@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/10 15:03:20 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/10 17:08:52 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,16 @@ void			ft_add_knot(T_LIST **node, int location, char *format); // OK
 int				ft_type_index(char *format, int location); // OK
 char			ft_get_format(char *format, int location); // OK
 char			ft_what_type(char format_in_knot); // OK
-char			ft_get_flag(char *format, int location);
-int				ft_get_width(char *format, int location);
-int				ft_get_accuracy(char *format, int location);
-char			ft_get_mod(char *format, int start, int end);
+char			ft_get_flag(char *format, int location); // OK
+int				ft_get_width(char *format, int location); // ?
+int				ft_get_accuracy(char *format, int location); // ?
+char			*ft_get_mod(char *format, int start, int end); // OK
 int				ft_is_flag(char flag); // OK
 int				ft_is_mod(char modifier); // OK
 void			ft_error(int error_code); // OK
 void			ft_wbzero(wchar_t *wstring, int len); // OK
 void			utf8(void); // OK
 wchar_t			*ft_base(intmax_t nb, int base); // OK
+int				ft_is_format(char c); // OK
 
 #endif

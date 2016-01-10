@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 15:31:51 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/10 14:59:09 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/10 16:21:07 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int		ft_type_index(char *format, int location)
 	while ((format[i] == '.' || ft_isdigit(format[i]) || ft_is_flag(format[i]) ||
 			ft_is_mod(format[i])) && format[i] != '\0')
 		i++;
+	printf("lol1\n");
+	NOW
 	return (i);
 }
 
@@ -51,6 +53,8 @@ T_LIST	*ft_first_node(void)
 	//first->is_star = 0;
 	first->type = 0;
 	first->format = 0;
+	printf("lol2\n");
+	NOW
 	return (first);
 }
 
@@ -62,12 +66,26 @@ void	ft_add_knot(T_LIST **node, int location, char *format)
 	(*node)->next = NULL;
 	(*node)->start_index = location;
 	(*node)->end_index = ft_type_index(format, location);
+	printf("Bon alors\n");
+	NOW
 	(*node)->format = ft_get_format(format, location);
+	printf("yoooo\n");
+	NOW
 	(*node)->type = ft_what_type((*node)->format);
+	printf("peut etre par la alors?\n");
+	NOW
 	(*node)->flag = ft_get_flag(format, location);
+	printf("non?\n");
+	NOW
 	(*node)->width = ft_get_width(format, location);
+	printf("la?\n");
+	NOW
 	(*node)->accuracy = ft_get_accuracy(format, location);
-	(*node)->mod = ft_get_mod(format, i, (*node)->end_index);
+	printf("ici?\n");
+	NOW
+	(*node)->mod = ft_get_mod(format, location, (*node)->end_index);
+	printf("lol3\n");
+	NOW
 }
 
 T_LIST	*ft_find_form(char *format/*, va_list args*/)
@@ -86,5 +104,7 @@ T_LIST	*ft_find_form(char *format/*, va_list args*/)
 				tmp = tmp->next;
 			ft_add_knot(&tmp, i, format);
 		}
+	printf("lol4\n");
+	NOW
 	return (start->next);
 }
