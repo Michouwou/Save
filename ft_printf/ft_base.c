@@ -1,31 +1,38 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <inttypes.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_base.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/01/10 14:02:17 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/10 14:19:32 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_base(long num, int base)
+#include "libftprintf.h"
+
+wchar_t *ft_base(intmax_t num, int base)
 {
-	char	*final;
-	int		k;
-	long	i;
-	char	alpha[17];
+	wchar_t		*final;
+	int			k;
+	intmax_t	i;
+	char		alpha[17];
 
+	if (num < 0)
+		ft_error(2);
 	i = 1;
 	k = 0;
-	strcpy(alpha, "0123456789abcdef");
-	bzero(final = (char*)malloc(sizeof(char) * 200), 200);
-	while ((i * base) < num)
-			i = i * base;
-	write(1, "trois\n", 6);
+	ft_strcpy(alpha, "0123456789abcdef");
+	ft_wbzero(final = (wchar_t*)malloc(sizeof(wchar_t) * 200), 200);
+	while ((i * (intmax_t)base) < num)
+			i = i * (intmax_t)base;
 	while (i > 0)
 	{
 		final[k++] = alpha[(num / i)];
 		num = num % i;
 		i /= base;
-		write(1, "youpi\n", 6);
 	}
 	final[k] = 0;
-	write(1, "quatre\n", 7);
 	return (final);
 }

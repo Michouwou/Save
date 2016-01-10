@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/10 12:27:33 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/10 14:02:29 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		ft_printf(char const *format, ...)
 	int			i;
 
 	va_start(args, format);
+	ft_check_format(format);
 	forms = ft_find_form((char*)format);
 	trail = forms;
 	print = ft_conv_wchar((char*)format);
