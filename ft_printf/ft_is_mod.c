@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char.c                                          :+:      :+:    :+:   */
+/*   ft_is_mod.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/08 13:51:16 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/08 15:20:02 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/10 12:45:40 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/10 12:48:36 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-wchar_t	*ft_char(char *flaglen, char **str, int beg, wchar_t c)
+int		ft_is_mod(char c)
 {
-	wchar_t	*res;
-	int		i;
-
-	i = beg;
-	while (!ft_what_type(*str[i]))
-		i++;
-	if (*str[i] == 'c' && c > 127)
-		ft_error();
-	res = ft_wstrnew(2);
-	res[0] = c;
-	ft_complete_char(&res, flaglen);
-	return (res);
+	if (c == 'h' || c == 'j' || c == 'l' || c == 'z' || c == 'L')
+		return (1);
+	return (0);
 }

@@ -6,50 +6,80 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 15:31:51 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/08 15:18:25 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/10 12:29:32 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libftprintf.h"
-#define NOW fflush(stdout);
 
-t_list	*ft_first_node()
+/* ************************************************************************** */
+/*                                                                            */
+/* Comments are just in case I decide to handle the '*' case, which would     */
+/* make things a little more complicated, for example the user can give me :  */
+/* --- "%#*.*d"                                                               */
+/* That is, I would have to pass a copy of the arg list to the functions      */
+/* looking for the format so that they could get the next argument in the     */
+/* list with 'arg_index', the index of the knot itself!                       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int		ft_type_index(char *format, int location)
 {
-	t_list	*first;
+	int i;
 
-	first = (t_list*)malloc(sizeof(t_list));
+	i = location + 1;
+	while (format[i] == '.' || ft_isdigit(format[i]) || ft_is_flag(format[i]) ||
+			ft_is_mod(format[i]))
+		i++;
+	return (i);
+}
+
+char	ft_get_format(char *format, int location)
+{
+	return (format[ft_type_index(format, location)]);
+}
+
+T_LIST	*ft_first_node(void)
+{
+	T_LIST	*first;
+
+	first = (T_LIST*)malloc(sizeof(T_LIST));
 	first->next = NULL;
-	first->location = -1;
+	//first->arg_index = 0;
+	first->start_index = 0;
+	first->end_index = 0;
+	//first->is_star = 0;
+	first->type = 0;
+	first->format = 0;
 	return (first);
 }
-void	ft_add_location(t_list **node, int location)
+
+void	ft_add_knot(T_LIST **node, int location, char *format)
 {
-	(*node)->next = (t_list*)malloc(sizeof(t_list));
+	(*node)->next = (T_LIST*)malloc(sizeof(T_LIST));
+	//(*node)->next->arg_index = (*node)->arg_index + 1;
 	*node = (*node)->next;
 	(*node)->next = NULL;
-	(*node)->location = location;
+	(*node)->start_index = location;
+	(*node)->end_index = ft_type_index(format, location);
+	(*node)->format = ft_get_format(format, location);
+	(*node)->type = ft_what_type((*node)->format);
 }
 
-t_list	*ft_find_form(wchar_t *format)
+T_LIST	*ft_find_form(char *format/*, va_list args*/)
 {
-	t_list *tmp;
-	t_list *start;
-	int i;
+	T_LIST	*tmp;
+	T_LIST	*start;
+	int		i;
 
 	start = ft_first_node();
 	tmp = start;
-	i = 0;
-	while (format[i] != '\0')
-	{
+	i = -1;
+	while (format[++i] != '\0')
 		if (format[i] == '%')
 		{
-			while (tmp->next != NULL)
-				tmp = tmp->next;
-			ft_add_location(&tmp, i);
+			tmp = tmp->next;
+			ft_add_knot(&tmp, i, format);
 		}
-		i++;
-	}
 	return (start->next);
 }

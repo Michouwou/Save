@@ -5,56 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/06 14:02:47 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/09 11:46:42 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/10 12:27:33 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <inttypes.h>
-#include <unistd.h>
 #include "libftprintf.h"
-#include <stdlib.h>
-#define LOC location->location
 
-void	ft_printf(const char *format, ...)
+int		ft_printf(char const *format, ...)
 {
-	int		i;
-	int		type;
-	va_list	list_arg;
-	t_list	*location;
-	wchar_t	*res;
+	va_list		args;
+	T_LIST		*forms;
+	T_LIST		*trail;
+	wchar_t		*print;
+	int			i;
 
-
-	va_start(list_arg, format);
-	res = ft_wsstrdup(format);
-	location = ft_find_form(res);
-	while (location->next != NULL)
+	va_start(args, format);
+	forms = ft_find_form((char*)format);
+	trail = forms;
+	print = ft_conv_wchar((char*)format);
+	while (trail->next != NULL)
 	{
-		i = LOC;
-		type = -1;
-		while (ft_isdigit(format[i]) || ft_is_flag(format[i]) ||
-				format[i] == '.' || !ft_what_type(format[i]))
-		{
-			if (ft_what_type(format[i]))
-				type = ft_what_type(format[i]);
-			i++;
-		}
-		if (type == 1)
-			res = ft_call_int(va_arg(list_arg, intmax_t), &res, LOC, i);
-		if (type == 2)
-			res = ft_call_pointer(va_arg(list_arg, unsigned), &res, LOC, i);
-		if (type == 3)
-		{
-			if (format[i] == 's' || format[i] == 'S')
-				res = ft_call_string(va_arg(list_arg, *wchar_t), &res, LOC, i);
-			if (format[i] == 'c' || format[i] == 'C')
-				res = ft_call_char(va_arg(list_arg, wchar_t), &res, LOC, i);
-		}
-		else
-			check_valid(res, location->location, i);
-		location = location->next;
+		if (T_ == 'd')
+			ft_call_int(va_arg(args, intmax_t), trail, print);
+		if (T_ == 'p')
+			ft_call_pointer(va_arg(args, unsigned), trail, print);
+		if (T_ == 'c')
+			ft_call_char(va_arg(args, wchar_t), trail, print);
+		if (T_ == 's')
+			ft_call_string(va_arg(args, char*), trail, print);
+		if (T_ == 'S')
+			ft_call_wstring(va_arg(args, wchar_t*), trail, print);
+		if (T_ == 'f')
+			ft_call_float(va_arg(args, double), trail, print);
+		trail = trail->next;
 	}
-	write(1, res, ft_wstrle(res));
-	free(res);
+	ft_putwstr(print);
+	i = ft_wstrlen(print);
+	ft_free_list(forms);
+	return (i);
 }

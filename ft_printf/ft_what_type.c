@@ -5,33 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/06 13:22:14 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/09 16:25:22 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/10 11:50:22 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/10 12:04:39 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#define CORRECT_FLAG 1
-#define NO_SPEC_FLAG 0
 
-int		ft_what_type(char f)
+char	ft_what_type(char c)
 {
-	if (f == 'D' || f == 'U' || f == 'u' || f == 'd' || f == 'i' || f == 'O' ||
-			f == 'o' || f == 'x' || f == 'X')
+	if (c == 'd' || c == 'D' || c == 'U' || c == 'u' || c == 'o' || c == 'O' ||
+			c == 'x' || c == 'X' || c == 'i')
 		return (INT_TYPE);
-	if (f == 'p')
-		return (POINTER_TYPE);
-	if (f == 's' || f == 'S' || f == 'c' || f == 'C')
+	else if (c == 'c' || c == 'C')
 		return (CHAR_TYPE);
+	else if (c == 'p')
+		return (POINTER_TYPE);
+	else if (c == 's')
+		return (STRING_TYPE);
+	else if (c == 'S')
+		return (WSTRING_TYPE);
+	else if (c == 'e' || c == 'E' || c == 'f' || c == 'F' /* || c == 'g' ||
+			c == 'G'*/)
+		return (DOUBLE_TYPE);
+//	else if (c == '*')
+//		return (NOT_YET_DEFINED);
 	else
-		return (NO_SPEC_TYPE);
-}
-
-int		ft_is_flag(char f)
-{
-	if (f == 'j' || f == 'z' || f == '#' || f == 48 || f == '-' || f == '+' ||
-			f == ' ')
-		return (CORRECT_FLAG);
-	else
-		return (NO_SPEC_FLAG);
+		return (NOT_TYPE);
 }
