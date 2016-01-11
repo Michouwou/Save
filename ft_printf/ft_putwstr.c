@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_putwstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 12:51:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/11 11:10:45 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/10 13:53:31 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/10 13:57:15 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_error(int error_code)
+void	ft_putwstr(wchar_t *wstring)
 {
-	if (error_code == 1)
-		write(1, "Wrong format\n", 13);
-	if (error_code == 2)
-		write(1, "Wrong type/format\n", 18);
-	exit(0);
+	int i;
+
+	i = 0;
+	utf8();
+	while (wstring[i] != 0)
+	{
+		write(1, (wstring + i), 1);
+		i++;
+	}
 }

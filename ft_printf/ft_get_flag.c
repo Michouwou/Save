@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_get_flag.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 12:51:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/11 11:10:45 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/10 15:24:49 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/10 16:10:19 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_error(int error_code)
+char	ft_get_flag(char *format, int location)
 {
-	if (error_code == 1)
-		write(1, "Wrong format\n", 13);
-	if (error_code == 2)
-		write(1, "Wrong type/format\n", 18);
-	exit(0);
+	if (ft_is_flag(format[location + 1]))
+		return (format[location + 1]);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/10 17:08:52 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/11 12:32:59 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void			ft_call_wstring(wchar_t *arg, T_LIST *locate, wchar_t *result);
 void			ft_call_float(double arg, T_LIST *locate, wchar_t *result);
 void			ft_putwstr(wchar_t *to_print); //OK
 int				ft_wstrlen(wchar_t *wstring); // OK
-void			ft_free_list(T_LIST *start); // OK
+void			ft_free_list(T_LIST **start); // OK
 T_LIST			*ft_first_node(void); // OK
 void			ft_add_knot(T_LIST **node, int location, char *format); // OK
 int				ft_type_index(char *format, int location); // OK
@@ -72,6 +72,6 @@ void			ft_error(int error_code); // OK
 void			ft_wbzero(wchar_t *wstring, int len); // OK
 void			utf8(void); // OK
 wchar_t			*ft_base(intmax_t nb, int base); // OK
-int				ft_is_format(char c); // OK
+void			ft_check_format(char *format); // OK (pas la norme)
 
 #endif

@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_get_accuracy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 12:51:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/11 11:10:45 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/10 15:46:34 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/11 10:28:58 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_error(int error_code)
+int		ft_get_accuracy(char *format, int location)
 {
-	if (error_code == 1)
-		write(1, "Wrong format\n", 13);
-	if (error_code == 2)
-		write(1, "Wrong type/format\n", 18);
-	exit(0);
+	int		i;
+	int		res;
+	char	*tmp;
+
+	i = 0;
+	location++;
+	while (format[location] != '.' && !ft_what_type(format[location]))
+		location++;
+	if (ft_what_type(format[location]))
+		return (0);
+	i = 1;
+	while (ft_isdigit(format[location + i]))
+		i++;
+	tmp = ft_strsub(format, location + 1, i);
+	res = (tmp != NULL) ? ft_atoi(tmp) : 0;
+	return (res);
 }

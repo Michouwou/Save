@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_wbzero.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 12:51:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/11 11:10:45 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/10 14:04:56 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/10 14:06:55 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_error(int error_code)
+void	ft_wbzero(wchar_t *wstring, int len)
 {
-	if (error_code == 1)
-		write(1, "Wrong format\n", 13);
-	if (error_code == 2)
-		write(1, "Wrong type/format\n", 18);
-	exit(0);
+	while (len--)
+		wstring[len] = 0;
 }
