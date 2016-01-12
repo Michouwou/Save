@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_call_wstring.c                                  :+:      :+:    :+:   */
+/*   ft_conv_wchar.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/11 15:41:39 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/12 16:26:25 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/05 18:06:18 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/09 13:58:24 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <inttypes.h>
 
-void	ft_call_wstring(wchar_t *wstring, T_LIST *trail, wchar_t *print)
+int			ft_strlen(char *str);
+
+wchar_t		*ft_conv_wchar(char *str)
 {
-	if (ft_check_wchar(wstring))
-		ft_repstr(print, trail, wstring);
-	if (trail->mod)
-		ft_error(1);
-	wstring = ft_set_length(trail, wstring);
-	wstring = ft_wstring_set_width(wstring, trail);
-	wstring = ft_wstring_apply_flag(wstring, trail);
-	ft_repstr(print, trail, wstring);
+	wchar_t	*res;
+	int		i;
+
+	i = -1;
+	res = (wchar_t*)malloc(sizeof(wchar_t) * ft_strlen(str));
+	while (str[++i] != 0)
+	{
+		res[i] = (unsigned char)str[i];
+		printf("%c\n", res[i]);
+	}
+	res[i] = 0;
+	return (res);
 }

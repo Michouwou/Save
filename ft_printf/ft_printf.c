@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/11 12:33:01 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/12 15:47:13 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_printf(char const *format, ...)
 	int			i;
 
 	va_start(args, format);
-	ft_check_format(format);
+	ft_check_format((char*)format);
 	forms = ft_find_form((char*)format);
 	trail = forms;
 	print = ft_conv_wchar((char*)format);
@@ -43,6 +43,6 @@ int		ft_printf(char const *format, ...)
 	}
 	ft_putwstr(print);
 	i = ft_wstrlen(print);
-	ft_free_list(forms);
+	ft_free_list(&forms);
 	return (i);
 }
