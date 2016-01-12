@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 10:09:31 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/04 09:54:19 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/12 18:16:23 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ t_superform		*ft_get_forms(char *file_name, char **char_tmp)
 	t_point		*point_tmp;
 	int			values[6];
 
+	point_tmp = NULL;
 	ft_declare_tab(values, &total, &file_name);
 	while (values[1] > 0)
 	{
