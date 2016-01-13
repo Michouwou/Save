@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 08:37:09 by mlevieux          #+#    #+#             */
-/*   Updated: 2015/12/17 15:46:48 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/13 10:41:58 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ int				ft_resolve(t_superform *total, int min_tab, t_superform *result,
 					int form);
 int				ft_min_tab(int nb_forms);
 void			ft_error();
+int				ft_is_stuck(t_form *form, t_point *point);
 
 #endif

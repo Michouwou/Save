@@ -6,13 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 10:09:31 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/12 18:16:23 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/13 10:55:29 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libfillit.h"
-#include <errno.h>
-#include <string.h>
 
 static void		ft_f_in(int tab[6], t_superform *tot, t_form *tmp, t_point *p)
 {

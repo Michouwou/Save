@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 08:41:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/12 19:03:51 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/13 10:54:56 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,38 +70,10 @@ int				ft_launch_check(char *file_name)
 	return (0);
 }
 
-static void		ft_exception(t_form *form)
-{
-	t_point *p2;
-	t_point *p3;
-	t_point *p4;
-
-	p2 = form->p2;
-	p3 = form->p3;
-	p4 = form->p4;
-	if (p2->x == 1 && p2->y == 0)
-		if (p3->x == 0 && p3->y == 2)
-			if (p4->x == 1 && p4->y == 2)
-				ft_error();
-	if (p2->x == 2 && p2->y == 0)
-		if (p3->x == 0 && p3->y == 1)
-			if (p4->x == 2 && p4->y == 1)
-				ft_error();
-}
-
 int				ft_form_is_valid(t_form *form)
 {
-	int		xmax;
-	int		xmin;
-	int		ymax;
-	int		ymin;
-
-	ft_exception(form);
-	xmax = ft_max(form->p2->x, ft_max(form->p3->x, form->p4->x));
-	xmin = ft_min(form->p2->x, ft_min(form->p3->x, form->p4->x));
-	ymax = ft_max(form->p2->y, ft_max(form->p3->y, form->p4->y));
-	ymin = ft_min(form->p2->y, ft_min(form->p3->y, form->p4->y));
-	if ((xmax - xmin) + (ymax - ymin) <= 3)
+	if ((ft_is_stuck(form, form->origin) + ft_is_stuck(form, form->p2) +
+			ft_is_stuck(form, form->p3) + ft_is_stuck(form, form->p4)) >= 5)
 		return (1);
 	return (0);
 }
