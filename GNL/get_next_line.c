@@ -6,12 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 20:16:19 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/04 10:21:30 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/13 17:06:19 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#define NOW fflush(stdout);
 
 int		get_next_line(int const fd, char **line)
 {
@@ -20,12 +19,12 @@ int		get_next_line(int const fd, char **line)
 
 	rest = ft_is_memory(memory, fd);
 	if (rest != NULL)
-		return (ft_next_line(rest , line, fd, memory));
+		return (ft_next_line(rest, line, fd, memory));
 	else
 	{
 		if (ft_set_memory(fd, &memory) == -1)
 			return (-1);
-		return(get_next_line(fd, line));
+		return (get_next_line(fd, line));
 	}
 }
 
@@ -33,6 +32,7 @@ char	*ft_is_memory(t_memory *memory, int const fd)
 {
 	t_memory	*tmp;
 	char		*ret;
+
 	tmp = memory;
 	ret = NULL;
 	while (tmp != NULL)
@@ -48,6 +48,7 @@ int		ft_set_memory(int const fd, t_memory **memory)
 {
 	t_memory	*tmp;
 	t_memory	*tmpb;
+
 	tmp = *memory;
 	while (tmp != NULL)
 	{
@@ -71,20 +72,19 @@ int		ft_set_memory(int const fd, t_memory **memory)
 
 int		ft_next_line(char *rest, char **line, int const fd, t_memory *memory)
 {
-	int	tmp;
-	t_memory *tmpm;
+	int			tmp;
+	t_memory	*tmpm;
 
 	tmp = 0;
 	tmpm = memory;
-	while(tmpm->fd != fd)
+	while (tmpm->fd != fd)
 		tmpm = tmpm->next;
 	while (rest[tmp] != '\n' && rest[tmp] != '\0' && rest[tmp] != 3)
 		tmp++;
 	if (rest[tmp] == '\0')
 	{
-		if (ft_next_read(fd, &rest) == -1)
-			return (-1);
-		return (ft_next_line(rest, line, fd, memory));
+		return ((ft_next_read(fd, &rest) == -1) ? -1 : ft_next_line(rest, line,
+				fd, memory));
 	}
 	if (rest[tmp] == 3)
 	{
@@ -104,16 +104,17 @@ int		ft_next_read(int const fd, char **rest)
 	int		i;
 	int		status;
 	char	*tmp;
+
 	i = ft_strlen(*rest);
 	tmp = *rest;
-	*rest = ft_strnew(i + (BUFF_SIZE) + 1);
+	*rest = ft_strnew(i + BUFF_SIZE + 1);
 	ft_strcpy(*rest, tmp);
-	status = read(fd, (*rest) + i, (BUFF_SIZE));
+	status = read(fd, (*rest) + i, BUFF_SIZE);
 	if (status == -1)
 		return (-1);
 	if (status == 0)
 	{
-		*rest[ft_strlen(*rest)] = 3;
+		(*rest)[ft_strlen(*rest)] = 3;
 		return (0);
 	}
 	return (1);
