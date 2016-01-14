@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/14 18:56:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/14 21:25:33 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,10 @@ void			ft_check_format(char *format); // OK
 void			ft_repstr(wchar_t *print, T_LIST *trail, wchar_t *result); // A revoir de A a Z!!
 wchar_t			*ft_char_apply_flag(T_LIST *trail);
 wchar_t			ft_char_apply_mod(T_LIST *trail, wchar_t wc); // ?
-wchar_t			*ft_set_length(T_LIST *trail, wchar_t *result); // Shall work for any format!! (not done yet)
+wchar_t			*ft_set_length(T_LIST *trail, wchar_t *result); // Shall work for any format!! // ???
 wchar_t			*ft_wstrnew(int size); // OK
 long double		ft_float_apply_mod(T_LIST *trail, long double number); // ?
-wchar_t			*ft_conv_float(long double number, T_LIST *trail);
+wchar_t			*ft_conv_float(long double number, T_LIST *trail); // ?
 wchar_t			*ft_float_set_width(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_float_apply_flag(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_watoi(intmax_t number, int base);
@@ -93,7 +93,7 @@ wchar_t			*ft_point_apply_flag(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_wstring_apply_mod(T_LIST *trail, wchar_t *wstring); // ?
 wchar_t			*ft_wstring_set_width(wchar_t *wstring, T_LIST *trail);
 wchar_t			*ft_wstring_apply_flag(wchar_t *wstring, T_LIST *trail);
-wchar_t			*ft_wstrcpy(wchar_t *wdest, wchar_t *wsrc);
-void			ft_wstrset(wchar_t *wstr, int len, char c);
+wchar_t			*ft_wstrcpy(wchar_t *wdest, wchar_t *wsrc); // ?
+void			ft_wstrset(wchar_t *wstr, int len, char c); // ?
 
 #endif

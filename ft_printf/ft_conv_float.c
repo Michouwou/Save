@@ -2,56 +2,50 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-double ft_power(double num, int pow)
+double		ft_power(long double num, int pow)
 {
-   if (pow < 0)
-      return (1 / ft_power(num, pow));
-   else if (pow == 0)
-      return (1);
-   else
-      return (num * ft_power(num, pow -1));
+	if (pow < 0)
+		return (1 / ft_power(num, -pow));
+	else if (pow == 0)
+		return (1);
+	else
+		return (num * ft_power(num, pow - 1));
 }
 
-char	*ft_putfloat(double to_print, int accuracy)
+static void	ft_is_neg(int *k, long double *number, wchar_t **final)
 {
-   char *final;
-   int	k;
-   long double i;
-
-   i = 1.0;
-   k = 0;
-   final = (char*)malloc(sizeof(char) * 200);
-   while (i < to_print)
-      i *= 10;
-   while ((i = i / 10) >= 1)
-   {
-      final[k++] = (int)(to_print / i) + 48;
-      to_print = (double)((int)to_print % (int)i) + to_print - (int)to_print;
-   }
-   if (accuracy > 0)
-   {
-      final[k++] = ',';
-      while (accuracy-- > 0)
-      {
-	 to_print *= 10;
-	 final[k++] = (int)to_print + 48;
-	 to_print = to_print - (int)to_print;
-      }
-   }
-   final[k] = '\0';
-   return (final);
+	if (*number < 0)
+	{
+		*number = -(*number);
+		*k = *k + 1;
+		(*final)[0] = '-';
+	}
 }
 
-int main()
+wchar_t		*ft_conv_float(long double to_print, int accuracy)
 {
-   char *str = ft_putfloat(3.1415, 3);
-   printf("%s\n", str);
-   str = ft_putfloat(2, 0);
-   printf("%s\n", str);
+	char *final;
+	int	k;
+	long double i;
 
-   str = ft_putfloat(3.1415, 5);
-   printf("%s\n", str);
-   str = ft_putfloat(3.1415, 0);
-   printf("%s\n", str);
-   return (0);
+	i = 1.0;
+	k = 0;
+	final = ft_wstrnew(310);
+	while (i < to_print)
+		i *= 10;
+	ft_is_neg(&k, &to_print, &final);
+	while ((i = i / 10) >= 1)
+	{
+		final[k++] = (int)(to_print / i) + 48;
+		to_print = (long double)((intmax_t)to_print % (intmax_t)i) + to_print -
+			(intmax_t)to_print;
+	}
+	final[k++] = (accuracy > 0) ? ',' : 0;
+	while (accuracy-- > 0)
+	{
+		to_print *= 10;
+		final[k++] = (intmax_t)to_print + 48;
+		to_print = to_print - (intmax_t)to_print;
+	}
+	return (final);
 }

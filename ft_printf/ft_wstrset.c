@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_set_length.c                                    :+:      :+:    :+:   */
+/*   ft_wstrset.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/14 16:12:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/14 20:50:34 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/14 20:50:44 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/14 20:52:18 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-wchar_t	*ft_set_length(T_LIST *trail, wchar_t *result)
+void	ft_wstrset(wchar_t *wstr, int len, char c)
 {
 	int i;
 
-	i = trail->length - ft_wstrlen(result);
-	if (trail->type == 'd' && trail->length > ft_wstrlen(result))
-		result = ft_repstr(result, 0, 0, ft_wstrset(ft_wstrnew(i), i, '0'));
-	else if (trail->type == 'f')
-		result = ft_float_set_length(result, trail);
-	else if (trail->type == 'S')
-		result[trail->length] = 0;
+	i = 0;
+	while (i < len)
+	{
+		wstr[i] = c;
+		i++;
+	}
 }
