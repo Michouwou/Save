@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_call_char.c                                     :+:      :+:    :+:   */
+/*   ft_char_apply_mod.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/11 13:50:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/14 10:37:51 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/14 13:29:40 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/14 14:33:23 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_call_char(wchar_t wc, T_LIST *trail, wchar_t *print)
+wchar_t		ft_char_apply_mod(T_LIST *trail, wchar_t wc)
 {
-	wchar_t	*result;
+	char *c;
+	char t;
 
-	ft_check_char(&wc, trail);
-	result = ft_wstrnew((trail->width > 1) ? trail->width : 1);
-	result = ft_char_apply_flag(trail);
-	wc = ft_char_apply_mod(trail, &wc);
-	result[ft_wstrlen(result)] = wc;
-	ft_repstr(print, trail, result);
+	c = trail->mod;
+	t = trail->format;
+	if (c == "l")
+		return ((wint_t)wc);
+	else if (!c && t == 'c')
+		return ((char)wc);
 }

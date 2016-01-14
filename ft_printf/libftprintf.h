@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/12 16:25:05 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/14 14:36:40 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void			ft_call_pointer(unsigned arg, T_LIST *locate, wchar_t *result); // ?
 void			ft_call_char(wchar_t arg, T_LIST *locate, wchar_t *result); // ?
 void			ft_call_string(char *arg, T_LIST *locate, wchar_t *result); // ?
 void			ft_call_wstring(wchar_t *arg, T_LIST *locate, wchar_t *result); // ?
-void			ft_call_float(double arg, T_LIST *locate, wchar_t *result); // ?
+void			ft_call_float(long double arg, T_LIST *locate, wchar_t *result); // ?
 void			ft_putwstr(wchar_t *to_print); //OK
 int				ft_wstrlen(wchar_t *wstring); // OK
 void			ft_free_list(T_LIST **start); // OK
@@ -74,28 +74,23 @@ void			utf8(void); // OK
 wchar_t			*ft_base(intmax_t nb, int base); // OK
 void			ft_check_format(char *format); // OK (pas la norme)
 void			ft_repstr(wchar_t *print, T_LIST *trail, wchar_t *result); // A revoir de A a Z!!
-void			ft_check_char(wchar_t wc, T_LIST *trail);
 wchar_t			*ft_char_apply_flag(T_LIST *trail);
-wchar_t			ft_char_apply_mod(T_LIST *trail, wchar_t wc);
-void			ft_check_int(intmax_t number, T_LIST *trail);
+wchar_t			ft_char_apply_mod(T_LIST *trail, wchar_t wc); // ?
 wchar_t			*ft_set_length(T_LIST *trail, wchar_t *result); // Shall work for any format!! (not done yet)
-wchar_t			*ft_wstrnew(int size);
-void			ft_check_float(double number, T_LIST *trail);
-double			ft_float_apply_mod(T_LIST *trail, double number);
-wchar_t			*ft_conv_float(double number, T_LIST *trail);
+wchar_t			*ft_wstrnew(int size); // OK
+long double		ft_float_apply_mod(T_LIST *trail, long double number);
+wchar_t			*ft_conv_float(long double number, T_LIST *trail);
 wchar_t			*ft_float_set_width(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_float_apply_flag(wchar_t *result, T_LIST *trail);
 intmax_t		ft_int_apply_mod(T_LIST *trail, intmax_t number);
 wchar_t			*ft_watoi(intmax_t number, int base);
+
 wchar_t			*ft_int_set_width(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_int_apply_flag(wchar_t *result, T_LIST *trail);
-void			ft_check_pointer(unsigned address, T_LIST *trail);
 wchar_t			*ft_point_set_width(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_point_apply_flag(wchar_t *result, T_LIST *trail);
-int				ft_check_string(char *string, T_LIST *trail);
 wchar_t			*ft_string_set_width(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_string_apply_flag(wchar_t *result, T_LIST *trail);
-int				ft_check_wchar(wchar_t *result);
 wchar_t			*ft_wstring_set_width(wchar_t *wstring, T_LIST *trail);
 wchar_t			*ft_wstring_apply_flag(wchar_t *wstring, T_LIST *trail);
 

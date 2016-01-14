@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 14:02:55 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/12 15:57:30 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/14 10:37:59 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_call_int(intmax_t number, T_LIST *trail, wchar_t *print)
 {
 	wchar_t	*result;
 
-	ft_check_int(number, trail);
+	ft_check_int(*number, trail);
 	number = ft_int_apply_mod(trail, number);
 	result = ft_watoi(number, trail->format);
 	result = ft_set_length(trail, result); // Number of digits to print INSIDE the field
