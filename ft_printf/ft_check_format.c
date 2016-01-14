@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 10:43:12 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/12 15:48:29 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/14 16:06:01 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,9 @@ static void		ft_inner_loop(int tab[], char *format, int *i)
 		if (format[*i] != 0 && !ft_what_type(format[*i]))
 			(*i)++;
 	}
-
 }
 
-void	ft_check_format(char *format)
+void			ft_check_format(char *format)
 {
 	int	i;
 	int tab[3];

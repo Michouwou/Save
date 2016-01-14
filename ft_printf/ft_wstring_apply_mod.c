@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conv_wchar.c                                    :+:      :+:    :+:   */
+/*   ft_wstring_apply_mod.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/05 18:06:18 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/14 15:47:27 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/14 15:52:13 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/14 15:57:20 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <inttypes.h>
-
-int			ft_strlen(char *str);
-
-wchar_t		*ft_conv_wchar(char *str)
+wchar_t		*ft_wstring_apply_mod(T_LIST *trail, wchar_t *wstring)
 {
-	wchar_t	*res;
-	int		i;
+	int i;
 
-	i = -1;
-	res = (wchar_t*)malloc(sizeof(wchar_t) * ft_strlen(str));
-	while (str[++i] != 0)
-	{
-		res[i] = (unsigned char)str[i];
-		printf("%c\n", res[i]);
-	}
-	res[i] = 0;
-	return (res);
+	i = 0;
+	if (!(trail->mod) && trail->format = 's')
+		while (i < ft_wstrlen(wstring))
+		{
+			wstring[i] = (char)(wstring[i]);
+			i++;
+		}
+	return (wstring);
 }
