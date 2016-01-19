@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/19 15:10:29 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/19 17:41:18 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,23 +78,20 @@ void			utf8(void); // OK
 wchar_t			*ft_base(intmax_t nb, int base); // OK
 void			ft_check_format(char *format); // OK
 void			ft_repstr(wchar_t *print, T_LIST *trail, wchar_t *result); // A revoir de A a Z!!
-wchar_t			*ft_char_apply_flag(T_LIST *trail);
 wchar_t			ft_char_apply_mod(T_LIST *trail, wchar_t wc); // ?
 wchar_t			*ft_set_length(T_LIST *trail, wchar_t *result); // Shall work for any format!! // ???
 wchar_t			*ft_wstrnew(int size); // OK
 long double		ft_float_apply_mod(T_LIST *trail, long double number); // ?
 wchar_t			*ft_conv_float(long double number, T_LIST *trail); // ?
-wchar_t			*ft_float_apply_flag(wchar_t *result, T_LIST *trail);
-wchar_t			*ft_watoi(intmax_t number, int base);
+wchar_t			*ft_watoi(intmax_t number, int base); // ?
 intmax_t		ft_int_apply_mod(T_LIST *trail, intmax_t number); // ?
-wchar_t			*ft_set_width(wchar_t *result, T_LIST *trail);
-wchar_t			*ft_int_apply_flag(wchar_t *result, T_LIST *trail);
-wchar_t			*ft_point_apply_flag(wchar_t *result, T_LIST *trail);
+wchar_t			*ft_set_width(wchar_t *result, T_LIST *trail); // ?
+wchar_t			*ft_apply_flag(wchar_t *result, T_LIST *trail);
 //wchar_t			*ft_string_set_width(wchar_t *result, T_LIST *trail);
 //wchar_t			*ft_string_apply_flag(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_wstring_apply_mod(T_LIST *trail, wchar_t *wstring); // ?
-wchar_t			*ft_wstring_apply_flag(wchar_t *wstring, T_LIST *trail);
 wchar_t			*ft_wstrcpy(wchar_t *wdest, wchar_t *wsrc); // ?
 void			ft_wstrset(wchar_t *wstr, int len, char c); // ?
+wchar_t			*ft_alternate(wchar_t *result, T_LIST *trail); // ?
 
 #endif
