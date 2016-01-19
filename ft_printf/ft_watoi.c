@@ -6,17 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:36:14 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/09 17:20:01 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/19 15:17:47 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-wchar_t			*ft_wstrnew(size_t len);
-wchar_t			*ft_wstrsub(wchar_t *ws, int start, size_t size);
-wchar_t			*ft_wstrdup(wchar_t const *wstring);
-size_t			ft_wstrlen(wchar_t const *wstring);
+#include "libftprintf.h"
 
 static void		final_loop(wchar_t *wstr, int neg, int *ret)
 {

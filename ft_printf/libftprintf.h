@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/19 14:38:50 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/19 15:10:29 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,18 +84,15 @@ wchar_t			*ft_set_length(T_LIST *trail, wchar_t *result); // Shall work for any 
 wchar_t			*ft_wstrnew(int size); // OK
 long double		ft_float_apply_mod(T_LIST *trail, long double number); // ?
 wchar_t			*ft_conv_float(long double number, T_LIST *trail); // ?
-wchar_t			*ft_float_set_width(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_float_apply_flag(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_watoi(intmax_t number, int base);
 intmax_t		ft_int_apply_mod(T_LIST *trail, intmax_t number); // ?
-wchar_t			*ft_int_set_width(wchar_t *result, T_LIST *trail);
+wchar_t			*ft_set_width(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_int_apply_flag(wchar_t *result, T_LIST *trail);
-wchar_t			*ft_point_set_width(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_point_apply_flag(wchar_t *result, T_LIST *trail);
 //wchar_t			*ft_string_set_width(wchar_t *result, T_LIST *trail);
 //wchar_t			*ft_string_apply_flag(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_wstring_apply_mod(T_LIST *trail, wchar_t *wstring); // ?
-wchar_t			*ft_wstring_set_width(wchar_t *wstring, T_LIST *trail);
 wchar_t			*ft_wstring_apply_flag(wchar_t *wstring, T_LIST *trail);
 wchar_t			*ft_wstrcpy(wchar_t *wdest, wchar_t *wsrc); // ?
 void			ft_wstrset(wchar_t *wstr, int len, char c); // ?
