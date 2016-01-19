@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/14 21:25:33 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/19 14:27:29 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,11 @@ typedef struct	s_list_printf
 	//int					is_star;
 	char					type;
 	char					format;
-	char					flag;
+	int						z_pad;
+	int						minus;
+	int						plus;
+	int						alternate;
+	int						space;
 	char					*mod;
 	struct s_list_printf	*next;
 }				t_list_printf;
