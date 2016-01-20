@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 12:32:40 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 14:31:17 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_printf(char const *format, ...)
 			ft_call_float(va_arg(args, double), trail, print);
 		trail = trail->next;
 	}
-	ft_putwstr(print);
+	ft_putstr((char*)print);
 	i = ft_wstrlen(print);
 	ft_free_list(&forms);
 	return (i);

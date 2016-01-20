@@ -6,23 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:06:23 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 12:33:11 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 14:24:28 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		ft_wstrlen(const wchar_t *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i] != 0)
-		i++;
-	return (i);
-}
-
-wchar_t	*ft_repstr(const wchar_t *str, int start, int end, wchar_t *to_insert)
+wchar_t	*ft_repstr(wchar_t *str, int start, int end, wchar_t *to_insert)
 {
 	wchar_t	*res;
 	int		i;

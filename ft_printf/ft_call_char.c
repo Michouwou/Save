@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 13:50:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 12:16:36 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 14:11:54 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	ft_call_char(wchar_t wc, T_LIST *trail, wchar_t *print)
 	ft_wstrset(result, ft_wstrlen(result) - 2, ' ');
 	wc = ft_char_apply_mod(trail, wc);
 	result[ft_wstrlen(result)] = wc;
-	print = ft_repstr(print, trail, result);
+	print = ft_repstr(print, trail->start_index, trail->end_index, result);
 }

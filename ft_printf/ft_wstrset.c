@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 20:50:44 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/14 20:52:18 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 14:18:03 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_wstrset(wchar_t *wstr, int len, char c)
+wchar_t	*ft_wstrset(wchar_t *wstr, int len, char c)
 {
 	int i;
 
@@ -22,4 +22,5 @@ void	ft_wstrset(wchar_t *wstr, int len, char c)
 		wstr[i] = c;
 		i++;
 	}
+	return (wstr);
 }

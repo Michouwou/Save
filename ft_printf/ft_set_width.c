@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 14:40:08 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 12:35:29 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 14:20:24 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ wchar_t	*ft_set_width(wchar_t *result, T_LIST *trail)
 		{
 			if (trail->z_pad && !(trail->accuracy && trail->type == 'd'))
 				result = ft_repstr(result, i, i,
-						ft_wstrset(ft_strnew(trail->width - ft_wstrlen(result)),
-						trail->width - ft_wstrlen(result), '0'));
+					ft_wstrset(ft_wstrnew(trail->width - ft_wstrlen(result)),
+					trail->width - ft_wstrlen(result), '0'));
 			else
 				result = ft_repstr(result, i, i,
-						ft_wstrset(ft_strnew(trail->width - ft_wstrlen(result)),
-						trail->width - ft_wstrlen(result), ' '));
+					ft_wstrset(ft_wstrnew(trail->width - ft_wstrlen(result)),
+					trail->width - ft_wstrlen(result), ' '));
 		}
 		else
 			result = ft_repstr(result, ft_wstrlen(result), ft_wstrlen(result),
-					ft_wstrset(ft_strnew(trail->width - ft_wstrlen(result)),
+					ft_wstrset(ft_wstrnew(trail->width - ft_wstrlen(result)),
 					trail->width - ft_wstrlen(result), ' '));
 	}
 	return (result);

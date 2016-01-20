@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:25:45 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/19 15:34:32 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 14:09:53 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ wchar_t	*ft_alternate(wchar_t *result, T_LIST *trail)
 		while (!ft_isdigit(result[i]))
 			i++;
 		if (trail->format == 'o' || trail->format == 'O')
-			result = ft_repstr(result, i, i, "0");
+			result = ft_repstr(result, i, i, L"0");
 		else if (trail->format == 'x')
-			result = ft_repstr(result, i, i, "0x");
+			result = ft_repstr(result, i, i, L"0x");
 		else
-			result = ft_repstr(result, i, i, "0X");
+			result = ft_repstr(result, i, i, L"0X");
 	}
 	else if (trail->type == 'f')
 	{
@@ -36,7 +36,7 @@ wchar_t	*ft_alternate(wchar_t *result, T_LIST *trail)
 		while (ft_isdigit(result[i]))
 			i++;
 		if (result[i] != ',')
-			result = ft_repstr(resut, i, i, ",");
+			result = ft_repstr(result, i, i, L",");
 	}
 	return (result);
 }

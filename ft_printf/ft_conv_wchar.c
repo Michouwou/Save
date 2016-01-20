@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 18:06:18 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/14 15:47:27 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 14:31:13 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ wchar_t		*ft_conv_wchar(char *str)
 	i = -1;
 	res = (wchar_t*)malloc(sizeof(wchar_t) * ft_strlen(str));
 	while (str[++i] != 0)
-	{
 		res[i] = (unsigned char)str[i];
-		printf("%c\n", res[i]);
-	}
 	res[i] = 0;
 	return (res);
 }

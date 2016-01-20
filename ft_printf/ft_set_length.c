@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 16:12:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 12:33:48 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 14:23:13 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ wchar_t	*ft_set_length(T_LIST *trail, wchar_t *result)
 	if (trail->type == 'd' && trail->accuracy > ft_wstrlen(result))
 		result = ft_repstr(result, j, j, ft_wstrset(ft_wstrnew(i), i, '0'));
 	else if (trail->type == 'S')
-		result[trail->length] = 0;
+		result[trail->accuracy] = 0;
+	return (result);
 }

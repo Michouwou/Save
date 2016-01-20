@@ -6,21 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 12:24:13 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 12:27:48 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 14:14:27 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
-static double	ft_power(long double num, int pow)
-{
-	if (pow < 0)
-		return (1 / ft_power(num, -pow));
-	else if (pow == 0)
-		return (1);
-	else
-		return (num * ft_power(num, pow - 1));
-}
 
 static void		ft_is_neg(int *k, long double *number, wchar_t **final)
 {
