@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 14:24:00 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 15:45:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <locale.h>
 #include 				<stdio.h> // DO NOT FORGET TO ERASE /!\. 
+#define NOW fflush(stdout);
 # include <unistd.h>
 # include <wchar.h>
 # include "libft.h"
@@ -53,12 +54,12 @@ typedef struct	s_list_printf
 int				ft_printf(char const *format, ...); // OK
 T_LIST			*ft_find_form(char *format); // OK
 wchar_t			*ft_conv_wchar(char *string); // OK
-void			ft_call_int(intmax_t arg, T_LIST *locate, wchar_t *result); // ?
-void			ft_call_pointer(unsigned arg, T_LIST *locate, wchar_t *result); // ?
-void			ft_call_char(wchar_t arg, T_LIST *locate, wchar_t *result); // ?
+void			ft_call_int(intmax_t arg, T_LIST *locate, wchar_t **result); // ?
+void			ft_call_pointer(unsigned arg, T_LIST *locate, wchar_t **result); // ?
+void			ft_call_char(wchar_t arg, T_LIST *locate, wchar_t **result); // ?
 //void			ft_call_string(char *arg, T_LIST *locate, wchar_t *result); // ?
-void			ft_call_wstring(wchar_t *arg, T_LIST *locate, wchar_t *result); // ?
-void			ft_call_float(long double arg, T_LIST *locate, wchar_t *result); // ?
+void			ft_call_wstring(wchar_t *arg, T_LIST *locate, wchar_t **result); // ?
+void			ft_call_float(long double arg, T_LIST *locate, wchar_t **result); // ?
 void			ft_putwstr(wchar_t *to_print); //OK
 int				ft_wstrlen(wchar_t *wstring); // OK
 void			ft_free_list(T_LIST **start); // OK

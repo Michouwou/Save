@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 15:38:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/11 10:40:33 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 15:34:41 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_get_width(char *format, int location)
 	i = 0;
 	location++;
 	while ((!ft_isdigit(format[location]) || ft_is_flag(format[location])) &&
-				format[location] != '.')
+				format[location] != '.' && !ft_what_type(format[location]))
 		location++;
 	if (format[location] == '.')
 		return (0);
@@ -30,5 +30,7 @@ int		ft_get_width(char *format, int location)
 	tmp = ft_strnew(i - location + 1);
 	tmp = ft_strsub(format, location, i);
 	res = (tmp != NULL) ? ft_atoi(tmp) : 0;
+	printf("\t\t\tres == %d\n", res);
+	NOW
 	return (res);
 }
