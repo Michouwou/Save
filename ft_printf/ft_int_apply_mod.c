@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 13:38:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/14 15:41:02 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 12:31:28 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,18 @@ intmax_t	ft_int_apply_mod(T_LIST *trail, intmax_t number)
 	c = trail->mod;
 	t = trail->format;
 	sign = (t == 'd' || t == 'D' || t == 'i') ? 1 : 0;
-	if (c == "z")
+	if (ft_strcmp(c, "z"))
 		return ((size_t)number);
-	else if (c == "h")
+	else if (ft_strcmp(c, "h"))
 		return (sign ? (short)number : (unsigned short)number);
-	else if (c == "hh")
+	else if (ft_strcmp(c, "hh"))
 		return (sign ? (char)number : (unsigned char)number);
-	else if (c == "l")
+	else if (ft_strcmp(c, "l"))
 		return (sign ? (long)number : (unsigned long)number);
-	else if (c == "ll")
+	else if (ft_strcmp(c, "ll"))
 		return (sign ? (long long)number : (unsigned long long)number);
+	else if (ft_strcmp(c, "z"))
+		return (sign ? number : (uintmax_t)number);
 	else
 		return (sign ? (int)number : (unsigned int)number);
 }

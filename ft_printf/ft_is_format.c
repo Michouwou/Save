@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 16:08:58 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/19 16:49:29 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 12:32:12 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ int		ft_is_format(char format)
 			format == 'E' || format == 'f' || format == 'F' || format == 'p' ||
 			format == 'n' || format == 'm' || format == 'b')
 		return (1);
+	return (0);
 }

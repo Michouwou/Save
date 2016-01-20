@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 15:24:49 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/14 16:29:03 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 12:28:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ long double	ft_float_apply_mod(T_LIST *trail, long double number)
 
 	c = trail->mod;
 	t = trail->format;
-	if (c == "L")
+	if (ft_strcmp(c, "L"))
 		return ((long double)number);
 	else
 		return ((double)number);

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/18 18:27:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 12:32:40 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		ft_printf(char const *format, ...)
 			ft_call_pointer(va_arg(args, unsigned), trail, print);
 		if (T_ == 'c')
 			ft_call_char(va_arg(args, wchar_t), trail, print);
-		if (T_ == 'S' && trail->format = 's')
+		if (T_ == 'S' && trail->format == 's')
 			ft_call_wstring(ft_conv_wchar(va_arg(args, char*)), trail, print);
 		else if (T_ == 'S')
 			ft_call_wstring(va_arg(args, wchar_t*), trail, print);

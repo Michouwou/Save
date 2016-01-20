@@ -1,8 +1,18 @@
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_conv_float.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/01/20 12:24:13 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/20 12:27:48 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-double		ft_power(long double num, int pow)
+#include "libftprintf.h"
+
+static double	ft_power(long double num, int pow)
 {
 	if (pow < 0)
 		return (1 / ft_power(num, -pow));
@@ -12,7 +22,7 @@ double		ft_power(long double num, int pow)
 		return (num * ft_power(num, pow - 1));
 }
 
-static void	ft_is_neg(int *k, long double *number, wchar_t **final)
+static void		ft_is_neg(int *k, long double *number, wchar_t **final)
 {
 	if (*number < 0)
 	{
@@ -22,11 +32,11 @@ static void	ft_is_neg(int *k, long double *number, wchar_t **final)
 	}
 }
 
-wchar_t		*ft_conv_float(long double to_print, int accuracy)
+wchar_t			*ft_conv_float(long double to_print, int accuracy)
 {
-	char *final;
-	int	k;
-	long double i;
+	wchar_t		*final;
+	int			k;
+	long double	i;
 
 	i = 1.0;
 	k = 0;

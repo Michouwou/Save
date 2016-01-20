@@ -6,15 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:06:23 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/14 17:58:29 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 12:33:11 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#define NOW fflush(stdout);
+#include "libftprintf.h"
 
 int		ft_wstrlen(const wchar_t *str)
 {

@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 14:02:17 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/19 18:17:17 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 12:16:00 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static void ft_isneg(int *num, int *k, wchar_t *final);
+static void ft_isneg(intmax_t *num, int *k, wchar_t *final)
 {
 	if (*num < 0)
 	{
