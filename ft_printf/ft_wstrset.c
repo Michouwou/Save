@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 20:50:44 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 14:18:03 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 18:44:32 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ wchar_t	*ft_wstrset(wchar_t *wstr, int len, char c)
 	int i;
 
 	i = 0;
-	while (i < len)
+	while (i <= len)
 	{
 		wstr[i] = c;
 		i++;

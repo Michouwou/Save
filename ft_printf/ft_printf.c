@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 15:45:30 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 17:39:31 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,8 @@ int		ft_printf(char const *format, ...)
 	printf("Fonction principale OK\n");
 	NOW
 	ft_putwstr(print);
-	printf("Affichage OK\n");
 	NOW
 	i = ft_wstrlen(print);
-	printf("Valeur de retour OK i = %d\n", i);
-	NOW
 	ft_free_list(&forms);
-	printf("Free OK\n");
-	NOW
 	return (i);
 }

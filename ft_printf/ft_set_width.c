@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 14:40:08 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 15:35:21 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 18:25:48 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ wchar_t	*ft_set_width(wchar_t *result, T_LIST *trail)
 	int i;
 
 	i = 0;
-	while (!ft_isdigit(result[i]))
+	while (!ft_isdigit(result[i]) && result[i] != 0)
 		i++;
 	if (trail->width > ft_wstrlen(result))
 	{

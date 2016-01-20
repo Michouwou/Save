@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 14:02:55 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 15:45:51 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 18:35:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ void	ft_call_int(intmax_t number, T_LIST *trail, wchar_t **print)
 		result = ft_base(number, trail->format);
 	else
 		result = ft_base(number, 10);
-	printf("\tInt base OK\n");
+	printf("\tInt base OK, length = %d\n", trail->accuracy);
+	NOW
+	result = ft_apply_flag(result, trail);
+	printf("\tLENGTH = %d\n", trail->accuracy);
 	NOW
 	result = ft_set_length(trail, result); // Number of digits to print INSIDE the field
 	printf("\tlength_int OK\n");

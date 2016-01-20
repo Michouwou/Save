@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 14:04:56 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/10 14:06:55 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/20 18:12:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_wbzero(wchar_t *wstring, int len)
 {
-	while (len--)
+	while (len)
+	{
 		wstring[len] = 0;
+		len--;
+	}
 }
