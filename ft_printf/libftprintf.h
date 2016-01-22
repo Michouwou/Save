@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 15:45:02 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/22 11:08:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void			ft_call_char(wchar_t arg, T_LIST *locate, wchar_t **result); // ?
 void			ft_call_wstring(wchar_t *arg, T_LIST *locate, wchar_t **result); // ?
 void			ft_call_float(long double arg, T_LIST *locate, wchar_t **result); // ?
 void			ft_putwstr(wchar_t *to_print); //OK
-int				ft_wstrlen(wchar_t *wstring); // OK
+size_t			ft_wstrlen(wchar_t *wstring); // OK
 void			ft_free_list(T_LIST **start); // OK
 T_LIST			*ft_first_node(void); // OK
 void			ft_add_knot(T_LIST **node, int location, char *format); // OK
@@ -83,7 +83,7 @@ wchar_t			*ft_repstr(wchar_t *print, int start, int end,
 						wchar_t *to_insert); // A revoir de A a Z!!
 wchar_t			ft_char_apply_mod(T_LIST *trail, wchar_t wc); // ?
 wchar_t			*ft_set_length(T_LIST *trail, wchar_t *result); // Shall work for any format!! // ???
-wchar_t			*ft_wstrnew(int size); // OK
+wchar_t			*ft_wstrnew(size_t size); // OK
 long double		ft_float_apply_mod(T_LIST *trail, long double number); // ?
 wchar_t			*ft_conv_float(long double number, int accuracy); // ?
 int				ft_watoi(const wchar_t *ws); // ?

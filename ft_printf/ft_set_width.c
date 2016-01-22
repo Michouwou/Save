@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 14:40:08 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 18:25:48 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/22 11:24:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,33 @@ wchar_t	*ft_set_width(wchar_t *result, T_LIST *trail)
 		i++;
 	if (trail->width > ft_wstrlen(result))
 	{
+		printf("\t\tOn est bien dans la condition\n");
+		NOW
 		if (!(trail->minus))
 		{
-			if (trail->z_pad && !(trail->accuracy && trail->type == 'd'))
+			printf("\t\tOui toujours... %d\n", (int)(trail->width - ft_wstrlen(result) - 1));
+			NOW
+			if (trail->z_pad && !(trail->accuracy != -1 && trail->type == 'd'))
+			{
 				result = ft_repstr(result, i, i,
-					ft_wstrset(ft_wstrnew(trail->width - ft_wstrlen(result)),
-					trail->width - ft_wstrlen(result), '0'));
-			else
+					ft_wstrset(ft_wstrnew(trail->width - ft_wstrlen(result) - 1),
+					trail->width - ft_wstrlen(result) - 1, '0'));
+				printf("\t\tReponse?\n");
+				NOW
+			}
+			else{
+				printf("Mdr, bon bah on pas entre dans la fonction pour le z_pad\n");
+				NOW
 				result = ft_repstr(result, i, i,
-					ft_wstrset(ft_wstrnew(trail->width - ft_wstrlen(result)),
-					trail->width - ft_wstrlen(result), ' '));
+					ft_wstrset(ft_wstrnew(trail->width - ft_wstrlen(result) - 1),
+					trail->width - ft_wstrlen(result) - 1, ' '));}
 		}
 		else
 			result = ft_repstr(result, ft_wstrlen(result), ft_wstrlen(result),
-					ft_wstrset(ft_wstrnew(trail->width - ft_wstrlen(result)),
-					trail->width - ft_wstrlen(result), ' '));
+					ft_wstrset(ft_wstrnew(trail->width - ft_wstrlen(result) - 1),
+					trail->width - ft_wstrlen(result) - 1, ' '));
 	}
+	printf("\t\tOn va retourner set_width\n");
+	NOW
 	return (result);
 }

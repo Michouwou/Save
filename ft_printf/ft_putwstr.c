@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 13:53:31 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 17:24:53 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/22 14:24:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putwstr(wchar_t *wstring)
 
 	i = 0;
 	utf8();
-	while (wstring[i] != 0)
+	while (wstring[i] != (int)0)
 	{
 		write(1, &wstring[i], 1);
 		i++;
