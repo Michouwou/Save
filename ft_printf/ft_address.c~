@@ -1,0 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_address.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/01/04 14:27:08 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/06 17:33:17 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libftprintf.h"
+
+char	*ft_address(void *pointer)
+{
+	unsigned long long	i;
+	wchar_t				*res;
+	wchar_t				*tmp;
+
+	i = (unsigned)pointer;
+	res = (wchar_t*)malloc(sizeof(wchar_t)*200);
+	tmp = res;
+	ft_wstrcpy(res, L"0x");
+	res += 2;
+	ft_wstrcpy(res, ft_base(i, 16));
+	return(tmp);
+}
