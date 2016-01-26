@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 12:24:13 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 14:14:27 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/26 16:00:53 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static void		ft_is_neg(int *k, long double *number, wchar_t **final)
+static void		ft_is_neg(int *k, long double *number, char **final)
 {
 	if (*number < 0)
 	{
@@ -22,15 +22,15 @@ static void		ft_is_neg(int *k, long double *number, wchar_t **final)
 	}
 }
 
-wchar_t			*ft_conv_float(long double to_print, int accuracy)
+char			*ft_conv_float(long double to_print, int accuracy)
 {
-	wchar_t		*final;
+	char		*final;
 	int			k;
 	long double	i;
 
 	i = 1.0;
 	k = 0;
-	final = ft_wstrnew(310);
+	final = ft_strnew(310);
 	while (i < to_print)
 		i *= 10;
 	ft_is_neg(&k, &to_print, &final);

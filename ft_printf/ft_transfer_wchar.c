@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 10:02:14 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/26 11:28:22 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/26 16:10:18 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 unsigned char *ft_transfer_wchar(wchar_t c)
 {
-	unsigned char b_static[5];
-	unsigned char *b = b_static;
+	unsigned char *b_static;
+	unsigned char *b;
 
+	b_static = ft_strnew(4);
+	b = b_static;
 	if (c < (1 << 7)) // 7 bit Unicode encoded as plain ascii
 		*b++ = (unsigned char)(c);
 	else if (c < (1 << 11)) // 11 bit Unicode encoded in 2 UTF-8 bytes

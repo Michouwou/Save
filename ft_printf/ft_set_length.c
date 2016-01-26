@@ -6,28 +6,24 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 16:12:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/22 14:33:28 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/26 16:04:28 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-wchar_t	*ft_set_length(T_LIST *trail, wchar_t *result)
+char	*ft_set_length(T_LIST *trail, char *result)
 {
 	int i;
 	int j;
 
-	i = trail->accuracy - ft_wstrlen(result);
-	printf("\t\ti = %d\n", i);
-	NOW
+	i = trail->accuracy - ft_strlen(result);
 	j = 0;
 	while (!ft_isdigit(result[j]) && result[j] != 0)
 		j++;
 	if (trail->type == 'd' && i > 0)
-		result = ft_repstr(result, j, j, ft_wstrset(ft_wstrnew(i), i, '0'));
+		result = ft_repstr(result, j, j, ft_strset(ft_strnew(i), i, '0'));
 	else if (trail->type == 'S')
 		result[trail->accuracy] = 0;
-	printf("\t\tJust before return\n");
-	NOW
 	return (result);
 }
