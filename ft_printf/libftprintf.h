@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/26 11:41:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/26 14:35:32 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void			utf8(void); // OK
 char			*ft_base(intmax_t nb, int base); // OK
 void			ft_check_format(char *format); // OK
 char			*ft_repstr(char *print, int start, int end, char *to_insert); // A revoir de A a Z!!
-char			ft_char_apply_mod(T_LIST *trail, wchar_t wc); // ?
+wchar_t			ft_char_apply_mod(T_LIST *trail, wchar_t wc); // ?
 char			*ft_set_length(T_LIST *trail, char *result); // Shall work for any format!! // ???
 // char			*ft_wstrnew(size_t size); // OK
 long double		ft_float_apply_mod(T_LIST *trail, long double number); // ?

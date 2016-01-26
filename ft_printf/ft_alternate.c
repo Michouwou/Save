@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:25:45 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/22 14:34:09 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/26 14:19:05 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-wchar_t	*ft_alternate(wchar_t *result, T_LIST *trail)
+char	*ft_alternate(char *result, T_LIST *trail)
 {
 	int i;
 

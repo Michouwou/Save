@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char_apply_mod.c                                :+:      :+:    :+:   */
+/*   ft_call_string.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/14 13:29:40 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/26 14:35:09 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/11 15:23:13 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/11 15:40:19 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-wchar_t		ft_char_apply_mod(T_LIST *trail, wchar_t wc)
+void	ft_call_string(char *string, T_LIST *trail, wchar_t *print)
 {
-	char *c;
-	char t;
+	wchar_t	*result;
 
-	c = trail->mod;
-	t = trail->format;
-	if (!ft_strcmp(c, "l"))
-		return ((wint_t)wc);
-	else if (c[0] == 0 && t == 'c')
-		return ((char)wc);
-	else
-		return (wc);
+	if (ft_check_string(string, trail) == 0)
+	{
+		ft_repstr(print, trail, "");
+		return;
+	}
+	result = ft_conv_wchar(string);
+	result = ft_set_length(trail, result);
+	result = ft_string_set_width(result, trail);
+	result = ft_string_apply_flag(result, trail);
+	ft_repstr(print, trail, result);
 }

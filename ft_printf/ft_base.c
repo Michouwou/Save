@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 14:02:17 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/22 11:36:45 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/26 14:21:36 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static void ft_isneg(intmax_t *num, int *k, wchar_t *final)
+static void ft_isneg(intmax_t *num, int *k, char *final)
 {
 	if (*num < 0)
 	{
@@ -32,9 +32,9 @@ static void ft_make_base(int *base)
 		*base = 2;
 }
 
-wchar_t 	*ft_base(intmax_t num, int base)
+char 	*ft_base(intmax_t num, int base)
 {
-	wchar_t		*final;
+	char		*final;
 	int			k;
 	intmax_t	i;
 	char		alpha[17];
@@ -44,7 +44,7 @@ wchar_t 	*ft_base(intmax_t num, int base)
 	i = 1;
 	k = 0;
 	ft_strcpy(alpha, "0123456789abcdef");
-	ft_wbzero(final = (wchar_t*)malloc(sizeof(wchar_t) * 200), 200);
+	ft_bzero(final = (char*)malloc(sizeof(char) * 200), 200);
 	ft_isneg(&num, &k, final);
 	ft_make_base(&base);
 	while ((i * (intmax_t)base) < num)

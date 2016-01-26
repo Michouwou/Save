@@ -6,19 +6,19 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 13:50:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 15:50:01 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/26 14:34:36 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_call_char(wchar_t wc, T_LIST *trail, wchar_t **print)
+void	ft_call_char(wchar_t wc, T_LIST *trail, char **print)
 {
-	wchar_t	*result;
+	char	*result;
 
-	result = ft_wstrnew((trail->width > 1) ? trail->width : 1);
-	ft_wstrset(result, ft_wstrlen(result) - 2, ' ');
 	wc = ft_char_apply_mod(trail, wc);
-	result[ft_wstrlen(result)] = wc;
+	result = ft_transfer_wchar(wc)
+	result = ft_repstr(result, 0, 0, ft_strset(ft_strnew(trail->width - 1),
+					trail->width - 1, ' '));
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
 }

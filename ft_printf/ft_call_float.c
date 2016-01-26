@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 15:53:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/22 14:50:17 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/26 14:22:26 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 #include "libftprintf.h"
 
-void	ft_call_float(long double number, T_LIST *trail, wchar_t **print)
+void	ft_call_float(long double number, T_LIST *trail, char **print)
 {
-	wchar_t	*result;
+	char	*result;
 
 	result = ft_conv_float(number, (trail->accuracy != -1) ?
 			trail->accuracy : 6);
