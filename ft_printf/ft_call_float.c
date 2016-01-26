@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 15:53:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/26 14:22:26 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/26 18:07:15 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ void	ft_call_float(long double number, T_LIST *trail, char **print)
 {
 	char	*result;
 
+	number = ft_float_apply_mod(trail, number);
 	result = ft_conv_float(number, (trail->accuracy != -1) ?
 			trail->accuracy : 6);
-	number = ft_float_apply_mod(trail, number);
+	printf("Bon alors num = %Lf, et le mien = %s\n", number, result);
 	result = ft_set_width(result, trail);
 	result = ft_apply_flag(result, trail);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,

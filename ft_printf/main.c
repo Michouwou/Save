@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 14:20:00 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/22 15:27:31 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/26 18:18:32 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int main()
 {
-	utf8();
-	ft_printf("Salut %10d lol\n", 255555);
+	wchar_t c;
+
+	c = 8364;
+	ft_printf("Salut %#.0f lol\n", 784.903);
+	printf("Yo! %#.0f mdr\n", 784.403);
 	return (0);
 }

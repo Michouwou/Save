@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/26 15:58:29 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/26 17:34:44 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char			*ft_get_mod(char *format, int start, int end); // OK
 int				ft_is_flag(char flag); // OK
 int				ft_is_mod(char modifier); // OK
 void			ft_error(int error_code); // OK
-void			ft_wbzero(wchar_t *wstring, int len); // OK
+// void			ft_wbzero(wchar_t *wstring, int len); // OK
 void			utf8(void); // OK
 char			*ft_base(intmax_t nb, int base); // OK
 void			ft_check_format(char *format); // OK
@@ -93,11 +93,11 @@ char			*ft_apply_flag(char *result, T_LIST *trail);
 //wchar_t			*ft_string_apply_flag(wchar_t *result, T_LIST *trail);
 wchar_t			*ft_wstring_apply_mod(T_LIST *trail, wchar_t *wstring); // ?
 // wchar_t			*ft_wstrcpy(wchar_t *wdest, wchar_t *wsrc); // ?
-// wchar_t			*ft_wstrset(wchar_t *wstr, int len, char c); // ?
+char			*ft_strset(char *str, int len, char c); // ?
 char			*ft_alternate(char *result, T_LIST *trail); // ?
 // wchar_t			*ft_wstrdup(wchar_t *wstr);
 // wchar_t			*ft_wstrsub(wchar_t *wstr, int i, int len);
 unsigned char	*ft_transfer_wchar(wchar_t c);
-unsigned char	*ft_transfer_wchars(wchar_t *wstr);
+char			*ft_transfer_wchars(wchar_t *wstr);
 
 #endif
