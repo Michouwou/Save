@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 15:46:34 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/14 18:29:49 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 18:01:13 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		ft_get_accuracy(char *format, int location)
 	if (ft_what_type(format[location]))
 		return (-1);
 	i = 1;
+	if (format[location + 1] == '*')
+		return (-10);
 	while (ft_isdigit(format[location + i]))
 		i++;
 	tmp = ft_strsub(format, location + 1, i);

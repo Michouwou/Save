@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 10:43:12 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 17:02:22 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 18:11:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ static void		ft_inner_loop(int tab[], char *format, int *i)
 	{
 		if (ft_is_flag(format[*i]) && !tab[2] && !tab[1] && !tab[0])
 			tab[0] = 1;
-		else if (format[*i] == '.' && ft_isdigit(format[*i + 1]) &&
-				!tab[2] && !tab[1])
+
+		else if (format[*i] == '.' && (ft_isdigit(format[*i + 1]) ||
+				format[*i + 1] == '*') && !tab[2] && !tab[1])
 			tab[1] = 1;
 		else if (ft_is_mod(format[*i]) && tab[2] <= 108 && tab[2] != 76)
 			tab[2] += format[*i];

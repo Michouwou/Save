@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/26 17:34:44 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 17:06:57 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,7 @@ char			*ft_alternate(char *result, T_LIST *trail); // ?
 // wchar_t			*ft_wstrsub(wchar_t *wstr, int i, int len);
 unsigned char	*ft_transfer_wchar(wchar_t c);
 char			*ft_transfer_wchars(wchar_t *wstr);
+void			ft_move_index(T_LIST **trail, int padding);
+void			ft_round(long double *num, int accuracy);
 
 #endif

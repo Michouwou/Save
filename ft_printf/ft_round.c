@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_call_wstring.c                                  :+:      :+:    :+:   */
+/*   ft_round.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/11 15:41:39 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/27 14:49:27 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/27 16:48:49 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/27 17:40:28 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
+static double	ft_power(double num, int pow)
 {
-	char *result;
+	if (pow == 0)
+		return (1);
+	else
+		return (num * ft_power(num, pow - 1));
+}
 
-	wstring = ft_wstring_apply_mod(trail, wstring);
-	result = ft_transfer_wchars(wstring);
-	result = ft_set_length(trail, result);
-	result = ft_set_width(result, trail);
-	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
-	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result) - 1);
+void			ft_round(long double *num, int accuracy)
+{
+	if (((int)(*num / (1.0 / (10.0 * ((long double)(accuracy) + 1.0)))) % 10) >= 5)
+		*num = *num + 1.0 / ft_power(10.0, accuracy);
 }

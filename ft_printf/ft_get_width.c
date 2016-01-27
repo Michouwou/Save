@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 15:38:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 15:34:41 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 18:00:07 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ int		ft_get_width(char *format, int location)
 	i = 0;
 	location++;
 	while ((!ft_isdigit(format[location]) || ft_is_flag(format[location])) &&
-				format[location] != '.' && !ft_what_type(format[location]))
+				format[location] != '.' && format[location] != '*' &&
+				!ft_what_type(format[location]))
 		location++;
+	if (format[location] == '*')
+		return (-10);
 	if (format[location] == '.')
 		return (0);
 	while (ft_isdigit(format[i + location]))

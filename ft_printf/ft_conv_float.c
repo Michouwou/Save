@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 12:24:13 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/26 18:16:10 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 17:06:29 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char			*ft_conv_float(long double to_print, int accuracy)
 	i = 1.0;
 	k = 0;
 	final = ft_strnew(310);
+	ft_round(&to_print, accuracy);
 	while (i < to_print)
 		i *= 10;
 	ft_is_neg(&k, &to_print, &final);
