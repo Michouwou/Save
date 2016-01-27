@@ -6,17 +6,18 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 10:43:12 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/27 18:11:02 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 18:16:44 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static void		ft_zero(int *flag, int *dot, int *mod)
+static void		ft_zero(int *flag, int *dot, int *mod, int *star)
 {
 	*dot = 0;
 	*mod = 0;
 	*flag = 0;
+	*star = 0;
 }
 
 static void		ft_inner_loop(int tab[], char *format, int *i)
@@ -25,10 +26,17 @@ static void		ft_inner_loop(int tab[], char *format, int *i)
 	{
 		if (ft_is_flag(format[*i]) && !tab[2] && !tab[1] && !tab[0])
 			tab[0] = 1;
-
+		else if (format[*i] == '*' && tab[3] < 2)
+		{
+			tab[3]++;
+			*i = *i + 1;
+		}
 		else if (format[*i] == '.' && (ft_isdigit(format[*i + 1]) ||
 				format[*i + 1] == '*') && !tab[2] && !tab[1])
+		{
 			tab[1] = 1;
+			tab[3]++;
+		}
 		else if (ft_is_mod(format[*i]) && tab[2] <= 108 && tab[2] != 76)
 			tab[2] += format[*i];
 		else if (ft_isdigit(format[*i]) && format[*i] != 0)
@@ -44,13 +52,13 @@ static void		ft_inner_loop(int tab[], char *format, int *i)
 void			ft_check_format(char *format)
 {
 	int	i;
-	int tab[3];
+	int tab[4];
 
 	i = -1;
 	while (format[++i] != 0)
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
-			ft_zero(&tab[0], &tab[1], &tab[2]);
+			ft_zero(&tab[0], &tab[1], &tab[2], &tab[3]);
 			i++;
 			ft_inner_loop(tab, format, &i);
 			if (!ft_what_type(format[i]))
