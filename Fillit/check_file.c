@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 08:41:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/13 10:54:56 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 12:37:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,17 @@ int				ft_check_format(char *t, char *file_name)
 		k = -1;
 		while (++k < 4 && i > 0)
 		{
-			if (read(fd, t, 1) <= 0)
-				return (1);
+			if (read(fd, t, 1) == 0)
+				return (0);
 			j = 0;
 			while (++j < 5 && i > 0 && *t != '\n')
 				i = read(fd, t, 1);
 			if (*t != '\n' || (j != 5 && j != 0))
 				return (0);
 		}
-		if (k != 4 || *t != '\n' || read(fd, t, 1) <= 0)
+		if (k != 4 || *t != '\n')
 			return (0);
+		i = read(fd, t, 1);
 	}
 	close(fd);
 	return (1);
@@ -64,9 +65,10 @@ int				ft_launch_check(char *file_name)
 {
 	char	*buf;
 
-	buf = (char*)malloc(sizeof(char) * 32000);
+	buf = (char*)malloc(sizeof(char) * 3200);
 	if (ft_check_format(buf, file_name) && ft_check_filling(buf, file_name))
 		return (1);
+	write(1, "looooool\n", 8);
 	return (0);
 }
 

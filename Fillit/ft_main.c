@@ -6,11 +6,12 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 15:47:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/12 18:09:03 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 12:31:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libfillit.h"
+#include <stdio.h>
 
 void	ft_main(char *file_name)
 {
@@ -23,7 +24,10 @@ void	ft_main(char *file_name)
 	{
 		super = ft_get_forms(file_name, &tmp);
 		if (ft_count_forms(&super) == 0 || ft_count_forms(&super) > 26)
+		{
+			printf("ERROR main!!!\n");
 			ft_error();
+		}
 		solution = ft_core(super);
 		ft_display(solution);
 	}
