@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 15:47:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/27 12:31:38 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 15:02:22 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ void	ft_main(char *file_name)
 	{
 		super = ft_get_forms(file_name, &tmp);
 		if (ft_count_forms(&super) == 0 || ft_count_forms(&super) > 26)
-		{
-			printf("ERROR main!!!\n");
 			ft_error();
-		}
 		solution = ft_core(super);
 		ft_display(solution);
 	}

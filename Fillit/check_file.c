@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 08:41:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/27 12:37:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 15:01:37 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int				ft_launch_check(char *file_name)
 	buf = (char*)malloc(sizeof(char) * 3200);
 	if (ft_check_format(buf, file_name) && ft_check_filling(buf, file_name))
 		return (1);
-	write(1, "looooool\n", 8);
 	return (0);
 }
 
