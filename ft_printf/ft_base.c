@@ -6,23 +6,25 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 14:02:17 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/27 17:36:41 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/28 17:59:23 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static void ft_isneg(intmax_t *num, int *k, char *final)
+static intmax_t	ft_isneg(intmax_t *num, int *k, char *final)
 {
+	printf("%jd Sa mere\n", *num);
 	if (*num < 0)
 	{
-		*num = *num - 1;
+		printf("Putain!");
+		*num = -(*num);
 		*k = 1;
 		final[0] = '-';
 	}
 }
 
-static void ft_make_base(int *base)
+static void 	ft_make_base(int *base)
 {
 	if (*base == 'o' || *base == 'O')
 		*base = 8;
@@ -32,7 +34,7 @@ static void ft_make_base(int *base)
 		*base = 2;
 }
 
-char 	*ft_base(intmax_t num, int base)
+char 			*ft_base(intmax_t num, int base)
 {
 	char		*final;
 	int			k;
@@ -47,6 +49,7 @@ char 	*ft_base(intmax_t num, int base)
 	ft_bzero(final = (char*)malloc(sizeof(char) * 200), 200);
 	ft_isneg(&num, &k, final);
 	ft_make_base(&base);
+	printf("1A : %d, %d\n", num, base);
 	while ((i * (intmax_t)base) < num)
 		i = i * (intmax_t)base;
 	while (i > 0)
@@ -55,6 +58,7 @@ char 	*ft_base(intmax_t num, int base)
 		num = num % i;
 		i /= base;
 	}
+	printf("1B : %s\n", final);
 	final[k] = 0;
 	return (final);
 }
