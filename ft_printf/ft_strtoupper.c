@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 14:20:00 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/28 12:02:23 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/28 11:22:22 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/28 11:22:54 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int main()
+void ft_strtoupper(char *str)
 {
-	wchar_t c;
-
-	c = 8364;
-	int i = 9;
-	size_t u = 864;
-	char op= 'o';
-	T_LIST *p = malloc(sizeof(T_LIST));
-	ft_printf("Salut %e\n", 89.9838749287);
-	printf("Salut %.2e\n", 0.000004985969);
-	return (0);
+	if (*str != 0)
+	{
+		*str = ft_toupper(*str);
+		ft_strtoupper(str + 1);
+	}
 }

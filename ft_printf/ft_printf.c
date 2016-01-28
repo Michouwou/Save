@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/27 18:34:44 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/28 11:21:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ int		ft_printf(char const *format, ...)
 	print = (char*)format;
 	while (trail != NULL)
 	{
-		if (trail->width == -10)
-			trail->width = va_arg(args, int);
+		trail->width = (trail->width == -10) ? va_arg(args, int) : trail->width;
 		if (trail->accuracy == -10)
 			trail->accuracy = va_arg(args, int);
 		if (T_ == 'd')

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 15:53:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/27 18:25:27 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/28 11:51:58 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ void	ft_call_float(long double number, T_LIST *trail, char **print)
 	number = ft_float_apply_mod(trail, number);
 	result = ft_conv_float(number, (trail->accuracy != -1) ?
 			trail->accuracy : 6);
+	if (trail->format == 'e' || trail->format == 'E')
+		result = ft_conv_exp(ft_strnew(2), number, trail);
+	if (trail->format == 'E')
+		ft_strtoupper(result);
 	result = ft_set_width(result, trail);
 	result = ft_apply_flag(result, trail);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,

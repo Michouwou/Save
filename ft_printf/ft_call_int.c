@@ -6,20 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 14:02:55 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/27 17:51:56 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/28 11:22:57 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
-static void ft_strtoupper(char *str)
-{
-	if (*str != 0)
-	{
-		*str = ft_toupper(*str);
-		ft_strtoupper(str + 1);
-	}
-}
 
 void	ft_call_int(intmax_t number, T_LIST *trail, char **print)
 {
