@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 11:12:54 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/28 12:01:41 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/28 15:19:48 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char	*ft_conv_exp(char *buff, long double number, T_LIST *trail)
 	int		i;
 	int		j;
 	int		k;
+	int		is_zero;
 	char	*result;
 
 	printf("%d\n Yoyoyoyoy\n", trail->accuracy);
@@ -57,18 +58,25 @@ char	*ft_conv_exp(char *buff, long double number, T_LIST *trail)
 	printf("2222222\n");
 	NOW
 	if (buff[j] != 0)
-		i = i - j;
+		i = (j > i + 1) ? i - j : i - 1;
+	j = 0;
 	while (buff[j] != 0)
 	{
+		while (k == 0 && (buff[j] == '0' || buff[j] == '.'))
+			j++;
 		if (k == 1)
 			result[k++] = '.';
-		else if (buff[j] == '.')
+		if (buff[j] == '.')
 			j++;
 		result[k++] = buff[j++];
 	}
 	printf("333333\n");
 	NOW
-	result[k++] = 'e';
-	result = ft_repstr(result, k, k, ft_itoa(i));
+	result = ft_repstr(result, k, k, (i >= 0 && !(i == 0 && buff[i] == '0')) ? "e+" : "e");
+	k = ft_strlen(result);
+	result = ft_repstr(result, k, k, ft_itoa((buff[i] == '0' && i == 0) ?
+				i = -1 : i));
+	if (i < 10)
+		result = ft_repstr(result, (i < 0) ? k = k + 1 : k, k, "0");
 	return (result);
 }

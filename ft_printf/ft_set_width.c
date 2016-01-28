@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 14:40:08 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/26 16:07:49 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/28 16:01:39 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,17 @@ char	*ft_set_width(char *result, T_LIST *trail)
 	int i;
 
 	i = 0;
-	while (!ft_isdigit(result[i]) && result[i] != 0)
+	while (!ft_isdigit(result[i]) && result[i] != '+' && result[i] != '-' &&
+			result[i] != 0)
 		i++;
+
 	if (trail->width > ft_strlen(result))
 	{
 		if (!(trail->minus))
 		{
 			if (trail->z_pad && !(trail->accuracy != -1 && trail->type == 'd'))
-				result = ft_repstr(result, i, i,
+				result = ft_repstr(result, (result[i] == '+' || result[i] == '-'
+					) ? i = i + 1 : i, i,
 					ft_strset(ft_strnew(trail->width - ft_strlen(result) - 1),
 					trail->width - ft_strlen(result) - 1, '0'));
 			else

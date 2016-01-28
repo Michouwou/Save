@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 14:02:55 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/28 11:22:57 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/28 15:44:00 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_call_int(intmax_t number, T_LIST *trail, char **print)
 	if (trail->format == 'X')
 		ft_strtoupper(result);
 	result = ft_apply_flag(result, trail);
-	result = ft_set_length(trail, result); // Number of digits to print INSIDE the field
 	result = ft_set_width(result, trail);
+	result = ft_set_length(trail, result); // Number of digits to print INSIDE the field
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
 	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result) - 1);
 }
