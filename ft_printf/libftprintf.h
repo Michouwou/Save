@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/28 11:48:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/29 10:30:21 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct	s_list_printf
 int				ft_printf(char const *format, ...); // OK
 T_LIST			*ft_find_form(char *format); // OK
 wchar_t			*ft_conv_wchar(char *string); // OK
-void			ft_call_int(intmax_t arg, T_LIST *locate, char **result); // ?
+void			ft_call_int(long long int arg, T_LIST *locate, char **result); // ?
 void			ft_call_pointer(unsigned arg, T_LIST *locate, char **result); // ?
 void			ft_call_char(wchar_t arg, T_LIST *locate, char **result); // ?
 //void			ft_call_string(char *arg, T_LIST *locate, wchar_t *result); // ?
@@ -77,7 +77,7 @@ int				ft_is_mod(char modifier); // OK
 void			ft_error(int error_code); // OK
 // void			ft_wbzero(wchar_t *wstring, int len); // OK
 void			utf8(void); // OK
-char			*ft_base(intmax_t nb, int base); // OK
+char			*ft_base(long long int nb, int base); // OK
 void			ft_check_format(char *format); // OK
 char			*ft_repstr(char *print, int start, int end, char *to_insert); // A revoir de A a Z!!
 wchar_t			ft_char_apply_mod(T_LIST *trail, wchar_t wc); // ?
@@ -86,7 +86,7 @@ char			*ft_set_length(T_LIST *trail, char *result); // Shall work for any format
 long double		ft_float_apply_mod(T_LIST *trail, long double number); // ?
 char			*ft_conv_float(long double number, int accuracy); // ?
 // int				ft_watoi(const wchar_t *ws); // ?
-intmax_t		ft_int_apply_mod(T_LIST *trail, intmax_t number); // ?
+long long int	ft_int_apply_mod(T_LIST *trail, long long int number); // ?
 char			*ft_set_width(char *result, T_LIST *trail); // ?
 char			*ft_apply_flag(char *result, T_LIST *trail);
 //wchar_t			*ft_string_set_width(wchar_t *result, T_LIST *trail);

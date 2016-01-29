@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 14:20:00 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/29 10:26:02 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/01/29 12:26:05 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/29 14:09:59 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <stdio.h>
 
 int main()
 {
-	wchar_t c;
-
-	c = 8364;
-	int i = -876543;
-	long long b = i;
-	size_t u = 864;
-	char op= 'o';
-	T_LIST *p = malloc(sizeof(T_LIST));
-	ft_printf("Salut %d oh\n", -9);
-	printf("Salut %d oh %lld\n", i, b);
-	return (0);
+	printf("%lu\n", 5000000000);
 }

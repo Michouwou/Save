@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/28 11:21:43 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/29 10:26:14 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_printf(char const *format, ...)
 		if (trail->accuracy == -10)
 			trail->accuracy = va_arg(args, int);
 		if (T_ == 'd')
-			ft_call_int(va_arg(args, intmax_t), trail, &print);
+			ft_call_int(va_arg(args, long long int), trail, &print);
 		if (T_ == 'p')
 			ft_call_pointer(va_arg(args, unsigned), trail, &print);
 		if (T_ == 'c')
