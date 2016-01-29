@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 14:02:17 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/29 10:22:17 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/29 14:32:08 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static void		ft_isneg(long long int *num, int *k, char *final)
+static void		ft_isneg(intmax_t *num, int *k, char *final)
 {
 	if (*num < 0)
 	{
@@ -32,11 +32,11 @@ static void 	ft_make_base(int *base)
 		*base = 2;
 }
 
-char 			*ft_base(long long int num, int base)
+char 			*ft_base(intmax_t num, int base)
 {
 	char			*final;
 	int				k;
-	long long int	i;
+	intmax_t		i;
 	char			alpha[17];
 
 	if (num < 0 && base != 10)

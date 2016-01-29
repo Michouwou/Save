@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/29 10:30:21 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/29 15:02:10 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include "libft.h"
 # define T_LIST t_list_printf
 # define T_ trail->type
+# define M_ t->format
 # define INT_TYPE 'd'
 # define CHAR_TYPE 'c'
 # define POINTER_TYPE 'p'
@@ -54,7 +55,7 @@ typedef struct	s_list_printf
 int				ft_printf(char const *format, ...); // OK
 T_LIST			*ft_find_form(char *format); // OK
 wchar_t			*ft_conv_wchar(char *string); // OK
-void			ft_call_int(long long int arg, T_LIST *locate, char **result); // ?
+void			ft_call_int(intmax_t arg, T_LIST *locate, char **result); // ?
 void			ft_call_pointer(unsigned arg, T_LIST *locate, char **result); // ?
 void			ft_call_char(wchar_t arg, T_LIST *locate, char **result); // ?
 //void			ft_call_string(char *arg, T_LIST *locate, wchar_t *result); // ?
@@ -77,7 +78,7 @@ int				ft_is_mod(char modifier); // OK
 void			ft_error(int error_code); // OK
 // void			ft_wbzero(wchar_t *wstring, int len); // OK
 void			utf8(void); // OK
-char			*ft_base(long long int nb, int base); // OK
+char			*ft_base(intmax_t nb, int base); // OK
 void			ft_check_format(char *format); // OK
 char			*ft_repstr(char *print, int start, int end, char *to_insert); // A revoir de A a Z!!
 wchar_t			ft_char_apply_mod(T_LIST *trail, wchar_t wc); // ?
@@ -103,5 +104,6 @@ void			ft_move_index(T_LIST **trail, int padding);
 void			ft_round(long double *num, int accuracy);
 void			ft_strtoupper(char *str);
 char			*ft_conv_exp(char *buff, long double number, T_LIST *trail);
+void			ft_get_int(T_LIST *trail, char **print, va_list *args);
 
 #endif
