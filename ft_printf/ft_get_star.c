@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_get_star.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/02 15:42:00 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/02/02 15:10:15 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/02/02 15:23:19 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		ft_printf(char const *format, ...)
+void	ft_get_star(va_list *args, T_LIST *trail)
 {
-	va_list		args;
-	T_LIST		*forms;
-	T_LIST		*trail;
-	char		*print;
-	int			i;
-
-	va_start(args, format);
-	ft_check_format((char*)format);
-	forms = ft_find_form((char*)format);
-	trail = forms;
-	print = (char*)format;
-	while (trail != NULL)
-	{
-		ft_get_arg(trail, &print, &args);
-		trail = trail->next;
-	}
-	ft_putstr(print);
-	i = ft_strlen(print);
-	ft_free_list(&forms);
-	return (i);
+	if (trail->width == -10)
+		trail->width = va_arg(*args, int);
+	else if (trail->accuracy == -10)
+		trail->accuracy = va_arg(*args, int);
 }

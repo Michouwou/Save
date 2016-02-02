@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 12:24:13 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/28 14:23:41 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/02 16:34:59 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void		ft_is_neg(int *k, long double *number, char **final)
 {
 	if (*number < 0)
 	{
-		*number = -(*number);
+		*number = *number * -1;
 		*k = *k + 1;
 		(*final)[0] = '-';
 	}
@@ -31,10 +31,10 @@ char			*ft_conv_float(long double to_print, int accuracy)
 	i = 1.0;
 	k = 0;
 	final = ft_strnew(310);
+	ft_is_neg(&k, &to_print, &final);
 	ft_round(&to_print, accuracy);
 	while (i < to_print)
 		i *= 10;
-	ft_is_neg(&k, &to_print, &final);
 	while ((i = i / 10) >= 1)
 	{
 		final[k++] = (int)(to_print / i) + 48;

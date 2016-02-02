@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 14:20:00 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/29 15:10:41 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/02 17:04:56 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
 	size_t u = 864;
 	char op= 'o';
 	T_LIST *p = malloc(sizeof(T_LIST));
-	ft_printf("Salut %d oh\n", i);
-	printf("Salut %d oh %lld\n", i, b);
+	ft_printf("Salut %e oh, %.2e, %s\n", 0.00903899999, 0.0000000000000000000003, "salut");
+	printf("Salut %e oh, %.2e, %s\n", 0.00903899999, 763.3, "salut");
 	return (0);
 }
