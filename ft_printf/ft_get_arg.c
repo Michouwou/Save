@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 15:15:39 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/02 15:42:10 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/02 18:05:16 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,6 @@ void	ft_get_arg(T_LIST *trail, char **print, va_list *args)
 		ft_call_wstring(va_arg(*args, wchar_t*), trail, print);
 	if (T_ == 'f')
 		ft_call_float(va_arg(*args, double), trail, print);
+	if (T_ == 'E')
+		ft_call_errno(trail, print);
 }

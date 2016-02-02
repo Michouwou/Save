@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/02 16:31:31 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/02 18:11:59 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 # include <inttypes.h>
 # include <stdarg.h>
 # include <stdlib.h>
-# include <locale.h>
 #include 				<stdio.h> // DO NOT FORGET TO ERASE /!\. 
 #define NOW fflush(stdout);
 # include <unistd.h>
 # include <wchar.h>
 # include "libft.h"
+# include <errno.h>
+# include <string.h>
 # define T_LIST t_list_printf
 # define T_ trail->type
 # define M_ t->format
@@ -30,6 +31,7 @@
 # define STRING_TYPE 's'
 # define WSTRING_TYPE 'S'
 # define DOUBLE_TYPE 'f'
+# define ERRNO 'E'
 //# define NOT_YET_DEFINED '*'
 # define NOT_TYPE 0
 
@@ -107,5 +109,6 @@ char			*ft_conv_exp(long double number, T_LIST *trail);
 void			ft_get_int(T_LIST *trail, char **print, va_list *args);
 void			ft_get_star(va_list *args, T_LIST *trail);
 void			ft_get_arg(T_LIST *trail, char **print, va_list *args);
+void			ft_call_errno(T_LIST *trail, char **print);
 
 #endif

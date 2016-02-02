@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_format.c                                     :+:      :+:    :+:   */
+/*   ft_call_errno.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 16:08:58 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/02 17:53:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/02/02 17:55:16 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/02/02 18:03:36 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		ft_is_format(char format)
+void	ft_call_errno(T_LIST *trail, char **print)
 {
-	if (format == 'd' || format == 'D' || format == 'i' || format == 'o' ||
-			format == 'O' || format == 'x' || format == 'X' || format == 'e' ||
-			format == 'E' || format == 'f' || format == 'F' || format == 'p' ||
-			format == 'm' || format == 'b' || format == 'c' || format == 'C' ||
-			format == 's' || format == 'S')
-		return (1);
-	return (0);
+	char *result;
+
+	result = strerror(errno);
+	result = ft_set_length(trail, result);
+	result = ft_set_width(result, trail);
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
+			result);
+	ft_move_index(&trail, trail->start_index - trail->end_index +
+			ft_strlen(result) - 1);
 }

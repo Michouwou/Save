@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 11:50:22 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/29 10:23:30 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/02 17:47:08 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ char	ft_what_type(char c)
 		return (POINTER_TYPE);
 	else if (c == 'S' || c == 's')
 		return (WSTRING_TYPE);
-	else if (c == 'e' || c == 'E' || c == 'f' || c == 'F' /* || c == 'g' ||
-			c == 'G'*/)
+	else if (c == 'e' || c == 'E' || c == 'f' || c == 'F' || c == 'g' ||
+			c == 'G')
 		return (DOUBLE_TYPE);
+	else if (c == 'm')
+		return (ERRNO);
 	else
 		return (NOT_TYPE);
 }
