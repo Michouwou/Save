@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_get_float.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/03 10:41:18 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/02/03 10:49:55 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/02/03 12:19:46 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		ft_printf(char const *format, ...)
+void    ft_get_float(T_LIST *trail, char **print, va_list *args)
 {
-	va_list		args;
-	T_LIST		*forms;
-	T_LIST		*trail;
-	char		*print;
-	int			i;
-
-	va_start(args, format);
-	ft_check_format((char*)format);
-	forms = ft_find_form((char*)format);
-	trail = forms;
-	print = (char*)format;
-	while (trail != NULL)
-	{
-		ft_get_arg(trail, &print, &args);
-		trail = trail->next;
-	}
-	ft_putstr(print);
-	i = ft_strlen(print);
-	ft_free_list(&forms);
-	return (i);
+    if (trail->mod[0] != 'L' && trail->format != 'F')
+        ft_call_float(va_arg(*args, double), trail, print);
+    else if (trail->mod[0] == 'L' || trail->format == 'F')
+        ft_call_float(va_arg(*args, double), trail, print);
 }
