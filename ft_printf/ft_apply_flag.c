@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 17:20:30 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 14:10:49 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/02 16:59:09 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-wchar_t *ft_apply_flag(wchar_t *result, T_LIST *trail)
+char *ft_apply_flag(char *result, T_LIST *trail)
 {
 	char t;
 
@@ -20,14 +20,15 @@ wchar_t *ft_apply_flag(wchar_t *result, T_LIST *trail)
 	if ((trail->type == 'd' || trail->type == 'f') && (trail->plus ||
 				trail->space || result[0] == '-'))
 	{
-		if (trail->type == 'd')
-			trail->accuracy++;
+		/*if (trail->type == 'd')
+			trail->accuracy++;*/
 		if (trail->space && ft_isdigit(result[0]) && (t != 'o' && t != 'O' &&
 					t != 'x' && t != 'X' && t != 'b'))
-			result = ft_repstr(result, 0, 0, L" ");
+			result = ft_repstr(result, 0, 0, " ");
 		if (trail->plus && ft_isdigit(result[0]) && (t != 'o' && t != 'O' &&
 					t != 'x' && t != 'X' && t != 'b'))
-			result = ft_repstr(result, 0, 0, L"+");
+			result = ft_repstr(result, 0, /*(trail->width >= ft_strlen(result)) ?
+						1 */ 0, "+");
 	}
 	if (trail->alternate)
 		result = ft_alternate(result, trail);

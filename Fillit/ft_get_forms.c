@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 10:09:31 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/13 10:55:29 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 14:56:39 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,7 @@ t_superform		*ft_get_forms(char *file_name, char **char_tmp)
 		}
 		values[1] = read(values[5], *char_tmp, 1);
 		values[0]++;
-		if (values[1] > 0)
-			ft_test(values, &total, &tmp);
+		ft_test(values, &total, &tmp);
 	}
 	close(values[5]);
 	return (total);

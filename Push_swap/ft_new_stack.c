@@ -23,7 +23,7 @@ t_stack *ft_fill_stack(char **args, int argc, char *options)
     while (i < argc)
     {
         tmp = ft_atoi(argv[i]);
-        if (ft_check_args(result->stack, tmp, options))
+        if (ft_check_args(result->stack, i + 1, tmp, options))
             result->stack[i] = tmp;
         else
             ft_error();

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 14:20:00 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/22 15:27:31 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/02 18:11:52 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,15 @@
 
 int main()
 {
-	utf8();
-	ft_printf("Salut %10d lol\n", 255555);
+	wchar_t c;
+
+	c = 8364;
+	size_t i = 876543;
+	long long b = i;
+	size_t u = 864;
+	char op= 'o';
+	T_LIST *p = malloc(sizeof(T_LIST));
+	ft_printf("Errno = \" %m \"\n");
+	printf("Salut %e oh, %.2e, %s\n", 0.00903899999, 763.3, "salut");
 	return (0);
 }

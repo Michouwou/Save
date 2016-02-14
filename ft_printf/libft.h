@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2015/12/15 12:29:05 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/27 17:42:35 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ int				ft_pgcd(int a, int b);
 double			ft_sqrt(double x);
 double			ft_nroot(double x, int r);
 void			ft_swap(int *a, int *b);
-double			ft_power(double nb, int pow);
 void			ft_topos(int *a);
 
 #endif

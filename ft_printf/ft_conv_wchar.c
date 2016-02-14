@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 18:06:18 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 17:13:40 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/03 12:31:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,5 @@ wchar_t		*ft_conv_wchar(char *str)
 	while (str[++i] != 0)
 		res[i] = (unsigned char)str[i];
 	res[i] = 0;
-	printf("\tAbout to return conversion\n");
-	NOW
 	return (res);
 }
