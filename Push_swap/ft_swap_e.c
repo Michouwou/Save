@@ -9,7 +9,7 @@ void    ft_swap_e(t_stack *alpha)
     alpha->stack[1] = tmp;
 }
 
-void ft_dswap_e(t_stack *alpha, t_stack *beta)
+void    ft_dswap_e(t_stack *alpha, t_stack *beta)
 {
     ft_swap_e(alpha);
     ft_swap_e(beta);
@@ -20,7 +20,7 @@ void ft_dswap_e(t_stack *alpha, t_stack *beta)
  * one au dessus de la pile stack two
 **/
 
-void ft_push(t_stack *stack_one, t_stack *stack_two)
+void    ft_push(t_stack *stack_one, t_stack *stack_two)
 {
     int *tmp;
     int i;
