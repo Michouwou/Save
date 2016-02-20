@@ -21,7 +21,7 @@ void            ft_rotate(t_stack *alpha); // ?
 void            ft_drotate(t_stack *alpha, t_stack *beta); // ?
 void            ft_rrotate(t_stack *alpha); // ?
 void            ft_drrotate(t_stack *alpha, t_stack *beta); // ?
-t_stack         *ft_fill_stack(char **args, int argc); // ?
+t_stack         *ft_fill_stack(char **args, int argc, char *options); // ?
 int             ft_check_args(int *prev_stack, int len, long nb, char *options); // ?
 t_stack         ft_new_stack(); // ?
 char            **ft_create_sol();
@@ -31,10 +31,12 @@ double          ft_cn(t_stack *alpha);
 double          ft_ci(double cn);
 double          ft_cs(t_stack *alpha, t_stack *beta); // ?
 double          ft_cds(t_stack *alpha, t_stack *beta); // ?
-void            ft_next_op(t_stack *alpha, t_stack *beta, double *coeffs, char *options);
+char            *ft_next_op(t_stack *alpha, t_stack *beta, double *coeffs, char *options);
 /* void    ft_color(? color);    /!\ Need to find how to print things with color /!\ */
 void            ft_error(); // ?
 char            *ft_extract_options(char **argv, int argc);
 void            ft_restack(t_stack *alpha, t_stack *beta);
+void            ft_normalize(t_stack *alpha);
+void            ft_display(char *options, char **sols);
 
 #endif
