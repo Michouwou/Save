@@ -6,18 +6,18 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 16:25:47 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/22 16:39:10 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/23 14:31:47 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//#include <unistd.h>
+
+void ft(int j, int i, char ft, double gh, long u)
+{
+	write(1, "lol", 1);
+}
 
 int main()
 {
-	write(1, "\033", 1);
-	write(1, "[0;", 3);
-	write(1, "36", 2);
-	write(1, "m", 1);
-	write(1, "lol", 3);
 	return(0);
 }

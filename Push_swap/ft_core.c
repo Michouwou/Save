@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:00:37 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/23 11:10:59 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/23 15:30:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_core(char **argv, int argc)
 {
-	char	**sols;
+	t_sol	*sols;
 	char	*options;
 	t_stack	*alpha;
 	t_stack	*beta;
@@ -23,7 +23,13 @@ void	ft_core(char **argv, int argc)
 	options = ft_extract_options(argv, argc);
 	alpha = ft_fill_stack(argv, argc, options);
 	beta = ft_new_stack();
-	while (ft_cn(alpha) != 1 || alpha->len != argc - ft_strlen(options))
-		ft_stack_sol(ft_next_op(alpha, beta, ft_coeffs(alpha, beta), options));
+	alpha->name = ft_strcpy(alpha->name, "a");
+	beta->name = ft_strcpy(beta->name, "b");
+	ft_divide(alpha, beta, options);
+	while (!ft_circular_check(alpha) || !ft_circular_check(ft_rev_stack(beta)))
+		ft_stack_sol(ft_next_op(alpha, beta, ft_coeffs(alpha, beta), sols));
+	ft_normalize(alpha);
+	ft_normalize(beta);
+	ft_restack(alpha, beta);
 	ft_display(options, sols);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 11:40:56 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/23 14:02:24 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/23 15:29:56 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ char	*ft_double_op(t_stack *alpha, t_stack *beta, char is_ext)
 	else if (!ft_strcmp(ft_next_op(alpha), "sw"))
 		return (ft_dswap(alpha, beta, is_ext));
 	else
-	   return (ft_drotate(alpha, beta, is_ext));	
+	   return (ft_drotate(alpha, beta, is_ext));
+	ft_disp_stack(alpha, beta, is_ext);
 }
 
 char	*ft_dnext_op(t_stack *alpha, t_stack *beta, char is_ext)
@@ -57,6 +58,7 @@ char	*ft_dnext_op(t_stack *alpha, t_stack *beta, char is_ext)
 		return (ft_rotate(alpha, is_ext));
 	else (!ft_strcmp(tmp2, "ro"))
 		return (ft_rotate(beta, is_ext));
+	ft_disp_stack(alpha, beta, is_ext);
 }
 
 t_stack	*ft_rev_stack(t_stack *stack)
