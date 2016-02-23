@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 13:52:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/23 14:02:29 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/23 17:23:46 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,21 @@ void			ft_stack_sol(char *sol, t_sol *stack_sol); // ?
 void			ft_core(char **args, int argc); // ?
 double			ft_cs(t_stack *alpha, t_stack *beta); // ?
 double			ft_cds(t_stack *alpha, t_stack *beta); // ?
-char			*ft_next_op_a(t_stack *alpha);
-char			*ft_next_op_b(t_stack *beta);
-char			*ft_dnext_op(t_stack *alpha, t_stack *beta, char is_ext);
+char			*ft_next_op(t_stack *alpha); // ?
+char			*ft_double_op(t_stack *alpha, t_stack *beta, char is_ext); // ?
+char			*ft_dnext_op(t_stack *alpha, t_stack *beta, char is_ext); // ?
 void			ft_color(char *color, char *to_print); // ?
 void			ft_error(void); // ?
 char			*ft_extract_options(char **argv, int argc); // ?
 void			ft_restack(t_stack *alpha, t_stack *beta); // ?
-void			ft_normalize(t_stack *alpha);
+void			ft_normalize(t_stack *alpha, char is_ext);
 void			ft_display(char *options, t_sol *sols); // ?
 void			ft_color(char *color, char *to_print); // ?
 int				ft_circular_check(t_stack *alpha); // ?
 int				ft_middle_coeff(t_stack *alpha); // ?
-double			ft_circular_coeff(t_stack *
+double			ft_cn(t_stack *alpha); // ?
+void			ft_divide(t_stack *alpha, t_stack *beta, char *options); // ?
+void			ft_disp_stack(t_stack *alpha, t_stack *beta, char is_ext); // ?
+int				ft_direction(t_stack *alpha);
 
 #endif
