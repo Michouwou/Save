@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_restack.c                                       :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 14:06:32 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/23 11:10:26 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/02/22 16:25:47 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/02/22 16:39:10 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <unistd.h>
 
-void	ft_restack(t_stack *alpha, t_stack *beta)
+int main()
 {
-	while (beta->len > 0)
-	{
-		while (beta->stack[0] < alpha->stack[0])
-			if (alpha->stack[0] != alpha->min)
-				ft_rrotate(alpha);
-		while (beta->stack[0] > alpha->stack[0])
-			if (alpha->stack[0] != alpha->max)
-				ft_rotate(alpha);
-		ft_push(beta, alpha);
-		beta->len--;
-		alpha->len++;
-	}
+	write(1, "\033", 1);
+	write(1, "[0;", 3);
+	write(1, "36", 2);
+	write(1, "m", 1);
+	write(1, "lol", 3);
+	return(0);
 }

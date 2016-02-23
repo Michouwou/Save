@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_restack.c                                       :+:      :+:    :+:   */
+/*   ft_next_op.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 14:06:32 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/23 11:10:26 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/02/23 11:40:56 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/02/23 12:07:07 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_restack(t_stack *alpha, t_stack *beta)
+char	*ft_next_op(t_stack *alpha, char *options)
 {
-	while (beta->len > 0)
-	{
-		while (beta->stack[0] < alpha->stack[0])
-			if (alpha->stack[0] != alpha->min)
-				ft_rrotate(alpha);
-		while (beta->stack[0] > alpha->stack[0])
-			if (alpha->stack[0] != alpha->max)
-				ft_rotate(alpha);
-		ft_push(beta, alpha);
-		beta->len--;
-		alpha->len++;
-	}
+	if (ft_middle_coeff(alpha) == 1)
+		return ("rr");
+	else if (alpha->stack[0] > alpha->stack[1])
+		return ("sw");
+	else if (ft_direction(alpha) == 1)
+	   return ("ro");	
 }

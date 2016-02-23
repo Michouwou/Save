@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_restack.c                                       :+:      :+:    :+:   */
+/*   ft_color.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 14:06:32 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/23 11:10:26 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/02/22 16:35:21 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/02/22 17:26:28 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_restack(t_stack *alpha, t_stack *beta)
+void	ft_color(char *color, char *to_print)
 {
-	while (beta->len > 0)
-	{
-		while (beta->stack[0] < alpha->stack[0])
-			if (alpha->stack[0] != alpha->min)
-				ft_rrotate(alpha);
-		while (beta->stack[0] > alpha->stack[0])
-			if (alpha->stack[0] != alpha->max)
-				ft_rotate(alpha);
-		ft_push(beta, alpha);
-		beta->len--;
-		alpha->len++;
-	}
+	write(1, "\033[0;", 4);
+	write(1, color, ft_strlen(color));
+	write(1, "m", 1);
+	write(1, to_print, ft_strlen(to_print));
+	write(1, "\033[0;m", 5);
 }
