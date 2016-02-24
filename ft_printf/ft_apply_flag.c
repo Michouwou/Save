@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 17:20:30 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/02 16:59:09 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:02:56 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ char *ft_apply_flag(char *result, T_LIST *trail)
 	if ((trail->type == 'd' || trail->type == 'f') && (trail->plus ||
 				trail->space || result[0] == '-'))
 	{
-		/*if (trail->type == 'd')
-			trail->accuracy++;*/
 		if (trail->space && ft_isdigit(result[0]) && (t != 'o' && t != 'O' &&
 					t != 'x' && t != 'X' && t != 'b'))
 			result = ft_repstr(result, 0, 0, " ");

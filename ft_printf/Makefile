@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/24 09:30:57 by mlevieux          #+#    #+#              #
-#    Updated: 2016/02/24 11:04:13 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/02/24 11:48:52 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,4 +44,4 @@ fclean : clean
 re : fclean all
 
 norme :
-	norminette $(NAME) libftprintf.h
+	norminette $(SRC) libftprintf.h

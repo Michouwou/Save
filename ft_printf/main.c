@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 14:20:00 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/24 11:45:28 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 14:06:25 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int main()
 	ft_printf("Int largeur de champs 5 : |%5d|\n", 300);
 	ft_printf("Double (f) precision 4 : |%.4f|\n", 5.897645312);
 	ft_printf("Double (e) precision 4, largeur de champs 15 : |%15.4e|\n", 345.345);
-	printf("|%5.4d|\n", 23);
 	ft_printf("Int, largeur de champs 5, precision 4 (*) : |%5.4d|\n", 23);
 	ft_printf("Deux chaines de caracteres : |%s| |%s|\n", "Salut", "comment ca va?");
 	ft_printf("Trois ints a la ligne, alignes a gauche :\n|%-d|\n|%-d|\n|%-d|\n", 245, 126, 90);
@@ -48,15 +47,15 @@ int main()
 	ft_printf("8 entiers (hh) : |%hhd| |%hhd| |%hhd| |%hhd| |%hhd| |%hhd| |%hhd| |%hhd|\n", 1, 2, 3, 4, 5, 6, 7, 8);
 	ft_printf("Chaine simple sans arguments\n");
 	ft_printf("Int (hh)aligne a gauche avec le signe, largeur de champs 6 et precision 4 : |%+-6.4hhd|\n", 5);
+	ft_printf("Chaine de caracteres avec precision de 4 et largeur de champs de 6 : |%6.4s|\n", "Anticonstitutionnellement");
+	ft_printf("Unsigned simple : |%u|\n", 678);
+	ft_printf("Double (f) de forme alternee, precision de 0 : |%#.0f|\n", 3.45);
+	//ft_printf("Affichage du pourcent%%\n");
+	ft_printf("Chaine de caractere alignee a droite largeur de champs de 8 : |%8s|\n", "hello");
+	ft_printf("Doubles (f puis e)signes plus : |%+e| |%+f|\n", 567.987, 67.234);
+	ft_printf("Doubles (e puis f) zero-padding largeur de champs 12 et precision 3 : |%012.3e| |%012.3f|\n", 34.56, 34.56);
+	ft_printf("Affichage avec le flag ' ' d'un int : |% d|\n", 67);
 	/*ft_printf();
-	ft_printf();
-	ft_printf();
-	ft_printf();
-	ft_printf();
-	ft_printf();
-	ft_printf();
-	ft_printf();
-	ft_printf();
 	ft_printf();
 	ft_printf();
 	ft_printf();
