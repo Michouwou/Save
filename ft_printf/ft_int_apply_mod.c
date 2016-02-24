@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 13:38:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/29 10:35:20 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 09:54:30 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ long long int	ft_int_apply_mod(T_LIST *trail, long long int number)
 
 	c = trail->mod;
 	t = trail->format;
-	printf("%d\n", number);
-	printf("HEY HEY HEY%s\n", c);
 	sign = (t == 'd' || t == 'D' || t == 'i') ? 1 : 0;
 	if (!ft_strcmp(c, "z"))
 		return ((size_t)number);
@@ -35,6 +33,5 @@ long long int	ft_int_apply_mod(T_LIST *trail, long long int number)
 		return (sign ? (long long)number : (unsigned long long)number);
 	else if (!ft_strcmp(c, "j"))
 		return ((intmax_t)number);
-	printf("Je passe au bon endroit\n");
 	return (sign ? (int)(number) : (unsigned int)(number));
 }

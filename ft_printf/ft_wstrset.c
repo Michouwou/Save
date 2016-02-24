@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/14 20:50:44 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/22 11:27:40 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 10:02:35 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,5 @@ wchar_t	*ft_wstrset(wchar_t *wstr, int len, char c)
 		wstr[i] = c;
 		i++;
 	}
-	printf("\t\t\tOn va sortir de wstrset\n");
-	NOW
 	return (wstr);
 }

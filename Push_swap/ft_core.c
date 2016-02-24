@@ -6,11 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:00:37 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/23 15:30:45 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 09:29:18 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "push_swap.h"
 
 void	ft_core(char **argv, int argc)
 {

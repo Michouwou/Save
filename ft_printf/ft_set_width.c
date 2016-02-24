@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 14:40:08 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/02 17:55:08 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 10:01:59 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_set_width(char *result, T_LIST *trail)
 			result[i] != 0)
 		i++;
 
-	if (trail->width > ft_strlen(result))
+	if (trail->width > (int)ft_strlen(result))
 	{
 		if (!(trail->minus))
 		{

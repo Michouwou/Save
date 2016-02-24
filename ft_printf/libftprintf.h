@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 16:03:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/03 12:34:14 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 10:00:52 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,5 @@ void			ft_get_star(va_list *args, T_LIST *trail);
 void			ft_get_arg(T_LIST *trail, char **print, va_list *args);
 void			ft_call_errno(T_LIST *trail, char **print);
 void            ft_get_float(T_LIST *trail, char **print, va_list *args);
-
+size_t			ft_wstrlen(wchar_t *wstring);
 #endif

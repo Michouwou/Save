@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 11:40:56 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/23 17:23:44 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 09:19:46 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 char	*ft_next_op(t_stack *alpha)
 {
-	if (ft_middle_coeff(alpha) == 1)
-		return ("rr");
-	else if (alpha->stack[0] > alpha->stack[1])
+	if (alpha->stack[0] > alpha->stack[1])
 		return ("sw");
 	else if (ft_direction(alpha) == 1)
 	   return ("ro");

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 13:52:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/23 17:23:46 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 09:30:15 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ int				ft_middle_coeff(t_stack *alpha); // ?
 double			ft_cn(t_stack *alpha); // ?
 void			ft_divide(t_stack *alpha, t_stack *beta, char *options); // ?
 void			ft_disp_stack(t_stack *alpha, t_stack *beta, char is_ext); // ?
-int				ft_direction(t_stack *alpha);
+int				ft_direction(t_stack *alpha); // ?
 
 #endif
