@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/24 09:30:57 by mlevieux          #+#    #+#              #
-#    Updated: 2016/02/24 09:53:46 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/02/24 11:04:13 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME) :
 	ar rc $(NAME) $(OBJ)
 
 clean :
-	rm -f $(OBJ)
+	rm -f $(OBJ) libftprintf.h.gch
 
 fclean : clean
 	rm -f $(NAME)

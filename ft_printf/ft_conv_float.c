@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 12:24:13 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/02 16:34:59 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 11:38:54 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,5 @@ char			*ft_conv_float(long double to_print, int accuracy)
 		final[k++] = (intmax_t)to_print + 48;
 		to_print = to_print - (intmax_t)to_print;
 	}
-	printf("final = %s\n", final);
 	return (final);
 }

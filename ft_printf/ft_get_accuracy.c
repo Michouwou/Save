@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 15:46:34 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/27 18:36:13 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 11:39:59 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int		ft_get_accuracy(char *format, int location)
 		return (-10);
 	while (ft_isdigit(format[location + i]))
 		i++;
-	printf("WHOWHOWHOOOOOO\n");
 	tmp = ft_strsub(format, location + 1, i);
 	res = (tmp != NULL) ? ft_atoi(tmp) : -1;
 	return (res);
