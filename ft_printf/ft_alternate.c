@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:25:45 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/26 18:19:56 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 15:00:18 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,18 @@ char	*ft_alternate(char *result, T_LIST *trail)
 
 	i = 0;
 	if (trail->format == 'o' || trail->format == 'O' || trail->format == 'x' ||
-			trail->format == 'X')
+			trail->format == 'X' || trail->format == 'b')
 	{
-		while (!ft_isdigit(result[i]))
+		while (!ft_isalnum(result[i]))
 			i++;
 		if (trail->format == 'o' || trail->format == 'O')
 			result = ft_repstr(result, i, i, "0");
 		else if (trail->format == 'x')
 			result = ft_repstr(result, i, i, "0x");
-		else
+		else if (trail->format == 'X')
 			result = ft_repstr(result, i, i, "0X");
+		else
+			result = ft_repstr(result, i, i, "b");
 	}
 	else if (trail->type == 'f')
 	{

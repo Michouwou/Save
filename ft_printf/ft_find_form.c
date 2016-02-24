@@ -6,21 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 15:31:51 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/02 17:51:08 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 15:50:24 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-/* ************************************************************************** */
-/*                                                                            */
-/* Comments are just in case I decide to handle the '*' case, which would     */
-/* make things a little more complicated, for example the user can give me :  */
-/* --- "%#*.*d"                                                               */
-/* That is, I would have to pass a copy of the arg list to the functions      */
-/* looking for the format so that they could get the next argument in the     */
-/* list with 'arg_index', the index of the knot itself!                       */
-/*                                                                            */
-/* ************************************************************************** */
 
 int		ft_type_index(char *format, int location)
 {
@@ -45,10 +35,8 @@ T_LIST	*ft_first_node(void)
 
 	first = (T_LIST*)malloc(sizeof(T_LIST));
 	first->next = NULL;
-	//first->arg_index = 0;
 	first->start_index = 0;
 	first->end_index = 0;
-	//first->is_star = 0;
 	first->type = 0;
 	first->format = 0;
 	return (first);
@@ -57,7 +45,6 @@ T_LIST	*ft_first_node(void)
 void	ft_add_knot(T_LIST **node, int location, char *format)
 {
 	(*node)->next = (T_LIST*)malloc(sizeof(T_LIST));
-	//(*node)->next->arg_index = (*node)->arg_index + 1;
 	*node = (*node)->next;
 	(*node)->next = NULL;
 	(*node)->start_index = location;
@@ -70,7 +57,7 @@ void	ft_add_knot(T_LIST **node, int location, char *format)
 	(*node)->mod = ft_get_mod(format, location, (*node)->end_index);
 }
 
-T_LIST	*ft_find_form(char *format/*, va_list args*/)
+T_LIST	*ft_find_form(char *format)
 {
 	T_LIST	*tmp;
 	T_LIST	*start;
@@ -85,6 +72,8 @@ T_LIST	*ft_find_form(char *format/*, va_list args*/)
 			while(tmp->next != NULL)
 				tmp = tmp->next;
 			ft_add_knot(&tmp, i, format);
+			if (format[i + 1] == '%')
+				++i;
 		}
 	return (start->next);
 }

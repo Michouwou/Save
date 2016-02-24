@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 10:43:12 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/28 15:20:18 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 15:36:27 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void			ft_check_format(char *format)
 
 	i = -1;
 	while (format[++i] != 0)
+	{
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
 			ft_zero(&tab[0], &tab[1], &tab[2], &tab[3]);
@@ -64,4 +65,7 @@ void			ft_check_format(char *format)
 			if (!ft_what_type(format[i]))
 				ft_error(2);
 		}
+		else if (format[i] == '%' && format[i + 1] == '%')
+			++i;
+	}
 }

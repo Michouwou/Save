@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 14:20:00 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/24 14:06:25 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 16:00:17 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@ int main()
 {
 	int *p;
 	int a = 38;
+	wchar_t	*chaine;
+
+	chaine = (wchar_t*)malloc(sizeof(wchar_t) * 5);
+	chaine[0] = 8364;
+	chaine[1] = 165;
+	chaine[2] = 36;
+	chaine[3] = 8356;
+	chaine[4] = 0;
 
 	p = &a;
 	ft_printf("Int : |%d|\n", 300);
@@ -34,7 +42,7 @@ int main()
 	ft_printf("Hexadecimal (minuscule) : |%x|\n", 255);
 	ft_printf("Hexadecimal (majuscule) : |%X|\n", 255);
 	ft_printf("Octal : |%o|\n", 255);
-	//ft_printf("Binaire : |%b|\n", 255);
+	ft_printf("Binaire : |%b|\n", 255);
 	ft_printf("Int largeur de champs 5 : |%5d|\n", 300);
 	ft_printf("Double (f) precision 4 : |%.4f|\n", 5.897645312);
 	ft_printf("Double (e) precision 4, largeur de champs 15 : |%15.4e|\n", 345.345);
@@ -50,16 +58,16 @@ int main()
 	ft_printf("Chaine de caracteres avec precision de 4 et largeur de champs de 6 : |%6.4s|\n", "Anticonstitutionnellement");
 	ft_printf("Unsigned simple : |%u|\n", 678);
 	ft_printf("Double (f) de forme alternee, precision de 0 : |%#.0f|\n", 3.45);
-	//ft_printf("Affichage du pourcent%%\n");
+	ft_printf("Affichage du pourcent %%\n");
 	ft_printf("Chaine de caractere alignee a droite largeur de champs de 8 : |%8s|\n", "hello");
 	ft_printf("Doubles (f puis e)signes plus : |%+e| |%+f|\n", 567.987, 67.234);
 	ft_printf("Doubles (e puis f) zero-padding largeur de champs 12 et precision 3 : |%012.3e| |%012.3f|\n", 34.56, 34.56);
 	ft_printf("Affichage avec le flag ' ' d'un int : |% d|\n", 67);
+	ft_printf("Affichage alternatif de l'hexa (majuscule) : |%#x|\n", 255);
+	ft_printf("Affichage alternatif de l'octal : |%#o|\n", 255);
+	ft_printf("Affichage alternatif du binaire : |%#b|\n", 255);
+	ft_printf("Chaine de caracteres etendus : |%S|\n", chaine);
 	/*ft_printf();
-	ft_printf();
-	ft_printf();
-	ft_printf();
-	ft_printf();
 	ft_printf();
 	ft_printf();
 	ft_printf();
