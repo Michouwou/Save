@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:04:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/24 09:29:39 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 16:56:41 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,18 @@ void		ft_display(char *options, t_sol *sols)
 	i = 0;
 	if (options[0] == 'c' || options[1] == 'c' ||
 			options[2] == 'c' || options[3] == 'c')
+	{
 		if (options[0] == 'x' || options[1] == 'x' ||
 				options[2] == 'x' || options[3] == 'x')
-			ft_display_u(sols->sols);
+			ft_display_u(sols);
+	}
 	else
 	{
-		while (i++ < sols->len)
-			ft_printf("%s ", (*sols)++);
+		while (i++ < sols->len - 1)
+			ft_printf("%s ", sols->sols++);
 		if (options[0] == 'c' || options[1] == 'c' ||
 			options[2] == 'c' || options[3] == 'c')
-			ft_color("36", *(sols->sols), ft_strlen(*(sols->sols)));
+			ft_color("36", *(sols->sols));
 		else
 			ft_printf("%s\n", *(sols->sols));
 	}

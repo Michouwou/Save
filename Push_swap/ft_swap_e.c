@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:07:22 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/25 12:18:41 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 15:53:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,15 @@ char	*ft_push(t_stack *stack_one, t_stack *stack_two, char is_ext)
 	}
 	tmp[0] = stack_one->stack[0];
 	i = 1;
-	while (i < stack_one->len)
+/*	while (i < stack_one->len)
 	{
 		stack_one->stack[i - 1] = stack_one->stack[i];
 		i++;
-	}
+}*/
+	stack_one->stack = (stack_one->stack) + 1;
 	stack_two->stack = tmp;
-	stack_one->len--;
-	stack_two->len++;
+	(stack_one->len)--;
+	(stack_two->len)++;
 	if (is_ext == 'x')
 		ft_printf("La pile b doit prendre la moitie des elements pour gagner de la vitesse puisqu'il y en a plus que trois, ou alors on remet la pile b sur la pile a car le tri est fini.\n");
 	return (!ft_strcmp(stack_one->name, "a") ? "pb" : "pa");

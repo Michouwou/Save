@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_disp_stack.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/23 16:34:38 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/25 16:30:54 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/02/25 14:02:20 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/02/25 14:03:34 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_disp_stack(t_stack *alpha, t_stack *beta, char is_ext)
+int main(int argc, char **argv)
 {
-	int i;
-
-	i = 0;
-	if (is_ext == 'v' || is_ext == 'x')
-	{
-		ft_printf("\ta : ");
-		while (i < alpha->len - 1)
-			ft_printf("%d ", alpha->stack[i++]);
-		ft_printf("%d\n\tb : ", alpha->stack[i]);
-		i = 0;
-		if (beta->len > 0)
-		{
-		while (i < beta->len - 1)
-			ft_printf("%d ", beta->stack[i++]);
-		ft_printf("%d\n", beta->stack[i]);
-		}
-	}
+	if (argc < 2)
+		ft_error(0);
+	else
+		ft_core(argv, argc);
+	return (0);
 }

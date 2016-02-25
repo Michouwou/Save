@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:04:23 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/22 14:31:00 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 13:46:55 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_cs(t_stack *alpha, t_stack *beta)
+double	ft_cs(t_stack *alpha, t_stack *beta)
 {
 	int		i;
 	double	result;
@@ -29,7 +29,7 @@ void	ft_cs(t_stack *alpha, t_stack *beta)
 	return (result);
 }
 
-void	ft_cds(t_stack *alpha, t_stack *beta)
+double	ft_cds(t_stack *alpha, t_stack *beta)
 {
 	int		i;
 	int		j;

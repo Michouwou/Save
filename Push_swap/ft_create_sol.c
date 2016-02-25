@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 15:03:14 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/22 15:39:16 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 17:17:51 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,31 @@ t_sol	*ft_create_sol(int size)
 	{
 		*(ret->sols) = ft_strnew(3);
 		ret->len++;
+		i++;
 	}
 	return (ret);
 }
 
-void	ft_stack_sol(char *sol, t_sol *stack_sol)
+void	ft_stack_sol(char *sol, t_sol **stack_sol)
 {
 	t_sol	*tsol;
 	int		i;
 
 	i = 0;
-	tsol = ft_create_sol(sizeof(stack_sol->len) + 1);
-	tsol->len = stack_sol->len + 1;
-	while (i < stack_sol->len)
+	printf("Entree dans stack_sol, stack_sol->len = %d et sol = %s\n", (*stack_sol)->len, sol);
+	fflush(stdout);
+	tsol = ft_create_sol(sizeof((*stack_sol)->len) + 1);
+	tsol->len = (*stack_sol)->len;
+	while (i < (*stack_sol)->len)
 	{
-		ft_strcpy(tsol->sols[i], stack_sol->sols[i]);
+		tsol->sols[i] = ft_strcpy(tsol->sols[i], (*stack_sol)->sols[i]);
 		i++;
 	}
 	ft_strcpy(tsol->sols[i], sol);
 	tsol->len++;
-	free(stack_sol);
-	stack_sol = tsol;
+	printf("Premiere operation : %s\n", tsol->sols[0]);
+	fflush(stdout);
+	*stack_sol = tsol;
+	printf("Premiere operation encore: %s\n", (*stack_sol)->sols[0]);
+	fflush(stdout);
 }

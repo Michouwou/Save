@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 08:54:00 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/24 09:12:30 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 13:46:09 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int		ft_direction(t_stack *alpha)
 {
 	int		i;
-	t_stack	tmp;
+	t_stack	*tmp;
 
 	i = 0;
 	tmp = ft_rev_stack(alpha);
 	if (ft_middle_coeff(alpha) == 1 && !ft_strcmp(alpha->name, "a"))
 		return (0);
-	else if (ft_middle_coeff(alpha) == 2 && !ft_strcmp(alpha->, "a"))
+	else if (ft_middle_coeff(alpha) == 2 && !ft_strcmp(alpha->name, "a"))
 		return (1);
 	else if (ft_middle_coeff(tmp) == 1 && !ft_strcmp(alpha->name, "b"))
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 17:04:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/22 17:30:41 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 13:35:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ char	**ft_make_ops(void)
 	int		i;
 
 	i = 0;
+	res = (char**)malloc(sizeof(char*) * 11);
 	while (i < 11)
 		res[i] = ft_strnew(3);
 	res[0] = "ss";
@@ -56,5 +57,4 @@ char	**ft_make_ops(void)
 	res[9] = "rr";
 	res[10] = "rrr";
 	return (res);
-}
 }

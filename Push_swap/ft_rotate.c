@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:06:56 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/25 12:03:54 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 13:25:54 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,18 @@ char	*ft_rotate(t_stack *alpha, char is_ext)
 	}
 	alpha->stack[alpha->len - 1] = tmp;
 	if (is_ext == 'x')
-		ft_printf("Les deux premiers elements de %s sont tries et les elements 
-				non tries les plus proches sont dans la premiere moitie de 
-				la pile donc on parcours vers le bas.\n", alpha->name);
-	return (!ft_strmp(alpha->name, "a") ? "ra" : "rb");
+		ft_printf("Les deux premiers elements de %s sont tries et les elements non tries les plus proches sont dans la premiere moitie de la pile donc on parcours vers le bas.\n", alpha->name);
+	return (!ft_strcmp(alpha->name, "a") ? "ra" : "rb");
 }
 
 char	*ft_drotate(t_stack *alpha, t_stack *beta, char is_ext)
 {
 	if (is_ext == 'x')
 		is_ext = 'y';
-	ft_rotate(alpha);
-	ft_rotate(beta);
+	ft_rotate(alpha, is_ext);
+	ft_rotate(beta, is_ext);
 	if (is_ext == 'y')
-		ft_printf("Les deux premiers elements des deux piles sont dans l'ordre 
-				et dans les deux cas les deux elements non tries les plus 
-				proches sont dans la premiere moitie, on parcourt donc les 
-				deux vers le bas.\n");
+		ft_printf("Les deux premiers elements des deux piles sont dans l'ordre et dans les deux cas les deux elements non tries les plus proches sont dans la premiere moitie, on parcourt donc les	deux vers le bas.\n");
 	return ("rr");
 }
 
@@ -67,13 +62,10 @@ char	*ft_rrotate(t_stack *alpha, char is_ext)
 char	*ft_drrotate(t_stack *alpha, t_stack *beta, char is_ext)
 {
 	if (is_ext == 'x')
-		is_ext == 'y';
-	ft_rrotate(alpha);
-	ft_rrotate(beta);
+		is_ext = 'y';
+	ft_rrotate(alpha, is_ext);
+	ft_rrotate(beta, is_ext);
 	if (is_ext == 'y')
-		ft_printf("Les deux premiers elements des deux piles sont dans l'ordre 
-				et dans les deux cas les deux elements non tries les plus 
-				proches sont dans la deuxieme moitie, on parcourt donc les 
-				deux vers le bas.\n");
+		ft_printf("Les deux premiers elements des deux piles sont dans l'ordre et dans les deux cas les deux elements non tries les plus proches sont dans la deuxieme moitie, on parcourt donc les deux vers le bas.\n");
 	return ("rrr");
 }
