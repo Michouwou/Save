@@ -6,13 +6,29 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 15:30:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/23 16:34:24 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 11:27:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.c"
 
-char	ft_divide(t_stack *alpha, t_stack *beta, char *options)
+static void	ft_beg_sort(t_stack *alpha, t_sol *stack_sol)
+{
+	char	*op;
+
+	op = ft_next_op(alpha);
+	while (ft_middle_coeff(alpha) < 1)
+	{
+		if (!ft_strcmp(op, "sw"))
+			ft_stack_sol(ft_swap_e(alpha, 'a'), stack_sol);
+		else if (!ft_strcmp(op, "ro"))
+			ft_stack_sol(ft_rotate(alpha, 'a'), stack_sol);
+		else
+			ft_stack_sol(ft_rrotate(alpha, 'a'), stack_sol);
+	}
+}
+
+char	ft_divide(t_stack *alpha, t_stack *beta, char *options, t_sol *stack_sol)
 {
 	char	is_ext;
 	int		i;
@@ -30,7 +46,7 @@ char	ft_divide(t_stack *alpha, t_stack *beta, char *options)
 	}
 	if (ft_cn(alpha) > 0.75 && alpha->len >= 6)
 	{
-		ft_beg_sort(alpha);
+		ft_beg_sort(alpha, stack_sol);
 		if (is_ext == 'y' || is_ext == 'w')
 			ft_printf("La liste etant deja presque triee, on classe les 
 					elements approximativement dans l'ordre pour que le 

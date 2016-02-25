@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 17:03:00 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/24 09:14:41 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 12:16:30 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	ft_normalize(t_stack *alpha, char is_ext)
 			if (ft_middle_coeff(alpha) == 2)
 				ft_rotate(alpha, 'a');
 			if (is_ext == 'x')
-				ft_printf("Operation de normalisation de a, on fait tourner la 
-						pile pour que les elements soient au bon 
-						emplacement\n");
+				ft_printf("Operation de normalisation de a, on fait tourner la pile pour que les elements soient au bon emplacement\n");
 		}
 	else if (!ft_strcmp(alpha->name, "b"))
 		while (!ft_is_sorted(ft_rev_stack(alpha)))
@@ -34,9 +32,6 @@ void	ft_normalize(t_stack *alpha, char is_ext)
 			if (ft_middle_coeff(ft_rev_stack(alpha)) == 2)
 				ft_rotate(alpha, 'a');
 			if (is_ext == 'x')
-				ft_printf("Operation de normalisation de b, on fait tourner la 
-						pile pour que les elements soient au bon 
-						emplacement\n");
-
+				ft_printf("Operation de normalisation de b, on fait tourner la pile pour que les elements soient au bon emplacement\n");
 		}
 }

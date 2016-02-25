@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:00:37 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/24 09:29:18 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 11:35:41 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_core(char **argv, int argc)
 	beta = ft_new_stack();
 	alpha->name = ft_strcpy(alpha->name, "a");
 	beta->name = ft_strcpy(beta->name, "b");
-	ft_divide(alpha, beta, options);
+	ft_divide(alpha, beta, options, sols);
 	while (!ft_circular_check(alpha) || !ft_circular_check(ft_rev_stack(beta)))
 		ft_stack_sol(ft_next_op(alpha, beta, ft_coeffs(alpha, beta), sols));
 	ft_normalize(alpha);

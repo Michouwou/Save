@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:06:56 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/24 09:12:33 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 12:03:54 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate(t_stack *alpha, char is_ext)
+char	*ft_rotate(t_stack *alpha, char is_ext)
 {
 	int i;
 	int tmp;
@@ -29,9 +29,10 @@ void	ft_rotate(t_stack *alpha, char is_ext)
 		ft_printf("Les deux premiers elements de %s sont tries et les elements 
 				non tries les plus proches sont dans la premiere moitie de 
 				la pile donc on parcours vers le bas.\n", alpha->name);
+	return (!ft_strmp(alpha->name, "a") ? "ra" : "rb");
 }
 
-void	ft_drotate(t_stack *alpha, t_stack *beta, char is_ext)
+char	*ft_drotate(t_stack *alpha, t_stack *beta, char is_ext)
 {
 	if (is_ext == 'x')
 		is_ext = 'y';
@@ -42,9 +43,10 @@ void	ft_drotate(t_stack *alpha, t_stack *beta, char is_ext)
 				et dans les deux cas les deux elements non tries les plus 
 				proches sont dans la premiere moitie, on parcourt donc les 
 				deux vers le bas.\n");
+	return ("rr");
 }
 
-void	ft_rrotate(t_stack *alpha, char is_ext)
+char	*ft_rrotate(t_stack *alpha, char is_ext)
 {
 	int i;
 	int tmp;
@@ -59,9 +61,10 @@ void	ft_rrotate(t_stack *alpha, char is_ext)
 	alpha->stack[0] = tmp;
 	if (is_ext == 'x')
 		ft_printf("Les deux premiers elements de la liste %s sont tries et les deux premiers elements non tries sont dans la deuxieme moitie de la pile, on se deplace donc vers le \"haut\".\n", alpha->name);
+	return (!ft_strcmp(alpha->name, "a") ? "rra" : "rrb");
 }
 
-void	ft_drrotate(t_stack *alpha, t_stack *beta, char is_ext)
+char	*ft_drrotate(t_stack *alpha, t_stack *beta, char is_ext)
 {
 	if (is_ext == 'x')
 		is_ext == 'y';
@@ -72,4 +75,5 @@ void	ft_drrotate(t_stack *alpha, t_stack *beta, char is_ext)
 				et dans les deux cas les deux elements non tries les plus 
 				proches sont dans la deuxieme moitie, on parcourt donc les 
 				deux vers le bas.\n");
+	return ("rrr");
 }
