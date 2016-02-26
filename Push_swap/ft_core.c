@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:00:37 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/26 09:41:39 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 11:28:49 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,7 @@ void	ft_core(char **argv, int argc)
 	fflush(stdout);
 	ft_disp_stack(alpha, beta, 'v');
 
-	int j = 0;
-	while ((!ft_circular_check(alpha) || !ft_circular_check(ft_rev_stack(beta))) && j++ < 30)
+	while ((!ft_circular_check(alpha) || !ft_circular_check(ft_rev_stack(beta))))
 		ft_stack_sol(ft_dnext_op(alpha, beta, is_ext), sols);
 	
 	printf("Tri circulaire des piles OK impression :\n\n");
@@ -76,6 +75,8 @@ void	ft_core(char **argv, int argc)
 
 	printf("Restacking done! stack_sol -> %s\n\n", (*sols)->sols[0]);
 	fflush(stdout);
+	ft_normalize(alpha, is_ext, sols);
+	ft_disp_stack(alpha, beta, 'v');
 
 	ft_display(options, sols);
 }

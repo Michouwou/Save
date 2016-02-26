@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 09:05:37 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/26 09:22:01 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 11:35:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ int		ft_middle_coeff(t_stack *alpha)
 			l += 1.0 / (alpha->len / 2);
 	if (k == i / (alpha->len / 2))
 		return ((l == j / (alpha->len / 2)) ? 3 : 1);
-	if (l == j / (alpha->len / 2))
+	if (l == (j - 1) / (alpha->len / 2))
 		return (2);
+	printf("%f LOL\n", l);
 	return (0);
 }
