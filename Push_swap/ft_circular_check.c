@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 09:05:37 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/25 16:36:52 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 09:22:01 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_circular_check(t_stack *alpha)
 	int	i;
 	int	j;
 
-	printf("\t\tEntree dans circular_check\n");
+	printf("\t\tEntree dans circular_check\nalpha->len = %d\n", alpha->len);
 	fflush(stdout);
 
 	i = 0;

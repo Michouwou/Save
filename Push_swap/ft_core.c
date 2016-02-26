@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:00:37 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/25 17:19:11 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 09:41:39 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_core(char **argv, int argc)
 {
-	t_sol	*sols;
+	t_sol	**sols;
 	char	*options;
 	t_stack	*alpha;
 	t_stack	*beta;
@@ -23,9 +23,10 @@ void	ft_core(char **argv, int argc)
 	printf("On vient d'entrer dans core\n\n");
 	fflush(stdout);
 
-	sols = ft_create_sol(0);
+	sols = (t_sol**)malloc(sizeof(t_sol*));
+	*sols = ft_create_sol(0);
 
-	printf("Creation de l'espace solution termine\n\n");
+	printf("Creation de l'espace solution termine -> %d\n\n", (*sols)->len);
 	fflush(stdout);
 
 	options = ft_extract_options(argv, argc);
@@ -52,28 +53,28 @@ void	ft_core(char **argv, int argc)
 
 	is_ext = ft_divide(alpha, beta, options, sols);
 
-	printf("Division de la pile alpha OK, impression de l'etat des piles, alpha->len/2 = %d\n\n", alpha->len/2);
+	printf("Division de la pile alpha OK, impression de l'etat des piles, alpha->len = %d\n\n", alpha->len);
 	fflush(stdout);
 	ft_disp_stack(alpha, beta, 'v');
 
 	int j = 0;
 	while ((!ft_circular_check(alpha) || !ft_circular_check(ft_rev_stack(beta))) && j++ < 30)
-		ft_stack_sol(ft_dnext_op(alpha, beta, is_ext), &sols);
+		ft_stack_sol(ft_dnext_op(alpha, beta, is_ext), sols);
 	
 	printf("Tri circulaire des piles OK impression :\n\n");
 	fflush(stdout);
 	ft_disp_stack(alpha, beta, 'v');
 
-	ft_normalize(alpha, is_ext, &sols);
-	ft_normalize(beta, is_ext, &sols);
+	ft_normalize(alpha, is_ext, sols);
+	ft_normalize(beta, is_ext, sols);
 
-	printf("Normalisation des piles terminee! sols : %s impression :\n\n", sols->sols[0]);
+	printf("Normalisation des piles terminee! sols : %s impression :\n\n", (*sols)->sols[0]);
 	fflush(stdout);
 	ft_disp_stack(alpha, beta, 'v');
 
-	ft_restack(alpha, beta);
+	ft_restack(alpha, beta, sols);
 
-	printf("Restacking done! stack_sol -> %s\n\n", sols->sols[0]);
+	printf("Restacking done! stack_sol -> %s\n\n", (*sols)->sols[0]);
 	fflush(stdout);
 
 	ft_display(options, sols);

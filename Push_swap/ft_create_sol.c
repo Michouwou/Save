@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 15:03:14 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/25 17:17:51 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 09:36:39 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ t_sol	*ft_create_sol(int size)
 	ret->len = 0;
 	while (i < size)
 	{
-		*(ret->sols) = ft_strnew(3);
+		ret->sols[i++] = ft_strnew(3);
 		ret->len++;
-		i++;
 	}
 	return (ret);
 }
@@ -38,14 +37,21 @@ void	ft_stack_sol(char *sol, t_sol **stack_sol)
 	i = 0;
 	printf("Entree dans stack_sol, stack_sol->len = %d et sol = %s\n", (*stack_sol)->len, sol);
 	fflush(stdout);
-	tsol = ft_create_sol(sizeof((*stack_sol)->len) + 1);
+	tsol = ft_create_sol((*stack_sol)->len + 1);
+
+	printf("Tsol->len = %d\n", tsol->len);
+	fflush(stdout);
+	
 	tsol->len = (*stack_sol)->len;
 	while (i < (*stack_sol)->len)
 	{
 		tsol->sols[i] = ft_strcpy(tsol->sols[i], (*stack_sol)->sols[i]);
+		printf("Copy OK ::: %s\n", tsol->sols[i]);
+		fflush(stdout);
+
 		i++;
 	}
-	ft_strcpy(tsol->sols[i], sol);
+	tsol->sols[i] = ft_strcpy(tsol->sols[i], sol);
 	tsol->len++;
 	printf("Premiere operation : %s\n", tsol->sols[0]);
 	fflush(stdout);

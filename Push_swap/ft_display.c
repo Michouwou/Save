@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:04:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/25 16:56:41 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 09:44:51 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		ft_display_u(t_sol *sols)
+void		ft_display_u(t_sol **sols)
 {
 	char	**ops;
 	char	**colors;
@@ -22,17 +22,17 @@ void		ft_display_u(t_sol *sols)
 	ops = ft_make_ops();
 	colors = ft_make_colors();
 	i = 0;
-	while (i < sols->len)
+	while (i < (*sols)->len)
 	{
 		j = 0;
-		while (!ft_strcmp(ops[j], *(sols->sols)))
+		while (!ft_strcmp(ops[j], *((*sols)->sols)))
 			j++;
-		ft_color(colors[j], *(sols->sols));
+		ft_color(colors[j], *((*sols)->sols));
 		i++;
 	}
 }
 
-void		ft_display(char *options, t_sol *sols)
+void		ft_display(char *options, t_sol **sols)
 {
 	int i;
 
@@ -46,12 +46,12 @@ void		ft_display(char *options, t_sol *sols)
 	}
 	else
 	{
-		while (i++ < sols->len - 1)
-			ft_printf("%s ", sols->sols++);
+		while (i++ < (*sols)->len - 1)
+			ft_printf("%s ", *((*sols)->sols)++);
 		if (options[0] == 'c' || options[1] == 'c' ||
 			options[2] == 'c' || options[3] == 'c')
-			ft_color("36", *(sols->sols));
+			ft_color("36", *((*sols)->sols));
 		else
-			ft_printf("%s\n", *(sols->sols));
+			ft_printf("%s\n", *((*sols)->sols));
 	}
 }

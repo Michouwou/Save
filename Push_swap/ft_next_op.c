@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 11:40:56 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/25 13:32:25 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 09:29:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ t_stack	*ft_rev_stack(t_stack *stack)
 
 	i = 0;
 	new = ft_new_stack();
-	while (i < stack->len)
+	new->stack = (int*)malloc(sizeof(int) * (stack->len));
+	while (i++ < stack->len)
 		new->stack[i] = stack->stack[i] * (-1);
 	new->len = stack->len;
 	return (new);
