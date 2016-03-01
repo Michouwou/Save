@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 11:06:26 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/26 17:40:46 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 09:55:22 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char *ft_transfer_wchars(wchar_t *wstr)
 	int				i;
 
 	result = (unsigned char*)ft_strnew(0);
+	i = 0;
 	while (wstr[i] != 0)
 	{
 		tmp2 = ft_transfer_wchar(wstr[i]);

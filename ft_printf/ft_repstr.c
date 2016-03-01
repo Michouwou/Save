@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 13:06:23 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/27 14:21:25 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 09:59:18 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_repstr(char *str, int start, int end, char *to_insert)
 		res[i] = str[i];
 		i++;
 	}
-	while (j < ft_strlen(to_insert))
+	while (j < (int)ft_strlen(to_insert))
 		res[i++] = (int)to_insert[j++];
 	j = end;
 	while (str[j] != 0)

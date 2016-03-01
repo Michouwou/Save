@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/03 10:41:18 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 15:51:35 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ int		ft_printf(char const *format, ...)
 	print = (char*)format;
 	while (trail != NULL)
 	{
-		ft_get_arg(trail, &print, &args);
+		if (trail->type == '%')
+			print = ft_repstr(print, trail->start_index, trail->end_index + 1, "%");
+		else
+			ft_get_arg(trail, &print, &args);
 		trail = trail->next;
 	}
 	ft_putstr(print);

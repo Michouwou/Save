@@ -6,15 +6,9 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/11 15:53:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/03 12:19:54 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/24 09:57:41 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-**Bon faut revoir l'affichage des floats, ex :
-**%#f --> 255 ne fonctionne pas
-**%f  --> ne fonctionne pas non plus...
-*/
 
 #include "libftprintf.h"
 
@@ -22,8 +16,6 @@
 void	ft_call_float(long double number, T_LIST *trail, char **print)
 {
 	char	*result;
-	char	*tmp;
-	char	*tmp2;
 
 	number = ft_float_apply_mod(trail, number);
 	result = ft_conv_float(number, (trail->accuracy != -1) ?

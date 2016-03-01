@@ -6,10 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 20:16:19 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/13 17:06:19 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/25 10:33:31 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "get_next_line.h"
 
 int		get_next_line(int const fd, char **line)
@@ -82,11 +83,9 @@ int		ft_next_line(char *rest, char **line, int const fd, t_memory *memory)
 	while (rest[tmp] != '\n' && rest[tmp] != '\0' && rest[tmp] != 3)
 		tmp++;
 	if (rest[tmp] == '\0')
-	{
 		return ((ft_next_read(fd, &rest) == -1) ? -1 : ft_next_line(rest, line,
-				fd, memory));
-	}
-	if (rest[tmp] == 3)
+			fd, memory));
+	if (rest[tmp] == 3 && tmp == 0)
 	{
 		rest[tmp] = '\n';
 		if (ft_next_line(rest, line, fd, memory) != -1)
