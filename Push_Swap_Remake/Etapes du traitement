@@ -1,0 +1,14 @@
+-   La fonction principale recupere la pile a et b et 
+    les options correspondantes
+        - Elle calcule combien de coups il faut pour 
+        trier les piles dans l'ordre actuel
+        - Elle calcule combien de coups il faut pour
+        trier les piles en transferant de a à b N elements:
+            - N est calcule par dichotomie (si possible)
+            de 1 à la moitie de la pile a
+        - Elle calcule combien de coups il faut pour trier 
+        les piles en remettant N elements de b dans a
+            - N est calcule naivement
+        - Elle effectue la premiere operation du chemin le
+        plus court puis recommence jusqu'a ce que les deux 
+        piles soient triees
