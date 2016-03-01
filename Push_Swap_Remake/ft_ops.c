@@ -1,7 +1,7 @@
 
 #include "push_swap.h"
 
-t_stack *ft_create_element()
+t_stack *ft_create_element(char name)
 {
     t_stack new;
     
@@ -12,11 +12,11 @@ t_stack *ft_create_element()
     new->prev = NULL;
 }
 
-void    ft_add_number(t_stack *alpha, int number)
+void    ft_add_number(t_stack *alpha, int number, char name)
 {
     t_stack *tmp;
     
-    tmp = ft_create_element();
+    tmp = ft_create_element(name);
     if (alpha && alpha->prev)
     {
         (alpha->prev)->next = tmp;
@@ -45,6 +45,21 @@ char    *ft_rr(t_stack *alpha, t_stack *beta)
     ft_ra(alpha);
     ft_ra(beta);
     return ("rr");
+}
+
+char    *ft_rra(t_stack *alpha)
+{
+    alpha->first = 0;
+    alpha = alpha->prev;
+    alpha->first = 1;
+    return (alpha->name == "a" ? "rra" : "rrb");
+}
+
+char    *ft_rrr(t_stack *alpha, t_stack *beta)
+{
+    ft_rra(alpha);
+    ft_rra(beta);
+    return ("rrr");
 }
 
 char    *ft_sa(t_stack *alpha)
