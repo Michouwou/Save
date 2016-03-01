@@ -8,10 +8,10 @@
 
 typedef struct  s_stack
 {
-    int     *numbers;
-    int     len;
-    int     med;
-    void    *bool;
+    int             element;
+    int             first;
+    struct s_stack  *next;
+    struct s_stack  *prev;
 }               t_stack;
 
 typedef struct  s_sol
@@ -20,6 +20,8 @@ typedef struct  s_sol
     int     len;
 }               t_sol;
 
+t_stack *ft_build_circle();
+void    ft_add_number(t_stack *alpha, int number);
 t_sol   *ft_core(t_stack *alpha, t_stack *beta, char *options);
 t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta, int prev_len);
 t_sol   *ft_atob(t_stack *alpha, t_stack *beta, int trans_len, int prev_len);
