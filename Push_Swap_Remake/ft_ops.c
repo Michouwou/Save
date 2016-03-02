@@ -7,9 +7,9 @@ t_stack *ft_create_element(char name)
     
     new = (t_stack*)malloc(sizeof(t_stack));
     new->element = 0;
-    new->first = 0;
-    new->next = NULL;
-    new->prev = NULL;
+    new->first = 1;
+    new->next = new;
+    new->prev = new;
 }
 
 void    ft_add_number(t_stack *alpha, int number, char name)
@@ -17,19 +17,21 @@ void    ft_add_number(t_stack *alpha, int number, char name)
     t_stack *tmp;
     
     tmp = ft_create_element(name);
-    if (alpha && alpha->prev)
+    if (!alpha)
+    {
+        alpha = ft_create_element(name);
+        alpha->element = number;
+    }
+    else
     {
         (alpha->prev)->next = tmp;
         tmp->prev = alpha->prev;
-    }
-    if (alpha)
-    {
         tmp->next = alpha;
         alpha->prev = tmp;
+        tmp->element = number;
+        alpha->first = 0;
+        tmp = alpha;
     }
-    tmp->first = 1;
-    tmp->first = 0;
-    tmp->element = number;
 }
 
 char    *ft_ra(t_stack *alpha)
