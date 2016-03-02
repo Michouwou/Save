@@ -17,8 +17,8 @@ typedef struct  s_stack
 
 typedef struct  s_sol
 {
-    char    *operations;
-    int     len;
+    char            *operations;
+    struct s_sol    *next;
 }               t_sol;
 
 t_stack *ft_create_element(char name);
@@ -38,4 +38,6 @@ char    *ft_pa(t_stack *alpha, t *beta);
 void    ft_display(t_sol *solution, char *options);
 t_sol   *ft_new_sol(void);
 void    ft_add_sol(t_sol *solutions, char *sol);
-void    ft_add_num_sol(t_sol *solutions, t_sol *sol);
+void    ft_add_num_sol(t_sol *solutions, t_sol *to_add);
+
+
