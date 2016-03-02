@@ -45,3 +45,19 @@ t_sol   *ft_atob(t_stack *alpha, t_stack *beta, int trans_len, int prev_len)
     return (solutions);
 }
 
+t_sol   *ft_btoa(t_stack *alpha, t_stack *beta, int trans_len, int prev_len)
+{
+    int     i;
+    t_sol   *solutions;
+    
+    i = 0;
+    solutions = ft_new_sol();²
+    while (i < trans_len)
+        ft_add_sol(solutions, ft_pa(beta, alpha));
+    ft_add_num_sol(solutions, ft_try_ab(alpha, beta, prev_len));
+    return (solutions);
+}
+
+
+
+

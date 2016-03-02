@@ -26,7 +26,7 @@ void    ft_add_number(t_stack *alpha, int number);
 t_sol   *ft_core(t_stack *alpha, t_stack *beta, char *options);
 t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta, int prev_len);
 t_sol   *ft_atob(t_stack *alpha, t_stack *beta, int trans_len, int prev_len);
-t_sol   *ft_btoa(t_stack *alpha, t_stack *beta, int prev_len);
+t_sol   *ft_btoa(t_stack *alpha, t_stack *beta, int trans_len, int prev_len);
 int     *ft_is_sorted(t_stack *alpha);
 char    *ft_ra(t_stack *alpha);
 char    *ft_rr(t_stack *alpha, *beta);
