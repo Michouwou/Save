@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:34 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 09:39:19 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/03 14:46:48 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int main(int argc, char **argv)
     t_stack *beta;
     t_sol   *solution;
     
-    options = ft_strnew(5);
     alpha = NULL;
     beta = NULL;
     i = 0;

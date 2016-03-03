@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 12:57:35 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/03 16:09:36 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,8 @@ t_sol	*ft_restack(alpha, beta);
 int		ft_sol_len(t_sol *solution);
 int		ft_stack_len(t_stack *t_stack);
 char	*ft_move(alpha, beta);
+char	*ft_extract_options(char **argv);
+void	ft_stop(void);
+int		ft_position(t_stack *beta, t_stack *alpha);
+
+#endif
