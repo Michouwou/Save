@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 09:17:10 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/03 12:57:35 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include "libft.h"
 # include <stdlib.h>
 # include <stddef.h>
+
+/**
+ * Bon, a retenir, 1 c'est try_ab, 2 c'est atob, et 0 btoa
+**/
 
 typedef struct  s_stack
 {
@@ -35,9 +39,9 @@ typedef struct  s_sol
 t_stack *ft_create_element(char name);
 void    ft_add_number(t_stack *alpha, int number);
 t_sol   *ft_core(t_stack *alpha, t_stack *beta, char *options);
-t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta, int prev_len);
-t_sol   *ft_atob(t_stack *alpha, t_stack *beta, int trans_len, int prev_len);
-t_sol   *ft_btoa(t_stack *alpha, t_stack *beta, int trans_len, int prev_len);
+t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta);
+t_sol   *ft_atob(t_stack *alpha, t_stack *beta, int trans_len);
+t_sol   *ft_btoa(t_stack *alpha, t_stack *beta, int trans_len);
 int     *ft_is_sorted(t_stack *alpha);
 char    *ft_ra(t_stack *alpha);
 char    *ft_rr(t_stack *alpha, *beta);
@@ -49,4 +53,8 @@ char    *ft_pa(t_stack *alpha, t *beta);
 void    ft_display(t_sol *solution, char *options);
 t_sol   *ft_new_sol(void);
 void    ft_add_sol(t_sol *solutions, char *sol);
-void    ft_add_num_sol(t_sol *solutions, t_sol *to_add);
+void    ft_add_num_sol(t_sol *solutions, t_sol *to_add);i
+t_sol	*ft_restack(alpha, beta);
+int		ft_sol_len(t_sol *solution);
+int		ft_stack_len(t_stack *t_stack);
+char	*ft_move(alpha, beta);

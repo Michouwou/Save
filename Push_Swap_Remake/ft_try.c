@@ -6,20 +6,19 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 09:38:47 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/03 12:57:33 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
 
-t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta, int prev_len)
+t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta)
 {
     t_sol *solutions;
     
     solutions = ft_new_sol();
-    while (ft_is_sorted(alpha) == 0 && ft_is_sorted(beta) == 0 &&
-    solutions->len < prev_len)
+    while (ft_is_sorted(alpha) == 0 && ft_is_sorted(beta) == 0)
     {
         if (alpha->number > alpha->next->number)
             ft_add_sol(solutions, ft_sa(alpha));
@@ -44,7 +43,7 @@ t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta, int prev_len)
     return (solutions);
 }
 
-t_sol   *ft_atob(t_stack *alpha, t_stack *beta, int trans_len, int prev_len)
+t_sol   *ft_atob(t_stack *alpha, t_stack *beta, int trans_len)
 {
     int     i;
     t_sol   *solutions;
@@ -53,12 +52,12 @@ t_sol   *ft_atob(t_stack *alpha, t_stack *beta, int trans_len, int prev_len)
     solutions = ft_new_sol();
     while (i < trans_len)
         ft_add_sol(solutions, ft_pa(alpha, beta));
-    ft_add_num_sol(solutions, ft_try_ab(alpha, beta, prev_len));
+    ft_add_num_sol(solutions, ft_try_ab(alpha, beta));
     ft_add_num_sol(solutions, ft_restack(alpha, beta));
     return (solutions);
 }
 
-t_sol   *ft_btoa(t_stack *alpha, t_stack *beta, int trans_len, int prev_len)
+t_sol   *ft_btoa(t_stack *alpha, t_stack *beta, int trans_len)
 {
     int     i;
     t_sol   *solutions;
@@ -67,7 +66,7 @@ t_sol   *ft_btoa(t_stack *alpha, t_stack *beta, int trans_len, int prev_len)
     solutions = ft_new_sol();
     while (i < trans_len)
         ft_add_sol(solutions, ft_pa(beta, alpha));
-    ft_add_num_sol(solutions, ft_try_ab(alpha, beta, prev_len));
+    ft_add_num_sol(solutions, ft_try_ab(alpha, beta));
     ft_add_num_sol(solutions, ft_restack(alpha, beta));
     return (solutions);
 }
