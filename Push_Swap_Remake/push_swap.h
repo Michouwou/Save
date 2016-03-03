@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/03/03 09:16:57 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/03 09:17:10 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef _PUSH_SWAP_H
 # define _PUSH_SWAP_H
@@ -39,5 +50,3 @@ void    ft_display(t_sol *solution, char *options);
 t_sol   *ft_new_sol(void);
 void    ft_add_sol(t_sol *solutions, char *sol);
 void    ft_add_num_sol(t_sol *solutions, t_sol *to_add);
-
-

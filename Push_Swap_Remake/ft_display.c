@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_display.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/03/03 09:15:33 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/03 09:19:29 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
@@ -32,29 +43,25 @@ static void ft_display_unit(char *operation)
 
 void    ft_display(t_sol *solution, char *options)
 {
-    int i;
-    
-    i = 0;
-    while (i < solution->len - 1)
+    while (solution->next != NULL)
     {
         if (options[0] == 'C' || options[1] == 'C' ||
         options[2] == 'C' || options[3] == 'C' ||
         options[4] == 'C')
         {
-            ft_display_unit(solution->operations[i]);
+            ft_display_unit(solution->operations);
             ft_printf(", ");
         }
         else
-            ft_printf("%s, ", solution->operations[i]);
-    
-        i++;
+            ft_printf("%s, ", solution->operations);
+    	solution = solution->next;
     }
     if (options[0] == 'c' || options[1] == 'c' ||
         options[2] == 'c' || options[3] == 'c' ||
         options[4] == 'c' || options[0] == 'C' ||
         options[1] == 'C' || options[2] == 'C' ||
         options[3] == 'C' || options[4] == 'C')
-        ft_display_unit(solution->operations[i]);
+        ft_display_unit(solution->operations);
     else
         ft_printf("%s", solution->operations);
     ft_printf("\n");

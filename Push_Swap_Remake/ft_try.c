@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_try.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/03/03 09:16:20 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/03 09:38:47 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "push_swap.h"
 
@@ -75,11 +87,19 @@ void    ft_add_sol(t_sol *solutions, char *sol)
     t_sol   *tmp;
     
     tmp = solutions;
-    new = ft_new_sol();
-    while (tmp->next != NULL)
-        tmp = tmp->next;
-    new->operations = ft_strcpy(new->operations, sol);
-    tmp->next = new;
+	if (solutions == NULL)
+	{
+		solutions = ft_new_sol();
+		solutions->operations = ft_strcpy(solutions->operations, sol);
+	}
+	else
+	{
+   		while (tmp->next != NULL)
+        	tmp = tmp->next;
+    	new = ft_new_sol();
+    	new->operations = ft_strcpy(new->operations, sol);
+    	tmp->next = new;
+	}
 }
 
 void    ft_add_num_sol(t_sol *solutions, t_sol *to_add)
@@ -91,7 +111,3 @@ void    ft_add_num_sol(t_sol *solutions, t_sol *to_add)
         tmp = tmp->next;
     tmp->next = to_add;
 }
-
-
-
-
