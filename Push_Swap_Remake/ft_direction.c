@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_restack.c                                       :+:      :+:    :+:   */
+/*   ft_direction.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/03 14:25:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 17:24:02 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/03/03 17:08:02 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/03 17:22:13 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-t_sol	*ft_restack(t_stack *alpha, t_stack *beta)
+int		ft_direction(t_stack *alpha)
 {
-	t_sol	*solution;
+	t_stack *tmp;
+	int     middle;
+	int     cursor;
 
-	while (ft_stack_len(beta) != 0)
+	middle = ft_stack_len(alpha);
+	tmp = alpha;
+	cursor = 0;
+	while (cursor < middle)
 	{
-		if (alpha->element > beta->element &&
-				(alpha->prev->element < beta->element ||
-				alpha->prev->element > alpha->element))
-			ft_add_sol(solution, ft_pa(beta, alpha));
-		else
-			ft_add_sol(solution, ft_position(beta, alpha) ? ft_ra(alpha) :
-					ft_rra(alpha));
+		if (tmp->previous->element > tmp->element &&
+				tmp->next->element > tmp->element)
+			return (1);
+		tmp = tmp->next;
+		cursor++;
 	}
-	return (solution);
+	return (0);
 }

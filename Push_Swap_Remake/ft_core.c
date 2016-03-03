@@ -6,11 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:33:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 14:54:44 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/03 16:35:37 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
 t_sol	*ft_core(t_stack *alpha, t_stack *beta, char *options)
 {

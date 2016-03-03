@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:15:58 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 16:09:40 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/03 17:30:55 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 t_stack *ft_create_element(char name)
 {
-	t_stack new;
+	t_stack *new;
 
 	new = (t_stack*)malloc(sizeof(t_stack));
 	new->element = 0;
@@ -24,7 +24,7 @@ t_stack *ft_create_element(char name)
 	new->prev = new;
 }
 
-void    ft_add_number(t_stack *alpha, int number, char name)
+void    ft_add_number(t_stack *alpha, int number)
 {
 	t_stack *tmp;
 
@@ -51,7 +51,7 @@ char    *ft_ra(t_stack *alpha)
 	alpha->first = 0;
 	alpha = alpha->next;
 	alpha->first = 1;
-	return (alpha->name == "a" ? "ra" : "rb");
+	return (!ft_strcmp(alpha->name, "a") ? "ra" : "rb");
 }
 
 char    *ft_rr(t_stack *alpha, t_stack *beta)
@@ -66,7 +66,7 @@ char    *ft_rra(t_stack *alpha)
 	alpha->first = 0;
 	alpha = alpha->prev;
 	alpha->first = 1;
-	return (alpha->name == "a" ? "rra" : "rrb");
+	return (!ft_strcmp(alpha->name, "a") ? "rra" : "rrb");
 }
 
 char    *ft_rrr(t_stack *alpha, t_stack *beta)
@@ -91,7 +91,7 @@ char    *ft_sa(t_stack *alpha)
 	tmp2->prev = tmp1;
 	tmp2->next = alpha;
 	tmp3->prev = alpha;
-	return (alpha->name == "a" ? "sa" : "sb");
+	return (!ft_strcmp(alpha->name, "a") ? "sa" : "sb");
 }
 
 char    *ft_ss(t_stack *alpha, t_stack *beta)
@@ -109,16 +109,17 @@ char    *ft_pa(t_stack *alpha, t_stack *beta)
 	alpha->prev = beta->prev;
 	beta->prev->next = alpha;
 	beta->prev = alpha;
+	return (!ft_strcmp(alpha->name, "b") ? "pb" : "pa");
 }
 
 char	*ft_move(t_stack *alpha, t_stack *beta)
 {
-	if (alpha->number > alpha->next->number &&
-			beta->number < beta->next->number)
+	if (alpha->element > alpha->next->element &&
+			beta->element < beta->next->element)
 		return (ft_ss(alpha, beta));
-	else if (alpha->number > alpha->next->number)
+	else if (alpha->element > alpha->next->element)
 		return (ft_sa(alpha));
-	else if (beta->number < beta->next->number)
+	else if (beta->element < beta->next->element)
 		return(ft_sa(beta));
 	else if (ft_direction(alpha) && ft_direction(beta))
 		return (ft_rr(alpha, beta));

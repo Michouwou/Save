@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 12:57:33 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/03 17:27:10 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta)
     solutions = ft_new_sol();
     while (ft_is_sorted(alpha) == 0 && ft_is_sorted(beta) == 0)
     {
-        if (alpha->number > alpha->next->number)
+        if (alpha->element > alpha->next->element)
             ft_add_sol(solutions, ft_sa(alpha));
-        if (beta->number < beta->next->number)
+        if (beta->element < beta->next->element)
             ft_add_sol(solutions, ft_sa(beta));
         if (ft_direction(alpha) && ft_direction(beta))
             ft_add_sol(solutions, ft_rr(alpha, beta));
@@ -75,9 +75,10 @@ t_sol   *ft_new_sol(void)
 {
     t_sol *sol;
     
-    sol = (sol*)malloc(sizeof(sol));
+    sol = (t_sol*)malloc(sizeof(t_sol));
     sol->operations = ft_strnew(3);
     sol->next = NULL;
+	return (sol);
 }
 
 void    ft_add_sol(t_sol *solutions, char *sol)

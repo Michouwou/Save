@@ -6,11 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:34 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 14:46:48 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/03 16:53:41 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
 int main(int argc, char **argv)
 {
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
     {
         options = ft_extract_options(argv);
         while (i < argc - ft_strlen(options))
-            ft_add_number(alpha, ft_atoi(argv[i]), 'a');
+            ft_add_number(alpha, ft_atoi(argv[i]));
         solution = ft_core(alpha, beta, options);
     }
     ft_display(solution, options);

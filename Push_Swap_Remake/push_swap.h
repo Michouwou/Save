@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 16:09:36 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/03 17:30:53 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,20 @@ t_sol   *ft_atob(t_stack *alpha, t_stack *beta, int trans_len);
 t_sol   *ft_btoa(t_stack *alpha, t_stack *beta, int trans_len);
 int     *ft_is_sorted(t_stack *alpha);
 char    *ft_ra(t_stack *alpha);
-char    *ft_rr(t_stack *alpha, *beta);
+char    *ft_rr(t_stack *alpha, t_stack *beta);
 char    *ft_rra(t_stack *alpha);
 char    *ft_rrr(t_stack *alpha, t_stack *beta);
 char    *ft_sa(t_stack *alpha);
 char    *ft_ss(t_stack *alpha, t_stack *beta);
-char    *ft_pa(t_stack *alpha, t *beta);
+char    *ft_pa(t_stack *alpha, t_stack *beta);
 void    ft_display(t_sol *solution, char *options);
 t_sol   *ft_new_sol(void);
 void    ft_add_sol(t_sol *solutions, char *sol);
-void    ft_add_num_sol(t_sol *solutions, t_sol *to_add);i
-t_sol	*ft_restack(alpha, beta);
+void    ft_add_num_sol(t_sol *solutions, t_sol *to_add);
+t_sol	*ft_restack(t_stack *alpha, t_stack *beta);
 int		ft_sol_len(t_sol *solution);
-int		ft_stack_len(t_stack *t_stack);
-char	*ft_move(alpha, beta);
+int		ft_stack_len(t_stack *alpha);
+char	*ft_move(t_stack *alpha, t_stack *beta);
 char	*ft_extract_options(char **argv);
 void	ft_stop(void);
 int		ft_position(t_stack *beta, t_stack *alpha);
