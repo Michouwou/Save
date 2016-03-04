@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:33:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 12:57:10 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/04 14:59:03 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ t_sol	*ft_core(t_stack *alpha, t_stack *beta, char *options)
 		fflush(stdout);
 
 		if (min == 0)
-			ft_add_sol(solution, ft_pa(beta, alpha));
+			ft_add_sol(solution, ft_pa(&beta, &alpha));
 		else if (min < 0)
-			ft_add_sol(solution, ft_pa(alpha, beta));
+			ft_add_sol(solution, ft_pa(&alpha, &beta));
 		else
-			ft_add_sol(solution, ft_move(alpha, beta));
+			ft_add_sol(solution, ft_move(&alpha, &beta));
 
 		printf("on vient d'ajouter le minimum local a la liste\n");
 		fflush(stdout);
