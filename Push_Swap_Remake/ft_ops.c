@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:15:58 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 17:30:55 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/04 11:24:37 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,46 @@ t_stack *ft_create_element(char name)
 {
 	t_stack *new;
 
+	printf("On est bien dans la creation d'un element\n");
+	fflush(stdout);
 	new = (t_stack*)malloc(sizeof(t_stack));
 	new->element = 0;
 	new->first = 1;
 	new->next = new;
 	new->prev = new;
+	new->name = ft_strnew(1);
+	new->name = ft_strcpy(new->name, name == 'a' ? "a" : "b");
+	return (new);
 }
 
-void    ft_add_number(t_stack *alpha, int number)
+void    ft_add_number(t_stack **alpha, int number)
 {
 	t_stack *tmp;
 
-	tmp = ft_create_element(name);
-	if (!alpha)
+	
+	printf("creation d'element OK\n");
+	fflush(stdout);
+
+	if (!*alpha)
 	{
-		alpha = ft_create_element(name);
-		alpha->element = number;
+		*alpha = ft_create_element('a');
+		(*alpha)->element = number;
+		(*alpha)->first = 1;
+	printf("Affection de l'element OK\n");
+	fflush(stdout);
+
+
 	}
-	else
+		else
 	{
-		(alpha->prev)->next = tmp;
-		tmp->prev = alpha->prev;
-		tmp->next = alpha;
-		alpha->prev = tmp;
+		tmp = ft_create_element((*alpha)->name[0]);
+		((*alpha)->prev)->next = tmp;
+		tmp->prev = (*alpha)->prev;
+		tmp->next = *alpha;
+		(*alpha)->prev = tmp;
 		tmp->element = number;
-		alpha->first = 0;
-		tmp = alpha;
+		(*alpha)->first = 0;
+		*alpha = tmp;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 14:08:37 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 14:21:09 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/04 10:06:44 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_extract_options(char **argv)
 	int		i;
 	int		j;
 	int		k;
-	char	ret;
+	char	*ret;
 
 	ret = ft_strnew(5);
 	i = 0;
@@ -31,6 +31,7 @@ char	*ft_extract_options(char **argv)
 				ret[k++] = argv[i][j];
 		i++;
 	}
+	argv = argv + i;
 	return (ret);
 }
 

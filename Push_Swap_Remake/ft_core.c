@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:33:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 16:35:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/04 11:21:17 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,28 @@ t_sol	*ft_core(t_stack *alpha, t_stack *beta, char *options)
 	int		min;
 	int		try;
 
-	while (!ft_is_sorted(alpha) || !ft_is_sorted(beta));
+	printf("Nous venons d'entrer dans ft_core\n");
+	printf("beta::: %d, alpha::: %d\n", beta->element, alpha->element);
+	fflush(stdout);
+
+	while (!ft_is_sorted(alpha) || !ft_is_sorted(beta))
 	{
 		try = -1;
 		min = ft_sol_len(ft_try_ab(alpha, beta));
+
+		printf("Segfault?\n");
+		fflush(stdout);
+
 		while (++try < ft_stack_len(alpha) / 2 - ft_stack_len(beta))
 			if (ft_sol_len(ft_atob(alpha, beta, try)) < min)
 				min = (ft_sol_len(ft_atob(alpha, beta, try)) * -1);
+		
+		printf("Et la?\n");
+		fflush(stdout);
+
 		try = -1;
 		while (++try < ft_stack_len(beta))
-			if (ft_sol_len(ft_btoa(alpha, beta, try) < ft_topos(min)))
+			if (ft_sol_len(ft_btoa(alpha, beta, try)) < (min < 0) ? -min : min)
 				min = 0;
 		if (min == 0)
 			ft_add_sol(solution, ft_pa(beta, alpha));

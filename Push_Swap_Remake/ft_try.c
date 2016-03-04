@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 17:27:10 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/04 11:38:21 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,17 @@
 t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta)
 {
     t_sol *solutions;
-    
+   
+   printf("Entree dans ft_try_ab\n");
+	fflush(stdout);  
     solutions = ft_new_sol();
-    while (ft_is_sorted(alpha) == 0 && ft_is_sorted(beta) == 0)
+	int i = 0;
+    while (ft_is_sorted(alpha) == 0 || ft_is_sorted(beta) == 0)
     {
+		if (i++ >= 5)
+			exit(0);
+		printf("On boucle??\n");
+		fflush(stdout);
         if (alpha->element > alpha->next->element)
             ft_add_sol(solutions, ft_sa(alpha));
         if (beta->element < beta->next->element)
@@ -38,6 +45,8 @@ t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta)
         }
         if (!ft_direction(alpha) && !ft_direction(beta))
             ft_add_sol(solutions, ft_rrr(alpha, beta));
+		printf("On va jusqu'ou?\n");
+		fflush(stdout);
     }
     ft_add_num_sol(solutions, ft_restack(alpha, beta));
     return (solutions);
