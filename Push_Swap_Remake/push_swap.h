@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 11:34:23 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/04 14:06:04 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_sol   *ft_btoa(t_stack *alpha, t_stack *beta, int trans_len);
 int     ft_is_sorted(t_stack *alpha);
 char    *ft_ra(t_stack *alpha);
 char    *ft_rr(t_stack *alpha, t_stack *beta);
-char    *ft_rra(t_stack *alpha);
+char    *ft_rra(t_stack **alpha);
 char    *ft_rrr(t_stack *alpha, t_stack *beta);
 char    *ft_sa(t_stack *alpha);
 char    *ft_ss(t_stack *alpha, t_stack *beta);

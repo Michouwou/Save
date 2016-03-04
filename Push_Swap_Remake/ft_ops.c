@@ -6,19 +6,24 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:15:58 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 11:24:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/04 14:08:41 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
 
+/**
+ * Les deux fonctions suivantes creent et ajoutent un element a une pile
+ **/
+
 t_stack *ft_create_element(char name)
 {
 	t_stack *new;
 
-	printf("On est bien dans la creation d'un element\n");
+	printf("On est dans la creation d'un element\n");
 	fflush(stdout);
+	
 	new = (t_stack*)malloc(sizeof(t_stack));
 	new->element = 0;
 	new->first = 1;
@@ -26,6 +31,10 @@ t_stack *ft_create_element(char name)
 	new->prev = new;
 	new->name = ft_strnew(1);
 	new->name = ft_strcpy(new->name, name == 'a' ? "a" : "b");
+	
+	printf("Fin de la creation\n");
+	fflush(stdout);
+
 	return (new);
 }
 
@@ -34,7 +43,7 @@ void    ft_add_number(t_stack **alpha, int number)
 	t_stack *tmp;
 
 	
-	printf("creation d'element OK\n");
+	printf("Ajout d'element\n");
 	fflush(stdout);
 
 	if (!*alpha)
@@ -42,12 +51,11 @@ void    ft_add_number(t_stack **alpha, int number)
 		*alpha = ft_create_element('a');
 		(*alpha)->element = number;
 		(*alpha)->first = 1;
-	printf("Affection de l'element OK\n");
-	fflush(stdout);
-
-
+		
+		printf("Affection de l'element OK\n");
+		fflush(stdout);
 	}
-		else
+	else
 	{
 		tmp = ft_create_element((*alpha)->name[0]);
 		((*alpha)->prev)->next = tmp;
@@ -58,10 +66,20 @@ void    ft_add_number(t_stack **alpha, int number)
 		(*alpha)->first = 0;
 		*alpha = tmp;
 	}
+	
+	printf("Sortie de la fonction d'ajout d'element\n");
+	fflush(stdout);
 }
+
+/**
+ * Les fonctions suivantes representent les operations que l'on effectue sur les piles
+ **/
 
 char    *ft_ra(t_stack *alpha)
 {
+	printf("ft_ra\n");
+	fflush(stdout);
+
 	alpha->first = 0;
 	alpha = alpha->next;
 	alpha->first = 1;
@@ -69,29 +87,41 @@ char    *ft_ra(t_stack *alpha)
 }
 
 char    *ft_rr(t_stack *alpha, t_stack *beta)
-{
+{	
+	printf("ft_rr\n");
+	fflush(stdout);
+
 	ft_ra(alpha);
 	ft_ra(beta);
 	return ("rr");
 }
 
-char    *ft_rra(t_stack *alpha)
-{
-	alpha->first = 0;
-	alpha = alpha->prev;
-	alpha->first = 1;
-	return (!ft_strcmp(alpha->name, "a") ? "rra" : "rrb");
+char    *ft_rra(t_stack **alpha)
+{	
+	printf("ft_rra\n");
+	fflush(stdout);
+
+	(*alpha)->first = 0;
+	*alpha = (*alpha)->prev;
+	(*alpha)->first = 1;
+	return (!ft_strcmp((*alpha)->name, "a") ? "rra" : "rrb");
 }
 
 char    *ft_rrr(t_stack *alpha, t_stack *beta)
-{
-	ft_rra(alpha);
-	ft_rra(beta);
+{	
+	printf("ft_rrr\n");
+	fflush(stdout);
+
+	ft_rra(&alpha);
+	ft_rra(&beta);
 	return ("rrr");
 }
 
 char    *ft_sa(t_stack *alpha)
-{
+{	
+	printf("ft_sa\n");
+	fflush(stdout);
+
 	t_stack *tmp1;
 	t_stack *tmp2;
 	t_stack *tmp3;
@@ -109,14 +139,20 @@ char    *ft_sa(t_stack *alpha)
 }
 
 char    *ft_ss(t_stack *alpha, t_stack *beta)
-{
+{	
+	printf("ft_ss\n");
+	fflush(stdout);
+
 	ft_sa(alpha);
 	ft_sa(beta);
 	return ("ss");
 }
 
 char    *ft_pa(t_stack *alpha, t_stack *beta)
-{
+{	
+	printf("ft_pa\n");
+	fflush(stdout);
+
 	alpha->next->prev = alpha->prev;
 	alpha->prev->next = alpha->next;
 	alpha->next = beta;
@@ -126,8 +162,15 @@ char    *ft_pa(t_stack *alpha, t_stack *beta)
 	return (!ft_strcmp(alpha->name, "b") ? "pb" : "pa");
 }
 
+/**
+ * La fonction suivante effectue l'operation la plus appropriee a l'etat de la pile
+ **/
+
 char	*ft_move(t_stack *alpha, t_stack *beta)
 {
+	printf("Entree dans ft_move\n");
+	fflush(stdout);
+
 	if (alpha->element > alpha->next->element &&
 			beta->element < beta->next->element)
 		return (ft_ss(alpha, beta));
@@ -142,9 +185,9 @@ char	*ft_move(t_stack *alpha, t_stack *beta)
 	else if (ft_direction(beta))
 		return (ft_ra(beta));
 	else if (!ft_direction(alpha))
-		return (ft_rra(alpha));
+		return (ft_rra(&alpha));
 	else if (!ft_direction(beta))
-		return (ft_rra(beta));
+		return (ft_rra(&beta));
 	else
 		return (ft_rrr(alpha, beta));	
 }

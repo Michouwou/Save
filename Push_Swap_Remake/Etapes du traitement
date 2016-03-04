@@ -12,3 +12,11 @@
         - Elle effectue la premiere operation du chemin le
         plus court puis recommence jusqu'a ce que les deux 
         piles soient triees
+
+
+Important :
+
+- Une pile doit pouvoir etre nulle a un instant t arbitraire
+- On ne doit modifier pendant les essais que des copies des listes
+- Le premier element donne est le dernier des la liste a
+- Aucune leak!

@@ -6,11 +6,16 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 13:35:16 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 10:27:39 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/04 13:06:35 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/**
+ * Les deux fonctions suivantes calculent respectivement la longueur d'une pile ou
+ * d'un espace solution
+ **/
 
 int		ft_stack_len(t_stack *alpha)
 {
@@ -27,6 +32,10 @@ int		ft_stack_len(t_stack *alpha)
 			i++;
 		}
 	}
+
+	printf("Sortie de stack_len, valeur de retour = %d\n", i);
+	fflush(stdout);
+
 	return (i);
 }
 
@@ -40,5 +49,9 @@ int		ft_sol_len(t_sol *solution)
 		solution = solution->next;
 		i++;
 	}
+
+	printf("Sortie de sol_len, valeur de retour = %d\n", i);
+	fflush(stdout);
+
 	return (i);
 }

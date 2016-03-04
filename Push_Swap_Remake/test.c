@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_stack.c                                   :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/04 11:32:15 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 14:08:17 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/03/04 13:38:30 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/04 14:10:57 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print_stack(t_stack *alpha)
+int main()
 {
-	t_stack *tmp;
+	t_stack *test;
 
-	printf("\t\tTMP->ELEMENT : %d\n", alpha->element);
-	tmp = alpha->next;
-	while (tmp->first == 0)
-	{
-		printf("\t\tTMP->ELEMENT : %d\n", tmp->element);
-		fflush(stdout);
-		tmp = tmp->next;
-	}
+	test = ft_create_element('a');
+	printf("test->element = %d, test->first = %d, test->next->element = %d, test->name = %s\n", test->element, test->first, test->next->element, test->name);
+
+	
+	ft_add_number(&test, 8);
+	ft_add_number(&test, 6);
+	ft_add_number(&test, 9);
+	ft_add_number(&test, 11);
+	ft_add_number(&test, 2);
+	ft_print_stack(test);
+
+	ft_ra(test);
+	ft_print_stack(test);
+
+  return(0);	
 }
