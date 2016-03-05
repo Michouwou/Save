@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/04 13:38:30 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/05 10:42:11 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/05 11:20:16 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int main()
 
 	ft_display(testsol, ft_strnew(5));
 	ft_print_stack(test);
-	ft_add_sol(&testsol, ft_move(&test, &btest));
-	ft_display(testsol, ft_strnew(5));
-	ft_print_stack(test);
+	printf("%d Alors?\n", ft_direction(test));
+	fflush(stdout);
   return(0);	
 }

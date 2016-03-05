@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 17:08:02 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 13:01:18 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/05 12:43:29 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int		ft_direction(t_stack *alpha)
 	fflush(stdout);
 
 	middle = ft_stack_len(alpha);
-	tmp = alpha;
+	middle = (middle % 2 == 0) ? middle / 2 - 1 : middle / 2;
+	tmp = alpha->next;
 	cursor = 0;
 
 	printf("Affectation des differents elements, tmp, middle, cursor, juste avant la boucle\n");
@@ -34,6 +35,7 @@ int		ft_direction(t_stack *alpha)
 
 	while (cursor < middle)
 	{
+		printf("Alors prev = %d, tmp = %d, next = %d et cursor = %d et middle = %d\n", tmp->prev->element, tmp->element, tmp->next->element, cursor, middle);
 		if (tmp->prev->element > tmp->element &&
 				tmp->next->element > tmp->element)
 			return (1);
