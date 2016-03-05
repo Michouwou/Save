@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 14:25:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 14:51:04 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/05 10:27:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ t_sol	*ft_restack(t_stack *alpha, t_stack *beta)
 		if (alpha->element > beta->element &&
 				(alpha->prev->element < beta->element ||
 				alpha->prev->element > alpha->element))
-			ft_add_sol(solution, ft_pa(&beta, &alpha));
+			ft_add_sol(&solution, ft_pa(&beta, &alpha));
 		else
-			ft_add_sol(solution, ft_position(beta, alpha) ? ft_ra(&alpha) :
+			ft_add_sol(&solution, ft_position(beta, alpha) ? ft_ra(&alpha) :
 					ft_rra(&alpha));
 	}
 

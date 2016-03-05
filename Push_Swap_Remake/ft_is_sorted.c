@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:15:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 13:04:26 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/05 10:08:04 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int     ft_is_sorted(t_stack *alpha)
 
 	while (tmp->next->first == 0)
 	{
-		ft_print_stack(alpha);
 		if (tmp->prev->element < tmp->element && tmp->element < tmp->next->element)
 			tmp = tmp->next;
 		else

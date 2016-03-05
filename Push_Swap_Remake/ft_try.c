@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 14:50:11 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/05 10:34:03 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta)
   	printf("Entree dans ft_try_ab\n");
 	fflush(stdout);
 
-    solutions = ft_new_sol();
+    solutions = NULL;
 	int i = 0;
 	
 	printf("Entre dans la boucle de try_ab\n");
@@ -35,23 +35,23 @@ t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta)
 		if (i++ >= 5)
 			exit(0);
         if (alpha->element > alpha->next->element)
-            ft_add_sol(solutions, ft_sa(&alpha));
+            ft_add_sol(&solutions, ft_sa(&alpha));
         if (beta->element < beta->next->element)
-            ft_add_sol(solutions, ft_sa(&beta));
+            ft_add_sol(&solutions, ft_sa(&beta));
         if (ft_direction(alpha) && ft_direction(beta))
-            ft_add_sol(solutions, ft_rr(&alpha, &beta));
+            ft_add_sol(&solutions, ft_rr(&alpha, &beta));
         if (ft_direction(alpha) && !ft_direction(beta))
         {
-            ft_add_sol(solutions, ft_ra(&alpha));
-            ft_add_sol(solutions, ft_rra(&beta));
+            ft_add_sol(&solutions, ft_ra(&alpha));
+            ft_add_sol(&solutions, ft_rra(&beta));
         }
         if (!ft_direction(alpha) && ft_direction(beta))
         {
-            ft_add_sol(solutions, ft_rra(&alpha));
-            ft_add_sol(solutions, ft_ra(&beta));
+            ft_add_sol(&solutions, ft_rra(&alpha));
+            ft_add_sol(&solutions, ft_ra(&beta));
         }
         if (!ft_direction(alpha) && !ft_direction(beta))
-            ft_add_sol(solutions, ft_rrr(&alpha, &beta));
+            ft_add_sol(&solutions, ft_rrr(&alpha, &beta));
     }
 
 	printf("Ajout de la liste d'operations aux operations effectuees\n");
@@ -77,7 +77,7 @@ t_sol   *ft_atob(t_stack *alpha, t_stack *beta, int trans_len)
 
     solutions = ft_new_sol();
     while (i < trans_len)
-        ft_add_sol(solutions, ft_pa(&alpha, &beta));
+        ft_add_sol(&solutions, ft_pa(&alpha, &beta));
 
 	printf("Tranfert OK\n");
 	fflush(stdout);
@@ -103,7 +103,7 @@ t_sol   *ft_btoa(t_stack *alpha, t_stack *beta, int trans_len)
 
 	solutions = ft_new_sol();
     while (i < trans_len)
-        ft_add_sol(solutions, ft_pa(&beta, &alpha));
+        ft_add_sol(&solutions, ft_pa(&beta, &alpha));
     
 	printf("Transfert termine\n");
 	fflush(stdout);
@@ -140,7 +140,7 @@ t_sol   *ft_new_sol(void)
 	return (sol);
 }
 
-void    ft_add_sol(t_sol *solutions, char *sol)
+void    ft_add_sol(t_sol **solutions, char *sol)
 {
     t_sol   *new;
     t_sol   *tmp;
@@ -148,14 +148,18 @@ void    ft_add_sol(t_sol *solutions, char *sol)
     printf("Entree dans add_sol\n");
 	fflush(stdout);
 
-	tmp = solutions;
-	if (solutions == NULL)
+	tmp = *solutions;
+	if (!(*solutions))
 	{
-		solutions = ft_new_sol();
-		solutions->operations = ft_strcpy(solutions->operations, sol);
+		printf("L'espace solution est null, nous allons en creer un\n");
+		fflush(stdout);
+		*solutions = ft_new_sol();
+		(*solutions)->operations = ft_strcpy((*solutions)->operations, sol);
 	}
 	else
 	{
+		printf("Apparemment l'espace solution existe, on le parcours\n");
+		fflush(stdout);
    		while (tmp->next != NULL)
         	tmp = tmp->next;
     	new = ft_new_sol();

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:15:58 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 15:22:16 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/05 10:40:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,22 +182,22 @@ char	*ft_move(t_stack **alpha, t_stack **beta)
 	printf("Entree dans ft_move\n");
 	fflush(stdout);
 
-	if ((*alpha)->element > (*alpha)->next->element &&
+	if (*beta && (*alpha)->element > (*alpha)->next->element &&
 			(*beta)->element < (*beta)->next->element)
 		return (ft_ss(alpha, beta));
 	else if ((*alpha)->element > (*alpha)->next->element)
 		return (ft_sa(alpha));
-	else if ((*beta)->element < (*beta)->next->element)
+	else if (*beta && (*beta)->element < (*beta)->next->element)
 		return(ft_sa(beta));
-	else if (ft_direction(*alpha) && ft_direction(*beta))
+	else if (*beta && ft_direction(*alpha) && ft_direction(*beta))
 		return (ft_rr(alpha, beta));
 	else if (ft_direction(*alpha))
 		return (ft_ra(alpha));
-	else if (ft_direction(*beta))
+	else if (*beta && ft_direction(*beta))
 		return (ft_ra(beta));
 	else if (!ft_direction(*alpha))
 		return (ft_rra(alpha));
-	else if (!ft_direction(*beta))
+	else if (*beta && !ft_direction(*beta))
 		return (ft_rra(beta));
 	else
 		return (ft_rrr(alpha, beta));	
