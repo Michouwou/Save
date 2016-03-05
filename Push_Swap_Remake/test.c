@@ -18,23 +18,32 @@ int main()
 	t_stack *btest;
 	t_sol	*testsol;
 
-	test = NULL; 
+	test = NULL;
+	btest = NULL;
 	testsol = NULL;
 	ft_add_sol(&testsol, "ra");
 	ft_add_sol(&testsol, "pa");
 	ft_add_sol(&testsol, "rra");
 	ft_add_sol(&testsol, "sb");
 	
-	ft_add_number(&test, 7);
-	ft_add_number(&test, 8);
+	ft_add_number(&test, 79);
+	ft_add_number(&test, 28);
 	ft_add_number(&test, 5);
-	ft_add_number(&test, 4);
+	ft_add_number(&test, 42);
 	ft_add_number(&test, 3);
-	ft_add_number(&test, 2);
+	ft_add_number(&test, 12);
+	ft_add_number(&btest, 8);
+	ft_add_number(&btest, 31);
+	ft_add_number(&btest, 4);
+	ft_add_number(&btest, 41);
+	ft_add_number(&btest, 300);
+	ft_add_number(&btest, 14);
+	
 
-	ft_display(testsol, ft_strnew(5));
 	ft_print_stack(test);
-	printf("%d Alors?\n", ft_direction(test));
-	fflush(stdout);
+	ft_print_stack(btest);
+	ft_restack(test, btest);
+	ft_print_stack(test);
+	ft_print_stack(btest);
   return(0);	
 }
