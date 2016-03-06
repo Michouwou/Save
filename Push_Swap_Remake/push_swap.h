@@ -16,6 +16,7 @@
 # include "libft.h"
 # include <stdlib.h>
 # include <stddef.h>
+# include <stdio.h>
 
 /**
  * Bon, a retenir, 1 c'est try_ab, 2 c'est atob, et 0 btoa
