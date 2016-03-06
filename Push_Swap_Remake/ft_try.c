@@ -19,50 +19,20 @@
 
 t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta)
 {
-    t_sol *solutions;
-   
-  	printf("Entree dans ft_try_ab\n");
-	fflush(stdout);
-
-    solutions = NULL;
-	int i = 0;
-	
-	printf("Entre dans la boucle de try_ab\n");
-	fflush(stdout);
-
-    while (ft_is_sorted(alpha) == 0 || ft_is_sorted(beta) == 0)
-    {
-		if (i++ >= 5)
-			exit(0);
-        if (alpha->element > alpha->next->element)
-            ft_add_sol(&solutions, ft_sa(&alpha));
-        if (beta->element < beta->next->element)
-            ft_add_sol(&solutions, ft_sa(&beta));
-        if (ft_direction(alpha) && ft_direction(beta))
-            ft_add_sol(&solutions, ft_rr(&alpha, &beta));
-        if (ft_direction(alpha) && !ft_direction(beta))
-        {
-            ft_add_sol(&solutions, ft_ra(&alpha));
-            ft_add_sol(&solutions, ft_rra(&beta));
-        }
-        if (!ft_direction(alpha) && ft_direction(beta))
-        {
-            ft_add_sol(&solutions, ft_rra(&alpha));
-            ft_add_sol(&solutions, ft_ra(&beta));
-        }
-        if (!ft_direction(alpha) && !ft_direction(beta))
-            ft_add_sol(&solutions, ft_rrr(&alpha, &beta));
-    }
-
-	printf("Ajout de la liste d'operations aux operations effectuees\n");
-	fflush(stdout);
-
-    ft_add_num_sol(solutions, ft_restack(alpha, beta));
+    t_sol   *tmp;
     
-	printf("Sortie de try_ab\n");
-	fflush(stdout);
-	
-	return (solutions);
+    tmp = NULL;
+    while (!ft_is_sorted(alpha) || !ft_is_sorted(beta))
+    {
+        while (ft_position(alpha) < -2 && ft_position(beta) < -2)
+            ft_add_sol(&tmp, ft_rrr(&alpha, &beta));
+        while (ft_position(alpha) > 2 && ft_position(beta) > 2)
+            ft_add_sol(&tmp, ft_rr(&alpha, &beta));
+        ft_middle_swap(&alpha, ft_position(alpha), &tmp);
+        ft_middle_swap(&beta, ft_position(beta), &tmp);
+    }
+    ft_add_num_sol(solutions, ft_restack(alpha, beta));
+	return (tmp);
 }
 
 t_sol   *ft_atob(t_stack *alpha, t_stack *beta, int trans_len)

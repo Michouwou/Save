@@ -65,5 +65,6 @@ int		ft_position(t_stack *beta, t_stack *alpha);
 int		ft_direction(t_stack *alpha);
 void	ft_print_stack(t_stack *alpha);
 t_stack	*ft_stack_copy(t_stack *alpha);
+void    ft_middle_swap(t_stack **alpha, int position, t_sol **solution);
 
 #endif
