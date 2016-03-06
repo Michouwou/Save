@@ -12,7 +12,26 @@
 
 #include "lem_in.h"
 
-char    **ft_get_args(char *filename, int *lines)
+static void ft_increase_tab(char ***to_up, int len)
+{
+    char    **tmp;
+    int     i;
+    
+    i = 0;
+    tmp = *to_up;
+    *to_up = (char**)malloc(sizeof(char*) * len + 6);
+    while (i < len)
+    {
+        (*to_up^)[i] = ft_strcpy(*to_up[i], tmp[i]);
+        i++;
+    }
+    i = 0;
+    while (i < len)
+        free(tmp[i++]);
+    free(tmp);
+}
+
+char        **ft_get_args(char *filename, int *lines)
 {
     int     fd;
     int     status;
@@ -30,7 +49,7 @@ char    **ft_get_args(char *filename, int *lines)
         status = get_next_line(fd, &(result[line_num]));
         ++line_num;
         if (!(line_num % 6))
-            ft_increase_tab(&result);
+            ft_increase_tab(&result, line_num);
         if (status == -1)
             ft_block();
     }
