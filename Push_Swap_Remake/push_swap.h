@@ -61,7 +61,7 @@ int		ft_stack_len(t_stack *alpha);
 char	*ft_move(t_stack **alpha, t_stack **beta);
 char	*ft_extract_options(char **argv);
 void	ft_stop(void);
-int		ft_position(t_stack *beta, t_stack *alpha);
+int		ft_position(t_stack *alpha);
 int		ft_direction(t_stack *alpha);
 void	ft_print_stack(t_stack *alpha);
 t_stack	*ft_stack_copy(t_stack *alpha);

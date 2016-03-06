@@ -31,7 +31,6 @@ t_sol   *ft_try_ab(t_stack *alpha, t_stack *beta)
         ft_middle_swap(&alpha, ft_position(alpha), &tmp);
         ft_middle_swap(&beta, ft_position(beta), &tmp);
     }
-    ft_add_num_sol(solutions, ft_restack(alpha, beta));
 	return (tmp);
 }
 

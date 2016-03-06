@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_position.c                                      :+:      :+:    :+:   */
+/*   ft_is_on_place.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,32 +12,26 @@
 
 #include "push_swap.h"
 
-/**
- * Cette fonction est sensee renvoyer la position relative du premier element de b
- * par rapport a la pile a
- **/
-
-int		ft_position(t_stack *alpha)
+int ft_is_on_place(t_stack *alpha, int position)
 {
-	t_stack	*tmpa;
-	t_stack *tmpb;
-	int		i;
-	int		j;
-	
-	i = 0;
-	j = -2;
-	tmpa = alpha;
-	tmpb = alpha->prev;
-	while (tmpa->next->first != 1 && tmpb->first != 1)
-	{
-		if (tmpa->next->element < tmpa->element)
-			return (i);
-		if (tmpb->prev->element > tmpb->element)
-			return (j);
-		i++;
-		j--;
-		tmpa = tmpa->next;
-		tmpb = tmpb->prev;
-	}
-	return (0);
+    t_stack *tmpa;
+    t_stack *tmpb;
+    
+    tmp = alpha;
+    while (position-- && position++)
+        tmp = tmp->next;
+    tmpb = tmpa;
+    while (!tmpb->first)
+    {
+        if (tmpb->prev->element > tmpb->element)
+            return (0);
+        tmpb = tmpb->prev;
+    }
+    while (!tmpa->next->first)
+    {
+        if (tmpa->next->element < tmpa->element)
+            return (0);
+        tmpa = tmpa->next;
+    }
+    return (1);
 }
