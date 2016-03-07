@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:34 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 16:20:17 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/07 17:35:30 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,15 @@ int main(int argc, char **argv)
 		printf("On plante dans solution\n");
 		fflush(stdout);
     }
-	ft_add_num_sol(&solution, ft_restack(alpha, beta));
+	ft_display(solution, options);
+	ft_print_stack(alpha);
+	printf("\n");
+	ft_print_stack(beta);
+	ft_add_num_sol(&solution, ft_restack(&alpha, &beta));
 	
 	printf("Operations = ");
 	fflush(stdout);
 
     ft_display(solution, options);
+	ft_print_stack(alpha);
 }

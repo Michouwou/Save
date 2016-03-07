@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 14:25:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 15:48:24 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/07 17:29:20 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,33 @@
  * dans leur ordre respectif
  **/
 
-t_sol	*ft_restack(t_stack *alpha, t_stack *beta)
+t_sol	*ft_restack(t_stack **alpha, t_stack **beta)
 {
 	t_sol	*solution;
-	t_stack *tmp;
 
 	printf("Entree dans ft_restack\n");
 	fflush(stdout);
 	
 	solution = NULL;
-	while (beta)
+	while (*beta)
 	{
-		tmp = alpha;
-		printf("WAHOU!\n");
-		fflush(stdout);
-		while (tmp->next)
-			tmp = tmp->next;
-		if (beta->element < alpha->element && (tmp->element < beta->element ||
-				tmp->element > alpha->element))
-			ft_add_sol(&solution, ft_pa(&beta, &alpha));
-		else if (beta->element < alpha->element)
-			ft_add_sol(&solution, ft_rra(&alpha));
-		else if (beta->element > alpha->element && beta->element < tmp->element)
-			ft_add_sol(&solution, ft_ra(&alpha));
-		else if (beta->element > alpha->element && beta->element > tmp->element)
+		if (ft_direction(*alpha, (*beta)->element) > ft_stack_len(*alpha) / 2)
+			ft_add_sol(&solution, ft_rra(alpha));
+		else if (ft_direction(*alpha, (*beta)->element) > 0)
+			ft_add_sol(&solution, ft_ra(alpha));
+		else if (ft_direction(*alpha, (*beta)->element) == 0)
 		{
-			ft_add_sol(&solution, ft_pa(&beta, &alpha));
-			ft_add_sol(&solution, ft_ra(&alpha));
+			ft_add_sol(&solution, ft_ra(alpha));
+			ft_add_sol(&solution, ft_pa(beta, alpha));
 		}
 	}
-
+	while (!ft_is_sorted(*alpha))
+	{
+		if (ft_position(*alpha))
+			ft_add_sol(&solution, ft_rra(alpha));
+		else
+			ft_add_sol(&solution, ft_ra(alpha));
+	}
 	printf("Sortie de la boucle de restack, tout s'est bien passe?\n");
 	ft_display(solution, ft_strnew(5));
 	fflush(stdout);

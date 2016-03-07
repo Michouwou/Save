@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 16:04:43 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/07 17:18:27 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void    ft_display(t_sol *solution, char *options);
 t_sol   *ft_new_sol(void);
 void    ft_add_sol(t_sol **solutions, char *sol);
 void    ft_add_num_sol(t_sol **solutions, t_sol *to_add);
-t_sol	*ft_restack(t_stack *alpha, t_stack *beta);
+t_sol	*ft_restack(t_stack **alpha, t_stack **beta);
 char	*ft_extract_options(char **argv);
 void	ft_stop(void);
 int		ft_position(t_stack *beta);
@@ -61,4 +61,5 @@ int		ft_stack_len(t_stack *alpha);
 int		ft_stack_min(t_stack *alpha);
 int		ft_stack_max(t_stack *alpha);
 int		ft_circle_check(t_stack *alpha);
+int		ft_direction(t_stack *alpha, int number);
 #endif
