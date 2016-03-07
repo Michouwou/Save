@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:33:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/05 10:28:13 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/07 16:05:53 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,52 +18,40 @@
  **/
 
 
-t_sol	*ft_core(t_stack *alpha, t_stack *beta, char *options)
+void ft_core(t_stack **alpha, t_stack **beta, t_sol **solution, char *options)
 {
-	t_sol	*solution;
-	int		min;
-	int		try;
+	int		min_max_med[3];
+	int		i;
 
 	printf("Nous venons d'entrer dans ft_core, les piles valent:\n");
-	ft_print_stack(alpha);
+	ft_print_stack(*alpha);
 	printf("\n");
-	ft_print_stack(beta);
+	ft_print_stack(*beta);
 	printf("\n");
 	fflush(stdout);
+	min_max_med[0] = ft_stack_min(*alpha);
+	min_max_med[1] = ft_stack_max(*alpha);
+	min_max_med[2] = ft_stack_med(*alpha);
 
-	while (!ft_is_sorted(alpha) || !ft_is_sorted(beta))
+	while (!ft_is_sorted(*alpha) || !ft_is_sorted(*beta))
 	{
-		try = -1;
-		min = ft_sol_len(ft_try_ab(alpha, beta));
-
-		printf("Min vient d'etre calcule\n");
-		fflush(stdout);
-
-		while (++try < ft_stack_len(alpha) / 2 - ft_stack_len(beta))
-			if (ft_sol_len(ft_atob(alpha, beta, try)) < min)
-				min = (ft_sol_len(ft_atob(alpha, beta, try)) * -1);
-		
-		printf("On vient d'essayer en transferant a vers b\n");
-		fflush(stdout);
-
-		try = -1;
-		while (++try < ft_stack_len(beta))
-			if (ft_sol_len(ft_btoa(alpha, beta, try)) < (min < 0) ? -min : min)
-				min = 0;
-
-		printf("On vient d'essayer en transferant b vers a\n");
-		fflush(stdout);
-
-		if (min == 0)
-			ft_add_sol(&solution, ft_pa(&beta, &alpha));
-		else if (min < 0)
-			ft_add_sol(&solution, ft_pa(&alpha, &beta));
+		if ((*alpha)->element < min_max_med[2])
+			ft_add_sol(solution, ft_pa(alpha, beta));
+		else if ((*alpha)->element == min_max_med[1])
+			ft_add_sol(solution, ft_ra(alpha));
+		else if ((*alpha)->element > (*alpha)->next->element)
+			ft_add_sol(solution, ft_sa(alpha));
 		else
-			ft_add_sol(&solution, ft_move(&alpha, &beta));
-
-		printf("on vient d'ajouter le minimum local a la liste\n");
-		fflush(stdout);
-	
+		{
+			i = ft_position(*alpha);
+			if (i < 0)
+				while (i++)
+					ft_add_sol(solution, ft_rra(alpha));
+			if (i > 0)
+				while (i--)
+					ft_add_sol(solution, ft_ra(alpha));
+		}
+		if (ft_circle_check(*alpha))
+			ft_add_sol(solution, ft_ra(alpha));
 	}
-	return (solution);
 }

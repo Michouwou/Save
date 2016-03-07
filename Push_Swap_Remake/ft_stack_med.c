@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/07 11:02:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 11:49:13 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/07 14:40:47 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,12 @@ static int		*ft_to_tab(t_stack *alpha)
 	return (ret);
 }
 
-static int		ft_tab_len(int *tab)
-{
-	return (sizeof(tab) / 4);
-}
-
-static int		ft_tab_is_sorted(int *tab)
+static int		ft_tab_is_sorted(int *tab, t_stack *alpha, int len)
 {
 	int i;
 
 	i = 0;
-	while (i < ft_tab_len(tab) - 1)
+	while (i < len - 1)
 	{
 		if (tab[i] > tab[i + 1])
 			return (0);
@@ -56,14 +51,16 @@ static int		ft_tab_is_sorted(int *tab)
 	return (1);
 }
 
-static void		ft_sort_tab(int **tab)
+static int		ft_sort_tab(int **tab, t_stack *alpha)
 {
 	int	i;
+	int	len;
 
 	i = 0;
-	while (!ft_tab_is_sorted(*tab))
+	len = ft_stack_len(alpha);
+	while (!ft_tab_is_sorted(*tab, alpha, len))
 	{
-		if (i == ft_tab_len(*tab) - 1)
+		if (i == len - 1)
 			i = 0;
 		if ((*tab)[i] > (*tab)[i + 1])
 		{
@@ -73,6 +70,7 @@ static void		ft_sort_tab(int **tab)
 		}
 		i++;
 	}
+	return (len);
 }
 
 int			ft_stack_med(t_stack *alpha)
@@ -80,9 +78,10 @@ int			ft_stack_med(t_stack *alpha)
 	t_stack	*tmp;
 	int		med;
 	int		*tab;
+	int		len;
 
 	tab = ft_to_tab(alpha);
-	ft_sort_tab(&tab);
-	med = tab[ft_tab_len(tab) / 2 + 1];
+	len = ft_sort_tab(&tab, alpha);
+	med = tab[len / 2];
 	return (med);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 16:16:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 13:17:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/07 13:22:01 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,18 @@
 
 int		ft_position(t_stack *alpha)
 {
-	t_stack	*tmpa;
-	t_stack *tmpb;
+	t_stack	*tmp;
 	int		i;
 	int		j;
 	
 	i = 0;
-	j = -2;
-	tmpa = alpha;
-	tmpb = alpha->prev;
-	while (tmpa->next->first != 1 && tmpb->first != 1)
+	tmp = alpha;
+	while (tmp->next)
 	{
-		if (tmpa->next->element < tmpa->element)
-			return (i);
-		if (tmpb->prev->element > tmpb->element)
-			return (j);
+		if (tmp->next->element < tmp->element)
+			return (i > ft_stack_len(alpha) ? ft_stack_len(alpha) - i : i);
 		i++;
-		j--;
-		tmpa = tmpa->next;
-		tmpb = tmpb->prev;
+		tmp = tmp->next;
 	}
 	return (0);
 }

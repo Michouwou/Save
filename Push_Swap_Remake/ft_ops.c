@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:15:58 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 11:48:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/07 16:19:49 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ t_stack *ft_create_element(char name)
 
 	printf("On est dans la creation d'un element\n");
 	fflush(stdout);
-	
+
 	new = (t_stack*)malloc(sizeof(t_stack));
 	new->element = 0;
-	new->next = new;
-	new->prev = new;
+	new->next = NULL;
+	new->prev = NULL;
 	new->name = ft_strnew(1);
 	new->name = ft_strcpy(new->name, name == 'a' ? "a" : "b");
-	
+
 	printf("Fin de la creation\n");
 	fflush(stdout);
 
@@ -41,15 +41,17 @@ void    ft_add_number(t_stack **alpha, int number)
 {
 	t_stack *tmp;
 
-	
+
 	printf("Ajout d'element\n");
 	fflush(stdout);
 
 	if (!*alpha)
 	{
+		printf("Affection de l'element\n");
+		fflush(stdout);
 		*alpha = ft_create_element('a');
 		(*alpha)->element = number;
-		
+
 		printf("Affection de l'element OK\n");
 		fflush(stdout);
 	}
@@ -61,7 +63,7 @@ void    ft_add_number(t_stack **alpha, int number)
 		tmp->element = number;
 		*alpha = tmp;
 	}
-	
+
 	printf("Sortie de la fonction d'ajout d'element\n");
 	fflush(stdout);
 }
@@ -79,7 +81,7 @@ char    *ft_ra(t_stack **alpha)
 
 	tmp = *alpha;
 	*alpha = (*alpha)->next;
-	*alpha->prev = NULL;
+	(*alpha)->prev = NULL;
 	tmp->next = NULL;
 	tmp2 = *alpha;
 	while (tmp2->next)
@@ -154,13 +156,36 @@ char    *ft_pa(t_stack **alpha, t_stack **beta)
 	t_stack *tmp;
 	printf("ft_pa\n");
 	fflush(stdout);
-
-	tmp = *alpha;
-	*alpha = (*alpha)->next;
-	tmp->next = (*beta);
-	(*beta)->prev = tmp;
-	*beta = tmp;
-	(*alpha)->prev = NULL;
-	(*beta)->name = ft_strcpy((*beta)->name, "b");
+	if (!(*alpha)->next)
+	{
+		(*alpha)->next = *beta;
+		printf("YO 1\n");
+		fflush(stdout);
+		(*beta)->prev = *alpha;
+		printf("YO 2\n");
+		fflush(stdout);
+		*beta = *alpha;
+		*alpha = NULL;
+		(*beta)->name = ft_strcpy((*beta)->name, !ft_strcmp((*beta)->next->name, "a") ? "a" : "b");
+		return ((*beta)->name[0] == 'b' ? "pa" : "pb");
+	}
+	else if (*beta)
+	{
+		tmp = *alpha;
+		*alpha = (*alpha)->next;
+		tmp->next = (*beta);
+		(*beta)->prev = tmp;
+		*beta = tmp;
+		(*alpha)->prev = NULL;
+		(*beta)->name = ft_strcpy((*beta)->name, !ft_strcmp((*alpha)->name, "a") ? "b" : "a");
+	}
+	else
+	{
+		*beta = *alpha;
+		*alpha = (*alpha)->next;
+		(*alpha)->prev = NULL;
+		(*beta)->next = NULL;
+		(*beta)->name = ft_strcpy((*beta)->name, "b");
+	}
 	return (!ft_strcmp((*alpha)->name, "b") ? "pb" : "pa");
 }

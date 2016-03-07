@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:15:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/05 10:08:04 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/07 13:48:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 int     ft_is_sorted(t_stack *alpha)
 {
 	t_stack	*tmp;
-	tmp = alpha->next;
+	tmp = alpha;
 
 	printf("Entree dans is_sorted, changement necessaires pour que alpha puisse etre nulle\n");
 	fflush(stdout);
 
-	while (tmp->next->first == 0)
+	while (tmp->next)
 	{
-		if (tmp->prev->element < tmp->element && tmp->element < tmp->next->element)
+		if (tmp->element < tmp->next->element)
 			tmp = tmp->next;
 		else
 			return(0);

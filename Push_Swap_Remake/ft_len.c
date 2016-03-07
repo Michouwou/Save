@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 13:35:16 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 13:06:35 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/07 13:21:16 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int		ft_stack_len(t_stack *alpha)
 	i = 0;
 	if (alpha)
 	{
-		i++;
-		alpha = alpha->next;
-		while (alpha->first == 0)
+		while (alpha)
 		{
 			alpha = alpha->next;
 			i++;

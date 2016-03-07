@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 11:50:01 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/07 15:59:56 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,18 +67,19 @@ void    ft_add_sol(t_sol **solutions, char *sol)
 	fflush(stdout);
 }
 
-void    ft_add_num_sol(t_sol *solutions, t_sol *to_add)
+void    ft_add_num_sol(t_sol **solutions, t_sol *to_add)
 {
     t_sol   *tmp;
     
 	printf("Entree dans add_num_sol\n");
 	fflush(stdout);
 
-    tmp = solutions;
+    tmp = *solutions;
     while (tmp->next != NULL)
         tmp = tmp->next;
     tmp->next = to_add;
-
+	
+	ft_display(*solutions, NULL);
 	printf("Sortie de add_num_sol\n");
 	fflush(stdout);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 14:25:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 12:14:48 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/07 15:48:24 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,13 @@ t_sol	*ft_restack(t_stack *alpha, t_stack *beta)
 
 	printf("Entree dans ft_restack\n");
 	fflush(stdout);
-
+	
+	solution = NULL;
 	while (beta)
 	{
 		tmp = alpha;
+		printf("WAHOU!\n");
+		fflush(stdout);
 		while (tmp->next)
 			tmp = tmp->next;
 		if (beta->element < alpha->element && (tmp->element < beta->element ||
@@ -45,6 +48,7 @@ t_sol	*ft_restack(t_stack *alpha, t_stack *beta)
 	}
 
 	printf("Sortie de la boucle de restack, tout s'est bien passe?\n");
+	ft_display(solution, ft_strnew(5));
 	fflush(stdout);
 
 	return (solution);
