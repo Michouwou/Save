@@ -19,13 +19,14 @@
 
 typedef struct  s_room
 {
-    struct s_ant    **content;
+    int             is_ful;
     struct s_room   **links;
+    char            *name;
 }               t_room;
 
 typedef struct  s_ant
 {
-    t_room          **actual;
+    t_room          *actual;
     t_room          **path;
     int             moved;
     char            *name;
@@ -33,14 +34,12 @@ typedef struct  s_ant
 
 void    ft_display_state(t_ant *ants, t_room *rooms);
 void    ft_build_path(t_ant *ants, t_room *rooms);
-void    ft_parse(char **argv, int argc);
 t_ant   *ft_get_ants(char **ants, int num);
 t_room  *ft_get_rooms(char **rooms, int num);
-void    ft_iterate(t_ant *ants, t_room *rooms);
+void    ft_iterate(t_ant **ants, t_room **rooms);
 void    ft_block();
-void    ft_check_args(char **argv, int argc);
-t_ant   *ft_make_ant();
-t_room  *ft_make_room();
+t_ant   *ft_make_ant(char *name);
+t_room  *ft_make_room(int number);
 t_room  *ft_smallest_path(t_room *rooms);
 void    ft_move(t_ant *ants);
 
