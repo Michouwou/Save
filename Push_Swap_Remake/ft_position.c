@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 16:16:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/08 10:41:58 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/08 15:10:37 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,39 @@ int		ft_position(t_stack *alpha)
 	t_stack	*tmp;
 	int		i;
 	int		j;
-	
+
 	i = 0;
 	tmp = alpha;
-	while (tmp->next)
+	if (ft_stack_len(alpha) > 3)
 	{
-		if (tmp->next->element < tmp->element)
-			return (i > ft_stack_len(alpha) / 2 ? i - ft_stack_len(alpha) : i);
-		i++;
-		tmp = tmp->next;
+		while (tmp->next)
+		{
+			if (tmp->next->element < tmp->element)
+				return (i > (ft_stack_len(alpha) - 2) / 2 ? i - ft_stack_len(alpha) : i);
+			i++;
+			tmp = tmp->next;
+		}
+	}
+	return (0);
+}
+
+int		ft_bposition(t_stack *alpha)
+{
+	t_stack	*tmp;
+	int		i;
+	int		j;
+
+	i = 0;
+	tmp = alpha;
+	if (ft_stack_len(alpha) > 3)
+	{
+		while (tmp->next)
+		{
+			if (tmp->next->element > tmp->element)
+				return (i > (ft_stack_len(alpha) - 2) / 2 ? i - ft_stack_len(alpha) : i);
+			i++;
+			tmp = tmp->next;
+		}
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:34 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/08 10:49:29 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/08 15:57:20 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int main(int argc, char **argv)
 	 	ft_core(&alpha, &beta, &solution, options);
     }
 	ft_add_num_sol(&solution, ft_restack(&alpha, &beta));
-	
+
+	ft_ator(&solution);	
     ft_display(solution, options);
+	ft_print_stack(alpha);
 }

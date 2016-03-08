@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/08 09:51:57 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/08 15:57:44 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,6 @@ int		ft_stack_min(t_stack *alpha);
 int		ft_stack_max(t_stack *alpha);
 int		ft_circle_check(t_stack *alpha);
 int		ft_direction(t_stack *alpha, int number);
+int		ft_bposition(t_stack *alpha);
+void	ft_ator(t_sol **solution);
 #endif
