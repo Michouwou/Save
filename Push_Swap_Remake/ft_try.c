@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:16:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 16:54:47 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/08 10:48:36 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,4 @@ void    ft_add_num_sol(t_sol **solutions, t_sol *to_add)
     while (tmp->next != NULL)
         tmp = tmp->next;
     tmp->next = to_add;
-	
-	ft_display(*solutions, NULL);
 }

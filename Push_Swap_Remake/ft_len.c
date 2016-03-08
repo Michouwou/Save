@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 13:35:16 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 13:21:16 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/08 10:47:11 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,6 @@ int		ft_stack_len(t_stack *alpha)
 			i++;
 		}
 	}
-
-	printf("Sortie de stack_len, valeur de retour = %d\n", i);
-	fflush(stdout);
-
 	return (i);
 }
 
@@ -47,9 +43,5 @@ int		ft_sol_len(t_sol *solution)
 		solution = solution->next;
 		i++;
 	}
-
-	printf("Sortie de sol_len, valeur de retour = %d\n", i);
-	fflush(stdout);
-
 	return (i);
 }

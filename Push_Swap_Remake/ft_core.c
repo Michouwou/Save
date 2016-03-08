@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:33:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 17:30:52 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/08 10:49:24 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@ void ft_core(t_stack **alpha, t_stack **beta, t_sol **solution, char *options)
 	int		min_max_med[3];
 	int		i;
 
-	printf("Nous venons d'entrer dans ft_core, les piles valent:\n");
-	ft_print_stack(*alpha);
-	printf("\n");
-	ft_print_stack(*beta);
-	printf("\n");
-	fflush(stdout);
 	min_max_med[0] = ft_stack_min(*alpha);
 	min_max_med[1] = ft_stack_max(*alpha);
 	min_max_med[2] = ft_stack_med(*alpha);
@@ -51,7 +45,7 @@ void ft_core(t_stack **alpha, t_stack **beta, t_sol **solution, char *options)
 				while (i--)
 					ft_add_sol(solution, ft_ra(alpha));
 		}
-		if (ft_circle_check(*alpha))
+		if (ft_circle_check(*alpha) && ft_position(*alpha) == 0)
 			ft_add_sol(solution, ft_ra(alpha));
 	}
 }

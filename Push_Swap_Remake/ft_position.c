@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 16:16:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 17:35:21 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/08 10:41:58 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_direction(t_stack *alpha, int number)
 			tmp = tmp->next;
 			i++;
 		}
-		return (i);
+		return (i == 0 ? -1 : i);
 	}
 	while (tmp->next)
 	{

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 14:25:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 17:29:20 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/08 10:48:15 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ t_sol	*ft_restack(t_stack **alpha, t_stack **beta)
 {
 	t_sol	*solution;
 
-	printf("Entree dans ft_restack\n");
-	fflush(stdout);
 	
 	solution = NULL;
 	while (*beta)
@@ -31,6 +29,8 @@ t_sol	*ft_restack(t_stack **alpha, t_stack **beta)
 			ft_add_sol(&solution, ft_rra(alpha));
 		else if (ft_direction(*alpha, (*beta)->element) > 0)
 			ft_add_sol(&solution, ft_ra(alpha));
+		else if (ft_direction(*alpha, (*beta)->element) == -1)
+			ft_add_sol(&solution, ft_pa(beta, alpha));
 		else if (ft_direction(*alpha, (*beta)->element) == 0)
 		{
 			ft_add_sol(&solution, ft_ra(alpha));
@@ -39,14 +39,11 @@ t_sol	*ft_restack(t_stack **alpha, t_stack **beta)
 	}
 	while (!ft_is_sorted(*alpha))
 	{
-		if (ft_position(*alpha))
+		if (ft_position(*alpha) < 0)
 			ft_add_sol(&solution, ft_rra(alpha));
 		else
 			ft_add_sol(&solution, ft_ra(alpha));
 	}
-	printf("Sortie de la boucle de restack, tout s'est bien passe?\n");
-	ft_display(solution, ft_strnew(5));
-	fflush(stdout);
 
 	return (solution);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 09:15:58 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/07 16:19:49 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/08 10:51:17 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ t_stack *ft_create_element(char name)
 {
 	t_stack *new;
 
-	printf("On est dans la creation d'un element\n");
-	fflush(stdout);
 
 	new = (t_stack*)malloc(sizeof(t_stack));
 	new->element = 0;
@@ -31,8 +29,6 @@ t_stack *ft_create_element(char name)
 	new->name = ft_strnew(1);
 	new->name = ft_strcpy(new->name, name == 'a' ? "a" : "b");
 
-	printf("Fin de la creation\n");
-	fflush(stdout);
 
 	return (new);
 }
@@ -42,18 +38,12 @@ void    ft_add_number(t_stack **alpha, int number)
 	t_stack *tmp;
 
 
-	printf("Ajout d'element\n");
-	fflush(stdout);
 
 	if (!*alpha)
 	{
-		printf("Affection de l'element\n");
-		fflush(stdout);
 		*alpha = ft_create_element('a');
 		(*alpha)->element = number;
 
-		printf("Affection de l'element OK\n");
-		fflush(stdout);
 	}
 	else
 	{
@@ -64,8 +54,6 @@ void    ft_add_number(t_stack **alpha, int number)
 		*alpha = tmp;
 	}
 
-	printf("Sortie de la fonction d'ajout d'element\n");
-	fflush(stdout);
 }
 
 /**
@@ -76,8 +64,6 @@ char    *ft_ra(t_stack **alpha)
 {
 	t_stack	*tmp;
 	t_stack *tmp2;
-	printf("ft_ra\n");
-	fflush(stdout);
 
 	tmp = *alpha;
 	*alpha = (*alpha)->next;
@@ -101,8 +87,6 @@ char    *ft_rra(t_stack **alpha)
 {	
 	t_stack	*tmp;
 	t_stack *tmp2;
-	printf("ft_rra\n");
-	fflush(stdout);
 
 	tmp = *alpha;
 	while (tmp->next)
@@ -117,8 +101,6 @@ char    *ft_rra(t_stack **alpha)
 
 char    *ft_rrr(t_stack **alpha, t_stack **beta)
 {	
-	printf("ft_rrr\n");
-	fflush(stdout);
 
 	ft_rra(alpha);
 	ft_rra(beta);
@@ -127,8 +109,6 @@ char    *ft_rrr(t_stack **alpha, t_stack **beta)
 
 char    *ft_sa(t_stack **alpha)
 {	
-	printf("ft_sa\n");
-	fflush(stdout);
 
 	t_stack *tmp;
 
@@ -143,8 +123,6 @@ char    *ft_sa(t_stack **alpha)
 
 char    *ft_ss(t_stack **alpha, t_stack **beta)
 {	
-	printf("ft_ss\n");
-	fflush(stdout);
 
 	ft_sa(alpha);
 	ft_sa(beta);
@@ -154,16 +132,10 @@ char    *ft_ss(t_stack **alpha, t_stack **beta)
 char    *ft_pa(t_stack **alpha, t_stack **beta)
 {	
 	t_stack *tmp;
-	printf("ft_pa\n");
-	fflush(stdout);
 	if (!(*alpha)->next)
 	{
 		(*alpha)->next = *beta;
-		printf("YO 1\n");
-		fflush(stdout);
 		(*beta)->prev = *alpha;
-		printf("YO 2\n");
-		fflush(stdout);
 		*beta = *alpha;
 		*alpha = NULL;
 		(*beta)->name = ft_strcpy((*beta)->name, !ft_strcmp((*beta)->next->name, "a") ? "a" : "b");
