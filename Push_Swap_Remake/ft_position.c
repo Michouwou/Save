@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 16:16:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/04 13:17:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/08 15:10:37 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,70 @@
  * par rapport a la pile a
  **/
 
+int		ft_direction(t_stack *alpha, int number)
+{
+	t_stack	*tmp;
+	int		i;
+
+	tmp = alpha;
+	i = 0;
+	if (number < ft_stack_min(alpha))
+	{
+		while (tmp->element != ft_stack_min(alpha))
+		{
+			tmp = tmp->next;
+			i++;
+		}
+		return (i == 0 ? -1 : i);
+	}
+	while (tmp->next)
+	{
+		if (number > tmp->element && number < tmp->next->element)
+			return (i);
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
+}
+
 int		ft_position(t_stack *alpha)
 {
-	t_stack	*tmpa;
-	t_stack *tmpb;
+	t_stack	*tmp;
 	int		i;
 	int		j;
-	
+
 	i = 0;
-	j = -2;
-	tmpa = alpha;
-	tmpb = alpha->prev;
-	while (tmpa->next->first != 1 && tmpb->first != 1)
+	tmp = alpha;
+	if (ft_stack_len(alpha) > 3)
 	{
-		if (tmpa->next->element < tmpa->element)
-			return (i);
-		if (tmpb->prev->element > tmpb->element)
-			return (j);
-		i++;
-		j--;
-		tmpa = tmpa->next;
-		tmpb = tmpb->prev;
+		while (tmp->next)
+		{
+			if (tmp->next->element < tmp->element)
+				return (i > (ft_stack_len(alpha) - 2) / 2 ? i - ft_stack_len(alpha) : i);
+			i++;
+			tmp = tmp->next;
+		}
+	}
+	return (0);
+}
+
+int		ft_bposition(t_stack *alpha)
+{
+	t_stack	*tmp;
+	int		i;
+	int		j;
+
+	i = 0;
+	tmp = alpha;
+	if (ft_stack_len(alpha) > 3)
+	{
+		while (tmp->next)
+		{
+			if (tmp->next->element > tmp->element)
+				return (i > (ft_stack_len(alpha) - 2) / 2 ? i - ft_stack_len(alpha) : i);
+			i++;
+			tmp = tmp->next;
+		}
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 14:25:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/05 10:27:45 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/08 10:48:15 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,33 @@
  * dans leur ordre respectif
  **/
 
-t_sol	*ft_restack(t_stack *alpha, t_stack *beta)
+t_sol	*ft_restack(t_stack **alpha, t_stack **beta)
 {
 	t_sol	*solution;
 
-	printf("Entree dans ft_restack\n");
-	fflush(stdout);
-
-	while (ft_stack_len(beta) != 0)
+	
+	solution = NULL;
+	while (*beta)
 	{
-		if (alpha->element > beta->element &&
-				(alpha->prev->element < beta->element ||
-				alpha->prev->element > alpha->element))
-			ft_add_sol(&solution, ft_pa(&beta, &alpha));
-		else
-			ft_add_sol(&solution, ft_position(beta, alpha) ? ft_ra(&alpha) :
-					ft_rra(&alpha));
+		if (ft_direction(*alpha, (*beta)->element) > ft_stack_len(*alpha) / 2)
+			ft_add_sol(&solution, ft_rra(alpha));
+		else if (ft_direction(*alpha, (*beta)->element) > 0)
+			ft_add_sol(&solution, ft_ra(alpha));
+		else if (ft_direction(*alpha, (*beta)->element) == -1)
+			ft_add_sol(&solution, ft_pa(beta, alpha));
+		else if (ft_direction(*alpha, (*beta)->element) == 0)
+		{
+			ft_add_sol(&solution, ft_ra(alpha));
+			ft_add_sol(&solution, ft_pa(beta, alpha));
+		}
 	}
-
-	printf("Sortie de la boucle de restack, tout s'est bien passe?\n");
-	fflush(stdout);
+	while (!ft_is_sorted(*alpha))
+	{
+		if (ft_position(*alpha) < 0)
+			ft_add_sol(&solution, ft_rra(alpha));
+		else
+			ft_add_sol(&solution, ft_ra(alpha));
+	}
 
 	return (solution);
 }

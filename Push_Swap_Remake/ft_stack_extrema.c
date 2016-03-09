@@ -1,47 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_len.c                                           :+:      :+:    :+:   */
+/*   ft_stack_extrema.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/03 13:35:16 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/08 10:47:11 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/03/07 13:50:19 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/07 14:03:40 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/**
- * Les deux fonctions suivantes calculent respectivement la longueur d'une pile ou
- * d'un espace solution
- **/
-
-int		ft_stack_len(t_stack *alpha)
+int		ft_stack_max(t_stack *alpha)
 {
-	int	i;
-
-	i = 0;
-	if (alpha)
+	int		max;
+	t_stack	*tmp;
+	
+	max = -2147483648;
+	tmp = alpha;
+	while (tmp)
 	{
-		while (alpha)
-		{
-			alpha = alpha->next;
-			i++;
-		}
+		if (tmp->element > max)
+			max = tmp->element;
+		tmp = tmp->next;
 	}
-	return (i);
+	return (max);
 }
 
-int		ft_sol_len(t_sol *solution)
+int		ft_stack_min(t_stack *alpha)
 {
-	int i;
+	int		min;
+	t_stack	*tmp;
 
-	i = 0;
-	while (solution != NULL)
+	min = 2147483647;
+	tmp = alpha;
+	while (tmp)
 	{
-		solution = solution->next;
-		i++;
+		if (tmp->element < min)
+			min = tmp->element;
+		tmp = tmp->next;
 	}
-	return (i);
+	return (min);
 }
