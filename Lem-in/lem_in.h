@@ -19,18 +19,22 @@
 
 typedef struct  s_room
 {
-    int             is_ful;
     struct s_room   **links;
     char            *name;
+    int             is_end;
 }               t_room;
 
 typedef struct  s_ant
 {
     t_room          *actual;
     t_room          **path;
-    int             moved;
-    char            *name;
 }               t_ant;
+
+typedef struct  s_path
+{
+    t_room          *node;
+    struct s_path   *next;
+}
 
 void    ft_display_state(t_ant *ants, t_room *rooms);
 void    ft_build_path(t_ant *ants, t_room *rooms);

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create.c                                        :+:      :+:    :+:   */
+/*   ft_is_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,26 +12,43 @@
 
 #include "lem_in.h"
 
-t_ant   *ft_make_ant(int number)
+int     ft_is_free(t_path **existing_paths, t_path *path)
 {
-    t_ant *new;
+    int     i;
+    t_path  *tmp;
+    t_path  *ex_tmp;
     
-    new = (t_ant*)malloc(sizeof(t_ant));
-    new->actual = (t_room*)malloc(sizeof(t_room));
-    new->path = (t_room**)malloc(sizeof(t_room*));
-    *(new->path) = (t_room*)malloc(sizeof(t_room));
-    return (new);
+    tmp = path;
+    while (!tmp->next->node->is_end)
+    {
+        i = 0;
+        while (existing_paths[i])
+        {
+            ex_tmp = existing_paths[i];
+            while (!ex_tmp->next->node->is_end)
+            {
+                if (!ft_strcmp(ex_tmp->node->name, tmp->node->name))
+                    return (0);
+                ex_tmp = ex_tmp->next;
+            }
+            i++;
+        }
+        tmp = tmp->next;
+    }
+    return (1);
 }
 
-t_room  *ft_make_room(char *name)
+int     ft_path_len(t_path *path)
 {
-    t_room  *new;
+    int     ret;
+    t_path  *tmp;
     
-    new = (t_room*)malloc(sizeof(t_room));
-    new->links = (t_room**)malloc(sizeof(t_room*));
-    *(new->links) = NULL;
-    new->is_end = 0;
-    new->name = ft_strnew(ft_strlen(name));
-    new->name = ft_strcpy(new->name, name);
-    new->name = NULL;
+    ret = 0;
+    tmp = path;
+    while (tmp)
+    {
+        ret++;
+        tmp = tmp->next;
+    }
+    return (ret);
 }

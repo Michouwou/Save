@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create.c                                        :+:      :+:    :+:   */
+/*   ft_is_linked.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,26 +12,18 @@
 
 #include "lem_in.h"
 
-t_ant   *ft_make_ant(int number)
+int     ft_is_linked(t_room **room)
 {
-    t_ant *new;
+    int j;
+    int links;
     
-    new = (t_ant*)malloc(sizeof(t_ant));
-    new->actual = (t_room*)malloc(sizeof(t_room));
-    new->path = (t_room**)malloc(sizeof(t_room*));
-    *(new->path) = (t_room*)malloc(sizeof(t_room));
-    return (new);
-}
-
-t_room  *ft_make_room(char *name)
-{
-    t_room  *new;
-    
-    new = (t_room*)malloc(sizeof(t_room));
-    new->links = (t_room**)malloc(sizeof(t_room*));
-    *(new->links) = NULL;
-    new->is_end = 0;
-    new->name = ft_strnew(ft_strlen(name));
-    new->name = ft_strcpy(new->name, name);
-    new->name = NULL;
+    j = 0;
+    links = 0;
+    while (room->links[j] && room->is_end == 0)
+    {
+        if (ft_is_linked(room->links[j]))
+            links++;
+        j++;
+    }
+    return (links);
 }
