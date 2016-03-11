@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/11 15:15:51 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/11 16:44:50 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * On definira la fin du tableau comme la t_room dont le name est un pointeur sur NULL
  **/
 
-t_path	*ft_build_path(t_room *room, t_path *actual_path)
+t_path	*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 {
 	int		room;
 	int		link;
@@ -33,7 +33,8 @@ t_path	*ft_build_path(t_room *room, t_path *actual_path)
 	while (rooms->links[link]->name != NULL)
 	{
 		tmp = ft_build_path(room->links[link], actual_path);
-		result = ft_min_path(tmp, result);
+		if (ft_path_is_free(tmp, all_paths, int len))
+			result = ft_min_path(tmp, result);
 		link++;
 	}
 	return (result);

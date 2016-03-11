@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min_path.c                                      :+:      :+:    :+:   */
+/*   ft_path_is_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/11 15:12:54 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/11 15:43:40 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/03/11 16:33:14 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/11 16:44:48 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_path	*ft_min_path(t_path *path_one, t_path *path_two)
+int		ft_path_is_free(t_path *path, t_path **all_paths, int len)
 {
-	int		lena;
-	int		lenb;
+	int		i;
+	t_path	*tmp;
+	t_path	*cursor;
 
-	lena = ft_path_len(path_one);
-	lenb = ft_path_len(path_two);
-	if (lena > lenb)
+	tmp = path;
+	while (tmp)
 	{
-		free(path_one);
-		return (path_two);
+		i = 0;
+		while (i < len)
+		{
+			cursor = all_paths[i];
+			while (cursor)
+			{
+				if (!ft_strcmp(cursor->room->name, path->room->name))
+					return (0);
+				cursor = cursor->next;
+			}
+			i++;
+		}
+		tmp = tmp->next;
 	}
-	else
-	{
-		free(path_two);
-		return (path_one);
-	}
+	return (1);
 }
