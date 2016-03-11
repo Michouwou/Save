@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/04 13:38:30 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/11 10:22:18 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/11 11:47:55 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct  s_room
     struct s_room   **links;
     char            *name;
     int             is_end;
+	int				is_start;
 }               t_room;
 
 typedef struct  s_ant
