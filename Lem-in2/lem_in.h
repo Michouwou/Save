@@ -48,7 +48,8 @@ void		ft_parse(char **args, t_room **rooms, t_ant **ants);
 void		ft_iterate(t_ant **ants, t_path **paths);
 t_ant		**ft_get_ants(char ***args, int *number_of_ants);
 char		**ft_read_file(int fd);
-t_room		**ft_get_rooms(char	**args);
+t_room		**ft_get_rooms(char	***args, int len);
+void		ft_link_rooms(t_room **rooms, char **args, int len);
 
 
 #endif

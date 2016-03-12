@@ -29,5 +29,6 @@ t_room  **ft_get_rooms(char ***args, int *number_of_rooms)
         *number_of_rooms += 1;
     }
     result[*number_of_rooms] = ft_create_room(NULL, 0, 0);
+    args += i;
     return (result);
 }
