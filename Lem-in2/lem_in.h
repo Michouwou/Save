@@ -46,7 +46,7 @@ void		ft_link_room(t_room *rooma, t_room *roomb);
 int			ft_path_is_free(t_path *path, t_path **all_paths, int len);
 void		ft_parse(char **args, t_room **rooms, t_ant **ants);
 void		ft_iterate(t_ant **ants, t_path **paths);
-t_ant		**ft_get_ants(char **args);
+t_ant		**ft_get_ants(char ***args, int *number_of_ants);
 char		**ft_read_file(int fd);
 t_room		**ft_get_rooms(char	**args);
 
