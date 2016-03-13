@@ -15,6 +15,7 @@
 # include "libft.h"
 # include "libftprintf.h"
 # include <stdlib.h>
+# include <errno.h>
 
 typedef struct		s_ant
 {
@@ -44,7 +45,6 @@ t_path		*ft_create_path(t_room *room);
 t_path		*ft_build_path(t_room *room, t_path *actual_path, t_room *all_rooms);
 void		ft_link_room(t_room *rooma, t_room *roomb);
 int			ft_path_is_free(t_path *path, t_path **all_paths, int len);
-void		ft_parse(char **args, t_room **rooms, t_ant **ants);
 int			ft_iterate(t_ant **ants, t_path **paths);
 t_ant		**ft_get_ants(char ***args, int *number_of_ants);
 char		**ft_read_file(int fd);
@@ -54,5 +54,8 @@ t_path		ft_find_paths(t_room **rooms);
 void		ft_core(t_room **rooms, t_ant **ants);
 void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants);
 void		ft_print_move(t_ant *ant);
+void		ft_block(char *string);
+int			ft_path_len(t_path *path);
+t_path		*ft_min_path(t_path *path_one, t_path *path_two);
 
 #endif

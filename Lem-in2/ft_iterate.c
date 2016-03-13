@@ -11,11 +11,14 @@ int    ft_iterate(t_ant **ants, t_path **paths)
     {
         if (!ants[i]->actual->is_end)
         {
-            ants[i]->actual = ants[i]->path->next;
+            if (i)
+                ft_printf(" ");
+            ants[i]->actual = (ants[i]->path = ants[i]->path->next);
             ft_print_move(ants[i]);
         }
         i++;
     }
+    ft_printf("\n");
     if (ants[i] == NULL)
         return (0);
     j = 0;
