@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_rooms.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/03/14 12:15:35 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/14 12:17:52 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "lem_in.h"
 
@@ -9,13 +20,13 @@ t_room  **ft_get_rooms(char ***args, int *number_of_rooms)
     int     flags[2];
     
     i = 0;
-    while (!ft_strchr(args[i], '-'))
+    while (!ft_strchr((*args)[i], '-'))
         i++;
     result = (t_room**)malloc(sizeof(t_room*) * (i + 1));
     i = 0;
-    while (!ft_strchr(args[i], '-'))
+    while (!ft_strchr((*args)[i], '-'))
     {
-        tmp = ft_strsplit(args[i], ' ');
+        tmp = ft_strsplit((*args)[i], ' ');
         if (!ft_strcmp(tmp[0], "##start") || !ft_strcmp(tmp[0], "##end"))
             flags[!ft_strcmp(tmp[0], "##start") ? 0 : 1] = 1;
         else if (!ft_strchr(tmp[0], '#'))

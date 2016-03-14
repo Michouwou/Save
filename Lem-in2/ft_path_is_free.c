@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 16:33:14 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/11 16:44:48 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/14 12:19:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int		ft_path_is_free(t_path *path, t_path **all_paths, int len)
+int		ft_path_is_free(t_path *path, t_path **all_paths)
 {
 	int		i;
 	t_path	*tmp;
@@ -22,7 +22,7 @@ int		ft_path_is_free(t_path *path, t_path **all_paths, int len)
 	while (tmp)
 	{
 		i = 0;
-		while (i < len)
+		while (all_paths[i])
 		{
 			cursor = all_paths[i];
 			while (cursor)

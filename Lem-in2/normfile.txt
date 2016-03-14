@@ -1,0 +1,410 @@
+Norme: ./ft_create_ant.c
+Norme: ./ft_free_everything.c
+Warning: /nfs/2015/m/mlevieux/Save/Lem-in2/ft_free_everything.c may not compile or is invalid for some reasons.
+Norme: ./ft_block.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4, col 4): bad spacing
+Error (line 6): bad indentation
+Error (line 6): must begin only by tabulations
+Error (line 7): bad indentation
+Error (line 7): must begin only by tabulations
+Error (line 8, col 0): no newline after block
+Norme: ./ft_path_len.c
+Norme: ./ft_create_path.c
+Norme: ./ft_print_move.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4, col 4): bad spacing
+Error (line 6): bad indentation
+Error (line 6): must begin only by tabulations
+Error (line 7, col 0): no newline after block
+Norme: ./ft_get_ants.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 4): declarations must be followed by one empty line in ft_get_ants
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4, col 5): bad spacing
+Error (line 6): bad indentation
+Error (line 6): must begin only by tabulations
+Error (line 6, col 9): bad spacing
+Error (line 7): bad indentation
+Error (line 7): must begin only by tabulations
+Error (line 7, col 7): bad spacing
+Error (line 8): spaces at the end of line
+Error (line 8): bad indentation
+Error (line 8): must begin only by tabulations
+Error (line 9): bad indentation
+Error (line 9): must begin only by tabulations
+Error (line 10): bad indentation
+Error (line 10): must begin only by tabulations
+Error (line 11): bad indentation
+Error (line 11): must begin only by tabulations
+Error (line 12): bad indentation
+Error (line 12): must begin only by tabulations
+Error (line 13): bad indentation
+Error (line 13): must begin only by tabulations
+Error (line 14): bad indentation
+Error (line 14): must begin only by tabulations
+Error (line 15): bad indentation
+Error (line 15): must begin only by tabulations
+Error (line 16): bad indentation
+Error (line 16): must begin only by tabulations
+Error (line 17): bad indentation
+Error (line 17): must begin only by tabulations
+Error (line 18): bad indentation
+Error (line 18): must begin only by tabulations
+Error (line 19): bad indentation
+Error (line 19): must begin only by tabulations
+Error (line 20): bad indentation
+Error (line 20): must begin only by tabulations
+Error (line 21): bad indentation
+Error (line 21): must begin only by tabulations
+Error (line 22, col 0): no newline after block
+Norme: ./ft_build_path.c
+Warning: /nfs/2015/m/mlevieux/Save/Lem-in2/ft_build_path.c may not compile or is invalid for some reasons.
+Norme: ./ft_create_room.c
+Norme: ./ft_link_room.c
+Error (line 15): function ft_link_room has 28 lines
+Norme: ./ft_min_path.c
+Norme: ./ft_read_file.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 4): declarations must be followed by one empty line in ft_read_file
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4, col 4): bad spacing
+Error (line 6): bad indentation
+Error (line 6): must begin only by tabulations
+Error (line 6, col 8): bad spacing
+Error (line 7): bad indentation
+Error (line 7): must begin only by tabulations
+Error (line 7, col 8): bad spacing
+Error (line 8): bad indentation
+Error (line 8): must begin only by tabulations
+Error (line 8, col 8): bad spacing
+Error (line 9): spaces at the end of line
+Error (line 9): bad indentation
+Error (line 9): must begin only by tabulations
+Error (line 10): bad indentation
+Error (line 10): must begin only by tabulations
+Error (line 11): bad indentation
+Error (line 11): must begin only by tabulations
+Error (line 12): bad indentation
+Error (line 12): must begin only by tabulations
+Error (line 13): bad indentation
+Error (line 13): must begin only by tabulations
+Error (line 14): bad indentation
+Error (line 14): must begin only by tabulations
+Error (line 15): bad indentation
+Error (line 15): must begin only by tabulations
+Error (line 16): bad indentation
+Error (line 16): must begin only by tabulations
+Error (line 17): bad indentation
+Error (line 17): must begin only by tabulations
+Error (line 18): bad indentation
+Error (line 18): must begin only by tabulations
+Error (line 19): bad indentation
+Error (line 19): must begin only by tabulations
+Error (line 20): bad indentation
+Error (line 20): must begin only by tabulations
+Error (line 21, col 0): no newline after block
+Norme: ./ft_links_rooms.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4, col 4): bad spacing
+Error (line 6): bad indentation
+Error (line 6): must begin only by tabulations
+Error (line 6, col 10): bad spacing
+Error (line 7): bad indentation
+Error (line 7): must begin only by tabulations
+Error (line 7, col 10): bad spacing
+Error (line 8): bad indentation
+Error (line 8): must begin only by tabulations
+Error (line 8, col 7): bad spacing
+Error (line 9): bad indentation
+Error (line 9): must begin only by tabulations
+Error (line 9, col 8): bad spacing
+Error (line 11): bad indentation
+Error (line 11): must begin only by tabulations
+Error (line 12): bad indentation
+Error (line 12): must begin only by tabulations
+Error (line 13): bad indentation
+Error (line 13): must begin only by tabulations
+Error (line 14): bad indentation
+Error (line 14): must begin only by tabulations
+Error (line 15): bad indentation
+Error (line 15): must begin only by tabulations
+Error (line 16): bad indentation
+Error (line 16): must begin only by tabulations
+Error (line 17): bad indentation
+Error (line 17): must begin only by tabulations
+Error (line 18): bad indentation
+Error (line 18): must begin only by tabulations
+Error (line 19): bad indentation
+Error (line 19): must begin only by tabulations
+Error (line 20): bad indentation
+Error (line 20): must begin only by tabulations
+Error (line 21): bad indentation
+Error (line 21): must begin only by tabulations
+Error (line 22): bad indentation
+Error (line 22): must begin only by tabulations
+Error (line 23): bad indentation
+Error (line 23): must begin only by tabulations
+Error (line 24): bad indentation
+Error (line 24): must begin only by tabulations
+Error (line 25): bad indentation
+Error (line 25): must begin only by tabulations
+Error (line 26): bad indentation
+Error (line 26): must begin only by tabulations
+Error (line 27): bad indentation
+Error (line 27): must begin only by tabulations
+Error (line 28): bad indentation
+Error (line 28): must begin only by tabulations
+Error (line 29): bad indentation
+Error (line 29): must begin only by tabulations
+Error (line 30): bad indentation
+Error (line 30): must begin only by tabulations
+Error (line 31, col 0): no newline after block
+Norme: ./ft_core.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 4): declarations must be followed by one empty line in ft_core
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4, col 4): bad spacing
+Error (line 6): bad indentation
+Error (line 6): must begin only by tabulations
+Error (line 6, col 10): bad spacing
+Error (line 7): bad indentation
+Error (line 7): must begin only by tabulations
+Error (line 7, col 7): bad spacing
+Error (line 8): spaces at the end of line
+Error (line 8): bad indentation
+Error (line 8): must begin only by tabulations
+Error (line 9): bad indentation
+Error (line 9): must begin only by tabulations
+Error (line 10): bad indentation
+Error (line 10): must begin only by tabulations
+Error (line 11): bad indentation
+Error (line 11): must begin only by tabulations
+Error (line 12): bad indentation
+Error (line 12): must begin only by tabulations
+Error (line 13): bad indentation
+Error (line 13): must begin only by tabulations
+Error (line 14): bad indentation
+Error (line 14): must begin only by tabulations
+Error (line 15, col 0): no newline after block
+Norme: ./ft_get_rooms.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 4): declarations must be followed by one empty line in ft_get_rooms
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): function ft_get_rooms has 28 lines
+Error (line 4, col 6): bad spacing
+Error (line 6): bad indentation
+Error (line 6): must begin only by tabulations
+Error (line 6, col 7): bad spacing
+Error (line 7): bad indentation
+Error (line 7): must begin only by tabulations
+Error (line 7, col 10): bad spacing
+Error (line 8): bad indentation
+Error (line 8): must begin only by tabulations
+Error (line 8, col 8): bad spacing
+Error (line 9): bad indentation
+Error (line 9): must begin only by tabulations
+Error (line 9, col 7): bad spacing
+Error (line 10): spaces at the end of line
+Error (line 10): bad indentation
+Error (line 10): must begin only by tabulations
+Error (line 11): bad indentation
+Error (line 11): must begin only by tabulations
+Error (line 12): bad indentation
+Error (line 12): must begin only by tabulations
+Error (line 13): bad indentation
+Error (line 13): must begin only by tabulations
+Error (line 14): bad indentation
+Error (line 14): must begin only by tabulations
+Error (line 15): bad indentation
+Error (line 15): must begin only by tabulations
+Error (line 16): bad indentation
+Error (line 16): must begin only by tabulations
+Error (line 17): bad indentation
+Error (line 17): must begin only by tabulations
+Error (line 18): bad indentation
+Error (line 18): must begin only by tabulations
+Error (line 19): bad indentation
+Error (line 19): must begin only by tabulations
+Error (line 20): bad indentation
+Error (line 20): must begin only by tabulations
+Error (line 21): bad indentation
+Error (line 21): must begin only by tabulations
+Error (line 22): bad indentation
+Error (line 22): must begin only by tabulations
+Error (line 23): bad indentation
+Error (line 23): must begin only by tabulations
+Error (line 23): line has 83 characters
+Error (line 24): bad indentation
+Error (line 24): must begin only by tabulations
+Error (line 25): bad indentation
+Error (line 25): must begin only by tabulations
+Error (line 26): bad indentation
+Error (line 26): must begin only by tabulations
+Error (line 27): bad indentation
+Error (line 27): must begin only by tabulations
+Error (line 28): bad indentation
+Error (line 28): must begin only by tabulations
+Error (line 29): bad indentation
+Error (line 29): must begin only by tabulations
+Error (line 30): bad indentation
+Error (line 30): must begin only by tabulations
+Error (line 31): bad indentation
+Error (line 31): must begin only by tabulations
+Error (line 32): bad indentation
+Error (line 32): must begin only by tabulations
+Error (line 33): bad indentation
+Error (line 33): must begin only by tabulations
+Error (line 34, col 0): no newline after block
+Norme: ./ft_find_paths.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 4): declarations must be followed by one empty line in ft_find_paths
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4, col 6): bad spacing
+Error (line 6): bad indentation
+Error (line 6): must begin only by tabulations
+Error (line 6, col 10): bad spacing
+Error (line 7): bad indentation
+Error (line 7): must begin only by tabulations
+Error (line 7, col 10): bad spacing
+Error (line 8): bad indentation
+Error (line 8): must begin only by tabulations
+Error (line 8, col 7): bad spacing
+Error (line 9): spaces at the end of line
+Error (line 9): bad indentation
+Error (line 9): must begin only by tabulations
+Error (line 10): bad indentation
+Error (line 10): must begin only by tabulations
+Error (line 11): bad indentation
+Error (line 11): must begin only by tabulations
+Error (line 12): bad indentation
+Error (line 12): must begin only by tabulations
+Error (line 13): bad indentation
+Error (line 13): must begin only by tabulations
+Error (line 14): bad indentation
+Error (line 14): must begin only by tabulations
+Error (line 15): bad indentation
+Error (line 15): must begin only by tabulations
+Error (line 16): bad indentation
+Error (line 16): must begin only by tabulations
+Error (line 17): bad indentation
+Error (line 17): must begin only by tabulations
+Error (line 18): 2 assignations
+Error (line 18): bad indentation
+Error (line 18): must begin only by tabulations
+Error (line 19): bad indentation
+Error (line 19): must begin only by tabulations
+Error (line 20): bad indentation
+Error (line 20): must begin only by tabulations
+Error (line 21): bad indentation
+Error (line 21): must begin only by tabulations
+Error (line 22): bad indentation
+Error (line 22): must begin only by tabulations
+Error (line 23, col 0): no newline after block
+Norme: ./lem_in.h
+Warning: /nfs/2015/m/mlevieux/Save/Lem-in2/lem_in.h may not compile or is invalid for some reasons.
+Norme: ./ft_path_is_free.c
+Norme: ./get_next_line.h
+Norme: ./ft_iterate.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 4): declarations must be followed by one empty line in ft_iterate
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): Space before function name
+Error (line 4): function ft_iterate has 28 lines
+Error (line 4, col 3): bad spacing
+Error (line 6): bad indentation
+Error (line 6): must begin only by tabulations
+Error (line 6, col 7): bad spacing
+Error (line 7): bad indentation
+Error (line 7): must begin only by tabulations
+Error (line 7, col 7): bad spacing
+Error (line 8): spaces at the end of line
+Error (line 8): bad indentation
+Error (line 8): must begin only by tabulations
+Error (line 9): bad indentation
+Error (line 9): must begin only by tabulations
+Error (line 10): bad indentation
+Error (line 10): must begin only by tabulations
+Error (line 11): bad indentation
+Error (line 11): must begin only by tabulations
+Error (line 12): bad indentation
+Error (line 12): must begin only by tabulations
+Error (line 13): bad indentation
+Error (line 13): must begin only by tabulations
+Error (line 14): bad indentation
+Error (line 14): must begin only by tabulations
+Error (line 15): bad indentation
+Error (line 15): must begin only by tabulations
+Error (line 16): 2 assignations
+Error (line 16): bad indentation
+Error (line 16): must begin only by tabulations
+Error (line 17): bad indentation
+Error (line 17): must begin only by tabulations
+Error (line 18): bad indentation
+Error (line 18): must begin only by tabulations
+Error (line 19): bad indentation
+Error (line 19): must begin only by tabulations
+Error (line 20): bad indentation
+Error (line 20): must begin only by tabulations
+Error (line 21): bad indentation
+Error (line 21): must begin only by tabulations
+Error (line 22): bad indentation
+Error (line 22): must begin only by tabulations
+Error (line 23): bad indentation
+Error (line 23): must begin only by tabulations
+Error (line 24): bad indentation
+Error (line 24): must begin only by tabulations
+Error (line 25): bad indentation
+Error (line 25): must begin only by tabulations
+Error (line 26): bad indentation
+Error (line 26): must begin only by tabulations
+Error (line 27): bad indentation
+Error (line 27): must begin only by tabulations
+Error (line 28): bad indentation
+Error (line 28): must begin only by tabulations
+Error (line 29): bad indentation
+Error (line 29): must begin only by tabulations
+Error (line 30): bad indentation
+Error (line 30): must begin only by tabulations
+Error (line 31): bad indentation
+Error (line 31): must begin only by tabulations
+Error (line 32): bad indentation
+Error (line 32): must begin only by tabulations
+Error (line 33): bad indentation
+Error (line 33): must begin only by tabulations
+Error (line 34, col 0): no newline after block
+Norme: ./get_next_line.c
+Error (line 90): bad indentation

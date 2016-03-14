@@ -1,32 +1,54 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2016/03/14 11:15:47 by mlevieux          #+#    #+#              #
+#    Updated: 2016/03/14 12:35:56 by mlevieux         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRC=    ft_block.c ft_create_room.c ft_iterate.c ft_path_len.c ft_build_path.c \
-        ft_find_paths.c ft_link_room.c ft_print_move.c ft_core.c ft_free_everything.c \
-        ft_links_rooms.c ft_read_file.c ft_create_ant.c ft_get_ants.c ft_min_path.c \
-        ft_create_path.c ft_get_rooms.c ft_path_is_free.c get_next_line.c
+SRC =	ft_create_ant.c ft_free_everything.c ft_link_room.c ft_path_len.c \
+	  	ft_block.c ft_create_path.c ft_get_ants.c ft_links_rooms.c \
+		ft_print_move.c ft_build_path.c ft_create_room.c ft_get_rooms.c \
+		ft_min_path.c ft_read_file.c ft_core.c ft_find_paths.c ft_iterate.c \
+		ft_path_is_free.c get_next_line.c
 
-HEADER= lem_in.h get_next_line.h
+OBJ = $(SRC:.c=.o)
 
-OBJ=    $(SRC:.c=.o)
+HEADERS = lem_in.h get_next_line.h libft.h libftprintf.h
 
-LIBS=   -lft -lftprintf
+LIBPATH = ~/Save/Lem-in2/includes
 
-EXEC=   lem-in
+LIBS = -lft -lftprintf
 
+NAME = lem-in
 
+all : makedir $(NAME)
 
-all : obj exec clean
+$(NAME) : $(OBJ)
+	@echo "Compilation..."
+	@cc $(OBJ) -L $(LIBPATH) $(LIBS) -I $(HEADERS)
 
-obj :
-    gcc -Wall -Wextra -Werror -c $(SRC) $(HEADER)
-    
-exec : obj
-    gcc -o $(EXEC) $(OBJ) -L. $(LIBS)
+makedir :
+	mkdir $(LIBPATH)
+	cp ~/Save/ft_printf/*.a $(LIBPATH)
+
+$(OBJ) : $(SRC) $(HEADERS)
+
+.PHONY: clean fclean norme
 
 clean :
-    rm -f $(OBJ)
-    
+	@echo "Cleaning..."
+	@rm -f $(OBJ)
+
 fclean : clean
-    rm -f $(EXEC)
-    
-norme :
-    norminette $(SRC) $(HEADER)
+	@echo "Cleaning everything..."
+	@rm -rf $(NAME) $(LIBPATH)
+
+norme : $(SRC) $(HEADERS)
+	@touch normfile.txt
+	@norminette $(SRC) $(HEADERS) > normfile.txt
+	@echo "File 'normfile.txt' created."

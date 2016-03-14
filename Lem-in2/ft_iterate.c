@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_iterate.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/03/14 12:24:52 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/14 12:25:34 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "lem_in.h"
 
@@ -13,7 +24,8 @@ int    ft_iterate(t_ant **ants, t_path **paths)
         {
             if (i)
                 ft_printf(" ");
-            ants[i]->actual = (ants[i]->path = ants[i]->path->next);
+            ants[i]->actual = ants[i]->path->next->room;
+			ants[i]->path = ants[i]->path->next;
             ft_print_move(ants[i]);
         }
         i++;
