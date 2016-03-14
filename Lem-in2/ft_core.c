@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:19:07 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/14 14:45:16 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/14 17:32:00 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_core(t_room **rooms, t_ant **ants)
 	t_path	**paths;
 	int		status;
 
-	printf("---Entree dans CORE\n");
+	printf("---Entree dans CORE, room[0]->name = %s\n", rooms[0]->name);
 	fflush(stdout);
 	paths = ft_find_paths(rooms);
 	printf("---Find paths seems okay\n");

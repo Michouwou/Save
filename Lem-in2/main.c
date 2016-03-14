@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:12:38 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/14 16:49:54 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/14 17:45:31 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(void)
 	printf("Sortie de get ants\n");
 	fflush(stdout);
 	rooms = ft_get_rooms(&args, &num_rooms);
-	printf("sortie de get rooms et entree dans CORE\n");
+	printf("sortie de get rooms et entree dans CORE, 000 :%s\n", rooms[0]->name);
 	fflush(stdout);
 	ft_core(rooms, ants);
 	printf("Eh?\n");

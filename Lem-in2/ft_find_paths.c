@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:19:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/14 14:41:04 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/14 17:30:19 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ t_path	**ft_find_paths(t_room **rooms)
 	i = 0;
 	while (rooms[i]->name)
 	{
+		printf("PASSE!!\n");
+		fflush(stdout);
 		if (rooms[i]->is_start)
 			start = rooms[i];
 		i++;
