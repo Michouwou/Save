@@ -1,0 +1,10 @@
+5
+##start
+salle1 78 90
+salle2 34 56
+salle3 45 67
+##end
+salle4 56 78
+salle1-salle2
+salle2-salle3
+salle3-salle4

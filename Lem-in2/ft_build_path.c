@@ -6,15 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/14 12:15:09 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/14 13:27:08 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-/**
- * On definira la fin du tableau comme la t_room dont le name est un pointeur sur NULL
- **/
 
 t_path	*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 {

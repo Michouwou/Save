@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_block.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/03/14 13:23:05 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/14 13:24:24 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "lem_in.h"
 
-void    ft_block(char *string)
+void	ft_block(char *string)
 {
-    ft_printf("%s\n", string);
-    perror("ERROR\n");
+	ft_printf("%s\n", string);
+	perror("ERROR\n");
 }

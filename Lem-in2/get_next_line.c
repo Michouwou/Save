@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 20:16:19 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 08:49:30 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/14 13:39:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,7 @@ int		ft_next_line(char *rest, char **line, int const fd, t_memory *memory)
 	while (rest[tmp] != '\n' && rest[tmp] != '\0' && rest[tmp] != 3)
 		tmp++;
 	if (rest[tmp] == '\0')
-		return ((ft_next_read(fd, &rest) == -1) ? -1 : ft_next_line(rest, line,
-			fd, memory));
+		return ((ft_next_read(fd, &rest) == -1) ? -1 : ft_next_line(rest, line, fd, memory));
 	if (rest[tmp] == 3 && tmp == 0)
 	{
 		rest[tmp] = '\n';
