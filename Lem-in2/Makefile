@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/14 11:15:47 by mlevieux          #+#    #+#              #
-#    Updated: 2016/03/14 13:47:40 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/03/14 15:08:55 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ $(NAME) : $(OBJ)
 
 makedir :
 	@mkdir $(LIBPATH)
+	@cp ~/Save/GNL/libft/libft.a ~/Save/ft_printf/
 	@cp ~/Save/ft_printf/*.a $(LIBPATH)
 	@echo "Dossier includes cree\n"
 

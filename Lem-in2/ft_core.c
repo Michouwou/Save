@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:19:07 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/14 13:29:33 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/14 14:45:16 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,15 @@ void	ft_core(t_room **rooms, t_ant **ants)
 	t_path	**paths;
 	int		status;
 
+	printf("---Entree dans CORE\n");
+	fflush(stdout);
 	paths = ft_find_paths(rooms);
+	printf("---Find paths seems okay\n");
+	fflush(stdout);
 	status = 1;
 	while (status)
 		status = ft_iterate(ants, paths);
+	printf("---About to free everything\n");
+	fflush(stdout);
 	ft_free_everything(paths, rooms, ants);
 }

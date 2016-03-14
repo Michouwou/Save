@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 20:02:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/13 13:47:55 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 15:38:07 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <sys/uio.h>
 # include <fcntl.h>
 # include <unistd.h>
-# define BUFF_SIZE 50
+# define BUFF_SIZE 1000
 
 typedef struct	s_memory
 {
