@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "lem_in.h"
-#include <fcntl.h>
 
 int	main(void)
 {
@@ -28,15 +27,7 @@ int	main(void)
 	printf("Apres ouverture de test, fd = %d\n", fd);
 	fflush(stdout);
 	args = ft_read_file(fd);
-	int i = 0;
-	while (args[i])
-	{
-		write(1, args[i], ft_strlen(args[i]));
-		write(1, "\n", 1);
-		i++;
-	}
-	fflush(stdout);
-	ants = ft_get_ants(&args, &num_ants);
+	ft_get_ants(&args, &num_ants, &ants);
 	printf("Sortie de get ants\n");
 	fflush(stdout);
 	ft_get_rooms(&args, &num_rooms, &rooms);
