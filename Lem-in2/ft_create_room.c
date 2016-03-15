@@ -12,14 +12,14 @@
 
 #include "lem_in.h"
 
-t_room	ft_create_room(char *name, int is_end, int is_start)
+t_room	*ft_create_room(char *name, int is_end, int is_start)
 {
-	t_room	new;
+	t_room	*new;
 
-	new.name = ft_strdup(name);
-	new.links = NULL;
-	new.is_end = is_end;
-	new.is_start = is_start;
-	new.is_full = 0;
+	new->name = ft_strdup(name);
+	new->links = NULL;
+	new->is_end = is_end;
+	new->is_start = is_start;
+	new->is_full = 0;
 	return (new);
 }

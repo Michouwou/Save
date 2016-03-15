@@ -39,7 +39,7 @@ int	main(void)
 	ants = ft_get_ants(&args, &num_ants);
 	printf("Sortie de get ants\n");
 	fflush(stdout);
-	rooms = ft_get_rooms(&args, &num_rooms);
+	ft_get_rooms(&args, &num_rooms, &rooms);
 	printf("sortie de get rooms et entree dans CORE, 000 :%s\n", rooms[0]->name);
 	fflush(stdout);
 	ft_core(rooms, ants);
