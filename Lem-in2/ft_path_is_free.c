@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 16:33:14 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 11:19:00 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/16 14:50:52 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ int		ft_path_is_free(t_path *path, t_path **all_paths)
 		fflush(stdout);
 		return (1);
 	}*/
+	int j = 0;
 	while (tmp)
 	{
 		i = 0;
-		printf("boucle externe\n");
+		printf("boucle externe tmp->room : %s\n", tmp->room->name);
 		fflush(stdout);
 		while (all_paths[i])
 		{
@@ -43,6 +44,9 @@ int		ft_path_is_free(t_path *path, t_path **all_paths)
 			}
 			i++;
 		}
+		j++;
+		if (j > 3)
+			exit(0);
 		tmp = tmp->next;
 	}
 	printf("Sortie is_free\n");

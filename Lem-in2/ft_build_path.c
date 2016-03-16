@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 12:10:08 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/16 14:56:53 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,46 +27,59 @@ static int	room_does_not_appear(t_room *room, t_path *actual_path)
 	return (1);
 }
 
+static int	no_option(t_room **rooms, t_path *actual_path)
+{
+	int i;
+	
+	i = 0;
+	while (rooms[i] && rooms[i]->name && !room_does_not_appear(rooms[i], actual_path))
+		i++;
+	if (room_does_not_appear(rooms[i], actual_path))
+		return (0);
+	return (1);
+}
+
 t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 {
-	int		link;
-	t_path	*tmp;
 	t_path	*result;
+	t_path	*tmp;
+	int		i;
 
-	printf("Entree dans ft_build_path\n");
+	printf("Entree dans build, room = %s\n", room->name);
 	fflush(stdout);
 	tmp = actual_path;
-	if (tmp)
-	{
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = ft_create_path(room);
-	}
+	while (tmp && tmp->next)
+		tmp = tmp->next;
+	if (!tmp)
+		actual_path = ft_create_path(room);
 	else
-	{
-		tmp = ft_create_path(room);
-		actual_path = tmp;
-	}
-	result = NULL;
-	link = 0;
-	printf("Juste avant la boucle dans build_path, room : %s, is_end : %d\n", room->name, room->is_end);
+		tmp->next = ft_create_path(room);
+	printf("Actual path updated\n");
 	fflush(stdout);
 	if (room->is_end)
-		return (result = ft_create_path(room));
-	else
-		while (room->links[link] && room->links[link]->name != NULL)
-		{
-			printf("On va rappeler build_path avec : %s\n", room->links[link]->name);
-			fflush(stdout);
-			if (room_does_not_appear(room->links[link], actual_path))
-			{
-				tmp = ft_build_path(room->links[link], actual_path, all_paths);
-				if (ft_path_is_free(tmp, all_paths))
-					result = ft_min_path(tmp, result);
-			}
-			link++;
-		}
-	printf("Sortie de ft_build_path\n");
+		return (ft_create_path(room));
+	if (!room->is_end && no_option(room->links, actual_path))
+		return (NULL);
+	printf("On est pas au bout dude!\n");
 	fflush(stdout);
-	return (result);
+	i = 0;
+	result = NULL;
+	tmp = NULL;
+	while (room->links[i] && room->links[i]->name)
+	{
+		printf("On encadre : links[i] = %s\n", room->links[i]->name);
+		fflush(stdout);
+		if (room_does_not_appear(room->links[i], actual_path))
+			tmp = ft_build_path(room->links[i], actual_path, all_paths);
+		printf("First tmp room : %s\n", (tmp) ? (tmp->room->name) : "NOOO");
+		fflush(stdout);
+		if (tmp && ft_path_is_free(tmp, all_paths))
+			result = ft_min_path(result, tmp);
+		i++;
+		printf("It loops\n");
+		fflush(stdout);
+	}
+	tmp = ft_create_path(room);
+	tmp->next = result;
+	return (tmp);
 }

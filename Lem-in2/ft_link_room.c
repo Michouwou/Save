@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 15:45:05 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 10:37:02 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/16 14:53:33 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	ft_link_room(t_room *room_one, t_room *room_two)
 		j++;
 	printf("Jusque la tout va bien\n");
 	fflush(stdout);
-	room_one->links = (t_room**)malloc(sizeof(t_room*) * (i + 1));
-	room_two->links = (t_room**)malloc(sizeof(t_room*) * (j + 1));
+	room_one->links = (t_room**)malloc(sizeof(t_room*) * (i + 2));
+	room_two->links = (t_room**)malloc(sizeof(t_room*) * (j + 2));
 	while (++tmp < i)
 		room_one->links[tmp] = tmp_link_one[tmp];
 	printf("Apres la premiere boucle\n");
