@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 11:22:16 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/16 12:10:08 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,15 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 	}
 	result = NULL;
 	link = 0;
-	printf("Juste avant la boucle dans build_path, room : %s\n", room->name);
+	printf("Juste avant la boucle dans build_path, room : %s, is_end : %d\n", room->name, room->is_end);
 	fflush(stdout);
 	if (room->is_end)
 		return (result = ft_create_path(room));
 	else
 		while (room->links[link] && room->links[link]->name != NULL)
 		{
+			printf("On va rappeler build_path avec : %s\n", room->links[link]->name);
+			fflush(stdout);
 			if (room_does_not_appear(room->links[link], actual_path))
 			{
 				tmp = ft_build_path(room->links[link], actual_path, all_paths);
