@@ -1,10 +1,22 @@
 5
 ##start
-salle1 78 90
-salle2 34 56
-salle3 45 67
+start 56 67
+A 78 90
+B 34 56
+C 45 67
+D 89 90
+E 2 987
+F 0 72
+G 90 12
 ##end
-salle4 56 78
-salle1-salle2
-salle2-salle3
-salle3-salle4
+end 56 78
+start-A
+start-B
+start-C
+A-E
+B-D
+C-G
+D-F
+D-G
+F-end
+G-end

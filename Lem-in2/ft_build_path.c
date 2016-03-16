@@ -6,18 +6,22 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 14:56:53 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/16 15:55:07 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+
+/**
+ * Penser a faire la fonction pour retirer la room du actual path
+ **/
 
 static int	room_does_not_appear(t_room *room, t_path *actual_path)
 {
 	t_path	*tmp;
 
 	tmp = actual_path;
-	if (tmp)
+	if (tmp && room->name)
 		while (tmp)
 		{
 			if (!ft_strcmp(tmp->room->name, room->name))
@@ -32,10 +36,19 @@ static int	no_option(t_room **rooms, t_path *actual_path)
 	int i;
 	
 	i = 0;
+	printf("Entree no_option\n");
 	while (rooms[i] && rooms[i]->name && !room_does_not_appear(rooms[i], actual_path))
 		i++;
+	printf("In the loop???\n");
+	fflush(stdout);
 	if (room_does_not_appear(rooms[i], actual_path))
+	{
+		printf("sortie no_option\n");
+		fflush(stdout);
 		return (0);
+	}
+	printf("Sortie no_option\n");
+	fflush(stdout);
 	return (1);
 }
 
@@ -58,6 +71,8 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 	fflush(stdout);
 	if (room->is_end)
 		return (ft_create_path(room));
+	printf("WESH\n");
+	fflush(stdout);
 	if (!room->is_end && no_option(room->links, actual_path))
 		return (NULL);
 	printf("On est pas au bout dude!\n");
@@ -67,7 +82,7 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 	tmp = NULL;
 	while (room->links[i] && room->links[i]->name)
 	{
-		printf("On encadre : links[i] = %s\n", room->links[i]->name);
+		printf("On encadre : links[i] = %s et room = %s\n", room->links[i]->name, room->name);
 		fflush(stdout);
 		if (room_does_not_appear(room->links[i], actual_path))
 			tmp = ft_build_path(room->links[i], actual_path, all_paths);
@@ -76,10 +91,16 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 		if (tmp && ft_path_is_free(tmp, all_paths))
 			result = ft_min_path(result, tmp);
 		i++;
+		tmp = NULL;
 		printf("It loops\n");
 		fflush(stdout);
 	}
 	tmp = ft_create_path(room);
 	tmp->next = result;
-	return (tmp);
+	result = tmp;
+	tmp = actual_path;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	tmp->next = NULL;
+	return (result);
 }
