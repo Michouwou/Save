@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:03:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/14 17:41:21 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/16 10:11:16 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int					ft_iterate(t_ant **ants, t_path **paths);
 void				ft_get_ants(char ***args, int *number_of_ants, t_ant ***ants);
 char				**ft_read_file(int fd);
 void				ft_get_rooms(char ***args, int *len, t_room ***result);
-void				ft_link_rooms(t_room **rooms, char **args, int len);
+void				ft_links_rooms(t_room **rooms, char **args, int len);
 t_path				**ft_find_paths(t_room **rooms);
 void				ft_core(t_room **rooms, t_ant **ants);
 void				ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants);

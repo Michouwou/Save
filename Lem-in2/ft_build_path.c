@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/14 13:27:08 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/16 10:09:36 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_path	*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 	t_path	*tmp;
 	t_path	*result;
 
+	printf("Entree dans ft_build_path\n");
+	fflush(stdout);
 	tmp = actual_path;
 	while (tmp->next)
 		tmp = tmp->next;
@@ -31,5 +33,7 @@ t_path	*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 			result = ft_min_path(tmp, result);
 		link++;
 	}
+	printf("Sortie de ft_build_path\n");
+	fflush(stdout);
 	return (result);
 }
