@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:19:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 10:09:50 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/16 11:12:15 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ t_path	**ft_find_paths(t_room **rooms)
 	printf("%%%%%%Sortie de la boucle\n");
 	fflush(stdout);
 	result = (t_path**)malloc(sizeof(t_path*) * i);
-	result[0] = ft_build_path(start, *result, result);
+	result[0] = NULL;
+	result[0] = ft_build_path(start, result[0], result);
 	i = 1;
 	printf("%%%%%%about to enter the second loop\n");
 	fflush(stdout);

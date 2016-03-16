@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:28:37 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 10:23:20 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/16 10:34:01 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_links_rooms(t_room **rooms, char **args, int len)
 	printf("Entree dans links_rooms\n");
 	fflush(stdout);
 	cursors[0] = 0;
-	while (cursors[0] < len)
+	while (args[cursors[0]])
 	{
 		cursors[1] = 0;
 		tmp_room_one = NULL;
@@ -40,7 +40,7 @@ void	ft_links_rooms(t_room **rooms, char **args, int len)
 				tmp_room_two = rooms[cursors[1]];
 			cursors[1]++;
 		}
-		printf("Just got out of the second loop\n");
+		printf("Just got out of the second loop, on va linker %s et %s\n", tmp_room_one->name, tmp_room_two->name);
 		fflush(stdout);
 		ft_link_room(tmp_room_one, tmp_room_two);
 		printf("Problem in link?\n");

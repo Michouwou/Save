@@ -6,13 +6,28 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 10:09:36 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/16 11:22:16 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_path	*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
+static int	room_does_not_appear(t_room *room, t_path *actual_path)
+{
+	t_path	*tmp;
+
+	tmp = actual_path;
+	if (tmp)
+		while (tmp)
+		{
+			if (!ft_strcmp(tmp->room->name, room->name))
+				return (0);
+			tmp = tmp->next;
+		}
+	return (1);
+}
+
+t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 {
 	int		link;
 	t_path	*tmp;
@@ -21,18 +36,34 @@ t_path	*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 	printf("Entree dans ft_build_path\n");
 	fflush(stdout);
 	tmp = actual_path;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = ft_create_path(room);
+	if (tmp)
+	{
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = ft_create_path(room);
+	}
+	else
+	{
+		tmp = ft_create_path(room);
+		actual_path = tmp;
+	}
 	result = NULL;
 	link = 0;
-	while (room->links[link]->name != NULL)
-	{
-		tmp = ft_build_path(room->links[link], actual_path, all_paths);
-		if (ft_path_is_free(tmp, all_paths))
-			result = ft_min_path(tmp, result);
-		link++;
-	}
+	printf("Juste avant la boucle dans build_path, room : %s\n", room->name);
+	fflush(stdout);
+	if (room->is_end)
+		return (result = ft_create_path(room));
+	else
+		while (room->links[link] && room->links[link]->name != NULL)
+		{
+			if (room_does_not_appear(room->links[link], actual_path))
+			{
+				tmp = ft_build_path(room->links[link], actual_path, all_paths);
+				if (ft_path_is_free(tmp, all_paths))
+					result = ft_min_path(tmp, result);
+			}
+			link++;
+		}
 	printf("Sortie de ft_build_path\n");
 	fflush(stdout);
 	return (result);
