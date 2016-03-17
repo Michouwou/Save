@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 15:12:54 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 13:30:46 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/16 16:22:31 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ t_path	*ft_min_path(t_path *path_one, t_path *path_two)
 	if (lena > lenb)
 	{
 		free(path_one);
-		printf("Out\n");
+		printf("Out --> %s |%d| contre |%d|\n", path_two->room->name, lena, lenb);
 		fflush(stdout);
 		return (path_two);
 	}
 	else
 	{
 		free(path_two);
-		printf("Out\n");
+		printf("Out --> %s |%d| contre |%d|\n", path_one->room->name, lena, lenb);
 		fflush(stdout);
 		return (path_one);
 	}

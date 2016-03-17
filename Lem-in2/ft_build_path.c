@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 15:55:07 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/17 11:15:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	no_option(t_room **rooms, t_path *actual_path)
 	int i;
 	
 	i = 0;
-	printf("Entree no_option\n");
+	printf("Entree no_option, rooms[i] ?");
 	while (rooms[i] && rooms[i]->name && !room_does_not_appear(rooms[i], actual_path))
 		i++;
 	printf("In the loop???\n");
@@ -50,6 +50,18 @@ static int	no_option(t_room **rooms, t_path *actual_path)
 	printf("Sortie no_option\n");
 	fflush(stdout);
 	return (1);
+}
+
+static void	erase_last_one(t_path *actual_path)
+{
+	t_path	*tmp;
+
+	tmp = actual_path;
+	while (tmp->next && tmp->next->next)
+		tmp = tmp->next;
+	printf("Nous liberons : %s\n", tmp->next->room->name);
+	free(tmp->next);
+	tmp->next = NULL;
 }
 
 t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
@@ -70,19 +82,25 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 	printf("Actual path updated\n");
 	fflush(stdout);
 	if (room->is_end)
+	{
+		erase_last_one(actual_path);
 		return (ft_create_path(room));
+	}
 	printf("WESH\n");
 	fflush(stdout);
 	if (!room->is_end && no_option(room->links, actual_path))
+	{
+		erase_last_one(actual_path);
 		return (NULL);
+	}
 	printf("On est pas au bout dude!\n");
 	fflush(stdout);
 	i = 0;
 	result = NULL;
 	tmp = NULL;
-	while (room->links[i] && room->links[i]->name)
+	while (room->links && room->links[i] && room->links[i]->name)
 	{
-		printf("On encadre : links[i] = %s et room = %s\n", room->links[i]->name, room->name);
+		printf("On encadre : links[i] =  et room = \n");
 		fflush(stdout);
 		if (room_does_not_appear(room->links[i], actual_path))
 			tmp = ft_build_path(room->links[i], actual_path, all_paths);
@@ -96,11 +114,10 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 		fflush(stdout);
 	}
 	tmp = ft_create_path(room);
+	if (result == NULL)
+		return (NULL);
 	tmp->next = result;
 	result = tmp;
-	tmp = actual_path;
-	while (tmp->next->next)
-		tmp = tmp->next;
-	tmp->next = NULL;
+	erase_last_one(actual_path);
 	return (result);
 }

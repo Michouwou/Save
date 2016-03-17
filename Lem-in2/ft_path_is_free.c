@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 16:33:14 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 14:50:52 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/17 11:02:20 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ int		ft_path_is_free(t_path *path, t_path **all_paths)
 			i++;
 		}
 		j++;
-		if (j > 3)
-			exit(0);
 		tmp = tmp->next;
 	}
 	printf("Sortie is_free\n");
