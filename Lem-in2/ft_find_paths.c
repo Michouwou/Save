@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:19:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/17 11:30:35 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/17 13:23:00 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,11 @@ t_path	**ft_find_paths(t_room **rooms)
 	i = 0;
 	printf("%%%%%%about to enter the second loop\n");
 	fflush(stdout);
-	while (result[i]!= NULL)
+	while (result[i] != NULL)
 	{
 		i++;
 		result[i] = ft_build_path(start, result[i], result);
+		printf("Result[i] : %s\n", result[i] ? "yes" : "no");
 	}
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:24:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/17 11:54:40 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/17 13:03:35 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_iterate(t_ant **ants, t_path **paths)
 		i++;
 	}
 	ft_printf("\n");
-	if (ants[i] == NULL)
+	if (ants[i] == NULL && ants[i - 1]->actual->is_end)
 		return (0);
 	j = 0;
 	while (ants[i] && paths[j])
@@ -45,8 +45,5 @@ int		ft_iterate(t_ant **ants, t_path **paths)
 		i++;
 	}
 	printf("i : %d, ants[0]->path exists? %s\n", i, ants[0]->path->room->name);
-	//exit(0);
-	//if (ants[i] == NULL)
-	//	return (0);
 	return (1);
 }
