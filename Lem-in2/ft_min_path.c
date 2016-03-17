@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 15:12:54 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 16:22:31 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/17 17:04:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ t_path	*ft_min_path(t_path *path_one, t_path *path_two)
 	lenb = ft_path_len(path_two);
 	printf("After path_len\n");
 	fflush(stdout);
+	if (!lena && !lenb)
+		return (NULL);
 	if (!lena || !lenb)
 		return ((!lena) ? path_two : path_one);
 	if (lena > lenb)

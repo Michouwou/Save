@@ -8,15 +8,30 @@ D 89 90
 E 2 987
 F 0 72
 G 90 12
+H 1 2
+I 1 2
+J 1 2
+K 1 2
+L 1 2
+M 1 2
 ##end
 end 56 78
 start-A
 start-B
-start-C
-A-E
+A-C
+A-D
 B-D
+B-E
+B-F
 C-G
-D-F
-D-G
-F-end
-G-end
+C-H
+D-I
+D-H
+E-I
+E-J
+F-J
+F-K
+H-L
+J-M
+L-end
+M-end
