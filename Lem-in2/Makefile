@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/14 11:15:47 by mlevieux          #+#    #+#              #
-#    Updated: 2016/03/14 15:08:55 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/03/21 10:17:27 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRC =	ft_create_ant.c ft_free_everything.c ft_link_room.c ft_path_len.c \
 	  	ft_block.c ft_create_path.c ft_get_ants.c ft_links_rooms.c \
 		ft_print_move.c ft_build_path.c ft_create_room.c ft_get_rooms.c \
 		ft_min_path.c ft_read_file.c ft_core.c ft_find_paths.c ft_iterate.c \
-		ft_path_is_free.c get_next_line.c main.c
+		ft_path_is_free.c ft_paths_coeff.c get_next_line.c main.c
 
 OBJ = $(SRC:.c=.o)
 

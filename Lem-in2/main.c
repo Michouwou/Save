@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:12:38 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 10:18:36 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/21 10:14:22 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(void)
 	printf("sortie de get rooms et entree dans link, adresse de rooms[0] %p\n", (void*)rooms[1]);
 	fflush(stdout);
 	ft_links_rooms(rooms, args, num_rooms);
-	ft_core(rooms, ants);
+	ft_core(rooms, ants, num_ants);
 	printf("Eh?\n");
 	fflush(stdout);
 	return (0);

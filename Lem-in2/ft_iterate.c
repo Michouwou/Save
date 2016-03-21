@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:24:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/17 13:03:35 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/21 10:37:51 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,10 @@ int		ft_iterate(t_ant **ants, t_path **paths)
 	if (ants[i] == NULL && ants[i - 1]->actual->is_end)
 		return (0);
 	j = 0;
-	while (ants[i] && paths[j])
+	while (ants[i] && paths[j] && paths[j]->coeff > 0)
 	{
 		ants[i]->path = paths[j];
+		paths[j]->coeff--;
 		j++;
 		i++;
 	}

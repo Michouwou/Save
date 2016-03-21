@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:03:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 10:11:16 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/21 10:15:34 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct		s_path
 {
 	t_room			*room;
 	struct s_path	*next;
+	int				coeff;
 }					t_path;
 
 t_ant				*ft_create_ant(int number);
@@ -52,11 +53,12 @@ char				**ft_read_file(int fd);
 void				ft_get_rooms(char ***args, int *len, t_room ***result);
 void				ft_links_rooms(t_room **rooms, char **args, int len);
 t_path				**ft_find_paths(t_room **rooms);
-void				ft_core(t_room **rooms, t_ant **ants);
+void				ft_core(t_room **rooms, t_ant **ants, int number_of_ants);
 void				ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants);
 void				ft_print_move(t_ant *ant);
 void				ft_block(char *string);
 int					ft_path_len(t_path *path);
 t_path				*ft_min_path(t_path *path_one, t_path *path_two);
+void				ft_paths_coeff(t_path **paths, int number_of_ants);
 
 #endif
