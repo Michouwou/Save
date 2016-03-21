@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:19:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/17 17:19:13 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/21 11:48:07 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_path	**ft_find_paths(t_room **rooms)
 	while (start->links[i] && start->links[i]->name)
 		i++;
 	result = (t_path**)malloc(sizeof(t_path*) * i);
+	i++;
 	while (i > 0)
 	{
 		result[i - 1] = NULL;
