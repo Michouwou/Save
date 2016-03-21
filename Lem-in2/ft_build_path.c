@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/17 17:16:42 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/21 09:49:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 	tmp = NULL;
 	while (room->links && room->links[i] && room->links[i]->name)
 	{
-		printf("ROOM : %s && LINK : %s\n", room->name, room->links[i]->name);
 		if (room_does_not_appear(room->links[i], actual_path))
 			tmp = ft_build_path(room->links[i], actual_path, all_paths);
 		if (tmp && ft_path_is_free(tmp, all_paths))
