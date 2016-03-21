@@ -1,37 +1,13 @@
-5
+8
 ##start
-start 56 67
-A 78 90
-B 34 56
-C 45 67
-D 89 90
-E 2 987
-F 0 72
-G 90 12
-H 1 2
-I 1 2
-J 1 2
-K 1 2
-L 1 2
-M 1 2
+start 0 0
+UneSalle 0 1
 ##end
-end 56 78
-start-A
-start-B
-A-C
-A-D
-B-D
-B-E
-B-F
-C-G
-C-H
-D-I
-D-H
-E-I
-E-J
-F-J
-F-K
-H-L
-J-M
-L-end
-M-end
+end 0 2
+UneSalleApres 0 3
+UnRaccourci 0 4
+start-UneSalle
+start-UnRaccourci
+UneSalle-UneSalleApres
+UnRaccourci-end
+UneSalleApres-end
