@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 13:56:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/22 14:11:05 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 14:24:22 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ double	ft_cn(t_stack *alpha)
 	while (i < alpha->len - 1)
 	{
 		if (alpha->stack[i] < alpha->stack[i + 1])
-			result += 1.0 / alpha->len;
+			result += 1.0 / (alpha->len - 1);
 		i++;
 	}
 	return (result);

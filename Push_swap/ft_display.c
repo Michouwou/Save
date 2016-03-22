@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:04:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/26 09:44:51 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 14:25:46 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void		ft_display(char *options, t_sol **sols)
 			options[2] == 'c' || options[3] == 'c')
 			ft_color("36", *((*sols)->sols));
 		else
-			ft_printf("%s\n", *((*sols)->sols));
+			if ((*sols)->len > 0)
+				ft_printf("%s\n", *((*sols)->sols));
 	}
 }

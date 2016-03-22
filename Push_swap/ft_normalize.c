@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 17:03:00 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/26 11:32:28 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 14:18:57 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,5 @@ void	ft_normalize(t_stack *alpha, char is_ext, t_sol **sols)
 				ft_stack_sol(ft_rotate(alpha, 'a'), sols);
 			if (is_ext == 'x')
 				ft_printf("Operation de normalisation de b, on fait tourner la pile pour que les elements soient au bon emplacement\n");
-			break;
 		}
 }

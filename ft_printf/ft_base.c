@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 14:02:17 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/24 14:37:58 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/22 10:17:01 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char 			*ft_base(intmax_t num, int base)
 	ft_bzero(final = (char*)malloc(sizeof(char) * 200), 200);
 	ft_isneg(&num, &k, final);
 	ft_make_base(&base);
-	while ((i * base) < num)
+	while ((i * base) <= num)
 		i = i * base;
 	while (i > 0)
 	{

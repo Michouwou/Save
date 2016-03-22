@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 15:03:14 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/26 09:36:39 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 14:27:41 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,27 +35,20 @@ void	ft_stack_sol(char *sol, t_sol **stack_sol)
 	int		i;
 
 	i = 0;
-	printf("Entree dans stack_sol, stack_sol->len = %d et sol = %s\n", (*stack_sol)->len, sol);
+	//printf("Entree dans stack_sol, stack_sol->len = %d et sol = %s\n", (*stack_sol)->len, sol);
 	fflush(stdout);
 	tsol = ft_create_sol((*stack_sol)->len + 1);
 
-	printf("Tsol->len = %d\n", tsol->len);
-	fflush(stdout);
-	
 	tsol->len = (*stack_sol)->len;
 	while (i < (*stack_sol)->len)
 	{
 		tsol->sols[i] = ft_strcpy(tsol->sols[i], (*stack_sol)->sols[i]);
-		printf("Copy OK ::: %s\n", tsol->sols[i]);
-		fflush(stdout);
 
 		i++;
 	}
 	tsol->sols[i] = ft_strcpy(tsol->sols[i], sol);
 	tsol->len++;
-	printf("Premiere operation : %s\n", tsol->sols[0]);
-	fflush(stdout);
 	*stack_sol = tsol;
-	printf("Premiere operation encore: %s\n", (*stack_sol)->sols[0]);
+	//printf("Premiere operation encore: %s\n", (*stack_sol)->sols[0]);
 	fflush(stdout);
 }

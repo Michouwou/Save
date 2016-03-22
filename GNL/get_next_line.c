@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 20:16:19 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/25 10:33:31 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/14 15:22:29 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int		get_next_line(int const fd, char **line)
 	static t_memory	*memory;
 	char			*rest;
 
+	if (!line)
+		return (-1);
 	rest = ft_is_memory(memory, fd);
 	if (rest != NULL)
 		return (ft_next_line(rest, line, fd, memory));

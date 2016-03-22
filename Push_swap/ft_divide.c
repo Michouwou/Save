@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 15:30:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/26 09:38:56 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/02/26 15:09:40 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ static void	ft_beg_sort(t_stack *alpha, t_sol **stack_sol)
 	char	*op;
 
 	op = ft_next_op(alpha);
-	while (ft_middle_coeff(alpha) < 1)
+	printf("YO, op = %s\n\n", op);
+	while (ft_middle_coeff(alpha) != 1 && ft_middle_coeff(alpha) != 3)
 	{
 		if (!ft_strcmp(op, "sw"))
 			ft_stack_sol(ft_swap_e(alpha, 'a'), stack_sol);
@@ -48,13 +49,13 @@ char		ft_divide(t_stack *alpha, t_stack *beta, char *options, t_sol **stack_sol)
 		else
 			is_ext = 'w';
 	}
-	if (ft_cn(alpha) > 0.75 && alpha->len >= 6)
+	if (ft_cn(alpha) > 0.5 && alpha->len >= 6)
 	{
 		printf("\t\tOn s'apprete a appeler beg_sort\n");
 		fflush(stdout);
 
 		ft_beg_sort(alpha, stack_sol);
-		if (is_ext == 'y' || is_ext == 'w')
+		//if (is_ext == 'y' || is_ext == 'w')
 			ft_printf("La liste etant deja presque triee, on classe les	elements approximativement dans l'ordre pour que le restack soit plus rapide.\n");
 	}
 	i = alpha->len / 2;
