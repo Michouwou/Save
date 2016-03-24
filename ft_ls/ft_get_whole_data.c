@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 12:46:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/24 16:37:31 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/24 18:17:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_get_whole_data(struct dirent *dir, t_data **data)
 	struct passwd	*pwd;
 
 	stat = (struct stat*)malloc(sizeof(struct stat));
-	if (!lstat(".", stat))
+	if (!lstat((*data)->name, stat))
 	{
 		grp = getgrgid(stat->st_gid);
 		pwd = getpwuid(stat->st_uid);

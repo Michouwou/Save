@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 11:01:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/24 16:39:02 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/24 18:53:01 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,14 @@ int main(int argc, char **argv)
 	struct passwd *pwd;
 	t_data *data;
 
-	open = opendir("./");
+	open = opendir(".");
 	data = ft_create_data();
 	stat = (struct stat*)malloc(sizeof(struct stat));
-	if ((dir = readdir(open)) != NULL)
+	while ((dir = readdir(open)) != NULL)
 	{
-		lstat("./a.out", stat);
-		if (stat->st_mode & S_IRWXU)
-		printf("ca marche wesh\n");
-		ft_get_whole_data(dir, &data);
 		data->name = dir->d_name;
-		printf("name : %s\n", data->name);
-		printf("mode : %s\n", data->mode);
-		printf("type : %c\n", data->type);
-		printf("mont : %s\n", data->date_mon);
-		printf("numb : %s\n", data->date_num);
-		printf("hour : %s\n", data->date_hour);
-		printf("time : %lld\n", data->time);
-		printf("size : %ld\n", data->size);
-		printf("grpn : %s\n", data->group_name);
-		printf("user : %s\n", data->user_name);
-		printf("lnks : %d\n", data->links);
+		ft_get_whole_data(dir, &data);
+		printf("%c%s  %d %s  %s  %*ld %s %s %s %s\n", data->is_dir ? 'd' : data->type, data->mode, data->links, data->user_name, data->group_name, ft_strlen(ft_itoa(ft_max(data))), data->size, data->date_mon, data->date_num, data->date_hour, data->name);
 	}
 	return (0);
 }
