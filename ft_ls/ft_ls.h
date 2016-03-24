@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/24 18:28:24 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/24 21:02:27 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ t_data			*ft_create_data(void);
 void			ft_get_whole_data(struct dirent *dir, t_data **data);
 void			ft_get_mode(mode_t st_mode, t_data **data);
 int				ft_isdir(mode_t st_mode);
-int				ft_max_width(t_data **datas, int flag); // can be valued from on eto seven
+int				ft_max_width(t_data **datas, int flag);
 
