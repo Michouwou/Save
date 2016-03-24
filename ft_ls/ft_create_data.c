@@ -19,6 +19,7 @@ t_data		*ft_create_data(void)
 	new = (t_data*)malloc(sizeof(t_data));
 	new->name = NULL;
 	new->mode = NULL;
+	new->type = '-';
 	new->date_mon = NULL;
 	new->date_num = NULL;
 	new->date_hour = NULL;

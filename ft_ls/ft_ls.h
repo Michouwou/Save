@@ -27,6 +27,7 @@ typedef struct	s_data
 {
 	char			*name;
 	char			*mode;
+	char			type;
 	char			*date_mon;
 	char			*date_num;
 	char			*date_hour;
@@ -47,3 +48,6 @@ t_data			*ft_create_data(void);
 void			ft_get_whole_data(struct dirent *dir, t_data **data); // Not yet tested
 void			ft_get_mode(mode_t st_mode, t_data **data); // Not yet done
 int				ft_isdir(mode_t st_mode); // Not yet done
+
+
+

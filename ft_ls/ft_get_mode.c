@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_get_mode.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,32 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <dirent.h>
-#include <string.h>
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <pwd.h>
-#include <grp.h>
-#include <time.h>
+#include "ft_ls.h"
 
-int main(int argc, char **argv)
+char    *ft_get_mode(mode_t mode)
 {
-	struct dirent *dir;
-	DIR *open;
-	struct stat *stat;
-	struct group *grp;
-	struct passwd *pwd;
-
-	open = opendir("./");
-	stat = (struct stat*)malloc(sizeof(struct stat));
-	if ((dir = readdir(open)) != NULL)
-	{
-		lstat("./a.out", stat);
-		if (stat->st_mode & S_IRWXU)
-		printf("ca marche wesh\n");
-	}
-	return (0);
+    char    *mode;
+    
+    mode = ft_strdup("---------");
+    if (mode & S_IRUSR)
+        mode[0] = 'r';
+    if (mode & S_IWUSR)
+        mode[1] = 'w';
+    if (mode & S_IXUSR)
+        mode[2] = 'x';
+    if (mode & S_IRGRP)
+        mode[3] = 'r';
+    if (mode & S_IWGRP)
+        mode[4] = 'w';
+    if (mode & S_IXGRP)
+        mode[5] = 'x';
+    if (mode & S_IROTH)
+        mode[6] = 'r';
+    if (mode & S_IWOTH)
+        mode[7] = 'w';
+    if (mode & S_IXOTH)
+        mode[8] = 'x';
+    return (mode);
 }
