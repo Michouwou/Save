@@ -6,11 +6,16 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 18:28:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/24 18:52:57 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/24 19:44:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+int		ft_max(int a, int b)
+{
+	return (a > b ? a : b);
+}
 
 int		ft_max_width(t_data **datas, int flag)
 {
