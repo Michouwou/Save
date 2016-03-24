@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_type.c                                      :+:      :+:    :+:   */
+/*   ft_isdir.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/22 11:01:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/24 16:23:41 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/03/24 15:52:00 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/24 16:29:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-char    ft_get_type(mode_t mode)
+int		ft_isdir(mode_t mode)
 {
-	char c;
-
-    if (mode & S_IFSOCK)
-        c = 's';
-    else if (mode & S_IFLNK)
-        c = 'l';    
-    else if (mode & S_IFREG)
-        c = '-';
-    else if (mode & S_IFBLK)
-        c = 'b';
-    else if (mode & S_IFDIR)
-        c = 'd';
-    else if (mode & S_IFCHR)
-        c = 'c';
-    else if (mode & S_IFIFO)
-        c = 'p';
-    return (c);
+	if (mode & S_IFDIR)
+		return (1);
+	return (0);
 }

@@ -6,34 +6,34 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 11:01:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/23 12:33:02 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/24 16:28:37 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-char    *ft_get_mode(mode_t mode)
+void    ft_get_mode(mode_t mode, t_data **data)
 {
-    char    *mode;
+    char    *mod;
     
-    mode = ft_strdup("---------");
+    mod = ft_strdup("---------");
     if (mode & S_IRUSR)
-        mode[0] = 'r';
+        mod[0] = 'r';
     if (mode & S_IWUSR)
-        mode[1] = 'w';
+        mod[1] = 'w';
     if (mode & S_IXUSR)
-        mode[2] = 'x';
+        mod[2] = 'x';
     if (mode & S_IRGRP)
-        mode[3] = 'r';
+        mod[3] = 'r';
     if (mode & S_IWGRP)
-        mode[4] = 'w';
+        mod[4] = 'w';
     if (mode & S_IXGRP)
-        mode[5] = 'x';
+        mod[5] = 'x';
     if (mode & S_IROTH)
-        mode[6] = 'r';
+        mod[6] = 'r';
     if (mode & S_IWOTH)
-        mode[7] = 'w';
+        mod[7] = 'w';
     if (mode & S_IXOTH)
-        mode[8] = 'x';
-    return (mode);
+        mod[8] = 'x';
+    (*data)->mode = mod;
 }
