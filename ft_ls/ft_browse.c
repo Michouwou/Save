@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 21:02:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/24 22:03:58 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/25 01:09:48 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,19 @@ void	ft_browse(t_data **data, char *entry_dir, int flag)
 
 	i = 0;
 	stat = (struct stat*)malloc(sizeof(struct stat));
-	(*data)->next = (t_data**)malloc(sizeof(t_data*) * (*data)->links);
+	(*data)->next = (t_data**)malloc(sizeof(t_data*) * 100);
 	directory = opendir(entry_dir);
-	while (i < (*data)->links)
+	while ((dir = readdir(directory)) != NULL)
 	{
-		dir = readdir(directory);
 		(*data)->next[i] = ft_create_data();
-		(*data)->next[i]->name = dir->d_name;
-		ft_get_path(data, (*data)->next[j]);
+		printf("Dir->d_name : %s\n", dir->d_name);
+		(*data)->next[i]->name = ft_strdup(dir->d_name);
 		ft_get_whole_data(dir, data);
-		if (flag == 1 && (*data)->next[j]->is_dir)
-			ft_browse(&((*data)->next[j]), (*data)->next[j]->path, 1); 
+		ft_get_path(data, (*data)->next[i]);
+		if (flag == 1 && (*data)->next[i]->is_dir)
+			ft_browse(&((*data)->next[i]), (*data)->next[i]->path, 1); 
 		i++;
 	}
+	closedir(directory);
+	free(stat);
 }
