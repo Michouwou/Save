@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 21:02:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/25 02:33:17 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/25 02:56:41 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,9 @@ void	ft_browse(t_data **data, char *entry_dir, int flag)
 	while ((dir = readdir(directory)) != NULL)
 	{
 		(*data)->next[i] = ft_create_data();
-		printf("Dir->d_name : %s\n", dir->d_name);
 		(*data)->next[i]->name = ft_strdup(dir->d_name);
 		ft_get_whole_data(dir, &((*data)->next[i]));
-		printf("(*data)->next[i]->size : %ld\n", (*data)->next[i]->size);
-		fflush(stdout);
 		ft_get_path(data, (*data)->next[i]);
-		ft_print_list(*data);
 		if (flag == 1 && (*data)->next[i]->is_dir)
 			ft_browse(&((*data)->next[i]), (*data)->next[i]->path, 1); 
 		i++;

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 11:01:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/25 02:29:52 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/25 03:03:36 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ int main(int argc, char **argv)
 	data->name = ft_strdup(".");
 	data->path = ft_strdup(".");
 	ft_browse(&data, data->name, 0);
+	for (int i = 0 ; data->next[i] ; i++)
+		ft_print_list(data->next, i);
 	return (0);
 }
