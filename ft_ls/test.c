@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 11:01:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/25 01:05:18 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/25 02:29:52 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,12 @@ int main(int argc, char **argv)
 	t_data *data;
 
 	data = (t_data*)malloc(sizeof(t_data));
+	open = opendir(".");
+	dir = readdir(open);
+	while (ft_strcmp(dir->d_name, "."))
+		dir = readdir(open);
 	data->name = ft_strdup(".");
 	data->path = ft_strdup(".");
-	ft_get_whole_data(dir, &data);
 	ft_browse(&data, data->name, 0);
 	return (0);
 }
