@@ -12,31 +12,28 @@
 
 #include "ft_ls.h"
 
-void	ft_browse(t_data **data, char *entry_dir, int flag)
+void	ft_browse(char *entry_dir, int *flag)
 {
-	int				i;
-	int				j;
 	DIR				*directory;
 	struct dirent	*dir;
 	struct stat		*stat;
+	t_tree			*tree;
+	t_data			*element;
 
-	i = -1;
 	stat = (struct stat*)malloc(sizeof(struct stat));
-	(*data)->next = (t_data**)malloc(sizeof(t_data*) * 100);
-	while (++i < 100)
-		(*data)->next[i] = NULL;
-	i = 0;
 	directory = opendir(entry_dir);
+	tree = NULL;
 	while ((dir = readdir(directory)) != NULL)
 	{
-		(*data)->next[i] = ft_create_data();
-		(*data)->next[i]->name = ft_strdup(dir->d_name);
-		ft_get_whole_data(dir, &((*data)->next[i]));
-		ft_get_path(data, (*data)->next[i]);
-		if (flag == 1 && (*data)->next[i]->is_dir)
-			ft_browse(&((*data)->next[i]), (*data)->next[i]->path, 1); 
-		i++;
+		element = ft_create_data();
+		element->name = dir->d_name;
+		ft_get_path(entry_dir, element);
+		lstat(element->path, stat);
+		ft_get_whole_data(dir, &element);
+		ft_insert_sort(element, &tree, flag[1]);
 	}
+	ft_print_tree(tree, flag);
+	ft_median_browse(&tree, flag)
 	closedir(directory);
 	free(stat);
 }
