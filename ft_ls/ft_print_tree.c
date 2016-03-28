@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_browse.c                                        :+:      :+:    :+:   */
+/*   ft_print_tree.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,29 +12,14 @@
 
 #include "ft_ls.h"
 
-void	ft_browse(char *entry_dir, int *flag)
+void    ft_print_tree(t_tree *tree, int *flag, int *widths)
 {
-	DIR				*directory;
-	struct dirent	*dir;
-	struct stat		*stat;
-	t_tree			*tree;
-	t_data			*element;
-
-	stat = (struct stat*)malloc(sizeof(struct stat));
-	directory = opendir(entry_dir);
-	tree = NULL;
-	while ((dir = readdir(directory)) != NULL)
-	{
-		element = ft_create_data();
-		element->name = dir->d_name;
-		ft_get_path(entry_dir, element);
-		lstat(element->path, stat);
-		ft_get_whole_data(dir, &element);
-		ft_insert_sort(element, &tree, flag[1]);
-	}
-	ft_print_tree(tree, flag);
-	ft_median_browse(tree, flag, ft_get_widths(tree));
-	ft_free_tree(tree);
-	closedir(directory);
-	free(stat);
+    if ((tree->left && !flag[3]) || (tree->right && flag[3]))
+        ft_print_tree(flag[3] ? tree->right : tree->left, flag, widths);
+    if (flag[2])
+        ft_print_list(tree, widths);
+    else
+        ft_simple_print(tree, widths);
+    if ((tree->right && !flag[3]) || (tree->left && flag[3]))
+        ft_print_tree(flag[3] ? tree->left : tree->right, flag, widths);
 }

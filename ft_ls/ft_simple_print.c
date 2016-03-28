@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_browse.c                                        :+:      :+:    :+:   */
+/*   ft_simple_print.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,29 +12,13 @@
 
 #include "ft_ls.h"
 
-void	ft_browse(char *entry_dir, int *flag)
-{
-	DIR				*directory;
-	struct dirent	*dir;
-	struct stat		*stat;
-	t_tree			*tree;
-	t_data			*element;
+/**
+ * Le tableau widths contiendra la largeur des noms a l'index 0 et le nombre
+ * d'elements par ligne a l'inde 1
+**/
 
-	stat = (struct stat*)malloc(sizeof(struct stat));
-	directory = opendir(entry_dir);
-	tree = NULL;
-	while ((dir = readdir(directory)) != NULL)
-	{
-		element = ft_create_data();
-		element->name = dir->d_name;
-		ft_get_path(entry_dir, element);
-		lstat(element->path, stat);
-		ft_get_whole_data(dir, &element);
-		ft_insert_sort(element, &tree, flag[1]);
-	}
-	ft_print_tree(tree, flag);
-	ft_median_browse(tree, flag, ft_get_widths(tree));
-	ft_free_tree(tree);
-	closedir(directory);
-	free(stat);
+void    ft_simple_print(t_tree *tree, int *widths)
+{
+    ft_printf("%*s", widths[0], tree->data->name);
+    widths[1]--;
 }

@@ -19,7 +19,7 @@ void	ft_get_whole_data(struct dirent *dir, t_data **data)
 	struct passwd	*pwd;
 
 	stat = (struct stat*)malloc(sizeof(struct stat));
-	if (!lstat((*data)->name, stat))
+	if (!lstat((*data)->path, stat))
 	{
 		grp = getgrgid(stat->st_gid);
 		pwd = getpwuid(stat->st_uid);

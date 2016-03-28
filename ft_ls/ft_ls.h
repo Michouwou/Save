@@ -43,11 +43,16 @@ typedef struct	s_data
 
 void			ft_parse_date(time_t time, t_data **data);
 char			*ft_parse(char **argv, char ***file_names);
-void			ft_print_list(t_data **data, int index);
+void			ft_print_list(t_data **data, int index); // A revoir
 t_data			*ft_create_data(void);
 void			ft_get_whole_data(struct dirent *dir, t_data **data);
 void			ft_get_mode(mode_t st_mode, t_data **data);
 int				ft_isdir(mode_t st_mode);
 int				ft_max_width(t_data **datas, int flag);
-void			ft_browse(t_data **data, char *entry_dir, int flag);
-void			ft_get_path(t_data **data, t_data *sub_data);
+void			ft_browse(char *entry_dir, int *flag);
+void			ft_get_path(t_data **data, t_data *sub_data); // A revoir
+char			ft_get_type(mode_t mode);
+void			ft_insert_sort(t_data *data, t_tree **first, int flag);
+void			ft_median_browse(t_tree *tree, int *flag);
+void			ft_print_tree(t_tree *tree, int *flag, int *widths);
+void			ft_simple_print(t_tree *tree, int *widths);
