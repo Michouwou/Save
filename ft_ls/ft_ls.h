@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/23 12:58:36 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/25 03:40:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ typedef struct	s_data
 
 void			ft_parse_date(time_t time, t_data **data);
 char			*ft_parse(char **argv, char ***file_names);
-void			ft_print_list(t_data *data);
+void			ft_print_list(t_data **data, int index);
 t_data			*ft_create_data(void);
-void			ft_get_whole_data(struct dirent *dir, t_data **data); // Not yet tested
-void			ft_get_mode(mode_t st_mode, t_data **data); // Not yet done
-int				ft_isdir(mode_t st_mode); // Not yet done
-
-
-
+void			ft_get_whole_data(struct dirent *dir, t_data **data);
+void			ft_get_mode(mode_t st_mode, t_data **data);
+int				ft_isdir(mode_t st_mode);
+int				ft_max_width(t_data **datas, int flag);
+void			ft_browse(t_data **data, char *entry_dir, int flag);
+void			ft_get_path(t_data **data, t_data *sub_data);

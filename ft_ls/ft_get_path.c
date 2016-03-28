@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_type.c                                      :+:      :+:    :+:   */
+/*   ft_get_path.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/22 11:01:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/24 18:39:07 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/03/24 22:51:56 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/25 03:11:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-char    ft_get_type(mode_t mode)
+void	ft_get_path(t_data **data, t_data *sub_data)
 {
-	char c;
+	char	*tmp;
 
-    if (mode & S_IFSOCK)
-        c = 's';
-    else if (mode & S_IFLNK)
-        c = 'l';    
-    else if (mode & S_IFREG)
-        c = '-';
-    else if (mode & S_IFBLK)
-        c = 'b';
-    else if (mode & S_IFDIR)
-        c = 'd';
-    else if (mode & S_IFCHR)
-        c = 'c';
-    else if (mode & S_IFIFO)
-        c = 'p';
-    return (c);
+	tmp = ft_strnew(ft_strlen((*data)->path) + ft_strlen(sub_data->name));
+	ft_strcpy(tmp, (*data)->path);
+	ft_strcat(tmp, "/");
+	ft_strcat(tmp, sub_data->name);
+	sub_data->path = tmp;
 }

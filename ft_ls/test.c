@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 11:01:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/23 12:33:02 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/25 03:23:59 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 #include <pwd.h>
 #include <grp.h>
 #include <time.h>
+#include "libft.h"
+#include "ft_ls.h"
 
 int main(int argc, char **argv)
 {
@@ -28,14 +30,17 @@ int main(int argc, char **argv)
 	struct stat *stat;
 	struct group *grp;
 	struct passwd *pwd;
+	t_data *data;
 
-	open = opendir("./");
-	stat = (struct stat*)malloc(sizeof(struct stat));
-	if ((dir = readdir(open)) != NULL)
-	{
-		lstat("./a.out", stat);
-		if (stat->st_mode & S_IRWXU)
-		printf("ca marche wesh\n");
-	}
+	data = (t_data*)malloc(sizeof(t_data));
+	open = opendir(".");
+	dir = readdir(open);
+	while (ft_strcmp(dir->d_name, "."))
+		dir = readdir(open);
+	data->name = ft_strdup(".");
+	data->path = ft_strdup(".");
+	ft_browse(&data, data->name, 0);
+	for (int i = 0 ; data->next[i] ; i++)
+		printf("Paths ... %s\n", data->next[i]->path);
 	return (0);
 }
