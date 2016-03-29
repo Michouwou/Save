@@ -6,26 +6,22 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/25 03:40:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/23 12:58:36 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FT_LS
-
-# define _FT_LS
-# include <dirent.h>
-# include <string.h>
-# include <stdio.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <pwd.h>
-# include <uuid/uuid.h>
-# include <grp.h>
-# include <time.h>
-# include "libft.h"
-# define WIN_WIDTH 80
+#include <dirent.h>
+#include <string.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <pwd.h>
+#include <uuid/uuid.h>
+#include <grp.h>
+#include <time.h>
+#include "libft.h"
 
 typedef struct	s_data
 {
@@ -41,32 +37,25 @@ typedef struct	s_data
 	char			*user_name;
 	int				links;
 	int				is_dir;
-	int				permission;
 	char			*path;
+	struct s_data	**next;
 }				t_data;
 
-typedef struct	s_tree
+typedef struct      s_tree
 {
-    t_data			*data;
-    struct s_tree	*left;
-    struct s_tree	*right;
-}				t_tree;
+    t_data          *data;
+    struct s_tree   *left;
+    struct s_tree   *right;
+}                   t_tree;
 
-void			ft_browse(char *entry_dir, int *flag);
-t_data			*ft_create_data(void);
-void			ft_free_tree(t_tree *tree);
-void			ft_get_mode(mode_t st_mode, t_data **data);
-void			ft_get_path(t_data **data, t_data *sub_data);
-char			ft_get_type(mode_t mode);
-void			ft_get_whole_data(struct dirent *dir, t_data **data);
-void			ft_insert_sort(t_data *data, t_tree **first, int flag);
-int				ft_isdir(mode_t st_mode);
-int				ft_max_width(t_data **datas, int flag);
-void			ft_median_browse(t_tree *tree, int *flag);
-char			*ft_parse(char **argv, char ***file_names);
 void			ft_parse_date(time_t time, t_data **data);
-void			ft_print_list(t_data **data, int index); // A revoir
-void			ft_print_tree(t_tree *tree, int *flag, int *widths);
-void			ft_simple_print(t_tree *tree, int *widths);
+char			*ft_parse(char **argv, char ***file_names);
+void			ft_print_list(t_data *data);
+t_data			*ft_create_data(void);
+void			ft_get_whole_data(struct dirent *dir, t_data **data);
+void			ft_get_mode(mode_t st_mode, t_data **data);
+int				ft_isdir(mode_t st_mode);
+t_tree      	*ft_create_node();
+void        	ft_insert_sort(t_data *data, t_tree **first, int flag);
 
-#endif
+

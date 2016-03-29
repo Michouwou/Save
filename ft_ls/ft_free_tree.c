@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_data.c                                   :+:      :+:    :+:   */
+/*   ft_free_tree.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/23 11:41:02 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/23 11:59:18 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/25 03:40:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-t_data		*ft_create_data(void)
+void    ft_free_tree(t_tree *tree)
 {
-	t_data	*new;
-
-	new = (t_data*)malloc(sizeof(t_data));
-	new->name = NULL;
-	new->mode = NULL;
-	new->type = '-';
-	new->date_mon = NULL;
-	new->date_num = NULL;
-	new->date_hour = NULL;
-	new->time = 0;
-	new->size = 0;
-	new->group_name = NULL;
-	new->user_name = NULL;
-	new->links = 0;
-	new->is_dir = 0;
-	new->permission = 1;
-	new->path = NULL;
-	new->next = NULL;
-	return (new);
+    free(tree->data->name);
+    free(tree->data->mode);
+    free(tree->data->date_mon);
+    free(tree->data->date_num);
+    free(tree->data->date_hour);
+    free(tree->data->group_name);
+    free(tree->data->user_name);
+    free(tree->data->path);
+    free(tree->data);
+    free(tree);
 }

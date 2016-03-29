@@ -19,6 +19,11 @@
 
 void    ft_simple_print(t_tree *tree, int *widths)
 {
+    if (widths[1] == 0)
+    {
+        ft_printf("\n");
+        widths[1] = WIN_WIDTH / widths[0];
+    }
     ft_printf("%*s", widths[0], tree->data->name);
     widths[1]--;
 }

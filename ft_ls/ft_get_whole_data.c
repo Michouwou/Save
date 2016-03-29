@@ -24,6 +24,7 @@ void	ft_get_whole_data(struct dirent *dir, t_data **data)
 		grp = getgrgid(stat->st_gid);
 		pwd = getpwuid(stat->st_uid);
 		ft_get_mode(stat->st_mode, data);
+		(*data)->type = ft_get_type(stat->st_mode);
 		ft_parse_date(stat->st_mtime, data);
 		(*data)->time = stat->st_mtime;
 		(*data)->size = stat->st_size;
@@ -32,4 +33,7 @@ void	ft_get_whole_data(struct dirent *dir, t_data **data)
 		(*data)->links = stat->st_nlink;
 		(*data)->is_dir = ft_isdir(stat->st_mode);
 	}
+	else
+		if (errno = EACCES)
+			(*data)->permission = 0;
 }

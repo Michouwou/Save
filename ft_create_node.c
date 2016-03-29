@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_data.c                                   :+:      :+:    :+:   */
+/*   ft_create_node.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/23 11:41:02 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/23 11:59:18 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/23 12:58:36 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-t_data		*ft_create_data(void)
+t_tree      *ft_create_node(void)
 {
-	t_data	*new;
-
-	new = (t_data*)malloc(sizeof(t_data));
-	new->name = NULL;
-	new->mode = NULL;
-	new->type = '-';
-	new->date_mon = NULL;
-	new->date_num = NULL;
-	new->date_hour = NULL;
-	new->time = 0;
-	new->size = 0;
-	new->group_name = NULL;
-	new->user_name = NULL;
-	new->links = 0;
-	new->is_dir = 0;
-	new->permission = 1;
-	new->path = NULL;
-	new->next = NULL;
-	return (new);
+    t_tree  *new;
+    
+    new = (t_data*)malloc(sizeof(t_data));
+    new->data = NULL;
+    new->right = NULL;
+    new->left = NULL;
+    return (new);
 }
