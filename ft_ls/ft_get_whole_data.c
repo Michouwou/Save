@@ -33,7 +33,6 @@ void	ft_get_whole_data(struct dirent *dir, t_data **data)
 		(*data)->links = stat->st_nlink;
 		(*data)->is_dir = ft_isdir(stat->st_mode);
 	}
-	else
-		if (errno = EACCES)
-			(*data)->permission = 0;
+	else if (errno = EACCES)
+		(*data)->permission = 0;
 }

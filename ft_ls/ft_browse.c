@@ -17,7 +17,22 @@
  * -r a l'indice 3, l'option -R a l'indice 0, et l'option -a a l'indice 4
 **/
 
-void	ft_browse(char *entry_dir, int *flag)
+static int	int_tab(void)
+{
+	int	*tab;
+	int	i;
+	
+	i = 0;
+	tab = (int*)malloc(sizeof(int) * 7)
+	while (i < 7)
+	{
+		tab[i] = 0;
+		i++;
+	}
+	return (tab);
+}
+
+void		ft_browse(char *entry_dir, int *flag)
 {
 	DIR				*directory;
 	struct dirent	*dir;
@@ -38,7 +53,7 @@ void	ft_browse(char *entry_dir, int *flag)
 		}
 	}
 	ft_print_tree(tree, flag);
-	ft_median_browse(tree, flag, ft_get_widths(tree));
+	ft_median_browse(tree, flag, ft_get_widths(tree, int_tab());
 	ft_free_tree(tree);
 	closedir(directory);
 	free(dir);
