@@ -13,7 +13,8 @@ void	jlst_push_front(j_list **first_node, void *data)
 	node->data_len = sizeof(data);
 	node->next = *first_node;
 	(*first_node)->previous = node;
-	while ((*first_node)->next)
+	while (
+		(*first_node)->next)
 	{
 		(*first_node)->list_len++;
 		*first_node = (*first_node)->next; 

@@ -24,5 +24,5 @@ void    jlst_sort(j_list **first_node, int (*compare_func)(void*, void*))
         jlst_del_data(first_node, min_e->data);
     }
     jlst_del_list(first_node);
-    return (new);
+    *first_node = new;
 }
