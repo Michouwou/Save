@@ -26,8 +26,8 @@ void			jlst_compact(j_list *first); /*compacts the list so it's continuous*/
 void			jlst_merge(j_list *first_list, j_list *second_list); /*add 'second_list' to the end of 'first_list'*/
 void			jlst_del_node(j_list **first_node, int index); /*deletes the node at 'index' in the list*/
 void			jlst_del_data(j_list **first_node, void *data, int (*compare_func)(void*, void*));
-void			jlst_del_list(j_list **first_node); /*deletes the whole list*/
-int				jlst_in_jlst(j_list *great_list, j_list *to_search); /*search a list in a greater list, and returns the index of its first element, or -1 if it was not found, not taking blanks in account*/
+void			jlst_del_list(j_list *first_node); /*deletes the whole list*/
+int				jlst_in_jlst(j_list *great_list, j_list *to_search); /*search a list in a greater list, and returns the index of its first element, or -1 if it was not found, not taking blanks in account for the list to search for*/
 int				jlst_length(j_list *first_node); /*returns the length of the list, that is to say the maximum size it can hold*/
 void			jlst_resize(j_list **first_node); /*increase list by two third*/
 int				jlst_is_sorted(j_list *first_node, int (*compare_func)(void* void*));
@@ -35,3 +35,4 @@ void			jlst_nforward(int n, j_list **first_node);
 void			jlst_nbackward(int n, j_list **first_node);
 void			jlst_sed(j_list *first_node);
 j_list			*jlst_nodecpy(j_list *to_copy);
+void			*jlst_datacpy(j_list *node);
