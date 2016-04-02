@@ -1,18 +1,30 @@
 // HEADER
 
-int		jlst_in_jlst(j_list *great_list, j_list *to_search)
+int		jlst_in_jlst(j_list *great_list, j_list *to_search, int (*compare_func)(void*, void*))
 {
-    int     i;
-    int     j;
     j_list  *tmpa;
     j_list  *tmpb;
+    j_list  *tmpc;
+    int     i[2];
     
-    i = jlst_length(great_list) - jlst_length(to_search);
-    j = 0;
     tmpa = great_list;
-    tmpb = to_search;
-    while (i > 0)
+    i[1] = jlst_length(great_list) - jlst_length(to_search);
+    while (tmpa && i[0] < i[1])
     {
-        
+        tmpb = to_search;
+        if (!compare_func(tmpa->data, tmpb->data))
+        {
+            tmpc = tmpa;
+            while (tmpc && tmpb && !compare_func(tmpc->data, tmpb->data))
+            {
+                tmpc = tmpc->next;
+                tmpb = tmpb->next;
+                i[0]++;
+            }
+            if (tmpb == NULL)
+                return (i);
+            i[0]++;
+            tmpa = tmpa->next;
+        }
     }
 }
