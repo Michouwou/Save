@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_simple_print.c                                  :+:      :+:    :+:   */
+/*   ft_create_node.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/24 21:02:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/19 12:13:59 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/04/19 10:38:17 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/04/19 10:41:07 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include <ft_ls.h>
 
-/**
- * Le tableau widths contiendra la largeur des noms a l'index 0 et le nombre
- * d'elements par ligne a l'inde 1
-**/
-
-void    ft_simple_print(t_tree *tree, int *widths)
+t_tree	*ft_create_node(void)
 {
-    if (widths[1] == 0)
-    {
-        ft_printf("\n");
-        widths[1] = WIN_WIDTH / (widths[0] + 1);
-    }
-    ft_printf("%-*s", widths[0], tree->data->name);
-    widths[1]--;
+	t_tree	*new;
+
+	new = (t_tree*)malloc(sizeof(t_tree));
+	new->data = NULL;
+	new->left = NULL;
+	new->right = NULL;
+	return (new);
 }

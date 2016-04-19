@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_simple_print.c                                  :+:      :+:    :+:   */
+/*   ft_display_rep.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/24 21:02:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/19 12:13:59 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/03/25 03:13:54 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/03/25 03:40:03 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-/**
- * Le tableau widths contiendra la largeur des noms a l'index 0 et le nombre
- * d'elements par ligne a l'inde 1
-**/
-
-void    ft_simple_print(t_tree *tree, int *widths)
+void	ft_display_rep(t_data **rep_content, int time, int rev, int listed)
 {
-    if (widths[1] == 0)
-    {
-        ft_printf("\n");
-        widths[1] = WIN_WIDTH / (widths[0] + 1);
-    }
-    ft_printf("%-*s", widths[0], tree->data->name);
-    widths[1]--;
+	t_data	*to_display;
+	int		i;
+
+	i = 0;
+	if (rev)
+		to_display = ft_sort_rev(rep_content);
+	else if (time)
+		to_display = ft_sort_time(rep_content);
+	else
+		to_display = ft_sort_reg(rep_content);
+	if (listed)
+		while (to_display[i]->type != -1)
+			ft_print_list(to_display, i++);
+	else
+		ft_print_simple(to_display);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/25 03:40:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/19 12:14:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@
 # include <grp.h>
 # include <time.h>
 # include "libft.h"
-# define WIN_WIDTH 80
+# include "libftprintf.h"
+# define WIN_WIDTH 100
 
 typedef struct	s_data
 {
@@ -54,18 +55,19 @@ typedef struct	s_tree
 
 void			ft_browse(char *entry_dir, int *flag);
 t_data			*ft_create_data(void);
+t_tree			*ft_create_node(void);
 void			ft_free_tree(t_tree *tree);
 void			ft_get_mode(mode_t st_mode, t_data **data);
-void			ft_get_path(t_data **data, t_data *sub_data);
+void			ft_get_path(char *super_path, t_data *sub_data);
 char			ft_get_type(mode_t mode);
 void			ft_get_whole_data(struct dirent *dir, t_data **data);
 int				*ft_get_widths(t_tree *tree, int *tab);
 void			ft_insert_sort(t_data *data, t_tree **first, int flag);
 int				ft_isdir(mode_t st_mode);
 void			ft_median_browse(t_tree *tree, int *flag);
-char			*ft_parse(char **argv, char ***file_names);
+int				*ft_parse(char **argv, char ***file_names);
 void			ft_parse_date(time_t time, t_data **data);
-void			ft_print_list(t_data **data, int index); // A revoir
+void			ft_print_list(t_tree *node, int *index); // A revoir
 void			ft_print_tree(t_tree *tree, int *flag, int *widths);
 void			ft_simple_print(t_tree *tree, int *widths);
 

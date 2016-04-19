@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 12:46:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/25 02:54:03 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/19 10:36:25 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ void	ft_get_whole_data(struct dirent *dir, t_data **data)
 		(*data)->links = stat->st_nlink;
 		(*data)->is_dir = ft_isdir(stat->st_mode);
 	}
-	else if (errno = EACCES)
+	else if (errno == EACCES)
 		(*data)->permission = 0;
 }

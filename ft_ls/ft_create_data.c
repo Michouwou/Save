@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 11:41:02 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/23 11:59:18 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/19 09:59:28 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ t_data		*ft_create_data(void)
 	new->is_dir = 0;
 	new->permission = 1;
 	new->path = NULL;
-	new->next = NULL;
 	return (new);
 }

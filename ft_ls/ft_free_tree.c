@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/25 03:40:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/19 12:14:29 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void    ft_free_tree(t_tree *tree)
 {
-    free(tree->data->name);
     free(tree->data->mode);
     free(tree->data->date_mon);
     free(tree->data->date_num);
