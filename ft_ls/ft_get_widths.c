@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/25 03:40:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/19 14:50:17 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int     *ft_get_widths(t_tree *tree, int *tab)
     if (tree->right)
         tab = ft_get_widths(tree->right, tab);
     tab[0] = ft_max(ft_strlen(tree->data->name), tab[0]);
-    tab[1] = WIN_WIDTH / tab[0];
+    tab[1] = tgetnum("li") / (tab[0] + 1);
     tab[2] = ft_max(ft_strlen(tree->data->date_num), tab[2]);
     tab[3] = ft_max(ft_strlen(ft_itoa(tree->data->size)), tab[3]);
     tab[4] = ft_max(ft_strlen(tree->data->group_name), tab[4]);

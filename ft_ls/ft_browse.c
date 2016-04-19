@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 21:02:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/19 13:16:58 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/19 14:36:09 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void		ft_browse(char *entry_dir, int *flag)
 	t_tree			**tree;
 	t_data			*element;
 
+	int i =0;
 	directory = opendir(entry_dir);
 	tree = (t_tree**)malloc(sizeof(t_tree*));
 	*tree = NULL;
@@ -47,10 +48,11 @@ void		ft_browse(char *entry_dir, int *flag)
 		if (!(dir->d_name[0] == '.' && !flag[4]))
 		{
 			element = ft_create_data();
-			element->name = dir->d_name;
+			element->name = ft_strdup(dir->d_name);
 			ft_get_path(entry_dir, element);
 			ft_get_whole_data(dir, &element);
 			ft_insert_sort(element, tree, flag[1]);
+			i++;
 		}
 	}
 	if (*tree)
@@ -62,4 +64,5 @@ void		ft_browse(char *entry_dir, int *flag)
 	}
 	closedir(directory);
 	free(dir);
+	printf("%d\n", i);
 }

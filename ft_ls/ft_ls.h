@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/19 12:14:43 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/19 14:47:52 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@
 # include <pwd.h>
 # include <uuid/uuid.h>
 # include <grp.h>
+# include <term.h>
 # include <time.h>
 # include "libft.h"
 # include "libftprintf.h"
-# define WIN_WIDTH 100
+//# define WIN_WIDTH 120
 
 typedef struct	s_data
 {

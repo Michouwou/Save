@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 21:02:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/19 12:13:59 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/19 14:11:40 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ void    ft_simple_print(t_tree *tree, int *widths)
         ft_printf("\n");
         widths[1] = WIN_WIDTH / (widths[0] + 1);
     }
-    ft_printf("%-*s", widths[0], tree->data->name);
+    ft_printf("%-*s", widths[0] + 1, tree->data->name);
     widths[1]--;
 }

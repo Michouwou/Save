@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/19 12:43:23 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/19 14:30:35 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void    ft_insert_sort(t_data *data, t_tree **first, int flag)
         if (((ft_strcmp(tmp->data->name, new->data->name) > 0 && !flag) ||
             ((tmp->data->time - new->data->time) > 0 && flag)) && tmp->left)
             tmp = tmp->left;
-        else if (((ft_strcmp(tmp->data->name, new->data->name) < 0 && !flag) ||
+        else if (((ft_strcmp(tmp->data->name, new->data->name) <= 0 && !flag) ||
             ((tmp->data->time - new->data->time) <= 0 && flag)) && tmp->right)
             tmp = tmp->right;
         else
@@ -38,9 +38,12 @@ void    ft_insert_sort(t_data *data, t_tree **first, int flag)
     if (tmp && ((ft_strcmp(tmp->data->name, new->data->name) > 0 && !flag) ||
         ((tmp->data->time - new->data->time) > 0 && flag)))
         tmp->left = new;
-    else if (tmp && ((ft_strcmp(tmp->data->name, new->data->name) < 0 && !flag) ||
+    else if (tmp && ((ft_strcmp(tmp->data->name, new->data->name) <= 0 && !flag) ||
         ((tmp->data->time - new->data->time) <= 0 && flag)))
         tmp->right = new;
     else
+	{
+		write(1, "lol\n", 4);
         *first = new;
+	}
 }
