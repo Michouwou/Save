@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 12:46:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/20 11:33:27 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/20 14:52:09 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,6 @@ void	ft_get_whole_data(struct dirent *dir, t_data **data)
 		(*data)->user_name = ft_strdup(pwd->pw_name);
 		(*data)->links = stat->st_nlink;
 		(*data)->is_dir = ft_isdir(stat->st_mode);
-	}
-	else if (lstat((*data)->path, stat) == -1)
-	{
-		printf("\n%s\n%s\n", strerror(errno), (*data)->path);
-		exit (0);
 	}
 	else if (errno == EACCES)
 		(*data)->permission = 0;

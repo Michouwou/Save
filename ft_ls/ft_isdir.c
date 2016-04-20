@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 15:52:00 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/24 16:29:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/20 14:53:48 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isdir(mode_t mode)
 {
-	if (mode & S_IFDIR)
+	if (S_ISDIR(mode))
 		return (1);
 	return (0);
 }
