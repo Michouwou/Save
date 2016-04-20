@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 21:02:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/20 14:54:56 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/20 18:18:37 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,12 @@ void		ft_browse(char *entry_dir, int *flag)
 	}
 	if (tree)
 	{
+		ft_printf("LOL");
 		ft_print_tree(tree, flag, ft_get_widths(tree, NULL));
 		ft_median_browse(tree, flag);
-		ft_free_tree(tree);
+		//ft_free_tree(tree);
 	}
 	closedir(directory);
-	free(dir);
+	ft_printf("\n\t\t%s\n", entry_dir);
+	//free(dir);
 }
