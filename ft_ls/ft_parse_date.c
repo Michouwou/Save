@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 12:12:49 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/20 10:49:15 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/20 11:25:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ void	ft_parse_date(time_t time, t_data **data)
 
 	date = ft_strsplit(ctime(&time), ' ');
 	printf("%s\n", ctime(&time));
-	if (date[1] != NULL)
-		(*data)->date_mon = ft_strdup(date[1]);
-	if (date[2] != NULL)
-		(*data)->date_num = ft_strdup(date[2]);
+	(*data)->date_mon = ft_strdup(date[1]);
+	(*data)->date_num = ft_strnew(3);
+	(*data)->date_num = ft_strcpy((*data)->date_num, date[2]);
 	tmp = ft_strdup(date[3]);
 	i = 0;
 	while (date[i])

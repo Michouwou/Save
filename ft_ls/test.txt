@@ -1,0 +1,491 @@
+total 2097208
+prw-rw-rw-  1 root      wheel                0 Apr 20 09:28 13AFC760-788E-439C-AC9B-319D617562E8_IN
+prw-rw-rw-  1 root      wheel                0 Apr 20 09:28 13AFC760-788E-439C-AC9B-319D617562E8_OUT
+-rw-r--r--  1 root      wheel       1073741824 Apr 20 06:07 1G.rnd
+prw-rw-rw-  1 root      wheel                0 Apr 19 16:29 2E379790-8F83-47B6-8AB1-458B1CAC855A_IN
+prw-rw-rw-  1 root      wheel                0 Apr 19 16:29 2E379790-8F83-47B6-8AB1-458B1CAC855A_OUT
+-rw-r--r--  1 root      wheel                0 Apr 19 15:54 AlTest1.err
+-rw-r--r--  1 root      wheel                0 Apr 19 15:54 AlTest1.out
+-rw-r--r--  1 mlevieux  wheel                0 Apr 19 16:29 ExmanProcessMutex
+prw-rw-rw-  1 root      wheel                0 Apr 19 15:55 F7C71944B49B446081C0603DE90E4855_IN
+prw-rw-rw-  1 root      wheel                0 Apr 20 09:28 F7C71944B49B446081C0603DE90E4855_OUT
+-rw-rw-rw-  1 root      wheel            22173 Apr 20 09:28 adobegc.log
+srwx------  1 mlevieux  wheel                0 Apr 20 09:28 com.adobe.AdobeIPCBroker.ctrl-mlevieux
+drwx------  3 mlevieux  wheel              102 Apr 19 16:28 com.apple.launchd.EvVx3IJs2Z
+drwx------  3 mlevieux  wheel              102 Apr 19 16:28 com.apple.launchd.Rd88LEUa5v
+drwx------  3 mlevieux  wheel              102 Apr 20 09:27 com.apple.launchd.RwJTjFNJfH
+drwx------  3 mlevieux  wheel              102 Apr 20 09:27 com.apple.launchd.RypNGFQD0B
+drwx------  3 mlevieux  wheel              102 Apr 20 09:27 com.apple.launchd.mqFf2LSbYV
+drwx------  3 mlevieux  wheel              102 Apr 19 16:28 com.apple.launchd.zcVIn0h2MG
+-rw-r--r--@ 1 mlevieux  wheel                0 Apr 19 16:28 ct.shutdown
+-rw-------  1 mlevieux  2015_paris         477 Apr 20 09:27 krb5cc_3YnxrL
+drwxr-xr-x  5 root      admin              170 Apr 20 01:01 munki_swupd_cache
+
+/tmp/com.apple.launchd.EvVx3IJs2Z:
+total 0
+srw-rw-rw-  1 mlevieux  wheel  0 Apr 19 16:28 org.macosforge.xquartz:0
+
+/tmp/com.apple.launchd.Rd88LEUa5v:
+total 0
+srw-rw-rw-  1 mlevieux  wheel  0 Apr 19 16:28 Listeners
+
+/tmp/com.apple.launchd.RwJTjFNJfH:
+total 0
+srw-rw-rw-  1 mlevieux  wheel  0 Apr 20 09:27 org.macosforge.xquartz:0
+
+/tmp/com.apple.launchd.RypNGFQD0B:
+total 0
+srw-rw-rw-  1 mlevieux  wheel  0 Apr 20 09:27 Listeners
+
+/tmp/com.apple.launchd.mqFf2LSbYV:
+total 0
+srw-rw-rw-  1 mlevieux  wheel  0 Apr 20 09:27 Render
+
+/tmp/com.apple.launchd.zcVIn0h2MG:
+total 0
+srw-rw-rw-  1 mlevieux  wheel  0 Apr 19 16:28 Render
+
+/tmp/munki_swupd_cache:
+total 8
+-rw-r--r--  1 root  admin  380 Apr 20 01:01 ApplicableUpdates.plist
+drwxr-xr-x  4 root  admin  136 Dec 28 18:27 content
+drwxr-xr-x  3 root  admin  102 Apr 20 01:01 mirror
+
+/tmp/munki_swupd_cache/content:
+total 0
+drwxr-xr-x   6 root  admin  204 Mar 22 16:11 catalogs
+drwxr-xr-x  11 root  admin  374 Mar 22 16:11 downloads
+
+/tmp/munki_swupd_cache/content/catalogs:
+total 6224
+-rw-r--r--  1 root  admin  3124434 Apr 20 11:59 apple_index.sucatalog
+-rw-r--r--  1 root  admin    16916 Mar 22 16:11 filtered_index.sucatalog
+-rw-r--r--  1 root  admin    18098 Mar 22 16:11 local_download.sucatalog
+-rw-r--r--  1 root  admin    18274 Mar 22 16:11 local_install.sucatalog
+
+/tmp/munki_swupd_cache/content/downloads:
+total 0
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 08
+drwxr-xr-x  3 root  admin  102 Jan 25 10:16 18
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 22
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 34
+drwxr-xr-x  3 root  admin  102 Mar 22 16:11 41
+drwxr-xr-x  3 root  admin  102 Mar 22 16:11 42
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 44
+drwxr-xr-x  3 root  admin  102 Mar 22 16:11 45
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 53
+
+/tmp/munki_swupd_cache/content/downloads/08:
+total 0
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 58
+
+/tmp/munki_swupd_cache/content/downloads/08/58:
+total 0
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 031-45768
+
+/tmp/munki_swupd_cache/content/downloads/08/58/031-45768:
+total 0
+drwxr-xr-x  38 root  admin  1292 Dec 28 18:27 yy0xr85ltis3a7mxuqf3zgaw7sovupckd7
+
+/tmp/munki_swupd_cache/content/downloads/08/58/031-45768/yy0xr85ltis3a7mxuqf3zgaw7sovupckd7:
+total 360
+-rw-r--r--@ 1 root  admin   3763 Dec 28 18:27 031-45768.Dutch.dist
+-rw-r--r--@ 1 root  admin   3742 Dec 28 18:27 031-45768.English.dist
+-rw-r--r--@ 1 root  admin   3805 Dec 28 18:27 031-45768.French.dist
+-rw-r--r--@ 1 root  admin   3755 Dec 28 18:27 031-45768.German.dist
+-rw-r--r--@ 1 root  admin   3764 Dec 28 18:27 031-45768.Italian.dist
+-rw-r--r--@ 1 root  admin   3795 Dec 28 18:27 031-45768.Japanese.dist
+-rw-r--r--@ 1 root  admin   3822 Dec 28 18:27 031-45768.Spanish.dist
+-rw-r--r--@ 1 root  admin   3837 Dec 28 18:27 031-45768.ar.dist
+-rw-r--r--@ 1 root  admin   3797 Dec 28 18:27 031-45768.ca.dist
+-rw-r--r--@ 1 root  admin   3773 Dec 28 18:27 031-45768.cs.dist
+-rw-r--r--@ 1 root  admin   3757 Dec 28 18:27 031-45768.da.dist
+-rw-r--r--@ 1 root  admin   3951 Dec 28 18:27 031-45768.el.dist
+-rw-r--r--@ 1 root  admin   3803 Dec 28 18:27 031-45768.es_MX.dist
+-rw-r--r--@ 1 root  admin   3761 Dec 28 18:27 031-45768.fi.dist
+-rw-r--r--@ 1 root  admin   3835 Dec 28 18:27 031-45768.he.dist
+-rw-r--r--@ 1 root  admin   3745 Dec 28 18:27 031-45768.hr.dist
+-rw-r--r--@ 1 root  admin   3799 Dec 28 18:27 031-45768.hu.dist
+-rw-r--r--@ 1 root  admin   3772 Dec 28 18:27 031-45768.id.dist
+-rw-r--r--@ 1 root  admin   3765 Dec 28 18:27 031-45768.ko.dist
+-rw-r--r--@ 1 root  admin   3753 Dec 28 18:27 031-45768.ms.dist
+-rw-r--r--@ 1 root  admin   3775 Dec 28 18:27 031-45768.no.dist
+-rw-r--r--@ 1 root  admin   3810 Dec 28 18:27 031-45768.pl.dist
+-rw-r--r--@ 1 root  admin   3787 Dec 28 18:27 031-45768.pt.dist
+-rw-r--r--@ 1 root  admin   3848 Dec 28 18:27 031-45768.pt_PT.dist
+-rw-r--r--@ 1 root  admin   3799 Dec 28 18:27 031-45768.ro.dist
+-rw-r--r--@ 1 root  admin   3983 Dec 28 18:27 031-45768.ru.dist
+-rw-r--r--@ 1 root  admin   3768 Dec 28 18:27 031-45768.sk.dist
+-rw-r--r--@ 1 root  admin   3774 Dec 28 18:27 031-45768.sv.dist
+-rw-r--r--@ 1 root  admin   3991 Dec 28 18:27 031-45768.th.dist
+-rw-r--r--@ 1 root  admin   3787 Dec 28 18:27 031-45768.tr.dist
+-rw-r--r--@ 1 root  admin   3906 Dec 28 18:27 031-45768.uk.dist
+-rw-r--r--@ 1 root  admin   3851 Dec 28 18:27 031-45768.vi.dist
+-rw-r--r--@ 1 root  admin   3745 Dec 28 18:27 031-45768.zh_CN.dist
+-rw-r--r--@ 1 root  admin   3773 Dec 28 18:27 031-45768.zh_TW.dist
+-rw-r--r--@ 1 root  admin    427 Dec 28 18:27 RecoveryHDUpdate.pkm
+-rw-r--r--@ 1 root  admin  37481 Dec 28 18:27 RecoveryHDUpdate.smd
+
+/tmp/munki_swupd_cache/content/downloads/18:
+total 0
+drwxr-xr-x  3 root  admin  102 Jan 25 10:16 29
+
+/tmp/munki_swupd_cache/content/downloads/18/29:
+total 0
+drwxr-xr-x  3 root  admin  102 Jan 25 10:16 031-48300
+
+/tmp/munki_swupd_cache/content/downloads/18/29/031-48300:
+total 0
+drwxr-xr-x  39 root  admin  1326 Jan 25 10:16 b29gckeka3xze80vz5sn1ub6cjhnsbzzf9
+
+/tmp/munki_swupd_cache/content/downloads/18/29/031-48300/b29gckeka3xze80vz5sn1ub6cjhnsbzzf9:
+total 1248
+-rw-r--r--@ 1 root  admin    7680 Jan 25 10:16 031-48300.Dutch.dist
+-rw-r--r--@ 1 root  admin    7598 Jan 25 10:16 031-48300.English.dist
+-rw-r--r--@ 1 root  admin    7803 Jan 25 10:16 031-48300.French.dist
+-rw-r--r--@ 1 root  admin    7675 Jan 25 10:16 031-48300.German.dist
+-rw-r--r--@ 1 root  admin    7670 Jan 25 10:16 031-48300.Italian.dist
+-rw-r--r--@ 1 root  admin    7892 Jan 25 10:16 031-48300.Japanese.dist
+-rw-r--r--@ 1 root  admin    7768 Jan 25 10:16 031-48300.Spanish.dist
+-rw-r--r--@ 1 root  admin    7903 Jan 25 10:16 031-48300.ar.dist
+-rw-r--r--@ 1 root  admin    7757 Jan 25 10:16 031-48300.ca.dist
+-rw-r--r--@ 1 root  admin    7718 Jan 25 10:16 031-48300.cs.dist
+-rw-r--r--@ 1 root  admin    7677 Jan 25 10:16 031-48300.da.dist
+-rw-r--r--@ 1 root  admin    8221 Jan 25 10:16 031-48300.el.dist
+-rw-r--r--@ 1 root  admin    7750 Jan 25 10:16 031-48300.es_MX.dist
+-rw-r--r--@ 1 root  admin    7705 Jan 25 10:16 031-48300.fi.dist
+-rw-r--r--@ 1 root  admin    7869 Jan 25 10:16 031-48300.he.dist
+-rw-r--r--@ 1 root  admin    7694 Jan 25 10:16 031-48300.hr.dist
+-rw-r--r--@ 1 root  admin    7814 Jan 25 10:16 031-48300.hu.dist
+-rw-r--r--@ 1 root  admin    7670 Jan 25 10:16 031-48300.id.dist
+-rw-r--r--@ 1 root  admin    7739 Jan 25 10:16 031-48300.ko.dist
+-rw-r--r--@ 1 root  admin    7696 Jan 25 10:16 031-48300.ms.dist
+-rw-r--r--@ 1 root  admin    7700 Jan 25 10:16 031-48300.no.dist
+-rw-r--r--@ 1 root  admin    7778 Jan 25 10:16 031-48300.pl.dist
+-rw-r--r--@ 1 root  admin    7736 Jan 25 10:16 031-48300.pt.dist
+-rw-r--r--@ 1 root  admin    7741 Jan 25 10:16 031-48300.pt_PT.dist
+-rw-r--r--@ 1 root  admin    7762 Jan 25 10:16 031-48300.ro.dist
+-rw-r--r--@ 1 root  admin    8136 Jan 25 10:16 031-48300.ru.dist
+-rw-r--r--@ 1 root  admin    7744 Jan 25 10:16 031-48300.sk.dist
+-rw-r--r--@ 1 root  admin    7700 Jan 25 10:16 031-48300.sv.dist
+-rw-r--r--@ 1 root  admin    8322 Jan 25 10:16 031-48300.th.dist
+-rw-r--r--@ 1 root  admin    7768 Jan 25 10:16 031-48300.tr.dist
+-rw-r--r--@ 1 root  admin    8059 Jan 25 10:16 031-48300.uk.dist
+-rw-r--r--@ 1 root  admin    7824 Jan 25 10:16 031-48300.vi.dist
+-rw-r--r--@ 1 root  admin    7610 Jan 25 10:16 031-48300.zh_CN.dist
+-rw-r--r--@ 1 root  admin    7630 Jan 25 10:16 031-48300.zh_TW.dist
+-rw-r--r--@ 1 root  admin     539 Jan 25 10:16 FirmwareUpdate.pkm
+-rw-r--r--@ 1 root  admin  272568 Jan 25 10:16 OSXUpd10.11.3.pkm
+-rw-r--r--@ 1 root  admin   73384 Jan 25 10:16 OSXUpd10.11.3.smd
+
+/tmp/munki_swupd_cache/content/downloads/22:
+total 0
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 59
+
+/tmp/munki_swupd_cache/content/downloads/22/59:
+total 0
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 031-44453
+
+/tmp/munki_swupd_cache/content/downloads/22/59/031-44453:
+total 0
+drwxr-xr-x  38 root  admin  1292 Dec 28 18:27 or6ya93xqfonpf9swco4jaiqtl4siwpndq
+
+/tmp/munki_swupd_cache/content/downloads/22/59/031-44453/or6ya93xqfonpf9swco4jaiqtl4siwpndq:
+total 784
+-rw-r--r--@ 1 root  admin    6363 Dec 28 18:27 031-44453.Dutch.dist
+-rw-r--r--@ 1 root  admin    6272 Dec 28 18:27 031-44453.English.dist
+-rw-r--r--@ 1 root  admin    6448 Dec 28 18:27 031-44453.French.dist
+-rw-r--r--@ 1 root  admin    6340 Dec 28 18:27 031-44453.German.dist
+-rw-r--r--@ 1 root  admin    6391 Dec 28 18:27 031-44453.Italian.dist
+-rw-r--r--@ 1 root  admin    6431 Dec 28 18:27 031-44453.Japanese.dist
+-rw-r--r--@ 1 root  admin    6402 Dec 28 18:27 031-44453.Spanish.dist
+-rw-r--r--@ 1 root  admin    6448 Dec 28 18:27 031-44453.ar.dist
+-rw-r--r--@ 1 root  admin    6404 Dec 28 18:27 031-44453.ca.dist
+-rw-r--r--@ 1 root  admin    6368 Dec 28 18:27 031-44453.cs.dist
+-rw-r--r--@ 1 root  admin    6338 Dec 28 18:27 031-44453.da.dist
+-rw-r--r--@ 1 root  admin    6723 Dec 28 18:27 031-44453.el.dist
+-rw-r--r--@ 1 root  admin    6393 Dec 28 18:27 031-44453.es_MX.dist
+-rw-r--r--@ 1 root  admin    6332 Dec 28 18:27 031-44453.fi.dist
+-rw-r--r--@ 1 root  admin    6441 Dec 28 18:27 031-44453.he.dist
+-rw-r--r--@ 1 root  admin    6321 Dec 28 18:27 031-44453.hr.dist
+-rw-r--r--@ 1 root  admin    6428 Dec 28 18:27 031-44453.hu.dist
+-rw-r--r--@ 1 root  admin    6330 Dec 28 18:27 031-44453.id.dist
+-rw-r--r--@ 1 root  admin    6424 Dec 28 18:27 031-44453.ko.dist
+-rw-r--r--@ 1 root  admin    6315 Dec 28 18:27 031-44453.ms.dist
+-rw-r--r--@ 1 root  admin    6348 Dec 28 18:27 031-44453.no.dist
+-rw-r--r--@ 1 root  admin    6407 Dec 28 18:27 031-44453.pl.dist
+-rw-r--r--@ 1 root  admin    6384 Dec 28 18:27 031-44453.pt.dist
+-rw-r--r--@ 1 root  admin    6450 Dec 28 18:27 031-44453.pt_PT.dist
+-rw-r--r--@ 1 root  admin    6410 Dec 28 18:27 031-44453.ro.dist
+-rw-r--r--@ 1 root  admin    6683 Dec 28 18:27 031-44453.ru.dist
+-rw-r--r--@ 1 root  admin    6358 Dec 28 18:27 031-44453.sk.dist
+-rw-r--r--@ 1 root  admin    6353 Dec 28 18:27 031-44453.sv.dist
+-rw-r--r--@ 1 root  admin    6877 Dec 28 18:27 031-44453.th.dist
+-rw-r--r--@ 1 root  admin    6338 Dec 28 18:27 031-44453.tr.dist
+-rw-r--r--@ 1 root  admin    6573 Dec 28 18:27 031-44453.uk.dist
+-rw-r--r--@ 1 root  admin    6401 Dec 28 18:27 031-44453.vi.dist
+-rw-r--r--@ 1 root  admin    6307 Dec 28 18:27 031-44453.zh_CN.dist
+-rw-r--r--@ 1 root  admin    6309 Dec 28 18:27 031-44453.zh_TW.dist
+-rw-r--r--@ 1 root  admin     834 Dec 28 18:27 RAWCameraUpdate6.pkm
+-rw-r--r--@ 1 root  admin  114919 Dec 28 18:27 RAWCameraUpdate6.smd
+
+/tmp/munki_swupd_cache/content/downloads/34:
+total 0
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 29
+
+/tmp/munki_swupd_cache/content/downloads/34/29:
+total 0
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 031-45690
+
+/tmp/munki_swupd_cache/content/downloads/34/29/031-45690:
+total 0
+drwxr-xr-x  39 root  admin  1326 Dec 28 18:27 gidtex35r99vky33vm8e34ygfjvfft09ys
+
+/tmp/munki_swupd_cache/content/downloads/34/29/031-45690/gidtex35r99vky33vm8e34ygfjvfft09ys:
+total 3216
+-rw-r--r--@ 1 root  admin   24491 Dec 28 18:27 031-45690.Dutch.dist
+-rw-r--r--@ 1 root  admin   24352 Dec 28 18:27 031-45690.English.dist
+-rw-r--r--@ 1 root  admin   24553 Dec 28 18:27 031-45690.French.dist
+-rw-r--r--@ 1 root  admin   24553 Dec 28 18:27 031-45690.German.dist
+-rw-r--r--@ 1 root  admin   24525 Dec 28 18:27 031-45690.Italian.dist
+-rw-r--r--@ 1 root  admin   24610 Dec 28 18:27 031-45690.Japanese.dist
+-rw-r--r--@ 1 root  admin   24605 Dec 28 18:27 031-45690.Spanish.dist
+-rw-r--r--@ 1 root  admin   24838 Dec 28 18:27 031-45690.ar.dist
+-rw-r--r--@ 1 root  admin   24595 Dec 28 18:27 031-45690.ca.dist
+-rw-r--r--@ 1 root  admin   24493 Dec 28 18:27 031-45690.cs.dist
+-rw-r--r--@ 1 root  admin   24427 Dec 28 18:27 031-45690.da.dist
+-rw-r--r--@ 1 root  admin   25291 Dec 28 18:27 031-45690.el.dist
+-rw-r--r--@ 1 root  admin   24584 Dec 28 18:27 031-45690.es_MX.dist
+-rw-r--r--@ 1 root  admin   24461 Dec 28 18:27 031-45690.fi.dist
+-rw-r--r--@ 1 root  admin   24756 Dec 28 18:27 031-45690.he.dist
+-rw-r--r--@ 1 root  admin   24469 Dec 28 18:27 031-45690.hr.dist
+-rw-r--r--@ 1 root  admin   24645 Dec 28 18:27 031-45690.hu.dist
+-rw-r--r--@ 1 root  admin   24460 Dec 28 18:27 031-45690.id.dist
+-rw-r--r--@ 1 root  admin   24531 Dec 28 18:27 031-45690.ko.dist
+-rw-r--r--@ 1 root  admin   24467 Dec 28 18:27 031-45690.ms.dist
+-rw-r--r--@ 1 root  admin   24453 Dec 28 18:27 031-45690.no.dist
+-rw-r--r--@ 1 root  admin   24598 Dec 28 18:27 031-45690.pl.dist
+-rw-r--r--@ 1 root  admin   24543 Dec 28 18:27 031-45690.pt.dist
+-rw-r--r--@ 1 root  admin   24641 Dec 28 18:27 031-45690.pt_PT.dist
+-rw-r--r--@ 1 root  admin   24616 Dec 28 18:27 031-45690.ro.dist
+-rw-r--r--@ 1 root  admin   25187 Dec 28 18:27 031-45690.ru.dist
+-rw-r--r--@ 1 root  admin   24534 Dec 28 18:27 031-45690.sk.dist
+-rw-r--r--@ 1 root  admin   24503 Dec 28 18:27 031-45690.sv.dist
+-rw-r--r--@ 1 root  admin   25478 Dec 28 18:27 031-45690.th.dist
+-rw-r--r--@ 1 root  admin   24592 Dec 28 18:27 031-45690.tr.dist
+-rw-r--r--@ 1 root  admin   25058 Dec 28 18:27 031-45690.uk.dist
+-rw-r--r--@ 1 root  admin   24680 Dec 28 18:27 031-45690.vi.dist
+-rw-r--r--@ 1 root  admin   24357 Dec 28 18:27 031-45690.zh_CN.dist
+-rw-r--r--@ 1 root  admin   24401 Dec 28 18:27 031-45690.zh_TW.dist
+-rw-r--r--@ 1 root  admin     539 Dec 28 18:27 FirmwareUpdate.pkm
+-rw-r--r--@ 1 root  admin  641050 Dec 28 18:27 OSXUpd10.11.2.pkm
+-rw-r--r--@ 1 root  admin   97694 Dec 28 18:27 OSXUpd10.11.2.smd
+
+/tmp/munki_swupd_cache/content/downloads/41:
+total 0
+drwxr-xr-x  3 root  admin  102 Mar 22 16:11 46
+
+/tmp/munki_swupd_cache/content/downloads/41/46:
+total 0
+drwxr-xr-x  3 root  admin  102 Mar 22 16:11 031-53822
+
+/tmp/munki_swupd_cache/content/downloads/41/46/031-53822:
+total 0
+drwxr-xr-x  40 root  admin  1360 Mar 22 16:11 ohlz4gfgdao83g9sqz3loxwdpy41c12jrz
+
+/tmp/munki_swupd_cache/content/downloads/41/46/031-53822/ohlz4gfgdao83g9sqz3loxwdpy41c12jrz:
+total 4536
+-rw-r--r--@ 1 root  admin   22087 Mar 22 16:11 031-53822.Dutch.dist
+-rw-r--r--@ 1 root  admin   21861 Mar 22 16:11 031-53822.English.dist
+-rw-r--r--@ 1 root  admin   22233 Mar 22 16:11 031-53822.French.dist
+-rw-r--r--@ 1 root  admin   22085 Mar 22 16:11 031-53822.German.dist
+-rw-r--r--@ 1 root  admin   22158 Mar 22 16:11 031-53822.Italian.dist
+-rw-r--r--@ 1 root  admin   22287 Mar 22 16:11 031-53822.Japanese.dist
+-rw-r--r--@ 1 root  admin   22137 Mar 22 16:11 031-53822.Spanish.dist
+-rw-r--r--@ 1 root  admin   22723 Mar 22 16:11 031-53822.ar.dist
+-rw-r--r--@ 1 root  admin   22287 Mar 22 16:11 031-53822.ca.dist
+-rw-r--r--@ 1 root  admin   22143 Mar 22 16:11 031-53822.cs.dist
+-rw-r--r--@ 1 root  admin   21994 Mar 22 16:11 031-53822.da.dist
+-rw-r--r--@ 1 root  admin   23490 Mar 22 16:11 031-53822.el.dist
+-rw-r--r--@ 1 root  admin   22191 Mar 22 16:11 031-53822.es_MX.dist
+-rw-r--r--@ 1 root  admin   22158 Mar 22 16:11 031-53822.fi.dist
+-rw-r--r--@ 1 root  admin   22701 Mar 22 16:11 031-53822.he.dist
+-rw-r--r--@ 1 root  admin   22088 Mar 22 16:11 031-53822.hr.dist
+-rw-r--r--@ 1 root  admin   22245 Mar 22 16:11 031-53822.hu.dist
+-rw-r--r--@ 1 root  admin   22065 Mar 22 16:11 031-53822.id.dist
+-rw-r--r--@ 1 root  admin   22171 Mar 22 16:11 031-53822.ko.dist
+-rw-r--r--@ 1 root  admin   22072 Mar 22 16:11 031-53822.ms.dist
+-rw-r--r--@ 1 root  admin   22051 Mar 22 16:11 031-53822.no.dist
+-rw-r--r--@ 1 root  admin   22257 Mar 22 16:11 031-53822.pl.dist
+-rw-r--r--@ 1 root  admin   22184 Mar 22 16:11 031-53822.pt.dist
+-rw-r--r--@ 1 root  admin   22310 Mar 22 16:11 031-53822.pt_PT.dist
+-rw-r--r--@ 1 root  admin   22254 Mar 22 16:11 031-53822.ro.dist
+-rw-r--r--@ 1 root  admin   23181 Mar 22 16:11 031-53822.ru.dist
+-rw-r--r--@ 1 root  admin   22228 Mar 22 16:11 031-53822.sk.dist
+-rw-r--r--@ 1 root  admin   22070 Mar 22 16:11 031-53822.sv.dist
+-rw-r--r--@ 1 root  admin   23799 Mar 22 16:11 031-53822.th.dist
+-rw-r--r--@ 1 root  admin   22248 Mar 22 16:11 031-53822.tr.dist
+-rw-r--r--@ 1 root  admin   23137 Mar 22 16:11 031-53822.uk.dist
+-rw-r--r--@ 1 root  admin   22327 Mar 22 16:11 031-53822.vi.dist
+-rw-r--r--@ 1 root  admin   21832 Mar 22 16:11 031-53822.zh_CN.dist
+-rw-r--r--@ 1 root  admin   21870 Mar 22 16:11 031-53822.zh_TW.dist
+-rw-r--r--@ 1 root  admin     539 Mar 22 16:11 FirmwareUpdate.pkm
+-rw-r--r--@ 1 root  admin  643840 Mar 22 16:11 OSXUpd10.11.4.pkm
+-rw-r--r--@ 1 root  admin  134653 Mar 22 16:11 OSXUpd10.11.4.smd
+-rw-r--r--@ 1 root  admin  700312 Mar 22 16:11 OSXUpd10.11.4Patch.pkm
+
+/tmp/munki_swupd_cache/content/downloads/42:
+total 0
+drwxr-xr-x  3 root  admin  102 Mar 22 16:11 18
+
+/tmp/munki_swupd_cache/content/downloads/42/18:
+total 0
+drwxr-xr-x  3 root  admin  102 Mar 22 16:11 031-53337
+
+/tmp/munki_swupd_cache/content/downloads/42/18/031-53337:
+total 0
+drwxr-xr-x  6 root  admin  204 Mar 22 16:11 0rcjc4z9pavbut02g1u76ktdpn0j00vija
+
+/tmp/munki_swupd_cache/content/downloads/42/18/031-53337/0rcjc4z9pavbut02g1u76ktdpn0j00vija:
+total 88
+-rw-r--r--@ 1 root  admin  28716 Mar 22 16:11 031-53337.English.dist
+-rw-r--r--@ 1 root  admin    853 Mar 22 16:11 CLTools_Executables.pkm
+-rw-r--r--@ 1 root  admin    837 Mar 22 16:11 DevSDK_OSX1011.pkm
+-rw-r--r--@ 1 root  admin   1396 Mar 22 16:11 DevSDK_OSX1011.smd
+
+/tmp/munki_swupd_cache/content/downloads/44:
+total 0
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 30
+
+/tmp/munki_swupd_cache/content/downloads/44/30:
+total 0
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 031-45138
+
+/tmp/munki_swupd_cache/content/downloads/44/30/031-45138:
+total 0
+drwxr-xr-x  6 root  admin  204 Dec 28 18:27 rcohxcaco8d7rdo651204aoas3kh0m7312
+
+/tmp/munki_swupd_cache/content/downloads/44/30/031-45138/rcohxcaco8d7rdo651204aoas3kh0m7312:
+total 88
+-rw-r--r--@ 1 root  admin  28716 Dec 28 18:27 031-45138.English.dist
+-rw-r--r--@ 1 root  admin    887 Dec 28 18:27 CLTools_Executables.pkm
+-rw-r--r--@ 1 root  admin    873 Dec 28 18:27 DevSDK_OSX1011.pkm
+-rw-r--r--@ 1 root  admin   1396 Dec 28 18:27 DevSDK_OSX1011.smd
+
+/tmp/munki_swupd_cache/content/downloads/45:
+total 0
+drwxr-xr-x  3 root  admin  102 Mar 22 16:11 12
+
+/tmp/munki_swupd_cache/content/downloads/45/12:
+total 0
+drwxr-xr-x  3 root  admin  102 Mar 22 16:11 zzzz031-51746
+
+/tmp/munki_swupd_cache/content/downloads/45/12/zzzz031-51746:
+total 0
+drwxr-xr-x  44 root  admin  1496 Mar 22 16:11 4vxo2ihq2n9u281abrk0x76h95mo2q25bw
+
+/tmp/munki_swupd_cache/content/downloads/45/12/zzzz031-51746/4vxo2ihq2n9u281abrk0x76h95mo2q25bw:
+total 696
+-rw-r--r--@ 1 root  admin   6443 Mar 22 16:11 031-51746.Dutch.dist
+-rw-r--r--@ 1 root  admin   6417 Mar 22 16:11 031-51746.English.dist
+-rw-r--r--@ 1 root  admin   6451 Mar 22 16:11 031-51746.French.dist
+-rw-r--r--@ 1 root  admin   6454 Mar 22 16:11 031-51746.German.dist
+-rw-r--r--@ 1 root  admin   6444 Mar 22 16:11 031-51746.Italian.dist
+-rw-r--r--@ 1 root  admin   6491 Mar 22 16:11 031-51746.Japanese.dist
+-rw-r--r--@ 1 root  admin   6433 Mar 22 16:11 031-51746.Spanish.dist
+-rw-r--r--@ 1 root  admin   6477 Mar 22 16:11 031-51746.ar.dist
+-rw-r--r--@ 1 root  admin   6439 Mar 22 16:11 031-51746.ca.dist
+-rw-r--r--@ 1 root  admin   6433 Mar 22 16:11 031-51746.cs.dist
+-rw-r--r--@ 1 root  admin   6418 Mar 22 16:11 031-51746.da.dist
+-rw-r--r--@ 1 root  admin   6557 Mar 22 16:11 031-51746.el.dist
+-rw-r--r--@ 1 root  admin   6415 Mar 22 16:11 031-51746.en_GB.dist
+-rw-r--r--@ 1 root  admin   6447 Mar 22 16:11 031-51746.es_MX.dist
+-rw-r--r--@ 1 root  admin   6437 Mar 22 16:11 031-51746.fi.dist
+-rw-r--r--@ 1 root  admin   6486 Mar 22 16:11 031-51746.he.dist
+-rw-r--r--@ 1 root  admin   6430 Mar 22 16:11 031-51746.hr.dist
+-rw-r--r--@ 1 root  admin   6471 Mar 22 16:11 031-51746.hu.dist
+-rw-r--r--@ 1 root  admin   6432 Mar 22 16:11 031-51746.id.dist
+-rw-r--r--@ 1 root  admin   6445 Mar 22 16:11 031-51746.ko.dist
+-rw-r--r--@ 1 root  admin   6432 Mar 22 16:11 031-51746.ms.dist
+-rw-r--r--@ 1 root  admin   6445 Mar 22 16:11 031-51746.no.dist
+-rw-r--r--@ 1 root  admin   6440 Mar 22 16:11 031-51746.pl.dist
+-rw-r--r--@ 1 root  admin   6453 Mar 22 16:11 031-51746.pt.dist
+-rw-r--r--@ 1 root  admin   6455 Mar 22 16:11 031-51746.pt_PT.dist
+-rw-r--r--@ 1 root  admin   6446 Mar 22 16:11 031-51746.ro.dist
+-rw-r--r--@ 1 root  admin   6512 Mar 22 16:11 031-51746.ru.dist
+-rw-r--r--@ 1 root  admin   6438 Mar 22 16:11 031-51746.sk.dist
+-rw-r--r--@ 1 root  admin   6436 Mar 22 16:11 031-51746.sv.dist
+-rw-r--r--@ 1 root  admin   6587 Mar 22 16:11 031-51746.th.dist
+-rw-r--r--@ 1 root  admin   6430 Mar 22 16:11 031-51746.tr.dist
+-rw-r--r--@ 1 root  admin   6504 Mar 22 16:11 031-51746.uk.dist
+-rw-r--r--@ 1 root  admin   6478 Mar 22 16:11 031-51746.vi.dist
+-rw-r--r--@ 1 root  admin   6408 Mar 22 16:11 031-51746.zh_CN.dist
+-rw-r--r--@ 1 root  admin   6430 Mar 22 16:11 031-51746.zh_TW.dist
+-rw-r--r--@ 1 root  admin    599 Mar 22 16:11 CoreADI.pkm
+-rw-r--r--@ 1 root  admin    598 Mar 22 16:11 CoreFP.pkm
+-rw-r--r--@ 1 root  admin   2287 Mar 22 16:11 MobileDevice.pkm
+-rw-r--r--@ 1 root  admin    621 Mar 22 16:11 iTunesAccess.pkm
+-rw-r--r--@ 1 root  admin   2200 Mar 22 16:11 iTunesXDelta.pkm
+-rw-r--r--@ 1 root  admin   3944 Mar 22 16:11 iTunesXPatch.pkm
+-rw-r--r--@ 1 root  admin  43041 Mar 22 16:11 iTunesXPatch.smd
+
+/tmp/munki_swupd_cache/content/downloads/53:
+total 0
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 06
+
+/tmp/munki_swupd_cache/content/downloads/53/06:
+total 0
+drwxr-xr-x  3 root  admin  102 Dec 28 18:27 zzzz031-45963
+
+/tmp/munki_swupd_cache/content/downloads/53/06/zzzz031-45963:
+total 0
+drwxr-xr-x  44 root  admin  1496 Dec 28 18:27 btrkd2dpsvvwytvc6mdgh7new7ua23avoi
+
+/tmp/munki_swupd_cache/content/downloads/53/06/zzzz031-45963/btrkd2dpsvvwytvc6mdgh7new7ua23avoi:
+total 712
+-rw-r--r--@ 1 root  admin   6555 Dec 28 18:27 031-45963.Dutch.dist
+-rw-r--r--@ 1 root  admin   6523 Dec 28 18:27 031-45963.English.dist
+-rw-r--r--@ 1 root  admin   6582 Dec 28 18:27 031-45963.French.dist
+-rw-r--r--@ 1 root  admin   6542 Dec 28 18:27 031-45963.German.dist
+-rw-r--r--@ 1 root  admin   6568 Dec 28 18:27 031-45963.Italian.dist
+-rw-r--r--@ 1 root  admin   6619 Dec 28 18:27 031-45963.Japanese.dist
+-rw-r--r--@ 1 root  admin   6601 Dec 28 18:27 031-45963.Spanish.dist
+-rw-r--r--@ 1 root  admin   6651 Dec 28 18:27 031-45963.ar.dist
+-rw-r--r--@ 1 root  admin   6548 Dec 28 18:27 031-45963.ca.dist
+-rw-r--r--@ 1 root  admin   6534 Dec 28 18:27 031-45963.cs.dist
+-rw-r--r--@ 1 root  admin   6526 Dec 28 18:27 031-45963.da.dist
+-rw-r--r--@ 1 root  admin   6773 Dec 28 18:27 031-45963.el.dist
+-rw-r--r--@ 1 root  admin   6522 Dec 28 18:27 031-45963.en_GB.dist
+-rw-r--r--@ 1 root  admin   6573 Dec 28 18:27 031-45963.es_MX.dist
+-rw-r--r--@ 1 root  admin   6526 Dec 28 18:27 031-45963.fi.dist
+-rw-r--r--@ 1 root  admin   6639 Dec 28 18:27 031-45963.he.dist
+-rw-r--r--@ 1 root  admin   6542 Dec 28 18:27 031-45963.hr.dist
+-rw-r--r--@ 1 root  admin   6587 Dec 28 18:27 031-45963.hu.dist
+-rw-r--r--@ 1 root  admin   6538 Dec 28 18:27 031-45963.id.dist
+-rw-r--r--@ 1 root  admin   6587 Dec 28 18:27 031-45963.ko.dist
+-rw-r--r--@ 1 root  admin   6524 Dec 28 18:27 031-45963.ms.dist
+-rw-r--r--@ 1 root  admin   6528 Dec 28 18:27 031-45963.no.dist
+-rw-r--r--@ 1 root  admin   6532 Dec 28 18:27 031-45963.pl.dist
+-rw-r--r--@ 1 root  admin   6547 Dec 28 18:27 031-45963.pt.dist
+-rw-r--r--@ 1 root  admin   6554 Dec 28 18:27 031-45963.pt_PT.dist
+-rw-r--r--@ 1 root  admin   6580 Dec 28 18:27 031-45963.ro.dist
+-rw-r--r--@ 1 root  admin   6825 Dec 28 18:27 031-45963.ru.dist
+-rw-r--r--@ 1 root  admin   6544 Dec 28 18:27 031-45963.sk.dist
+-rw-r--r--@ 1 root  admin   6539 Dec 28 18:27 031-45963.sv.dist
+-rw-r--r--@ 1 root  admin   6850 Dec 28 18:27 031-45963.th.dist
+-rw-r--r--@ 1 root  admin   6544 Dec 28 18:27 031-45963.tr.dist
+-rw-r--r--@ 1 root  admin   6709 Dec 28 18:27 031-45963.uk.dist
+-rw-r--r--@ 1 root  admin   6644 Dec 28 18:27 031-45963.vi.dist
+-rw-r--r--@ 1 root  admin   6501 Dec 28 18:27 031-45963.zh_CN.dist
+-rw-r--r--@ 1 root  admin   6534 Dec 28 18:27 031-45963.zh_TW.dist
+-rw-r--r--@ 1 root  admin    599 Dec 28 18:27 CoreADI.pkm
+-rw-r--r--@ 1 root  admin    598 Dec 28 18:27 CoreFP.pkm
+-rw-r--r--@ 1 root  admin   2285 Dec 28 18:27 MobileDevice.pkm
+-rw-r--r--@ 1 root  admin    621 Dec 28 18:27 iTunesAccess.pkm
+-rw-r--r--@ 1 root  admin   2179 Dec 28 18:27 iTunesXDelta.pkm
+-rw-r--r--@ 1 root  admin   4008 Dec 28 18:27 iTunesXPatch.pkm
+-rw-r--r--@ 1 root  admin  49589 Dec 28 18:27 iTunesXPatch.smd
+
+/tmp/munki_swupd_cache/mirror:
+total 6104
+-rw-r--r--@ 1 root  admin  3124434 Apr 20 01:01 apple.sucatalog

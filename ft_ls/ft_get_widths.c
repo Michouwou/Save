@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/20 10:39:58 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/20 11:28:18 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ int     *ft_get_widths(t_tree *tree, int *tab)
 	tab[0] = ft_max(ft_strlen(tree->data->name), tab[0]);
 	write(1, "C\n", 2);
 	tab[1] = WIN_WIDTH / (tab[0] + 1);
-	tab[2] = ft_max(ft_strlen(tree->data->date_num), tab[2]);
+	if (ft_strlen(tree->data->date_num) != 0)
+		tab[2] = ft_max(ft_strlen(tree->data->date_num), tab[2]);
 	write(1, "E\n", 2);
 	tab[3] = ft_max(ft_strlen(ft_itoa(tree->data->size)), tab[3]);
 	write(1, "F\n", 2);
