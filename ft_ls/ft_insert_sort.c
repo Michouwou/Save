@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/19 14:30:35 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/19 16:38:54 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,5 @@ void    ft_insert_sort(t_data *data, t_tree **first, int flag)
         ((tmp->data->time - new->data->time) <= 0 && flag)))
         tmp->right = new;
     else
-	{
-		write(1, "lol\n", 4);
         *first = new;
-	}
 }
