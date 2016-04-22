@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/22 23:12:34 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/22 23:37:50 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,21 @@ int    ft_call_float(long double number, T_LIST *trail, char **print)
 	result = ft_set_width(result, trail, &state_value);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
 			result);
+	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result) - 1);
+	return (state_value);
+}
+
+int		ft_call_pointer(unsigned address, T_LIST *trail, char **print)
+{
+	char    *result;
+	int		state_value;
+
+	state_value = 1;
+	result = ft_base(address, 16, &state_value);
+	result = ft_repstr(result, 0, 0, "0x");
+	result = ft_set_length(trail, result, &state_value);
+	result = ft_set_width(result, trail, &state_value);
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
 	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result) - 1);
 	return (state_value);
 }
