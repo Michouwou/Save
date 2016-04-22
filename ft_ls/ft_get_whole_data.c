@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/23 12:46:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/20 18:13:46 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/21 11:30:31 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_get_whole_data(struct dirent *dir, t_data **data)
+void	ft_get_whole_data(t_data **data)
 {
 	struct stat		*stat;
 	struct group	*grp;

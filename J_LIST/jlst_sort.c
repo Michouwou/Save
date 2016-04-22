@@ -1,4 +1,16 @@
-// HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   jlst_sort.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/04/20 15:31:14 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/04/20 15:32:23 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "j_list.h"
 
 void    jlst_sort(j_list **first_node, int (*compare_func)(void*, void*))
 {
@@ -21,8 +33,8 @@ void    jlst_sort(j_list **first_node, int (*compare_func)(void*, void*))
         if (min_e->previous == NULL && (*first_node)->next)
             *first_node = (*first_node)->next;
         jlst_push_back(&new, min_e->data);
-        jlst_del_data(first_node, min_e->data);
+        jlst_del_data(first_node, min_e->data, compare_func);
     }
-    jlst_del_list(first_node);
+    jlst_del_list(*first_node);
     *first_node = new;
 }

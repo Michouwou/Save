@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 21:02:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/20 18:18:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/21 11:31:10 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void		ft_browse(char *entry_dir, int *flag)
 			element = ft_create_data();
 			element->name = ft_strdup(dir->d_name);
 			ft_get_path(entry_dir, element);
-			ft_get_whole_data(dir, &element);
+			ft_get_whole_data(&element);
 			ft_insert_sort(element, &tree, flag[1]);
 		}
 	}

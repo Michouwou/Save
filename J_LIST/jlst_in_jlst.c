@@ -1,4 +1,16 @@
-// HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   jlst_in_jlst.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/04/20 15:51:08 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/04/20 15:56:48 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "j_list.h"
 
 int		jlst_in_jlst(j_list *great_list, j_list *to_search, int (*compare_func)(void*, void*))
 {
@@ -22,9 +34,10 @@ int		jlst_in_jlst(j_list *great_list, j_list *to_search, int (*compare_func)(voi
                 i[0]++;
             }
             if (tmpb == NULL)
-                return (i);
+                return (i[0]);
             i[0]++;
             tmpa = tmpa->next;
         }
     }
+	return (-1);
 }

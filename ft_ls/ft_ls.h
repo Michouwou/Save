@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:30:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/19 16:36:58 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/21 11:30:50 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void			ft_free_tree(t_tree *tree);
 void			ft_get_mode(mode_t st_mode, t_data **data);
 void			ft_get_path(char *super_path, t_data *sub_data);
 char			ft_get_type(mode_t mode);
-void			ft_get_whole_data(struct dirent *dir, t_data **data);
+void			ft_get_whole_data(t_data **data);
 int				*ft_get_widths(t_tree *tree, int *tab);
 void			ft_insert_sort(t_data *data, t_tree **first, int flag);
 int				ft_isdir(mode_t st_mode);
