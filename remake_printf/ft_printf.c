@@ -6,11 +6,82 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/22 23:37:50 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/23 02:13:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+char    *ft_set_width(char *result, T_LIST *trail, int *state_value)
+{
+	int i;
+
+	i = 0;
+	while (!ft_isdigit(result[i]) && result[i] != '+' && result[i] != '-' &&
+			result[i] != 0 && (trail->type == 'd' || trail->type == 'f'))
+		i++;
+	if (trail->width > (int)ft_strlen(result))
+	{
+		if (!(trail->minus))
+		{
+			if (trail->z_pad && !(trail->accuracy != -1 && trail->type == 'd'))
+				result = ft_repstr(result, (result[i] == '+' || result[i] == '-'
+							) ? i = i + 1 : i, i,
+						ft_strset(ft_strnew(trail->width - ft_strlen(result)),
+							trail->width - ft_strlen(result), '0'));
+			else
+				result = ft_repstr(result, i, i,
+						ft_strset(ft_strnew(trail->width - ft_strlen(result)),
+							trail->width - ft_strlen(result), ' '));
+		}
+		else
+			result = ft_repstr(result, ft_strlen(result), ft_strlen(result),
+					ft_strset(ft_strnew(trail->width - ft_strlen(result)),
+						trail->width - ft_strlen(result), ' '));
+	}
+	return (result);
+}
+
+char    *ft_set_length(T_LIST *trail, char *result, int *state_value)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = -1;
+	while (result[++j] != 0)
+		if (ft_isdigit(result[j]))
+			i++;
+	i = trail->accuracy - i;
+	j = 0;
+	while (!ft_isdigit(result[j]) && result[j] != 0)
+		j++;
+	if (trail->type == 'd' && i > 0)
+		result = ft_repstr(result, j, j, ft_strset(ft_strnew(i), i, '0'));
+	else if (trail->type == 'S' || trail->type == 's')
+		result[trail->accuracy] = 0;
+	return (result);
+}
+
+char *ft_apply_flag(char *result, T_LIST *trail, int *state_value)
+{
+	char t;
+
+	t = trail->format;
+	if ((trail->type == 'd' || trail->type == 'f') && (trail->plus ||
+				trail->space || result[0] == '-'))
+	{
+		if (trail->plus && ft_isdigit(result[0]) && (t != 'o' && t != 'O' &&
+					t != 'x' && t != 'X' && t != 'b'))
+			result = ft_repstr(result, 0, 0, "+");
+		else if (trail->space && ft_isdigit(result[0]) && (t != 'o' && t != 'O' &&
+					t != 'x' && t != 'X' && t != 'b'))
+			result = ft_repstr(result, 0, 0, " ");
+	}
+	if (trail->alternate)
+		result = ft_alternate(result, trail, state_value);
+	return (result);
+}
 
 int		ft_int_type(T_LIST *args_data, va_list *args, char **result)
 {
