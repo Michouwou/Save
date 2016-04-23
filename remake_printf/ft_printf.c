@@ -6,11 +6,58 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/23 04:03:26 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/23 04:58:23 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+static void     ft_isneg(intmax_t *num, int *k, char *final)
+{
+	if (*num < 0)
+	{
+		*num = -(*num);
+		*k = 1;
+		final[0] = '-';
+	}
+}
+
+static void     ft_make_base(int *base)
+{
+	if (*base == 'o' || *base == 'O')
+		*base = 8;
+	if(*base == 'x' || *base == 'X')
+		*base = 16;
+	if (*base == 'b')
+		*base = 2;
+	if (*base == 'd' || *base == 'D' || *base == 'i')
+		*base = 10;
+}
+
+char            *ft_base(intmax_t num, int base)
+{
+	char            *final;
+	int             k;
+	intmax_t        i;
+	char            alpha[17];
+
+	ft_make_base(&base);
+	i = 1;
+	k = 0;
+	ft_strcpy(alpha, "0123456789abcdef");
+	ft_bzero(final = (char*)malloc(sizeof(char) * 200), 200);
+	ft_isneg(&num, &k, final);
+	while ((i * base) <= num)
+		i = i * base;
+	while (i > 0)
+	{
+		final[k++] = alpha[(num / i)];
+		num = num % i;
+		i /= base;
+	}
+	final[k] = 0;
+	return (final);
+}
 
 char    *ft_repstr(char *str, int start, int end, char *to_insert)
 {
@@ -159,8 +206,7 @@ int		ft_call_int(intmax_t number, T_LIST *trail, char **print)
 	char    *result;
 	int		state_value;
 
-	state_value = 1;
-	result = ft_base(number, trail->format, &state_value);
+	result = ft_base(number, trail->format);
 	if (trail->format == 'X')
 		ft_strtoupper(result);
 	result = ft_apply_flag(result, trail, &state_value);
@@ -185,7 +231,6 @@ int		ft_call_char(wchar_t wc, T_LIST *trail, char **print)
 	char    *result;
 	int		state_value;
 
-	state_value = 1;
 	result = (char*)ft_transfer_wchar(wc);
 	result = ft_set_width(result, trail, &state_value);
 	if (trail->flag)
@@ -210,7 +255,6 @@ int    ft_call_float(long double number, T_LIST *trail, char **print)
 	char    *result;
 	int		state_value;
 
-	state_value = 1;
 	result = ft_conv_float(number, (trail->accuracy != -1) ?
 			trail->accuracy : 6);
 	if (trail->accuracy == -2)
@@ -233,7 +277,7 @@ int		ft_call_pointer(unsigned address, T_LIST *trail, char **print)
 	int		state_value;
 
 	state_value = 1;
-	result = ft_base(address, 16, &state_value);
+	result = ft_base(address, 16);
 	result = ft_repstr(result, 0, 0, "0x");
 	result = ft_set_length(trail, result, &state_value);
 	result = ft_set_width(result, trail, &state_value);
@@ -314,7 +358,6 @@ int    ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 	char 	*result;
 	int		state_value;
 
-	state_value = 1;
 	result = ft_transfer_wchars(wstring);
 	result = ft_set_length(trail, result, &state_value);
 	result = ft_set_width(result, trail, &state_value);
@@ -323,7 +366,39 @@ int    ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 	return (state_value);
 }
 
+void    ft_move_index(T_LIST **trail, int padding)
+{
+	while (*trail != NULL)
+	{
+		(*trail)->start_index += padding;
+		(*trail)->end_index += padding;
+		*trail = (*trail)->next;
+	}
+}
 
+int    ft_call_errno(T_LIST *trail, char **print, int *state_value)
+{
+	char *result;
+
+	result = strerror(errno);
+	result = ft_set_length(trail, result, &state_value);
+	result = ft_set_width(result, trail, &state_value);
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
+			result);
+	ft_move_index(&trail, trail->start_index - trail->end_index +
+			ft_strlen(result) - 1);
+}
+
+int		ft_call_percent(T_LIST *trail, char **print, int *state_value)
+{
+	char	*result;
+
+	result = ft_strdup("%");
+	result = ft_set_width(result, trail, &state_value);
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
+	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result));
+	return (state_value);
+}
 
 int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result)
 {
