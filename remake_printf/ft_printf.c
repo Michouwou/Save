@@ -6,11 +6,48 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/23 02:13:43 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/23 04:03:26 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+char    *ft_repstr(char *str, int start, int end, char *to_insert)
+{
+	char    *res;
+	int     i;
+	int     j;
+
+	res = (char*)malloc(sizeof(char) * (ft_strlen(str) - (end - start) + ft_strlen(to_insert) + 1));
+	ft_bzero(res, ft_strlen(str) - (end - start) + ft_strlen(to_insert));
+	i = 0;
+	j = 0;
+	while (i < start)
+	{
+		res[i] = str[i];
+		i++;
+	}
+	while (j < (int)ft_strlen(to_insert))
+		res[i++] = (int)to_insert[j++];
+	j = end;
+	while (str[j] != 0)
+		res[i++] = (int)str[j++];
+	res[i] = 0;
+	return (res);
+}
+
+char    *ft_strset(char *str, int len, char c)
+{
+	int i;
+
+	i = 0;
+	while (i < len)
+	{
+		str[i] = c;
+		i++;
+	}
+	return (str);
+}
 
 char    *ft_set_width(char *result, T_LIST *trail, int *state_value)
 {
@@ -205,6 +242,89 @@ int		ft_call_pointer(unsigned address, T_LIST *trail, char **print)
 	return (state_value);
 }
 
+wchar_t     *ft_conv_wchar(char *str)
+{
+	wchar_t *res;
+	int     i;
+
+	i = -1;
+	res = (wchar_t*)malloc(sizeof(wchar_t) * ft_strlen(str) + 1);
+	while (str[++i] != 0)
+		res[i] = (unsigned char)str[i];
+	res[i] = 0;
+	return (res);
+}
+
+unsigned char *ft_transfer_wchar(wchar_t c)
+{
+	unsigned char *b_static;
+	unsigned char *b;
+
+	b_static = (unsigned char*)ft_strnew(4);
+	b = b_static;
+	if (c < (1 << 7))
+		*b++ = (unsigned char)(c);
+	else if (c < (1 << 11))
+	{
+		*b++ = (unsigned char)((c >> 6) | 0xC0);
+		*b++ = (unsigned char)((c & 0x3F) | 0x80);
+	}
+	else if (c < (1 << 16))
+	{
+		*b++ = (unsigned char)(((c >> 12)) | 0xE0);
+		*b++ = (unsigned char)(((c >> 6) & 0x3F) | 0x80);
+		*b++ = (unsigned char)((c & 0x3F) | 0x80);
+	}
+	else if (c < (1 << 21))
+	{
+		*b++ = (unsigned char)(((c >> 18)) | 0xF0);
+		*b++ = (unsigned char)(((c >> 12) & 0x3F) | 0x80);
+		*b++ = (unsigned char)(((c >> 6) & 0x3F) | 0x80);
+		*b++ = (unsigned char)((c & 0x3F) | 0x80);
+	}
+	*b = '\0';
+	return (b_static);
+}
+
+char *ft_transfer_wchars(wchar_t *wstr)
+{
+	unsigned char   *result;
+	unsigned char   *tmp1;
+	unsigned char   *tmp2;
+	int             i;
+
+	result = (unsigned char*)ft_strnew(0);
+	i = 0;
+	while (wstr[i] != 0)
+	{
+		tmp2 = ft_transfer_wchar(wstr[i]);
+		tmp1 = result;
+		result = (unsigned char*)ft_strnew(ft_strlen((char*)result) +
+				ft_strlen((char*)tmp2));
+		ft_strcat((char*)result, (char*)tmp1);
+		ft_strcat((char*)result, (char*)tmp2);
+		free(tmp1);
+		i++;
+	}
+	return ((char*)result);
+}
+
+int    ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
+{
+	char 	*result;
+	int		state_value;
+
+	state_value = 1;
+	result = ft_transfer_wchars(wstring);
+	result = ft_set_length(trail, result, &state_value);
+	result = ft_set_width(result, trail, &state_value);
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
+	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result) - 1);
+	return (state_value);
+}
+
+
+
 int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result)
 {
 	if (args_data->type == INT_TYPE)
@@ -212,11 +332,11 @@ int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result)
 	else if (args_data->type == CHAR_TYPE)
 		return (ft_char_type(args_data, args, result));
 	else if (args_data->type == POINTER_TYPE)
-		return (ft_call_pointer(args_data, args, result));
+		return (ft_call_pointer(args_data, va_arg(args, unsigned long), result));
 	else if (args_data->type == STRING_TYPE)
-		return (ft_call_string(args_data, args, result));
+		return (ft_call_wstring(args_data, ft_conv_wchar(va_arg(args, char*)) , result));
 	else if (args_data->type == WSTRING_TYPE)
-		return (ft_call_wstring(args_data, args, result));
+		return (ft_call_wstring(args_data, va_arg(args, wchar_t*), result));
 	else if (args_data->type == DOUBLE_TYPE)
 		return (ft_double_type(args_data, args, result));
 	else if (args_data->type == ERRNO)
