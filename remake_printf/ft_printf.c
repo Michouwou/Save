@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/23 04:58:23 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/23 06:09:31 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,37 @@ char    *ft_set_length(T_LIST *trail, char *result, int *state_value)
 	return (result);
 }
 
+char    *ft_alternate(char *result, T_LIST *trail)
+{
+	int i;
+
+	i = 0;
+	if (trail->format == 'o' || trail->format == 'O' || trail->format == 'x' ||
+			trail->format == 'X' || trail->format == 'b')
+	{
+		while (!ft_isalnum(result[i]))
+			i++;
+		if (trail->format == 'o' || trail->format == 'O')
+			result = ft_repstr(result, i, i, "0");
+		else if (trail->format == 'x')
+			result = ft_repstr(result, i, i, "0x");
+		else if (trail->format == 'X')
+			result = ft_repstr(result, i, i, "0X");
+		else
+			result = ft_repstr(result, i, i, "b");
+	}
+	else if (trail->type == 'f')
+	{
+		while (!ft_isdigit(result[i]))
+			i++;
+		while (ft_isdigit(result[i]))
+			i++;
+		if (result[i] != '.')
+			result = ft_repstr(result, i, i, ".");
+	}
+	return (result);
+}
+
 char *ft_apply_flag(char *result, T_LIST *trail, int *state_value)
 {
 	char t;
@@ -233,8 +264,6 @@ int		ft_call_char(wchar_t wc, T_LIST *trail, char **print)
 
 	result = (char*)ft_transfer_wchar(wc);
 	result = ft_set_width(result, trail, &state_value);
-	if (trail->flag)
-		state_value = 0;
 	result = ft_repstr(result, 0, 0, ft_strset(ft_strnew(trail->width - 1),
 				trail->width - 1, ' '));
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
@@ -250,15 +279,96 @@ int		ft_double_type(T_LIST *args_data, va_list *args, char **result)
 		return (ft_call_float(va_arg(args, double), args_data, result));
 }
 
+static double   ft_power(double num, int pow)
+{
+	if (pow == 0)
+		return (1);
+	else
+		return (num * ft_power(num, pow - 1));
+}
+
+void            ft_round(long double *num, int accuracy)
+{
+	if ((int)(*num * ft_power(10.0, accuracy + 1)) % 10 >= 5)
+		*num = *num + 1.0 / ft_power(10.0, accuracy);
+}
+
+static void     ft_is_neg(int *k, long double *number, char **final)
+{
+	if (*number < 0)
+	{
+		*number = *number * -1;
+		*k = *k + 1;
+		(*final)[0] = '-';
+	}
+}
+
+char            *ft_conv_float(long double to_print, int accuracy)
+{
+	char        *final;
+	int         k;
+	long double i;
+
+	i = 1.0;
+	k = 0;
+	final = ft_strnew(310);
+	ft_is_neg(&k, &to_print, &final);
+	ft_round(&to_print, accuracy);
+	while (i < to_print)
+		i *= 10;
+	while ((i = i / 10) >= 1)
+	{
+		final[k++] = (int)(to_print / i) + 48;
+		to_print = (long double)((intmax_t)to_print % (intmax_t)i) + to_print -
+			(intmax_t)to_print;
+	}
+	if (k == 0)
+		final[k++] = '0';
+	final[k++] = (accuracy > 0) ? '.' : 0;
+	while (accuracy-- > 0)
+	{
+		to_print *= 10;
+		final[k++] = (intmax_t)to_print + 48;
+		to_print = to_print - (intmax_t)to_print;
+	}
+	return (final);
+}
+
+char    *ft_conv_exp(long double number, T_LIST *trail)
+{
+	int     i;
+	char    *res;
+
+	i = 0;
+	while (number >= 10.0 || number <= -10.0 )
+	{
+		number /= 10.0;
+		i++;
+	}
+	while (number < 1.0 && number > -1.0)
+	{
+		number *= 10.0;
+		i--;
+	}
+	res = ft_itoa(i);
+	if (i < 10 && i > -10)
+		res = ft_repstr(res, i < 0 ? 1 : 0, i < 0 ? 1 : 0, "0");
+	if (i >= 0)
+		res = ft_repstr(res, 0, 0, "+");
+	res = ft_repstr(res, 0, 0, "e");
+	res = ft_repstr(res, 0, 0, ft_conv_float(number, trail->accuracy > 0 ?
+				trail->accuracy : 6));
+	return(res);
+}
+
 int    ft_call_float(long double number, T_LIST *trail, char **print)
 {
 	char    *result;
 	int		state_value;
 
-	result = ft_conv_float(number, (trail->accuracy != -1) ?
-			trail->accuracy : 6);
-	if (trail->accuracy == -2)
-		state_value = 0;
+	if (trail->format == 'f' || trail->format == 'F')
+		result = ft_conv_float(number, (trail->accuracy != -1) ?
+				trail->accuracy : 6);
 	if (trail->format == 'e' || trail->format == 'E')
 		result = ft_conv_exp(number, trail);
 	if (trail->format == 'E')
@@ -376,9 +486,10 @@ void    ft_move_index(T_LIST **trail, int padding)
 	}
 }
 
-int    ft_call_errno(T_LIST *trail, char **print, int *state_value)
+int    ft_call_errno(T_LIST *trail, char **print)
 {
-	char *result;
+	char	*result;
+	int		state_value;
 
 	result = strerror(errno);
 	result = ft_set_length(trail, result, &state_value);
@@ -387,13 +498,27 @@ int    ft_call_errno(T_LIST *trail, char **print, int *state_value)
 			result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 			ft_strlen(result) - 1);
+	return (state_value);
 }
 
-int		ft_call_percent(T_LIST *trail, char **print, int *state_value)
+int		ft_call_percent(T_LIST *trail, char **print)
 {
 	char	*result;
+	int		state_value;
 
 	result = ft_strdup("%");
+	result = ft_set_width(result, trail, &state_value);
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
+	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result));
+	return (state_value);
+}
+
+int		ft_call_wildcard(T_LIST *trail, char **print)
+{
+	char	*result;
+	int		state_value;
+
+	result = ft_strdup(trail->wildcard);
 	result = ft_set_width(result, trail, &state_value);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
 	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result));
@@ -421,6 +546,10 @@ int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result)
 	else
 		return (ft_call_wildcard(args_data, args, result));
 }
+
+int		ft_check_fmt(char const *fmt)
+
+T_LIST	*ft_get_args(char const *fmt)
 
 int		ft_printf(char const *fmt, ...)
 {
