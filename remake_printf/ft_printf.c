@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/23 11:50:24 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/23 12:42:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -587,6 +587,33 @@ int		ft_check_fmt(char const *fmt)
 	else if (ft_is_format(fmt[i]) || !fmt[i])
 		return (2); // Code ca a l'air bon
 	else return (0); //Code y a un serieux probleme quelque part!
+}
+
+T_LIST	*ft_make_node(void)
+{
+	T_LIST	*new;
+
+	new = (T_LIST*)malloc(sizeof(T_LIST));
+	new->minus = 0;
+	new->plus = 0;
+	new->z_pad = 0;
+	new->alternate = 0;
+	new->space = 0;
+	new->width = 0;
+	new->accuracy = 0;
+	new->is_signed = 0;
+	new->type = 0;
+	new->format = 0;
+	new->mod = NULL;
+	new->incomplete = 0;
+	new->next = NULL;
+	return (new);
+}
+
+int		ft_is_modifier(char *str)
+{
+	if ((str[0] == 'l' && str[1] == 'l') || (str[0] == 'l' && !str[1]) || (str[0] == 'j' && !str[1]) ||
+			str[0] == 'z' && !str[1]) || (str[0] == 'h' && !str[1]) || (c[0] = "hh");
 }
 
 T_LIST	*ft_get_args(char const *fmt)
