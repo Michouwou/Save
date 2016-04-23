@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/23 06:09:31 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/23 06:46:00 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -547,9 +547,51 @@ int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result)
 		return (ft_call_wildcard(args_data, args, result));
 }
 
-int		ft_check_fmt(char const *fmt)
+void    ft_free_list(T_LIST **start)
+{
+	if ((*start) != NULL && (*start)->next != NULL)
+		ft_free_list(&(*start)->next);
+	free(*start);
+}
 
-T_LIST	*ft_get_args(char const *fmt)
+int     ft_is_format(char format)
+{
+	if (format == 'd' || format == 'D' || format == 'i' || format == 'o' ||
+			format == 'O' || format == 'x' || format == 'X' || format == 'e' ||
+			format == 'E' || format == 'f' || format == 'F' || format == 'p' ||
+			format == 'm' || format == 'b' || format == 'c' || format == 'C' ||
+			format == 's' || format == 'S')
+		return (1);
+	return (0);
+}
+
+int		ft_is_valid(char c)
+{
+	if (c == '-' || c == '+' || c == '0' || c == '#' || c == ' ' || c == '*' || c == '.' ||
+			c == 'd' || c == 'L' || c == 'l' || c == 'j' || c == 'z' || c == 'h' ||
+			c == 'i' || c == 'o' || c == 'u' || c == 'D' || c == 'U' || c == 'O' ||
+			c == 'f' || c == 'm' || c == 'E' || c == 'e' || c == 'X' || c == 'x' ||
+			c == 'F' || c == '%' || c == 'S' || c == 's' || c == 'c' || c == 'C' ||
+			c == 'p' || c == 'b' || ft_isdigit(c))
+		return (1);
+	return (0);
+}
+
+int		ft_check_fmt(char const *fmt)
+{
+	int		i;
+
+	i = 0;
+	while (ft_is_valid(fmt[i]) && !ft_is_format(fmt[i]) && fmt[i])
+		++i;
+	if (!ft_is_valid(fmt[i]))
+		return (1); // Code incomplet
+	else if (ft_is_format(fmt[i]) || !fmt[i])
+		return (2); // Code ca a l'air bon
+	else return (0); //Code y a un serieux probleme quelque part!
+}
+
+T_LIST	*ft_get_args(char const *fmt);
 
 int		ft_printf(char const *fmt, ...)
 {
@@ -572,6 +614,6 @@ int		ft_printf(char const *fmt, ...)
 		args_data = args_data->next;
 	}
 	ft_putstr(result);
-	ft_free_data_args(data_args);	
+	ft_free_list(data_args);	
 	return (state_value ? ft_strlen(result) : -1);
 }
