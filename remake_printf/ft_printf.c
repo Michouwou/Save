@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/23 06:46:00 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/23 11:50:24 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -381,15 +381,13 @@ int    ft_call_float(long double number, T_LIST *trail, char **print)
 	return (state_value);
 }
 
-int		ft_call_pointer(unsigned address, T_LIST *trail, char **print)
+int		ft_call_pointer(void *pointer, T_LIST *trail, char **print)
 {
 	char    *result;
 	int		state_value;
 
-	state_value = 1;
-	result = ft_base(address, 16);
+	result = (pointer) ? ft_base((unsigned)pointer, 16) : ft_strdup("0");
 	result = ft_repstr(result, 0, 0, "0x");
-	result = ft_set_length(trail, result, &state_value);
 	result = ft_set_width(result, trail, &state_value);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
 	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result) - 1);
@@ -468,7 +466,7 @@ int    ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 	char 	*result;
 	int		state_value;
 
-	result = ft_transfer_wchars(wstring);
+	result = (wstring) ? ft_transfer_wchars(wstring) : ft_strdup("(null)");
 	result = ft_set_length(trail, result, &state_value);
 	result = ft_set_width(result, trail, &state_value);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
@@ -532,7 +530,7 @@ int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result)
 	else if (args_data->type == CHAR_TYPE)
 		return (ft_char_type(args_data, args, result));
 	else if (args_data->type == POINTER_TYPE)
-		return (ft_call_pointer(args_data, va_arg(args, unsigned long), result));
+		return (ft_call_pointer(args_data, va_arg(args, void*), result));
 	else if (args_data->type == STRING_TYPE)
 		return (ft_call_wstring(args_data, ft_conv_wchar(va_arg(args, char*)) , result));
 	else if (args_data->type == WSTRING_TYPE)
@@ -560,7 +558,7 @@ int     ft_is_format(char format)
 			format == 'O' || format == 'x' || format == 'X' || format == 'e' ||
 			format == 'E' || format == 'f' || format == 'F' || format == 'p' ||
 			format == 'm' || format == 'b' || format == 'c' || format == 'C' ||
-			format == 's' || format == 'S')
+			format == 's' || format == 'S' || format == '%')
 		return (1);
 	return (0);
 }
@@ -591,7 +589,57 @@ int		ft_check_fmt(char const *fmt)
 	else return (0); //Code y a un serieux probleme quelque part!
 }
 
-T_LIST	*ft_get_args(char const *fmt);
+T_LIST	*ft_get_args(char const *fmt)
+{
+	T_LIST	*args;
+	T_LIST	*tmp;
+	int		i;
+	int		j;
+
+	args = ft_make_node();
+	tmp = args;
+	i = 0;
+	while (fmt[i])
+	{
+		if (fmt[i] == '%')
+		{
+			while (ft_is_valid(fmt[i]) && !ft_is_format(fmt[i]))
+			{
+				if (fmt[i] == '-')
+					tmp->minus = 1;
+				else if (fmt[i] == '+')
+					tmp->plus = 1;
+				else if (fmt[i] == '0')
+					tmp->z_pad = 1;
+				else if (fmt[i] == '#')
+					tmp->alternate = 1;
+				else if (fmt[i] == ' ')
+					tmp->space = 1;
+				else if (fmt[i] == '*' && trail->width != -10)
+					tmp->width = -10;
+				else if (fmt[i] == '*' && trail->width == -10)
+					tmp->accuracy = -10;
+				else if (ft_isdigit(fmt[i]))
+					ft_get_width(&(fmt[i]), &i, tmp);
+				else if (fmt[i] == '.')
+					ft_get_accuracy(&(fmt[i]), &i, tmp);
+				else if (ft_is_modifier(&(fmt[i])))
+					ft_get_greatest_modifier(&(fmt[i]), tmp);
+				i++;
+			}
+			if (ft_is_format(fmt[i]))
+				ft_get_fmt(tmp, fmt[i]);
+			else if (!fmt[i])
+				tmp->incomplete = 1;
+			else
+				ft_wildcard(tmp, fmt[i]);
+			tmp->next = ft_make_node();
+			tmp = tmp->next;
+		}
+		i++;
+	}
+	return (args);
+}
 
 int		ft_printf(char const *fmt, ...)
 {
