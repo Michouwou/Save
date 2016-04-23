@@ -612,8 +612,45 @@ T_LIST	*ft_make_node(void)
 
 int		ft_is_modifier(char *str)
 {
-	if ((str[0] == 'l' && str[1] == 'l') || (str[0] == 'l' && !str[1]) || (str[0] == 'j' && !str[1]) ||
-			str[0] == 'z' && !str[1]) || (str[0] == 'h' && !str[1]) || (c[0] = "hh");
+	if ((str[0] == 'l' && str[1] == 'l') || (str[0] == 'l' && str[1] != 'l') || (str[0] == 'j') ||
+		(str[0] == 'z') || (str[0] == 'h' && str[1] != 'h') || (str[0] == 'h' && str[1] == 'h'))
+		return (1);
+}
+
+void	ft_get_greatest_modifier(char *fmt, int *counter, T_LIST *trail)
+{
+	if (fmt[*counter] == 'j')
+		trail->mod = ft_strdup("j");
+	else if (fmt[*counter] == 'z')
+		trail_>mod = ft_strdup("z");
+	else if (fmt[*counter] == 'l' && fmt[*counter + 1] == 'l')
+		trail_>mod = ft_strdup("ll");
+	else if (fmt[*counter] == 'l' && fmt[*counter + 1] != 'l' && ft_strcmp(trail->mod, "ll"))
+		trail->mod = ft_strdup("l");
+	else if (fmt[*counter] == 'h' && fmt[*counter + 1] != 'h' && trail->mod[0] != 'l')
+		trail->mod = ft_strdup("h");
+	else if (fmt[*counter] == 'h' && fmt[*counter + 1] == 'h' && !trail->mod)
+		trail->mod = ft_strdup("hh");
+}
+
+void	ft_get_width(char *location, int *counter, T_LIST *trail)
+{
+	int	i;
+
+	i = *counter;
+	while (location[*counter] && ft_isdigit(location[*counter]))
+		(*counter)++;
+	trail->width = ft_atoi(ft_strsub(location, i, *counter - i));
+}
+
+void	ft_get_accuracy(char *location, int *counter, T_LIST *trail)
+{
+	int	i;
+	
+	i = *counter + 1;
+	while (location[*counter] && ft_isdigit(location[*counter]))
+		(counter*)++;
+	trail->accuracy = ft_atoi(ft_strsub(location, i, *counter - i));
 }
 
 T_LIST	*ft_get_args(char const *fmt)
@@ -647,11 +684,11 @@ T_LIST	*ft_get_args(char const *fmt)
 				else if (fmt[i] == '*' && trail->width == -10)
 					tmp->accuracy = -10;
 				else if (ft_isdigit(fmt[i]))
-					ft_get_width(&(fmt[i]), &i, tmp);
+					ft_get_width(fmt, &i, tmp);
 				else if (fmt[i] == '.')
-					ft_get_accuracy(&(fmt[i]), &i, tmp);
+					ft_get_accuracy(fmt, &i, tmp);
 				else if (ft_is_modifier(&(fmt[i])))
-					ft_get_greatest_modifier(&(fmt[i]), tmp);
+					ft_get_greatest_modifier(fmt, i, tmp);
 				i++;
 			}
 			if (ft_is_format(fmt[i]))
