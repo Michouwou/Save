@@ -189,8 +189,8 @@ char *ft_apply_flag(char *result, T_LIST *trail, int *state_value)
 		if (trail->plus && ft_isdigit(result[0]) && (t != 'o' && t != 'O' &&
 					t != 'x' && t != 'X' && t != 'b'))
 			result = ft_repstr(result, 0, 0, "+");
-		else if (trail->space && ft_isdigit(result[0]) && (t != 'o' && t != 'O' &&
-					t != 'x' && t != 'X' && t != 'b'))
+		else if (trail->space && ft_isdigit(result[0]) && (t != 'o'
+				&& t != 'O' && t != 'x' && t != 'X' && t != 'b'))
 			result = ft_repstr(result, 0, 0, " ");
 	}
 	if (trail->alternate)
@@ -205,7 +205,8 @@ int		ft_int_type(T_LIST *args_data, va_list *args, char **result)
 	else if (args_data->format == 'O' || args_data->format == 'U')
 		return (ft_call_int(va_arg(*args, unsigned long), args_data, result));
 	else if (!ft_strcmp(args_data->mod, "ll") && !args_data->is_signed)
-		return (ft_call_int(va_arg(*args, unsigned long long), args_data, result));
+		return (ft_call_int(va_arg(*args, unsigned long long), args_data,
+			result));
 	else if (!ft_strcmp(args_data->mod, "ll") && args_data->is_signed)
 		return (ft_call_int(va_arg(*args, long long), args_data, result));
 	else if (!ft_strcmp(args_data->mod, "l") && !args_data->is_signed)
@@ -243,8 +244,10 @@ int		ft_call_int(intmax_t number, T_LIST *trail, char **print)
 	result = ft_apply_flag(result, trail, &state_value);
 	result = ft_set_length(trail, result, &state_value);
 	result = ft_set_width(result, trail, &state_value);
-	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
-	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result) - 1);
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
+		result);
+	ft_move_index(&trail, trail->start_index - trail->end_index +
+		ft_strlen(result) - 1);
 	return (state_value);
 }
 
@@ -266,8 +269,10 @@ int		ft_call_char(wchar_t wc, T_LIST *trail, char **print)
 	result = ft_set_width(result, trail, &state_value);
 	result = ft_repstr(result, 0, 0, ft_strset(ft_strnew(trail->width - 1),
 				trail->width - 1, ' '));
-	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
-	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result) - 1);
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
+		result);
+	ft_move_index(&trail, trail->start_index - trail->end_index +
+		ft_strlen(result) - 1);
 	return (state_value);
 }
 
@@ -377,7 +382,8 @@ int    ft_call_float(long double number, T_LIST *trail, char **print)
 	result = ft_set_width(result, trail, &state_value);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
 			result);
-	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result) - 1);
+	ft_move_index(&trail, trail->start_index - trail->end_index +
+		ft_strlen(result) - 1);
 	return (state_value);
 }
 
@@ -389,8 +395,10 @@ int		ft_call_pointer(void *pointer, T_LIST *trail, char **print)
 	result = (pointer) ? ft_base((unsigned)pointer, 16) : ft_strdup("0");
 	result = ft_repstr(result, 0, 0, "0x");
 	result = ft_set_width(result, trail, &state_value);
-	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
-	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result) - 1);
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
+		result);
+	ft_move_index(&trail, trail->start_index - trail->end_index +
+		ft_strlen(result) - 1);
 	return (state_value);
 }
 
@@ -469,8 +477,10 @@ int    ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 	result = (wstring) ? ft_transfer_wchars(wstring) : ft_strdup("(null)");
 	result = ft_set_length(trail, result, &state_value);
 	result = ft_set_width(result, trail, &state_value);
-	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
-	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result) - 1);
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
+		result);
+	ft_move_index(&trail, trail->start_index - trail->end_index +
+		ft_strlen(result) - 1);
 	return (state_value);
 }
 
@@ -506,8 +516,10 @@ int		ft_call_percent(T_LIST *trail, char **print)
 
 	result = ft_strdup("%");
 	result = ft_set_width(result, trail, &state_value);
-	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
-	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result));
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
+		result);
+	ft_move_index(&trail, trail->start_index - trail->end_index +
+		ft_strlen(result));
 	return (state_value);
 }
 
@@ -518,8 +530,10 @@ int		ft_call_wildcard(T_LIST *trail, char **print)
 
 	result = ft_strdup(trail->wildcard);
 	result = ft_set_width(result, trail, &state_value);
-	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1, result);
-	ft_move_index(&trail, trail->start_index - trail->end_index + ft_strlen(result));
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
+		result);
+	ft_move_index(&trail, trail->start_index - trail->end_index +
+		ft_strlen(result));
 	return (state_value);
 }
 
@@ -532,7 +546,8 @@ int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result)
 	else if (args_data->type == POINTER_TYPE)
 		return (ft_call_pointer(args_data, va_arg(args, void*), result));
 	else if (args_data->type == STRING_TYPE)
-		return (ft_call_wstring(args_data, ft_conv_wchar(va_arg(args, char*)) , result));
+		return (ft_call_wstring(args_data, ft_conv_wchar(va_arg(args, char*)) ,
+			result));
 	else if (args_data->type == WSTRING_TYPE)
 		return (ft_call_wstring(args_data, va_arg(args, wchar_t*), result));
 	else if (args_data->type == DOUBLE_TYPE)
@@ -565,11 +580,12 @@ int     ft_is_format(char format)
 
 int		ft_is_valid(char c)
 {
-	if (c == '-' || c == '+' || c == '0' || c == '#' || c == ' ' || c == '*' || c == '.' ||
-			c == 'd' || c == 'L' || c == 'l' || c == 'j' || c == 'z' || c == 'h' ||
-			c == 'i' || c == 'o' || c == 'u' || c == 'D' || c == 'U' || c == 'O' ||
-			c == 'f' || c == 'm' || c == 'E' || c == 'e' || c == 'X' || c == 'x' ||
-			c == 'F' || c == '%' || c == 'S' || c == 's' || c == 'c' || c == 'C' ||
+	if (c == '-' || c == '+' || c == '0' || c == '#' || c == ' ' || c == '*' ||
+			c == '.' || c == 'd' || c == 'L' || c == 'l' || c == 'j' ||
+			c == 'z' || c == 'h' || c == 'i' || c == 'o' || c == 'u' ||
+			c == 'D' || c == 'U' || c == 'O' || c == 'f' || c == 'm' ||
+			c == 'E' || c == 'e' || c == 'X' || c == 'x' || c == 'F' ||
+			c == '%' || c == 'S' || c == 's' || c == 'c' || c == 'C' ||
 			c == 'p' || c == 'b' || ft_isdigit(c))
 		return (1);
 	return (0);
@@ -612,8 +628,9 @@ T_LIST	*ft_make_node(void)
 
 int		ft_is_modifier(char *str)
 {
-	if ((str[0] == 'l' && str[1] == 'l') || (str[0] == 'l' && str[1] != 'l') || (str[0] == 'j') ||
-		(str[0] == 'z') || (str[0] == 'h' && str[1] != 'h') || (str[0] == 'h' && str[1] == 'h'))
+	if ((str[0] == 'l' && str[1] == 'l') || (str[0] == 'l' && str[1] != 'l') ||
+		(str[0] == 'j') || (str[0] == 'z') ||
+		(str[0] == 'h' && str[1] != 'h') || (str[0] == 'h' && str[1] == 'h'))
 		return (1);
 }
 
@@ -625,9 +642,11 @@ void	ft_get_greatest_modifier(char *fmt, int *counter, T_LIST *trail)
 		trail_>mod = ft_strdup("z");
 	else if (fmt[*counter] == 'l' && fmt[*counter + 1] == 'l')
 		trail_>mod = ft_strdup("ll");
-	else if (fmt[*counter] == 'l' && fmt[*counter + 1] != 'l' && ft_strcmp(trail->mod, "ll"))
+	else if (fmt[*counter] == 'l' && fmt[*counter + 1] != 'l' &&
+		ft_strcmp(trail->mod, "ll"))
 		trail->mod = ft_strdup("l");
-	else if (fmt[*counter] == 'h' && fmt[*counter + 1] != 'h' && trail->mod[0] != 'l')
+	else if (fmt[*counter] == 'h' && fmt[*counter + 1] != 'h' &&
+		trail->mod[0] != 'l')
 		trail->mod = ft_strdup("h");
 	else if (fmt[*counter] == 'h' && fmt[*counter + 1] == 'h' && !trail->mod)
 		trail->mod = ft_strdup("hh");
@@ -651,6 +670,25 @@ void	ft_get_accuracy(char *location, int *counter, T_LIST *trail)
 	while (location[*counter] && ft_isdigit(location[*counter]))
 		(counter*)++;
 	trail->accuracy = ft_atoi(ft_strsub(location, i, *counter - i));
+}
+
+void	ft_get_fmt(T_LIST *trail, char fmt)
+{
+	if (fmt == 'd' || fmt == 'i' || fmt == 'o' || fmt == 'u' || fmt == 'D' ||
+		fmt == 'O' || fmt == 'x' || fmt == 'X' || fmt == 'U')
+		trail->type = 'd';
+	else if (fmt == 'e' || fmt == 'E' || fmt == 'f' || fmt == 'F')
+		trail->type = 'f';
+	else if (fmt == 'c' || fmt == 'C')
+		trail->type = 'c';
+	else
+		trail->type = fmt;
+	trail->format = fmt;
+}
+
+void	ft_wildcard(T_LIST *trail, char *fmt, int *i)
+{
+	trail->wildcard = ft_strset(ft_strnew(1), 1, fmt[i]);
 }
 
 T_LIST	*ft_get_args(char const *fmt)
@@ -696,7 +734,7 @@ T_LIST	*ft_get_args(char const *fmt)
 			else if (!fmt[i])
 				tmp->incomplete = 1;
 			else
-				ft_wildcard(tmp, fmt[i]);
+				ft_wildcard(tmp, fmt, &i);
 			tmp->next = ft_make_node();
 			tmp = tmp->next;
 		}

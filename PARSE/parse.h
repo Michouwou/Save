@@ -204,3 +204,8 @@ char    *parse_get_pattern(char *str);
  * Returns a pattern that corresponds to str, so that it can be reused
  * somewhere else
  **/
+ 
+int     parse_countw(char *str)
+/**
+ * Returns the number of words in str
+ **/

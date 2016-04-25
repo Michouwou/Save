@@ -77,13 +77,9 @@ void ft_core(t_stack **alpha, t_stack **beta, t_sol **solution, char *options)
 	i = 0;
 	while (!ft_is_sorted(*alpha))
 	{
-		//printf ("J'y suis!\n");
-		//fflush(stdout);
 		ft_print_stack(*alpha);
 		ft_alpha(alpha, beta, solution, min_max_med);
 		if (*beta && (*beta)->next)
 			ft_beta(alpha, beta, solution);
-		//i++;
-		//if (i == 2) exit(0);
 	}
 }

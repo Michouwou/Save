@@ -83,3 +83,5 @@ void            ft_get_width(char *location, int *counter, T_LIST *trail);
 void            ft_get_accuracy(char *location, int *counter, T_LIST *trail);
 T_LIST          *ft_get_args(char const *fmt);
 int             ft_printf(char const *fmt, ...);
+
+#endif

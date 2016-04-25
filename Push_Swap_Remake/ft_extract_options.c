@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+// NON VALIDE!!!
+
 char	*ft_extract_options(char **argv)
 {
 	int		i;
