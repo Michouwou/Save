@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/25 16:44:38 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/25 16:54:46 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -492,10 +492,7 @@ int    ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 	char 	*result;
 	int		state_value;
 
-	SAY("HEY\n");
 	result = (wstring) ? ft_transfer_wchars(wstring) : ft_strdup("(null)");
-	printf("Yop\n");
-	fflush(stdout);
 	result = ft_set_length(trail, result, &state_value);
 	result = ft_set_width(result, trail, &state_value);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
@@ -570,11 +567,8 @@ int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result)
 	else if (args_data->type == POINTER_TYPE)
 		return (ft_call_pointer(va_arg(*args, unsigned), args_data, result));
 	else if (args_data->type == STRING_TYPE)
-	{	
-		SAY("HO\n")
 		return (ft_call_wstring(ft_conv_wchar(va_arg(*args, char*)), args_data,
 			result));
-	}
 	else if (args_data->type == WSTRING_TYPE)
 		return (ft_call_wstring(va_arg(*args, wchar_t*), args_data, result));
 	else if (args_data->type == DOUBLE_TYPE)
@@ -795,7 +789,6 @@ int		ft_printf(char const *fmt, ...)
 			args_data->accuracy = va_arg(args, int);
 		state_value = state_value & ft_type_crossroad(args_data, &args, &result);
 		args_data = args_data->next;
-	SAY("HI\n")	
 	}
 	ft_putstr(result);
 	ft_free_list(&args_data);
