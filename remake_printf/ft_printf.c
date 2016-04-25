@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/25 15:56:53 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/25 16:44:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static void     ft_isneg(intmax_t *num, int *k, char *final)
 		*k = 1;
 		final[0] = '-';
 	}
-	SAY("isneg\n")
 }
 
 static void     ft_make_base(int *base)
@@ -34,7 +33,6 @@ static void     ft_make_base(int *base)
 		*base = 2;
 	if (*base == 'd' || *base == 'D' || *base == 'i')
 		*base = 10;
-	SAY("make_base\n")
 }
 
 char            *ft_base(intmax_t num, int base)
@@ -59,7 +57,6 @@ char            *ft_base(intmax_t num, int base)
 		i /= base;
 	}
 	final[k] = 0;
-	SAY("base\n")
 	return (final);
 }
 
@@ -84,7 +81,6 @@ char    *ft_repstr(char *str, int start, int end, char *to_insert)
 	while (str[j] != 0)
 		res[i++] = (int)str[j++];
 	res[i] = 0;
-	SAY("repstr\n")
 	return (res);
 }
 
@@ -98,7 +94,6 @@ char    *ft_strset(char *str, int len, char c)
 		str[i] = c;
 		i++;
 	}
-	SAY("strset\n")
 	return (str);
 }
 
@@ -129,7 +124,6 @@ char    *ft_set_width(char *result, T_LIST *trail, int *state_value)
 					ft_strset(ft_strnew(trail->width - ft_strlen(result)),
 						trail->width - ft_strlen(result), ' '));
 	}
-	SAY("set_width\n")
 	return (result);
 }
 
@@ -151,7 +145,6 @@ char    *ft_set_length(T_LIST *trail, char *result, int *state_value)
 		result = ft_repstr(result, j, j, ft_strset(ft_strnew(i), i, '0'));
 	else if (trail->type == 'S' || trail->type == 's')
 		result[trail->accuracy] = 0;
-	SAY("set_length\n")
 	return (result);
 }
 
@@ -183,7 +176,6 @@ char    *ft_alternate(char *result, T_LIST *trail)
 		if (result[i] != '.')
 			result = ft_repstr(result, i, i, ".");
 	}
-	SAY("alternate\n")
 	return (result);
 }
 
@@ -204,13 +196,11 @@ char *ft_apply_flag(char *result, T_LIST *trail, int *state_value)
 	}
 	if (trail->alternate)
 		result = ft_alternate(result, trail);
-	SAY("apply_flag\n")
 	return (result);
 }
 
 int		ft_int_type(T_LIST *args_data, va_list *args, char **result)
 {
-	SAY("int_type\n")
 	int		m;
 
 	m = (args_data) ? 1 : 0;
@@ -257,7 +247,6 @@ static void	ft_strtoupper(char *str)
 		str[i] = ft_toupper(str[i]);
 		i++;
 	}
-	SAY("toupper\n")
 }
 
 int		ft_call_int(intmax_t number, T_LIST *trail, char **print)
@@ -265,7 +254,6 @@ int		ft_call_int(intmax_t number, T_LIST *trail, char **print)
 	char    *result;
 	int		state_value;
 
-	SAY("IN CALL-INT\n");
 	result = ft_base(number, trail->format);
 	if (trail->format == 'X')
 		ft_strtoupper(result);
@@ -276,13 +264,11 @@ int		ft_call_int(intmax_t number, T_LIST *trail, char **print)
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 		ft_strlen(result) - 1);
-	SAY("call_int\n")
 	return (state_value);
 }
 
 int		ft_char_type(T_LIST *args_data, va_list *args, char **result)
 {
-	SAY("char_type\n")
 	if (args_data->format == 'C' || (args_data->format == 'c' &&
 				!ft_strcmp(args_data->mod, "l")))
 		return (ft_call_char((wchar_t)va_arg(*args, wchar_t), args_data, result));
@@ -303,13 +289,11 @@ int		ft_call_char(wchar_t wc, T_LIST *trail, char **print)
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 		ft_strlen(result) - 1);
-	SAY("call_char\n")
 	return (state_value);
 }
 
 int		ft_double_type(T_LIST *args_data, va_list *args, char **result)
 {
-	SAY("double_type\n")
 	if (!ft_strcmp(args_data->mod, "L"))
 		return (ft_call_float(va_arg(*args, long double), args_data, result));
 	else
@@ -318,7 +302,6 @@ int		ft_double_type(T_LIST *args_data, va_list *args, char **result)
 
 static double   ft_power(double num, int pow)
 {
-	SAY("power\n")
 	if (pow == 0)
 		return (1);
 	else
@@ -329,7 +312,6 @@ void            ft_round(long double *num, int accuracy)
 {
 	if ((int)(*num * ft_power(10.0, accuracy + 1)) % 10 >= 5)
 		*num = *num + 1.0 / ft_power(10.0, accuracy);
-	SAY("round\n")
 }
 
 static void     ft_is_neg(int *k, long double *number, char **final)
@@ -340,7 +322,6 @@ static void     ft_is_neg(int *k, long double *number, char **final)
 		*k = *k + 1;
 		(*final)[0] = '-';
 	}
-	SAY("is_neg\n")
 }
 
 char            *ft_conv_float(long double to_print, int accuracy)
@@ -371,7 +352,6 @@ char            *ft_conv_float(long double to_print, int accuracy)
 		final[k++] = (intmax_t)to_print + 48;
 		to_print = to_print - (intmax_t)to_print;
 	}
-	SAY("conv_float\n")
 	return (final);
 }
 
@@ -399,7 +379,6 @@ char    *ft_conv_exp(long double number, T_LIST *trail)
 	res = ft_repstr(res, 0, 0, "e");
 	res = ft_repstr(res, 0, 0, ft_conv_float(number, trail->accuracy > 0 ?
 				trail->accuracy : 6));
-	SAY("conv_exp\n")
 	return(res);
 }
 
@@ -421,7 +400,6 @@ int    ft_call_float(long double number, T_LIST *trail, char **print)
 			result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 		ft_strlen(result) - 1);
-	SAY("call_float\n")
 	return (state_value);
 }
 
@@ -430,16 +408,13 @@ int		ft_call_pointer(unsigned pointer, T_LIST *trail, char **print)
 	char    *result;
 	int		state_value;
 
-	SAY("1call_pointer\n")
 	result = pointer ? ft_base(pointer, 16) : ft_strdup("0");
 	result = ft_repstr(result, 0, 0, "0x");
 	result = ft_set_width(result, trail, &state_value);
-	printf("1 : %d, 2 : %d\n", trail->start_index, trail->end_index);fflush(stdout);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 		ft_strlen(result) - 1);
-	SAY("call_pointer\n")
 	return (state_value);
 }
 
@@ -449,11 +424,12 @@ wchar_t     *ft_conv_wchar(char *str)
 	int     i;
 
 	i = -1;
+	if (!str)
+		return (NULL);
 	res = (wchar_t*)malloc(sizeof(wchar_t) * ft_strlen(str) + 1);
 	while (str[++i] != 0)
 		res[i] = (unsigned char)str[i];
 	res[i] = 0;
-	SAY("conv_wchar\n")
 	return (res);
 }
 
@@ -485,7 +461,6 @@ unsigned char *ft_transfer_wchar(wchar_t c)
 		*b++ = (unsigned char)((c & 0x3F) | 0x80);
 	}
 	*b = '\0';
-	SAY("transfer_wchar\n")
 	return (b_static);
 }
 
@@ -509,7 +484,6 @@ char *ft_transfer_wchars(wchar_t *wstr)
 		free(tmp1);
 		i++;
 	}
-	SAY("transfer_wchars\n")
 	return ((char*)result);
 }
 
@@ -518,17 +492,16 @@ int    ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 	char 	*result;
 	int		state_value;
 
+	SAY("HEY\n");
 	result = (wstring) ? ft_transfer_wchars(wstring) : ft_strdup("(null)");
-	printf("- %s -\n", result);
+	printf("Yop\n");
+	fflush(stdout);
 	result = ft_set_length(trail, result, &state_value);
-	printf("- %s -\n", result);
 	result = ft_set_width(result, trail, &state_value);
-	printf("- %s -\n", result);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 		ft_strlen(result) - 1);
-	SAY("call_wstring\n")
 	return (state_value);
 }
 
@@ -543,8 +516,6 @@ void    ft_move_index(T_LIST **trail, int padding)
 		tmp->end_index += padding;
 		tmp = tmp->next;
 	}
-	printf("Padding ===== %d\n", padding);fflush(stdout);
-	SAY("move_index\n")
 }
 
 int    ft_call_errno(T_LIST *trail, char **print)
@@ -559,7 +530,6 @@ int    ft_call_errno(T_LIST *trail, char **print)
 			result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 			ft_strlen(result) - 1);
-	SAY("call_errno\n")
 	return (state_value);
 }
 
@@ -574,7 +544,6 @@ int		ft_call_percent(T_LIST *trail, char **print)
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 		ft_strlen(result));
-	SAY("call_percent\n")
 	return (state_value);
 }
 
@@ -589,22 +558,23 @@ int		ft_call_wildcard(T_LIST *trail, char **print)
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 		ft_strlen(result));
-	SAY("call_wildcard\n")
 	return (state_value);
 }
 
 int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result)
 {
-	SAY("type_crossroad\n")
 	if (args_data->type == INT_TYPE)
 		return (ft_int_type(args_data, args, result));
 	else if (args_data->type == CHAR_TYPE)
 		return (ft_char_type(args_data, args, result));
 	else if (args_data->type == POINTER_TYPE)
-		return (ft_call_pointer(args_data, va_arg(*args, unsigned), result));
+		return (ft_call_pointer(va_arg(*args, unsigned), args_data, result));
 	else if (args_data->type == STRING_TYPE)
+	{	
+		SAY("HO\n")
 		return (ft_call_wstring(ft_conv_wchar(va_arg(*args, char*)), args_data,
 			result));
+	}
 	else if (args_data->type == WSTRING_TYPE)
 		return (ft_call_wstring(va_arg(*args, wchar_t*), args_data, result));
 	else if (args_data->type == DOUBLE_TYPE)
@@ -622,12 +592,10 @@ void    ft_free_list(T_LIST **start)
 	if ((*start) != NULL && (*start)->next != NULL)
 		ft_free_list(&(*start)->next);
 	free(*start);
-	SAY("free_list\n")
 }
 
 int     ft_is_format(char format)
 {
-	SAY("is_format\n")
 	if (format == 'd' || format == 'D' || format == 'i' || format == 'o' ||
 			format == 'O' || format == 'x' || format == 'X' || format == 'e' ||
 			format == 'E' || format == 'f' || format == 'F' || format == 'p' ||
@@ -639,7 +607,6 @@ int     ft_is_format(char format)
 
 int		ft_is_valid(char c)
 {
-	SAY("is_valid\n")
 	if (c == '-' || c == '+' || c == '0' || c == '#' || c == ' ' || c == '*' ||
 			c == '.' || c == 'd' || c == 'L' || c == 'l' || c == 'j' ||
 			c == 'z' || c == 'h' || c == 'i' || c == 'o' || c == 'u' ||
@@ -658,7 +625,6 @@ int		ft_check_fmt(char const *fmt)
 	i = 0;
 	while (ft_is_valid(fmt[i]) && !ft_is_format(fmt[i]) && fmt[i])
 		++i;
-	SAY("check_fmt\n")
 	if (!ft_is_valid(fmt[i]))
 		return (1); // Code incomplet
 	else if (ft_is_format(fmt[i]) || !fmt[i])
@@ -685,13 +651,11 @@ T_LIST	*ft_make_node(void)
 	new->mod = ft_strdup("-");
 	new->incomplete = 0;
 	new->next = NULL;
-	SAY("make_node\n")
 	return (new);
 }
 
 int		ft_is_modifier(char *str)
 {
-	SAY("is_modifier\n")
 	if ((str[0] == 'l' && str[1] == 'l') || (str[0] == 'l' && str[1] != 'l') ||
 		(str[0] == 'j') || (str[0] == 'z') ||
 		(str[0] == 'h' && str[1] != 'h') || (str[0] == 'h' && str[1] == 'h'))
@@ -715,7 +679,6 @@ void	ft_get_greatest_modifier(char *fmt, int *counter, T_LIST *trail)
 		trail->mod = ft_strdup("h");
 	else if (fmt[*counter] == 'h' && fmt[*counter + 1] == 'h' && !trail->mod)
 		trail->mod = ft_strdup("hh");
-	SAY("get_greatest_modifier\n")
 }
 
 void	ft_get_width(char *location, int *counter, T_LIST *trail)
@@ -727,7 +690,6 @@ void	ft_get_width(char *location, int *counter, T_LIST *trail)
 		(*counter)++;
 	trail->width = ft_atoi(ft_strsub(location, i, *counter - i));
 	(*counter) -= 1;
-	SAY("get_width\n")
 }
 
 void	ft_get_accuracy(char *location, int *counter, T_LIST *trail)
@@ -739,7 +701,6 @@ void	ft_get_accuracy(char *location, int *counter, T_LIST *trail)
 		(*counter)++;
 	trail->accuracy = ft_atoi(ft_strsub(location, i, *counter - i));
 	(*counter) -= 1;
-	SAY("get_accuracy\n")
 }
 
 void	ft_get_fmt(T_LIST *trail, char fmt)
@@ -754,13 +715,11 @@ void	ft_get_fmt(T_LIST *trail, char fmt)
 	else
 		trail->type = fmt;
 	trail->format = fmt;
-	SAY("get_fmt\n")
 }
 
 void	ft_wildcard(T_LIST *trail, char *fmt, int *i)
 {
 	trail->wildcard = ft_strset(ft_strnew(1), 1, fmt[*i]);
-	SAY("wildcard\n")
 }
 
 T_LIST	*ft_get_args(char *fmt)
@@ -811,11 +770,9 @@ T_LIST	*ft_get_args(char *fmt)
 			else
 				ft_wildcard(tmp, fmt, &i);
 			tmp->end_index = i;
-			printf("I ->>>>>>>> %d\n", i);fflush(stdout);
 		}
 		i++;
 	}
-	SAY("get_args\n")
 	return (args->next);
 }
 
@@ -838,9 +795,9 @@ int		ft_printf(char const *fmt, ...)
 			args_data->accuracy = va_arg(args, int);
 		state_value = state_value & ft_type_crossroad(args_data, &args, &result);
 		args_data = args_data->next;
+	SAY("HI\n")	
 	}
 	ft_putstr(result);
-	ft_free_list(&args_data);	
-	printf("printf : %d, %d\n", ft_strlen(result), state_value);
+	ft_free_list(&args_data);
 	return (state_value ? ft_strlen(result) : -1);
 }
