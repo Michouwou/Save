@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/25 13:56:13 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/25 15:57:25 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int             ft_double_type(T_LIST *args_data, va_list *args, char **result);
 char            *ft_conv_float(long double to_print, int accuracy);
 char            *ft_conv_exp(long double number, T_LIST *trail);
 int             ft_call_float(long double number, T_LIST *trail, char **print);
-int             ft_call_pointer(void *pointer, T_LIST *trail, char **print);
+int             ft_call_pointer(unsigned p, T_LIST *trail, char **print);
 wchar_t         *ft_conv_wchar(char *str);
 unsigned char   *ft_transfer_wchar(wchar_t c);
 char            *ft_transfer_wchars(wchar_t *wstr);

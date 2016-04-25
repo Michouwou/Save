@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/25 14:19:25 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/25 15:56:53 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,6 +211,9 @@ char *ft_apply_flag(char *result, T_LIST *trail, int *state_value)
 int		ft_int_type(T_LIST *args_data, va_list *args, char **result)
 {
 	SAY("int_type\n")
+	int		m;
+
+	m = (args_data) ? 1 : 0;
 	if (args_data->format == 'D')
 		return (ft_call_int(va_arg(*args, long), args_data, result));
 	else if (args_data->format == 'O' || args_data->format == 'U')
@@ -262,6 +265,7 @@ int		ft_call_int(intmax_t number, T_LIST *trail, char **print)
 	char    *result;
 	int		state_value;
 
+	SAY("IN CALL-INT\n");
 	result = ft_base(number, trail->format);
 	if (trail->format == 'X')
 		ft_strtoupper(result);
@@ -421,14 +425,16 @@ int    ft_call_float(long double number, T_LIST *trail, char **print)
 	return (state_value);
 }
 
-int		ft_call_pointer(void *pointer, T_LIST *trail, char **print)
+int		ft_call_pointer(unsigned pointer, T_LIST *trail, char **print)
 {
 	char    *result;
 	int		state_value;
 
-	result = (pointer) ? ft_base((unsigned)pointer, 16) : ft_strdup("0");
+	SAY("1call_pointer\n")
+	result = pointer ? ft_base(pointer, 16) : ft_strdup("0");
 	result = ft_repstr(result, 0, 0, "0x");
 	result = ft_set_width(result, trail, &state_value);
+	printf("1 : %d, 2 : %d\n", trail->start_index, trail->end_index);fflush(stdout);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
@@ -513,8 +519,11 @@ int    ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 	int		state_value;
 
 	result = (wstring) ? ft_transfer_wchars(wstring) : ft_strdup("(null)");
+	printf("- %s -\n", result);
 	result = ft_set_length(trail, result, &state_value);
+	printf("- %s -\n", result);
 	result = ft_set_width(result, trail, &state_value);
+	printf("- %s -\n", result);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
@@ -525,13 +534,17 @@ int    ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 
 void    ft_move_index(T_LIST **trail, int padding)
 {
-	while (*trail != NULL)
+	T_LIST *tmp;
+
+	tmp = *trail;
+	while (tmp != NULL)
 	{
-		(*trail)->start_index += padding;
-		(*trail)->end_index += padding;
-		*trail = (*trail)->next;
+		tmp->start_index += padding;
+		tmp->end_index += padding;
+		tmp = tmp->next;
 	}
-	SAY(";ove_index\n")
+	printf("Padding ===== %d\n", padding);fflush(stdout);
+	SAY("move_index\n")
 }
 
 int    ft_call_errno(T_LIST *trail, char **print)
@@ -588,7 +601,7 @@ int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result)
 	else if (args_data->type == CHAR_TYPE)
 		return (ft_char_type(args_data, args, result));
 	else if (args_data->type == POINTER_TYPE)
-		return (ft_call_pointer(args_data, va_arg(*args, void*), result));
+		return (ft_call_pointer(args_data, va_arg(*args, unsigned), result));
 	else if (args_data->type == STRING_TYPE)
 		return (ft_call_wstring(ft_conv_wchar(va_arg(*args, char*)), args_data,
 			result));
@@ -650,7 +663,8 @@ int		ft_check_fmt(char const *fmt)
 		return (1); // Code incomplet
 	else if (ft_is_format(fmt[i]) || !fmt[i])
 		return (2); // Code ca a l'air bon
-	else return (0); //Code y a un serieux probleme quelque part!
+	else
+		return (0); //Code y a un serieux probleme quelque part!
 }
 
 T_LIST	*ft_make_node(void)
@@ -663,12 +677,12 @@ T_LIST	*ft_make_node(void)
 	new->z_pad = 0;
 	new->alternate = 0;
 	new->space = 0;
-	new->width = 0;
-	new->accuracy = 0;
+	new->width = -1;
+	new->accuracy = -1;
 	new->is_signed = 0;
 	new->type = 0;
 	new->format = 0;
-	new->mod = NULL;
+	new->mod = ft_strdup("-");
 	new->incomplete = 0;
 	new->next = NULL;
 	SAY("make_node\n")
@@ -712,6 +726,7 @@ void	ft_get_width(char *location, int *counter, T_LIST *trail)
 	while (location[*counter] && ft_isdigit(location[*counter]))
 		(*counter)++;
 	trail->width = ft_atoi(ft_strsub(location, i, *counter - i));
+	(*counter) -= 1;
 	SAY("get_width\n")
 }
 
@@ -723,13 +738,14 @@ void	ft_get_accuracy(char *location, int *counter, T_LIST *trail)
 	while (location[*counter] && ft_isdigit(location[*counter]))
 		(*counter)++;
 	trail->accuracy = ft_atoi(ft_strsub(location, i, *counter - i));
+	(*counter) -= 1;
 	SAY("get_accuracy\n")
 }
 
 void	ft_get_fmt(T_LIST *trail, char fmt)
 {
 	if (fmt == 'd' || fmt == 'i' || fmt == 'o' || fmt == 'u' || fmt == 'D' ||
-		fmt == 'O' || fmt == 'x' || fmt == 'X' || fmt == 'U')
+		fmt == 'O' || fmt == 'x' || fmt == 'X' || fmt == 'U' || fmt == 'b')
 		trail->type = 'd';
 	else if (fmt == 'e' || fmt == 'E' || fmt == 'f' || fmt == 'F')
 		trail->type = 'f';
@@ -761,6 +777,9 @@ T_LIST	*ft_get_args(char *fmt)
 	{
 		if (fmt[i] == '%')
 		{
+			tmp->next = ft_make_node();
+			tmp = tmp->next;
+			tmp->start_index = i++;
 			while (ft_is_valid(fmt[i]) && !ft_is_format(fmt[i]))
 			{
 				if (fmt[i] == '-')
@@ -791,13 +810,13 @@ T_LIST	*ft_get_args(char *fmt)
 				tmp->incomplete = 1;
 			else
 				ft_wildcard(tmp, fmt, &i);
-			tmp->next = ft_make_node();
-			tmp = tmp->next;
+			tmp->end_index = i;
+			printf("I ->>>>>>>> %d\n", i);fflush(stdout);
 		}
 		i++;
 	}
 	SAY("get_args\n")
-	return (args);
+	return (args->next);
 }
 
 int		ft_printf(char const *fmt, ...)
@@ -822,6 +841,6 @@ int		ft_printf(char const *fmt, ...)
 	}
 	ft_putstr(result);
 	ft_free_list(&args_data);	
-	SAY("printf\n")
+	printf("printf : %d, %d\n", ft_strlen(result), state_value);
 	return (state_value ? ft_strlen(result) : -1);
 }
