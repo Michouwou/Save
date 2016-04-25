@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/23 12:42:43 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/25 13:56:13 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdint.h>
 # include <wchar.h>
 # include <stdarg.h>
+# include <string.h>
+# include <errno.h>
 
 # include "libft.h"
 
@@ -32,6 +34,8 @@
 
 typedef struct  s_list_printf
 {
+	int			start_index;
+	int			end_index;
     int         minus;
     int         plus;
     int         alternate;
@@ -44,6 +48,7 @@ typedef struct  s_list_printf
     char        format;
     char        type;
     int         incomplete;
+	int			is_signed;
     struct      s_list_printf *next;
 }               T_LIST;
 
@@ -81,7 +86,7 @@ int             ft_is_modifier(char *str);
 void            ft_get_greatest_modifier(char *fmt, int *counter, T_LIST *trail);
 void            ft_get_width(char *location, int *counter, T_LIST *trail);
 void            ft_get_accuracy(char *location, int *counter, T_LIST *trail);
-T_LIST          *ft_get_args(char const *fmt);
+T_LIST          *ft_get_args(char *fmt);
 int             ft_printf(char const *fmt, ...);
 
 #endif
