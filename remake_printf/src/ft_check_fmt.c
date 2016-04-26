@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 int		ft_check_fmt(char const *fmt)
 {
 	int		i;

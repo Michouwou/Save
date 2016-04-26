@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 char    *ft_set_length(T_LIST *trail, char *result, int *state_value)
 {
 	int i;

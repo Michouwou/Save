@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 static void     ft_is_neg(int *k, long double *number, char **final)
 {
 	if (*number < 0)

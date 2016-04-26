@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 T_LIST	*ft_get_args(char *fmt, int *buffer)
 {
 	T_LIST	*args;

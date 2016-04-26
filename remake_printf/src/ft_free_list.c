@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 void    ft_free_list(T_LIST **start)
 {
 	if ((*start) != NULL && (*start)->next != NULL)

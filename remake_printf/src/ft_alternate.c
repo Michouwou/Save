@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 char    *ft_alternate(char *result, T_LIST *trail)
 {
 	int i;

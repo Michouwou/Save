@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result, int *buffer)
 {
 	if (args_data->type == INT_TYPE)

@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 static double   ft_power(double num, int pow)
 {
 	if (pow == 0)

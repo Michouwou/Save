@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 void	ft_get_accuracy(char *location, int *counter, T_LIST *trail)
 {
 	int	i;

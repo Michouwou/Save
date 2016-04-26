@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 char    *ft_conv_exp(long double number, T_LIST *trail)
 {
 	int     i;

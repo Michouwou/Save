@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 char    *ft_repstr(char *str, int start, int end, char *to_insert)
 {
 	char    *res;

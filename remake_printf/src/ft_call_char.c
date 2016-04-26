@@ -1,3 +1,6 @@
+
+#include "libftprintf.h"
+
 int		ft_call_char(wchar_t wc, T_LIST *trail, char **print, int *buffer)
 {
 	char    *result;

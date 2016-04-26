@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 int		ft_call_wildcard(T_LIST *trail, char **print)
 {
 	char	*result;

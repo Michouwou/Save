@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 char    *ft_strset(char *str, int len, char c)
 {
 	int i;

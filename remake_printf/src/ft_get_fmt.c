@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 void	ft_get_fmt(T_LIST *trail, char fmt)
 {
 	if (fmt == 'd' || fmt == 'i' || fmt == 'o' || fmt == 'u' || fmt == 'D' ||

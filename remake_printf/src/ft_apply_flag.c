@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 char *ft_apply_flag(char *result, T_LIST *trail, int *state_value)
 {
 	char t;

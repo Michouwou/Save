@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 static void     ft_isneg(intmax_t *num, int *k, char *final)
 {
 	if (*num < 0)

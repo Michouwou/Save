@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 int    ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 {
 	char 	*result;

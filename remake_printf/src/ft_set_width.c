@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 char    *ft_set_width(char *result, T_LIST *trail, int *state_value)
 {
 	int i;

@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 static void	ft_strtoupper(char *str)
 {
 	int i;

@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 int		ft_int_type(T_LIST *args_data, va_list *args, char **result)
 {
 	int		m;

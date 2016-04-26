@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 int		ft_is_modifier(char *str)
 {
 	if ((str[0] == 'l' && str[1] == 'l') || (str[0] == 'l' && str[1] != 'l') ||

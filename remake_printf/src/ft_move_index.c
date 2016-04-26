@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 void    ft_move_index(T_LIST **trail, int padding)
 {
 	T_LIST *tmp;

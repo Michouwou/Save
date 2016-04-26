@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 unsigned char *ft_transfer_wchar(wchar_t c)
 {
 	unsigned char *b_static;

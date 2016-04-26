@@ -1,3 +1,6 @@
+
+#include "libftprintf.h"
+
 int		ft_is_valid(char c)
 {
 	if (c == '-' || c == '+' || c == '0' || c == '#' || c == ' ' || c == '*' ||

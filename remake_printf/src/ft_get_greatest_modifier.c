@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 void	ft_get_greatest_modifier(char *fmt, int *counter, T_LIST *trail)
 {
 	if (fmt[*counter] == 'j')

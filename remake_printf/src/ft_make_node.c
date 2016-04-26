@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 T_LIST	*ft_make_node(void)
 {
 	T_LIST	*new;

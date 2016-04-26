@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 char *ft_transfer_wchars(wchar_t *wstr)
 {
 	unsigned char   *result;
