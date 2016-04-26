@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/25 16:54:46 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/26 17:06:46 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -254,6 +254,7 @@ int		ft_call_int(intmax_t number, T_LIST *trail, char **print)
 	char    *result;
 	int		state_value;
 
+	state_value = 1;
 	result = ft_base(number, trail->format);
 	if (trail->format == 'X')
 		ft_strtoupper(result);
@@ -267,24 +268,28 @@ int		ft_call_int(intmax_t number, T_LIST *trail, char **print)
 	return (state_value);
 }
 
-int		ft_char_type(T_LIST *args_data, va_list *args, char **result)
+int		ft_char_type(T_LIST *args_data, va_list *args, char **result, int *buffer)
 {
 	if (args_data->format == 'C' || (args_data->format == 'c' &&
 				!ft_strcmp(args_data->mod, "l")))
-		return (ft_call_char((wchar_t)va_arg(*args, wchar_t), args_data, result));
+		return (ft_call_char((wchar_t)va_arg(*args, wchar_t), args_data, result, buffer));
 	else
-		return (ft_call_char((char)va_arg(*args, wchar_t), args_data, result));
+		return (ft_call_char((char)va_arg(*args, wchar_t), args_data, result, buffer));
 }
 
-int		ft_call_char(wchar_t wc, T_LIST *trail, char **print)
+int		ft_call_char(wchar_t wc, T_LIST *trail, char **print, int *buffer)
 {
 	char    *result;
 	int		state_value;
 
+	state_value = 1;
 	result = (char*)ft_transfer_wchar(wc);
+	if (wc == 0)
+	{
+		trail->width--;
+		(*buffer)++;
+	}
 	result = ft_set_width(result, trail, &state_value);
-	result = ft_repstr(result, 0, 0, ft_strset(ft_strnew(trail->width - 1),
-				trail->width - 1, ' '));
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
@@ -387,6 +392,7 @@ int    ft_call_float(long double number, T_LIST *trail, char **print)
 	char    *result;
 	int		state_value;
 
+	state_value = 1;
 	if (trail->format == 'f' || trail->format == 'F')
 		result = ft_conv_float(number, (trail->accuracy != -1) ?
 				trail->accuracy : 6);
@@ -408,6 +414,7 @@ int		ft_call_pointer(unsigned pointer, T_LIST *trail, char **print)
 	char    *result;
 	int		state_value;
 
+	state_value = 1;
 	result = pointer ? ft_base(pointer, 16) : ft_strdup("0");
 	result = ft_repstr(result, 0, 0, "0x");
 	result = ft_set_width(result, trail, &state_value);
@@ -492,6 +499,7 @@ int    ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 	char 	*result;
 	int		state_value;
 
+	state_value = 1;
 	result = (wstring) ? ft_transfer_wchars(wstring) : ft_strdup("(null)");
 	result = ft_set_length(trail, result, &state_value);
 	result = ft_set_width(result, trail, &state_value);
@@ -520,6 +528,7 @@ int    ft_call_errno(T_LIST *trail, char **print)
 	char	*result;
 	int		state_value;
 
+	state_value = 1;
 	result = strerror(errno);
 	result = ft_set_length(trail, result, &state_value);
 	result = ft_set_width(result, trail, &state_value);
@@ -535,6 +544,7 @@ int		ft_call_percent(T_LIST *trail, char **print)
 	char	*result;
 	int		state_value;
 
+	state_value = 1;
 	result = ft_strdup("%");
 	result = ft_set_width(result, trail, &state_value);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
@@ -549,6 +559,7 @@ int		ft_call_wildcard(T_LIST *trail, char **print)
 	char	*result;
 	int		state_value;
 
+	state_value = 1;
 	result = ft_strdup(trail->wildcard);
 	result = ft_set_width(result, trail, &state_value);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
@@ -558,19 +569,21 @@ int		ft_call_wildcard(T_LIST *trail, char **print)
 	return (state_value);
 }
 
-int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result)
+int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result, int *buffer)
 {
 	if (args_data->type == INT_TYPE)
 		return (ft_int_type(args_data, args, result));
 	else if (args_data->type == CHAR_TYPE)
-		return (ft_char_type(args_data, args, result));
+		return (ft_char_type(args_data, args, result, buffer));
 	else if (args_data->type == POINTER_TYPE)
 		return (ft_call_pointer(va_arg(*args, unsigned), args_data, result));
 	else if (args_data->type == STRING_TYPE)
 		return (ft_call_wstring(ft_conv_wchar(va_arg(*args, char*)), args_data,
 			result));
 	else if (args_data->type == WSTRING_TYPE)
+	{
 		return (ft_call_wstring(va_arg(*args, wchar_t*), args_data, result));
+	}
 	else if (args_data->type == DOUBLE_TYPE)
 		return (ft_double_type(args_data, args, result));
 	else if (args_data->type == ERRNO)
@@ -716,7 +729,7 @@ void	ft_wildcard(T_LIST *trail, char *fmt, int *i)
 	trail->wildcard = ft_strset(ft_strnew(1), 1, fmt[*i]);
 }
 
-T_LIST	*ft_get_args(char *fmt)
+T_LIST	*ft_get_args(char *fmt, int *buffer)
 {
 	T_LIST	*args;
 	T_LIST	*tmp;
@@ -732,6 +745,7 @@ T_LIST	*ft_get_args(char *fmt)
 		{
 			tmp->next = ft_make_node();
 			tmp = tmp->next;
+			tmp->buffer = buffer;
 			tmp->start_index = i++;
 			while (ft_is_valid(fmt[i]) && !ft_is_format(fmt[i]))
 			{
@@ -776,21 +790,25 @@ int		ft_printf(char const *fmt, ...)
 	int			state_value;
 	T_LIST		*args_data;
 	char		*result;
+	int			*buffer;
 
 	va_start(args, fmt);
 	result = ft_strdup(fmt);
-	state_value = ft_check_fmt(fmt);
-	args_data = ft_get_args(ft_strdup(fmt));
+	state_value = 1;
+	buffer = (int*)malloc(sizeof(int));
+	*buffer = 0;
+	args_data = ft_get_args(ft_strdup(fmt), buffer);
 	while (args_data)
 	{
 		if (args_data->width == -10)
 			args_data->width = va_arg(args, int);
 		if (args_data->accuracy == -10)
 			args_data->accuracy = va_arg(args, int);
-		state_value = state_value & ft_type_crossroad(args_data, &args, &result);
+		if (ft_type_crossroad(args_data, &args, &result, buffer) == 0)
+			state_value = 0;
 		args_data = args_data->next;
 	}
 	ft_putstr(result);
 	ft_free_list(&args_data);
-	return (state_value ? ft_strlen(result) : -1);
+	return (state_value ? ft_strlen(result) + *buffer : -1);
 }

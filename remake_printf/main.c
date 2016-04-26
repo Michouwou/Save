@@ -6,6 +6,10 @@ int main(int argc, char **argv)
 	int p = 8;
 	char *s;
 
-	ft_printf("%3d, %s, %f, %b, %p, %s\n", 3, " salut", 0.034, 255, &p, s);
+//	printf("%d : ft_printf\n", ft_printf("{%3c}", 0));
+//	printf("%d : printf\n", 
+	if(ft_printf("{%30S}", L"我是一只猫。") == 32)
+		write(1, "-", 1);
+//	write(1, "\n", 1);
 	return(0);
 }
