@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_fmt.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/04/27 13:56:58 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/04/27 14:06:22 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
 void	ft_get_fmt(T_LIST *trail, char fmt)
 {
+	if (fmt == 'd' || fmt == 'i' || fmt == 'D')
+		trail->is_signed = 1;
 	if (fmt == 'd' || fmt == 'i' || fmt == 'o' || fmt == 'u' || fmt == 'D' ||
 		fmt == 'O' || fmt == 'x' || fmt == 'X' || fmt == 'U' || fmt == 'b')
 		trail->type = 'd';

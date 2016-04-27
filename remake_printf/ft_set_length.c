@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_set_length.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/04/27 11:45:29 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/04/27 11:56:38 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
 char    *ft_set_length(T_LIST *trail, char *result, int *state_value)
@@ -7,6 +19,8 @@ char    *ft_set_length(T_LIST *trail, char *result, int *state_value)
 
 	i = 0;
 	j = -1;
+	if (!ft_strcmp(result, "0") && !trail->accuracy)
+		return (ft_strnew(0));
 	while (result[++j] != 0)
 		if (ft_isdigit(result[j]))
 			i++;

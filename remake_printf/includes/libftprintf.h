@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/27 11:06:28 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/27 14:52:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdarg.h>
 # include <string.h>
 # include <errno.h>
+# include <limits.h>
 
 # include "libft.h"
 
@@ -54,6 +55,7 @@ typedef struct  s_list_printf
 }               T_LIST;
 
 char            *ft_base(intmax_t num, int base);
+char            *ft_ubase(uintmax_t num, int base);
 char            *ft_repstr(char *str, int start, int end, char *to_insert);
 char            *ft_strset(char *str, int len, char c);
 char            *ft_set_width(char *result, T_LIST *trail, int *state_value);
@@ -62,13 +64,14 @@ char            *ft_alternate(char *result, T_LIST *trail);
 char            *ft_apply_flag(char *result, T_LIST *trail, int *state_value);
 int             ft_int_type(T_LIST *args_data, va_list *args, char **result);
 int             ft_call_int(intmax_t number, T_LIST *trail, char **print);
+int             ft_call_uint(uintmax_t number, T_LIST *trail, char **print);
 int             ft_char_type(T_LIST *args_data, va_list *args, char **result, int *buffer);
 int             ft_call_char(wchar_t wc, T_LIST *trail, char **print, int *buffer);
 int             ft_double_type(T_LIST *args_data, va_list *args, char **result);
 char            *ft_conv_float(long double to_print, int accuracy);
 char            *ft_conv_exp(long double number, T_LIST *trail);
 int             ft_call_float(long double number, T_LIST *trail, char **print);
-int             ft_call_pointer(unsigned p, T_LIST *trail, char **print);
+int             ft_call_pointer(unsigned long p, T_LIST *trail, char **print);
 wchar_t         *ft_conv_wchar(char *str);
 unsigned char   *ft_transfer_wchar(wchar_t c);
 char            *ft_transfer_wchars(wchar_t *wstr);

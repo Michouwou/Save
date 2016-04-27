@@ -48,6 +48,7 @@ T_LIST	*ft_get_args(char *fmt, int *buffer)
 				tmp->incomplete = 1;
 			else
 				ft_wildcard(tmp, fmt, &i);
+			printf("%d, %d, %d, %d, %d, %d, %d, %d, %d, %s, %s, %c, %c, %d, %d\n", tmp->start_index, tmp->end_index, tmp->minus, tmp->plus, tmp->alternate, tmp->z_pad, tmp->space, tmp->width, tmp->accuracy, tmp->mod, tmp->wildcard, tmp->format, tmp->type, tmp->incomplete, tmp->is_signed);fflush(stdout);
 			tmp->end_index = i;
 		}
 		i++;
