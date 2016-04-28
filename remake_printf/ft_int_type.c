@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 13:01:32 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/27 16:09:30 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/28 11:15:42 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_int_type(T_LIST *args_data, va_list *args, char **result)
 		return (ft_call_int(va_arg(*args, intmax_t), args_data, result));
 	else if (!ft_strcmp(args_data->mod, "z") && args_data->is_signed)
 		return (ft_call_int(va_arg(*args, size_t), args_data, result));
-	else if (ft_strcmp(args_data->mod, "-") && !args_data->is_signed)
+	else if (!ft_strcmp(args_data->mod, "-") && !args_data->is_signed)
 		return (ft_call_uint(va_arg(*args, unsigned), args_data, result));
 	else
 		return (ft_call_int(va_arg(*args, int), args_data, result));

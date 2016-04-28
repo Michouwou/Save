@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 12:11:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/27 14:04:44 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/28 11:04:23 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result, int *buffer)
 {
 	if (args_data->type == INT_TYPE)
-	{
-		printf("POUF\n");fflush(stdout);
 		return (ft_int_type(args_data, args, result));
-	}
 	else if (args_data->type == CHAR_TYPE)
 		return (ft_char_type(args_data, args, result, buffer));
 	else if (args_data->type == POINTER_TYPE)

@@ -15,7 +15,5 @@ char *ft_apply_flag(char *result, T_LIST *trail, int *state_value)
 				&& t != 'O' && t != 'x' && t != 'X' && t != 'b'))
 			result = ft_repstr(result, 0, 0, " ");
 	}
-	if (trail->alternate)
-		result = ft_alternate(result, trail);
 	return (result);
 }

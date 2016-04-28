@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/27 14:00:30 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/28 11:29:07 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,12 @@ int		ft_printf(char const *fmt, ...)
 	args_data = ft_get_args(ft_strdup(fmt), buffer);
 	while (args_data)
 	{
-		printf("%c %d\n", args_data->format, args_data->is_signed);
 		if (args_data->width == -10)
 			args_data->width = va_arg(args, int);
 		if (args_data->accuracy == -10)
 			args_data->accuracy = va_arg(args, int);
-		printf("%c\n", args_data->format);
 		if (ft_type_crossroad(args_data, &args, &result, buffer) == 0)
 			state_value = 0;
-		printf("%c\n", args_data->format);
 		args_data = args_data->next;
 	}
 	ft_putstr(result);

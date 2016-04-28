@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 13:03:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/27 15:10:42 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/28 11:50:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void     ft_make_base(int *base)
 		*base = 16;
 	if (*base == 'b')
 		*base = 2;
-	if (*base == 'd' || *base == 'D' || *base == 'i')
+	if (*base == 'd' || *base == 'D' || *base == 'i' || *base == 'u' || *base == 'U')
 		*base = 10;
 }
 
@@ -70,25 +70,19 @@ char            *ft_ubase(uintmax_t num, int base)
 
 	ft_make_base(&base);
 	i = 1;
-	k = 0;	
-	if (num == ULONG_MAX)
-		return (ft_strdup("18446744073709551615"));
-	printf("lol, num : %ju\n", num);
-	fflush(stdout);
+	k = 0;
+	if (num == ULONG_MAX || num == ULONG_MAX / 2 + 1)
+		return (ft_strdup(num == ULONG_MAX ? "18446744073709551615" : "1000000000000000000000"));
 	ft_strcpy(alpha, "0123456789abcdef");
 	ft_bzero(final = (char*)malloc(sizeof(char) * 200), 200);
 	while ((i * base) <= num)
 		i = i * base;
-	printf("lol\n");
-	fflush(stdout);
 	while (i > 0)
 	{
 		final[k++] = alpha[(num / i)];
 		num = num % i;
 		i /= base;
 	}
-	printf("lol\n");
-	fflush(stdout);
 	final[k] = 0;
 	return (final);
 }
