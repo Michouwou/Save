@@ -30,24 +30,25 @@ T_LIST	*ft_get_args(char *fmt, int *buffer)
 					tmp->alternate = 1;
 				else if (fmt[i] == ' ')
 					tmp->space = 1;
-				else if (fmt[i] == '*' && tmp->width != -10)
-					tmp->width = -10;
-				else if (fmt[i] == '*' && tmp->width == -10)
-					tmp->accuracy = -10;
+				else if (fmt[i] == '*' && tmp->width == -1)
+					tmp->width = -10; // Penser a changer get_accuracy pour le wildcard
 				else if (ft_isdigit(fmt[i]))
+				{
+					tmp->unused = (tmp->width == -10) ? tmp->unused + 1 : tmp->unused;
 					ft_get_width(fmt, &i, tmp);
+				}
 				else if (fmt[i] == '.')
 					ft_get_accuracy(fmt, &i, tmp);
 				else if (ft_is_modifier(&(fmt[i])))
 					ft_get_greatest_modifier(fmt, &i, tmp);
+				else if (fmt[i] == '*')
+					tmp->unused++;
 				i++;
 			}
 			if (ft_is_format(fmt[i]))
 				ft_get_fmt(tmp, fmt[i]);
-			else if (!fmt[i])
-				tmp->incomplete = 1;
 			else
-				ft_wildcard(tmp, fmt, &i);
+				tmp->incomplete = 1;
 			tmp->end_index = i;
 		}
 		i++;

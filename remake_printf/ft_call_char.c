@@ -7,7 +7,7 @@ int		ft_call_char(wchar_t wc, T_LIST *trail, char **print, int *buffer)
 	int		state_value;
 
 	state_value = 1;
-	result = (char*)ft_transfer_wchar(wc);
+	result = (char*)ft_transfer_wchar(wc, &(trail->oct_num));
 	if (wc == 0)
 	{
 		trail->width--;

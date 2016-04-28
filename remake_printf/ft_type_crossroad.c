@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 12:11:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/28 11:04:23 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/28 17:49:11 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ int		ft_type_crossroad(T_LIST *args_data, va_list *args, char **result, int *buf
 		return (ft_call_wstring(ft_conv_wchar(va_arg(*args, char*)), args_data,
 			result));
 	else if (args_data->type == WSTRING_TYPE)
-	{
 		return (ft_call_wstring(va_arg(*args, wchar_t*), args_data, result));
-	}
 	else if (args_data->type == DOUBLE_TYPE)
 		return (ft_double_type(args_data, args, result));
 	else if (args_data->type == ERRNO)
 		return (ft_call_errno(args_data, result));
 	else if (args_data->type == PERCENT)
 		return (ft_call_percent(args_data, result));
-	else
+	else if (args_data->incomplete)
 		return (ft_call_wildcard(args_data, result));
+	else
+		return (0);
 }

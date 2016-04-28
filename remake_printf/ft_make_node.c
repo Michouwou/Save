@@ -15,8 +15,10 @@ T_LIST	*ft_make_node(void)
 	new->is_signed = 0;
 	new->type = 0;
 	new->format = 0;
+	new->unused = 1;
 	new->mod = ft_strdup("-");
 	new->incomplete = 0;
+	new->oct_num = 1;
 	new->next = NULL;
 	return (new);
 }

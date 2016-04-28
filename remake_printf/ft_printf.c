@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/28 13:11:40 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/28 18:11:30 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int		ft_printf(char const *fmt, ...)
 	args_data = ft_get_args(ft_strdup(fmt), buffer);
 	while (args_data)
 	{
+		while (--(args_data->unused))
+			va_arg(args, void*);
 		if (args_data->width == -10)
 			args_data->width = va_arg(args, int);
 		if (args_data->accuracy == -10)

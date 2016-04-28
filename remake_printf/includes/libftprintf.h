@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/27 14:52:02 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/28 18:12:10 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,13 @@ typedef struct  s_list_printf
     int         width;
     int         accuracy;
     char        *mod;
-    char        *wildcard;
     char        format;
     char        type;
     int         incomplete;
 	int			is_signed;
 	int			*buffer;
+	int			oct_num;
+	int			unused;
     struct      s_list_printf *next;
 }               T_LIST;
 
@@ -73,8 +74,8 @@ char            *ft_conv_exp(long double number, T_LIST *trail);
 int             ft_call_float(long double number, T_LIST *trail, char **print);
 int             ft_call_pointer(unsigned long p, T_LIST *trail, char **print);
 wchar_t         *ft_conv_wchar(char *str);
-unsigned char   *ft_transfer_wchar(wchar_t c);
-char            *ft_transfer_wchars(wchar_t *wstr);
+unsigned char   *ft_transfer_wchar(wchar_t c, int *oct_num);
+char            *ft_transfer_wchars(wchar_t *wstr, T_LIST *trail);
 int             ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print);
 void            ft_move_index(T_LIST **trail, int padding);
 int             ft_call_errno(T_LIST *trail, char **print);
@@ -95,6 +96,5 @@ int             ft_printf(char const *fmt, ...);
 void			ft_round(long double *num, int accuracy);
 void			ft_get_fmt(T_LIST *trail, char fmt);
 void			ft_strtoupper(char *str);
-void			ft_wildcard(T_LIST *trail, char *fmt, int *i);
 
 #endif

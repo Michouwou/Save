@@ -9,7 +9,7 @@ int main()
 	unsigned long num2 = 900;
 
 	char *s = ft_strdup("Salut\n");
-	printf("%s\n", s);
+	printf("%d\n", printf("{%**3d }", 5, 0, 3));
 	s = ft_repstr(s, 0, 0, "0");
 	printf("%s\n", s);
 }

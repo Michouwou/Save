@@ -12,9 +12,9 @@ char    *ft_alternate(char *result, T_LIST *trail)
 			i++;
 		if ((trail->format == 'o' || trail->format == 'O') && ft_strcmp(result, "0"))
 			result = ft_repstr(result, i, i, "0");
-		else if (trail->format == 'x')
+		else if (trail->format == 'x' && ft_strcmp(result, "0"))
 			result = ft_repstr(result, i, i, "0x");
-		else if (trail->format == 'X')
+		else if (trail->format == 'X' && ft_strcmp(result, "0"))
 			result = ft_repstr(result, i, i, "0X");
 		else if (trail->format == 'b')
 			result = ft_repstr(result, i, i, "b");

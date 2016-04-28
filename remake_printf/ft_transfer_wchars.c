@@ -1,6 +1,6 @@
 #include "libftprintf.h"
 
-char *ft_transfer_wchars(wchar_t *wstr)
+char *ft_transfer_wchars(wchar_t *wstr, T_LIST *trail)
 {
 	unsigned char   *result;
 	unsigned char   *tmp1;
@@ -11,7 +11,7 @@ char *ft_transfer_wchars(wchar_t *wstr)
 	i = 0;
 	while (wstr[i] != 0)
 	{
-		tmp2 = ft_transfer_wchar(wstr[i]);
+		tmp2 = ft_transfer_wchar(wstr[i], &(trail->oct_num));
 		tmp1 = result;
 		result = (unsigned char*)ft_strnew(ft_strlen((char*)result) +
 				ft_strlen((char*)tmp2));

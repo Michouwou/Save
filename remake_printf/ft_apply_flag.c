@@ -11,8 +11,7 @@ char *ft_apply_flag(char *result, T_LIST *trail, int *state_value)
 		if (trail->plus && ft_isdigit(result[0]) && (t != 'o' && t != 'O' &&
 					t != 'x' && t != 'X' && t != 'b'))
 			result = ft_repstr(result, 0, 0, "+");
-		else if (trail->space && ft_isdigit(result[0]) && (t != 'o'
-				&& t != 'O' && t != 'x' && t != 'X' && t != 'b'))
+		else if (trail->space && ft_isdigit(result[0]) && trail->is_signed)
 			result = ft_repstr(result, 0, 0, " ");
 	}
 	return (result);
