@@ -7,7 +7,7 @@ char    *ft_repstr(char *str, int start, int end, char *to_insert)
 	int     j;
 
 	res = (char*)malloc(sizeof(char) * (ft_strlen(str) - (end - start) + ft_strlen(to_insert) + 1));
-	ft_bzero(res, ft_strlen(str) - (end - start) + ft_strlen(to_insert));
+	ft_bzero(res, ft_strlen(str) - (end - start) + ft_strlen(to_insert) + 1);
 	i = 0;
 	j = 0;
 	while (i < start)

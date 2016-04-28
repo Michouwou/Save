@@ -8,15 +8,15 @@ char    *ft_alternate(char *result, T_LIST *trail)
 	if (trail->format == 'o' || trail->format == 'O' || trail->format == 'x' ||
 			trail->format == 'X' || trail->format == 'b')
 	{
-		while (!ft_isalnum(result[i]))
+		while (!ft_isalnum(result[i]) && result[i])
 			i++;
-		if (trail->format == 'o' || trail->format == 'O')
+		if ((trail->format == 'o' || trail->format == 'O') && ft_strcmp(result, "0"))
 			result = ft_repstr(result, i, i, "0");
 		else if (trail->format == 'x')
 			result = ft_repstr(result, i, i, "0x");
 		else if (trail->format == 'X')
 			result = ft_repstr(result, i, i, "0X");
-		else
+		else if (trail->format == 'b')
 			result = ft_repstr(result, i, i, "b");
 	}
 	else if (trail->type == 'f')

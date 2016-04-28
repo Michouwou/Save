@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 13:01:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/28 12:08:07 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/28 14:02:49 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ int		ft_call_uint(uintmax_t number, T_LIST *trail, char **print)
 	result = ft_ubase(number, trail->format);
 	if (trail->format == 'X')
 		ft_strtoupper(result);
-	if (number != 0 && trail->alternate)
-		ft_alternate(result, trail);
 	result = ft_apply_flag(result, trail, &state_value);
 	result = ft_set_length(trail, result, &state_value);
+	if (trail->alternate)
+		result = ft_alternate(result, trail);
 	result = ft_set_width(result, trail, &state_value);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
-		result);
+			result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
-		ft_strlen(result) - 1);
+			ft_strlen(result) - 1);
 	return (state_value);
 }
 
@@ -53,13 +53,13 @@ int		ft_call_int(intmax_t number, T_LIST *trail, char **print)
 	state_value = 1;
 	result = ft_base(number, trail->format);
 	if (number != 0 && trail->alternate)
-		ft_alternate(result, trail);
+		result = ft_alternate(result, trail);
 	result = ft_apply_flag(result, trail, &state_value);
 	result = ft_set_length(trail, result, &state_value);
 	result = ft_set_width(result, trail, &state_value);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
-		result);
+			result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
-		ft_strlen(result) - 1);
+			ft_strlen(result) - 1);
 	return (state_value);
 }

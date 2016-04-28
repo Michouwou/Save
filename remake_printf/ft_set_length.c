@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 11:45:29 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/27 11:56:38 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/28 13:50:44 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char    *ft_set_length(T_LIST *trail, char *result, int *state_value)
 
 	i = 0;
 	j = -1;
-	if (!ft_strcmp(result, "0") && !trail->accuracy)
-		return (ft_strnew(0));
+	if (!ft_strcmp(result, "0") && !trail->accuracy && !trail->alternate)
+		return (ft_strnew(1));
 	while (result[++j] != 0)
 		if (ft_isdigit(result[j]))
 			i++;
