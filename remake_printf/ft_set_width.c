@@ -12,7 +12,7 @@ char    *ft_set_width(char *result, T_LIST *trail, int *state_value)
 	{
 		if (!(trail->minus))
 		{
-			if (trail->z_pad && !(trail->accuracy != -1 && trail->type == 'd'))
+			if (trail->z_pad && !(trail->accuracy > -1 && trail->type == 'd'))
 				result = ft_repstr(result, (result[i] == '+' || result[i] == '-'
 							) ? i = i + 1 : i, i,
 						ft_strset(ft_strnew(trail->width - ft_strlen(result)),

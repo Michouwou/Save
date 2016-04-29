@@ -30,8 +30,10 @@ T_LIST	*ft_get_args(char *fmt, int *buffer)
 					tmp->alternate = 1;
 				else if (fmt[i] == ' ')
 					tmp->space = 1;
-				else if (fmt[i] == '*' && tmp->width == -1)
+				else if (fmt[i] == '*' && tmp->width != -10)
 					tmp->width = -10; // Penser a changer get_accuracy pour le wildcard
+				else if (fmt[i] == '*' && tmp->width != -1 && tmp->accuracy == -1)
+					tmp->accuracy = -10;
 				else if (ft_isdigit(fmt[i]))
 				{
 					tmp->unused = (tmp->width == -10) ? tmp->unused + 1 : tmp->unused;
@@ -49,7 +51,7 @@ T_LIST	*ft_get_args(char *fmt, int *buffer)
 				ft_get_fmt(tmp, fmt[i]);
 			else
 				tmp->incomplete = 1;
-			tmp->end_index = i;
+			tmp->end_index = (tmp->incomplete) ? i - 1 : i;
 		}
 		i++;
 	}
