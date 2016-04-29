@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 11:45:29 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/28 16:57:55 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/29 15:42:16 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char    *ft_set_length(T_LIST *trail, char *result, int *state_value)
 	j = 0;
 	while (!ft_isdigit(result[j]) && result[j] != 0)
 		j++;
-	if (trail->type == 'd' && i > 0)
+	if ((trail->type == 'd' || trail->type == 'p') && i > 0)
 		result = ft_repstr(result, j, j, ft_strset(ft_strnew(i), i, '0'));
 	else if (trail->type == 'S' && trail->accuracy != -1)
 		result[trail->accuracy - (trail->accuracy % trail->oct_num)] = 0;

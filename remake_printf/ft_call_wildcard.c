@@ -7,6 +7,7 @@ int		ft_call_wildcard(T_LIST *trail, char **print)
 
 	state_value = 1;
 	result = ft_strnew(0);
+	trail->width--;
 	result = ft_set_width(result, trail, &state_value);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
 		result);

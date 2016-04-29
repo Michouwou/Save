@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 13:03:06 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/28 11:50:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/29 12:09:29 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,13 @@ char            *ft_ubase(uintmax_t num, int base)
 	i = 1;
 	k = 0;
 	if (num == ULONG_MAX || num == ULONG_MAX / 2 + 1)
+	{
+		if (base == 8)
+			return (ft_strdup("1777777777777777777777"));
+		else if (base == 16)
+			return (ft_strdup("ffffffffffffffff"));
 		return (ft_strdup(num == ULONG_MAX ? "18446744073709551615" : "1000000000000000000000"));
+	}
 	ft_strcpy(alpha, "0123456789abcdef");
 	ft_bzero(final = (char*)malloc(sizeof(char) * 200), 200);
 	while ((i * base) <= num)
