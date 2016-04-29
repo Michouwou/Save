@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 13:01:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/29 14:47:08 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/29 17:42:19 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ int		ft_call_int(intmax_t number, T_LIST *trail, char **print)
 	result = ft_base(number, trail->format);
 	if (number != 0 && trail->alternate)
 		result = ft_alternate(result, trail);
+	if (trail->width < 0)
+	{
+		trail->width = -1 * trail->width;
+		trail->minus = 1;
+	}
 	result = ft_apply_flag(result, trail, &state_value);
 	result = ft_set_length(trail, result, &state_value);
 	result = ft_set_width(result, trail, &state_value);

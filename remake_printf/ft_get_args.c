@@ -32,7 +32,7 @@ T_LIST	*ft_get_args(char *fmt, int *buffer)
 					tmp->space = 1;
 				else if (fmt[i] == '*' && tmp->width != -10)
 					tmp->width = -10; // Penser a changer get_accuracy pour le wildcard
-				else if (fmt[i] == '*' && tmp->width != -1 && tmp->accuracy == -1)
+				else if (fmt[i] == '*' && tmp->width != 0 && tmp->accuracy == -1)
 					tmp->accuracy = -10;
 				else if (ft_isdigit(fmt[i]))
 				{

@@ -10,7 +10,7 @@ T_LIST	*ft_make_node(void)
 	new->z_pad = 0;
 	new->alternate = 0;
 	new->space = 0;
-	new->width = -1;
+	new->width = 0;
 	new->accuracy = -1;
 	new->is_signed = 0;
 	new->type = 0;

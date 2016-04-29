@@ -8,9 +8,15 @@ int		ft_call_char(wchar_t wc, T_LIST *trail, char **print, int *buffer)
 
 	state_value = 1;
 	result = (char*)ft_transfer_wchar(wc, &(trail->oct_num));
+
+	if (trail->width < 0)
+	{
+		trail->width = -1 * trail->width;
+		trail->minus = 1;
+	}
 	if (wc == 0)
 	{
-		trail->width--;
+		trail->width--; // = trail->width <= 0 ? trail->width : trail->width - 1;
 		(*buffer)++;
 	}
 	result = ft_set_width(result, trail, &state_value);

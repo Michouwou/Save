@@ -1,7 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdint.h>
-#include "libftprintf.h"
 #include <locale.h>
 
 int main()
@@ -10,8 +9,5 @@ int main()
 	unsigned long num2 = 900;
 
 	setlocale(LC_ALL, "");
-	char *s = ft_strdup("Salut\n");
-	printf("%d\n", printf("{% c}", 0));
-	s = ft_repstr(s, 0, 0, "0");
-	printf("%s\n", s);
+	printf("%d\n", printf("{%*c}", -15, 0));
 }
