@@ -50,7 +50,11 @@ T_LIST	*ft_get_args(char *fmt, int *buffer)
 			if (ft_is_format(fmt[i]))
 				ft_get_fmt(tmp, fmt[i]);
 			else
+			{
 				tmp->incomplete = 1;
+				if (fmt[i])
+					tmp->format = fmt[i];
+			}
 			tmp->end_index = (tmp->incomplete) ? i - 1 : i;
 		}
 		i++;

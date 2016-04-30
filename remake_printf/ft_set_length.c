@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 11:45:29 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/29 18:14:12 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/30 09:46:01 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 static char *set_x_length(T_LIST *trail, char *result, int *state_value)
 {
-	if (ft_strlen(result) && trail->accuracy > ft_strlen(result))
-	{
+	if (ft_strlen(result) && trail->accuracy > (int)ft_strlen(result))
 		result = ft_repstr(result, 0, 0, ft_strset(ft_strnew(trail->accuracy - ft_strlen(result)), trail->accuracy - ft_strlen(result), '0'));
-	}
 	return (result);
 }
 
