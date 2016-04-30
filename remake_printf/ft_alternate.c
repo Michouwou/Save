@@ -10,7 +10,7 @@ char    *ft_alternate(char *result, T_LIST *trail)
 	{
 		while (!ft_isalnum(result[i]) && result[i])
 			i++;
-		if ((trail->format == 'o' || trail->format == 'O') && ft_strcmp(result, "0") && trail->accuracy < 0)
+		if ((trail->format == 'o' || trail->format == 'O') && ft_strcmp(result, "0") && trail->accuracy <= 0)
 			result = ft_repstr(result, i, i, "0");
 		else if (trail->format == 'x' && ft_strcmp(result, "0"))
 			result = ft_repstr(result, i, i, "0x");

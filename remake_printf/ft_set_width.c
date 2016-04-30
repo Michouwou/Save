@@ -6,8 +6,11 @@ char    *ft_set_width(char *result, T_LIST *trail, int *state_value)
 
 	i = 0;
 	while (!ft_isdigit(result[i]) && result[i] != '+' && result[i] != '-' &&
-			result[i] != 0 && (trail->type == 'd' || trail->type == 'f'))
+			result[i] != 0 && (trail->type == 'd' || trail->type == 'f') &&
+			trail->format != 'x' && trail->format != 'X')
 		i++;
+	if (trail->format == 'p' && trail->z_pad && !trail->minus)
+		i = 2;
 	if (trail->width > (int)ft_strlen(result))
 	{
 		if (!(trail->minus))
