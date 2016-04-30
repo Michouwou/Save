@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/28 18:12:10 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/04/30 14:22:31 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define STRING_TYPE 's'
 # define WSTRING_TYPE 'S'
 # define DOUBLE_TYPE 'f'
-# define ERRNO 'e'
+# define ERRNO 'm'
 # define PERCENT '%'
 
 typedef struct  s_list_printf

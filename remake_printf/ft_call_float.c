@@ -15,6 +15,8 @@ int    ft_call_float(long double number, T_LIST *trail, char **print)
 		ft_strtoupper(result);
 	result = ft_apply_flag(result, trail, &state_value);
 	result = ft_set_width(result, trail, &state_value);
+	if (trail->alternate)
+		result = ft_alternate(result, trail);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
 			result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
