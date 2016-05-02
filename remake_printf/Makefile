@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/25 16:57:31 by mlevieux          #+#    #+#              #
-#    Updated: 2016/04/28 17:48:32 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/04/30 17:41:30 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,3 +70,6 @@ fclean: clean
 	@echo "\033[0;32mOK!\033[0;m\n"
 
 re: fclean all
+
+norme :
+	norminette $(SRC) $(HEADERS)

@@ -1,6 +1,6 @@
 #include "libftprintf.h"
 
-static void     ft_is_neg(int *k, long double *number, char **final)
+static void		ft_is_neg(int *k, long double *number, char **final)
 {
 	if (*number < 0)
 	{
@@ -10,10 +10,10 @@ static void     ft_is_neg(int *k, long double *number, char **final)
 	}
 }
 
-char            *ft_conv_float(long double to_print, int accuracy)
+char			*ft_conv_float(long double to_print, int accuracy)
 {
-	char        *final;
-	int         k;
+	char		*final;
+	int			k;
 	long double i;
 
 	i = 1.0;

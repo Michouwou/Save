@@ -7,8 +7,8 @@ int		ft_call_pointer(unsigned long pointer, T_LIST *trail, char **print)
 
 	state_value = 1;
 	result = ft_base(pointer, 16);
-	if (trail->accuracy == 0)
-		result = ft_strnew(0);
+//	if (trail->accuracy == 0)
+//		result = ft_strnew(0);
 	if (pointer > 0)
 		trail->accuracy--;
 	result = ft_set_length(trail, result, &state_value);

@@ -1,6 +1,6 @@
 #include "libftprintf.h"
 
-int     ft_is_format(char format)
+int	ft_is_format(char format)
 {
 	if (format == 'd' || format == 'D' || format == 'i' || format == 'o' ||
 			format == 'u' || format == 'U' || format == 'O' || format == 'x' ||

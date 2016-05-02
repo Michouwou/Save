@@ -1,6 +1,6 @@
 #include "libftprintf.h"
 
-wchar_t     *ft_conv_wchar(char *str)
+wchar_t		*ft_conv_wchar(char *str)
 {
 	wchar_t *res;
 	int     i;

@@ -24,128 +24,28 @@ int main(void)
 	printf("Usage : \n- Out ft_printf\n- Out printf\n- Return value my_printf - return value real_printf\n\n");
 	fflush(stdout);
 
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
+	my_printf = ft_printf("Extended character : |%C|\n", L'لا');
+	real_printf = printf("Extended character : |%C|\n", L'لا');
+	printf("Difference between return value : %d\n\n", my_printf - real_printf);
 	fflush(stdout);
 
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
+	my_printf = ft_printf("Largeur (9) : |%9C|\n", L'हि');
+	real_printf = printf("Largeur (9) : |%9C|\n", L'हि');
+	printf("Difference between return value : %d\n\n", my_printf - real_printf);
 	fflush(stdout);
 
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
+	my_printf = ft_printf("Precision (8) : |%.8C|\n", L'གྲོ');
+	real_printf = printf("Precision (8) : |%.8C|\n", L'གྲོ');
+	printf("Difference between return value : %d\n\n", my_printf - real_printf);
 	fflush(stdout);
 
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
+	my_printf = ft_printf("Largeur bonus (*) : |%*C|\n", 5, L'យ');
+	real_printf = printf("Largeur bonus (*) : |%*C|\n", 5, L'យ');
+	printf("Difference between return value : %d\n\n", my_printf - real_printf);
 	fflush(stdout);
 
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
-	fflush(stdout);
-
-	my_printf = ft_printf("\n", );
-	real_printf = printf("\n", );
-	printf("Difference between return value : %d\n\n", my_printf = real_printf);
+	my_printf = ft_printf("Flag - : |%-3C|\n", L'h');
+	real_printf = printf("Flag - : |%-3C|\n", L'h');
+	printf("Difference between return value : %d\n\n", my_printf - real_printf);
 	fflush(stdout);
 }

@@ -1,22 +1,22 @@
 #include "libftprintf.h"
 
-void	ft_get_accuracy(char *location, int *counter, T_LIST *trail)
+void	ft_get_accuracy(char *format, int *j, T_LIST *trail)
 {
 	int	i;
 	
-	(*counter)++;
-	i = *counter;
-	while (location[*counter] && (ft_isdigit(location[*counter]) || location[*counter] == '*'))
+	(*j)++;
+	i = *j;
+	while (format[*j] && (ft_isdigit(format[*j]) || format[*j] == '*'))
 	{
-		if (location[*counter] == '*')
+		if (format[*j] == '*')
 		{
 			trail->accuracy = -10;
 			return;
 		}
-		(*counter)++;
+		(*j)++;
 	}
-	trail->accuracy = ft_atoi(ft_strsub(location, i, *counter - i));
-	if (i == *counter)
+	trail->accuracy = ft_atoi(ft_strsub(format, i, *j - i));
+	if (i == *j)
 		trail->accuracy = 0;
-	(*counter) -= 1;
+	(*j) -= 1;
 }
