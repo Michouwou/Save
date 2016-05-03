@@ -53,5 +53,5 @@ int		ft_int_type(T_LIST *args_data, va_list *args, char **res)
 	else if (!ft_strcmp(args_data->mod, "hh") && args_data->is_signed)
 		return (ft_call_int((char)va_arg(*args, int), args_data, res));
 	else
-		part_two(args_data, args, res);
+		return (part_two(args_data, args, res));
 }

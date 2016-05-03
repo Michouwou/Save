@@ -1,6 +1,6 @@
 #include "libftprintf.h"
 
-static unsigned char *part_two(wchar_t c, int *oct_num, unsigned char *b)
+static void part_two(wchar_t c, int *oct_num, unsigned char *b)
 {
 	if (c < (1 << 16))
 	{

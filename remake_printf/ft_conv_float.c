@@ -10,6 +10,17 @@ static void		ft_is_neg(int *k, long double *number, char **final)
 	}
 }
 
+static char *after_coma(char *final, long double to_print, int accuracy, int k)
+{
+	while (accuracy-- > 0)
+	{
+		to_print *= 10;
+		final[k++] = (intmax_t)to_print + 48;
+		to_print = to_print - (intmax_t)to_print;
+	}
+	return (final);
+}
+
 char			*ft_conv_float(long double to_print, int accuracy)
 {
 	char		*final;
@@ -32,11 +43,6 @@ char			*ft_conv_float(long double to_print, int accuracy)
 	if (k == 0)
 		final[k++] = '0';
 	final[k++] = (accuracy > 0) ? '.' : 0;
-	while (accuracy-- > 0)
-	{
-		to_print *= 10;
-		final[k++] = (intmax_t)to_print + 48;
-		to_print = to_print - (intmax_t)to_print;
-	}
+	final = after_coma(final, to_print, accuracy, k);
 	return (final);
 }

@@ -16,7 +16,7 @@ int		ft_call_char(wchar_t wc, T_LIST *trail, char **print, int *buffer)
 	}
 	if (wc == 0)
 	{
-		trail->width--; // = trail->width <= 0 ? trail->width : trail->width - 1;
+		trail->width--;
 		(*buffer)++;
 	}
 	result = ft_set_width(result, trail, &state_value);

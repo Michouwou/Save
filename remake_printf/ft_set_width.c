@@ -1,6 +1,6 @@
 #include "libftprintf.h"
 
-char	*trail_minus(char *result, T_LIST *trail)
+char	*trail_minus(char *result, T_LIST *trail, int i)
 {
 	if (trail->z_pad && !(trail->accuracy > -1 && trail->type == 'd'))
 		result = ft_repstr(result,
@@ -28,7 +28,7 @@ char    *ft_set_width(char *result, T_LIST *trail, int *state_value)
 	if (trail->width > (int)ft_strlen(result))
 	{
 		if (!(trail->minus))
-			result = trail_minus(result, trail);
+			result = trail_minus(result, trail, i);
 		else
 			result = ft_repstr(result, ft_strlen(result), ft_strlen(result),
 					ft_strset(ft_strnew(trail->width - ft_strlen(result)),

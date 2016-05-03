@@ -30,7 +30,8 @@ static void     ft_make_base(int *base)
 		*base = 16;
 	if (*base == 'b')
 		*base = 2;
-	if (*base == 'd' || *base == 'D' || *base == 'i' || *base == 'u' || *base == 'U')
+	if (*base == 'd' || *base == 'D' || *base == 'i' || *base == 'u' ||
+		*base == 'U')
 		*base = 10;
 }
 
@@ -45,7 +46,8 @@ char            *ft_base(intmax_t num, int base)
 	i = 1;
 	k = 0;
 	if (num == LONG_MAX || num == LONG_MIN)
-		return (ft_strdup((num == LONG_MAX) ? "9223372036854775807" : "-9223372036854775808"));
+		return (ft_strdup((num == LONG_MAX) ? "9223372036854775807" :
+			"-9223372036854775808"));
 	ft_strcpy(alpha, "0123456789abcdef");
 	ft_bzero(final = (char*)malloc(sizeof(char) * 200), 200);
 	ft_isneg(&num, &k, final);
@@ -61,6 +63,16 @@ char            *ft_base(intmax_t num, int base)
 	return (final);
 }
 
+static char *return_good_base(uintmax_t num, int base)
+{
+	if (base == 8 && num == ULONG_MAX)
+			return (ft_strdup("1777777777777777777777"));
+		else if (base == 16)
+			return (ft_strdup("ffffffffffffffff"));
+		return (ft_strdup(num == ULONG_MAX ? "18446744073709551615" :
+			"1000000000000000000000"));
+}
+
 char            *ft_ubase(uintmax_t num, int base)
 {
 	char            		*final;
@@ -72,13 +84,7 @@ char            *ft_ubase(uintmax_t num, int base)
 	i = 1;
 	k = 0;
 	if (num == ULONG_MAX || num == ULONG_MAX / 2 + 1)
-	{
-		if (base == 8 && num == ULONG_MAX)
-			return (ft_strdup("1777777777777777777777"));
-		else if (base == 16)
-			return (ft_strdup("ffffffffffffffff"));
-		return (ft_strdup(num == ULONG_MAX ? "18446744073709551615" : "1000000000000000000000"));
-	}
+		return (return_good_base(num, base));
 	ft_strcpy(alpha, "0123456789abcdef");
 	ft_bzero(final = (char*)malloc(sizeof(char) * 200), 200);
 	while ((i * base) <= num)
