@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#define SAY(m) printf(m);fflush(stdout);
+
+/**
+* Faudra revenir sur celle la pour la norme!
+**/
 
 int		ft_printf(char const *fmt, ...)
 {
