@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/25 16:57:31 by mlevieux          #+#    #+#              #
-#    Updated: 2016/04/30 17:41:30 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/05/03 16:25:38 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ $(OBJ) :
 	@make clean -C $(INCDIR)
 	@echo "\033[0;32mOK!\033[0;m\n"
 	@echo "\033[0;31mCompilation des sources...\033[0;m\n"
-	@gcc -c $(SRC) -I $(HEADERDIR)
+	@gcc -Wall -Werror -Wextra -c $(SRC) -I $(HEADERDIR)
 	@echo "\033[0;32mOK!\033[0;m\n"
 
 clean:

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_args.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/05/03 15:52:34 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/03 15:52:36 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
-static void if_forest(char *fmt, int i, T_LIST *tmp)
+static void		if_forest(char *fmt, int i, T_LIST *tmp)
 {
 	if (fmt[i] == '-')
 		tmp->minus = 1;
@@ -18,7 +30,7 @@ static void if_forest(char *fmt, int i, T_LIST *tmp)
 		tmp->accuracy = -10;
 }
 
-static void intern_loop(int *i, char *fmt, T_LIST *tmp)
+static void		intern_loop(int *i, char *fmt, T_LIST *tmp)
 {
 	if (fmt[*i] == '-' || fmt[*i] == '+' || fmt[*i] == '0' || fmt[*i] == '#' ||
 		fmt[*i] == ' ' || (fmt[*i] == '*' && ((tmp->width != -10) ||
@@ -38,7 +50,7 @@ static void intern_loop(int *i, char *fmt, T_LIST *tmp)
 	(*i)++;
 }
 
-static void intern_condition(int *i, T_LIST **tmp, char *fmt, int *buffer)
+static void		intern_condition(int *i, T_LIST **tmp, char *fmt, int *buffer)
 {
 	(*tmp)->next = ft_make_node();
 	*tmp = (*tmp)->next;
@@ -57,12 +69,11 @@ static void intern_condition(int *i, T_LIST **tmp, char *fmt, int *buffer)
 	(*tmp)->end_index = ((*tmp)->format) ? *i : *i - 1;
 }
 
-T_LIST	*ft_get_args(char *fmt, int *buffer)
+T_LIST			*ft_get_args(char *fmt, int *buffer)
 {
 	T_LIST	*args;
 	T_LIST	*tmp;
 	int		i;
-	int		j;
 
 	args = ft_make_node();
 	tmp = args;

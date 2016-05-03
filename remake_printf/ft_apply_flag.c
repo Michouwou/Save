@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_apply_flag.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/05/03 15:49:55 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/03 15:49:56 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
-char *ft_apply_flag(char *result, T_LIST *trail, int *state_value)
+char	*ft_apply_flag(char *result, T_LIST *trail)
 {
-	char t;
+	char	t;
 
 	t = trail->format;
 	if ((trail->type == 'd' || trail->type == 'f') && (trail->plus ||

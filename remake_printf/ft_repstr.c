@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_repstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/05/03 15:55:02 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/03 15:55:04 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
-char    *ft_repstr(char *str, int start, int end, char *to_insert)
+char	*ft_repstr(char *str, int start, int end, char *to_insert)
 {
-	char    *res;
-	int     i;
-	int     j;
+	char	*res;
+	int		i;
+	int		j;
 
 	res = (char*)malloc(sizeof(char) *
 		(ft_strlen(str) - (end - start) + ft_strlen(to_insert) + 1));

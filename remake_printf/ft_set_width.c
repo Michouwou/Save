@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_set_width.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/05/03 15:55:27 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/03 15:55:28 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
 char	*trail_minus(char *result, T_LIST *trail, int i)
@@ -14,9 +26,9 @@ char	*trail_minus(char *result, T_LIST *trail, int i)
 	return (result);
 }
 
-char    *ft_set_width(char *result, T_LIST *trail, int *state_value)
+char	*ft_set_width(char *result, T_LIST *trail)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (!ft_isdigit(result[i]) && result[i] != '+' && result[i] != '-' &&

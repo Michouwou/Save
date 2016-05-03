@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_transfer_wchar.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/05/03 15:55:43 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/03 15:55:45 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
-static void part_two(wchar_t c, int *oct_num, unsigned char *b)
+static unsigned char	*part_two(wchar_t c, int *oct_num, unsigned char *b)
 {
 	if (c < (1 << 16))
 	{
@@ -17,9 +29,10 @@ static void part_two(wchar_t c, int *oct_num, unsigned char *b)
 		*b++ = (unsigned char)(((c >> 6) & 0x3F) | 0x80);
 		*b++ = (unsigned char)((c & 0x3F) | 0x80);
 	}
+	return (b);
 }
 
-unsigned char *ft_transfer_wchar(wchar_t c, int *oct_num)
+unsigned char			*ft_transfer_wchar(wchar_t c, int *oct_num)
 {
 	unsigned char *b_static;
 	unsigned char *b;
@@ -35,7 +48,7 @@ unsigned char *ft_transfer_wchar(wchar_t c, int *oct_num)
 		*b++ = (unsigned char)((c & 0x3F) | 0x80);
 	}
 	else
-		part_two(c, oct_num, b);
+		b = part_two(c, oct_num, b);
 	*b = '\0';
 	return (b_static);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_conv_float.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/05/03 15:51:50 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/03 15:51:51 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
 static void		ft_is_neg(int *k, long double *number, char **final)
@@ -10,9 +22,9 @@ static void		ft_is_neg(int *k, long double *number, char **final)
 	}
 }
 
-static char *after_coma(char *final, long double to_print, int accuracy, int k)
+static char		*after_coma(char *final, long double to_print, int acc, int k)
 {
-	while (accuracy-- > 0)
+	while (acc-- > 0)
 	{
 		to_print *= 10;
 		final[k++] = (intmax_t)to_print + 48;
@@ -21,17 +33,17 @@ static char *after_coma(char *final, long double to_print, int accuracy, int k)
 	return (final);
 }
 
-char			*ft_conv_float(long double to_print, int accuracy)
+char			*ft_conv_float(long double to_print, int acc)
 {
 	char		*final;
 	int			k;
-	long double i;
+	long double	i;
 
 	i = 1.0;
 	k = 0;
 	final = ft_strnew(310);
 	ft_is_neg(&k, &to_print, &final);
-	ft_round(&to_print, accuracy);
+	ft_round(&to_print, acc);
 	while (i < to_print)
 		i *= 10;
 	while ((i = i / 10) >= 1)
@@ -42,7 +54,7 @@ char			*ft_conv_float(long double to_print, int accuracy)
 	}
 	if (k == 0)
 		final[k++] = '0';
-	final[k++] = (accuracy > 0) ? '.' : 0;
-	final = after_coma(final, to_print, accuracy, k);
+	final[k++] = (acc > 0) ? '.' : 0;
+	final = after_coma(final, to_print, acc, k);
 	return (final);
 }

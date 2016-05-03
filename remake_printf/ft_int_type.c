@@ -6,14 +6,14 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 13:01:32 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/30 11:21:58 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/03 15:53:12 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 #define U unsigned
 
-static int part_two(T_LIST *args_data, va_list *args, char **res)
+static int	part_two(T_LIST *args_data, va_list *args, char **res)
 {
 	if (!ft_strcmp(args_data->mod, "h") && !args_data->is_signed)
 		return (ft_call_uint((U short)va_arg(*args, U), args_data, res));
@@ -33,7 +33,7 @@ static int part_two(T_LIST *args_data, va_list *args, char **res)
 		return (ft_call_int(va_arg(*args, int), args_data, res));
 }
 
-int		ft_int_type(T_LIST *args_data, va_list *args, char **res)
+int			ft_int_type(T_LIST *args_data, va_list *args, char **res)
 {
 	if (args_data->format == 'D')
 		return (ft_call_int(va_arg(*args, long), args_data, res));

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_call_wildcard.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/05/03 15:51:01 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/03 16:42:28 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
 int		ft_call_wildcard(T_LIST *trail, char **print)
@@ -10,7 +22,7 @@ int		ft_call_wildcard(T_LIST *trail, char **print)
 		ft_strnew(0);
 	if (!trail->format)
 		trail->width--;
-	result = ft_set_width(result, trail, &state_value);
+	result = ft_set_width(result, trail);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +

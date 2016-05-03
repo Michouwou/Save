@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 11:45:29 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/30 09:46:01 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/03 15:55:20 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static char *set_x_length(T_LIST *trail, char *result, int *state_value)
+static char		*set_x_length(T_LIST *trail, char *result)
 {
 	if (ft_strlen(result) && trail->accuracy > (int)ft_strlen(result))
 		result = ft_repstr(result, 0, 0,
@@ -21,17 +21,17 @@ static char *set_x_length(T_LIST *trail, char *result, int *state_value)
 	return (result);
 }
 
-char    *ft_set_length(T_LIST *trail, char *result, int *state_value)
+char			*ft_set_length(T_LIST *trail, char *result)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = -1;
 	if (!ft_strcmp(result, "0") && !trail->accuracy && !trail->alternate)
 		return (ft_strnew(1));
 	if (trail->format == 'x' || trail->format == 'X')
-		return (result = set_x_length(trail, result, state_value));
+		return (result = set_x_length(trail, result));
 	while (result[++j] != 0)
 		if (ft_isdigit(result[j]))
 			i++;

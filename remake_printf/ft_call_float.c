@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_call_float.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/05/03 15:50:31 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/03 16:43:56 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
-int    ft_call_float(long double number, T_LIST *trail, char **print)
+int		ft_call_float(long double number, T_LIST *trail, char **print)
 {
-	char    *result;
+	char	*result;
 	int		state_value;
 
 	state_value = 1;
@@ -13,8 +25,8 @@ int    ft_call_float(long double number, T_LIST *trail, char **print)
 		result = ft_conv_exp(number, trail);
 	if (trail->format == 'E')
 		ft_strtoupper(result);
-	result = ft_apply_flag(result, trail, &state_value);
-	result = ft_set_width(result, trail, &state_value);
+	result = ft_apply_flag(result, trail);
+	result = ft_set_width(result, trail);
 	if (trail->alternate)
 		result = ft_alternate(result, trail);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
