@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:49:55 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 15:49:56 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/03 17:16:47 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ char	*ft_apply_flag(char *result, T_LIST *trail)
 	{
 		if (trail->plus && ft_isdigit(result[0]) && (trail->is_signed ||
 			trail->type == 'f'))
-			result = ft_repstr(result, 0, 0, "+");
+			result = ft_repstr(result, 0, 0, ft_strdup("+"));
 		else if (trail->space && ft_isdigit(result[0]) && trail->is_signed)
-			result = ft_repstr(result, 0, 0, " ");
+			result = ft_repstr(result, 0, 0, ft_strdup(" "));
 	}
 	return (result);
 }

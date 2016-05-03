@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/25 16:57:31 by mlevieux          #+#    #+#              #
-#    Updated: 2016/05/03 16:25:38 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/05/03 17:38:11 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,11 @@ ft_round.c ft_call_errno.c ft_char_type.c \
 ft_get_accuracy.c ft_is_modifier.c ft_set_length.c ft_call_float.c \
 ft_check_fmt.c ft_get_args.c ft_is_valid.c ft_set_width.c \
 ft_call_int.c ft_conv_exp.c ft_get_fmt.c ft_make_node.c ft_strset.c
-
+TESTS = maintest_O.c maintest_X.c maintest_d.c maintest_p.c maintest_u.c \
+maintest_C.c maintest_S.c maintest_bonus.c maintest_i.c maintest_s.c \
+maintest_unit_failed.c maintest_D.c maintest_U.c maintest_c.c maintest_o.c \
+maintest_time.c maintest_x.c
+TESTDIR = maintests/
 
 OBJ = $(patsubst %c, %o, $(SRC))
 
@@ -73,3 +77,44 @@ re: fclean all
 
 norme :
 	norminette $(SRC) $(HEADERS)
+
+tests :
+	@mkdir -p tests_result
+	@gcc -w -o maintest_C maintests/maintest_C.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_c maintests/maintest_c.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_s maintests/maintest_s.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_S maintests/maintest_S.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_d maintests/maintest_d.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_i maintests/maintest_i.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_o maintests/maintest_o.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_x maintests/maintest_x.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_u maintests/maintest_u.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_D maintests/maintest_D.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_O maintests/maintest_O.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_X maintests/maintest_X.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_U maintests/maintest_U.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_p maintests/maintest_p.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_unit_failed maintests/maintest_unit_failed.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_bonus maintests/maintest_bonus.c $(NAME) -I $(HEADERDIR)
+	@gcc -w -o maintest_time maintests/maintest_time.c $(NAME) -I $(HEADERDIR)
+	@./maintest_C > tests_result/maintest_C
+	@./maintest_c > tests_result/maintest_c
+	@./maintest_s > tests_result/maintest_s
+	@./maintest_S > tests_result/maintest_S
+	@./maintest_d > tests_result/maintest_d
+	@./maintest_i > tests_result/maintest_i
+	@./maintest_o > tests_result/maintest_o
+	@./maintest_x > tests_result/maintest_x
+	@./maintest_u > tests_result/maintest_u
+	@./maintest_D > tests_result/maintest_D
+	@./maintest_O > tests_result/maintest_O
+	@./maintest_X > tests_result/maintest_X
+	@./maintest_U > tests_result/maintest_U
+	@./maintest_p > tests_result/maintest_p
+	@./maintest_unit_failed > tests_result/maintest_unit_failed
+	@./maintest_bonus > tests_result/maintest_bonus
+	@./maintest_time > tests_result/maintest_time
+	@rm -f maintest_C maintest_c maintest_s maintest_S maintest_d maintest_i \
+		maintest_o maintest_u maintest_x maintest_D maintest_O maintest_U \
+		maintest_X maintest_p maintest_time maintest_unit_failed \
+		maintest_bonus

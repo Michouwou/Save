@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:49:45 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 16:09:58 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/03 17:16:19 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ static char		*intern_condition(char *result, T_LIST *trail, int i)
 		i++;
 	if ((trail->format == 'o' || trail->format == 'O') &&
 			ft_strcmp(result, "0") && trail->accuracy <= 0)
-		result = ft_repstr(result, i, i, "0");
+		result = ft_repstr(result, i, i, ft_strdup("0"));
 	else if (trail->format == 'x' && ft_strcmp(result, "0"))
-		result = ft_repstr(result, i, i, "0x");
+		result = ft_repstr(result, i, i, ft_strdup("0x"));
 	else if (trail->format == 'X' && ft_strcmp(result, "0"))
-		result = ft_repstr(result, i, i, "0X");
+		result = ft_repstr(result, i, i, ft_strdup("0X"));
 	else if (trail->format == 'b')
-		result = ft_repstr(result, i, i, "b");
+		result = ft_repstr(result, i, i, ft_strdup("b"));
 	else if (!trail->accuracy && (trail->format == 'x' ||
 				trail->format == 'X'))
 		result = ft_strnew(0);
@@ -46,7 +46,7 @@ char			*ft_alternate(char *result, T_LIST *trail)
 		while (ft_isdigit(result[i]))
 			i++;
 		if (result[i] != '.')
-			result = ft_repstr(result, i, i, ".");
+			result = ft_repstr(result, i, i, ft_strdup("."));
 	}
 	return (result);
 }
