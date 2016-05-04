@@ -14,21 +14,28 @@
 
 char	*trail_minus(char *result, T_LIST *trail, int i)
 {
+	char	*insert;
 	if (trail->z_pad && !(trail->accuracy > -1 && trail->type == 'd'))
+	{
+		insert = ft_strset(ft_strnew(trail->width - ft_strlen(result)),
+				trail->width - ft_strlen(result), '0');
 		result = ft_repstr(result,
-			(result[i] == '+' || result[i] == '-') ? i = i + 1 : i, i,
-				ft_strset(ft_strnew(trail->width - ft_strlen(result)),
-				trail->width - ft_strlen(result), '0'));
+			(result[i] == '+' || result[i] == '-') ? i = i + 1 : i, i, insert);
+	}
 	else
-		result = ft_repstr(result, i, i,
-			ft_strset(ft_strnew(trail->width - ft_strlen(result)),
-			trail->width - ft_strlen(result), ' '));
+	{
+		insert = ft_strset(ft_strnew(trail->width - ft_strlen(result)),
+			trail->width - ft_strlen(result), ' ');
+		result = ft_repstr(result, i, i, insert);
+	}
+	free(insert);
 	return (result);
 }
 
 char	*ft_set_width(char *result, T_LIST *trail)
 {
 	int		i;
+	char	*insert;
 
 	i = 0;
 	while (!ft_isdigit(result[i]) && result[i] != '+' && result[i] != '-' &&
@@ -42,9 +49,12 @@ char	*ft_set_width(char *result, T_LIST *trail)
 		if (!(trail->minus))
 			result = trail_minus(result, trail, i);
 		else
+		{
+			insert = ft_strset(ft_strnew(trail->width - ft_strlen(result)),
+						trail->width - ft_strlen(result), ' ');
 			result = ft_repstr(result, ft_strlen(result), ft_strlen(result),
-					ft_strset(ft_strnew(trail->width - ft_strlen(result)),
-						trail->width - ft_strlen(result), ' '));
+					insert);
+		}
 	}
 	return (result);
 }

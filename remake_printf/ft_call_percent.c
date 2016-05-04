@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 12:27:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 16:41:45 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 09:25:42 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int		ft_call_percent(T_LIST *trail, char **print)
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 		ft_strlen(result) - 1);
+	free(result);
 	return (state_value);
 }

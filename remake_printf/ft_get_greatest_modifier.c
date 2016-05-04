@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:52:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 15:52:56 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 10:30:03 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_get_greatest_modifier(char *fmt, int *i, T_LIST *trail)
 {
+	free(trail->mod);
 	if (fmt[*i] == 'j')
 		trail->mod = ft_strdup("j");
 	else if (fmt[*i] == 'z')

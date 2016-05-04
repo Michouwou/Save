@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 15:54:55 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 09:07:40 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int		ft_printf(char const *fmt, ...)
 		args_data = args_data->next;
 	}
 	ft_putstr(result);
+	*buffer = ft_strlen(result) + *buffer;
+	free(result);
 	ft_free_list(&args_data);
-	return (state_value ? ft_strlen(result) + *buffer : -1);
+	return (state_value ? *buffer : -1);
 }

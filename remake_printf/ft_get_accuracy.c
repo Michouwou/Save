@@ -15,6 +15,7 @@
 void	ft_get_accuracy(char *format, int *j, T_LIST *trail)
 {
 	int		i;
+	char	*str;
 
 	(*j)++;
 	i = *j;
@@ -27,7 +28,8 @@ void	ft_get_accuracy(char *format, int *j, T_LIST *trail)
 		}
 		(*j)++;
 	}
-	trail->accuracy = ft_atoi(ft_strsub(format, i, *j - i));
+	trail->accuracy = ft_atoi(str = ft_strsub(format, i, *j - i));
+	free(str);
 	if (i == *j)
 		trail->accuracy = 0;
 	(*j) -= 1;

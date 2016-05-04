@@ -1,0 +1,37 @@
+Usage : 
+- Out ft_printf
+- Out printf
+- Return value my_printf - return value real_printf
+
+String : |Salut|
+String : |Salut|
+Difference between return value : 0
+
+Extended string : |毛泽东/毛澤東|
+Extended string : |毛泽东/毛澤東|
+Difference between return value : 0
+
+Precision (12) : |Bonjour voya|
+Precision (12) : |Bonjour voya|
+Difference between return value : 0
+
+Precision bonus (*) : |Cette chaine|
+Precision bonus (*) : |Cette chaine|
+Difference between return value : 0
+
+Largeur (25) : |Il n'y aura ici que 25 caracteres|
+Largeur (25) : |Il n'y aura ici que 25 caracteres|
+Difference between return value : 0
+
+Largeur (18) et precision (12) : |      Encore une c|
+Largeur (18) et precision (12) : |      Encore une c|
+Difference between return value : 0
+
+Flag - : |Il y a trop d'espace!                   |
+Flag - : |Il y a trop d'espace!                   |
+Difference between return value : 0
+
+Flag - avec largeur (20) et precision (10) : |Et la pas           |
+Flag - avec largeur (20) et precision (10) : |Et la pas           |
+Difference between return value : 0
+

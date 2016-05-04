@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/30 15:28:26 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/30 15:41:40 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 09:17:18 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,15 @@ int main()
 	int real_printf;
 
 	printf("Usage :\n- ft_printf return\n- printf return\n- Difference de retour = ft_printf return value - printf return value\n\n");
+	fflush(stdout);
 
 	my_printf = ft_printf("Double (f) : |%f|\n", 5.987);
 	real_printf = printf("Double (f) : |%f|\n", 5.987);
+	printf("Difference de retour : %d\n\n", real_printf - my_printf);
+	fflush(stdout);
+
+	my_printf = ft_printf("Deux doubles (f et F) : |%f| |%F|\n", 1.42, 1.42);
+	real_printf = printf("Deux doubles (f et F) : |%f| |%F|\n", 1.42, 1.42);
 	printf("Difference de retour : %d\n\n", real_printf - my_printf);
 	fflush(stdout);
 

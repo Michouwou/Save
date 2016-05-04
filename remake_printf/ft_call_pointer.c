@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:50:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 17:17:29 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 09:25:58 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int		ft_call_pointer(unsigned long pointer, T_LIST *trail, char **print)
 		result);
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 		ft_strlen(result) - 1);
+	free(result);
 	return (state_value);
 }

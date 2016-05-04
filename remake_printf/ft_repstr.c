@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:55:02 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 17:08:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 09:21:52 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ char	*ft_repstr(char *str, int start, int end, char *to_insert)
 		res[i++] = (int)str[j++];
 	res[i] = 0;
 	free(str);
-	free(to_insert);
 	return (res);
 }

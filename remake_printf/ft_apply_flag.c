@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:49:55 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 17:16:47 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 10:30:49 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_apply_flag(char *result, T_LIST *trail)
 {
 	char	t;
+	char	*insert;
 
 	t = trail->format;
 	if ((trail->type == 'd' || trail->type == 'f') && (trail->plus ||
@@ -22,9 +23,17 @@ char	*ft_apply_flag(char *result, T_LIST *trail)
 	{
 		if (trail->plus && ft_isdigit(result[0]) && (trail->is_signed ||
 			trail->type == 'f'))
-			result = ft_repstr(result, 0, 0, ft_strdup("+"));
+		{
+			insert = ft_strdup("+");
+			result = ft_repstr(result, 0, 0, insert);
+			free(insert);
+		}			
 		else if (trail->space && ft_isdigit(result[0]) && trail->is_signed)
-			result = ft_repstr(result, 0, 0, ft_strdup(" "));
+		{
+			insert = ft_strdup(" ");
+			result = ft_repstr(result, 0, 0, insert);
+			free(insert);
+		}
 	}
 	return (result);
 }

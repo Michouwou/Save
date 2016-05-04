@@ -1,0 +1,89 @@
+Usage : 
+- Out ft_printf
+- Out printf
+- Return value my_printf - return value real_printf
+
+Grand octal : |222215|
+Grand octal : |222215|
+Difference between return value : 0
+
+(char) Grand octal : |55|
+(char) Grand octal : |55|
+Difference between return value : 0
+
+(short) Grand octal : |36277|
+(short) Grand octal : |36277|
+Difference between return value : 0
+
+(long) Grand octal : |26264057000|
+(long) Grand octal : |26264057000|
+Difference between return value : 0
+
+(long long) Grand octal : |26264057000|
+(long long) Grand octal : |26264057000|
+Difference between return value : 0
+
+(size_t) Grand octal : |10624|
+(size_t) Grand octal : |10624|
+Difference between return value : 0
+
+(intmax_t) Grand octal : |47000225322|
+(intmax_t) Grand octal : |47000225322|
+Difference between return value : 0
+
+Precision (.) : |67|
+Precision (.) : |67|
+Difference between return value : 0
+
+Precision (10) : |0000000067|
+Precision (10) : |0000000067|
+Difference between return value : 0
+
+Precision bonus (*) : |0103|
+Precision bonus (*) : |0103|
+Difference between return value : 0
+
+Largeur (6) : |  1067|
+Largeur (6) : |  1067|
+Difference between return value : 0
+
+Largeur bonus (*) : |  674|
+Largeur bonus (*) : |  674|
+Difference between return value : 0
+
+Largeur (14) et precision (5) : |         00020|
+Largeur (14) et precision (5) : |         00020|
+Difference between return value : 0
+
+Largeur bonus (*) et precision (7) : |  0001453|
+Largeur bonus (*) et precision (7) : |  0001453|
+Difference between return value : 0
+
+Largeur bonus (*) et precision bonus (*) : |  000707|
+Largeur bonus (*) et precision bonus (*) : |  000707|
+Difference between return value : 0
+
+Flag 0 : |00040|
+Flag 0 : |00040|
+Difference between return value : 0
+
+Flag - : |40   |
+Flag - : |40   |
+Difference between return value : 0
+
+Flag + : |1067|
+Flag + : |1067|
+Difference between return value : 0
+
+Flag ' ' : |1067|
+Flag ' ' : |1067|
+Difference between return value : 0
+
+Flag # : |01067|
+Flag # : |01067|
+Difference between return value : 0
+
+Flag - et largeur (12) et precision (6) : |000531      |
+Flag - et largeur (12) et precision (6) : |000531      |
+Difference between return value : 0
+

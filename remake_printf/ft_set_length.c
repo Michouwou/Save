@@ -14,10 +14,15 @@
 
 static char		*set_x_length(T_LIST *trail, char *result)
 {
+	char	*insert;
+
 	if (ft_strlen(result) && trail->accuracy > (int)ft_strlen(result))
-		result = ft_repstr(result, 0, 0,
-			ft_strset(ft_strnew(trail->accuracy - ft_strlen(result)),
-				trail->accuracy - ft_strlen(result), '0'));
+	{
+		insert = ft_strset(ft_strnew(trail->accuracy - ft_strlen(result)),
+				trail->accuracy - ft_strlen(result), '0');
+		result = ft_repstr(result, 0, 0, insert);
+		free(insert);
+	}
 	return (result);
 }
 
@@ -25,6 +30,7 @@ char			*ft_set_length(T_LIST *trail, char *result)
 {
 	int		i;
 	int		j;
+	char	*insert;
 
 	i = 0;
 	j = -1;
@@ -39,8 +45,10 @@ char			*ft_set_length(T_LIST *trail, char *result)
 	j = 0;
 	while (!ft_isdigit(result[j]) && result[j] != 0)
 		j++;
+	insert = ft_strset(ft_strnew(i), i, '0');
 	if ((trail->type == 'd' || trail->type == 'p') && i > 0)
-		result = ft_repstr(result, j, j, ft_strset(ft_strnew(i), i, '0'));
+		result = ft_repstr(result, j, j, insert);
+	free(insert);
 	if (trail->type == 'S' && trail->accuracy != -1)
 		result[trail->accuracy - (trail->accuracy % trail->oct_num)] = 0;
 	else if (trail->type == 's')
