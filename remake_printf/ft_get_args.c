@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:52:34 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/04 09:08:03 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 11:59:11 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,8 @@ T_LIST			*ft_get_args(char *fmt, int *buffer)
 		i++;
 	}
 	free(fmt);
-	return (args->next);
+	tmp = args->next;
+	free(args->mod);
+	free(args);
+	return (tmp);
 }
