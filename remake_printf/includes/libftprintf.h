@@ -65,7 +65,7 @@ int				ft_call_float(long double number, T_LIST *trail, char **print);
 int				ft_call_pointer(unsigned long p, T_LIST *trail, char **print);
 wchar_t			*ft_conv_wchar(char *str);
 unsigned char	*ft_transfer_wchar(wchar_t c, int *oct_num);
-char			*ft_transfer_wchars(wchar_t *wstr, T_LIST *trail);
+char			*ft_transfer_wchars(wchar_t *wstr, T_LIST *trail, unsigned char **p);
 int				ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print);
 void			ft_move_index(T_LIST **trail, int padding);
 int				ft_call_errno(T_LIST *trail, char **print);

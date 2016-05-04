@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 12:11:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 16:11:24 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 16:37:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_type_crossroad(T_LIST *args_d, va_list *args, char **res, int *buf)
 	else if (args_d->type == POINTER_TYPE)
 		return (ft_call_pointer(va_arg(*args, unsigned long), args_d, res));
 	else if (args_d->type == STRING_TYPE && args_d->mod[0] == '-')
-		return (ft_call_wstring(ft_conv_wchar(va_arg(*args, char*)), args_d,
+		return (ft_call_wstring((ft_conv_wchar(va_arg(*args, char*))), args_d,
 			res));
 	else if (args_d->type == WSTRING_TYPE ||
 			(args_d->type == STRING_TYPE &&

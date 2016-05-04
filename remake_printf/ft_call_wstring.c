@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:51:08 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/04 09:26:44 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 18:12:49 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@ int		ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 {
 	char	*result;
 	int		state_value;
+	unsigned char *to_free;
 
 	state_value = 1;
-	result = (wstring) ? ft_transfer_wchars(wstring, trail) :
-		ft_strdup("(null)");
+	to_free = NULL;
+	if (!wstring)
+		result = ft_strdup("(null)");
+	else
+		result = ft_transfer_wchars(wstring, trail, &to_free);
 	result = ft_set_length(trail, result);
 	result = ft_set_width(result, trail);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
@@ -27,5 +31,7 @@ int		ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 		ft_strlen(result) - 1);
 	free(result);
+	if (to_free)
+		free(to_free);
 	return (state_value);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/04 11:46:19 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 15:23:08 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ int		ft_printf(char const *fmt, ...)
 	{
 		while (--(tmp->unused))
 			va_arg(args, void*);
-		if (args_data->width == -10)
+		if (tmp->width == -10)
 			tmp->width = va_arg(args, int);
-		if (args_data->accuracy == -10)
+		if (tmp->accuracy == -10)
 			tmp->accuracy = va_arg(args, int);
 		if (ft_type_crossroad(tmp, &args, &result, buffer) == 0)
 			state_value = 0;
@@ -47,8 +47,9 @@ int		ft_printf(char const *fmt, ...)
 	}
 	//ft_putstr(result);
 	write(1, result, ft_strlen(result));
-	*buffer = ft_strlen(result) + *buffer;
+	state_value = (state_value) ? ft_strlen(result) + *buffer : -1;
 	free(result);
+	free(buffer);
 	ft_free_list(&args_data);
-	return (state_value ? *buffer : -1);
+	return (state_value);
 }

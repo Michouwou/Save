@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:55:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/04 11:47:42 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 17:42:13 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*trail_minus(char *result, T_LIST *trail, int i)
 	else
 	{
 		insert = ft_strset(ft_strnew(trail->width - ft_strlen(result)),
-			trail->width - ft_strlen(result), ' ');
+				trail->width - ft_strlen(result), ' ');
 		result = ft_repstr(result, i, i, insert);
 	}
 	free(insert);

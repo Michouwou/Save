@@ -1,4 +1,14 @@
-Salut, 500000, 0x7fff56fed7b4, a, %, 12.980000, 1.239870e+02Salut, 500000, 0x7fff56fed7b4, a, %, 12.980000, 1.239870e+02
-Execution time for ft_printf : 81.000000 sec...
-Execution time for printf : 17.000000 sec...
-400% moins rapide que le vrai printf
+- 0x7f88b8c03340 - 0x7f88b8c03660 - 0x7f88b8c03670 -
+- 0x7f88b8c03340 - 0x7f88b8c03660 - 0x7f88b8c03670 -
+- 0x7f88b8c03670 - 0x7f88b8c03680 - 0x7f88b8c03690 -
+- 0x7f88b8c03670 - 0x7f88b8c03680 - 0x7f88b8c03690 -
+- 0x7f88b8c03690 - 0x7f88b8c036a0 - 0x7f88b8c036b0 -
+- 0x7f88b8c03690 - 0x7f88b8c036a0 - 0x7f88b8c036b0 -
+- 0x7f88b8c036b0 - 0x7f88b8c036c0 - 0x7f88b8c036d0 -
+- 0x7f88b8c036b0 - 0x7f88b8c036c0 - 0x7f88b8c036d0 -
+- 0x7f88b8c036d0 - 0x7f88b8c036e0 - 0x7f88b8c036f0 -
+- 0x7f88b8c036d0 - 0x7f88b8c036e0 - 0x7f88b8c036f0 -
+Salut, 500000, 0x7fff5d39ca94, a, %, 12.980000, 1.239870e+02Salut, 500000, 0x7fff5d39ca94, a, %, 12.980000, 1.239870e+02
+Execution time for ft_printf : 367.000000 sec...
+Execution time for printf : 5.000000 sec...
+7300% moins rapide que le vrai printf
