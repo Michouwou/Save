@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:55:47 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 15:55:49 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 11:40:03 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_transfer_wchars(wchar_t *wstr, T_LIST *trail)
 		ft_strcat((char*)result, (char*)tmp1);
 		ft_strcat((char*)result, (char*)tmp2);
 		free(tmp1);
+		free(tmp2);
 		i++;
 	}
 	return ((char*)result);

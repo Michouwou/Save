@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:50:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/04 09:25:58 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 11:35:39 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ int		ft_call_pointer(unsigned long pointer, T_LIST *trail, char **print)
 {
 	char	*result;
 	int		state_value;
+	char	*insert;
 
 	state_value = 1;
 	result = ft_base(pointer, 16);
 	if (pointer > 0)
 		trail->accuracy--;
 	result = ft_set_length(trail, result);
-	result = ft_repstr(result, 0, 0, ft_strdup("0x"));
+	result = ft_repstr(result, 0, 0, insert = ft_strdup("0x"));
+	free(insert);
 	result = ft_set_width(result, trail);
 	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
 		result);

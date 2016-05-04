@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:55:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 17:19:18 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 11:47:42 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*trail_minus(char *result, T_LIST *trail, int i)
 {
 	char	*insert;
+	
 	if (trail->z_pad && !(trail->accuracy > -1 && trail->type == 'd'))
 	{
 		insert = ft_strset(ft_strnew(trail->width - ft_strlen(result)),
@@ -54,6 +55,7 @@ char	*ft_set_width(char *result, T_LIST *trail)
 						trail->width - ft_strlen(result), ' ');
 			result = ft_repstr(result, ft_strlen(result), ft_strlen(result),
 					insert);
+			free(insert);
 		}
 	}
 	return (result);

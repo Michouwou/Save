@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:49:45 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/03 17:16:19 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/04 11:28:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ static char		*intern_condition(char *result, T_LIST *trail, int i)
 		result = ft_repstr(result, i, i, insert = ft_strdup("b"));
 	else if (!trail->accuracy && (trail->format == 'x' ||
 				trail->format == 'X'))
+	{
+		free(result);
 		result = ft_strnew(0);
+	}
 	if (insert)
 		free(insert);
 	return (result);
