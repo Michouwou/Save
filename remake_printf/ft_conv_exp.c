@@ -32,18 +32,21 @@ char	*ft_conv_exp(long double number, T_LIST *trail)
 	res = ft_itoa(i);
 	if (i < 10 && i > -10)
 	{
-		res = ft_repstr(res, i < 0 ? 1 : 0, i < 0 ? 1 : 0, insert = ft_strdup("0"));
+		insert = ft_strdup("0");
+		res = ft_repstr(res, i < 0 ? 1 : 0, i < 0 ? 1 : 0, insert);
 		free(insert);
 	}
 	if (i >= 0)
 	{
-		res = ft_repstr(res, 0, 0, insert = ft_strdup("+"));
+		insert = ft_strdup("+");
+		res = ft_repstr(res, 0, 0, insert);
 		free(insert);
 	}
-	res = ft_repstr(res, 0, 0, insert = ft_strdup("e"));
+	insert = ft_strdup("e");
+	res = ft_repstr(res, 0, 0, insert);
 	free(insert);
-	res = ft_repstr(res, 0, 0, insert = ft_conv_float(number, trail->accuracy > 0 ?
-				trail->accuracy : 6));
+	insert = ft_conv_float(number, trail->accuracy > 0 ? trail->accuracy : 6);
+	res = ft_repstr(res, 0, 0, insert);
 	free(insert);
 	return (res);
 }

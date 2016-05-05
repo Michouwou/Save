@@ -15,7 +15,7 @@
 char	*trail_minus(char *result, T_LIST *trail, int i)
 {
 	char	*insert;
-	
+
 	if (trail->z_pad && !(trail->accuracy > -1 && trail->type == 'd'))
 	{
 		insert = ft_strset(ft_strnew(trail->width - ft_strlen(result)),

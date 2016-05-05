@@ -20,7 +20,8 @@ void	ft_get_width(char *location, int *counter, T_LIST *trail)
 	i = *counter;
 	while (location[*counter] && ft_isdigit(location[*counter]))
 		(*counter)++;
-	trail->width = ft_atoi(str = ft_strsub(location, i, *counter - i));
+	str = ft_strsub(location, i, *counter - i);
+	trail->width = ft_atoi(str);
 	free(str);
 	(*counter) -= 1;
 }

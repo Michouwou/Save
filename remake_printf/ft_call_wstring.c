@@ -16,7 +16,7 @@ int		ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print, int code)
 {
 	char			*result;
 	int				state_value;
-	unsigned char 	*to_free;
+	unsigned char	*to_free;
 	wchar_t			*tmp;
 
 	state_value = 1;

@@ -27,7 +27,7 @@ char	*ft_apply_flag(char *result, T_LIST *trail)
 			insert = ft_strdup("+");
 			result = ft_repstr(result, 0, 0, insert);
 			free(insert);
-		}			
+		}
 		else if (trail->space && ft_isdigit(result[0]) && trail->is_signed)
 		{
 			insert = ft_strdup(" ");

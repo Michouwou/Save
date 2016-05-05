@@ -56,29 +56,36 @@ char			*ft_apply_flag(char *result, T_LIST *trail);
 int				ft_int_type(T_LIST *args_data, va_list *args, char **result);
 int				ft_call_int(intmax_t number, T_LIST *trail, char **print);
 int				ft_call_uint(uintmax_t number, T_LIST *trail, char **print);
-int				ft_char_type(T_LIST *args_data, va_list *args, char **result, int *buffer);
-int				ft_call_char(wchar_t wc, T_LIST *trail, char **print, int *buffer);
-int				ft_double_type(T_LIST *args_data, va_list *args, char **result);
+int				ft_char_type(T_LIST *args_data, va_list *args, char **result,
+					int *buffer);
+int				ft_call_char(wchar_t wc, T_LIST *trail, char **print,
+					int *buffer);
+int				ft_double_type(T_LIST *args_data, va_list *args,
+					char **result);
 char			*ft_conv_float(long double to_print, int accuracy);
 char			*ft_conv_exp(long double number, T_LIST *trail);
 int				ft_call_float(long double number, T_LIST *trail, char **print);
 int				ft_call_pointer(unsigned long p, T_LIST *trail, char **print);
 wchar_t			*ft_conv_wchar(char *str);
 unsigned char	*ft_transfer_wchar(wchar_t c, int *oct_num);
-char			*ft_transfer_wchars(wchar_t *wstr, T_LIST *trail, unsigned char **p);
-int				ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print, int code);
+char			*ft_transfer_wchars(wchar_t *wstr, T_LIST *trail,
+					unsigned char **p);
+int				ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print,
+					int code);
 void			ft_move_index(T_LIST **trail, int padding);
 int				ft_call_errno(T_LIST *trail, char **print);
 int				ft_call_percent(T_LIST *trail, char **print);
 int				ft_call_wildcard(T_LIST *trail, char **print);
-int				ft_type_crossroad(T_LIST *args_data, va_list *args, char **result, int *buffer);
+int				ft_type_crossroad(T_LIST *args_data, va_list *args,
+					char **result, int *buffer);
 void			ft_free_list(T_LIST **start);
 int				ft_is_format(char format);
 int				ft_is_valid(char c);
 int				ft_check_fmt(char const *fmt);
 T_LIST			*ft_make_node(void);
 int				ft_is_modifier(char *str);
-void			ft_get_greatest_modifier(char *fmt, int *counter, T_LIST *trail);
+void			ft_get_greatest_modifier(char *fmt, int *counter,
+					T_LIST *trail);
 void			ft_get_width(char *location, int *counter, T_LIST *trail);
 void			ft_get_accuracy(char *location, int *counter, T_LIST *trail);
 T_LIST			*ft_get_args(char *fmt, int *buffer);

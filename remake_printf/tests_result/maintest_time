@@ -1,4 +1,6 @@
-Salut, 500000, 0x7fff5d161a44, a, %, 12.980000, 1.239870e+02Salut, 500000, 0x7fff5d161a44, a, %, 12.980000, 1.239870e+02
-Execution time for ft_printf : 89.000000 sec...
-Execution time for printf : 22.000000 sec...
+53, Yo, 0x7fff54fc6a9c, a
+53, Yo, 0x7fff54fc6a9c, a
+
+Execution time for ft_printf : 0.068000 
+Execution time for printf : 0.017000 
 400% moins rapide que le vrai printf
