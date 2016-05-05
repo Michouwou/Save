@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 13:54:51 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/04 16:22:22 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/05 11:45:29 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void)
 	printf("Usage : \n- Out ft_printf\n- Out printf\n- Return value my_printf - return value real_printf\n\n");
 	fflush(stdout);
 
-	my_printf = ft_printf("String : |%s|\n", "Salut trololol j'ecris de la merde juste pour tester mon putin de programme");
+	my_printf = ft_printf("String : |%s|\n", "Salut");
 	real_printf = printf("String : |%s|\n", "Salut");
 	printf("Difference between return value : %d\n\n", my_printf - real_printf);
 	fflush(stdout);

@@ -3,43 +3,43 @@ Usage :
 - Out printf
 - Return value my_printf - return value real_printf
 
-Pointeur : |0x7fff5aba8aac|
-Pointeur : |0x7fff5aba8aac|
+Pointeur : |0x7fff579f2a5c|
+Pointeur : |0x7fff579f2a5c|
 Difference between return value : 0
 
 Pointeur NULL : |0x0|
 Pointeur NULL : |0x0|
 Difference between return value : 0
 
-Precision (.) : |0x7fff5aba8aac|
-Precision (.) : |0x7fff5aba8aac|
+Precision (.) : |0x7fff579f2a5c|
+Precision (.) : |0x7fff579f2a5c|
 Difference between return value : 0
 
-Precision (16) : |0x0000000000007fff5aba8aac|
-Precision (16) : |0x00007fff5aba8aac|
-Difference between return value : 8
+Precision (16) : |0x0000000007fff579f2a5c|
+Precision (16) : |0x00007fff579f2a5c|
+Difference between return value : 5
 
-Precision bonus (*) : |0x000000000000007fff5aba8aac|
-Precision bonus (*) : |0x0000007fff5aba8aac|
-Difference between return value : 8
+Precision bonus (*) : |0x000000000007fff579f2a5c|
+Precision bonus (*) : |0x0000007fff579f2a5c|
+Difference between return value : 5
 
-Largeur (20) : |      0x7fff5aba8aac|
-Largeur (20) : |      0x7fff5aba8aac|
+Largeur (20) : |      0x7fff579f2a5c|
+Largeur (20) : |      0x7fff579f2a5c|
 Difference between return value : 0
 
-Largeur bonus (*) : |           0x7fff5aba8aac|
-Largeur bonus (*) : |           0x7fff5aba8aac|
+Largeur bonus (*) : |           0x7fff579f2a5c|
+Largeur bonus (*) : |           0x7fff579f2a5c|
 Difference between return value : 0
 
-Largeur (19) et precision bonus (*) : |0x000000000000007fff5aba8aac|
-Largeur (19) et precision bonus (*) : |0x0000007fff5aba8aac|
-Difference between return value : 8
+Largeur (19) et precision bonus (*) : |0x000000000007fff579f2a5c|
+Largeur (19) et precision bonus (*) : |0x0000007fff579f2a5c|
+Difference between return value : 5
 
-Flag - : |0x7fff5aba8aac     |
-Flag - : |0x7fff5aba8aac     |
+Flag - : |0x7fff579f2a5c     |
+Flag - : |0x7fff579f2a5c     |
 Difference between return value : 0
 
-Flag 0 : |0x0000007fff5aba8aac|
-Flag 0 : |0x0000007fff5aba8aac|
+Flag 0 : |0x0000007fff579f2a5c|
+Flag 0 : |0x0000007fff579f2a5c|
 Difference between return value : 0
 

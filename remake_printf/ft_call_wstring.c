@@ -6,20 +6,22 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 15:51:08 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/04 18:12:49 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/05 11:43:35 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
+int		ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print, int code)
 {
-	char	*result;
-	int		state_value;
-	unsigned char *to_free;
+	char			*result;
+	int				state_value;
+	unsigned char 	*to_free;
+	wchar_t			*tmp;
 
 	state_value = 1;
 	to_free = NULL;
+	tmp = code == 0 ? wstring : NULL;
 	if (!wstring)
 		result = ft_strdup("(null)");
 	else
@@ -31,6 +33,7 @@ int		ft_call_wstring(wchar_t *wstring, T_LIST *trail, char **print)
 	ft_move_index(&trail, trail->start_index - trail->end_index +
 		ft_strlen(result) - 1);
 	free(result);
+	free(tmp);
 	if (to_free)
 		free(to_free);
 	return (state_value);
