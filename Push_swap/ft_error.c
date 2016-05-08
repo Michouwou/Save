@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/04 19:50:51 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/08 13:57:20 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/08 14:00:20 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_error(int code)
 {
-	int				i;
-	unsigned char	*tmp1;
-	unsigned char	*tmp2;
-
-	tmp1 = (unsigned char*)s1;
-	tmp2 = (unsigned char*)s2;
-	i = 0;
-	while (n--)
-	{
-		if (*tmp1 != *tmp2 || *tmp1 == '\0' || *tmp2 == '\0')
-			return (*tmp1 - *tmp2);
-		tmp1++;
-		tmp2++;
-	}
-	return (0);
+	if (code == 0)
+		write(1, "Error : invalid option\n", 23);
+	else if (code == 1)
+		write(1, "Error : invalid argument\n", 25);
+	exit(0);
 }

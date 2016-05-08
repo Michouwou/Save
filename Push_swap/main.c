@@ -5,18 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/25 14:02:20 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/25 14:03:34 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/08 13:24:53 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/08 14:02:54 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int ac, char **av)
 {
-	if (argc < 2)
-		ft_error(0);
-	else
-		ft_core(argv, argc);
+	char	*options;
+	t_stack	*stack_one;
+	t_stack	*stack_two;
+
+	options = ft_strnew(5);
+	stack_one = ft_create_stack(av + ft_get_options(options, av));
+	stack_two = NULL;
+	ft_core(stack_one, stack_two, options);
 	return (0);
 }

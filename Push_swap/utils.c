@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/04 19:50:51 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/08 13:54:04 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/08 13:57:04 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strjoin_free(char *stra, char *strb)
 {
-	int				i;
-	unsigned char	*tmp1;
-	unsigned char	*tmp2;
+	int		i;
+	char	*ret;
 
-	tmp1 = (unsigned char*)s1;
-	tmp2 = (unsigned char*)s2;
-	i = 0;
-	while (n--)
-	{
-		if (*tmp1 != *tmp2 || *tmp1 == '\0' || *tmp2 == '\0')
-			return (*tmp1 - *tmp2);
-		tmp1++;
-		tmp2++;
-	}
-	return (0);
+	i = ft_strlen(stra);
+	ret = ft_strnew(i + ft_strlen(strb));
+	ft_strcpy(ret, stra);
+	ft_strcat(ret + i, strb);
+	free(stra);
+	return (ret);
 }

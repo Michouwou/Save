@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2015/12/17 17:07:16 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/01/04 19:52:05 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 		s1[tmp + i] = s2[i];
 		i++;
 	}
+	s1[tmp + i] = 0;
 	return (s1);
 }

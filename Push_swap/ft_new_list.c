@@ -67,7 +67,7 @@ int		ft_get_options(char *options, char **args)
 	return (i);
 }
 
-t_list	*ft_create_stack(char **args)
+t_stack	*ft_create_stack(char **args)
 {
 	int		i;
 	t_stack	*tmp;
