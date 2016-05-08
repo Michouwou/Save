@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/08 14:02:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/08 15:45:04 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
-
+#define SAY(m) printf(m);fflush(stdout);
+#include <stdio.h>
 typedef struct	s_stack
 {
 	long int			number;
@@ -38,5 +39,5 @@ void			ft_display(char *sols, char *options);
 int				ft_is_sorted(t_stack *stack);
 int				ft_direction(t_stack *stack, int index);
 char			*ft_strjoin_free(char *stra, char *strb);
-void			ft_special_case(t_stack *stack_one, t_stack *stack_two, char *options);
+void			ft_special_case(t_stack *stack_one, char *options);
 void			ft_error(int error_code);

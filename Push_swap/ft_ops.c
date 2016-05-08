@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 14:04:09 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/08 14:26:41 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/08 16:06:03 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,14 @@ void	ft_rr(t_stack **stack)
 	tmpa->next = NULL;
 	tmpb->next = *stack;
 	*stack = tmpb;
+}
+
+void	ft_s(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	tmp = *stack;
+	*stack = (*stack)->next;
+	tmp->next = (*stack)->next;
+	(*stack)->next = tmp;
 }
