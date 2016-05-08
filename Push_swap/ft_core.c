@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 10:32:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/08 10:45:43 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/08 13:08:42 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,13 @@ void	ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 		tmp = ft_get_min(stack_one);
 		ft_move(&stack_one, ft_direction(stack_one, tmp), tmp, &sols);
 		ft_p(&stack_one, &stack_two);
-		sols = ft_strjoin_free(sols, "pb");
+		sols = ft_strjoin_free(sols, " pb");
 	}
 	if (stack_one->number > stack_one->next->number)
-		ft_s(
+	{
+		ft_s(&stack_one);
+		sols = ft_strjoin_free(sols, " sa");
+	}
+	ft_repush(&stack_two, &stack_one, &sols);
+	ft_display(sols, options);
 }
