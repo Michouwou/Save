@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/07 19:13:45 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/08 10:45:47 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,15 +141,14 @@ void	ft_move(t_stack **stack, int direction, int index, char **sols)
 		while ((*stack)->index != index)
 		{
 			ft_r(stack);
-			sols[i++] = ft_strdup("ra");
+			*sols = ft_strjoin_free(*sols, "ra");
 		}
 	else
 		while ((*stack)->index != index)
 		{
 			ft_rr(stack);
-			sols[i++] = ft_strdup("rra");
+			*sols = ft_strjoin_free(*sols, "rra");
 		}
-
 }
 
 void	ft_repush(t_stack **stack_two, t_stack **stack_one, char **sols)
@@ -157,9 +156,9 @@ void	ft_repush(t_stack **stack_two, t_stack **stack_one, char **sols)
 	int	i;
 
 	i = 0;
-	while (*tack_two)
+	while (*stack_two)
 	{
 		ft_p(stack_two, stack_one);
-		sols[i++] = ft_strdup("pa");
+		*sols = ft_strjoin_free(*sols, "pa");
 	}
 }

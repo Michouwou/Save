@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/07 19:13:47 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/08 10:31:47 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int				ft_get_min(t_stack *stack_one);
 void			ft_move(t_stack **stack_one, int direction, int index, char **sols);
 void			ft_repush(t_stack **stack_two, t_stack **stack_one);
 void			ft_core(t_stack *stack_one, t_stack *two, char *options);
-void			ft_display(char **sols);
-void			ft_is_sorted(t_stack *stack);
+void			ft_display(char *sols);
+int				ft_is_sorted(t_stack *stack);
 
