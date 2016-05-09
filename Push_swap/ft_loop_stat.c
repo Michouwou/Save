@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 13:24:59 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 15:43:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/09 17:06:52 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options)
 		loop = 0;
 		stack_one = NULL;
 		stack_two = NULL;
-		printf("Arguments?\n");fflush(stdout);
+		write(1, "\033[4mArguments?\n\033[0m", 19);
 		scanf(" %[^\n]", arg);
 		stack_one = ft_create_stack(ft_strsplit(arg, ' '));
 		if ((size + 1) % 10 == 0)
@@ -70,8 +70,11 @@ void	ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options)
 		loop = -1;
 		while (loop != 0 && loop != 1)
 		{
-			printf("\nSouhaitez-vous recommencer? (0 - non ; 1 - oui)\n");
+			printf("\n\033[5mSouhaitez-vous recommencer? (0 - non ; 1 - oui)\n\033[0m");
+			loop = -1;
 			scanf("%d", &loop);
+			scanf ("%*[^\n]");
+			fflush(stdin);
 		}
 		size++;
 		ft_bzero(arg, ft_strlen(arg));

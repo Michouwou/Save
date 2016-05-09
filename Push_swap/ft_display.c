@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 15:02:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 14:51:09 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/09 16:41:54 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ int		ft_display(char *sols, char *options, t_stack *first)
 	}
 	if (options[2])
 	{
-		write(1, "\033[0;33m", 7);
+		write(1, "\033[044;33m", 9);
 		ft_putnbr(len);
 		write(1, " operations pour ", 17);
 		ft_putnbr(ret);
-		write(1, " entrees\n", 9);
-		write(1, "\033[0;m", 5);
+		write(1, " entrees", 9);
+		write(1, "\033[0m\n", 5);
 	}
 	num = ft_strlen(sols) - 1;
 	write(1, sols + 1, num);

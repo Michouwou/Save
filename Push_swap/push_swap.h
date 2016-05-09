@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 14:25:22 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/09 18:31:04 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void			ft_s(t_stack **stack);
 void			ft_p(t_stack **stack_one, t_stack **stack_two);
 int				ft_get_min(t_stack *stack_one);
 void			ft_move(t_stack **stack_one, int direction, int index, char **sols);
-void			ft_repush(t_stack **stack_two, t_stack **stack_one, char **sols);
+void			ft_repush(t_stack **stack_two, t_stack **stack_one, char **sols, int is_ext);
 int				ft_core(t_stack *stack_one, t_stack *two, char *options);
 int				ft_display(char *sols, char *options, t_stack *first);
 int				ft_is_sorted(t_stack *stack);
@@ -45,3 +45,4 @@ void			ft_error(int error_code, char *str);
 void			ft_push_back(t_stack **first, t_stack *to_add);
 void			ft_check_doubles(t_stack *first);
 void			ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options);
+void			ft_print_stack(t_stack *stack_one, t_stack *stack_two, char *action);
