@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_create_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/08 13:24:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 11:08:52 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/09 11:35:31 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/09 11:35:56 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+t_stack	*ft_create_stack(char **args)
 {
-	char	*options;
-	t_stack	*stack_one;
-	t_stack	*stack_two;
+	int		i;
+	t_stack	*tmp;
+	t_stack	*first;
 
-	options = ft_strnew(3);
-	stack_one = ft_create_stack(av + ft_get_options(options, av));
-	stack_two = NULL;
-	ft_core(stack_one, stack_two, options);
-	return (0);
+	i = 0;
+	first = NULL;
+	while (args[i])
+	{
+		if ((args[i][0] == '+' || args[i][0] == '-' ||
+					ft_isdigit(args[i][0])) && !(args[i][1] &&
+					!ft_isdigit(args[i][1])))
+		{
+			tmp = ft_new_stack(ft_atoi(args[i]), i);
+			ft_push_back(&first, tmp);
+		}
+		else
+			ft_error(1, args[i]);
+		i++;
+	}
+	return (first);
 }

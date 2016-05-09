@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 10:32:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/08 16:34:50 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/09 11:31:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 	int		tmp;
 	char	*sols;
 
+	if (!options[0])
+		ft_check_doubles(stack_one);
 	sols = ft_strnew(10);
 	if (!stack_one->next || !stack_one->next->next)
 	{
@@ -36,5 +38,5 @@ void	ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 		sols = ft_strjoin_free(sols, " sa");
 	}
 	ft_repush(&stack_two, &stack_one, &sols);
-	ft_display(sols, options);
+	ft_display(sols, options, stack_one);
 }

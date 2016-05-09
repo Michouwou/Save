@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check_doubles.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/08 13:24:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 11:08:52 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/09 11:20:56 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/09 11:30:19 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_check_doubles(t_stack *first)
 {
-	char	*options;
-	t_stack	*stack_one;
-	t_stack	*stack_two;
+	t_stack	*tmpa;
+	t_stack	*tmpb;
 
-	options = ft_strnew(3);
-	stack_one = ft_create_stack(av + ft_get_options(options, av));
-	stack_two = NULL;
-	ft_core(stack_one, stack_two, options);
-	return (0);
+	tmpa = first;
+	while (tmpa->next)
+	{
+		tmpb = tmpa->next;
+		while (tmpb)
+		{
+			if (tmpb->number == tmpa->number)
+				ft_error(2, tmpb->str_rep);
+			tmpb = tmpb->next;
+		}
+		tmpa = tmpa->next;
+	}
 }

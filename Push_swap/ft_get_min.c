@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_get_min.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/08 13:24:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 11:08:52 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/09 11:05:59 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/09 11:06:01 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+int		ft_get_min(t_stack *stack)
 {
-	char	*options;
-	t_stack	*stack_one;
-	t_stack	*stack_two;
+	t_stack			*tmp;
+	int				ret;
+	long int		tmpi;
 
-	options = ft_strnew(3);
-	stack_one = ft_create_stack(av + ft_get_options(options, av));
-	stack_two = NULL;
-	ft_core(stack_one, stack_two, options);
-	return (0);
+	tmp = stack;
+	tmpi = LONG_MAX;
+	while (tmp)
+	{
+		if (tmp->number < tmpi)
+		{
+			tmpi = tmp->number;
+			ret = tmp->index;
+		}
+		tmp = tmp->next;
+	}
+	return (ret);
 }

@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_get_options.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/08 13:24:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 11:08:52 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/09 11:31:00 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/09 11:36:20 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+int		ft_get_options(char *options, char **args)
 {
-	char	*options;
-	t_stack	*stack_one;
-	t_stack	*stack_two;
+	int	i;
+	int	j;
 
-	options = ft_strnew(3);
-	stack_one = ft_create_stack(av + ft_get_options(options, av));
-	stack_two = NULL;
-	ft_core(stack_one, stack_two, options);
-	return (0);
+	i = 1;
+	while (args[i][0] == '-' && !ft_isdigit(args[i][1]))
+	{
+		j = 1;
+		while (args[i][j])
+		{
+			if (args[i][j] == 'd')
+				options[0] = 1;
+			else if (args[i][j] == 'v')
+				options[1] = 1;
+			else if (args[i][j] == 'p')
+				options[2] = 1;
+			else
+				ft_error(0, &(args[i][j]));
+			j++;
+		}
+		i++;
+	}
+	return (i);
 }
