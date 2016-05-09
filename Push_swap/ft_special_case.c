@@ -6,30 +6,29 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 15:05:19 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 11:13:46 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/09 14:23:12 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	for_two(t_stack *stack, char *options)
+static int	for_two(t_stack *stack, char *options)
 {
 	char	*sols;
 
 	sols = ft_strnew(10);
 	if (stack->number > stack->next->number)
 		sols = ft_strjoin_free(sols, "sa");
-	ft_display(sols, options, stack);
-	free(sols);
+	return (ft_display(sols, options, stack));
 }
 
-void	ft_special_case(t_stack *stack, char *options)
+int		ft_special_case(t_stack *stack, char *options)
 {
 	char	*sols;
 
 	sols = ft_strnew(10);
 	if (!stack->next->next)
-		for_two(stack, options);
+		return (for_two(stack, options));
 	else if (stack->number > stack->next->number &&
 			stack->number > stack->next->next->number &&
 			stack->next->number < stack->next->next->number)
@@ -54,6 +53,5 @@ void	ft_special_case(t_stack *stack, char *options)
 			stack->number < stack->next->next->number &&
 			stack->next->number > stack->next->next->number)
 		sols = ft_strjoin_free(sols, "sa ra");
-	ft_display(sols, options, stack);
-	free(sols);
+	return(ft_display(sols, options, stack));
 }
