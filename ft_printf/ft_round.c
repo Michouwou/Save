@@ -5,20 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/27 16:48:49 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/28 14:17:45 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/03 15:55:10 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/09 09:35:15 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
-static double	ft_power(double num, int pow)
-{
-	if (pow == 0)
-		return (1);
-	else
-		return (num * ft_power(num, pow - 1));
-}
 
 void			ft_round(long double *num, int accuracy)
 {

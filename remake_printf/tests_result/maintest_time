@@ -1,6 +1,0 @@
-53, Yo, 0x7fff54fc6a9c, a
-53, Yo, 0x7fff54fc6a9c, a
-
-Execution time for ft_printf : 0.068000 
-Execution time for printf : 0.017000 
-400% moins rapide que le vrai printf

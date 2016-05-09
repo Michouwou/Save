@@ -5,31 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 15:46:34 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/24 11:39:59 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/03 15:52:26 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/04 15:54:54 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		ft_get_accuracy(char *format, int location)
+void	ft_get_accuracy(char *format, int *j, T_LIST *trail)
 {
 	int		i;
-	int		res;
-	char	*tmp;
+	char	*str;
 
-	i = 0;
-	location++;
-	while (format[location] != '.' && !ft_what_type(format[location]))
-		location++;
-	if (ft_what_type(format[location]))
-		return (-1);
-	i = 1;
-	if (format[location + 1] == '*')
-		return (-10);
-	while (ft_isdigit(format[location + i]))
-		i++;
-	tmp = ft_strsub(format, location + 1, i);
-	res = (tmp != NULL) ? ft_atoi(tmp) : -1;
-	return (res);
+	(*j)++;
+	i = *j;
+	while (format[*j] && (ft_isdigit(format[*j]) || format[*j] == '*'))
+	{
+		if (format[*j] == '*')
+		{
+			trail->accuracy = -10;
+			return ;
+		}
+		(*j)++;
+	}
+	str = ft_strsub(format, i, *j - i);
+	trail->accuracy = ft_atoi(str);
+	free(str);
+	if (i == *j)
+		trail->accuracy = 0;
+	(*j) -= 1;
 }

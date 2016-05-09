@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/27 14:18:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/27 14:51:32 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/03 15:54:00 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/03 15:54:01 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	ft_move_index(T_LIST **trail, int padding)
 {
-	while (*trail != NULL)
+	T_LIST	*tmp;
+
+	tmp = *trail;
+	while (tmp != NULL)
 	{
-		(*trail)->start_index += padding;
-		(*trail)->end_index += padding;
-		*trail = (*trail)->next;
+		tmp->start_index += padding;
+		tmp->end_index += padding;
+		tmp = tmp->next;
 	}
 }

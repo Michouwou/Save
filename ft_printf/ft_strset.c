@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/14 20:50:44 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/24 12:57:37 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/03 15:55:32 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/03 15:55:33 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strset(char *str, int len, char c)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (i < len)

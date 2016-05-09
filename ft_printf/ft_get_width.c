@@ -5,33 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 15:38:33 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/03 12:31:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/03 15:53:04 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/04 15:42:59 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		ft_get_width(char *format, int location)
+void	ft_get_width(char *location, int *counter, T_LIST *trail)
 {
-	char	*tmp;
 	int		i;
-	int		res;
+	char	*str;
 
-	i = 0;
-	location++;
-	while ((!ft_isdigit(format[location]) || ft_is_flag(format[location])) &&
-				format[location] != '.' && format[location] != '*' &&
-				!ft_what_type(format[location]))
-		location++;
-	if (format[location] == '*')
-		return (-10);
-	if (format[location] == '.')
-		return (0);
-	while (ft_isdigit(format[i + location]))
-		i++;
-	tmp = ft_strnew(i - location + 1);
-	tmp = ft_strsub(format, location, i);
-	res = (tmp != NULL) ? ft_atoi(tmp) : 0;
-	return (res);
+	i = *counter;
+	while (location[*counter] && ft_isdigit(location[*counter]))
+		(*counter)++;
+	str = ft_strsub(location, i, *counter - i);
+	trail->width = ft_atoi(str);
+	free(str);
+	(*counter) -= 1;
 }

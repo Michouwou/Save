@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 13:49:21 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/01/20 14:53:52 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/03 15:52:13 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/04 15:40:37 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	ft_free_list(T_LIST **start)
 {
-	if ((*start) != NULL && (*start)->next != NULL)
-		ft_free_list(&(*start)->next);
-	free(*start);
+	if ((*start) && (*start)->next != NULL)
+		ft_free_list(&((*start)->next));
+	if (*start && (*start)->w_size)
+		free((*start)->w_size);
+	if (*start)
+		free(*start);
 }

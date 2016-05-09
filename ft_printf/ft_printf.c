@@ -5,37 +5,66 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 09:15:03 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/22 10:49:05 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/04/22 15:34:27 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/06 11:35:03 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		ft_printf(char const *format, ...)
+static int	printf_loop(T_LIST **tmp, va_list *args, char **result)
+{
+	int state_value;
+
+	state_value = 1;
+	while (--((*tmp)->unused))
+		va_arg(*args, void*);
+	if ((*tmp)->width == -10)
+		(*tmp)->width = va_arg(*args, int);
+	if ((*tmp)->accuracy == -10)
+		(*tmp)->accuracy = va_arg(*args, int);
+	if (ft_type_crossroad(*tmp, args, result) == 0)
+		state_value = 0;
+	free((*tmp)->mod);
+	*tmp = (*tmp)->next;
+	return (state_value);
+}
+
+static void	ft_print(char *str)
+{
+	int		i;
+	char	z;
+
+	i = 0;
+	z = ft_strlen(str);
+	while (str[i] != 0)
+	{
+		if (str[i] == -1)
+			str[i] = 0;
+		i++;
+	}
+	write(1, str, z);
+}
+
+int			ft_printf(char const *fmt, ...)
 {
 	va_list		args;
-	T_LIST		*forms;
-	T_LIST		*trail;
-	char		*print;
-	int			i;
+	int			state_value;
+	T_LIST		**list;
+	char		*result;
 
-	va_start(args, format);
-	if (!ft_check_format((char*)format))
-		return (0);
-	forms = ft_find_form((char*)format);
-	trail = forms;
-	print = (char*)format;
-	while (trail != NULL)
-	{
-		if (trail->type == '%')
-			print = ft_repstr(print, trail->start_index, trail->end_index + 1, "%");
-		else
-			ft_get_arg(trail, &print, &args);
-		trail = trail->next;
-	}
-	ft_putstr(print);
-	i = ft_strlen(print);
-	ft_free_list(&forms);
-	return (i);
+	list = (T_LIST**)malloc(sizeof(T_LIST*) * 2);
+	va_start(args, fmt);
+	result = ft_strdup(fmt);
+	state_value = 1;
+	list[0] = ft_get_args(ft_strdup(fmt));
+	list[1] = list[0];
+	while (list[1])
+		state_value = printf_loop(list + 1, &args, &result);
+	state_value = (state_value) ? ft_strlen(result) : -1;
+	ft_print(result);
+	free(result);
+	ft_free_list(list);
+	free(list);
+	return (state_value);
 }

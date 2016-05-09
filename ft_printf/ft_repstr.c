@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/05 13:06:23 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/02/24 09:59:18 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/03 15:55:02 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/06 17:07:04 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ char	*ft_repstr(char *str, int start, int end, char *to_insert)
 	int		i;
 	int		j;
 
-	res = (char*)malloc(sizeof(char) * (ft_strlen(str) - (end - start) + ft_strlen(to_insert) + 1));
-	ft_bzero(res, ft_strlen(str) - (end - start) + ft_strlen(to_insert));
+	if (ft_strlen(str) == 0)
+		return (ft_strdup(to_insert));
+	res = (char*)malloc(sizeof(char) *
+		(ft_strlen(str) - (end - start) + ft_strlen(to_insert) + 1));
+	ft_bzero(res, ft_strlen(str) - (end - start) + ft_strlen(to_insert) + 1);
 	i = 0;
 	j = 0;
 	while (i < start)
@@ -33,5 +36,6 @@ char	*ft_repstr(char *str, int start, int end, char *to_insert)
 	while (str[j] != 0)
 		res[i++] = (int)str[j++];
 	res[i] = 0;
+	free(str);
 	return (res);
 }
