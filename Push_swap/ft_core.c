@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 10:32:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 14:34:32 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/10 17:36:14 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int		ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 	}
 	if (!options[0])
 		ft_check_doubles(stack_one);
-	sols = ft_strnew(10);
 	if (!stack_one->next || !stack_one->next->next)
 		return(ft_special_case(stack_one, options));
+	sols = ft_strnew(10);
 	while (stack_one->next->next)
 	{
 		tmp = ft_get_min(stack_one);

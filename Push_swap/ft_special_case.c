@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 15:05:19 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 14:23:12 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/10 17:51:43 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int		ft_special_case(t_stack *stack, char *options)
 {
 	char	*sols;
 
-	sols = ft_strnew(10);
 	if (!stack->next->next)
 		return (for_two(stack, options));
-	else if (stack->number > stack->next->number &&
+	sols = ft_strnew(10);
+	if (stack->number > stack->next->number &&
 			stack->number > stack->next->next->number &&
 			stack->next->number < stack->next->next->number)
 		sols = ft_strjoin_free(sols, "ra");

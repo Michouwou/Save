@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_direction.c                                     :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 17:03:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 17:03:50 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/10 16:26:16 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/10 16:47:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_direction(t_stack *stack, int index)
+void	ft_free(t_stack *stack)
 {
-	int		i;
-	t_stack	*tmp;
+	if (stack->next)
+		ft_free(stack->next);
+	free(stack->str_rep);
+	free(stack);
 
-	tmp = stack;
-	i = 0;
-	while (tmp && tmp->index != index)
-	{
-		++i;
-		tmp = tmp->next;
-	}
-	while (tmp)
-	{
-		--i;
-		tmp = tmp->next;
-	}
-	if (i < 0)
-		return (1);
-	else
-		return (2);
 }

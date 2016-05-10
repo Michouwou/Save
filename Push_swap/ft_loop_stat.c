@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 13:24:59 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 17:06:52 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/10 17:00:49 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options)
 		stack_two = NULL;
 		write(1, "\033[4mArguments?\n\033[0m", 19);
 		scanf(" %[^\n]", arg);
-		stack_one = ft_create_stack(ft_strsplit(arg, ' '));
+		stack_one = ft_create_stack(ft_strsplit(arg, ' '), 1);
 		if ((size + 1) % 10 == 0)
 			increase_tab(&sum, size + 1);
 		sum[size] = ft_core(stack_one, stack_two, options);
@@ -80,4 +80,6 @@ void	ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options)
 		ft_bzero(arg, ft_strlen(arg));
 	}
 	printf("Proportion coups / nombre d'arguments : %d\n", average(sum, size));
+	free(arg);
+	free(sum);
 }

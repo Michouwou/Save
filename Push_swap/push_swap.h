@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 13:36:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/10 16:58:46 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct	s_stack
 
 t_stack			*ft_new_stack(int num, int index);
 int				ft_get_options(char *options, char **args, int *is_stat);
-t_stack			*ft_create_stack(char **args);
+t_stack			*ft_create_stack(char **args, int code);
 void			ft_r(t_stack **stack);
 void			ft_rr(t_stack **stack);
 void			ft_s(t_stack **stack);
@@ -46,3 +46,4 @@ void			ft_push_back(t_stack **first, t_stack *to_add);
 void			ft_check_doubles(t_stack *first);
 void			ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options);
 void			ft_print_stack(t_stack *stack_one, t_stack *stack_two, char *action);
+void			ft_free(t_stack *stack);

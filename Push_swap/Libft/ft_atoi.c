@@ -6,11 +6,12 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2015/11/28 17:13:48 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/05 11:30:04 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static void		final_loop(char *str, int neg, int *ret)
 {
@@ -35,7 +36,7 @@ static char		*is_neg(char *str, int *neg)
 			*neg = 1;
 		str++;
 	}
-	return (ft_strdup(str));
+	return (str);
 }
 
 static char		*check_valid(char *str)
@@ -45,7 +46,7 @@ static char		*check_valid(char *str)
 	i = 0;
 	while (str[i] != 0 && ft_isdigit(str[i]))
 		i++;
-	return (ft_strdup(ft_strsub(str, 0, i)));
+	return (ft_strsub(str, 0, i));
 }
 
 static char		*ft_strtrim_atoi(char const *s)
@@ -66,8 +67,7 @@ static char		*ft_strtrim_atoi(char const *s)
 			tmp[i] == '\f' || tmp[i] == '\r' || tmp[i] == '\v')
 		j--;
 	j++;
-	tmp = ft_strdup(ft_strsub(tmp, i, j - i));
-	return (tmp);
+	return (tmp + i);
 }
 
 int				ft_atoi(const char *s)
@@ -83,5 +83,6 @@ int				ft_atoi(const char *s)
 	tmp = is_neg(tmp, &neg);
 	tmp = check_valid(tmp);
 	final_loop(tmp, neg, &ret);
+	free(tmp);
 	return (ret);
 }

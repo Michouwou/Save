@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 11:35:31 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 18:27:23 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/10 16:58:26 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_create_stack(char **args)
+t_stack	*ft_create_stack(char **args, int code)
 {
 	int		i;
 	t_stack	*tmp;
@@ -31,6 +31,8 @@ t_stack	*ft_create_stack(char **args)
 		}
 		else
 			ft_error(1, args[i]);
+		if (code == 1)
+			free(args[i]);
 		i++;
 	}
 	return (first);
