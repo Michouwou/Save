@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 18:31:04 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/10 13:36:37 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ t_stack			*ft_create_stack(char **args);
 void			ft_r(t_stack **stack);
 void			ft_rr(t_stack **stack);
 void			ft_s(t_stack **stack);
-void			ft_p(t_stack **stack_one, t_stack **stack_two);
+void			ft_p(t_stack **stack_one, t_stack **stack_two, int code);
 int				ft_get_min(t_stack *stack_one);
-void			ft_move(t_stack **stack_one, int direction, int index, char **sols);
+void			ft_move(t_stack **stack_one, t_stack *stack_two, int direction, int index, char **sols);
 void			ft_repush(t_stack **stack_two, t_stack **stack_one, char **sols, int is_ext);
 int				ft_core(t_stack *stack_one, t_stack *two, char *options);
 int				ft_display(char *sols, char *options, t_stack *first);

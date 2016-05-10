@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 17:48:08 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 18:28:07 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/10 13:28:19 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_print_stack(t_stack *stack_one, t_stack *stack_two, char *action)
 	t_stack	*tmp;
 
 	tmp = stack_one;
-	write(1, "\nA : ", 5);
+	write(1, "\033[0;32m\nA\033[0;m : ", 17);
 	while (tmp)
 	{
 		write(1, tmp->str_rep, ft_strlen(tmp->str_rep));
@@ -25,11 +25,12 @@ void	ft_print_stack(t_stack *stack_one, t_stack *stack_two, char *action)
 		tmp = tmp->next;
 	}
 	tmp = stack_two;
-	write(1, "\nB : ", 5);
+	write(1, "\033[0;35m\nB\033[0;m : ", 17);
 	while (tmp)
 	{
 		write(1, tmp->str_rep, ft_strlen(tmp->str_rep));
 		write(1, " ", 1);
 		tmp = tmp->next;
 	}
+	write(1, "\n", 1);
 }

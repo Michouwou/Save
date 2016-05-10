@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 14:04:09 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/08 16:06:03 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/10 13:38:27 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_p(t_stack **stack_one, t_stack **stack_two)
+void	ft_p(t_stack **stack_one, t_stack **stack_two, int code)
 {
 	t_stack	*tmp;
 
@@ -20,6 +20,10 @@ void	ft_p(t_stack **stack_one, t_stack **stack_two)
 	*stack_two = (*stack_two)->next;
 	tmp->next = *stack_one;
 	*stack_one = tmp;
+	if (code == 1)
+		write(1, "\nAction : pb", 12);
+	if (code == 2)
+		write(1, "\nAction : pa", 12);
 }
 
 void	ft_r(t_stack **stack)
