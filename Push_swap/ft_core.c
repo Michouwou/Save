@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 10:32:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 13:38:42 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/10 14:34:32 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ int		ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 	int		tmp;
 	char	*sols;
 
+	if (!stack_one->next)
+	{
+		if (options[2])
+			write(1, "\033[044;33m0 operations pour 1 entrees\033[0;m\n", 42);
+		return (0);
+	}
 	if (!options[0])
 		ft_check_doubles(stack_one);
 	sols = ft_strnew(10);
