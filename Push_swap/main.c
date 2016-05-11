@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 13:24:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 10:11:35 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 11:52:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static void	usage(void)
 {
-	write(1, "Usage : ./push_swap [-cvdp] [--stat] n1 n2 n3 [...]\n-c Is en\
- extended-colors option that prints the different actions in a\
- color that is theirs\n-d Option enables to input multiple times\
- the same argument\n-p Is a precision option that tells how many\
- actions were necessary for the number of arguments given\n-v\
- Option outpouts the state of stacks A and B after each action is\
- applied to them\n", 391);
+	write(1, "Usage : ./push_swap [-cvdp] [--stat] n1 n2 n3 [...]\n-c Is", 57);
+	write(1, " en extended-colors option that prints the different", 52);
+	write(1, " actions in a color that is theirs\n-d Option enables to", 55);
+	write(1, " input multiple times the same argument\n-p Is a precision", 57);
+	write(1, " option that tells how many actions were necessary for the", 58);
+	write(1, " number of arguments given\n-v Option outpouts the state", 55);
+	write(1, " of stacks A and B after each action is applied to them\n", 56);
 	exit(0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 11:15:30 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 11:46:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void			ft_rr(t_stack **stack);
 void			ft_s(t_stack **stack);
 void			ft_p(t_stack **stack_one, t_stack **stack_two, int code);
 int				ft_get_min(t_stack *stack_one);
-void			ft_move(t_stack ***stacks, int direction, int index,
+void			ft_move(t_stack **stack, t_stack *stack_two, int dir_ind[],
 					char **sols);
 void			ft_repush(t_stack **stack_two, t_stack **stack_one,
 					char **sols, int is_ext);

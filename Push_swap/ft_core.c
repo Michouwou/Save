@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 10:32:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 11:15:45 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 11:46:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 {
-	int		tmp;
+	int		tmp[2];
 	t_stack	**tmps;
 	char	*sols;
 
@@ -31,12 +31,9 @@ int		ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 	sols = ft_strnew(10);
 	while (stack_one->next->next)
 	{
-		tmp = ft_get_min(stack_one);
-		tmps = (t_stack**)malloc(sizeof(t_stack*) * 2);
-		tmps[0] = stack_one;
-		tmps[1] = stack_two;
-		ft_move(&tmps, ft_direction(stack_one, tmp) +
-				(options[1] ? 10 : 0), tmp, &sols);
+		tmp[1] = ft_get_min(stack_one);
+		tmp[0] = ft_direction(stack_one, tmp[1]) + (options[1] ? 10 : 0);
+		ft_move(&stack_one, stack_two, tmp, &sols);
 		ft_p(&stack_two, &stack_one, options[1] ? 1 : 0);
 		if (options[1])
 			ft_print_stack(stack_one, stack_two, NULL);
