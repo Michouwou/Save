@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 11:35:31 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 16:58:26 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 16:22:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_stack	*ft_create_stack(char **args, int code)
 					ft_isdigit(args[i][0])) && !(args[i][1] &&
 					!ft_isdigit(args[i][1])))
 		{
-			tmp = ft_new_stack(ft_atoi(args[i]), i);
+			tmp = ft_new_stack(args[i], i);
 			ft_push_back(&first, tmp);
 		}
 		else

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 11:46:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 16:28:49 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct	s_stack
 	struct s_stack		*next;
 }				t_stack;
 
-t_stack			*ft_new_stack(int num, int index);
+t_stack			*ft_new_stack(char *str, int index);
 int				ft_get_options(char *options, char **args, int *is_stat);
 t_stack			*ft_create_stack(char **args, int code);
 void			ft_r(t_stack **stack);

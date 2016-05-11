@@ -87,7 +87,8 @@ void		ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options)
 		size++;
 		ft_bzero(arg, ft_strlen(arg));
 	}
-	ft_printf("Proportion coups / nombre d'arguments : %d\n", average(sum, size));
+	ft_printf("Proportion coups / nombre d'arguments : %d\n",
+		average(sum, size));
 	free(arg);
 	free(sum);
 }

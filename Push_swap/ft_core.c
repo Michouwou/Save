@@ -6,18 +6,14 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 10:32:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 11:46:45 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 14:27:16 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
+static int	check_possibilities(t_stack *stack_one, char *options, char **sols)
 {
-	int		tmp[2];
-	t_stack	**tmps;
-	char	*sols;
-
 	if (!stack_one->next)
 	{
 		if (options[2])
@@ -26,9 +22,31 @@ int		ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 	}
 	if (!options[0])
 		ft_check_doubles(stack_one);
-	if (!stack_one->next || !stack_one->next->next)
+	if (!stack_one->next->next || !stack_one->next->next->next)
 		return (ft_special_case(stack_one, options));
-	sols = ft_strnew(10);
+	*sols = ft_strnew(10);
+	return (-1);
+}
+
+static void	last(t_stack **s_one, t_stack *s_two, char *options, char **sols)
+{
+	ft_s(s_one);
+	if (options[1])
+	{
+		write(1, "\nAction : sa", 12);
+		ft_print_stack(*s_one, s_two, NULL);
+	}
+	*sols = ft_strjoin_free(*sols, " sa");
+}
+
+int			ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
+{
+	int		tmp[2];
+	t_stack	**tmps;
+	char	*sols;
+
+	if ((tmp[0] = check_possibilities(stack_one, options, &sols)) != -1)
+		return (tmp[0]);
 	while (stack_one->next->next)
 	{
 		tmp[1] = ft_get_min(stack_one);
@@ -40,15 +58,7 @@ int		ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 		sols = ft_strjoin_free(sols, " pb");
 	}
 	if (stack_one->number > stack_one->next->number)
-	{
-		ft_s(&stack_one);
-		if (options[1])
-		{
-			write(1, "\nAction : sa", 12);
-			ft_print_stack(stack_one, stack_two, NULL);
-		}
-		sols = ft_strjoin_free(sols, " sa");
-	}
+		last(&stack_one, stack_two, options, &sols);
 	ft_repush(&stack_two, &stack_one, &sols, options[1]);
 	return (ft_display(sols, options, stack_one));
 }
