@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_repush.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:12:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2015/11/25 18:15:40 by mlevieux          #+#    #+#             */
+/*   Updated: 2015/12/15 12:25:34 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_repush(t_stack **stack_t, t_stack **stack_o, char **sols, int is_ext)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	int	i;
-
-	i = 0;
-	while (*stack_t)
+	if (new != NULL)
 	{
-		ft_p(stack_o, stack_t, is_ext ? 2 : 0);
-		if (is_ext)
-			ft_print_stack(*stack_o, *stack_t);
-		*sols = ft_strjoin_free(*sols, " pa");
+		new->next = *alst;
+		*alst = new;
 	}
 }

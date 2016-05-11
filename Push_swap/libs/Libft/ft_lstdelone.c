@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_repush.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:12:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2015/11/25 18:37:22 by mlevieux          #+#    #+#             */
+/*   Updated: 2015/11/28 16:17:51 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
+#include "libft.h"
 
-void	ft_repush(t_stack **stack_t, t_stack **stack_o, char **sols, int is_ext)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	int	i;
-
-	i = 0;
-	while (*stack_t)
-	{
-		ft_p(stack_o, stack_t, is_ext ? 2 : 0);
-		if (is_ext)
-			ft_print_stack(*stack_o, *stack_t);
-		*sols = ft_strjoin_free(*sols, " pa");
-	}
+	(*del)((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

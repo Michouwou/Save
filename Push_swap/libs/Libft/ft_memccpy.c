@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_repush.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:12:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
+/*   Updated: 2015/12/17 17:38:15 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_repush(t_stack **stack_t, t_stack **stack_o, char **sols, int is_ext)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int	i;
+	int				i;
+	unsigned char	*tmpa;
+	unsigned char	*tmpb;
+	unsigned char	tmpc;
 
+	tmpa = (unsigned char*)dst;
+	tmpb = (unsigned char*)src;
+	tmpc = (unsigned char)c;
 	i = 0;
-	while (*stack_t)
+	while (i < (int)n)
 	{
-		ft_p(stack_o, stack_t, is_ext ? 2 : 0);
-		if (is_ext)
-			ft_print_stack(*stack_o, *stack_t);
-		*sols = ft_strjoin_free(*sols, " pa");
+		tmpa[i] = tmpb[i];
+		if (tmpb[i] == tmpc)
+			break ;
+		i++;
 	}
+	return ((i == (int)n) ? 0 : &dst[i + 1]);
 }

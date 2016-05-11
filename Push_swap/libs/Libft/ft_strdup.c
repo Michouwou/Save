@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_repush.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:12:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
+/*   Updated: 2015/12/17 18:06:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <errno.h>
+#include "libft.h"
 
-void	ft_repush(t_stack **stack_t, t_stack **stack_o, char **sols, int is_ext)
+char	*ft_strdup(const char *s)
 {
-	int	i;
+	int		i;
+	int		size;
+	char	*ret;
 
 	i = 0;
-	while (*stack_t)
+	size = ft_strlen(s);
+	ret = ft_strnew(size);
+	if (ret == NULL)
 	{
-		ft_p(stack_o, stack_t, is_ext ? 2 : 0);
-		if (is_ext)
-			ft_print_stack(*stack_o, *stack_t);
-		*sols = ft_strjoin_free(*sols, " pa");
+		errno = ENOMEM;
+		return (NULL);
 	}
+	while (i < size)
+	{
+		ret[i] = s[i];
+		i++;
+	}
+	ret[i] = '\0';
+	return (ret);
 }

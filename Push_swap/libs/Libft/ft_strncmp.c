@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_repush.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:12:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/04 19:50:51 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_repush(t_stack **stack_t, t_stack **stack_o, char **sols, int is_ext)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	int				i;
+	unsigned char	*tmp1;
+	unsigned char	*tmp2;
 
+	tmp1 = (unsigned char*)s1;
+	tmp2 = (unsigned char*)s2;
 	i = 0;
-	while (*stack_t)
+	while (n--)
 	{
-		ft_p(stack_o, stack_t, is_ext ? 2 : 0);
-		if (is_ext)
-			ft_print_stack(*stack_o, *stack_t);
-		*sols = ft_strjoin_free(*sols, " pa");
+		if (*tmp1 != *tmp2 || *tmp1 == '\0' || *tmp2 == '\0')
+			return (*tmp1 - *tmp2);
+		tmp1++;
+		tmp2++;
 	}
+	return (0);
 }

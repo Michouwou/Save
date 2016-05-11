@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_repush.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:12:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2015/11/25 20:30:02 by mlevieux          #+#    #+#             */
+/*   Updated: 2015/11/28 16:19:03 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_repush(t_stack **stack_t, t_stack **stack_o, char **sols, int is_ext)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int	i;
+	t_list *tmp;
+	t_list *tmp2;
 
-	i = 0;
-	while (*stack_t)
+	tmp = ft_lstnew(NULL, 0);
+	tmp->next = (*f)(lst);
+	tmp2 = tmp;
+	while (lst->next != NULL)
 	{
-		ft_p(stack_o, stack_t, is_ext ? 2 : 0);
-		if (is_ext)
-			ft_print_stack(*stack_o, *stack_t);
-		*sols = ft_strjoin_free(*sols, " pa");
+		tmp = tmp->next;
+		lst = lst->next;
+		tmp->next = (*f)(lst);
 	}
+	(tmp->next)->next = NULL;
+	tmp2 = tmp2->next;
+	return (tmp2);
 }

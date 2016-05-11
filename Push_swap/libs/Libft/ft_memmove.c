@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_repush.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:12:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/01/08 11:07:07 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_repush(t_stack **stack_t, t_stack **stack_o, char **sols, int is_ext)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int	i;
+	unsigned char	*tmpa;
+	unsigned char	*tmpb;
 
-	i = 0;
-	while (*stack_t)
+	tmpa = (unsigned char*)dst;
+	tmpb = (unsigned char*)src;
+	if (dst > src)
 	{
-		ft_p(stack_o, stack_t, is_ext ? 2 : 0);
-		if (is_ext)
-			ft_print_stack(*stack_o, *stack_t);
-		*sols = ft_strjoin_free(*sols, " pa");
+		tmpa = tmpa + len;
+		tmpb = tmpb + len;
+		while (len)
+		{
+			*--tmpa = *--tmpb;
+			len--;
+		}
 	}
+	else
+		ft_memcpy(dst, src, len);
+	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 11:37:47 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 17:10:33 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 18:05:39 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	is_zero(char *str)
 	i = str[0] == '-' || str[0] == '+' ? 1 : 0;
 	while (str[i] && str[i] == '0')
 		i++;
-	if (i < ft_strlen(str))
+	if (i < (int)ft_strlen(str))
 		return (0);
 	return (1);
 }

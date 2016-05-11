@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_repush.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:12:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2015/11/28 18:40:40 by mlevieux          #+#    #+#             */
+/*   Updated: 2015/12/15 12:27:47 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_repush(t_stack **stack_t, t_stack **stack_o, char **sols, int is_ext)
+double	ft_sqrt(double nb)
 {
-	int	i;
+	double x;
+	double y;
+	double e;
 
-	i = 0;
-	while (*stack_t)
+	e = 0.00001;
+	if (nb < 0)
 	{
-		ft_p(stack_o, stack_t, is_ext ? 2 : 0);
-		if (is_ext)
-			ft_print_stack(*stack_o, *stack_t);
-		*sols = ft_strjoin_free(*sols, " pa");
+		return (-1);
 	}
+	x = nb;
+	y = 1;
+	if (nb == 0)
+		return (0);
+	while (x < (y - e) || x > (y + e))
+	{
+		x = (x + y) / 2;
+		y = nb / x;
+	}
+	return (x);
 }

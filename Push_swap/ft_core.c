@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 10:32:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 14:27:16 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 18:11:48 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	last(t_stack **s_one, t_stack *s_two, char *options, char **sols)
 	if (options[1])
 	{
 		write(1, "\nAction : sa", 12);
-		ft_print_stack(*s_one, s_two, NULL);
+		ft_print_stack(*s_one, s_two);
 	}
 	*sols = ft_strjoin_free(*sols, " sa");
 }
@@ -42,7 +42,6 @@ static void	last(t_stack **s_one, t_stack *s_two, char *options, char **sols)
 int			ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 {
 	int		tmp[2];
-	t_stack	**tmps;
 	char	*sols;
 
 	if ((tmp[0] = check_possibilities(stack_one, options, &sols)) != -1)
@@ -54,7 +53,7 @@ int			ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 		ft_move(&stack_one, stack_two, tmp, &sols);
 		ft_p(&stack_two, &stack_one, options[1] ? 1 : 0);
 		if (options[1])
-			ft_print_stack(stack_one, stack_two, NULL);
+			ft_print_stack(stack_one, stack_two);
 		sols = ft_strjoin_free(sols, " pb");
 	}
 	if (stack_one->number > stack_one->next->number)

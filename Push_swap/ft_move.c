@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 17:44:43 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 11:42:38 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 18:12:08 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_move(t_stack **stack, t_stack *stack_two, int dir_ind[], char **sols)
 			if (dir_ind[0] > 10)
 			{
 				write(1, "\nAction : ra", 12);
-				ft_print_stack(*stack, stack_two, "ra");
+				ft_print_stack(*stack, stack_two);
 			}
 		}
 	else
@@ -36,7 +36,7 @@ void	ft_move(t_stack **stack, t_stack *stack_two, int dir_ind[], char **sols)
 			if (dir_ind[0] > 10)
 			{
 				write(1, "\nAction : rra", 13);
-				ft_print_stack(*stack, stack_two, "rra");
+				ft_print_stack(*stack, stack_two);
 			}
 		}
 }

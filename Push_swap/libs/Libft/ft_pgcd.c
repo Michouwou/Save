@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_repush.c                                        :+:      :+:    :+:   */
+/*   ft_pgcd.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:12:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2015/11/28 18:17:32 by mlevieux          #+#    #+#             */
+/*   Updated: 2015/12/15 12:27:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_repush(t_stack **stack_t, t_stack **stack_o, char **sols, int is_ext)
+int		ft_pgcd(int nb1, int nb2)
 {
-	int	i;
+	int c;
 
-	i = 0;
-	while (*stack_t)
+	if (nb1 == 0)
+		return (nb2);
+	if (nb2 == 0)
+		return (nb1);
+	if (nb1 < nb2)
+		ft_swap(&nb1, &nb2);
+	while (nb2 != 0)
 	{
-		ft_p(stack_o, stack_t, is_ext ? 2 : 0);
-		if (is_ext)
-			ft_print_stack(*stack_o, *stack_t);
-		*sols = ft_strjoin_free(*sols, " pa");
+		c = nb2;
+		nb2 = nb1 % nb2;
+		nb1 = c;
 	}
+	ft_topos(&nb1);
+	return (nb1);
 }

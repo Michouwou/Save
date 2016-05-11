@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 17:48:08 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 09:50:49 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 18:04:44 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print_stack(t_stack *stack_one, t_stack *stack_two, char *action)
+void	ft_print_stack(t_stack *stack_one, t_stack *stack_two)
 {
 	t_stack	*tmp;
 

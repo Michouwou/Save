@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_repush.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:12:33 by mlevieux         ###   ########.fr       */
+/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
+/*   Updated: 2015/11/28 16:26:26 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_repush(t_stack **stack_t, t_stack **stack_o, char **sols, int is_ext)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	i;
+	int				i;
+	unsigned char	*tmp1;
+	unsigned char	*tmp2;
 
+	tmp1 = (unsigned char*)s1;
+	tmp2 = (unsigned char*)s2;
 	i = 0;
-	while (*stack_t)
+	while (tmp1[i] == tmp2[i] && tmp1[i] != '\0' && tmp2[i] != '\0')
 	{
-		ft_p(stack_o, stack_t, is_ext ? 2 : 0);
-		if (is_ext)
-			ft_print_stack(*stack_o, *stack_t);
-		*sols = ft_strjoin_free(*sols, " pa");
+		i++;
 	}
+	if (tmp1[i] == '\0')
+		return (-1 * tmp2[i]);
+	if (tmp2[i] == '\0')
+		return (tmp1[i]);
+	return (tmp1[i] - tmp2[i]);
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 16:28:49 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 18:10:30 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ void			ft_push_back(t_stack **first, t_stack *to_add);
 void			ft_check_doubles(t_stack *first);
 void			ft_loop_stat(t_stack *stack_one, t_stack *stack_two,
 					char *options);
-void			ft_print_stack(t_stack *stack_one, t_stack *stack_two,
-					char *action);
+void			ft_print_stack(t_stack *stack_one, t_stack *stack_two);
 void			ft_free(t_stack *stack);
 
 #endif
