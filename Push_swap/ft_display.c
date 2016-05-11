@@ -6,13 +6,13 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 15:02:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 17:08:20 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 10:01:21 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void print_color(char *sols)
+static void	print_color(char *sols)
 {
 	int	i;
 
@@ -32,21 +32,21 @@ static void print_color(char *sols)
 			write(1, sols + i, 2);
 			i += 2;
 			write(1, "\033[0;m", 5);
-		}	
+		}
 		else if (sols[i] == 'r' && sols[i + 1] == 'a')
 		{
 			write(1, "\033[0;34m", 7);
 			write(1, sols + i, 2);
 			i += 2;
 			write(1, "\033[0;m", 5);
-		}	
+		}
 		else if (sols[i] == 'r' && sols[i + 1] == 'r' && sols[i + 2] == 'a')
 		{
 			write(1, "\033[0;35m", 7);
 			write(1, sols + i, 3);
 			i += 3;
 			write(1, "\033[0;m", 5);
-		}	
+		}
 		else if (sols[i] == 's' && sols[i + 1] == 'a')
 		{
 			write(1, "\033[0;36m", 7);
@@ -61,7 +61,7 @@ static void print_color(char *sols)
 	}
 }
 
-int		ft_display(char *sols, char *options, t_stack *first)
+int			ft_display(char *sols, char *options, t_stack *first)
 {
 	int		len;
 	int		ret;
@@ -78,7 +78,7 @@ int		ft_display(char *sols, char *options, t_stack *first)
 	while (tmp)
 	{
 		tmp = tmp->next;
-		ret++;;
+		ret++;
 	}
 	if (options[2])
 	{

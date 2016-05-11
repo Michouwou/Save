@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 10:32:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 17:36:14 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 11:15:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int		ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 {
 	int		tmp;
+	t_stack	**tmps;
 	char	*sols;
 
 	if (!stack_one->next)
@@ -26,12 +27,16 @@ int		ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 	if (!options[0])
 		ft_check_doubles(stack_one);
 	if (!stack_one->next || !stack_one->next->next)
-		return(ft_special_case(stack_one, options));
+		return (ft_special_case(stack_one, options));
 	sols = ft_strnew(10);
 	while (stack_one->next->next)
 	{
 		tmp = ft_get_min(stack_one);
-		ft_move(&stack_one, stack_two, ft_direction(stack_one, tmp) + (options[1] ? 10 : 0), tmp, &sols);
+		tmps = (t_stack**)malloc(sizeof(t_stack*) * 2);
+		tmps[0] = stack_one;
+		tmps[1] = stack_two;
+		ft_move(&tmps, ft_direction(stack_one, tmp) +
+				(options[1] ? 10 : 0), tmp, &sols);
 		ft_p(&stack_two, &stack_one, options[1] ? 1 : 0);
 		if (options[1])
 			ft_print_stack(stack_one, stack_two, NULL);

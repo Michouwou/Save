@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 13:24:59 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 17:00:49 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 09:49:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,27 @@ static int	average(int *tab, int size)
 	return ((int)(ret / size));
 }
 
-void	ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options)
+static void	restart(int *loop)
+{
+	*loop = -1;
+	while (*loop != 0 && *loop != 1)
+	{
+		write(1, "\nSouhaitez-vous recommencer? (0 - non ; 1 - oui)\n", 49);
+		*loop = -1;
+		scanf("%d", loop);
+		scanf("%*[^\n]");
+	}
+}
+
+static void	init_vals(t_stack **stack_one, t_stack **stack_two, char **arg)
+{
+	*stack_one = NULL;
+	*stack_two = NULL;
+	write(1, "\033[4mArguments?\n\033[0m", 19);
+	scanf(" %[^\n]", *arg);
+}
+
+void		ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options)
 {
 	int		size;
 	int		*sum;
@@ -58,28 +78,16 @@ void	ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options)
 	arg = ft_strnew(100);
 	while (loop)
 	{
-		loop = 0;
-		stack_one = NULL;
-		stack_two = NULL;
-		write(1, "\033[4mArguments?\n\033[0m", 19);
-		scanf(" %[^\n]", arg);
+		init_vals(&stack_one, &stack_two, &arg);
 		stack_one = ft_create_stack(ft_strsplit(arg, ' '), 1);
 		if ((size + 1) % 10 == 0)
 			increase_tab(&sum, size + 1);
 		sum[size] = ft_core(stack_one, stack_two, options);
-		loop = -1;
-		while (loop != 0 && loop != 1)
-		{
-			printf("\n\033[5mSouhaitez-vous recommencer? (0 - non ; 1 - oui)\n\033[0m");
-			loop = -1;
-			scanf("%d", &loop);
-			scanf ("%*[^\n]");
-			fflush(stdin);
-		}
+		restart(&loop);
 		size++;
 		ft_bzero(arg, ft_strlen(arg));
 	}
-	printf("Proportion coups / nombre d'arguments : %d\n", average(sum, size));
+	ft_printf("Proportion coups / nombre d'arguments : %d\n", average(sum, size));
 	free(arg);
 	free(sum);
 }

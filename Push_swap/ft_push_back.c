@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push_back.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/05/11 09:50:55 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/11 09:51:49 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_push_back(t_stack **stack, t_stack *to_add)
@@ -7,7 +19,7 @@ void	ft_push_back(t_stack **stack, t_stack *to_add)
 	if (!*stack)
 	{
 		*stack = to_add;
-		return;
+		return ;
 	}
 	tmp = *stack;
 	while (tmp->next)

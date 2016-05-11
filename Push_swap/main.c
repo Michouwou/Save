@@ -6,19 +6,25 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 13:24:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 16:57:44 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 10:11:35 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void usage(void)
+static void	usage(void)
 {
-	write(1, "Usage : ./push_swap [-cvdp] [--stat] n1 n2 n3 [...]\n-c Is en extended-colors option that prints the different actions in a color that is theirs\n-d Option enables to input multiple times the same argument\n-p Is a precision option that tells how many actions were necessary for the number of arguments given\n-v Option outpouts the state of stacks A and B after each action is applied to them\n", 391);
+	write(1, "Usage : ./push_swap [-cvdp] [--stat] n1 n2 n3 [...]\n-c Is en\
+ extended-colors option that prints the different actions in a\
+ color that is theirs\n-d Option enables to input multiple times\
+ the same argument\n-p Is a precision option that tells how many\
+ actions were necessary for the number of arguments given\n-v\
+ Option outpouts the state of stacks A and B after each action is\
+ applied to them\n", 391);
 	exit(0);
 }
 
-int	main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	char	*options;
 	t_stack	*stack_one;
@@ -36,6 +42,5 @@ int	main(int ac, char **av)
 	else
 		ft_core(stack_one, stack_two, options);
 	free(options);
-	while (1);
 	return (0);
 }

@@ -6,17 +6,20 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 16:58:46 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 11:15:30 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _PUSH_SWAP_H
+# define _PUSH_SWAP_H
 
-#include "libft.h"
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
-#define SAY(m) printf(m);fflush(stdout);
-#include <stdio.h>
+# include "libft.h"
+# include "libftprintf.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
+# include <stdio.h>
+
 typedef struct	s_stack
 {
 	long int			number;
@@ -33,8 +36,10 @@ void			ft_rr(t_stack **stack);
 void			ft_s(t_stack **stack);
 void			ft_p(t_stack **stack_one, t_stack **stack_two, int code);
 int				ft_get_min(t_stack *stack_one);
-void			ft_move(t_stack **stack_one, t_stack *stack_two, int direction, int index, char **sols);
-void			ft_repush(t_stack **stack_two, t_stack **stack_one, char **sols, int is_ext);
+void			ft_move(t_stack ***stacks, int direction, int index,
+					char **sols);
+void			ft_repush(t_stack **stack_two, t_stack **stack_one,
+					char **sols, int is_ext);
 int				ft_core(t_stack *stack_one, t_stack *two, char *options);
 int				ft_display(char *sols, char *options, t_stack *first);
 int				ft_is_sorted(t_stack *stack);
@@ -44,6 +49,10 @@ int				ft_special_case(t_stack *stack_one, char *options);
 void			ft_error(int error_code, char *str);
 void			ft_push_back(t_stack **first, t_stack *to_add);
 void			ft_check_doubles(t_stack *first);
-void			ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options);
-void			ft_print_stack(t_stack *stack_one, t_stack *stack_two, char *action);
+void			ft_loop_stat(t_stack *stack_one, t_stack *stack_two,
+					char *options);
+void			ft_print_stack(t_stack *stack_one, t_stack *stack_two,
+					char *action);
 void			ft_free(t_stack *stack);
+
+#endif

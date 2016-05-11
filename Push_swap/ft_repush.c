@@ -6,22 +6,22 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 17:44:50 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 13:38:44 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 09:52:30 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_repush(t_stack **stack_two, t_stack **stack_one, char **sols, int is_ext)
+void	ft_repush(t_stack **stack_t, t_stack **stack_o, char **sols, int is_ext)
 {
 	int	i;
 
 	i = 0;
-	while (*stack_two)
+	while (*stack_t)
 	{
-		ft_p(stack_one, stack_two, is_ext ? 2 : 0);
+		ft_p(stack_o, stack_t, is_ext ? 2 : 0);
 		if (is_ext)
-			ft_print_stack(*stack_one, *stack_two, NULL);
+			ft_print_stack(*stack_o, *stack_t, NULL);
 		*sols = ft_strjoin_free(*sols, " pa");
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/10 16:26:16 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/10 16:47:02 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/11 09:42:40 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,4 @@ void	ft_free(t_stack *stack)
 		ft_free(stack->next);
 	free(stack->str_rep);
 	free(stack);
-
 }
