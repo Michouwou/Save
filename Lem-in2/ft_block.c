@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:23:05 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/14 13:24:24 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/12 15:12:50 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_block(char *string)
 {
-	ft_printf("%s\n", string);
+	printf("%s\n", string);
 	perror("ERROR\n");
 }

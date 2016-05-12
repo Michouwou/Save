@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:15:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/16 10:06:35 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/12 16:15:47 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ static int	count_rooms(char **args)
 			num++;
 		i++;
 	}
-	printf("NUM = %d\n", num);
-	fflush(stdout);
+	printf("On compte les pieces pour pouvoir en allouer le bon nombre\n");
 	return (num);
 }
 
@@ -36,23 +35,16 @@ void	ft_get_rooms(char ***args, int *number_of_rooms, t_room ***result)
 	char	**tmp;
 	int		flags[2];
 
-	printf("Premier arg! --> %s\n", (*args)[0]);
 	*result = (t_room**)malloc(sizeof(t_room*) * (count_rooms(*args) + 1));
-	printf("Adresse de result : %p\n", (void**)(*result));
-	fflush(stdout);
 	i = 0;
 	while (!ft_strchr((*args)[i], '-'))
 	{
-		printf("LA?\n");
-		fflush(stdout);
 		tmp = ft_strsplit((*args)[i], ' ');
 		if (!ft_strcmp(tmp[0], "##start") || !ft_strcmp(tmp[0], "##end"))
 			flags[!ft_strcmp(tmp[0], "##start") ? 0 : 1] = 1;
 		else if (!ft_strchr(tmp[0], '#'))
 		{
 			(*result)[*number_of_rooms] = ft_create_room(tmp[0], flags[1], flags[0]);
-		printf("On a construit une piece, adresse de cette \"piece\" %p\n", (void*)((*result)[*number_of_rooms]));
-		fflush(stdout);
 			flags[0] = 0;
 			flags[1] = 0;
 			*number_of_rooms += 1;
@@ -60,10 +52,7 @@ void	ft_get_rooms(char ***args, int *number_of_rooms, t_room ***result)
 		free(tmp);
 		i++;
 	}
-	printf("Sortie de boucle\n");
-	fflush(stdout);
+	printf("On vient de creer les differentes pieces\n");
 	(*result)[*number_of_rooms] = ft_create_room(NULL, 0, 0);
-	printf("Nope\n");
-	fflush(stdout);
 	*args += i;
 }

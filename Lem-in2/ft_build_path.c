@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/21 12:13:34 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/12 16:25:34 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ static int	no_option(t_room **rooms, t_path *actual_path)
 	int i;
 	
 	i = 0;
-	printf("Inside no_option\n");
-	fflush(stdout);
 	while (rooms && rooms[i] && rooms[i]->name && !room_does_not_appear(rooms[i], actual_path))
 		i++;
 	if (rooms && room_does_not_appear(rooms[i], actual_path))
@@ -62,23 +60,13 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 	t_path	*tmp;
 	int		i;
 
-	printf("SALUT\n");
 	tmp = actual_path;
 	while (tmp && tmp->next)
-	{
-		printf("Dans la boucle ou on avance dans actual_path, tmp->room->name : %s\n", tmp->room->name);
-		fflush(stdout);
 		tmp = tmp->next;
-	}
 	if (!tmp)
-	{
 		actual_path = ft_create_path(room);
-		printf("Actual_path : %s\n", actual_path->room->name);
-	}
 	else
 		tmp->next = ft_create_path(room);
-	printf("Passe les conditions\n");
-	fflush(stdout);
 	if (room->is_end)
 	{
 		erase_last_one(actual_path);
@@ -86,7 +74,6 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 	}
 	if (!room->is_end && no_option(room->links, actual_path))
 	{
-		printf("-- On libere et on renvoie car bloquage\n");
 		erase_last_one(actual_path);
 		return (NULL);
 	}
@@ -106,12 +93,10 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths)
 	if (result == NULL)
 	{
 		erase_last_one(actual_path);
-		printf("On ne libere pas mais on renvoie, car aucun chemin trouve\n");
 		return (NULL);
 	}
 	tmp->next = result;
 	result = tmp;
-	printf("Un chemin au moins a ete trouve, on libere\n");
 	erase_last_one(actual_path);
 	return (result);
 }

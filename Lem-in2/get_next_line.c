@@ -6,29 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 20:16:19 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/03/03 08:57:40 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/03/22 15:42:48 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int		get_next_line(int const fd, char **line)
-{
-	static t_memory	*memory;
-	char			*rest;
-
-	if (!line)
-		return (-1);
-	rest = ft_is_memory(memory, fd);
-	if (rest != NULL)
-		return (ft_next_line(rest, line, fd, memory));
-	else
-	{
-		if (ft_set_memory(fd, &memory) == -1)
-			return (-1);
-		return (get_next_line(fd, line));
-	}
-}
 
 char	*ft_is_memory(t_memory *memory, int const fd)
 {
@@ -72,32 +54,32 @@ int		ft_set_memory(int const fd, t_memory **memory)
 	return (1);
 }
 
-int		ft_next_line(char *rest, char **line, int const fd, t_memory *memory)
+int		ft_next_line(char *rest, char **line, int fd, t_memory *memory)
 {
-	int			tmp;
 	t_memory	*tmpm;
 
-	tmp = 0;
 	tmpm = memory;
 	while (tmpm->fd != fd)
 		tmpm = tmpm->next;
-	while (rest[tmp] != '\n' && rest[tmp] != '\0' && rest[tmp] != 3)
-		tmp++;
-	if (rest[tmp] == '\0')
+	fd = 0;
+	while (rest[fd] != '\n' && rest[fd] != '\0' && rest[fd] != 3)
+		fd++;
+	if (rest[fd] == '\0')
 	{
-		if (ft_next_read(fd, &rest) == -1)
+		if (ft_next_read(tmpm->fd, &rest) == -1)
 			return (-1);
-		return (ft_next_line(rest, line, fd, memory));
+		return (ft_next_line(rest, line, tmpm->fd, memory));
 	}
-	if (rest[tmp] == 3 && tmp == 0)
+	if (rest[fd] == 3 && fd == 0)
 	{
-		rest[tmp] = '\n';
-		if (ft_next_line(rest, line, fd, memory) != -1)
+		rest[fd] = '\n';
+		if (ft_next_line(rest, line, tmpm->fd, memory) != -1)
 			return (0);
 		return (-1);
 	}
-	*line = ft_strsub(rest, 0, tmp);
-	*tmpm->next_lines = (rest + tmp + 1);
+	*line = ft_strsub(rest, 0, fd);
+	*tmpm->next_lines = ft_strsub(rest, fd + 1, ft_strlen(rest));
+	free(rest);
 	return (1);
 }
 
@@ -111,6 +93,7 @@ int		ft_next_read(int const fd, char **rest)
 	tmp = *rest;
 	*rest = ft_strnew(i + BUFF_SIZE + 1);
 	ft_strcpy(*rest, tmp);
+	free(tmp);
 	status = read(fd, (*rest) + i, BUFF_SIZE);
 	if (status == -1)
 		return (-1);
@@ -120,4 +103,22 @@ int		ft_next_read(int const fd, char **rest)
 		return (0);
 	}
 	return (1);
+}
+
+int		get_next_line(int const fd, char **line)
+{
+	static t_memory	*memory;
+	char			*rest;
+
+	if (!line)
+		return (-1);
+	rest = ft_is_memory(memory, fd);
+	if (rest != NULL)
+		return (ft_next_line(rest, line, fd, memory));
+	else
+	{
+		if (ft_set_memory(fd, &memory) == -1)
+			return (-1);
+		return (get_next_line(fd, line));
+	}
 }

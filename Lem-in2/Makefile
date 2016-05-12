@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/14 11:15:47 by mlevieux          #+#    #+#              #
-#    Updated: 2016/03/21 10:17:27 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/05/11 17:30:56 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,8 @@ all : makedir $(NAME) clean
 
 $(NAME) : $(OBJ)
 	@echo "Compilation...\n"
-	@cc -c $(SRC) -I $(HEADERS)
-	@cc -g -Wall -Werror -Wextra $(OBJ) -L $(LIBPATH) $(LIBS) -o $(NAME)
+	@gcc -c $(SRC) -I $(HEADERS)
+	@gcc -Wall -Werror -Wextra $(OBJ) -L $(LIBPATH) $(LIBS) -o $(NAME)
 
 makedir :
 	@mkdir $(LIBPATH)
