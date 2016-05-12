@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#define _V (void*)-1
 
 static void	increase_tab(int **tab, int size)
 {
@@ -33,18 +34,22 @@ static int	average(int *tab, int size)
 {
 	int		i;
 	int		ret;
+	int		z;
 
 	i = 0;
 	ret = 0;
+	z = 0;
 	while (i < size)
 	{
 		ret += tab[i];
 		i++;
+		if (!tab[i])
+			z++;
 	}
-	return ((int)(ret / size));
+	return ((int)(ret / (size - z)));
 }
 
-static void	restart(int *loop)
+static void	restart(int *loop, int *size, char **arg)
 {
 	*loop = -1;
 	while (*loop != 0 && *loop != 1)
@@ -54,17 +59,20 @@ static void	restart(int *loop)
 		scanf("%d", loop);
 		scanf("%*[^\n]");
 	}
+	if (loop)
+		(*size)++;
+	ft_bzero(*arg, ft_strlen(*arg));
 }
 
-static void	init_vals(t_stack **stack_one, t_stack **stack_two, char **arg)
+static void	init_vals(t_stack **s_one, t_stack **s_two, char **arg)
 {
-	*stack_one = NULL;
-	*stack_two = NULL;
+	*s_one = NULL;
+	*s_two = NULL;
 	write(1, "\033[4mArguments?\n\033[0m", 19);
 	scanf(" %[^\n]", *arg);
 }
 
-void		ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options)
+void		ft_loop_stat(t_stack *s_one, t_stack *s_two, char *options)
 {
 	int		size;
 	int		*sum;
@@ -78,17 +86,14 @@ void		ft_loop_stat(t_stack *stack_one, t_stack *stack_two, char *options)
 	arg = ft_strnew(100);
 	while (loop)
 	{
-		init_vals(&stack_one, &stack_two, &arg);
-		stack_one = ft_create_stack(ft_strsplit(arg, ' '), 1);
-		if (!options[0] && stack_one != (void*)-1)
-			ft_check_doubles(stack_one, 1);
+		init_vals(&s_one, &s_two, &arg);
+		s_one = ft_create_stack(ft_strsplit(arg, ' '), 1);
+		if (!options[0] && s_one != (void*)-1)
+			ft_check_doubles(s_one, 1);
 		if ((size + 1) % 10 == 0)
 			increase_tab(&sum, size + 1);
-		if (stack_one != (void*)-1)
-			sum[size] = ft_core(stack_one, stack_two, options);
-		restart(&loop);
-		size++;
-		ft_bzero(arg, ft_strlen(arg));
+		sum[size] = s_one == _V ? 0 : ft_core(s_one, s_two, options);
+		restart(&loop, &size, &arg);
 	}
 	ft_printf("Proportion coups / nombre d'arguments : %d\n",
 		average(sum, size));

@@ -12,7 +12,15 @@
 
 #include "push_swap.h"
 
-t_stack	*ft_create_stack(char **args, int code)
+static void	*invalid_arg(int code, char *str)
+{
+	if (code == 0)
+		ft_error(1, str);
+	ft_error_loop(1, str);
+	return ((void*)-1);
+}
+
+t_stack		*ft_create_stack(char **args, int code)
 {
 	int		i;
 	t_stack	*tmp;
@@ -32,12 +40,7 @@ t_stack	*ft_create_stack(char **args, int code)
 			ft_push_back(&first, tmp);
 		}
 		else
-		{
-			if (code == 0)
-				ft_error(1, args[i]);
-			ft_error_loop(1, args[i]);
-			return ((void*)-1);
-		}
+			return (invalid_arg(code, args[i]));
 		if (code == 1)
 			free(args[i]);
 		i++;

@@ -24,6 +24,17 @@ static int	is_zero(char *str)
 	return (1);
 }
 
+static void	if_non_zero(int code, char *str, t_stack *new)
+{
+	if ((ft_isdigit(str[0]) || (str[1] && ft_isdigit(str[1]))) &&
+			!new->number)
+	{
+		if (!code)
+			ft_error(3, str);
+		ft_error_loop(3, str);
+	}
+}
+
 t_stack		*ft_new_stack(char *str, int index, int code)
 {
 	t_stack	*new;
@@ -45,13 +56,7 @@ t_stack		*ft_new_stack(char *str, int index, int code)
 	new = (t_stack*)malloc(sizeof(t_stack));
 	new->number = ft_atoi(str);
 	if (!is_zero(str))
-		if ((ft_isdigit(str[0]) || (str[1] && ft_isdigit(str[1]))) &&
-				!new->number)
-		{
-			if (!code)
-				ft_error(3, str);
-			ft_error_loop(3, str);
-		}
+		if_non_zero(code, str, new);
 	new->index = index;
 	new->str_rep = ft_strdup(str);
 	new->next = NULL;

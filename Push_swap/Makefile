@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/11 17:30:16 by mlevieux          #+#    #+#              #
-#    Updated: 2016/05/12 10:08:59 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/05/12 12:33:00 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ fclean : clean
 	@echo "Cleaning everything...\n"
 	@rm -rf $(NAME)
 
-norme : $(SRC) $(HEADERS)
+norme :
 	@touch normfile.txt
 	@norminette $(SRC) > normfile.txt
 	@echo "File 'normfile.txt' created.\n"
