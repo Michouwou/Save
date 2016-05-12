@@ -6,14 +6,14 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/11 17:30:16 by mlevieux          #+#    #+#              #
-#    Updated: 2016/05/11 18:03:59 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/05/12 10:08:59 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC =   ft_check_doubles.c ft_direction.c ft_free.c ft_loop_stat.c ft_ops.c\
 		ft_repush.c utils.c ft_core.c ft_display.c ft_get_min.c ft_move.c\
 		ft_print_stack.c ft_special_case.c main.c ft_create_stack.c ft_error.c\
-		ft_get_options.c ft_new_stack.c ft_push_back.c
+		ft_get_options.c ft_new_stack.c ft_push_back.c ft_error_loop.c
 
 OBJ = $(SRC:.c=.o)
 

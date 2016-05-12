@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 11:37:47 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:05:39 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/12 10:12:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	is_zero(char *str)
 	return (1);
 }
 
-t_stack		*ft_new_stack(char *str, int index)
+t_stack		*ft_new_stack(char *str, int index, int code)
 {
 	t_stack	*new;
 	int		i;
@@ -34,7 +34,12 @@ t_stack		*ft_new_stack(char *str, int index)
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
-			ft_error(1, str);
+		{
+			if (!code)
+				ft_error(1, str);
+			ft_error_loop(1, str);
+			return ((void*)-1);
+		}
 		i++;
 	}
 	new = (t_stack*)malloc(sizeof(t_stack));
@@ -42,7 +47,11 @@ t_stack		*ft_new_stack(char *str, int index)
 	if (!is_zero(str))
 		if ((ft_isdigit(str[0]) || (str[1] && ft_isdigit(str[1]))) &&
 				!new->number)
-			ft_error(3, str);
+		{
+			if (!code)
+				ft_error(3, str);
+			ft_error_loop(3, str);
+		}
 	new->index = index;
 	new->str_rep = ft_strdup(str);
 	new->next = NULL;

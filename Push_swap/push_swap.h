@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:10:30 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/12 10:19:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct	s_stack
 	struct s_stack		*next;
 }				t_stack;
 
-t_stack			*ft_new_stack(char *str, int index);
+t_stack			*ft_new_stack(char *str, int index, int code);
 int				ft_get_options(char *options, char **args, int *is_stat);
 t_stack			*ft_create_stack(char **args, int code);
 void			ft_r(t_stack **stack);
@@ -48,10 +48,11 @@ char			*ft_strjoin_free(char *stra, char *strb);
 int				ft_special_case(t_stack *stack_one, char *options);
 void			ft_error(int error_code, char *str);
 void			ft_push_back(t_stack **first, t_stack *to_add);
-void			ft_check_doubles(t_stack *first);
+void			ft_check_doubles(t_stack *first, int is_stat);
 void			ft_loop_stat(t_stack *stack_one, t_stack *stack_two,
 					char *options);
 void			ft_print_stack(t_stack *stack_one, t_stack *stack_two);
 void			ft_free(t_stack *stack);
+void			ft_error_loop(int code, char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 10:32:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/11 18:11:48 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/12 10:17:09 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ static int	check_possibilities(t_stack *stack_one, char *options, char **sols)
 			write(1, "\033[044;33m0 operations pour 1 entrees\033[0;m\n", 42);
 		return (0);
 	}
-	if (!options[0])
-		ft_check_doubles(stack_one);
 	if (!stack_one->next->next || !stack_one->next->next->next)
 		return (ft_special_case(stack_one, options));
 	*sols = ft_strnew(10);
