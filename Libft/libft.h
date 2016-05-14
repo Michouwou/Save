@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2015/12/15 12:29:05 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/14 09:53:58 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,7 @@ double			ft_nroot(double x, int r);
 void			ft_swap(int *a, int *b);
 double			ft_power(double nb, int pow);
 void			ft_topos(int *a);
+int				ft_printf(const char *fmt, ...);
+char			*ft_repstr(char *str, int start, int end, char *to_insert);
 
 #endif
