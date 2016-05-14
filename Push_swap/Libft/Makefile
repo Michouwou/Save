@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 10:17:44 by mlevieux          #+#    #+#              #
-#    Updated: 2015/11/27 11:39:29 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/05/14 09:51:05 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,20 +23,25 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	  ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c \
 	  ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c \
 	  ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c \
-	  ft_tolower.c ft_toupper.c
+	  ft_tolower.c ft_toupper.c ft_power.c
 
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
 
 $(NAME) :
+	make re -C ft_printf/
 	gcc -c -Wall -Wextra -Werror $(SRC)
 	ar rc $(NAME) $(OBJ)
+	libtool -static -o $(NAME) ft_printf/libftprintf.a libft.a
+	ranlib $(NAME)
 
 clean :
+	make clean -C ft_printf/
 	rm -f $(OBJ)
 
 fclean : clean
+	make fclean -C ft_printf/
 	rm -f $(NAME)
 
 re : fclean all

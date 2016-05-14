@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_get_width.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/13 10:44:37 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/03 15:53:04 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/04 15:42:59 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include "libft.h"
+#include "libftprintf.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_get_width(char *location, int *counter, T_LIST *trail)
 {
 	int		i;
-	int		j;
-	char	*result;
+	char	*str;
 
-	i = -1;
-	j = -1;
-	if (!s1 && !s2)
-		return (NULL);
-	result = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (!result)
-		return (NULL);
-	if (s1)
-		result = ft_strcat(result, s1);
-	if (s2)
-		result = ft_strcat(result, s2);
-	result[ft_strlen(result) + 1] = 0;
-	return (result);
+	i = *counter;
+	while (location[*counter] && ft_isdigit(location[*counter]))
+		(*counter)++;
+	str = ft_strsub(location, i, *counter - i);
+	trail->width = ft_atoi(str);
+	free(str);
+	(*counter) -= 1;
 }

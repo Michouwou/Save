@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/11 17:30:16 by mlevieux          #+#    #+#              #
-#    Updated: 2016/05/12 12:33:00 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/05/14 10:11:53 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,9 @@ SRC =   ft_check_doubles.c ft_direction.c ft_free.c ft_loop_stat.c ft_ops.c\
 
 OBJ = $(SRC:.c=.o)
 
-HEADERS = libft.h libftprintf.h
+HEADERS = libft.h
 
 HEADERPATH = includes/
-
-LIBPATH = libs/
-
-LIBP = -lftprintf
 
 LIBL = -lft
 
@@ -32,24 +28,21 @@ NAME = push_swap
 all : $(NAME)
 
 $(NAME) : $(SRC)
-	make re -C $(LIBPATH)ft_printf && make re -C $(LIBPATH)Libft
-	echo "Compilation...\n"
+	make re -C Libft
 	gcc -Wall -Werror -Wextra -c $(SRC) -I$(HEADERPATH)
-	gcc -Wall -Werror -Wextra $(OBJ) -L $(LIBPATH)/ft_printf $(LIBP) -L $(LIBPATH)/Libft $(LIBL) -o $(NAME)
+	gcc -Wall -Werror -Wextra $(OBJ) -L Libft/ $(LIBL) -o $(NAME)
 
 re : fclean all
 
 .PHONY: clean fclean norme
 
 clean :
-	@echo "Cleaning...\n"
-	@rm -rf $(OBJ)
+	make clean -C Libft
+	rm -rf $(OBJ)
 
 fclean : clean
-	@echo "Cleaning everything...\n"
-	@rm -rf $(NAME)
+	make fclean -C Libft
+	rm -rf $(NAME)
 
 norme :
-	@touch normfile.txt
-	@norminette $(SRC) > normfile.txt
-	@echo "File 'normfile.txt' created.\n"
+	norminette $(SRC)

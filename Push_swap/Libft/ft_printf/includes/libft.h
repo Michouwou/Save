@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/14 09:53:58 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/09 09:39:36 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,10 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list			*ft_lstnew(void const *content, size_t content_size);
 int				ft_pgcd(int a, int b);
+double			ft_power(double nb, int pow);
 double			ft_sqrt(double x);
 double			ft_nroot(double x, int r);
 void			ft_swap(int *a, int *b);
-double			ft_power(double nb, int pow);
 void			ft_topos(int *a);
-int				ft_printf(const char *fmt, ...);
-char			*ft_repstr(char *str, int start, int end, char *to_insert);
 
 #endif

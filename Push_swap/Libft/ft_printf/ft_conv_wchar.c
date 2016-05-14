@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_conv_wchar.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/13 10:44:37 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/03 15:51:57 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/04 13:32:50 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include "libft.h"
+#include "libftprintf.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+wchar_t		*ft_conv_wchar(char *str)
 {
+	wchar_t	*res;
 	int		i;
-	int		j;
-	char	*result;
 
 	i = -1;
-	j = -1;
-	if (!s1 && !s2)
+	if (!str)
 		return (NULL);
-	result = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (!result)
-		return (NULL);
-	if (s1)
-		result = ft_strcat(result, s1);
-	if (s2)
-		result = ft_strcat(result, s2);
-	result[ft_strlen(result) + 1] = 0;
-	return (result);
+	res = (wchar_t*)malloc(sizeof(wchar_t) * ft_strlen(str) + 1);
+	while (str[++i] != 0)
+		res[i] = (unsigned char)str[i];
+	res[i] = 0;
+	return (res);
 }

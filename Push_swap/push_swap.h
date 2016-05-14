@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/12 10:19:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/14 10:20:24 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define _PUSH_SWAP_H
 
 # include "libft.h"
-# include "libftprintf.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>

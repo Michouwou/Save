@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_call_errno.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/13 10:44:37 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/05/03 15:50:24 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/05/04 11:32:23 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include "libft.h"
+#include "libftprintf.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int		ft_call_errno(T_LIST *trail, char **print)
 {
-	int		i;
-	int		j;
 	char	*result;
+	int		state_value;
 
-	i = -1;
-	j = -1;
-	if (!s1 && !s2)
-		return (NULL);
-	result = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (!result)
-		return (NULL);
-	if (s1)
-		result = ft_strcat(result, s1);
-	if (s2)
-		result = ft_strcat(result, s2);
-	result[ft_strlen(result) + 1] = 0;
-	return (result);
+	state_value = 1;
+	result = strerror(errno);
+	result = ft_set_length(trail, result);
+	result = ft_set_width(result, trail);
+	*print = ft_repstr(*print, trail->start_index, trail->end_index + 1,
+			result);
+	ft_move_index(&trail, trail->start_index - trail->end_index +
+			ft_strlen(result) - 1);
+	free(result);
+	return (state_value);
 }
