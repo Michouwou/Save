@@ -3,30 +3,29 @@ Norme: ./ft_block.c
 Norme: ./ft_path_len.c
 Norme: ./ft_create_path.c
 Norme: ./ft_free_everything.c
-Norme: ./ft_print_move.c
 Norme: ./ft_get_ants.c
+Norme: ./ft_print_move.c
 Norme: ./ft_link_room.c
 Error (line 15): function ft_link_room has 28 lines
 Norme: ./ft_create_room.c
-Norme: ./ft_build_path.c
 Norme: ./ft_min_path.c
 Norme: ./ft_links_rooms.c
-Norme: ./ft_read_file.c
+Error (line 15): function ft_links_rooms has 28 lines
 Norme: ./ft_core.c
-Norme: ./ft_path_is_free.c
-Norme: ./ft_find_paths.c
+Norme: ./ft_read_file.c
 Norme: ./ft_iterate.c
-Error (line 15): function ft_iterate has 29 lines
-Norme: ./main.c
+Error (line 15): function ft_iterate has 32 lines
+Norme: ./ft_find_paths.c
+Error (line 15): function ft_find_paths has 31 lines
+Error (line 27, col 3): missing space after break
+Norme: ./ft_build_path.c
+Error (line 54): function ft_build_path has 43 lines
+Error (line 54): line has 82 characters
 Norme: ./ft_get_rooms.c
-Error (line 15): function ft_get_rooms has 28 lines
-Error (line 34): line has 83 characters
-Norme: ./get_next_line.h
-Norme: ./lem_in.h
-Error: global scope bad aligned
-Error (line 46): line has 91 characters
-Error (line 56): line has 86 characters
-Norme: ./libftprintf.h
-Norme: ./libft.h
+Error (line 31): function ft_get_rooms has 26 lines
+Norme: ./ft_path_is_free.c
+Error (line 31): must begin only by tabulations
+Norme: ./ft_paths_coeff.c
+Norme: ./main.c
+Error (line 15, col 0): main has 6 variables
 Norme: ./get_next_line.c
-Error (line 88): line has 94 characters

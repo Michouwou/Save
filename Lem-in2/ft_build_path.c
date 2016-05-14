@@ -6,15 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/12 16:25:34 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/13 16:50:25 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-/**
- * Penser a faire la fonction pour retirer la room du actual path
- **/
 
 static int	room_does_not_appear(t_room *room, t_path *actual_path)
 {
@@ -34,9 +30,10 @@ static int	room_does_not_appear(t_room *room, t_path *actual_path)
 static int	no_option(t_room **rooms, t_path *actual_path)
 {
 	int i;
-	
+
 	i = 0;
-	while (rooms && rooms[i] && rooms[i]->name && !room_does_not_appear(rooms[i], actual_path))
+	while (rooms && rooms[i] && rooms[i]->name &&
+			!room_does_not_appear(rooms[i], actual_path))
 		i++;
 	if (rooms && room_does_not_appear(rooms[i], actual_path))
 		return (0);

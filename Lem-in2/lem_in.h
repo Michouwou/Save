@@ -6,13 +6,14 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:03:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/12 15:17:55 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/13 12:06:46 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _LEM_IN_H
 # define _LEM_IN_H
 # include "libft.h"
+# include "libftprintf.h"
 # include "get_next_line.h"
 # include <stdlib.h>
 #include <stdio.h>

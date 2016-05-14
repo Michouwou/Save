@@ -1,0 +1,11 @@
+300
+##start
+debut 3 4
+salle1 7 3
+salle3 4 5
+salle2 0 7
+##end
+fin
+debut-salle1
+salle2-salle3
+salle2-fin

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 15:45:05 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/12 16:36:05 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/13 12:07:49 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	ft_link_room(t_room *room_one, t_room *room_two)
 	while (++tmp < j)
 		room_two->links[tmp] = tmp_link_two[tmp];
 	room_two->links[j] = room_one;
-	printf("On vient de lier %s et %s\n", room_one->links[i]->name, room_two->links[j]->name);
 	room_two->links[j + 1] = ft_create_room(NULL, 0, 0);
 	free(tmp_link_one);
 	free(tmp_link_two);

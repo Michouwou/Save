@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:27:19 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/12 16:09:18 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/13 16:10:58 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char		**ft_read_file(int fd)
 	result = ft_strnew(1);
 	while (get_next_line(fd, &tmp) > 0)
 	{
-		tmp = ft_strjoin(tmp, "\n");
+		result = ft_strjoin(result, "\n");
 		result = ft_strjoin(result, tmp);
 	}
 	return_string_tab = ft_strsplit(result, '\n');

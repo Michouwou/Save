@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:24:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/12 16:36:36 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/13 12:03:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int		ft_iterate(t_ant **ants, t_path **paths)
 	while (ants[i] != NULL && ants[i]->path != NULL)
 	{
 		if (!ants[i]->actual && ants[i]->path)
-		{
-			printf("\nLa fourmi %d n'a pas encore de chemin, on lui en donne un\n", i);
 			ants[i]->actual = ants[i]->path->room;
-		}
 		else if (ants[i]->actual && !ants[i]->actual->is_end)
 		{
 			if (j)
