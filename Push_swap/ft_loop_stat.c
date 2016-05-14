@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 13:24:59 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/12 10:26:31 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/14 12:12:35 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void		ft_loop_stat(t_stack *s_one, t_stack *s_two, char *options)
 		init_vals(&s_one, &s_two, &arg);
 		s_one = ft_create_stack(ft_strsplit(arg, ' '), 1);
 		if (!options[0] && s_one != (void*)-1)
-			ft_check_doubles(s_one, 1);
+			ft_check_doubles(&s_one, 1);
 		if ((size + 1) % 10 == 0)
 			increase_tab(&sum, size + 1);
 		sum[size] = s_one == _V ? 0 : ft_core(s_one, s_two, options);

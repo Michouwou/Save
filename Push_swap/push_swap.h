@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/07 13:37:10 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/14 10:20:24 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/14 11:36:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char			*ft_strjoin_free(char *stra, char *strb);
 int				ft_special_case(t_stack *stack_one, char *options);
 void			ft_error(int error_code, char *str);
 void			ft_push_back(t_stack **first, t_stack *to_add);
-void			ft_check_doubles(t_stack *first, int is_stat);
+void			ft_check_doubles(t_stack **first, int is_stat);
 void			ft_loop_stat(t_stack *stack_one, t_stack *stack_two,
 					char *options);
 void			ft_print_stack(t_stack *stack_one, t_stack *stack_two);

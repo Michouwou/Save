@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 10:32:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/12 10:17:09 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/14 12:12:33 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,24 @@ int			ft_core(t_stack *stack_one, t_stack *stack_two, char *options)
 	int		tmp[2];
 	char	*sols;
 
-	if ((tmp[0] = check_possibilities(stack_one, options, &sols)) != -1)
-		return (tmp[0]);
-	while (stack_one->next->next)
+	if (stack_one)
 	{
-		tmp[1] = ft_get_min(stack_one);
-		tmp[0] = ft_direction(stack_one, tmp[1]) + (options[1] ? 10 : 0);
-		ft_move(&stack_one, stack_two, tmp, &sols);
-		ft_p(&stack_two, &stack_one, options[1] ? 1 : 0);
-		if (options[1])
-			ft_print_stack(stack_one, stack_two);
-		sols = ft_strjoin_free(sols, " pb");
+		if ((tmp[0] = check_possibilities(stack_one, options, &sols)) != -1)
+			return (tmp[0]);
+		while (stack_one->next->next)
+		{
+			tmp[1] = ft_get_min(stack_one);
+			tmp[0] = ft_direction(stack_one, tmp[1]) + (options[1] ? 10 : 0);
+			ft_move(&stack_one, stack_two, tmp, &sols);
+			ft_p(&stack_two, &stack_one, options[1] ? 1 : 0);
+			if (options[1])
+				ft_print_stack(stack_one, stack_two);
+			sols = ft_strjoin_free(sols, " pb");
+		}
+		if (stack_one->number > stack_one->next->number)
+			last(&stack_one, stack_two, options, &sols);
+		ft_repush(&stack_two, &stack_one, &sols, options[1]);
+		return (ft_display(sols, options, stack_one));
 	}
-	if (stack_one->number > stack_one->next->number)
-		last(&stack_one, stack_two, options, &sols);
-	ft_repush(&stack_two, &stack_one, &sols, options[1]);
-	return (ft_display(sols, options, stack_one));
+	return (0);
 }

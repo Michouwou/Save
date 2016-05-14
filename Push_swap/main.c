@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 13:24:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/12 10:22:06 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/14 11:36:24 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int			main(int ac, char **av)
 	else
 	{
 		if (!options[0])
-			ft_check_doubles(stack_one, is_stat);
+			ft_check_doubles(&stack_one, is_stat);
 		ft_core(stack_one, stack_two, options);
 		write(1, "\n", 1);
 	}
