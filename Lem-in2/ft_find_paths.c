@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:19:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/14 17:19:01 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/15 15:51:19 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_path	**ft_find_paths(t_room **rooms)
 	int		i;
 
 	i = 0;
+	start = NULL;
 	while (rooms[i] && rooms[i]->name)
 	{
 		if (rooms[i]->is_start)
@@ -28,7 +29,7 @@ t_path	**ft_find_paths(t_room **rooms)
 		}
 		i++;
 	}
-	if (!rooms[i])
+	if (!rooms[i] || !start)
 		ft_block("You didn't build ANY starting room? You dumb!!!\n");
 	i = 0;
 	if (!start->links)
