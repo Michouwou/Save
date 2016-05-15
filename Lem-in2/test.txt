@@ -1,18 +1,13 @@
-30
+300
+ret 45 67
+rat 12 23
+rut 90 87
 ##start
-debut 8 4
-premiere 2 3
-unesalle 9 0
-uneautresalle 1 2
-untruc 4 6
-unautretruc 3 2
-unederniere 6 2
+sdcjkh& 98 76
 ##end
-fin 1 6
-debut-premiere
-debut-unesalle
-premiere-uneautresalle
-premiere-fin
-unesalle-fin
-uneautresalle-untruc
-untruc-fin
+00)) 31 24
+ret-rat
+rat-ret
+rut-ret
+00))-rut
+sdcjkh&-rat

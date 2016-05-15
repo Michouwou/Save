@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:27:19 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/13 16:10:58 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/15 09:50:34 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char		**ft_read_file(int fd)
 		result = ft_strjoin(result, "\n");
 		result = ft_strjoin(result, tmp);
 	}
+	if (!result[0])
+		return (NULL);
 	return_string_tab = ft_strsplit(result, '\n');
 	return (return_string_tab);
 }

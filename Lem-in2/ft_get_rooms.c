@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:15:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/14 16:48:38 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/15 12:20:20 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void		ft_get_rooms(char ***args, int *number_of_rooms, t_room ***result)
 	char	**tmp;
 	int		flags[2];
 
+
 	if ((i = count_rooms(*args)) == 0)
 		return ;
 	*result = (t_room**)malloc(sizeof(t_room*) * (i + 1));
@@ -47,7 +48,7 @@ void		ft_get_rooms(char ***args, int *number_of_rooms, t_room ***result)
 			flags[!ft_strcmp(tmp[0], "##start") ? 0 : 1] = 1;
 		else if (!ft_strchr(tmp[0], '#'))
 		{
-			(*result)[*number_of_rooms] = ft_create_room(tmp[0], flags[1],
+			(*result)[*number_of_rooms] = ft_create_room(tmp, flags[1],
 					flags[0]);
 			flags[0] = 0;
 			flags[1] = 0;

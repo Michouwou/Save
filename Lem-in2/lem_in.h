@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:03:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/13 12:06:46 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/15 10:54:44 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct		s_room
 	int				is_end;
 	int				is_start;
 	int				is_full;
+	int				x;
+	int				y;
 }					t_room;
 
 typedef struct		s_path
@@ -43,7 +45,7 @@ typedef struct		s_path
 }					t_path;
 
 t_ant				*ft_create_ant(int number);
-t_room				*ft_create_room(char *name, int is_end, int is_start);
+t_room				*ft_create_room(char **tab, int is_end, int is_start);
 t_path				*ft_create_path(t_room *room);
 t_path				*ft_build_path(t_room *room, t_path *actual_path, t_path **all_paths);
 void				ft_link_room(t_room *rooma, t_room *roomb);
