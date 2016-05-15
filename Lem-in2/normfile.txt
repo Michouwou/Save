@@ -3,29 +3,40 @@ Norme: ./ft_block.c
 Norme: ./ft_path_len.c
 Norme: ./ft_create_path.c
 Norme: ./ft_free_everything.c
+Error (line 15): function ft_free_everything has 26 lines
 Norme: ./ft_get_ants.c
 Norme: ./ft_print_move.c
 Norme: ./ft_link_room.c
 Error (line 15): function ft_link_room has 28 lines
 Norme: ./ft_create_room.c
+Error (line 45): line has 85 characters
 Norme: ./ft_min_path.c
 Norme: ./ft_links_rooms.c
-Error (line 15): function ft_links_rooms has 28 lines
-Norme: ./ft_core.c
+Error (line 15): C++ comment
+Error (line 16): C++ comment
+Error (line 17): C++ comment
+Error (line 19): function ft_links_rooms has 42 lines
+Error (line 60): line has 116 characters
+Norme: ./ft_get_rooms.c
+Error (line 31): function ft_get_rooms has 29 lines
+Error (line 31): declarations must be followed by one empty line in ft_get_rooms
+Error (line 37): multiple empty lines
+Error (line 37): Empty line
 Norme: ./ft_read_file.c
-Norme: ./ft_iterate.c
-Error (line 15): function ft_iterate has 32 lines
-Norme: ./ft_find_paths.c
-Error (line 15): function ft_find_paths has 31 lines
-Error (line 27, col 3): missing space after break
+Norme: ./ft_core.c
 Norme: ./ft_build_path.c
 Error (line 54): function ft_build_path has 43 lines
 Error (line 54): line has 82 characters
-Norme: ./ft_get_rooms.c
-Error (line 31): function ft_get_rooms has 26 lines
 Norme: ./ft_path_is_free.c
-Error (line 31): must begin only by tabulations
+Norme: ./ft_find_paths.c
+Error (line 15): function ft_find_paths has 35 lines
 Norme: ./ft_paths_coeff.c
+Norme: ./ft_iterate.c
+Error (line 15): function ft_iterate has 32 lines
 Norme: ./main.c
+Error (line 15): function main has 28 lines
 Error (line 15, col 0): main has 6 variables
+Error (line 29): line has 83 characters
+Error (line 36): line has 84 characters
+Error (line 41): line has 95 characters
 Norme: ./get_next_line.c

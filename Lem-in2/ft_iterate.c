@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:24:52 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/13 12:03:45 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/15 13:36:58 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_iterate(t_ant **ants, t_path **paths)
 		else if (ants[i]->actual && !ants[i]->actual->is_end)
 		{
 			if (j)
-				printf(" ");
+				ft_printf(" ");
 			ants[i]->actual = ants[i]->path->next->room;
 			ants[i]->path = ants[i]->path->next;
 			ft_print_move(ants[i]);
@@ -34,7 +34,8 @@ int		ft_iterate(t_ant **ants, t_path **paths)
 		}
 		i++;
 	}
-	printf("\n");
+	if (j)
+		ft_printf("\n");
 	if ((ants[i] == NULL && ants[i - 1]->actual->is_end) || paths[0] == NULL)
 		return (0);
 	j = 0;

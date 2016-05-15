@@ -16,7 +16,43 @@
 // et cursors[2] pour savoir si on a au moins un link, cursors[3] au cas
 // ou aucun link ne corresponde a une room
 
-void	ft_links_rooms(t_room **rooms, char **args, int len)
+static char	**init(int curs[], t_room **tmp_one, t_room **tmp_two, char **args)
+{
+	curs[3] = 1;
+	*tmp_one = NULL;
+	*tmp_two = NULL;
+	return (ft_strsplit(args[curs[0]], '-'));
+}
+
+static void	get_rooms(t_room **rooms, t_room **one, t_room **two, char **link)
+{
+	int		i;
+
+	i = 0;
+	while (rooms[i]->name && !(*one && *two))
+	{
+		if (!ft_strcmp(rooms[i]->name, link[0]))
+			*one = rooms[i];
+		if (!ft_strcmp(rooms[i]->name, link[1]))
+			*two = rooms[i];
+		i++;
+	}
+}
+
+static int	final_cond(t_room *one, t_room *two, int cursors[], char **links)
+{
+	free(links[0]);
+	free(links[1]);
+	if (one && two)
+	{
+		cursors[2] = 1;
+		ft_link_room(one, two);
+		return (1);
+	}
+	return (0);
+}
+
+void		ft_links_rooms(t_room **rooms, char **args, int len)
 {
 	t_room	*tmp_room_one;
 	t_room	*tmp_room_two;
@@ -31,28 +67,10 @@ void	ft_links_rooms(t_room **rooms, char **args, int len)
 	{
 		if (!ft_strchr(args[cursors[0]], '#'))
 		{
-			cursors[3] = 1;
-			cursors[1] = 0;
-			tmp_room_one = NULL;
-			tmp_room_two = NULL;
-			tmp_link = ft_strsplit(args[cursors[0]], '-');
-			while (rooms[cursors[1]]->name && !(tmp_room_one && tmp_room_two))
-			{
-				if (!ft_strcmp(rooms[cursors[1]]->name, tmp_link[0]))
-					tmp_room_one = rooms[cursors[1]];
-				if (!ft_strcmp(rooms[cursors[1]]->name, tmp_link[1]))
-					tmp_room_two = rooms[cursors[1]];
-				cursors[1]++;
-			}
-			if (tmp_room_one && tmp_room_two)
-			{
-				cursors[2] = 1;
-				ft_link_room(tmp_room_one, tmp_room_two);
-			}
-			else
+			tmp_link = init(cursors, &tmp_room_one, &tmp_room_two, args);
+			get_rooms(rooms, &tmp_room_one, &tmp_room_two, tmp_link);
+			if (!final_cond(tmp_room_one, tmp_room_two, cursors, tmp_link))
 				return ;
-			free(tmp_link[0]);
-			free(tmp_link[1]);
 		}
 		cursors[0]++;
 	}

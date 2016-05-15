@@ -42,7 +42,8 @@ t_room		*ft_create_room(char **tab, int is_end, int is_start)
 	new->is_full = 0;
 	new->x = tab ? ft_atoi(tab[1]) : 0;
 	new->y = tab ? ft_atoi(tab[2]) : 0;
-	if (tab && ((!new->x && !is_number(tab[1])) || (!new->y && !is_number(tab[2]))))
+	if (tab && ((!new->x && !is_number(tab[1])) ||
+		(!new->y && !is_number(tab[2]))))
 		ft_block("X and Y must be numbers since they're coordinates...");
 	return (new);
 }
