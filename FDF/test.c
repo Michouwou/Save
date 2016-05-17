@@ -6,22 +6,29 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 17:49:27 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/16 18:00:01 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/17 16:04:14 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
+#include <math.h>
 
 int main()
 {
 	void	*ptr;
 	void	*window;
+	int		tab[7][7] = {{0, 0, 5, 5, 5, 0, 0},
+						{0, 5, 5, 5, 0, 0, 0},
+						{5, 5, 5, 0, 0, 0, 5},
+						{5, 5, 0, 0, 0, 5, 5},
+						{5, 0, 0, 0, 5, 5, 5},
+						{0, 0, 0, 5, 5, 5, 5},
+						{0, 0, 5, 5, 5, 5, 0}};
 
+	int k = 0;
+	int l = 0;
 	ptr = mlx_init();
-	window = mlx_new_window(ptr, 500, 500, "Hellooooo");
-	for (int i = 0 ; i < 50 ; i++)
-		for (int j = 0 ; j < 50 ; j++)
-			mlx_pixel_put(ptr, window, j, i, 0x0FFFFFF);
+	window = mlx_new_window(ptr, 1000, 1000, "Hellooooo");
 	mlx_loop(ptr);
 	return (0);
 }
