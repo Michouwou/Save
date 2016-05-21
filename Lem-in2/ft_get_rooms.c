@@ -28,12 +28,20 @@ static int	count_rooms(char **args)
 	return (num);
 }
 
+static void	new_room(char **tmp, t_room ***result, int *number, int flags[])
+{
+	(*result)[*number] = ft_create_room(tmp, flags[1],
+			flags[0]);
+	flags[0] = 0;
+	flags[1] = 0;
+	*number += 1;
+}
+
 void		ft_get_rooms(char ***args, int *number_of_rooms, t_room ***result)
 {
 	int		i;
 	char	**tmp;
 	int		flags[2];
-
 
 	if ((i = count_rooms(*args)) == 0)
 		return ;
@@ -47,13 +55,7 @@ void		ft_get_rooms(char ***args, int *number_of_rooms, t_room ***result)
 		if (!ft_strcmp(tmp[0], "##start") || !ft_strcmp(tmp[0], "##end"))
 			flags[!ft_strcmp(tmp[0], "##start") ? 0 : 1] = 1;
 		else if (!ft_strchr(tmp[0], '#'))
-		{
-			(*result)[*number_of_rooms] = ft_create_room(tmp, flags[1],
-					flags[0]);
-			flags[0] = 0;
-			flags[1] = 0;
-			*number_of_rooms += 1;
-		}
+			new_room(tmp, result, number_of_rooms, flags);
 		free(tmp);
 		i++;
 	}

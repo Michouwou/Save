@@ -12,7 +12,23 @@
 
 #include "lem_in.h"
 
-int		ft_iterate(t_ant **ants, t_path **paths)
+static void	loop(t_ant **ants, t_path **paths, int *i, int *j)
+{
+	if (!ants[*i]->actual && ants[*i]->path)
+		ants[*i]->actual = ants[*i]->path->room;
+	else if (ants[*i]->actual && !ants[*i]->actual->is_end)
+	{
+		if (j)
+			ft_printf(" ");
+		ants[*i]->actual = ants[*i]->path->next->room;
+		ants[*i]->path = ants[*i]->path->next;
+		ft_print_move(ants[*i]);
+		(*j)++;
+	}
+	(*i)++;
+}
+
+int			ft_iterate(t_ant **ants, t_path **paths)
 {
 	int	i;
 	int	j;
@@ -20,20 +36,7 @@ int		ft_iterate(t_ant **ants, t_path **paths)
 	i = 0;
 	j = 0;
 	while (ants[i] != NULL && ants[i]->path != NULL)
-	{
-		if (!ants[i]->actual && ants[i]->path)
-			ants[i]->actual = ants[i]->path->room;
-		else if (ants[i]->actual && !ants[i]->actual->is_end)
-		{
-			if (j)
-				ft_printf(" ");
-			ants[i]->actual = ants[i]->path->next->room;
-			ants[i]->path = ants[i]->path->next;
-			ft_print_move(ants[i]);
-			j++;
-		}
-		i++;
-	}
+		loop(ants, paths, &i, &j);
 	if (j)
 		ft_printf("\n");
 	if ((ants[i] == NULL && ants[i - 1]->actual->is_end) || paths[0] == NULL)

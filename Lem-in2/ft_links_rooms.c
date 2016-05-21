@@ -6,15 +6,11 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:28:37 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/15 12:02:28 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/16 16:14:52 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-// cursors[0] pour la grande boucle, cursors[1] pour parcourir les rooms
-// et cursors[2] pour savoir si on a au moins un link, cursors[3] au cas
-// ou aucun link ne corresponde a une room
 
 static char	**init(int curs[], t_room **tmp_one, t_room **tmp_two, char **args)
 {
@@ -75,7 +71,7 @@ void		ft_links_rooms(t_room **rooms, char **args, int len)
 		cursors[0]++;
 	}
 	if (cursors[3] && !cursors[2])
-		ft_block("None of yours links corresponded to any room you gave, think you messed up with your ant-hills");
+		ft_block("None of yours links corresponded to any room you gave!");
 	if (!cursors[2])
 		ft_block("No links, ants can't fly!\n");
 }

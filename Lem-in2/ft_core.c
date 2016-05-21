@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:19:07 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/15 12:21:00 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/16 14:25:28 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_core(t_room **rooms, t_ant **ants, int num_ants)
 
 	paths = ft_find_paths(rooms);
 	if (!paths[0])
-		ft_block("There is apparently no way to cross the ant-hill...\n");
+		ft_block("There is apparently no way to cross the ant-hill...");
 	ft_paths_coeff(paths, num_ants);
 	status = 1;
 	while (status)

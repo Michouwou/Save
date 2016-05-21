@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:25:15 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/15 12:20:33 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/21 11:11:18 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,4 @@
 void	ft_print_move(t_ant *ant)
 {
 	ft_printf("L%d-%s", ant->number, ant->actual->name);
-	fflush(stdout);
 }

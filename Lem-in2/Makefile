@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/14 11:15:47 by mlevieux          #+#    #+#              #
-#    Updated: 2016/05/14 16:19:28 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/05/21 11:20:30 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,23 +24,20 @@ all : $(NAME)
 
 $(NAME) :
 	echo "Compilation...\n"
-	make re -C libft/
-	make re -C libftprintf/
-	gcc -c $(SRC) -I includes/
-	gcc -Wall -Werror -Wextra $(OBJ) -L libft/ -lft -L libftprintf/ -lftprintf -o $(NAME)
+	make re -C Libft/
+	gcc -c $(SRC) -I includes/ -I.
+	gcc -Wall -Werror -Wextra $(OBJ) -L Libft/ -lft -o $(NAME)
 
 .PHONY: clean fclean norme
 
 clean :
 	echo "Cleaning...\n"
+	make clean -C Libft/
 	rm -rf $(OBJ)
 
 fclean : clean
 	echo "Cleaning everything...\n"
+	make fclean -C Libft/
 	rm -rf $(NAME)
 
 re : fclean all
-norme : $(SRC)
-	touch normfile.txt
-	norminette $(SRC) > normfile.txt
-	echo "File 'normfile.txt' created.\n"

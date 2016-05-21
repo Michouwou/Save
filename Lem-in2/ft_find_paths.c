@@ -6,13 +6,31 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:19:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/15 15:51:19 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/16 14:24:05 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_path	**ft_find_paths(t_room **rooms)
+static t_path	**build_result(t_path **result, t_room *start, int i)
+{
+	result = (t_path**)malloc(sizeof(t_path*) * i + 1);
+	while (i >= 0)
+	{
+		result[i] = NULL;
+		i--;
+	}
+	result[0] = ft_build_path(start, result[0], result);
+	i = 0;
+	while (result[i] != NULL)
+	{
+		i++;
+		result[i] = ft_build_path(start, result[i], result);
+	}
+	return (result);
+}
+
+t_path			**ft_find_paths(t_room **rooms)
 {
 	t_path	**result;
 	t_room	*start;
@@ -30,24 +48,11 @@ t_path	**ft_find_paths(t_room **rooms)
 		i++;
 	}
 	if (!rooms[i] || !start)
-		ft_block("You didn't build ANY starting room? You dumb!!!\n");
+		ft_block("You didn't build ANY starting room? You dumb!!!");
 	i = 0;
 	if (!start->links)
-		ft_block("Starting room is a dead-end, shit!\n");
+		ft_block("Starting room is a dead-end, shit!");
 	while (start->links[i] && start->links[i]->name)
 		i++;
-	result = (t_path**)malloc(sizeof(t_path*) * i + 1);
-	while (i >= 0)
-	{
-		result[i] = NULL;
-		i--;
-	}
-	result[0] = ft_build_path(start, result[0], result);
-	i = 0;
-	while (result[i] != NULL)
-	{
-		i++;
-		result[i] = ft_build_path(start, result[i], result);
-	}
-	return (result);
+	return (build_result(result, start, i));
 }
