@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 21:11:57 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/09 09:37:52 by mlevieux         ###   ########.fr       */
+/*   Updated: 2015/12/15 12:27:35 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ double	ft_nroot(double nb, int root)
 {
 	double x;
 	double y;
+	double e;
 
 	if (nb == 0)
 		return (0);

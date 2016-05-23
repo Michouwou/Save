@@ -6,31 +6,38 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/13 10:44:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2015/12/16 11:51:45 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
-	int		j;
 	char	*result;
 
-	i = -1;
-	j = -1;
-	if (!s1 && !s2)
-		return (NULL);
-	result = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (!result)
-		return (NULL);
-	if (s1)
-		result = ft_strcat(result, s1);
-	if (s2)
-		result = ft_strcat(result, s2);
-	result[ft_strlen(result) + 1] = 0;
+	if (ft_strlen(s1) == 0 || ft_strlen(s2) == 0)
+	{
+		result = (char*)malloc(1);
+		return (result = "");
+	}
+	result = (char*)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) - 1));
+	if (result)
+	{
+		i = -1;
+		while (++i < (int)ft_strlen(s1) && s1[i] != '\0')
+			result[i] = s1[i];
+		while ((i - ft_strlen(s1)) < ft_strlen(s2)
+				&& s2[ft_strlen(s2) - 1] != '\0')
+		{
+			result[i] = s2[i - ft_strlen(s1)];
+			i++;
+		}
+		result[i] = '\0';
+	}
+	else
+		result = (NULL);
 	return (result);
 }

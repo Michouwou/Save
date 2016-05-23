@@ -1,0 +1,22 @@
+400
+##start
+debut 0 0
+un 1 1
+deux 2 2
+trois 3 3
+quatre 5 5
+nulle 1 0
+pourrie 3 4
+##end
+fin 9 9
+debut-un
+debut-deux
+un-quatre
+un-pourrie
+deux-nulle
+deux-quatre
+deux-trois
+trois-fin
+pourrie-nulle
+nulle-fin
+deux-fin
