@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:27:19 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/25 14:01:41 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/25 16:48:19 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ char		*ft_strjoin_free(char *str1, char *str2, int code)
 	while (cursor[0] < tmp[0])
 	{
 		result[cursor[0]] = str1[cursor[0]];
-		cursor[0]++;
+		++cursor[0];
 	}
 	while (cursor[1] < tmp[1])
 	{
 		result[cursor[0] + cursor[1]] = str2[cursor[1]];
-		cursor[1]++;
+		++cursor[1];
 	}
 	result[cursor[0] + cursor[1]] = 0;
 	free(code == 1 || code == 3 ? str1 : NULL);
