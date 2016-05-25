@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/25 15:58:33 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/25 16:16:42 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,10 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all)
 	}
 	tmp = ft_create_path(room);
 	tmp->next = result;
-	result = result ? tmp : NULL;
+	if (result)
+		result = tmp;
+	else
+		free(tmp);
 	erase_last_one(actual_path);
 	return (result);
 }
