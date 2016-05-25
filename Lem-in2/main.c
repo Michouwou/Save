@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:12:38 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/23 10:38:17 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/25 11:27:00 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ int			main(int ac, char **av)
 		ft_block("There was a problem reading the file...");
 	else if (!args)
 		ft_block("LMAO, the file was empty!");
+	while (1);
 	return (0);
 }
