@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:04:13 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/16 16:01:52 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/25 14:18:38 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants)
 		free(rooms[i]->links);
 		free(rooms[i++]);
 	}
+	free(rooms[i]);
 	free(rooms);
 	care_paths(paths);
 }

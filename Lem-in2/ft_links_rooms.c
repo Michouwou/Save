@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:28:37 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/16 16:14:52 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/25 15:29:52 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 static char	**init(int curs[], t_room **tmp_one, t_room **tmp_two, char **args)
 {
+	char **res;
+
 	curs[3] = 1;
 	*tmp_one = NULL;
 	*tmp_two = NULL;
-	return (ft_strsplit(args[curs[0]], '-'));
+	res = ft_strsplit(args[curs[0]], '-');
+	return (res);
 }
 
 static void	get_rooms(t_room **rooms, t_room **one, t_room **two, char **link)
@@ -39,6 +42,7 @@ static int	final_cond(t_room *one, t_room *two, int cursors[], char **links)
 {
 	free(links[0]);
 	free(links[1]);
+	free(links);
 	if (one && two)
 	{
 		cursors[2] = 1;

@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:03:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/24 14:39:03 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/25 15:57:57 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ t_path				*ft_min_path(t_path *path_one, t_path *path_two);
 void				ft_paths_coeff(t_path **paths, int number_of_ants);
 int					ft_is_number(char *str);
 void				ft_check_coordinates(t_room **rooms, int number_of_rooms);
+void				ft_free_path(t_path *path);
 
 #endif

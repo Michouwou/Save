@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:15:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/25 11:40:11 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/25 15:24:50 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ void		ft_get_rooms(char ***args, int *number_of_rooms, t_room ***result)
 			flags[!ft_strcmp(tmp[0], "##start") ? 0 : 1] = 1;
 		else if (!ft_strchr(tmp[0], '#'))
 			new_room(tmp, result, number_of_rooms, flags);
-		if (tmp && tmp[0] && tmp[1] && tmp[2])
-		{
-			free(tmp[0]);
-			free(tmp[1]);
+		if (tmp[0] && tmp[1] && tmp[2])
 			free(tmp[2]);
-		}
+		if (tmp[0] && tmp[1])
+			free(tmp[1]);
+		if (tmp[0])
+			free(tmp[0]);
 		free(tmp);
 		i++;
 	}

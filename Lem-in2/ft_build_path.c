@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 14:28:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/16 16:10:15 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/25 15:58:33 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	erase_last_one(t_path *actual_path)
 	tmp = actual_path;
 	while (tmp->next && tmp->next->next)
 		tmp = tmp->next;
-	free(tmp->next ? tmp->next : tmp);
+	free(tmp->next);
 	tmp->next = NULL;
 }
 
@@ -90,6 +90,8 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all)
 			tmp = ft_build_path(room->links[i], actual_path, all);
 		if (tmp && ft_path_is_free(tmp, all))
 			result = ft_min_path(result, tmp);
+		else
+			ft_free_path(tmp);
 		tmp = NULL;
 	}
 	tmp = ft_create_path(room);
