@@ -1,0 +1,28 @@
+Process:         lem-in [7079]
+Path:            /nfs/2015/m/mlevieux/Save/Lem-in2/lem-in
+Load Address:    0x108a3a000
+Identifier:      lem-in
+Version:         ???
+Code Type:       X86-64
+Parent Process:  zsh [3353]
+
+Date/Time:       2016-05-26 16:51:48.262 +0200
+Launch Time:     2016-05-26 16:51:13.811 +0200
+OS Version:      Mac OS X 10.11.5 (15F34)
+Report Version:  7
+Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
+Analysis Tool Version:  Xcode 7.3 (7D175)
+----
+
+leaks Report Version:  2.0
+Process 7079: 184 nodes malloced for 19 KB
+Process 7079: 3 leaks for 96 total leaked bytes.
+Leak: 0x7fb2d07006d0  size=32  zone: DefaultMallocZone_0x108a47000
+	0xd07004a0 0x00007fb2 0x00000000 0x00000000 	..p.............
+	0x00000000 0x00000000 0x00000000 0x00020000 	................
+Leak: 0x7fb2d0700820  size=32  zone: DefaultMallocZone_0x108a47000
+	0xd07004a0 0x00007fb2 0x00000000 0x00000000 	..p.............
+	0x00000000 0x00000000 0x00000000 0x00020000 	................
+Leak: 0x7fb2d0700860  size=32  zone: DefaultMallocZone_0x108a47000
+	0xd07004a0 0x00007fb2 0x00000000 0x00000000 	..p.............
+	0x00000000 0x00000000 0x00000000 0x00020000 	................
