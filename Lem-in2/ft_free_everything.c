@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:04:13 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/25 14:18:38 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/26 11:44:29 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static void	care_paths(t_path **paths)
 void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants)
 {
 	int		i;
+	int		j;
 
 	i = 0;
 	while (ants[i])
@@ -43,6 +44,10 @@ void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants)
 	while (rooms[i]->name)
 	{
 		free(rooms[i]->name);
+		j = 0;
+		while (rooms[i]->links[j]->name)
+			j++;
+		free(rooms[i]->links[j]);
 		free(rooms[i]->links);
 		free(rooms[i++]);
 	}

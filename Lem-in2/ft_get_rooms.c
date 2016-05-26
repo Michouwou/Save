@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 12:15:35 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/25 16:59:13 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/26 10:04:04 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void		ft_get_rooms(char ***args, int *number_of_rooms, t_room ***result)
 		free(tmp);
 		i++;
 	}
+	(*args) += i;;
 	(*result)[*number_of_rooms] = ft_create_room(NULL, 0, 0);
 	ft_check_coordinates(*result, *number_of_rooms);
 }

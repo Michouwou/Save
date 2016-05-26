@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:25:36 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/25 16:58:53 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/05/26 10:03:27 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ void	ft_get_ants(char ***args, int *number_of_ants, t_ant ***ants)
 		(*ants)[tmp] = ft_create_ant(tmp + 1);
 		tmp++;
 	}
+	(*args)++;
 }
