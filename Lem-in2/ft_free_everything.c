@@ -43,11 +43,16 @@ void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants)
 	i = 0;
 	while (rooms[i]->name)
 	{
-		free(rooms[i]->name);
 		j = 0;
-		while (rooms[i]->links[j]->name)
+		while (rooms[i]->links && rooms[i]->links[j] && rooms[i]->links[j]->name)
 			j++;
 		free(rooms[i]->links[j]);
+		i++;
+	}
+	i = 0;
+	while (rooms[i]->name)
+	{
+		free(rooms[i]->name);
 		free(rooms[i]->links);
 		free(rooms[i++]);
 	}
