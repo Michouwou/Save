@@ -27,5 +27,6 @@ void	ft_get_ants(char ***args, int *number_of_ants, t_ant ***ants)
 		(*ants)[tmp] = ft_create_ant(tmp + 1);
 		tmp++;
 	}
+	(*ants)[tmp] = NULL;
 	(*args)++;
 }

@@ -18,7 +18,7 @@ static void	loop(t_ant **ants, t_path **paths, int *i, int *j)
 		ants[*i]->actual = ants[*i]->path->room;
 	else if (ants[*i]->actual && !ants[*i]->actual->is_end)
 	{
-		if (j)
+		if (*j)
 			ft_printf(" ");
 		ants[*i]->actual = ants[*i]->path->next->room;
 		ants[*i]->path = ants[*i]->path->next;
@@ -35,7 +35,7 @@ int			ft_iterate(t_ant **ants, t_path **paths)
 
 	i = 0;
 	j = 0;
-	while (ants[i] != NULL && ants[i]->path != NULL)
+	while (ants[i] && ants[i]->path != NULL)
 		loop(ants, paths, &i, &j);
 	if (j)
 		ft_printf("\n");

@@ -88,7 +88,7 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all)
 	{
 		if (room_does_not_appear(room->links[i], actual_path))
 			tmp = ft_build_path(room->links[i], actual_path, all);
-		if ((tmp && ft_path_is_free(tmp, all)) && !(room->is_start && tmp->room->is_end))
+		if ((tmp && ft_path_is_free(tmp, all)) && !(room->is_start && tmp->room->is_end && all[0]))
 			result = ft_min_path(result, tmp);
 		else
 			ft_free_path(tmp);
