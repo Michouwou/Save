@@ -31,24 +31,10 @@ static void	care_paths(t_path **paths)
 	free(paths);
 }
 
-void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants)
+static void	care_rooms(t_room **rooms)
 {
-	int		i;
-	int		j;
+	int	i;
 
-	i = 0;
-	while (ants[i])
-		free(ants[i++]);
-	free(ants);
-	i = 0;
-	while (rooms[i]->name)
-	{
-		j = 0;
-		while (rooms[i]->links && rooms[i]->links[j] && rooms[i]->links[j]->name)
-			j++;
-		free(rooms[i]->links[j]);
-		i++;
-	}
 	i = 0;
 	while (rooms[i]->name)
 	{
@@ -56,7 +42,28 @@ void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants)
 		free(rooms[i]->links);
 		free(rooms[i++]);
 	}
+}
+
+void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	care_paths(paths);
+	while (ants[i])
+		free(ants[i++]);
+	free(ants);
+	i = -1;
+	while (rooms[++i]->name)
+	{
+		j = 0;
+		while (rooms[i]->links && rooms[i]->links[j] &&
+			rooms[i]->links[j]->name)
+			j++;
+		free(rooms[i]->links ? rooms[i]->links[j] : NULL);
+	}
+	care_rooms(rooms);
 	free(rooms[i]);
 	free(rooms);
-	care_paths(paths);
 }

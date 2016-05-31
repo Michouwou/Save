@@ -16,7 +16,7 @@ static t_path	**build_result(t_path **result, t_room *start, int i)
 {
 	t_path	*tmp;
 
-	result = (t_path**)malloc(sizeof(t_path*) * i + 1);
+	result = (t_path**)malloc(sizeof(t_path*) * (i + 1));
 	while (i >= 0)
 	{
 		result[i] = NULL;

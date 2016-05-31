@@ -23,11 +23,9 @@ void	ft_check_coordinates(t_room **rooms, int number_of_rooms)
 		j = 1;
 		while (i + j < number_of_rooms)
 		{
-			if (rooms[i]->x == rooms[i + j]->x && rooms[i]->y == rooms[i + j]->y)
-			{
-				ft_printf("Room : %s et room : %s ont les memes coordonees\n", rooms[i]->name, rooms[j]->name);
+			if (rooms[i]->x == rooms[i + j]->x &&
+				rooms[i]->y == rooms[i + j]->y)
 				ft_block("You cannot have two rooms at the same place.");
-			}
 			j++;
 		}
 		i++;

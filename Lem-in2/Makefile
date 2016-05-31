@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/14 11:15:47 by mlevieux          #+#    #+#              #
-#    Updated: 2016/05/24 14:38:31 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/05/30 17:30:00 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all : $(NAME)
 
 $(NAME) :
 	echo "Compilation...\n"
-	make re -C Libft/
+	make -C Libft/
 	gcc -c $(SRC) -I includes/ -I.
 	gcc -Wall -Werror -Wextra $(OBJ) -L Libft/ -lft -o $(NAME)
 

@@ -45,10 +45,11 @@ int			main(int ac, char **av)
 		ft_block("There was a problem reading the file...");
 	else if (!args)
 		ft_block("LMAO, the file was empty!");
+	if (fd != -1)
+		close(fd);
 	fd = -1;
 	while (args[++fd])
 		free(args[fd]);
 	free(args);
-	close(fd);
 	return (0);
 }

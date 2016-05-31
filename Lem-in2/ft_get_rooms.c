@@ -19,9 +19,9 @@ static int	count_rooms(char **args)
 
 	i = 0;
 	num = 0;
-	while (args[i] && !ft_strchr(args[i], '-'))
+	while (args[i] && !(ft_strchr(args[i], '-') && args[i][0] != '#'))
 	{
-		if (!ft_strchr(args[i], '#'))
+		if (args[i][0] != '#')
 			num++;
 		i++;
 	}
@@ -37,6 +37,17 @@ static void	new_room(char **tmp, t_room ***result, int *number, int flags[])
 	*number += 1;
 }
 
+static void	for_tmp(char ***tmp)
+{
+	if ((*tmp)[0] && (*tmp)[1] && (*tmp)[2])
+		free((*tmp)[2]);
+	if ((*tmp)[0] && (*tmp)[1])
+		free((*tmp)[1]);
+	if ((*tmp)[0])
+		free((*tmp)[0]);
+	free(*tmp);
+}
+
 void		ft_get_rooms(char ***args, int *number_of_rooms, t_room ***result)
 {
 	int		i;
@@ -49,20 +60,14 @@ void		ft_get_rooms(char ***args, int *number_of_rooms, t_room ***result)
 	i = 0;
 	flags[0] = 0;
 	flags[1] = 0;
-	while ((*args)[i] && !ft_strchr((*args)[i], '-'))
+	while ((*args)[i] && !(ft_strchr((*args)[i], '-') && (*args)[i][0] != '#'))
 	{
 		tmp = ft_strsplit((*args)[i], ' ');
 		if (!ft_strcmp(tmp[0], "##start") || !ft_strcmp(tmp[0], "##end"))
 			flags[!ft_strcmp(tmp[0], "##start") ? 0 : 1] = 1;
-		else if (!ft_strchr(tmp[0], '#'))
+		else if (tmp[0][0] != '#')
 			new_room(tmp, result, number_of_rooms, flags);
-		if (tmp[0] && tmp[1] && tmp[2])
-			free(tmp[2]);
-		if (tmp[0] && tmp[1])
-			free(tmp[1]);
-		if (tmp[0])
-			free(tmp[0]);
-		free(tmp);
+		for_tmp(&tmp);
 		i++;
 	}
 	(*args) += i;

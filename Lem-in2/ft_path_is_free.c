@@ -12,24 +12,6 @@
 
 #include "lem_in.h"
 
-static int	part_case(t_path *path, t_path **all_paths)
-{
-	int		i;
-
-	i = 0;
-	if (path->room->is_start && path->next && path->next->room->is_end)
-	{
-		while (all_paths[i])
-		{
-			if (all_paths[i]->room->is_start && all_paths[i]->next &&
-				all_paths[i]->next->room->is_end)
-				return (0);
-			i++;
-		}
-	}
-	return (1);
-}
-
 int			ft_path_is_free(t_path *path, t_path **all_paths)
 {
 	int		i;
@@ -55,5 +37,5 @@ int			ft_path_is_free(t_path *path, t_path **all_paths)
 			return (0);
 		tmp = tmp->next;
 	}
-	return (part_case(path, all_paths));
+	return (1);
 }

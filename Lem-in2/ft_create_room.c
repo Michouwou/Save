@@ -12,22 +12,6 @@
 
 #include "lem_in.h"
 
-int		ft_is_number(char *str)
-{
-	int		i;
-	int		num;
-
-	num = 1;
-	i = 0;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			num = 0;
-		i++;
-	}
-	return (num ? 1 : 0);
-}
-
 t_room	*ft_create_room(char **tab, int is_end, int is_start)
 {
 	t_room	*new;

@@ -51,7 +51,7 @@ char		**ft_read_file(int fd)
 	i = 0;
 	while (get_next_line(fd, &tmp) == 1)
 	{
-		if (i == 0 && (!tmp[0] || !ft_is_number(tmp)))
+		if (i == 0 && (!tmp[0] || (!ft_is_number(tmp) && tmp[0] != '#')))
 			ft_block("Your file does not begin with the number of ants");
 		result = ft_strjoin_free(result, "\n", 1);
 		result = ft_strjoin_free(result, tmp, 3);

@@ -51,23 +51,25 @@ static void	erase_last_one(t_path *actual_path)
 	tmp->next = NULL;
 }
 
-static int	part_two(t_path **tmp, t_path **actual_path, t_room **room)
+static int	part_two(t_path **tmp, t_path **actual, t_room **room, t_path **res)
 {
-	*tmp = *actual_path;
+	*tmp = *actual;
 	while (*tmp && (*tmp)->next)
 		*tmp = (*tmp)->next;
 	if (!*tmp)
-		*actual_path = ft_create_path(*room);
+		*actual = ft_create_path(*room);
 	else
 		(*tmp)->next = ft_create_path(*room);
+	*res = NULL;
+	*tmp = NULL;
 	if ((*room)->is_end)
 	{
-		erase_last_one(*actual_path);
+		erase_last_one(*actual);
 		return (1);
 	}
-	if (!(*room)->is_end && no_option((*room)->links, *actual_path))
+	if (!(*room)->is_end && no_option((*room)->links, *actual))
 	{
-		erase_last_one(*actual_path);
+		erase_last_one(*actual);
 		return (2);
 	}
 	return (-1);
@@ -79,16 +81,15 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all)
 	t_path	*tmp;
 	int		i;
 
-	i = part_two(&tmp, &actual_path, &room);
+	i = part_two(&tmp, &actual_path, &room, &result);
 	if (i != -1)
 		return (i == 1 ? ft_create_path(room) : NULL);
-	result = NULL;
-	tmp = NULL;
 	while (room->links && room->links[++i] && room->links[i]->name)
 	{
 		if (room_does_not_appear(room->links[i], actual_path))
 			tmp = ft_build_path(room->links[i], actual_path, all);
-		if ((tmp && ft_path_is_free(tmp, all)) && !(room->is_start && tmp->room->is_end && all[0]))
+		if ((tmp && ft_path_is_free(tmp, all)) && !(room->is_start &&
+			tmp->room->is_end && all[0]))
 			result = ft_min_path(result, tmp);
 		else
 			ft_free_path(tmp);
@@ -96,10 +97,8 @@ t_path		*ft_build_path(t_room *room, t_path *actual_path, t_path **all)
 	}
 	tmp = ft_create_path(room);
 	tmp->next = result;
-	if (result)
-		result = tmp;
-	else
-		free(tmp);
+	result = result ? tmp : NULL;
+	free(result ? NULL : tmp);
 	erase_last_one(actual_path);
 	return (result);
 }
