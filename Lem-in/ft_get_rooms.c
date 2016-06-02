@@ -18,10 +18,14 @@ static void	increase_num_rooms(t_room ***rooms, int i)
 	t_room	**tmp;
 
 	j = 0;
-	if (i % 10 == 0)
+	while ((*rooms) && (*rooms)[j] && (*rooms)[j]->name)
+		j++;
+	free(*rooms ? (*rooms)[j] : NULL);
+	if ((i + 1) % 10 == 0 || i == 0)
 	{
 		tmp = (t_room**)malloc(sizeof(t_room*) * (i + 10));
-		while (j < i)
+		j = 0;
+		while ((*rooms) && (*rooms)[j] && (*rooms)[j]->name)
 		{
 			tmp[j] = (*rooms)[j];
 			j++;
@@ -57,8 +61,10 @@ static void	new_room(char **tmp, t_room ***result, int *number, int *flag)
 		if (!ft_strcmp((*result)[i]->name, tmp[0]) &&
 			(*result)[i]->x == ft_atoi(tmp[1]) &&
 			(*result)[i]->y == ft_atoi(tmp[2]) &&
-			((*result)[i]->is_start == (*flag == 1) ? 1 : 0 ) &&
-			(*result)[i]->is_end == (*flag ==  2) ? 1 : 0)
+			(((*result)[i]->is_start && *flag == 2) ||
+				(!(*result)[i]->is_start && *flag != 2)) &&
+			(((*result)[i]->is_end && *flag == 1) || (!(*result)[i] &&
+				*flag != 1)))
 		{
 			i = -1;
 			break ;
@@ -67,9 +73,10 @@ static void	new_room(char **tmp, t_room ***result, int *number, int *flag)
 	}
 	if (i != -1)
 	{
-		(*result)[*number] = ft_create_room(tmp, *flag == 1, *flag == 2);
+		(*result)[*number] = ft_create_room(tmp, *flag == 2, *flag == 1);
 		*number += 1;
 	}
+	*flag = 0;
 }
 
 static void	for_tmp(char ***tmp)
@@ -83,14 +90,14 @@ static void	for_tmp(char ***tmp)
 	free(*tmp);
 }
 
-void		ft_get_rooms(char *line, int *number_of_rooms, t_room ***rooms, int *flag)
+void		ft_get_rooms(char *line, int *nrooms, t_room ***rooms, int *flag)
 {
 	char	**tmp;
 
-	increase_num_rooms(rooms, *number_of_rooms);
+	increase_num_rooms(rooms, *nrooms);
 	num_space(line);
 	tmp = ft_strsplit(line, ' ');
-	new_room(tmp, rooms, number_of_rooms, flag);
+	new_room(tmp, rooms, nrooms, flag);
 	for_tmp(&tmp);
-	(*rooms)[*number_of_rooms] = ft_create_room(NULL, 0, 0);
+	(*rooms)[*nrooms] = ft_create_room(NULL, 0, 0);
 }

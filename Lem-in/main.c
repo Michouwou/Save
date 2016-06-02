@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:12:38 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/26 10:46:24 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/06/02 15:57:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void	treatment(t_ant **ants, t_room **rooms)
 	ft_read_file(&rooms, &ants, &num_rooms, &num_ants);
 	if (!num_rooms)
 		ft_block("There is no room, where do you want the ants to go?\n");
+	write(1, "\n", 1);
 	ft_core(rooms, ants, num_ants);
 }
 

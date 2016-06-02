@@ -50,10 +50,9 @@ void		ft_read_file(t_room ***rooms, t_ant ***ants, int *number_of_rooms, int *nu
 	flag = 0;
 	while (get_next_line(0, &tmp) == 1)
 	{
-		ft_printf("%s\n  --- \n", tmp);
 		if (!tmp[0] && i != 3)
 			ft_block("Empty lines are forbidden, you fool'");
-		if (i == 0 && (!tmp[0] || (!ft_is_number(tmp) && tmp[0] != '#')))
+		if ((i == 0 && (!tmp[0] || (!ft_is_number(tmp) && tmp[0] != '#'))) || (i != 0 && !*number_of_ants))
 			ft_block("Your arguments do not begin with the number of ants");
 		else if (tmp[0] != '#' && i == 0)
 		{
@@ -83,6 +82,7 @@ void		ft_read_file(t_room ***rooms, t_ant ***ants, int *number_of_rooms, int *nu
 			return ;
 		ft_putendl(tmp);
 		free(tmp);
+		ft_check_coordinates(*rooms, *number_of_rooms);
 	}
-	ft_check_coordinates(*rooms, *number_of_rooms);
+	
 }

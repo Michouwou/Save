@@ -45,103 +45,103 @@ fclean : clean
 re : fclean all
 
 test :
-	./lem-in tests/test_1
+	./lem-in < tests/test_1
 	@echo "\n"
 	@read
-	./lem-in tests/test_2
+	./lem-in < tests/test_2
 	@echo "\n"
 	@read
-	./lem-in tests/test_3
+	./lem-in < tests/test_3
 	@echo "\n"
 	@read
-	./lem-in tests/test_4
+	./lem-in < tests/test_4
 	@echo "\n"
 	@read
-	./lem-in tests/test_5
+	./lem-in < tests/test_5
 	@echo "\n"
 	@read
-	./lem-in tests/test_6
+	./lem-in < tests/test_6
 	@echo "\n"
 	@read
-	./lem-in tests/test_7
+	./lem-in < tests/test_7
 	@echo "\n"
 	@read
-	./lem-in tests/test_8
+	./lem-in < tests/test_8
 	@echo "\n"
 	@read
-	./lem-in tests/test_9
+	./lem-in < tests/test_9
 	@echo "\n"
 	@read
-	./lem-in tests/test_missing_coordinate
+	./lem-in < tests/test_missing_coordinate
 	@echo "\n"
 	@read
-	./lem-in tests/test_no_parallel
+	./lem-in < tests/test_no_parallel
 	@echo "\n"
 	@read
-	./lem-in tests/test_trailing_space_end_of_line
+	./lem-in < tests/test_trailing_space_end_of_line
 	@echo "\n"
 	@read
-	./lem-in tests/test_negative_ants
+	./lem-in < tests/test_negative_ants
 	@echo "\n"
 	@read
-	./lem-in tests/test_no_start
+	./lem-in < tests/test_no_start
 	@echo "\n"
 	@read
-	./lem-in tests/test_twice_same_line
+	./lem-in < tests/test_twice_same_line
 	@echo "\n"
 	@read
-	./lem-in tests/test_comments_and_sharp_room_name
+	./lem-in < tests/test_comments_and_sharp_room_name
 	@echo "\n"
 	@read
-	./lem-in tests/test_negative_coordinates
+	./lem-in < tests/test_negative_coordinates
 	@echo "\n"
 	@read
-	./lem-in tests/test_out_int
+	./lem-in < tests/test_out_int
 	@echo "\n"
 	@read
-	./lem-in tests/test_two_ends
+	./lem-in < tests/test_two_ends
 	@echo "\n"
 	@read
-	./lem-in tests/test_dash_beginning_of_line
+	./lem-in < tests/test_dash_beginning_of_line
 	@echo "\n"
 	@read
-	./lem-in tests/test_newline_line5
+	./lem-in < tests/test_newline_line5
 	@echo "\n"
 	@read
-	./lem-in tests/test_rooms_same_place
+	./lem-in < tests/test_rooms_same_place
 	@echo "\n"
 	@read
-	./lem-in tests/test_two_rooms_same_name
+	./lem-in < tests/test_two_rooms_same_name
 	@echo "\n"
 	@read
-	./lem-in tests/test_dash_end_of_line
+	./lem-in < tests/test_dash_end_of_line
 	@echo "\n"
 	@read
-	./lem-in tests/test_no_ants
+	./lem-in < tests/test_no_ants
 	@echo "\n"
 	@read
-	./lem-in tests/test_start_not_linked
+	./lem-in < tests/test_start_not_linked
 	@echo "\n"
 	@read
-	./lem-in tests/test_two_starts
+	./lem-in < tests/test_two_starts
 	@echo "\n"
 	@read
-	./lem-in tests/test_empty_file
+	./lem-in < tests/test_empty_file
 	@echo "\n"
 	@read
-	./lem-in tests/test_no_end
+	./lem-in < tests/test_no_end
 	@echo "\n"
 	@read
-	./lem-in tests/test_tab_before_link
+	./lem-in < tests/test_tab_before_link
 	@echo "\n"
 	@read
-	./lem-in tests/test_wrong_name
+	./lem-in < tests/test_wrong_name
 	@echo "\n"
 	@read
-	./lem-in tests/test_half_link
+	./lem-in < tests/test_half_link
 	@echo "\n"
 	@read
-	./lem-in tests/test_no_links
+	./lem-in < tests/test_no_links
 	@echo "\n"
 	@read
-	./lem-in tests/test_trailing_space
+	./lem-in < tests/test_trailing_space
