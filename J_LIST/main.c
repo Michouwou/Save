@@ -52,5 +52,17 @@ int main(void)
     printf("L'information contenue à l'index 2 est : %f, la liste a une longueur effective de %d\n", *((double*)jlst_get_data(list, 2)), jlst_get_size(list));
     
     printf("L'index auquel est contenue 4.00 se trouve à l'index : %d\n", jlst_get_index(list, (void*)&(tab[3]), &compare_func));
+    
+    printf("Il y a %d instances de 2.00 dans list\n", jlst_instances(list, (void*)&(tab[1]), &compare_func));
+    jlst_add(&list, 3, (void*)&(tab[1]), sizeof(double));
+    printf("Il y a %d instances de 2.00 dans list\n", jlst_instances(list, (void*)&(tab[1]), &compare_func));
+    
+    jlst_sort(&list, &compare_func, 0);
+    tmp = list;
+    while (tmp)
+    {
+        printf("tmp contient : %f, de taille %zd\n", *((double*)tmp->data), tmp->data_len);
+        tmp = tmp->next;
+    }
     return (0);
 }

@@ -12,28 +12,38 @@
 
 #include "j_list.h"
 
-void    jlst_sort(j_list **first_node, int (*compare_func)(void*, void*))
+void    jlst_sort(j_list **first_node, int (*compare_func)(void*, void*), int code)
 {
     j_list  *tmp;
     j_list  *min_e;
     j_list  *new;
     
-    new = jlst_new(1);
+    new = NULL;
+    printf("On y est\n");
     while (*first_node)
     {
+        printf("boucle principale : %f\n", *(double*)(*first_node)->data);
         tmp = *first_node;
         min_e = tmp;
         while (tmp)
         {
-            if (compare_func(tmp->data, min_e->data) < 0)
+            if (compare_func(tmp->data, min_e->data) > 0)
                 min_e = tmp;
             tmp = tmp->next;
         }
-        if (min_e->previous == NULL && (*first_node)->next)
-            *first_node = (*first_node)->next;
-        jlst_push_back(&new, min_e->data, min_e->data_len);
-        jlst_del_data(first_node, min_e->data, compare_func);
+        printf("Avant le push_front : %f\n", *(double*)min_e->data);
+        jlst_push_front(&new, malloc(min_e->data_len), min_e->data_len);
+        printf("Apres le push_front\n");
+        ft_memcpy(new->data, min_e->data, min_e->data_len);
+        printf("Apres memcpy, jlst_get_index : %d\n", jlst_get_index(*first_node, min_e->data, compare_func));
+        jlst_del_node(first_node, jlst_get_index(*first_node, min_e->data, compare_func), code);
+        tmp = new;
+        while (tmp)
+        {
+            printf("\tData : %f\n", *(double*)tmp->data);
+            tmp = tmp->next;
+        }
     }
-    jlst_del_list(*first_node);
     *first_node = new;
+    printf("On sort\n");
 }

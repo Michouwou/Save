@@ -21,7 +21,7 @@ void	jlst_push_front(j_list **first_node, void *data, size_t data_size)
 	node->data = data;
 	node->state = 1;
 	node->data_len = data_size;
-	if (first_node)
+	if (*first_node)
 	{
 		node->next = *first_node;
 		if (node->next)

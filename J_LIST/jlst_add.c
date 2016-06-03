@@ -27,7 +27,7 @@ void	jlst_add(j_list **first_node, int index, void *data, size_t data_size)
 			(*first_node)->data_len = data_size;
 			(*first_node)->state = 1;
 			if (jlst_get_size(*first_node) >= (*first_node)->list_len * 2 / 3)
-				jlst_resize(first_node);
+				jlst_resize(first_node, 0);
 		}
 		while ((*first_node)->previous)
 			*first_node = (*first_node)->previous;

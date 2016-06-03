@@ -12,7 +12,7 @@
 
 #include "j_list.h"
 
-void    jlst_resize(j_list **first_node)
+void    jlst_resize(j_list **first_node, int code)
 {
     int     i;
     j_list  *new_list;
@@ -27,7 +27,7 @@ void    jlst_resize(j_list **first_node)
     {
         if (!(i % 2))
         {
-            ft_memcpy(tmpb->data, tmpa->data, sizeof(tmpa->data));
+            ft_memcpy(tmpb->data, tmpa->data, tmpa->data_len);
             tmpb->data_len = tmpa->data_len;
             tmpb->state = 1;
             tmpa = tmpa->next;
@@ -35,6 +35,6 @@ void    jlst_resize(j_list **first_node)
         i++;
         tmpb = tmpb->next;
     }
-    jlst_del_list(*first_node);
+    jlst_del_list(*first_node, code);
     *first_node = new_list;
 }
