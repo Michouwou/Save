@@ -29,6 +29,12 @@ int main(void)
     
     strcpy(str, "Bonjour");
     jlst_add(&list, 3, (void*)str, (size_t)strlen(str));
+    char *str2 = (char*)malloc(sizeof(char) * 20);
+    strcpy(str2, "Salut");
+    jlst_add(&list, 7, (void*)str2, (size_t)strlen(str2));
+    char *str3 = (char*)malloc(sizeof(char) * 20);
+    strcpy(str3, "Yo");
+    jlst_add(&list, 0, (void*)str3, (size_t)strlen(str3));
     i = 0;
     tmp = list;
     while (i < 3)
@@ -36,7 +42,22 @@ int main(void)
         tmp = tmp->next;
         i++;
     }
-    printf("L'indice trois contient : %s, de taille %zd, la liste a une longueur effective de %d\n", (char*)tmp->data, tmp->data_len, jlst_get_size(list));
+    printf("L'indice trois contient : %s, de taille %zd, la liste a une longueur effective de %d\n\n", (char*)tmp->data, tmp->data_len, jlst_get_size(list));
+   
+    tmp = list; 
+    while (tmp)
+    {
+        printf("tmp contient : %s, de taille %zd\n", (char*)tmp->data, tmp->data_len);
+        tmp = tmp->next;
+    }
+    printf("\n");
+    jlst_compact(&list);
+    tmp = list;
+    while (tmp)
+    {
+        printf("tmp contient : %s, de taille %zd\n", (char*)tmp->data, tmp->data_len);
+        tmp = tmp->next;
+    }
     
     jlst_push_front(&list, (void*)&i, sizeof(i));
     printf("Le premier element de la liste est maintenant : %d, d'une taille de %zd, la liste a une longueur effective de %d\n", *((int*)list->data), list->data_len, jlst_get_size(list));

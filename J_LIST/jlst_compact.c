@@ -12,24 +12,29 @@
 
 #include "j_list.h"
 
-void    jlst_compact(j_list *first_node)
+void    jlst_compact(j_list **first_node)
 {
-    j_list *tmpa;
     j_list *tmpb;
     j_list *element;
+    j_list *tmp;
     
-    element = first_node;
+    element = *first_node;
     while (element)
     {
-        tmpa = element;
-        while (tmpa->previous && !tmpa->previous->data)
+        while (element->state && element->previous && !element->previous->state)
         {
-            tmpb = tmpa->previous;
-            tmpa->next = tmpb;
-            tmpa->previous = tmpb->previous;
-            tmpb->previous = tmpa;
-            tmpb->next = tmpa->next;
+            tmpb = element->previous;
+            if (tmpb->previous)
+                tmpb->previous->next = element;
+            if (element->next)
+                element->next->previous = tmpb;
+            element->previous = tmpb->previous;
+            tmpb->previous = element;
+            tmpb->next = element->next;
+            element->next = tmpb;
+            if (!element->previous)
+                *first_node = element;
         }
-        element = element->next;
+    element = element->next;
     }
 }

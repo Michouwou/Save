@@ -36,7 +36,7 @@ int				jlst_get_index(j_list *first_node, void *data, int (*compare_func)(void*,
 int				jlst_get_size(j_list *first_node); /*returns the number of elements in the list*/
 int				jlst_instances(j_list *first_node, void *data, int (*compare_func)(void*, void*)); /*returns the number of instances of 'data' in LIST*/
 void			jlst_sort(j_list **first_node, int (*compare_func)(void*, void*), int code); /*sorts the list according to 'compare_func', that's not advised because it takes many operations*/
-void			jlst_compact(j_list *first); /*compacts the list so it's continuous*/
+void			jlst_compact(j_list **first); /*compacts the list so it's continuous*/
 void			jlst_merge(j_list *first_list, j_list *second_list); /*add 'second_list' to the end of 'first_list'*/
 void			jlst_del_node(j_list **first_node, int index, int code); /*deletes the node at 'index' in the list*/
 void			jlst_del_data(j_list **first_node, void *data, int (*compare_func)(void*, void*), int code);
