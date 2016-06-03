@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   jlst_length.c                                      :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/20 15:57:02 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/20 15:57:39 by mlevieux         ###   ########.fr       */
+/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
+/*   Updated: 2015/12/17 17:38:18 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "j_list.h"
 
-int     jlst_length(j_list *first_node)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-    int     i;
-    j_list  *tmp;
-    
-    i = 0;
-    tmp = first_node;
-    while (tmp)
-    {
-        ++i;
-        tmp = tmp->next;
-    }
-    return (i);
+	int				i;
+	unsigned char	*tmpa;
+	unsigned char	*tmpb;
+
+	tmpa = (unsigned char*)dst;
+	tmpb = (unsigned char*)src;
+	i = 0;
+	while (i < (int)n)
+	{
+		tmpa[i] = tmpb[i];
+		i++;
+	}
+	return (dst);
 }

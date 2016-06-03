@@ -27,7 +27,7 @@ void    jlst_resize(j_list **first_node)
     {
         if (!(i % 2))
         {
-            ft_memcpy(tmpb->data, tmpa->data);
+            ft_memcpy(tmpb->data, tmpa->data, sizeof(tmpa->data));
             tmpb->data_len = tmpa->data_len;
             tmpb->state = 1;
             tmpa = tmpa->next;

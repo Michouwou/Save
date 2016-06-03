@@ -14,7 +14,6 @@
 
 void    jlst_sort(j_list **first_node, int (*compare_func)(void*, void*))
 {
-    int     min;
     j_list  *tmp;
     j_list  *min_e;
     j_list  *new;

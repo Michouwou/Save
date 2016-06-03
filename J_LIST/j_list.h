@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct	j_like_lst
@@ -48,3 +50,4 @@ void			jlst_nbackward(int n, j_list **first_node);
 void			jlst_sed(j_list *first_node);
 j_list			*jlst_nodecpy(j_list *to_copy);
 void			*jlst_datacpy(j_list *node);
+void			*ft_memcpy(void *dst, const void *src, size_t n);
