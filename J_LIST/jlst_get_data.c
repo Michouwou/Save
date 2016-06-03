@@ -19,10 +19,10 @@ void    *jlst_get_data(j_list *first_node, int index)
     
     i = 0;
     list = first_node;
-    while (i < index)
+    while (list && i < index)
     {
         list = list->next;
         i++;
     }
-    return (list->data);
+    return (i == index ? list->data : NULL);
 }

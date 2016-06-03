@@ -31,7 +31,7 @@ void    jlst_sort(j_list **first_node, int (*compare_func)(void*, void*))
         }
         if (min_e->previous == NULL && (*first_node)->next)
             *first_node = (*first_node)->next;
-        jlst_push_back(&new, min_e->data);
+        jlst_push_back(&new, min_e->data, min_e->data_len);
         jlst_del_data(first_node, min_e->data, compare_func);
     }
     jlst_del_list(*first_node);

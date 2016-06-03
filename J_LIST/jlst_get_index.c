@@ -21,10 +21,10 @@ int     jlst_get_index(j_list *first_node, void *data, int (*compare_func)(void*
     tmp = first_node;
     while (tmp)
     {
-        ret++;
-        if (!compare_func(first_node->data, data))
+        if (!compare_func(tmp->data, data))
             break;
         tmp = tmp->next;
+        ret++;
     }
     if (tmp == NULL)
         return (-1);

@@ -18,7 +18,7 @@ typedef struct	j_like_lst
 {
 	void				*data;
 	int					list_len;
-	int					data_len;
+	size_t				data_len;
 	struct j_like_lst	*previous;
 	struct j_like_lst	*next;
 	int					state;
@@ -27,10 +27,10 @@ typedef struct	j_like_lst
 j_list			*jlst_node(void); /*creates a fresh null node, OK*/
 j_list			*jlst_create(void); /*creates a fresh list, initial size of 9, OK*/
 j_list			*jlst_new(int size); /*creates a fresh list, initial size of size, OK*/
-void			jlst_add(j_list **first_node, int index, void *data); /*add 'data' to the index'th node of the list OK*/
-void			jlst_push_front(j_list **first_node, void *data); /*add data (in a new node) as the first element of the list, makes a reversed rotation, OK*/
-void			jlst_push_back(j_list **first_node, void *data); /*same as push_front but at the last index of the list, OK*/
-j_list			*jlst_from_tab(void *tab, int size, int length); /*creates a list out of an array, size is the size of the basic block, OK*/
+void			jlst_add(j_list **first_node, int index, void *data, size_t data_size); /*add 'data' to the index'th node of the list OK*/
+void			jlst_push_front(j_list **first_node, void *data, size_t data_size); /*add data (in a new node) as the first element of the list, makes a reversed rotation, OK*/
+void			jlst_push_back(j_list **first_node, void *data, size_t data_size); /*same as push_front but at the last index of the list, OK*/
+j_list			*jlst_from_tab(void *tab, size_t size, int length); /*creates a list out of an array, size is the size of the basic block, OK*/
 void			*jlst_get_data(j_list *first_node, int index); /*returns the data at the index 'index'*/
 int				jlst_get_index(j_list *first_node, void *data, int (*compare_func)(void*, void*)); /*gets the index of 'data' in the list*/
 int				jlst_get_size(j_list *first_node); /*returns the number of elements in the list*/
