@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 16:01:45 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/20 16:03:36 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/06/04 13:56:54 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void        *jlst_datacpy(j_list *node)
     int             i;
     
     data = (unsigned char*)node->data;
-    copy = (unsigned char*)malloc(sizeof(unsigned char) * (node->data_len + 1));
+    copy = (unsigned char*)malloc(sizeof(unsigned char) * (node->data_len));
     i = 0;
-    while (i < node->data_len)
+    while (i < (int)node->data_len)
     {
         copy[i] = data[i];
         i++;

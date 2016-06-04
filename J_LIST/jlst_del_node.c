@@ -21,11 +21,13 @@ void    jlst_del_node(j_list **first_node, int index, int code)
     if (!first_node || !*first_node)
         return ;
     tmp = *first_node;
-    while (i < index)
+    while (i < index && tmp)
     {
         i++;
         tmp = tmp->next;
     }
+    if (!tmp)
+        return ;
     if (tmp->previous)
         tmp->previous->next = tmp->next;
     if (tmp->next)

@@ -85,5 +85,25 @@ int main(void)
         printf("tmp contient : %f, de taille %zd\n", *((double*)tmp->data), tmp->data_len);
         tmp = tmp->next;
     }
+
+	printf("\nApres merge\n");
+	j_list *list_two;
+	list_two = jlst_from_tab((void*)tab, sizeof(double), 5);
+	jlst_merge(list, list_two);
+	tmp = list;
+	while (tmp)
+    {
+    	printf("tmp contient : %f, de taille %zd\n", *((double*)tmp->data), tmp->data_len);
+        tmp = tmp->next;
+    }
+
+	tab[0] = 3.00;
+	tab[1] = 5.00;
+	tab[2] = 11.00;
+	tab[3] = 2.00;
+	tab[4] = 3.00;
+	list_two = jlst_from_tab((void*)tab, 8, 5);
+	i = jlst_in_jlst(list, list_two, compare_func);
+	printf("\nOn cherche list_two dans list, y est il? %s, si oui a l'index %d\n", i >= 0 ? "Oui" : "Non", i);
     return (0);
 }

@@ -20,13 +20,13 @@ void    jlst_merge(j_list *first_list, j_list *second_list)
     j_list  *node;
     
     tmpa = second_list;
+    tmpb = first_list;
     while (tmpa)
     {
-        tmpb = first_list;
         i = 0;
-        while (tmpb->next && tmpb->data)
+        while (tmpb->next && tmpb->state)
             tmpb = tmpb->next;
-        if (tmpb->next == NULL && tmpb->data)
+        if (tmpb->next == NULL && tmpb->state)
         {
             node = jlst_nodecpy(tmpa);
             node->previous = tmpb;
@@ -36,7 +36,7 @@ void    jlst_merge(j_list *first_list, j_list *second_list)
         else
         {
             tmpb->data = jlst_datacpy(tmpa);
-            tmpb->data_len = sizeof(tmpb->data);
+            tmpb->data_len = tmpa->data_len;
         }
         tmpa = tmpa->next;
     }

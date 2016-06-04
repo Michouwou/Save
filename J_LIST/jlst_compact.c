@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 15:33:30 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/20 15:33:36 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/06/04 13:56:32 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void    jlst_compact(j_list **first_node)
 {
     j_list *tmpb;
     j_list *element;
-    j_list *tmp;
     
     element = *first_node;
     while (element)
