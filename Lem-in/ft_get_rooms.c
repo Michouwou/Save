@@ -48,7 +48,7 @@ static void	num_space(char *str)
 		i++;
 	}
 	if (spaces > 2)
-		ft_block("Make sure there's no trailing space in your file!");
+		ft_block("Make sure there's no trailing space in your args!");
 }
 
 static void	new_room(char **tmp, t_room ***result, int *number, int *flag)

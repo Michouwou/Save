@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/14 11:15:47 by mlevieux          #+#    #+#              #
-#    Updated: 2016/05/31 16:11:03 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/06/04 13:24:05 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ all : $(NAME)
 $(NAME) :
 	@echo "Compilation...\n"
 	@make -C Libft/
-	@gcc -c $(SRC) -I includes/ -I.
+	@gcc -Wall -Werror -Wextra -c $(SRC) -I includes/ -I.
 	@gcc -Wall -Werror -Wextra $(OBJ) -L Libft/ -lft -o $(NAME)
 	@echo "\033[0;32mOK!\n\033[0;m"
 

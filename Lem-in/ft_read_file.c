@@ -43,7 +43,8 @@ static int	func_one(char *tmp, int *i, t_ant ***ants, int *number_of_ants)
 {
 	if (!tmp[0] && *i != 3)
 		ft_block("Empty lines are forbidden, you fool'");
-	if ((*i == 0 && (!tmp[0] || (!ft_is_number(tmp) && tmp[0] != '#'))) || (*i != 0 && !*number_of_ants))
+	if ((*i == 0 && (!tmp[0] || (!ft_is_number(tmp) && tmp[0] != '#'))) ||
+		(*i != 0 && !*number_of_ants))
 		ft_block("Your arguments do not begin with the number of ants");
 	ft_putendl(tmp);
 	if (tmp[0] != '#' && *i == 0)
@@ -55,11 +56,12 @@ static int	func_one(char *tmp, int *i, t_ant ***ants, int *number_of_ants)
 	return (0);
 }
 
-static int func_two(char *tmp, int flags[], t_room ***rooms, int *number_of_rooms)
+static int	func_two(char *tmp, int flags[], t_room ***rooms, int *nrooms)
 {
-	if (tmp[0] != '#' && !ft_strchr(tmp, '-') && flags[0] < 3)
+	if (tmp[0] != '#' && (!ft_strchr(tmp, '-') || ft_strchr(tmp, ' ')) &&
+		flags[0] < 3)
 	{
-		ft_get_rooms(tmp, number_of_rooms, rooms, &(flags[1]));
+		ft_get_rooms(tmp, nrooms, rooms, &(flags[1]));
 		flags[0] = 2;
 		return (1);
 	}
@@ -78,7 +80,7 @@ static int func_two(char *tmp, int flags[], t_room ***rooms, int *number_of_room
 	return (0);
 }
 
-static void	get_commands(char *tmp, int	flags[])
+static void	get_commands(char *tmp, int flags[])
 {
 	flags[1] = (tmp[2] == 's') ? 1 : 2;
 	flags[0] = 2;
@@ -98,7 +100,7 @@ static void	get_commands(char *tmp, int	flags[])
 	}
 }
 
-void		ft_read_file(t_room ***rooms, t_ant ***ants, int *number_of_rooms, int *number_of_ants)
+void		ft_read(t_room ***rooms, t_ant ***ants, int *nrooms, int *nants)
 {
 	char	*tmp;
 	int		flags[3];
@@ -110,15 +112,18 @@ void		ft_read_file(t_room ***rooms, t_ant ***ants, int *number_of_rooms, int *nu
 	flags[2] = 0;
 	while (get_next_line(0, &tmp) == 1)
 	{
-		if ((mem = func_one(tmp, &(flags[0]), ants, number_of_ants)) == 0)
-			mem = func_two(tmp, flags, rooms, number_of_rooms);
-		if (!mem && (!ft_strcmp(tmp, "##start") || !ft_strcmp(tmp, "##end")) && flags[0] < 3)
+		if ((mem = func_one(tmp, &(flags[0]), ants, nants)) == 0)
+			mem = func_two(tmp, flags, rooms, nrooms);
+		if (!mem && (!ft_strcmp(tmp, "##start") || !ft_strcmp(tmp, "##end")) &&
+			flags[0] < 3)
 			get_commands(tmp, flags);
 		else if (!mem && tmp[0] != '#')
 			return ;
 		if (mem == -1)
 			return ;
 		free(tmp);
-		ft_check_coordinates(*rooms, *number_of_rooms);
-	}	
+		ft_check_coordinates(*rooms, *nrooms);
+	}
+	if (!flags[1])
+		ft_block("No links? Ants can't fly!");
 }

@@ -19,20 +19,20 @@ static void	treatment(t_ant **ants, t_room **rooms)
 
 	num_ants = 0;
 	num_rooms = 0;
-	ft_read_file(&rooms, &ants, &num_rooms, &num_ants);
+	ft_read(&rooms, &ants, &num_rooms, &num_ants);
 	if (!num_rooms)
 		ft_block("There is no room, where do you want the ants to go?\n");
 	write(1, "\n", 1);
 	ft_core(rooms, ants, num_ants);
 }
 
-int			main(int ac, char **av)
+int			main(void)
 {
-	int		fd;
-	char	**args;
 	t_ant	**ants;
 	t_room	**rooms;
 
+	ants = NULL;
+	rooms = NULL;
 	treatment(ants, rooms);
 	return (0);
 }

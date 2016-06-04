@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-static void	loop(t_ant **ants, t_path **paths, int *i, int *j)
+static void	loop(t_ant **ants, int *i, int *j)
 {
 	if (!ants[*i]->actual && ants[*i]->path)
 		ants[*i]->actual = ants[*i]->path->room;
@@ -36,7 +36,7 @@ int			ft_iterate(t_ant **ants, t_path **paths)
 	i = 0;
 	j = 0;
 	while (ants[i] && ants[i]->path != NULL)
-		loop(ants, paths, &i, &j);
+		loop(ants, &i, &j);
 	if (j)
 		ft_printf("\n");
 	if ((ants[i] == NULL && ants[i - 1]->actual->is_end) || paths[0] == NULL)

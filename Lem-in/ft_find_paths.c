@@ -43,6 +43,7 @@ t_path			**ft_find_paths(t_room **rooms)
 
 	i = 0;
 	start = NULL;
+	result = NULL;
 	while (rooms[i] && rooms[i]->name)
 	{
 		if (rooms[i]->is_start)
