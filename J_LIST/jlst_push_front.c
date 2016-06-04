@@ -12,7 +12,7 @@
 
 #include "j_list.h"
 
-void	jlst_push_front(j_list **first_node, void *data, size_t data_size)
+void	jlst_push_front(j_list **first_node, void *data, size_t data_size, char alloc_)
 {
 	j_list	*node;
 	
@@ -20,6 +20,7 @@ void	jlst_push_front(j_list **first_node, void *data, size_t data_size)
 	node->list_len = first_node && *first_node ? (*first_node)->list_len + 1 : 1;
 	node->data = data;
 	node->state = 1;
+	node->alloc_ = 0;
 	node->data_len = data_size;
 	if (*first_node)
 	{
@@ -35,7 +36,7 @@ void	jlst_push_front(j_list **first_node, void *data, size_t data_size)
 			(*first_node)->list_len++;
 		while ((*first_node)->previous)
 			*first_node = (*first_node)->previous;
-		}
+	}
 	else if (first_node)
 		*first_node = node;
 }

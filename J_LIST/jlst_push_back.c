@@ -1,27 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   jlst_push_back.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/20 15:27:58 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/20 15:28:28 by mlevieux         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-#include "j_list.h"
-
-j_list	*jlst_node(void)
+void	jlst_push_back(j_list **first_node, void *data, size_t data_size, char alloc_)
 {
-	j_list	*new;
+	j_list	*node;
+	j_list	*tmp;
 	
-	new = (j_list*)malloc(sizeof(j_list));
-	new->data = NULL;
-	new->list_len = 0;
-	new->data_len = 0;
-	new->previous = NULL;
-	new->next = NULL;
-	new->state = 0;
-	return (new);
+	node = jlst_node();
+	node->list_len = first_node && *first_node ? (*first_node)->list_len + 1 : 1;
+	node->data = data;
+	node->state = 1;
+	node->data_len = data_size;
+	if (*first_node)
+	{
+		tmp = *first_node;
+		while (tmp && tmp->next)
+		{
+			++(tmp->list_len);
+			tmp = tmp->next;
+		}
+		++(tmp->list_len);
+		node->previous = tmp;
+		tmp->next = node;
+	}
+	else if (first_node)
+		*first_node = node;
 }

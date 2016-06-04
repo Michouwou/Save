@@ -21,15 +21,16 @@ typedef struct	j_like_lst
 	size_t				data_len;
 	struct j_like_lst	*previous;
 	struct j_like_lst	*next;
-	int					state;
+	char				state;
+	char				alloc_;	
 }				j_list;
 
 j_list			*jlst_node(void); /*creates a fresh null node, OK*/
 j_list			*jlst_create(void); /*creates a fresh list, initial size of 9, OK*/
 j_list			*jlst_new(int size); /*creates a fresh list, initial size of size, OK*/
-void			jlst_add(j_list **first_node, int index, void *data, size_t data_size); /*add 'data' to the index'th node of the list OK*/
-void			jlst_push_front(j_list **first_node, void *data, size_t data_size); /*add data (in a new node) as the first element of the list, makes a reversed rotation, OK*/
-void			jlst_push_back(j_list **first_node, void *data, size_t data_size); /*same as push_front but at the last index of the list*/
+void			jlst_add(j_list **first_node, int index, void *data, size_t data_size, char alloc_); /*add 'data' to the index'th node of the list OK*/
+void			jlst_push_front(j_list **first_node, void *data, size_t data_size, char alloc_); /*add data (in a new node) as the first element of the list, makes a reversed rotation, OK*/
+void			jlst_push_back(j_list **first_node, void *data, size_t data_size, char alloc_); /*same as push_front but at the last index of the list*/
 j_list			*jlst_from_tab(void *tab, size_t size, int length); /*creates a list out of an array, size is the size of the basic block, OK*/
 void			*jlst_get_data(j_list *first_node, int index); /*returns the data at the index 'index' OK*/
 int				jlst_get_index(j_list *first_node, void *data, int (*compare_func)(void*, void*)); /*gets the index of 'data' in the list OK*/
@@ -47,7 +48,7 @@ void			jlst_resize(j_list **first_node, int code); /*increase list by two third 
 int				jlst_is_sorted(j_list *first_node, int (*compare_func)(void*, void*)); // OK ?
 void			jlst_nforward(int n, j_list **first_node); // OK
 void			jlst_nbackward(int n, j_list **first_node); // OK
-void			jlst_sed(j_list *first_node);
-j_list			*jlst_nodecpy(j_list *to_copy);
-void			*jlst_datacpy(j_list *node);
+void			jlst_sed(j_list *first_node); // Ok ?
+j_list			*jlst_nodecpy(j_list *to_copy); // Ok
+void			*jlst_datacpy(j_list *node); // Ok
 void			*ft_memcpy(void *dst, const void *src, size_t n);
