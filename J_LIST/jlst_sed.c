@@ -12,13 +12,13 @@
 
 #include "j_list.h"
 
-void    jlst_sed(j_list *first_node, int code)
+void    jlst_sed(j_list *first_node)
 {
     j_list      *tmpa;
     j_list      *tmpb;
     
     tmpa = first_node;
-    while (tmpa)
+    while (tmpa && tmpa->next)
     {
         tmpb = tmpa->next;
         while (tmpb && !tmpb->data)
@@ -28,8 +28,8 @@ void    jlst_sed(j_list *first_node, int code)
             tmpb = tmpa->next;
             tmpa->next = NULL;
             tmpb->previous = NULL;
-            jlst_del_list(tmpb, code);
-            return;
+            jlst_del_list(tmpb, 0);
+            return ;
         }
         else
             tmpa = tmpa->next;

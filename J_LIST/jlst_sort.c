@@ -31,8 +31,7 @@ void    jlst_sort(j_list **first_node, int (*compare_func)(void*, void*), int co
                 min_e = tmp;
             tmp = tmp->next;
         }
-        jlst_push_front(&new, malloc(min_e->data_len), min_e->data_len);
-        ft_memcpy(new->data, min_e->data, min_e->data_len);
+        jlst_push_front(&new, jlst_datacpy(min_e), min_e->data_len);
         jlst_del_node(first_node, jlst_get_index(*first_node, min_e->data, compare_func), code);
     }
     *first_node = new;

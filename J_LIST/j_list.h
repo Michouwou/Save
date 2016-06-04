@@ -42,12 +42,12 @@ void			jlst_del_node(j_list **first_node, int index, int code); /*deletes the no
 void			jlst_del_data(j_list **first_node, void *data, int (*compare_func)(void*, void*), int code); /*deletes all the nodes containing 'data' OK*/
 void			jlst_del_list(j_list *first_node, int code); /*deletes the whole list*/
 int				jlst_in_jlst(j_list *great_list, j_list *to_search, int (compare_func)(void*, void*)); /*search a list in a greater list, and returns the index of its first element, or -1 if it was not found, not taking blanks in account for the list to search for OK*/
-int				jlst_length(j_list *first_node); /*returns the length of the list, that is to say the maximum size it can hold*/
-void			jlst_resize(j_list **first_node, int code); /*increase list by two third*/
-int				jlst_is_sorted(j_list *first_node, int (*compare_func)(void*, void*));
-void			jlst_nforward(int n, j_list **first_node);
-void			jlst_nbackward(int n, j_list **first_node);
-void			jlst_sed(j_list *first_node, int code);
+int				jlst_length(j_list *first_node); /*returns the length of the list, that is to say the maximum size it can hold OK*/
+void			jlst_resize(j_list **first_node, int code); /*increase list by two third OK*/
+int				jlst_is_sorted(j_list *first_node, int (*compare_func)(void*, void*)); // OK ?
+void			jlst_nforward(int n, j_list **first_node); // OK
+void			jlst_nbackward(int n, j_list **first_node); // OK
+void			jlst_sed(j_list *first_node);
 j_list			*jlst_nodecpy(j_list *to_copy);
 void			*jlst_datacpy(j_list *node);
 void			*ft_memcpy(void *dst, const void *src, size_t n);

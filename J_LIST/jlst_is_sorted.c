@@ -19,7 +19,7 @@ int     jlst_is_sorted(j_list *first_node, int (*compare_func)(void*, void*))
     tmp = first_node;
     while (tmp && tmp->next)
     {
-        if (compare_func(tmp->data, tmp->next->data))
+        if (tmp->state && tmp->next->state && compare_func(tmp->data, tmp->next->data) > 0)
             return (0);
         tmp = tmp->next;
     }

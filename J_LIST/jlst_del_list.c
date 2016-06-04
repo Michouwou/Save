@@ -15,7 +15,6 @@
 void    jlst_del_list(j_list *first_node, int code)
 {
     while (first_node)
-        jlst_del_node(&first_node, 1, code);
-    free(first_node);
+        jlst_del_node(&first_node, 0, code);
 	first_node = NULL;
 }

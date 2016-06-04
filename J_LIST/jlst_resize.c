@@ -27,7 +27,7 @@ void    jlst_resize(j_list **first_node, int code)
     {
         if (!(i % 2))
         {
-            ft_memcpy(tmpb->data, tmpa->data, tmpa->data_len);
+            tmpb->data = jlst_datacpy(tmpa);
             tmpb->data_len = tmpa->data_len;
             tmpb->state = 1;
             tmpa = tmpa->next;
@@ -35,6 +35,7 @@ void    jlst_resize(j_list **first_node, int code)
         i++;
         tmpb = tmpb->next;
     }
+    printf("On y est???\n\n");
     jlst_del_list(*first_node, code);
     *first_node = new_list;
 }
