@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_loop_translate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/25 14:13:22 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/06/02 10:21:36 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/06/02 10:22:18 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fdf.h"
 
-void	ft_putstr(char *s)
+int		ft_loop_translate(t_mlx *ptr)
 {
-	write(1, s, ft_strlen(s));
+	if (ptr->translate_x)
+		ft_translate_x(ptr, ptr->way);
+	else if (ptr->translate_y)
+		ft_translate_y(ptr, ptr->way);
+	ptr->translate_x = 0;
+	ptr->translate_y = 0;
+	return (0);
+}
+
+void	ft_set_loop(t_mlx *ptr)
+{
+
 }

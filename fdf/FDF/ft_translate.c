@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/23 15:10:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/23 15:21:23 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/06/02 10:42:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ void	ft_translate_x(t_mlx *ptr, int sense)
 		while (j < ptr->n_per_line)
 		{
 			if (sense == 1)
-				ptr->map[i].x[j] += 10;
+				ptr->map[i].x[j] += 20;
 			else if (sense == -1)
-				ptr->map[i].x[j] -= 10;
+				ptr->map[i].x[j] -= 20;
 			j++;
 		}
 		i++;
 	}
-	ft_draw_map(ptr, ptr->nb_lines, ptr->n_per_line, ptr->map);
 }
 
 void	ft_translate_y(t_mlx *ptr, int sense)
@@ -46,12 +45,11 @@ void	ft_translate_y(t_mlx *ptr, int sense)
 		while (j < ptr->n_per_line)
 		{
 			if (sense == 1)
-				ptr->map[i].y[j] += 10;
+				ptr->map[i].y[j] += 20;
 			else if (sense == -1)
-				ptr->map[i].y[j] -= 10;
+				ptr->map[i].y[j] -= 20;
 			j++;
 		}
 		i++;
 	}
-	ft_draw_map(ptr, ptr->nb_lines, ptr->n_per_line, ptr->map);
 }

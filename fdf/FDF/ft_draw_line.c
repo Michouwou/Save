@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 09:49:55 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/23 10:18:42 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/06/02 09:41:27 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		ft_get_color_pad(int sum)
 		return (0x033CC33);
 	if (sum / 2 >= 15)
 		return (0x00033FF);
+	return (0);
 }
 
 int		ft_abs(int num)
