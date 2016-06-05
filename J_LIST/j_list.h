@@ -53,3 +53,30 @@ j_list			*jlst_nodecpy(j_list *to_copy); // Ok
 void			*jlst_datacpy(j_list *node); // Ok
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void    		jlst_reverse(j_list **first_node);
+void			*jlst_median(j_list *list, int (*compare_func)(void*, void*), char code); // Looks for the median in a list or a tree, code will tell the function to return either the data or the index, or the node etc...
+void			*jlst_appears(j_list *first_node, void *data, int (*compare_func)(void*, void*));
+void			jlst_map(j_list *first_node, void (*function)(j_list *node));
+void			jlst_spec_map(j_list *first_node, void *data_ref, void (*function)(j_list *node), int (*compare_func)(void*, void*));
+int				jlst_compare(j_list *node1, j_list *node2);
+j_list			*jlst_split(j_list *first_node, void *data_ref, int (*compare_func)(void*, void*), char is_conservative);
+j_list			*jlst_to_lst(j_list *tree);
+j_list			*jlst_duplicate(j_list *first_node);
+size_t			jlst_get_total_size(j_list *first_node);
+
+void			jlst_to_tree(j_list **first_node, int (*compare_func)(void*, void*), char is_avl);
+void			jlst_balance_tree(j_list **first_node, int (*compare_func)(void*, void*));
+j_list			*jlst_build_tree(int depth, char is_avl);
+int				jlst_get_depth(j_list *tree);
+int				jlst_get_max_depth(j_list *tree);
+int				jlst_get_min_depth(j_list *tree);
+void			jlst_push_tree(j_list **tree, j_list *node, int (*compare_func)(void*, void*));
+j_list			*jlst_tree_from_tab(void *tab, size_t size, int length, int (*compare_func)(void*, void*));
+void			jlst_to_redandblack(j_list **tree, int (*compare_func)(void*, void*));
+void			jlst_set_avl(j_list *tree);
+void			jlst_del_subtrees(j_list **first_node, void *data_ref, int (*compare_func)(void*, void*));
+void			jlst_preffix_map(j_list *tree, void (*function)(j_list *node));
+void			jlst_suffix_map(j_list *tree, void (*function)(j_list *node));
+void			jlst_infix_map(j_list *tree, void (*function)(j_list *node));
+
+
+
