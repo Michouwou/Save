@@ -52,7 +52,7 @@ void			jlst_sed(j_list *first_node); // Ok ?
 j_list			*jlst_nodecpy(j_list *to_copy); // Ok
 void			*jlst_datacpy(j_list *node); // Ok
 void			*ft_memcpy(void *dst, const void *src, size_t n);
-void    		jlst_reverse(j_list **first_node);
+void    		jlst_reverse(j_list **first_node); // OK ?
 void			*jlst_median(j_list *list, int (*compare_func)(void*, void*), char code); // Looks for the median in a list or a tree, code will tell the function to return either the data or the index, or the node etc...
 void			*jlst_appears(j_list *first_node, void *data, int (*compare_func)(void*, void*));
 void			jlst_map(j_list *first_node, void (*function)(j_list *node));
