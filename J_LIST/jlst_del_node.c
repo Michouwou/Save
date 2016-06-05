@@ -12,7 +12,7 @@
 
 #include "j_list.h"
 
-void    jlst_del_node(j_list **first_node, int index, int code)
+void    jlst_del_node(j_list **first_node, int index)
 {
     int     i;
     j_list  *tmp;
@@ -32,7 +32,7 @@ void    jlst_del_node(j_list **first_node, int index, int code)
         tmp->previous->next = tmp->next;
     if (tmp->next)
         tmp->next->previous = tmp->previous;
-    if (tmp->data && code == 1)
+    if (tmp->data && tmp->alloc_)
         free(tmp->data);
     if (!tmp->previous)
         *first_node = (*first_node)->next;

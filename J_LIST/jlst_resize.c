@@ -12,7 +12,7 @@
 
 #include "j_list.h"
 
-void    jlst_resize(j_list **first_node, int code)
+void    jlst_resize(j_list **first_node)
 {
     int     i;
     j_list  *new_list;
@@ -30,12 +30,12 @@ void    jlst_resize(j_list **first_node, int code)
             tmpb->data = jlst_datacpy(tmpa);
             tmpb->data_len = tmpa->data_len;
             tmpb->state = 1;
+            tmpb->alloc_ = 1;
             tmpa = tmpa->next;
         }
         i++;
         tmpb = tmpb->next;
     }
-    printf("On y est???\n\n");
-    jlst_del_list(*first_node, code);
+    jlst_del_list(*first_node);
     *first_node = new_list;
 }

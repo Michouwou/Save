@@ -26,7 +26,7 @@ int main(void)
 	list = jlst_from_tab((void*)tab, 8, 5);
 
 	printf("La liste list %s triee\n", jlst_is_sorted(list, &compare_func) ? "est" : "n'est pas");
-	jlst_sort(&list, &compare_func, 0);
+	jlst_sort(&list, &compare_func);
 	printf("DONE\n");
 	fflush(stdout);
 	printf("La liste list %s triee\n", jlst_is_sorted(list, &compare_func) ? "est" : "n'est");
@@ -40,7 +40,7 @@ int main(void)
 
 	printf("Yop\n");
 	fflush(stdout);
-	jlst_resize(&list, 0);
+	jlst_resize(&list);
 	printf("Yop\n");
 	fflush(stdout);
 	jlst_compact(&list);
@@ -50,5 +50,21 @@ int main(void)
 	printf("La liste list a une longueur de %d\n", jlst_length(list));
 	fflush(stdout);
 
+	jlst_push_back(&list, &(tab[2]), 8, 0);
+	tmp = list;
+	while (tmp)
+	{
+		printf("Tmp : %f\n",  *(double*)tmp->data);
+		tmp = tmp->next;
+	}
+	
+	jlst_reverse(&list);
+	printf("\nApres reverse :\n");
+	tmp = list;
+	while (tmp)
+	{
+		printf("Tmp : %f\n",  *(double*)tmp->data);
+		tmp = tmp->next;
+	}
     return (0);
 }

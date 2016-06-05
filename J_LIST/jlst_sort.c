@@ -12,7 +12,7 @@
 
 #include "j_list.h"
 
-void    jlst_sort(j_list **first_node, int (*compare_func)(void*, void*), int code)
+void    jlst_sort(j_list **first_node, int (*compare_func)(void*, void*))
 {
     j_list  *tmp;
     j_list  *min_e;
@@ -31,8 +31,8 @@ void    jlst_sort(j_list **first_node, int (*compare_func)(void*, void*), int co
                 min_e = tmp;
             tmp = tmp->next;
         }
-        jlst_push_front(&new, jlst_datacpy(min_e), min_e->data_len);
-        jlst_del_node(first_node, jlst_get_index(*first_node, min_e->data, compare_func), code);
+        jlst_push_front(&new, jlst_datacpy(min_e), min_e->data_len, 1);
+        jlst_del_node(first_node, jlst_get_index(*first_node, min_e->data, compare_func));
     }
     *first_node = new;
 }

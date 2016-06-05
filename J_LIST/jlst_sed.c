@@ -28,7 +28,7 @@ void    jlst_sed(j_list *first_node)
             tmpb = tmpa->next;
             tmpa->next = NULL;
             tmpb->previous = NULL;
-            jlst_del_list(tmpb, 0);
+            jlst_del_list(tmpb);
             return ;
         }
         else

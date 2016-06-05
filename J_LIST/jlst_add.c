@@ -14,23 +14,24 @@
 
 void	jlst_add(j_list **first_node, int index, void *data, size_t data_size, char alloc_)
 {
+	j_list	*tmp;
+	
+	tmp = *first_node;
 	if (first_node && *first_node)
 	{
-		while ((*first_node)->next && index > 0)
+		while (tmp->next && index > 0)
 		{
-			*first_node = (*first_node)->next;
+			tmp = tmp->next;
 			index--;
 		}
 		if (index == 0)
 		{
-			(*first_node)->data = data;
-			(*first_node)->data_len = data_size;
-			(*first_node)->state = 1;
-			(*first_node)->alloc_ = alloc_;
-			if (jlst_get_size(*first_node) >= (*first_node)->list_len * 2 / 3)
-				jlst_resize(first_node, 0);
+			tmp->data = data;
+			tmp->data_len = data_size;
+			tmp->state = 1;
+			tmp->alloc_ = alloc_;
+			if (jlst_get_size(*first_node) >= tmp->list_len * 2 / 3)
+				jlst_resize(first_node);
 		}
-		while ((*first_node)->previous)
-			*first_node = (*first_node)->previous;
 	}
 }

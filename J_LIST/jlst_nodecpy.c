@@ -22,5 +22,6 @@ j_list      *jlst_nodecpy(j_list *to_copy)
     new_node->next = to_copy->next;
     new_node->previous = to_copy->previous;
     new_node->state = to_copy->state;
+    new_node->alloc_ = 1;
     return (new_node);
 }

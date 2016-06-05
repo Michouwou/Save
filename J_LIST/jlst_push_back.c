@@ -1,4 +1,6 @@
 
+#include "j_list.h"
+
 void	jlst_push_back(j_list **first_node, void *data, size_t data_size, char alloc_)
 {
 	j_list	*node;
@@ -9,6 +11,7 @@ void	jlst_push_back(j_list **first_node, void *data, size_t data_size, char allo
 	node->data = data;
 	node->state = 1;
 	node->data_len = data_size;
+	node->alloc_ = alloc_;
 	if (*first_node)
 	{
 		tmp = *first_node;

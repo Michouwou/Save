@@ -12,9 +12,9 @@
 
 #include "j_list.h"
 
-void    jlst_del_list(j_list *first_node, int code)
+void    jlst_del_list(j_list *first_node)
 {
     while (first_node)
-        jlst_del_node(&first_node, 0, code);
+        jlst_del_node(&first_node, 0);
 	first_node = NULL;
 }
