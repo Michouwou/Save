@@ -42,6 +42,7 @@ int				jlst_compare(j_list *node1, j_list *node2); // OK ?
 j_list			*jlst_split(j_list *first_node, void *data_ref, int (*compare_func)(void*, void*), char is_conservative);
 j_list			*jlst_duplicate(j_list *first_node); // OK ?
 size_t			jlst_get_total_size(j_list *first_node); // OK ?
+void			jlst_del_multiples(j_list *list, int (*compare_func)(void*, void*));
 
 // Those are the functions that can be applied only on lists only :
 
@@ -72,6 +73,13 @@ void    		jlst_reverse(j_list **first_node); // OK ?
 int				*jlst_dicho_appears(j_list *list, void *data_ref, int (*compare_func)(void*, void*), char code); // OK ?
 void			jlst_push(j_list *list, void *data, size_t data_len, char alloc_); // OK ?
 void			jlst_to_tree(j_list **first_node, int (*compare_func)(void*, void*), char is_avl);
+void			jlst_quick_sort(j_list **first_node, int (*compare_func)(void*, void*));
+void			jlst_fusion_sort(j_list **first_node, int (*compare_func)(void*, void*));
+void			jlst_shell_sort(j_list **first_node, int (*compare_func)(void*, void*));
+void			jlst_comb_sort(j_list **first_node, int (*compare_func)(void*, void*));
+void			jlst_select_sort(j_list **first_node, int (*compare_func)(void*, void*));
+void			jlst_insert_sort(j_list **first_node, int (*compare_func)(void*, void*));
+void			jlst_counter_sort(j_list **first_node, int (*compare_func)(void*, void*));
 
 // Those are the functions that can be applied on trees only :
 
