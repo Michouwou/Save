@@ -119,13 +119,15 @@ void		ft_read(t_room ***rooms, t_ant ***ants, int *nrooms, int *nants)
 		if (!mem && (!ft_strcmp(tmp, "##start") || !ft_strcmp(tmp, "##end")) &&
 			flags[0] < 3)
 			get_commands(tmp, flags);
-		else if (!mem && tmp[0] != '#')
+		else if ((!mem && tmp[0] != '#') || mem == -1)
+		{
+			free (tmp);
 			return ;
-		if (mem == -1)
-			return ;
+		}
 		free(tmp);
 		ft_check_coordinates(*rooms, *nrooms);
 	}
+	free(tmp ? tmp : NULL);
 	if (!flags[1])
 		ft_block("No links? Ants can't fly!");
 }

@@ -34,6 +34,5 @@ int			main(void)
 	ants = NULL;
 	rooms = NULL;
 	treatment(ants, rooms);
-	while (1);
 	return (0);
 }
