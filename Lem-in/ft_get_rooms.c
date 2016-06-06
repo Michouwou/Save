@@ -20,7 +20,6 @@ static void	increase_num_rooms(t_room ***rooms, int i)
 	j = 0;
 	while ((*rooms) && (*rooms)[j] && (*rooms)[j]->name)
 		j++;
-	//free(*rooms ? (*rooms)[j] : NULL);
 	if ((i + 1) % 10 == 0 || i == 0)
 	{
 		tmp = (t_room**)malloc(sizeof(t_room*) * (i + 10));
@@ -100,5 +99,4 @@ void		ft_get_rooms(char *line, int *nrooms, t_room ***rooms, int *flag)
 	tmp = ft_strsplit(line, ' ');
 	new_room(tmp, rooms, nrooms, flag);
 	for_tmp(&tmp);
-	//(*rooms)[*nrooms] = ft_create_room(NULL, 0, 0);
 }
