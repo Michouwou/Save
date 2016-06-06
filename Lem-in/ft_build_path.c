@@ -47,7 +47,7 @@ static void	erase_last_one(t_path *actual_path)
 	tmp = actual_path;
 	while (tmp->next && tmp->next->next)
 		tmp = tmp->next;
-	free(tmp->next);
+	free(tmp->next ? tmp->next : tmp);
 	tmp->next = NULL;
 }
 

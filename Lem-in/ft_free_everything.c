@@ -36,7 +36,7 @@ static void	care_rooms(t_room **rooms)
 	int	i;
 
 	i = 0;
-	while (rooms[i]->name)
+	while (rooms[i])
 	{
 		free(rooms[i]->name);
 		free(rooms[i]->links);
@@ -55,7 +55,7 @@ void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants)
 		free(ants[i++]);
 	free(ants);
 	i = -1;
-	while (rooms[++i]->name)
+	while (rooms[++i])
 	{
 		j = 0;
 		while (rooms[i]->links && rooms[i]->links[j] &&
@@ -64,6 +64,5 @@ void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants)
 		free(rooms[i]->links ? rooms[i]->links[j] : NULL);
 	}
 	care_rooms(rooms);
-	free(rooms[i]);
 	free(rooms);
 }

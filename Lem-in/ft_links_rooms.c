@@ -41,7 +41,7 @@ static void	get_rooms(t_room **rooms, t_room **one, t_room **two, char **link)
 	i = 0;
 	if (!link || !link[0] || !link[1])
 		return ;
-	while (rooms[i]->name && !(*one && *two))
+	while (rooms[i] && !(*one && *two))
 	{
 		if (!ft_strcmp(rooms[i]->name, link[0]))
 			*one = rooms[i];

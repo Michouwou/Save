@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 13:27:19 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/05/25 16:48:19 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/06/06 09:45:15 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ static int	func_two(char *tmp, int flags[], t_room ***rooms, int *nrooms)
 
 static void	get_commands(char *tmp, int flags[])
 {
+	if (flags[0] == 0)
+		ft_block("Your arguments do not begin with the number of ants");
 	flags[1] = (tmp[2] == 's') ? 1 : 2;
 	flags[0] = 2;
 	if (flags[2] == 0)
