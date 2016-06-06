@@ -16,9 +16,9 @@ void	jlst_add(j_list **first_node, int index, void *data, size_t data_size, char
 {
 	j_list	*tmp;
 	
-	tmp = *first_node;
 	if (first_node && *first_node)
 	{
+		tmp = *first_node;
 		while (tmp->next && index > 0)
 		{
 			tmp = tmp->next;

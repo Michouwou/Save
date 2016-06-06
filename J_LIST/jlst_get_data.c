@@ -24,5 +24,5 @@ void    *jlst_get_data(j_list *first_node, int index)
         list = list->next;
         i++;
     }
-    return (i == index ? list->data : NULL);
+    return ((i == index && list) ? list->data : NULL);
 }

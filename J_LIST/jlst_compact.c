@@ -34,6 +34,6 @@ void    jlst_compact(j_list **first_node)
             if (!element->previous)
                 *first_node = element;
         }
-    element = element->next;
+        element = element->next;
     }
 }

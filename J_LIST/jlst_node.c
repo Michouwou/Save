@@ -13,5 +13,6 @@ j_list  *jlst_node(void)
     new->previous = NULL;
     new->next = NULL;
     new->alloc_ = 0;
+    new->is_tree = 0;
     return (new);
 }

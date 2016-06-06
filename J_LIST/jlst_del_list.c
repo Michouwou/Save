@@ -14,7 +14,14 @@
 
 void    jlst_del_list(j_list *first_node)
 {
-    while (first_node)
-        jlst_del_node(&first_node, 0);
-	first_node = NULL;
+	j_list	*tmp;
+
+	while (first_node)
+	{
+		tmp = first_node;
+		first_node = first_node->next;
+		if (tmp->alloc_)
+			free(tmp->data);
+		free(tmp);
+	}
 }

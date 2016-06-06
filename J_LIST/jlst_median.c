@@ -41,7 +41,7 @@ void    *jlst_median(j_list *list, int (*compare_func)(void*, void*), char code)
     {
         jlst_nforward(tmp->list_len / 2, &list); // On avance dans la liste temporaire jusqu'au noeud median
         index = tmp->alloc_; // On set index sur alloc
-        ret = (void*)jlst_get_node(list, tmp->data, compare_func); // On recup' le node median dans la liste d'origin
+        ret = (void*)jlst_get_node(list, tmp->data, compare_func); // On recup' le node median dans la liste d'origine
         jlst_set_start(tmp); // On remet tmp au debut
         jlst_del_list(tmp);
         return (code == 4 ? ret : (void*)&index);

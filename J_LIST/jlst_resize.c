@@ -12,30 +12,18 @@
 
 #include "j_list.h"
 
-void    jlst_resize(j_list **first_node)
+void    jlst_resize(j_list *first_node)
 {
-    int     i;
-    j_list  *new_list;
-    j_list  *tmpa;
-    j_list  *tmpb;
-    
-    new_list = jlst_new(2 * jlst_length(*first_node));
-    i = 0;
-    tmpa = *first_node;
-    tmpb = new_list;
-    while (tmpa)
+    j_list  *tmp;
+    j_list  *node;
+
+    tmp = *first_node;
+    while (tmp)
     {
-        if (!(i % 2))
-        {
-            tmpb->data = jlst_datacpy(tmpa);
-            tmpb->data_len = tmpa->data_len;
-            tmpb->state = 1;
-            tmpb->alloc_ = 1;
-            tmpa = tmpa->next;
-        }
-        i++;
-        tmpb = tmpb->next;
+        node = jlst_node();
+        node->next = tmp->next;
+        node->previous = tmp;
+        tmp->next = node;
+        tmp = tmp->next->next;
     }
-    jlst_del_list(*first_node);
-    *first_node = new_list;
 }

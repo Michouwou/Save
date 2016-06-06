@@ -25,10 +25,7 @@ j_list      *jlst_from_tab(void *tab, size_t size, int length)
     tmp_list = list;
     while (list && length)
     {
-        list->data = tmp;
-        list->data_len = size;
-        list->state = 1;
-        list->alloc_ = 0;
+        jlst_add(&list, 0, tmp, size, 0);
         tmp += size;
         list = list->next;
         length--;

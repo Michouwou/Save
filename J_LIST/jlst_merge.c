@@ -22,7 +22,7 @@ void    jlst_merge(j_list *first_list, j_list *second_list)
     tmpb = first_list;
     while (tmpa)
     {
-        while (tmpb->next && tmpb->state)
+        while (tmpb && tmpb->next && tmpb->state)
             tmpb = tmpb->next;
         if (tmpb->next == NULL && tmpb->state)
         {

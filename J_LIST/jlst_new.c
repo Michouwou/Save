@@ -15,21 +15,23 @@
 j_list	*jlst_new(int size)
 {
 	j_list	*new;
+	j_list	*tmp;
 	int		i;
 	
 	i = 0;
+	if (size < 1)
+		return (NULL);
 	new = jlst_node();
 	new->list_len = size;
+	tmp = new;
 	while (i < size - 1)
 	{
-		new->next = jlst_node();
-		new->next->previous = new;
-		new = new->next;
-		new->list_len = size;
+		tmp->next = jlst_node();
+		tmp->next->previous = tmp;
+		tmp = tmp->next;
+		tmp->list_len = size;
 		i++;
 	}
-	new->next = NULL;
-	while (new->previous)
-		new = new->previous;
+	tmp->next = NULL;
 	return (new);
 }
