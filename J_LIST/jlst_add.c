@@ -12,7 +12,7 @@
 
 #include "j_list.h"
 
-void	jlst_add(j_list **first_node, int index, void *data, size_t data_size, char alloc_)
+void	jlst_add(j_list **first_node, int index, j_list *full_node, char alloc_)
 {
 	j_list	*tmp;
 	
@@ -26,12 +26,13 @@ void	jlst_add(j_list **first_node, int index, void *data, size_t data_size, char
 		}
 		if (index == 0)
 		{
-			tmp->data = data;
-			tmp->data_len = data_size;
+			tmp->data = full_node->data;
+			tmp->data_len = full_node->data_len;
 			tmp->state = 1;
-			tmp->alloc_ = alloc_;
+			tmp->alloc_ = full_node->alloc_;
 			if (jlst_get_size(*first_node) >= tmp->list_len * 2 / 3)
 				jlst_resize(first_node);
+			free(full_node);
 		}
 	}
 }
