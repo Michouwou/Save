@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/14 11:15:47 by mlevieux          #+#    #+#              #
-#    Updated: 2016/06/04 13:24:05 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/06/07 11:51:00 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -145,3 +145,9 @@ test :
 	@echo "\n"
 	@read
 	./lem-in < tests/test_trailing_space
+	@echo "\n"
+	@read
+	./lem-in < tests/test_first_line_command
+	@echo "\n"
+	@read
+	./lem-in < tests/test_two_following_commands

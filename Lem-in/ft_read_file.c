@@ -84,6 +84,8 @@ static void	get_commands(char *tmp, int flags[])
 {
 	if (flags[0] == 0)
 		ft_block("Your arguments do not begin with the number of ants");
+	if (flags[1])
+		ft_block("Two following commands are forbidden, what did you think?!");
 	flags[1] = (tmp[2] == 's') ? 1 : 2;
 	flags[0] = 2;
 	if (flags[2] == 0)
