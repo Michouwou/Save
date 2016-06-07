@@ -97,7 +97,10 @@ void		ft_get_rooms(char *line, int *nrooms, t_room ***rooms, int *flag)
 	increase_num_rooms(rooms, *nrooms);
 	num_space(line);
 	tmp = ft_strsplit(line, ' ');
-	if (ft_strchr(tmp[1],'.') || ft_strchr(tmp[1],',') || ft_strchr(tmp[2], '.') || ft_strchr(tmp[2], ',') || (tmp[1] && ft_is_number(tmp[1]) == 1 && !ft_atoi(tmp[1])) || (tmp[1] && tmp[2] && ft_is_number(tmp[2]) == 1 && !ft_atoi(tmp[2])))
+	if ((tmp[1] && (ft_strchr(tmp[1],'.') || ft_strchr(tmp[1],','))) ||
+		(tmp[1] && tmp[2] && (ft_strchr(tmp[2], '.') || ft_strchr(tmp[2], ','))) ||
+		(tmp[1] && ft_is_number(tmp[1]) == 1 && !ft_atoi(tmp[1])) ||
+		(tmp[1] && tmp[2] && ft_is_number(tmp[2]) == 1 && !ft_atoi(tmp[2])))
 		ft_block("Coordinates must be representable as ints");
 	new_room(tmp, rooms, nrooms, flag);
 	for_tmp(&tmp);
