@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/14 11:15:47 by mlevieux          #+#    #+#              #
-#    Updated: 2016/06/07 11:51:00 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/06/07 19:13:30 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,9 @@ fclean : clean
 	@rm -rf $(NAME)
 
 re : fclean all
+
+norme :
+	@norminette **/**.[ch]
 
 test :
 	./lem-in < tests/test_1
