@@ -17,7 +17,7 @@ void    jlst_resize(j_list *first_node)
     j_list  *tmp;
     j_list  *node;
 
-    tmp = *first_node;
+    tmp = first_node;
     while (tmp)
     {
         node = jlst_node();

@@ -25,7 +25,7 @@ j_list      *jlst_from_tab(void *tab, size_t size, int length)
     tmp_list = list;
     while (list && length)
     {
-        jlst_add(&list, 0, tmp, size, 0);
+        jlst_add(&list, 0, jlst_full_node(tmp, size, 0), 0);
         tmp += size;
         list = list->next;
         length--;

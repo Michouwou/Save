@@ -49,7 +49,7 @@ void			jlst_del_multiples(j_list *list, int (*compare_func)(void*, void*));
 j_list			*jlst_node(void); /*creates a fresh null node, OK*/
 j_list			*jlst_create(void); /*creates a fresh list, initial size of 9, OK*/
 j_list			*jlst_new(int size); /*creates a fresh list, initial size of size, OK*/
-j_list			*jlst_full_node(void *data, size_t data_len, char a lloc_); // OK ?
+j_list			*jlst_full_node(void *data, size_t data_len, char alloc_); // OK ?
 void			jlst_add(j_list **first_node, int index, j_list *full_node, char alloc_); /*add 'data' to the index'th node of the list OK*/
 void			jlst_add_data(j_list **first_node, int index, void *data, size_t data_len); // memory freeing will not be insured after a call to this function (alloc_ set to 0) OK ? 
 void			jlst_push_front(j_list **first_node, void *data, size_t data_size, char alloc_); /*add data (in a new node) as the first element of the list, makes a reversed rotation, OK*/
@@ -62,7 +62,7 @@ void			jlst_compact(j_list **first); /*compacts the list so it's continuous OK*/
 void			jlst_merge(j_list *first_list, j_list *second_list); /*add 'second_list' to the end of 'first_list' OK*/
 void			jlst_del_node(j_list **first_node, int index); /*deletes the node at 'index' in the list OK*/
 int				jlst_length(j_list *first_node); /*returns the length of the list, that is to say the maximum size it can hold OK*/
-void			jlst_resize(j_list **first_node); /*increase list by two third OK*/
+void			jlst_resize(j_list *first_node); /*increase list by two third OK*/
 int				jlst_is_sorted(j_list *first_node, int (*compare_func)(void*, void*)); // OK ?
 void			jlst_nforward(int n, j_list **first_node); // OK
 void			jlst_nbackward(int n, j_list **first_node); // OK
@@ -72,7 +72,7 @@ void			*ft_memcpy(void *dst, const void *src, size_t n);
 void    		jlst_reverse(j_list **first_node); // OK ?
 int				*jlst_dicho_appears(j_list *list, void *data_ref, int (*compare_func)(void*, void*), char code); // OK ?
 void			jlst_push(j_list *list, void *data, size_t data_len, char alloc_); // OK ?
-void			jlst_to_tree(j_list **first_node, int (*compare_func)(void*, void*), char is_avl);
+void			jlst_to_tree(j_list **first_node, int (*compare_func)(void*, void*), char is_avl); // OK ?
 void			jlst_quick_sort(j_list **first_node, int (*compare_func)(void*, void*));
 void			jlst_fusion_sort(j_list **first_node, int (*compare_func)(void*, void*));
 void			jlst_shell_sort(j_list **first_node, int (*compare_func)(void*, void*));
