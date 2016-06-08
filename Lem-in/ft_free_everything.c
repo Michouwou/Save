@@ -50,7 +50,6 @@ void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants)
 	int		j;
 
 	i = 0;
-	ft_printf("On est dans ft_free_everything\n");
 	care_paths(paths);
 	while (ants[i])
 		free(ants[i++]);
@@ -59,19 +58,12 @@ void		ft_free_everything(t_path **paths, t_room **rooms, t_ant **ants)
 	while (rooms[i])
 	{
 		j = 0;
-		ft_printf("Avant la boucle\n");
 		while (rooms[i]->links && rooms[i]->links[j] &&
 			rooms[i]->links[j]->name)
-		{
-			ft_printf("rooms[i]->links[j]->name : %s\n", rooms[i]->links[j]->name);
 			j++;
-		}
-		ft_printf("Apres la boucle\n");
 		free(rooms[i]->links ? rooms[i]->links[j] : NULL);
-		ft_printf("Apres le free\n");
 		i++;
 	}
 	care_rooms(rooms);
 	free(rooms);
-	ft_printf("On y est plus\n");
 }

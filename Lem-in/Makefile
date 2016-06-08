@@ -45,7 +45,11 @@ fclean : clean
 re : fclean all
 
 norme :
-	@norminette **/**.[ch]
+	@echo "Norme checking...\n"
+	@result=$(shell norminette . | grep -e "Error" -e "Warning" | grep -v "Warning: Not a valid file");
+	@ifeq(0,$(result))
+		echo "Error!\n"
+	@endif
 
 test :
 	@echo "Building the generator...\n"
@@ -55,61 +59,78 @@ test :
 	@sh git.sh
 	@make -C gen
 	@cp gen/lem-in_gen .
-	@./lem-in_gen 15 5 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 1 2 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 10 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 25 2 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 11 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 15 3 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 12 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 50 4 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 15 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 200 5 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 20 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 3 6 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 3 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 145 7 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 8 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 98 8 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 17 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 87 9 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 15 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 20 10 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 9 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 7 11 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 5 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 55 12 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 7 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 70 13 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@./lem-in_gen 15 2 > file_test
-	@./lem-in < file_test
-	@sleep 1
+	@./lem-in_gen 185 14 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
+	@./lem-in_gen 1500 15 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
 	@echo "\n"
-	@rm -rf file_test gen lem-in_gen git.sh
+	@./lem-in_gen 10 16 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
+	@echo "\n"
+	@./lem-in_gen 21 17 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
+	@echo "\n"
+	@./lem-in_gen 15 18 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@echo "-----------------------------------------------------------------------------------"
+	@echo "\n"
+	@./lem-in_gen 67 19 > file_for_lemin_test
+	@./lem-in < file_for_lemin_test
+	@rm -rf file_for_lemin_test gen lem-in_gen git.sh
 	@echo "Tests OK!\n"
