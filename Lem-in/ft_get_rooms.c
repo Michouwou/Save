@@ -17,14 +17,11 @@ static void	increase_num_rooms(t_room ***rooms, int i)
 	int		j;
 	t_room	**tmp;
 
-	j = 0;
-	while ((*rooms) && (*rooms)[j] && (*rooms)[j]->name)
-		j++;
 	if ((i + 1) % 10 == 0 || i == 0)
 	{
 		tmp = (t_room**)malloc(sizeof(t_room*) * (i + 10));
 		j = 0;
-		while ((*rooms) && (*rooms)[j] && (*rooms)[j]->name)
+		while ((*rooms) && (*rooms)[j])
 		{
 			tmp[j] = (*rooms)[j];
 			j++;
@@ -43,7 +40,7 @@ static void	num_space(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == '-')
+		if (str[i] == '-' && spaces == 0)
 			ft_block("Room names can't contain dashes, that's an error");
 		if (str[i] == ' ')
 			spaces++;
@@ -96,8 +93,11 @@ void		ft_get_rooms(char *line, int *nrooms, t_room ***rooms, int *flag)
 {
 	char	**tmp;
 
+	ft_printf("On entre dans ft_get_rooms\n");
 	increase_num_rooms(rooms, *nrooms);
+	ft_printf("On a finit increase_num_rooms\n");
 	num_space(line);
+	ft_printf("On a finit num_space\n");
 	tmp = ft_strsplit(line, ' ');
 	if ((tmp[0] && tmp[1] && (ft_strchr(tmp[1], '.') ||
 		ft_strchr(tmp[1], ','))) || (tmp[0] && tmp[1] &&
@@ -105,6 +105,10 @@ void		ft_get_rooms(char *line, int *nrooms, t_room ***rooms, int *flag)
 		(tmp[1] && ft_is_number(tmp[1]) == 1 && !ft_atoi(tmp[1])) ||
 		(tmp[1] && tmp[2] && ft_is_number(tmp[2]) == 1 && !ft_atoi(tmp[2])))
 		ft_block("Coordinates must be representable as ints");
+	ft_printf("On a finit de regarder l'integrite du nombre\n");
 	new_room(tmp, rooms, nrooms, flag);
+	ft_printf("On est sorti de new_room\n");
 	for_tmp(&tmp);
+	(*rooms)[*nrooms] = NULL;
+	ft_printf("Memoire liberee!\n");
 }

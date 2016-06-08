@@ -1,0 +1,7647 @@
+Building the generator...
+
+gcc -O3 -o lem-in_gen gen.c
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-4
+L1-1 L2-4
+L1-end L2-1 L3-4
+L2-end L3-1 L4-4
+L3-end L4-1 L5-4
+L4-end L5-1 L6-4
+L5-end L6-1 L7-4
+L6-end L7-1 L8-4
+L7-end L8-1 L9-4
+L8-end L9-1 L10-4
+L9-end L10-1 L11-4
+L10-end L11-1 L12-4
+L11-end L12-1 L13-4
+L12-end L13-1 L14-4
+L13-end L14-1 L15-4
+L14-end L15-1
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 4
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 3
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5 5 5
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6 6 6
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7 7 7
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8 8 8
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9 9 9
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-2
+L1-0 L2-2
+L1-end L2-0 L3-2
+L2-end L3-0 L4-2
+L3-end L4-0 L5-2
+L4-end L5-0 L6-2
+L5-end L6-0 L7-2
+L6-end L7-0 L8-2
+L7-end L8-0 L9-2
+L8-end L9-0 L10-2
+L9-end L10-0 L11-2
+L10-end L11-0 L12-2
+L11-end L12-0 L13-2
+L12-end L13-0 L14-2
+L13-end L14-0 L15-2
+L14-end L15-0
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 2
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 5
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : end
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 6
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 9
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 8
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 6
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 9
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 3
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5 5 5
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6 6 6
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7 7 7
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8 8 8
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9 9 9
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10 10 10
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-4
+L1-2 L2-4
+L1-0 L2-2 L3-4
+L1-end L2-0 L3-2 L4-4
+L2-end L3-0 L4-2 L5-4
+L3-end L4-0 L5-2 L6-4
+L4-end L5-0 L6-2 L7-4
+L5-end L6-0 L7-2 L8-4
+L6-end L7-0 L8-2 L9-4
+L7-end L8-0 L9-2 L10-4
+L8-end L9-0 L10-2 L11-4
+L9-end L10-0 L11-2 L12-4
+L10-end L11-0 L12-2 L13-4
+L11-end L12-0 L13-2 L14-4
+L12-end L13-0 L14-2 L15-4
+L13-end L14-0 L15-2
+L14-end L15-0
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 7
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 8
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 8
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 8
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 10
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 5
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 5
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 7
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 5
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5 5 5
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6 6 6
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7 7 7
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8 8 8
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9 9 9
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10 10 10
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11 11 11
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-10
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-2 L2-4
+L1-5 L2-1 L3-2 L4-4
+L1-11 L2-3 L3-5 L4-1 L5-2 L6-4
+L1-end L2-0 L3-11 L4-3 L5-5 L6-1 L7-2 L8-4
+L2-6 L3-end L4-0 L5-11 L6-3 L7-5 L8-1 L9-2 L10-4
+L2-end L4-6 L5-end L6-0 L7-11 L8-3 L9-5 L10-1 L11-2 L12-4
+L4-end L6-6 L7-end L8-0 L9-11 L10-3 L11-5 L12-1 L13-2 L14-4
+L6-end L8-6 L9-end L10-0 L11-11 L12-3 L13-5 L14-1 L15-2
+L8-end L10-6 L11-end L12-0 L13-11 L14-3 L15-5
+L10-end L12-6 L13-end L14-0 L15-11
+L12-end L14-6 L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 4
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 6
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 6
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 3
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 10
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 7
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 11
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 10
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 9
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 10
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 7
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 2
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5 5 5
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6 6 6
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7 7 7
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8 8 8
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9 9 9
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10 10 10
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11 11 11
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12 12 12
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+13 13 13
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+14 14 14
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-12
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11-12
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11-10
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+13-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+14-12
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+14-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-10
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-10
+L1-7 L2-10
+L1-end L2-7 L3-10
+L2-end L3-7 L4-10
+L3-end L4-7 L5-10
+L4-end L5-7 L6-10
+L5-end L6-7 L7-10
+L6-end L7-7 L8-10
+L7-end L8-7 L9-10
+L8-end L9-7 L10-10
+L9-end L10-7 L11-10
+L10-end L11-7 L12-10
+L11-end L12-7 L13-10
+L12-end L13-7 L14-10
+L13-end L14-7 L15-10
+L14-end L15-7
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 10
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 7
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 14
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 13
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 9
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 6
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 5
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 10
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 11
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 13
+rooms[i]->links[j]->name : 11
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 10
+rooms[i]->links[j]->name : 13
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 12
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 13
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 13
+rooms[i]->links[j]->name : 14
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 0
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5 5 5
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6 6 6
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7 7 7
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8 8 8
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9 9 9
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10 10 10
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11 11 11
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12 12 12
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+13 13 13
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+14 14 14
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+15 15 15
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+16 16 16
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+17 17 17
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+18 18 18
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+19 19 19
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-18
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-15
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-15
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-15
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-14
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-15
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-15
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-14
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-12
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11-15
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12-10
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+13-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+13-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+14-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+15-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+15-17
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+15-10
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+16-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+16-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+16-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+17-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+18-10
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+19-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-17
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-1
+L1-4 L2-1
+L1-15 L2-4 L3-1
+L1-17 L2-15 L3-4 L4-1
+L1-end L2-17 L3-15 L4-4 L5-1
+L2-end L3-17 L4-15 L5-4 L6-1
+L3-end L4-17 L5-15 L6-4 L7-1
+L4-end L5-17 L6-15 L7-4 L8-1
+L5-end L6-17 L7-15 L8-4 L9-1
+L6-end L7-17 L8-15 L9-4 L10-1
+L7-end L8-17 L9-15 L10-4 L11-1
+L8-end L9-17 L10-15 L11-4 L12-1
+L9-end L10-17 L11-15 L12-4 L13-1
+L10-end L11-17 L12-15 L13-4 L14-1
+L11-end L12-17 L13-15 L14-4 L15-1
+L12-end L13-17 L14-15 L15-4
+L13-end L14-17 L15-15
+L14-end L15-17
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 17
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 18
+rooms[i]->links[j]->name : 15
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 12
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 16
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 6
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 15
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 10
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 15
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 15
+rooms[i]->links[j]->name : 16
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 14
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 14
+rooms[i]->links[j]->name : 13
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 13
+rooms[i]->links[j]->name : 16
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 15
+rooms[i]->links[j]->name : 15
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 19
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 14
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 13
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 15
+rooms[i]->links[j]->name : 18
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 15
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 12
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 10
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 17
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 6
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 17
+rooms[i]->links[j]->name : 10
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 15
+rooms[i]->links[j]->name : 13
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 10
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 8
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-0 L2-1
+L1-end L2-end L3-0 L4-1
+L3-end L4-end L5-0 L6-1
+L5-end L6-end L7-0 L8-1
+L7-end L8-end L9-0 L10-1
+L9-end L10-end L11-0 L12-1
+L11-end L12-end L13-0 L14-1
+L13-end L14-end L15-0
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 2
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : start
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : start
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : end
+rooms[i]->links[j]->name : end
+rooms[i]->links[j]->name : end
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5 5 5
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6 6 6
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7 7 7
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-1 L2-7
+L1-0 L2-4 L3-1 L4-7
+L1-end L2-end L3-0 L4-4 L5-1 L6-7
+L3-end L4-end L5-0 L6-4 L7-1 L8-7
+L5-end L6-end L7-0 L8-4 L9-1 L10-7
+L7-end L8-end L9-0 L10-4 L11-1 L12-7
+L9-end L10-end L11-0 L12-4 L13-1 L14-7
+L11-end L12-end L13-0 L14-4 L15-1
+L13-end L14-end L15-0
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 7
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 4
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : end
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 3
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 4
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : end
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : start
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5 5 5
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6 6 6
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7 7 7
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8 8 8
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9 9 9
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10 10 10
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11 11 11
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12 12 12
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+13 13 13
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+14 14 14
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+15 15 15
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+16 16 16
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-10
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-14
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-10
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-10
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-10
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12-14
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+13-15
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+14-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+15-12
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+16-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+16-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+16-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+16-14
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+16-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-16
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-14
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-16
+L1-14 L2-16
+L1-end L2-14 L3-16
+L2-end L3-14 L4-16
+L3-end L4-14 L5-16
+L4-end L5-14 L6-16
+L5-end L6-14 L7-16
+L6-end L7-14 L8-16
+L7-end L8-14 L9-16
+L8-end L9-14 L10-16
+L9-end L10-14 L11-16
+L10-end L11-14 L12-16
+L11-end L12-14 L13-16
+L12-end L13-14 L14-16
+L13-end L14-14 L15-16
+L14-end L15-14
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 16
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 14
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 16
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 10
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 8
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 10
+rooms[i]->links[j]->name : 12
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 14
+rooms[i]->links[j]->name : 14
+rooms[i]->links[j]->name : 16
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 13
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 10
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 16
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 16
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 10
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 10
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 2
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 7
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 14
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 15
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 15
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 16
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 13
+rooms[i]->links[j]->name : 12
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 14
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5 5 5
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6 6 6
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7 7 7
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8 8 8
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9 9 9
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10 10 10
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11 11 11
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12 12 12
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+13 13 13
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+14 14 14
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-11
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-14
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-12
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-12
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-14
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+9-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+10-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+11-12
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+12-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+13-10
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+14-12
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+14-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+14-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-13
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-12
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-9
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-13
+L1-9 L2-13
+L1-end L2-9 L3-13
+L2-end L3-9 L4-13
+L3-end L4-9 L5-13
+L4-end L5-9 L6-13
+L5-end L6-9 L7-13
+L6-end L7-9 L8-13
+L7-end L8-9 L9-13
+L8-end L9-9 L10-13
+L9-end L10-9 L11-13
+L10-end L11-9 L12-13
+L11-end L12-9 L13-13
+L12-end L13-9 L14-13
+L13-end L14-9 L15-13
+L14-end L15-9
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 13
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 9
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 9
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 14
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 8
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 14
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 9
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 13
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 14
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 9
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 8
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 14
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 13
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 13
+rooms[i]->links[j]->name : 13
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 12
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 11
+rooms[i]->links[j]->name : 13
+rooms[i]->links[j]->name : 14
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 9
+rooms[i]->links[j]->name : 10
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 10
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 12
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 5
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5 5 5
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6 6 6
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7 7 7
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8 8 8
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-7
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+7-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+8-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-8
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-4
+L1-8 L2-4
+L1-end L2-8 L3-4
+L2-end L3-8 L4-4
+L3-end L4-8 L5-4
+L4-end L5-8 L6-4
+L5-end L6-8 L7-4
+L6-end L7-8 L8-4
+L7-end L8-8 L9-4
+L8-end L9-8 L10-4
+L9-end L10-8 L11-4
+L10-end L11-8 L12-4
+L11-end L12-8 L13-4
+L12-end L13-8 L14-4
+L13-end L14-8 L15-4
+L14-end L15-8
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 4
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 8
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 7
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 6
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 7
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 6
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 8
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 8
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 7
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 3
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 0
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-1 L2-4
+L1-end L2-3 L3-1 L4-4
+L2-end L3-end L4-3 L5-1 L6-4
+L4-end L5-end L6-3 L7-1 L8-4
+L6-end L7-end L8-3 L9-1 L10-4
+L8-end L9-end L10-3 L11-1 L12-4
+L10-end L11-end L12-3 L13-1 L14-4
+L12-end L13-end L14-3 L15-1
+L14-end L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 4
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : start
+rooms[i]->links[j]->name : end
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : end
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2 2 2
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3 3 3
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4 4 4
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5 5 5
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6 6 6
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+2-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+3-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+4-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+5-3
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+6-2
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-5
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-6
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-4
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-5
+L1-6 L2-5
+L1-end L2-6 L3-5
+L2-end L3-6 L4-5
+L3-end L4-6 L5-5
+L4-end L5-6 L6-5
+L5-end L6-6 L7-5
+L6-end L7-6 L8-5
+L7-end L8-6 L9-5
+L8-end L9-6 L10-5
+L9-end L10-6 L11-5
+L10-end L11-6 L12-5
+L11-end L12-6 L13-5
+L12-end L13-6 L14-5
+L13-end L14-6 L15-5
+L14-end L15-6
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 5
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 4
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 6
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 4
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : 6
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 5
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 3
+rooms[i]->links[j]->name : 6
+rooms[i]->links[j]->name : start
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 5
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 2
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+On y est plus
+
+
+On entre dans la boucle
+On entre dans func_one
+15
+On sort de func_one
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##start
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start 0 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+##end
+On sort de func_one
+On entre dans func_two
+On sort de func_two
+On entre dans get_commands
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end 1 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0 0 0
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1 1 1
+On sort de func_one
+On entre dans func_two
+func_two --> premiere comdition
+On entre dans ft_get_rooms
+On a finit increase_num_rooms
+On a finit num_space
+On a finit de regarder l'integrite du nombre
+On est sorti de new_room
+Memoire liberee!
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+0-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+1-0
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+start-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On entre dans la boucle
+On entre dans func_one
+end-1
+On sort de func_one
+On entre dans func_two
+func_two --> deuxieme condition
+On sort de func_two
+On a fini les conditions
+On a free tmp
+On vient de check les coordonnees
+On va sortir
+
+L1-1
+L1-end L2-1
+L2-end L3-1
+L3-end L4-1
+L4-end L5-1
+L5-end L6-1
+L6-end L7-1
+L7-end L8-1
+L8-end L9-1
+L9-end L10-1
+L10-end L11-1
+L11-end L12-1
+L12-end L13-1
+L13-end L14-1
+L14-end L15-1
+L15-end
+On est dans ft_free_everything
+Avant la boucle
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 1
+rooms[i]->links[j]->name : 1
+Apres la boucle
+Apres le free
+Avant la boucle
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : 0
+rooms[i]->links[j]->name : start
+rooms[i]->links[j]->name : end
+Apres la boucle
+Apres le free
+On y est plus
+
+
+Tests OK!
+
