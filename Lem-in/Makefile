@@ -41,96 +41,131 @@ fclean : clean
 	@echo "Cleaning everything...\n"
 	@make fclean -C Libft/
 	@rm -rf $(NAME)
+	@rm -rf gen lem-in_gen git.sh 
 
 re : fclean all
 
-norme :
-	@echo "Norme checking...\n"
-	@result=$(shell norminette . | grep -e "Error" -e "Warning" | grep -v "Warning: Not a valid file");
-	@ifeq(0,$(result))
-		echo "Error!\n"
-	@endif
-
-test :
+clone :
 	@echo "Building the generator...\n"
 	@echo "if [ ! -d gen ]\nthen\n\
-	\tgit clone https://github.com/cmehay/lem-in_generator.git gen\n\
-	else\n\tcd gen git pull\nfi" > git.sh
-	@sh git.sh
-	@make -C gen
+	\tgit clone -q https://github.com/cmehay/lem-in_generator.git gen\n\
+	else\n\tcd gen git pull -q > /dev/null\nfi" > git.sh
+	@sh git.sh > /dev/null
+	@make -C gen > /dev/null
 	@cp gen/lem-in_gen .
-	@./lem-in_gen 1 2 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 25 2 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 15 3 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 50 4 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 200 5 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 3 6 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 145 7 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 98 8 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 87 9 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 20 10 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 7 11 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 55 12 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 70 13 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 185 14 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@./lem-in_gen 1500 15 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 10 16 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 21 17 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 15 18 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@echo "-----------------------------------------------------------------------------------"
-	@echo "\n"
-	@./lem-in_gen 67 19 > file_for_lemin_test
-	@./lem-in < file_for_lemin_test
-	@rm -rf file_for_lemin_test gen lem-in_gen git.sh
-	@echo "Tests OK!\n"
+	@echo "Generator ready!\n"
+
+test :
+	@./lem-in < tests/test_1
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_10
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_2
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_3
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_4
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_5
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_6
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_7
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_8
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_9
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_comments_and_sharp_room_name
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_dash_beginning_of_line
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_dash_end_of_line
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_dash_room_name
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_empty_file
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_first_line_command
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_half_link
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_missing_coordinate
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_negative_ants
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_negative_coordinates
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_newline_line5
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_no_ants
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_no_end
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_no_links
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_no_parallel
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_no_start
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_out_int
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_rooms_same_place
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_start_not_linked
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_tab_before_link
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_trailing_space
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_trailing_space_end_of_line
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_twice_same_line
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_two_ends
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_two_following_commands
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_two_rooms_same_name
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_two_starts
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
+	@sleep 3
+	@./lem-in < tests/test_wrong_name
+	@echo "\033[0;33m----------------------------------------------------------------------------------\033[0;m"
