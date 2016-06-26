@@ -1,0 +1,23 @@
+.header
+{
+    width: 100%;
+    height: 20%;
+    position: inherit;
+    font-size: 5vmax;
+    background-image: url("header.jpg");
+    color: blue;
+    text-align: center;
+}
+
+.title_text
+{
+    margin: 0%;
+    padding-top: 5vmin;
+    padding-bottom: 5vmin;
+}
+
+.WhoIAm
+{
+    width: 100%;
+    background: lightgrey;
+}

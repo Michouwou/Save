@@ -18,7 +18,7 @@ SRC = jlst_compact.c jlst_del_list.c jlst_get_index.c jlst_is_sorted.c \
 	  jlst_push_front.c jlst_datacpy.c jlst_from_tab.c jlst_in_jlst.c \
 	  jlst_merge.c jlst_node.c jlst_resize.c jlst_add.c jlst_del_data.c \
 	  jlst_get_data.c jlst_instances.c jlst_nbackward.c jlst_nodecpy.c \
-	  jlst_sed.c jlst_reverse.c
+	  jlst_sed.c jlst_reverse.c jlst_quick_sort.c
 
 OBJ = $(SRC:.c=.o)
 
