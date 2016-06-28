@@ -1,0 +1,46 @@
+— ERRNO — 
+
+<?php
+$link = mysqli_connect('localhost', 'my_user', 'my_password', 'my_db');
+
+if (!$link) {
+    die('Erreur de connexion (' . mysqli_connect_errno() . ') '
+            . mysqli_connect_error());
+}
+
+echo 'Succès... ' . mysqli_get_host_info($link) . "\n";
+
+mysqli_close($link);
+?>
+
+— Fetch_array —
+
+/* Tableau numérique */
+$row = mysqli_fetch_array($result, MYSQLI_NUM);
+printf ("%s (%s)\n", $row[0], $row[1]);
+
+/* Tableau associatif */
+$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+printf ("%s (%s)\n", $row["Name"], $row["CountryCode"]);
+
+/* Tableau associatif et numérique */
+$row = mysqli_fetch_array($result, MYSQLI_BOTH);
+printf ("%s (%s)\n", $row[0], $row["CountryCode"]);
+
+/* Libération des résultats */
+mysqli_free_result($result);
+
+— Connect —
+
+<?php
+$link = mysqli_connect('localhost', 'my_user', 'my_password', 'my_db');
+
+if (!$link) {
+    die('Erreur de connexion (' . mysqli_connect_errno() . ') '
+            . mysqli_connect_error());
+}
+
+echo 'Succès... ' . mysqli_get_host_info($link) . "\n";
+
+mysqli_close($link);
+?>
