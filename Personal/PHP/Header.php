@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="Accueil.css" type="text/css" />
+        <link rel="stylesheet" href="Header.css" type="text/css" />
         <meta charset="UTF-8">
     </head>
     <body>
@@ -12,7 +12,7 @@
         <div class="Nav">
             <ul id="menu">
                 <li class="violet">
-                    <span>My Life</span>
+                    <a href="MyLife.php">My Life</a>
                     <ul>
                         <li>
                             <a href=#>Cursus 42</a>
@@ -32,7 +32,7 @@
                     </ul>
                 </li>
                 <li class="violet">
-                    <span>My Personal Projects</span>
+                    <a href="MyProjects.php">My Personal Projects</a>
                     <ul>
                         <li>
                             <a href=#>J_LIST</a>
@@ -52,7 +52,7 @@
                     </ul>
                 </li>
                 <li class="violet">
-                    <span>Others</span>
+                    <a href="Others.php">Others</a>
                     <ul>
                         <li>
                             <a href=#>Interest Fields</a>
@@ -66,7 +66,7 @@
                     </ul>
                 </li>
                 <li class="violet">
-                    <span>Contact Me</span>
+                    <a href="Contact.php">Contact Me</a>
                     <ul>
                         <li>
                             <a href=#>Facebook</a>
@@ -86,14 +86,6 @@
                     </ul>
                 </li>
             </ul>
-        </div>
-        <div class="Presentation">
-            <p>Bonjour,<br />
-                Je m'appelle XXXXX, j'étudie l'informatique.<br />
-                Actuellement je suis à l'école 42 et en faculté de mathématiques.<br />
-                Je parle en Anglais.
-                Je m'interesse à des tas de domaines.
-            </p>
         </div>
     </body>
 </html>

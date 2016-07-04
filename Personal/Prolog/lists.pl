@@ -1,3 +1,21 @@
+
+:- initialization main.
+
+main :-
+	read(X),
+	isPair(X),
+	halt.
+
+isPair(X) :- not(integer(X)), write('not a number'), nl.
+
+isPair(X) :- pair(X), write('pair.'), nl.
+
+isPair(X) :- impair(X), write('impair.'), nl.
+
+pair(X) :- mod(X, 2) =:= 0.
+
+impair(X) :- mod(X, 2) =:= 1.
+
 prefix([], _).
 
 prefix([X|L], [X|M]) :- 
@@ -24,4 +42,18 @@ search_list([_|T], X) :-
 search_list(Q, X) :-
 	prefix(X, Q).
 
+display([]).
 
+display([H|T]) :-
+	write(H),
+	nl,
+	display(T).
+
+copy(X, X).
+
+display_rev([]).
+
+display_rev([H|T]) :-
+	display_rev(T),
+	write(H),
+	nl.

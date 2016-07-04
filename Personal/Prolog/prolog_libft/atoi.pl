@@ -3,35 +3,23 @@
 
 :- initialization consult(strcat).
 
-atoi([], 0).
+atoi(X, Y) :-
+	atoi(X, Y, P).
 
-atoi(["-"|T], X) :-
-	atoi(T, X1),
-	X is -X1,
-	!.
+atoi([], 0, 1).
 
-atoi([H|T], X) :-
-	atoi(T, X1),
-	ten_p(Y, X1),
-	X2 is H - 48,
-	X is X2 * Y + X1.
+atoi([45|T], Y, P) :-
+	atoi(T, Y1, P),
+	Y is Y1 * -1.
 
-% X becomes the smallest power of ten superior to Y 
+atoi([H|T], Y, P) :-
+	atoi(T, Y1, P1),
+	Y is (H - 48) * P1 + Y1,
+	P is P1 * 10.
 
-ten_p(X, Y) :-
-	get_divide(X1, Y),
-	X2 is 10,
-	power(X2, X1, X).
+power(X, 0, 1).
 
-get_divide(X, Y) :-
-	Y < 1,
-	X is 1.
-
-get_divide(X, Y) :-
-	get_divide(X1, Y),
-	X is X1 + 1.
-
-power(X, 0, X).
+power(X, 1, X).
 
 power(X, Y, Z) :-
 	Y1 is Y - 1,
