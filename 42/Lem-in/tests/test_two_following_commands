@@ -1,0 +1,10 @@
+20
+salle1 1 1
+salle2 2 2
+salle3 3 3
+##start
+##end
+endstart 9 9
+salle1-salle2
+salle2-salle3
+salle3-endstart

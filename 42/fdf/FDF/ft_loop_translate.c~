@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_loop_translate.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/06/02 10:21:36 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/06/02 10:22:18 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fdf.h"
+
+int		ft_loop_translate(t_mlx *ptr)
+{
+	if (ptr->translate_x)
+		ft_translate_x(ptr, ptr->way);
+	else if (ptr->translate_y)
+		ft_translate_y(ptr, ptr->way);
+	ptr->translate_x = 0;
+	ptr->translate_y = 0;
+	return (0);
+}
+
+void	ft_set_loop(t_mlx *ptr)
+{
+
+}
