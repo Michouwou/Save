@@ -19,3 +19,56 @@ links
 {
     list-style-type: circle;
 }
+
+@keyframes move
+{
+    25% {top: 100px;}
+    100% {top: 300px;}
+}
+
+.container
+{
+    width: 46%;
+    position: relative;
+    margin-left: 25%;
+    overflow: hidden;
+    transition: right 2s;
+}
+
+.slider
+{
+    margin: 0;
+    width: 400%;
+    display: flex;
+}
+
+.slider img
+{
+    height: 45vmin;
+}
+
+.container .arrow
+{
+    opacity: 0.8;
+    position: absolute;
+    padding-top: 30%;
+    top: 0;
+}
+
+.container .arrow img
+{
+    width: 5vmin;
+    cursor: pointer;
+}
+
+.container .arrow img:hover
+{
+    border: 2px inset darkgrey;
+    background: linear-gradient(grey, black, grey);
+}
+
+.container .arrow img:active
+{
+    border: 3px outset black;
+    background: linear-gradient(darkgrey, darkblue, darkgrey);
+}
