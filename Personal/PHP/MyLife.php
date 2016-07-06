@@ -33,18 +33,22 @@
                 </ul>
             </p>
             <hr>
-            <div class="container">
-                <div class="arrow">
-                    <img src="img/left-arrow.png" />
+            <div style="height:47vmin;padding-top:1vmin;">
+                <div class="container">
+                    <div class="arrow">
+                        <img src="img/left-arrow.png" />
+                    </div>
+                    <div class="slider" id="parent">
+                        <img src="img/42cluster.jpg" id="img1"/>
+                        <img src="img/42infographie.png" id="img2"/>
+                        <img src="img/42PiscinePHP.png" id="img3"/>
+                    </div>
+                    <div class="arrow" style="right:0;">
+                        <img src="img/right-arrow.png" />
+                    </div>
                 </div>
-                <div class="slider" id="parent">
-                    <img src="img/42cluster.jpg" />
-                    <img src="img/42infographie.png" />
-                    <img src="img/42PiscinePHP.png" />
-                </div>
-                <div class="arrow" style="right:0;">
-                    <img src="img/right-arrow.png" />
             </div>
+            <hr>
        </div>
     </body>
     <script type="text/javascript" src="slider.js"></script>

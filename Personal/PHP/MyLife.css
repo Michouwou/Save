@@ -29,7 +29,8 @@ links
 .container
 {
     width: 46%;
-    position: relative;
+    height: 47vmin;
+    position: absolute;
     margin-left: 25%;
     overflow: hidden;
     transition: right 2s;
@@ -38,13 +39,15 @@ links
 .slider
 {
     margin: 0;
-    width: 400%;
+    /*width: 400%;*/
     display: flex;
 }
 
 .slider img
 {
     height: 45vmin;
+    left: 0;
+    position: absolute;
 }
 
 .container .arrow
@@ -53,6 +56,7 @@ links
     position: absolute;
     padding-top: 30%;
     top: 0;
+    z-index: 10;
 }
 
 .container .arrow img
