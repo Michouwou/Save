@@ -28,7 +28,7 @@ typedef struct	j_like_lst
 
 // Those are the functions that can be applied on any j_list :
 
-int				jlst_get_size(j_list *first_node); /*returns the number of elements in the listOK*/
+int				jlst_get_size(j_list *first_node); /*returns the number of elements in the list OK*/
 int				jlst_instances(j_list *first_node, void *data, int (*compare_func)(void*, void*)); /*returns the number of instances of 'data' in LIST OK*/
 void			jlst_del_data(j_list **first_node, void *data, int (*compare_func)(void*, void*)); /*deletes all the nodes containing 'data' OK*/
 void			jlst_del_list(j_list *first_node); /*deletes the whole list OK ?*/
@@ -52,7 +52,7 @@ j_list			*jlst_node(void); /*creates a fresh null node, OK*/
 j_list			*jlst_create(void); /*creates a fresh list, initial size of 9, OK*/
 j_list			*jlst_new(int size); /*creates a fresh list, initial size of size, OK*/
 j_list			*jlst_full_node(void *data, size_t data_len, char alloc_); // OK ?
-void			jlst_add(j_list **first_node, int index, j_list *full_node, char alloc_); /*add 'data' to the index'th node of the list OK*/
+void			jlst_add(j_list **first_node, int index, j_list *full_node); /*add 'data' to the index'th node of the list OK*/
 void			jlst_add_data(j_list **first_node, int index, void *data, size_t data_len); // memory freeing will not be insured after a call to this function (alloc_ set to 0) OK ? 
 void			jlst_push_front(j_list **first_node, void *data, size_t data_size, char alloc_); /*add data (in a new node) as the first element of the list, makes a reversed rotation, OK*/
 void			jlst_push_back(j_list **first_node, void *data, size_t data_size, char alloc_); /*same as push_front but at the last index of the list*/

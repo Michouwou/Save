@@ -19,7 +19,7 @@ void        *jlst_datacpy(j_list *node)
     int             i;
     
     data = (unsigned char*)node->data;
-    copy = (unsigned char*)malloc(sizeof(unsigned char) * (node->data_len + 1));
+    copy = (unsigned char*)malloc(sizeof(unsigned char) * node->data_len);
     i = 0;
     while (i < (int)node->data_len)
     {

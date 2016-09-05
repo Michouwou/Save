@@ -7,7 +7,7 @@ int				jlst_compare(j_list *node1, j_list *node2, int (*compare_func)(void*, voi
 	j_list	*tmpa;
 	j_list	*tmpb;
 
-	while (tmpa && tmpb)
+	while (tmpa || tmpb)
 	{
 		if (compare_func(tmpa->data, tmpb->data))
 			return (0);

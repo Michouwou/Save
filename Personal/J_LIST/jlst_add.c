@@ -12,10 +12,13 @@
 
 #include "j_list.h"
 
-void	jlst_add(j_list **first_node, int index, j_list *full_node, char alloc_)
+void	jlst_add(j_list **first_node, int index, j_list *full_node)
 {
 	j_list	*tmp;
+	int		intmp;
 	
+	intmp = index;
+	printf("Intmp : %d\n", intmp);
 	if (first_node && *first_node)
 	{
 		tmp = *first_node;
@@ -26,13 +29,13 @@ void	jlst_add(j_list **first_node, int index, j_list *full_node, char alloc_)
 		}
 		if (index == 0)
 		{
-			tmp->data = full_node->data;
-			tmp->data_len = full_node->data_len;
-			tmp->state = 1;
-			tmp->alloc_ = alloc_;
+			tmp->next->previous = full_node;
+			full_node->next = tmp->next;
+			full_node->previous = tmp;
+			tmp->next = full_node;
+			jlst_del_node(first_node, intmp);
 			if (jlst_get_size(*first_node) >= tmp->list_len * 2 / 3)
 				jlst_resize(*first_node);
-			free(full_node);
 		}
 	}
 }

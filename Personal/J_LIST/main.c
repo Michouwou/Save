@@ -17,53 +17,59 @@ int compare_func(void *e1, void *e2)
 
 int main(void)
 {
-    j_list *list;
-    j_list *tmp;
-    char *str;
-    int i;
-    double tab[] = {1.0, 4.0, 3.0, 9.0, 5.0};
-    
-	list = jlst_from_tab((void*)tab, 8, 5);
+	j_list *tmp;
 
-	printf("La liste list %s triee\n", jlst_is_sorted(list, &compare_func) ? "est" : "n'est pas");
-	jlst_sort(&list, &compare_func);
-	printf("DONE\n");
+	j_list *first = jlst_create();
+	printf("On vien de creer une chaine de 9\n");
 	fflush(stdout);
-	printf("La liste list %s triee\n", jlst_is_sorted(list, &compare_func) ? "est" : "n'est");
 
-	tmp = list;
+	j_list *second = jlst_new(15);
+	printf("On vien de creer une chaine de 15\n\n");
+	fflush(stdout);
+
+	tmp = first;
 	while (tmp)
 	{
-		printf("Tmp : %f\n",  *(double*)tmp->data);
+		printf("On est dans la chaine de 9\n");
 		tmp = tmp->next;
 	}
 
-	printf("Yop\n");
-	fflush(stdout);
-	jlst_resize(&list);
-	printf("Yop\n");
-	fflush(stdout);
-	jlst_compact(&list);
-	printf("La liste list a une longueur de %d\n", jlst_length(list));
-	fflush(stdout);
-	jlst_sed(list);
-	printf("La liste list a une longueur de %d\n", jlst_length(list));
-	fflush(stdout);
+	printf("\n");
 
-	jlst_push_back(&list, &(tab[2]), 8, 0);
-	tmp = list;
-	while (tmp)
+	while (second)
 	{
-		printf("Tmp : %f\n",  *(double*)tmp->data);
-		tmp = tmp->next;
+		printf("On est dans la chaine de 15\n");
+		second = second->next;
 	}
 	
-	jlst_reverse(&list);
-	printf("\nApres reverse :\n");
-	tmp = list;
+	printf("\n");
+
+	j_list *full = jlst_full_node(strdup("LOL"), 3, 1);
+	printf("On vient de creer un noeud complet\n");
+	fflush(stdout);
+	
+	printf("\n");
+
+	jlst_add(&first, 6, full);
+	printf("On vient d'ajouter le noeud plein a l'index 6 de la premiere liste\n");
+
+	tmp = first;
 	while (tmp)
 	{
-		printf("Tmp : %f\n",  *(double*)tmp->data);
+		printf("On est dans la chaine de 9, le noeud contient : %s\n", tmp->data);
+		tmp = tmp->next;
+	}
+
+	printf("\n");
+
+	jlst_add_data(&first, 4, "mdr", 3);
+	printf("on vient d'ajouter de la data dans la premiere liste\n");
+	fflush(stdout);
+
+	tmp = first;
+	while (tmp)
+	{
+		printf("On est dans la chaine de 9, le noeud contient : %s\n", tmp->data);
 		tmp = tmp->next;
 	}
     return (0);
