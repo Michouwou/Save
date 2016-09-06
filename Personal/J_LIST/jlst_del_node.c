@@ -17,6 +17,7 @@ void    jlst_del_node(j_list **first_node, int index)
     int     i;
     j_list  *tmp;
     
+
     i = 0;
     if (!first_node || !*first_node)
         return ;
@@ -28,8 +29,10 @@ void    jlst_del_node(j_list **first_node, int index)
     }
     if (!tmp)
         return ;
-    tmp->previous->next = tmp->next;
-    tmp->next->previous = tmp->previous;
+    if (tmp->previous)
+        tmp->previous->next = tmp->next;
+    if (tmp->next)
+        tmp->next->previous = tmp->previous;
     if (tmp->data && tmp->alloc_)
         free(tmp->data);
     if (!tmp->previous)

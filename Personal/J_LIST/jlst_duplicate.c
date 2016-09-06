@@ -12,7 +12,7 @@ j_list			*jlst_duplicate(j_list *first_node)
 	while (tmp)
 	{
 		jlst_push(dup, jlst_datacpy(tmp->data), tmp->data_len, 1);
-		tmp= tmp->next;
+		tmp = tmp->next;
 	}
 	return (dup);
 }

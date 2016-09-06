@@ -18,7 +18,6 @@ void	jlst_add(j_list **first_node, int index, j_list *full_node)
 	int		intmp;
 	
 	intmp = index;
-	printf("Intmp : %d\n", intmp);
 	if (first_node && *first_node)
 	{
 		tmp = *first_node;

@@ -16,19 +16,15 @@ j_list      *jlst_from_tab(void *tab, size_t size, int length)
 {
     void    *tmp;
     j_list  *list;
-    j_list  *tmp_list;
     
     if (!tab || size < 1 || length < 1)
         return (NULL);
     tmp = tab;
-    list = jlst_new(length);
-    tmp_list = list;
-    while (list && length)
+    list = jlst_full_node(tmp, size, 0);
+    while (--length)
     {
-        jlst_add(&list, 0, jlst_full_node(tmp, size, 0));
         tmp += size;
-        list = list->next;
-        length--;
+        jlst_push_back(&list, tmp, size, 0);
     }
-    return (tmp_list);
+    return (list);
 }
