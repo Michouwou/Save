@@ -14,17 +14,25 @@
 
 int		ft_get_color_pad(int sum)
 {
-	if (sum / 2 <= 0)
-		return (0x0990000);
-	if (sum / 2 <= 5)
-		return (0x0660099);
-	if (sum / 2 <= 10)
-		return (0x0333366);
-	if (sum / 2 <= 15)
-		return (0x033CC33);
-	if (sum / 2 >= 15)
-		return (0x00033FF);
-	return (0);
+	if (sum <= 0)
+		return (0x4072A4 * (sum != 0 ? sum : 1));
+	if (sum <= 2)
+		return (0x4068A4 * sum);
+	if (sum <= 4)
+		return (0x4057A4 * sum);
+	if (sum <= 6)
+		return (0x4043A4 * sum);
+	if (sum <= 8)
+		return (0x4A40A4 * sum);
+	if (sum <= 10)
+		return (0x5B40A4 * sum);
+	if (sum <= 15)
+		return (0x6140A4 * sum);
+	if (sum <= 20)
+		return (0x6B40A4 * sum);
+	if (sum <= 30)
+		return (0x7540A4 * sum);
+	return (0x8640A4 * sum);
 }
 
 int		ft_abs(int num)
