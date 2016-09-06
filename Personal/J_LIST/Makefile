@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/04 13:47:25 by mlevieux          #+#    #+#              #
-#    Updated: 2016/09/06 21:33:17 by mlevieux         ###   ########.fr        #
+#    Updated: 2016/09/06 23:04:27 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC = jlst_compact.c jlst_del_list.c jlst_get_index.c jlst_is_sorted.c \
 	  jlst_merge.c jlst_node.c jlst_resize.c jlst_add.c jlst_del_data.c \
 	  jlst_get_data.c jlst_instances.c jlst_nbackward.c jlst_nodecpy.c \
 	  jlst_sed.c jlst_reverse.c jlst_quick_sort.c jlst_full_node.c \
-	  jlst_add_data.c jlst_map.c
+	  jlst_add_data.c jlst_map.c jlst_push.c jlst_to_tree.c
 
 OBJ = $(SRC:.c=.o)
 

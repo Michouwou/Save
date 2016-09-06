@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/06 18:40:04 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/09/06 22:13:02 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/09/06 23:03:57 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -239,5 +239,44 @@ int main(void)
 		tmp = tmp->next;
 	}
 	printf("\n");
+
+	j_list *node = jlst_nodecpy(list2);
+	printf("Data : %d\n", *((int*)(node->data)));
+	printf("Data_len : %zd\n", node->data_len);
+	printf("List_len : %d\n", node->list_len);
+	printf("Next : %p\n", node->next);
+	printf("Prev : %p\n", node->previous);
+	printf("State : %d\n", node->state);
+	printf("Alloc_ : %d\n", node->alloc_);
+	printf("Tree : %d\n", node->is_tree);
+
+	printf("\n");
+
+	printf("On va push une data fraiche respectivement dans first et dans list2\n");
+	int a = 300;
+
+	first->data = NULL;
+	first->state = 0;
+	first->alloc_ = 0;
+	jlst_push(first, strdup("plus"), 4, 1);
+	jlst_push(list2, &a, 4, 0);
+	tmp = first;
+	while (tmp)
+	{
+		printf("On est dans first : %s\n", tmp->data);
+		tmp = tmp->next;
+	}
+	printf("\n");
+	tmp = list2;
+	while (tmp)
+	{
+		printf("On est dans list2 : %d\n", *((int*)(tmp->data)));
+		tmp = tmp->next;
+	}
+	printf("\n");
+
+	printf("Allez on va tenter de transformer notre liste chainee en arbre...\n");
+	jlst_to_tree(&list2, &compare_func, 0);
+
     return (0);
 }
