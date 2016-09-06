@@ -12,6 +12,11 @@
 
 #include "j_list.h"
 
+static void	increase(j_list *node)
+{
+	++(node->list_len);
+}
+
 void	jlst_add(j_list **first_node, int index, j_list *full_node)
 {
 	j_list	*tmp;
@@ -32,6 +37,7 @@ void	jlst_add(j_list **first_node, int index, j_list *full_node)
 			full_node->next = tmp->next;
 			full_node->previous = tmp;
 			tmp->next = full_node;
+			jlst_map(*first_node, &increase);
 			jlst_del_node(first_node, intmp);
 			if (jlst_get_size(*first_node) >= tmp->list_len * 2 / 3)
 				jlst_resize(*first_node);

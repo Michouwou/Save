@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/20 15:21:41 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/04/20 16:04:15 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/09/06 21:44:14 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int				jlst_get_index(j_list *first_node, void *data, int (*compare_func)(void*,
 void			jlst_sort(j_list **first_node, int (*compare_func)(void*, void*)); /*sorts the list according to 'compare_func', that's not advised because it takes many operations OK*/
 void			jlst_compact(j_list **first); /*compacts the list so it's continuous OK*/
 void			jlst_merge(j_list *first_list, j_list *second_list); /*add 'second_list' to the end of 'first_list' OK*/
-void			jlst_del_node(j_list **first_node, int index); /*deletes the node at 'index' in the list OK*/
+void			jlst_del_node(j_list **first_node, int index); /*deletes the node at 'index' in the list OK , still need to fix this problem of list_len*/
 int				jlst_length(j_list *first_node); /*returns the length of the list, that is to say the maximum size it can hold OK*/
 void			jlst_resize(j_list *first_node); /*increase list by two third OK*/
 int				jlst_is_sorted(j_list *first_node, int (*compare_func)(void*, void*)); // OK ?

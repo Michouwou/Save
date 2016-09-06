@@ -30,12 +30,15 @@ void    jlst_merge(j_list *first_list, j_list *second_list)
             node->previous = tmpb;
             node->next = NULL;
             tmpb->next = node;
+            printf("On copie un noeud : %s\n", tmpa->data);fflush(stdout);
         }
         else
         {
             tmpb->data = jlst_datacpy(tmpa);
             tmpb->data_len = tmpa->data_len;
-            tmpb->alloc_ = 1;
+            tmpb->alloc_ = tmpa->alloc_;
+            tmpb->state = tmpa->state;
+            printf("On copie un noeud : %s\n", tmpa->data);fflush(stdout);
         }
         tmpa = tmpa->next;
     }

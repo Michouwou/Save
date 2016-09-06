@@ -11,8 +11,9 @@ void			jlst_map(j_list *first_node, void (*function)(j_list *node))
 	secure_ = first_node;
 	while (tmp)
 	{
-		tmp = secure_;
-		secure_ = tmp->next;
+		if (secure_)
+			secure_ = secure_->next;
 		function(tmp);
+		tmp = secure_;
 	}
 }

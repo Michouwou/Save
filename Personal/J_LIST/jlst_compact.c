@@ -20,6 +20,7 @@ void    jlst_compact(j_list **first_node)
     element = *first_node;
     while (element)
     {
+        printf("Element->state : %d, Element->representation : %s\n", element->state, element->data);fflush(stdout);
         while (element->state && element->previous && !element->previous->state)
         {
             tmpb = element->previous;

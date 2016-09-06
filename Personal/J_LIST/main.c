@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/06 18:40:04 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/09/06 20:04:16 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/09/06 21:49:26 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,12 @@ int main(void)
 	}
 
 	printf("\n");
-
-	while (second)
+	
+	tmp = second;
+	while (tmp)
 	{
 		printf("On est dans la chaine de 15\n");
-		second = second->next;
+		tmp = tmp->next;
 	}
 	
 	printf("\n");
@@ -155,6 +156,62 @@ int main(void)
 	while (tmp)
 	{
 		printf("Notre liste ressemble a : %d\n", *((int*)tmp->data));
+		tmp = tmp->next;
+	}
+	printf("\n");fflush(stdout);
+
+	printf("On va compacter first et l'afficher pour voir ce que ca donne\n");
+	jlst_compact(&first);
+	tmp = first;
+	while (tmp)
+	{
+		printf("On est de nouveau dans first, le noeud contient : %s\n", tmp->data);
+		tmp = tmp->next;
+	}
+	printf("\n");fflush(stdout);
+
+	printf("On va tenter de merger first2 et first et d'afficher la liste resultante\n");
+	j_list *first2 = jlst_new(5);
+	jlst_add(&first2, 2, jlst_full_node(strdup("autreliste"), 10, 1));
+	jlst_add(&first2, 0, jlst_full_node(strdup("prems"), 5, 1));
+	tmp = first2;
+	while (tmp)
+	{
+		printf("On est dans la chaine first2 maintenant, le noeud contient : %s\n", tmp->data);
+		tmp = tmp->next;
+	}
+	jlst_merge(first, first2);
+	printf("\n");fflush(stdout);
+	tmp = first;
+	while (tmp)
+	{
+		printf("On est dans la chaine mergee, le noeud contient : %s\n", tmp->data);
+		tmp = tmp->next;
+	}
+	printf("\n");fflush(stdout);
+
+	printf("On va supprimer un noeud de la liste mergee, c'est le noeud a l'indice 2\n");fflush(stdout);
+	jlst_del_node(&first, 2);
+
+	tmp = first;
+	printf("Taille de la liste : %d\n", first->list_len);
+	while (tmp)
+	{
+		printf("On est dans la chaine mergee qvec un noeud supprime, le noeud contient : %s\n", tmp->data);
+		tmp = tmp->next;
+	}
+	printf("\n");fflush(stdout);
+
+	printf("On va calculer la taille totale de first, second, first2 et list\n");
+	printf("Dans l'ordre : %d, %d, %d, %d\n\n", jlst_length(first), jlst_length(second), jlst_length(first2), jlst_length(list));
+
+	printf("On va forcer le resize de first\n");
+	jlst_resize(first);
+
+	tmp = first;
+	while (tmp)
+	{
+		printf("On est dans first, le noeud contient : %s\n", tmp->data);
 		tmp = tmp->next;
 	}
 	printf("\n");fflush(stdout);

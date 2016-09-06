@@ -12,12 +12,16 @@
 
 #include "j_list.h"
 
-void    jlst_del_node(j_list **first_node, int index)
+static void decrease(j_list *node)
+{
+    --(node->list_len);
+}
+
+void        jlst_del_node(j_list **first_node, int index)
 {
     int     i;
     j_list  *tmp;
     
-
     i = 0;
     if (!first_node || !*first_node)
         return ;
@@ -38,4 +42,5 @@ void    jlst_del_node(j_list **first_node, int index)
     if (!tmp->previous)
         *first_node = (*first_node)->next;
     free(tmp);
+    jlst_map(*first_node, &decrease);
 }
