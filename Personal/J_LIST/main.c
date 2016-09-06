@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/06 18:40:04 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/09/06 21:49:26 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/09/06 22:13:02 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,5 +215,29 @@ int main(void)
 		tmp = tmp->next;
 	}
 	printf("\n");fflush(stdout);
+
+	printf("On va verifier que notre liste first n'est pas triee mais que list2 l'est bel et bien\n");
+	printf("La liste first %s triee\n", jlst_is_sorted(first, &compare_func) ? "est" : "n'est pas");
+	printf("La liste list2 %s triee\n\n", jlst_is_sorted(list2, &compare_func) ? "est" : "n'est pas");
+
+	printf("On va avancer list2 de 3 et voir sa taille\n");
+	jlst_nforward(3, &list2);
+	tmp = list2;
+	while (tmp)
+	{
+		printf("On est dans list2 : %d\n", *((int*)(tmp->data)));
+		tmp = tmp->next;
+	}
+	printf("\n");
+
+	printf("Nickel, de deux dans l'autre sens maintenant\n");
+	jlst_nbackward(2, &list2);
+	tmp = list2;
+	while (tmp)
+	{
+		printf("On est dans list2 : %d\n", *((int*)(tmp->data)));
+		tmp = tmp->next;
+	}
+	printf("\n");
     return (0);
 }

@@ -14,14 +14,23 @@
 
 int     jlst_is_sorted(j_list *first_node, int (*compare_func)(void*, void*))
 {
-    j_list  *tmp;
+    j_list  *tmpa;
+    j_list	*tmpb;
     
-    tmp = first_node;
-    while (tmp && tmp->next)
+    tmpa = first_node;
+    while (tmpa && tmpa->next)
     {
-        if (tmp->state && tmp->next->state && compare_func(tmp->data, tmp->next->data) > 0)
-            return (0);
-        tmp = tmp->next;
+    	if (tmpa->state)
+    	{
+        	tmpb = tmpa->next;
+        	while (tmpb && !tmpb->state)
+        		tmpb = tmpb->next;
+        	if (!tmpb)
+        		return (1);
+        	else if (tmpb && compare_func(tmpa->data, tmpb->data) > 0)
+        		return (0);
+    	}
+    	tmpa = tmpa->next;
     }
     return (1);
 }
