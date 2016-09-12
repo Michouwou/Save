@@ -1,0 +1,53 @@
+body
+{
+    background-color: #2E2E2E;
+}
+
+#center
+{
+    width : 33%;
+    margin : 0 auto 0 auto;
+}
+
+.host_button
+{
+    margin-top: 2em;
+    height : 10%;
+    background: linear-gradient(#848484, #0B2F3A, #848484);
+    min-height: 40px;
+    border-radius: 15px;
+}
+
+.host_button:hover
+{
+    background: radial-gradient(#848484, #0A2A1B, #848484);
+    border-radius: 20px;
+    box-shadow: 0.3vmin 0.3vmin 0.4vmin #08298A inset;
+    transition: box-shadow 2s;
+}
+
+.host_button:active
+{
+    background: radial-gradient(#151515, #0A2A1B, #848484);
+    border-radius: 20px;
+    border : 0.5vmin solid #CED8F6;
+    color : red;
+    box-shadow: none;
+    text-shadow: 0.2vmin 0.2vmin 0.2vmin #CED8F6;
+    transition: text-shadow 1.5s, box-shadow 1s, color 2s, border 1s;
+}
+
+.host_button .topp
+{
+    width: 33%;
+    font-size: 2.5vw;
+    margin: auto;
+    padding-top: 1.5vmin;
+    font-weight: 700;
+}
+
+a
+{
+    text-decoration: none;
+    color : black;
+}

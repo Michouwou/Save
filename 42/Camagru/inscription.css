@@ -1,0 +1,76 @@
+#connexion
+{
+    position : fixed;
+    background : blue;
+    border-bottom: 1px blue dashed;
+    top : 0;
+    height : 4vmin;
+    width : 100%;
+    font-size : 2vmin;
+}
+
+#connexion a
+{
+    position : fixed;
+    right : 0;
+    color : red;
+    font-size: 2vmin;
+}
+
+#validate
+{
+    background: #23f123;
+    color: blue;
+    border-radius: 5px 10px 5px 10px;
+    border: 2px groove lightblue;
+    position: relative;
+    bottom: 1vmin;
+    margin-top: 3vmin;
+    left: 80%;
+    height: 5vmin;
+    width: 10vmin;
+}
+
+#validate #first, #validate:hover #second, #validate:active #third
+{
+    display: block;
+}
+
+#validate:hover #first, #validate:active #first, #validate #second, #validate:active #second, #validate #third
+{
+    display: none;
+    cursor : pointer;
+}
+
+#validate:active
+{
+    background : #FF0000;
+    border : 2px double darkgrey;
+}
+
+#table_form
+{
+    border : 3px solid #6E6E6E;
+    color : #151515;
+    border-collapse: collapse;
+}
+
+#table_form td
+{
+    border : 2px dotted #6E6E6E;
+    padding : 1vmin;
+    font-size: 2vmin;
+}
+
+#precision
+{
+    font-size : 1.5vmin;
+    color : red;
+}
+
+#warning
+{
+    color : #FF0000;
+    font-weight : 700;
+    text-decoration : underline;
+}

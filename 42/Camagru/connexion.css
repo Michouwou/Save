@@ -1,0 +1,72 @@
+#inscription
+{
+    position : fixed;
+    background : blue;
+    border-bottom: 1px blue dashed;
+    top : 0;
+    height : 4vmin;
+    width : 100%;
+    font-size : 2vmin;
+}
+
+#inscription a
+{
+    position : fixed;
+    right : 0;
+    color : red;
+    font-size: 2vmin;
+}
+
+#connexion
+{
+    position: fixed;
+    border : 2px grey double;
+    background : radial-gradient(#848484, #A4A4A4, #D8D8D8, #F2F2F2);
+    width : 50%;
+    top : 30%;
+    left : 25%;
+    margin : 0 auto 0 auto;
+    font-size : 2vmax;
+}
+
+form
+{
+    margin-bottom: 0;
+}
+
+#validate
+{
+    background: #23f123;
+    color: blue;
+    border-radius: 5px 10px 5px 10px;
+    border: 2px groove lightblue;
+    position: relative;
+    bottom: 1vmin;
+    margin-top: 3vmin;
+    left: 80%;
+    height: 5vmin;
+    width: 10vmin;
+}
+
+#validate #first, #validate:hover #second, #validate:active #third
+{
+    display: block;
+}
+
+#validate:hover #first, #validate:active #first, #validate #second, #validate:active #second, #validate #third
+{
+    display: none;
+    cursor : pointer;
+}
+
+#validate:active
+{
+    background : #FF0000;
+    border : 2px double darkgrey;
+}
+
+input
+{
+    width: 17vmax;
+    height: 2.5vmax;
+}

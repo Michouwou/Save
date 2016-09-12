@@ -1,0 +1,94 @@
+body
+{
+    margin : 0;
+}
+
+#header
+{
+    background: rgb(35, 40, 46);
+    height : 15%;
+}
+
+#fast_access
+{
+    text-align: right;
+    background: inherit;
+    padding: 9vmin 1vmin 0 0;
+}
+
+#fast_access a
+{
+    text-decoration: none;
+    font-weight: 600;
+    color : white;
+    font-size: 2vmin;
+    padding: 1%;
+}
+
+#fast_access a:hover
+{
+    font-weight: 700;
+    background: black;
+    border-radius: 10%;
+}
+
+#fast_access a:active
+{
+    color : black;
+    background : white;
+}
+
+#main_content
+{
+    background: #e0effd;
+    height : 75%;
+}
+
+.side
+{
+    float: left;
+    width: 49%;
+}
+
+#footer
+{
+    background: #48494A;
+    height : 10%;
+}
+
+#videoElement
+{
+    position: absolute;
+    width : 70vmin;
+}
+
+#shoot
+{
+    position : absolute;
+    top : 60vmin;
+    left : 33vmin;
+    background : black;
+    border-radius : 100%;
+    border : 10px double #BDBDBD;
+    cursor : pointer;
+    width : 6vmin;
+    height : 6vmin;
+}
+
+#shoot:hover
+{
+    width : 6.5vmin;
+    height : 6.5vmin;
+}
+
+#shoot:active
+{
+    width : 5.5vmin;
+    height : 5.5vmin;
+    opacity: 0.3;
+}
+
+canvas
+{
+    display: none;
+}
