@@ -70,3 +70,11 @@ input
     width: 17vmax;
     height: 2.5vmax;
 }
+
+#errors
+{
+    position : fixed;
+    background:red;
+    color : black;
+    bottom : 0;
+}

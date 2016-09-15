@@ -1,4 +1,7 @@
 <?php
+    require_once("data_base.php");
+    if ($_SESSION['logged_in'] == false)
+        header('Location : connexion.php');
 ?>
 
 <html>
@@ -50,6 +53,7 @@
     <script type="text/javascript">
         var video = document.querySelector("#videoElement");
         var canvas = document.querySelector("#my_canvas");
+        var tab = [];
  
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
  
@@ -73,6 +77,19 @@
             inner_images.height = 200;
             inner_images.width = 200;
             inner_images.setAttribute('src', data);
+            tab.push(data);
+        }
+        
+        window.onbeforeunload = saveData;
+        window.onunload = saveData;
+        
+        function saveData()
+        {
+            var to_send = JSON.stringify(tab);
+            var request = new XMLHttpRequest();
+            request.open("POST", "JSON_Handler.php", true);
+            request.setRequestHeader("Content-type", "application/json");
+            request.send("data=".to_send);
         }
  
         function videoError(e)

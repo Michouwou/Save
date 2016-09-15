@@ -60,8 +60,7 @@
                         https://save-michouwou.c9users.io/Save/42/Camagru/activation.php?login="
                         .urlencode($_POST['Email'])."&cle=".urlencode(hash('sha512', $cle)).
                         "\nCeci est un message automatique, merci de ne pas répondre.";
-            if (mail($_POST['Email'], $subject, $message, $entete))
-                echo "FUCK YEAH!";
+            mail($_POST['Email'], $subject, $message, $entete);
             $_POST['Username'] = null;
             $_POST['Password'] = null;
             $_POST['Email'] = null;

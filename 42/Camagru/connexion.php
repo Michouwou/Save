@@ -11,7 +11,6 @@
         $prep->execute();
         
         $arr = $prep->fetch();
-        echo "array = ".$arr;
         if ($arr == false)
         {
             $_POST['error_no_such_login'] = "Le login entré semble ne pas exister.";
@@ -24,7 +23,7 @@
                 if ($arr['active'] == 1)
                 {
                     $_SESSION['logged_in'] = true;
-                    //header('Location : https://save-michouwou.c9users.io/Save/42/Camagru/camagru.php');
+                    header('Location : https://save-michouwou.c9users.io/Save/42/Camagru/camagru.php');
                 }
                 else
                 {
@@ -46,6 +45,7 @@
 
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" type="text/css" href="connexion.css">
         <title>
             Connexion
@@ -79,6 +79,13 @@
                     <span id="third">Wouhou!!</span>
                 </button>
             </form>
+        </div>
+        <div id="errors">
+                <?php
+                    echo '<p>'.$_POST['error_account_not_active'].'</p>'.
+                        '<p>'.$_POST['error_connection_failed'].'</p>'.
+                        '<p>'.$_POST['error_no_such_login'].'</p>';
+                ?>
         </div>
     </body>
 </html>

@@ -70,39 +70,43 @@ void			jlst_nforward(int n, j_list **first_node); // OK
 void			jlst_nbackward(int n, j_list **first_node); // OK
 j_list			*jlst_nodecpy(j_list *to_copy); // Ok
 void			*jlst_datacpy(j_list *node); // Ok
-void			*ft_memcpy(void *dst, const void *src, size_t n);
 void    		jlst_reverse(j_list **first_node); // OK ?
 int				*jlst_dicho_appears(j_list *list, void *data_ref, int (*compare_func)(void*, void*), char code); // OK ?
 void			jlst_push(j_list *list, void *data, size_t data_len, char alloc_); // OK ?
 void			jlst_to_tree(j_list **first_node, int (*compare_func)(void*, void*), char is_avl); // OK ?
-void			jlst_quick_sort(j_list **first_node, int (*compare_func)(void*, void*));
+
+/*void			jlst_quick_sort(j_list **first_node, int (*compare_func)(void*, void*));
 void			jlst_fusion_sort(j_list **first_node, int (*compare_func)(void*, void*));
 void			jlst_shell_sort(j_list **first_node, int (*compare_func)(void*, void*));
 void			jlst_comb_sort(j_list **first_node, int (*compare_func)(void*, void*));
 void			jlst_select_sort(j_list **first_node, int (*compare_func)(void*, void*));
 void			jlst_insert_sort(j_list **first_node, int (*compare_func)(void*, void*));
 void			jlst_counter_sort(j_list **first_node, int (*compare_func)(void*, void*));
-void			jlst_set_start(j_list *list);
-void			jlst_set_end(j_list *list);
-int				jlst_precedes(j_list *left, j_list *right);
-void			jlst_stick(int nb, j_list *node1, j_list *node2, ...);
+
+A voir selon besoin de performance des differentes applis
+*/
+
+void			jlst_set_start(j_list *list); // OK
+void			jlst_set_end(j_list *list); // OK
+int				jlst_precedes(j_list *left, j_list *right); // OK?
+void			jlst_stick(int nb, j_list *node1, j_list *node2, ...); // OK?
 
 // Those are the functions that can be applied on trees only :
 
 j_list			*jlst_to_lst(j_list *tree);
 void			jlst_balance_tree(j_list **first_node, int (*compare_func)(void*, void*));
-j_list			*jlst_build_tree(int depth, char is_avl);
-int				jlst_get_depth(j_list *tree);
-int				jlst_get_max_depth(j_list *tree);
-int				jlst_get_min_depth(j_list *tree);
-void			jlst_push_tree(j_list **tree, j_list *node, int (*compare_func)(void*, void*));
+j_list			*jlst_build_tree(int depth, char is_avl); // OK
+int				jlst_get_depth(j_list *tree); // OK
+int				jlst_get_max_depth(j_list *tree); // OK
+int				jlst_get_min_depth(j_list *tree); // OK
+void			jlst_push_tree(j_list **tree, j_list *node, int (*compare_func)(void*, void*)); // Should be okay
 j_list			*jlst_tree_from_tab(void *tab, size_t size, int length, int (*compare_func)(void*, void*));
 void			jlst_to_redandblack(j_list **tree, int (*compare_func)(void*, void*));
 void			jlst_set_avl(j_list *tree);
 void			jlst_del_subtrees(j_list **first_node, void *data_ref, int (*compare_func)(void*, void*));
-void			jlst_preffix_map(j_list *tree, void (*function)(j_list *node));
-void			jlst_suffix_map(j_list *tree, void (*function)(j_list *node));
-void			jlst_infix_map(j_list *tree, void (*function)(j_list *node));
+void			jlst_preffix_map(j_list *tree, void (*function)(j_list *node)); // Should be okay
+void			jlst_suffix_map(j_list *tree, void (*function)(j_list *node)); // Should be okay
+void			jlst_infix_map(j_list *tree, void (*function)(j_list *node)); // Should be okay
 
 
 

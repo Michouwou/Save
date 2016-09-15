@@ -1,0 +1,108 @@
+body
+{
+    margin : 0;
+}
+
+#header, #footer
+{
+    background: rgb(35, 40, 46);
+}
+
+#fast_access
+{
+    text-align: right;
+    background: inherit;
+    padding: 9vmin 1vmin 0 0;
+}
+
+.commentaries, #pictures
+{
+    background : #b7b5b5;
+    height : 80%;
+    top : 13%;
+    border-radius: 5%;
+    border : 1vmin double;
+    border-color: white;
+    box-sizing: border-box;
+}
+
+.commentaries
+{
+    position : absolute;
+    width : 30%;
+    margin-left: 2%;
+}
+
+.display
+{
+    display : none;
+}
+
+#pictures
+{
+    position : absolute;
+    width : 60%;
+    left : 30%;
+    margin-left : 5%;
+}
+
+#footer
+{
+    position : fixed;
+    bottom : 0;
+    width : 100%;
+    height : 5%;
+}
+
+#comment
+{
+    width : 100%;
+    height : 80%;
+}
+
+#comment #form, #comment table
+{
+    width : 99%;
+    height : 100%;
+}
+
+#comment table
+{
+    margin-top : 30%;
+}
+
+#comment td
+{
+    padding : 0;
+}
+
+#form textarea
+{
+    width : 100%;
+    height : 80%;
+}
+
+.select
+{
+    height : 30%;
+    font-size: 4vw;
+    color : red;
+    padding-left: 5%;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-style: italic;
+}
+
+#pictures img
+{
+    height : 40%;
+    width : 40%;
+    margin : 4%;
+    box-sizing: border-box;
+    overflow: scroll;
+}
+
+#pictures img:hover
+{
+    cursor: pointer;
+    border : 3px solid blue;
+}
