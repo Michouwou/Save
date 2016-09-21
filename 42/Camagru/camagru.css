@@ -92,3 +92,17 @@ canvas
 {
     display: none;
 }
+
+.speed_view
+{
+    width : 29vmin;
+    position : absolute;
+    left : 71vmin;
+}
+
+.speed_view img
+{
+    width: 11vw;
+    height: 11vw;
+    position: static;
+}

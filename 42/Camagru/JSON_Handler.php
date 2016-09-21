@@ -1,14 +1,12 @@
 <?php
     require_once("data_base.php");
-    if ($_POST['data'] != NULL)
-    {
-        $result = json_decode($_POST['data']);
-        while (($var = $result->fetch()) != false)
-        {
-            $query = "INSERT INTO galery ('json_rep') VALUES (?)";
-            $prep = $pdo->prepare($query);
-            $prep->bindValue(1, base64_encode($var), PARAM::STR);
-            $prep->execute();
-        }
-    }
+	if (array_key_exists('imageData',$_REQUEST))
+		$data = $_REQUEST['imageData'];
+	$query = "INSERT INTO gallery (picture) VALUES (?);";
+	$prep = $pdo->prepare($query);
+	$fd = fopen("test.jpeg", 'w+');
+	fwrite($fd, base64_decode($data));
+	fclose($fd);
+    $prep->bindValue(1, $data, PDO::PARAM_STR);
+    $prep->execute();
 ?>

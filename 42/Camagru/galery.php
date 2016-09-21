@@ -3,14 +3,14 @@
     if ($_SESSION[logged_in] == false)
         header('Location : connexion.php');
     $images = "";
-    $query = "SELECT * FROM images";
+    $query = "SELECT * FROM gallery";
     $prep = $pdo->prepare($query);
     $prep->execute();
     
     $arr = $prep->fetch();
     while ($arr != false)
     {
-        $images += "<img src=\"".$arr['url']."\" onclick=getRightDiv()/>\n";
+        $images += "<img src=\"".$arr['picture']."\" onclick=getRightDiv()/>\n";
         $arr = $prep->fetch();
     }
 ?>

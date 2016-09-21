@@ -1,13 +1,14 @@
 <?php
     require_once("data_base.php");
-    if ($_SESSION['logged_in'] == false)
-        header('Location : connexion.php');
+    // if ($_SESSION['logged_in'] == false)
+    //     header('Location : connexion.php');
 ?>
 
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="camagru.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <title>
             Camagru
         </title>
@@ -50,51 +51,5 @@
             
         </div>
     </body>
-    <script type="text/javascript">
-        var video = document.querySelector("#videoElement");
-        var canvas = document.querySelector("#my_canvas");
-        var tab = [];
- 
-        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
- 
-        if (navigator.getUserMedia)       
-            navigator.getUserMedia({video: true}, handleVideo, videoError);
- 
-        function handleVideo(stream)
-        {
-            video.src = window.URL.createObjectURL(stream);
-        }
-        
-        function getImage()
-        {
-            var context = canvas.getContext('2d');
-            canvas.width = 200;
-            canvas.height = 200;
-            context.drawImage(video, 0, 0, 200, 200);
-            var data = canvas.toDataURL('image/png');
-            var inner_images = document.querySelector("#inner_images");
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            inner_images.height = 200;
-            inner_images.width = 200;
-            inner_images.setAttribute('src', data);
-            tab.push(data);
-        }
-        
-        window.onbeforeunload = saveData;
-        window.onunload = saveData;
-        
-        function saveData()
-        {
-            var to_send = JSON.stringify(tab);
-            var request = new XMLHttpRequest();
-            request.open("POST", "JSON_Handler.php", true);
-            request.setRequestHeader("Content-type", "application/json");
-            request.send("data=".to_send);
-        }
- 
-        function videoError(e)
-        {
-            alert("You have to allow access to your video device to use this application!")
-        }
-    </script>
+    <script type="text/javascript" src="get_image.js"></script>
 </html>
