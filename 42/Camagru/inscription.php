@@ -58,7 +58,7 @@
                         veuillez utiliser la rubrique contact de notre site.
                         \n\nCliquez sur le lien pour activer votre compte :\n
                         https://save-michouwou.c9users.io/Save/42/Camagru/activation.php?login="
-                        .urlencode($_POST['Email'])."&cle=".urlencode(hash('sha512', $cle)).
+                        .urlencode($_POST['Username'])."&cle=".urlencode(hash('sha512', $cle)).
                         "\nCeci est un message automatique, merci de ne pas répondre.";
             mail($_POST['Email'], $subject, $message, $entete);
             $_POST['Username'] = null;

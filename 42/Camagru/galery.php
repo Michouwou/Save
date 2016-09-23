@@ -1,5 +1,5 @@
 <?php
-    require_once('data_base.php');
+    /*require_once('data_base.php');
     if ($_SESSION[logged_in] == false)
         header('Location : connexion.php');
     $images = "";
@@ -12,7 +12,7 @@
     {
         $images += "<img src=\"".$arr['picture']."\" onclick=getRightDiv()/>\n";
         $arr = $prep->fetch();
-    }
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +27,16 @@
     <body>
         <div id="header">
             <div id="fast_access">
-                <a href="log_out.php">Se déconnecter</a>
-                <a href="galery.php">Galerie</a>
+                <table>
+                    <tr>
+                        <td style="position:absolute;">
+                            <a href="log_out.php">Se déconnecter</a>
+                        </td>
+                        <td style="position:static;">
+                             <a href="galery.php">Galerie</a>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
         <div class="display" id="commenting">
@@ -68,6 +76,9 @@
         <div id="pictures">
             <img src="http://www.gettyimages.pt/gi-resources/images/Homepage/Hero/PT/PT_hero_42_153645159.jpg" onclick="getRightDiv()"/>
             <img src="http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg" onclick="getRightDiv()"/>
+            <img src="http://www.wanimo.com/veterinaire/cache/multithumb_thumbs/b_300_0_16777215_00_images_articles_chat_chat-hyperesthsie.jpg" onclick="getRightDiv()"/>
+            <img src="http://www.geluck.com/dpics/slideshow/LART-ET-LE-CHAT-C1-3D.png" onclick="getRightDiv()"/>
+            <img src="http://www.wanimo.com/veterinaire/cache/multithumb_thumbs/b_300_0_16777215_00_images_articles_chat_chat-hyperesthsie.jpg" onclick="getRightDiv()"/>
             <?php
                 if ($images != "")
                     echo $images;
