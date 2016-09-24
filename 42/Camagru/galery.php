@@ -23,22 +23,14 @@
     <body>
         <div id="header">
             <div id="fast_access">
-                <table>
-                    <tr>
-                        <td style="position:absolute;">
-                            <a href="log_out.php">Se déconnecter</a>
-                        </td>
-                        <td style="position:static;">
-                             <a href="galery.php">Galerie</a>
-                        </td>
-                    </tr>
-                </table>
+                <a href="log_out.php">Se déconnecter</a>
+                <a href="camagru.php">Camagru</a>
             </div>
         </div>
         <div class="display" id="commenting">
             <div id="like">
-                <button id="button1" onclick="likePicture()">I like it!</button>
-                <button id="button2" onclick="unlikePicture()">I don't like it!</button>
+                <button id="button1" onclick="likePicture()"></button>
+                <button id="button2" onclick="unlikePicture()"></button>
             </div>
             <div id="comment">
                 <form id="form">
@@ -54,19 +46,29 @@
                             </td>
                         </tr>
                     </table>
-                            
                 </form>
+                <hr/>
+                <div id="actual_contain">
+                    <table id="actual">
+                        <tr>
+                            <td>
+                                J'adore cette photo, elle est geante!
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Quelqu'un pourrait me trouver le nom de l'artiste svp, ca fait un bout de temps que je le cherche et impossible de mettre la main dessus, du coup si    quelqu'un a une idee, faites le moi savoir svp
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
         <div class="commentaries" id="selecting">
-            <div class="select" style="padding-top:10%;">
+            <div class="select">
                 Selectionnez
-            </div>
-            <div class="select">
-                une
-            </div>
-            <div class="select">
-               image!
+                <br>une
+                <br>image
            </div>
         </div>
         <div id="pictures">

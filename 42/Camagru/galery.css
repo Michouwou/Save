@@ -15,33 +15,29 @@ body
 {
     text-align: right;
     background: inherit;
-    padding: 6vmin 1% 0% 0%;
-    font-size: 3vmin;
-}
-
-#fast_access table
-{
-    position : absolute;
-    right : 0;
-    width : 33vmin;
-    padding : 0;
-    margin-right : 1vmin;
+    padding: 8vmin 1vmin 0 0;
 }
 
 #fast_access a
 {
-    padding : 1vmin;
-    box-sizing : border-box;
-    text-decoration : none;
-    background : #1c1c1d;
-    color : #a0a0a5;
+    text-decoration: none;
+    font-weight: 600;
+    color : white;
+    font-size: 2vmin;
+    padding: 1%;
 }
 
 #fast_access a:hover
 {
-    padding : 0.8vmin;
-    color : #afefec;
-    border-radius : 2vw;
+    font-weight: 700;
+    background: black;
+    border-radius: 10%;
+}
+
+#fast_access a:active
+{
+    color : black;
+    background : white;
 }
 
 .commentaries, #pictures
@@ -60,6 +56,12 @@ body
     position : absolute;
     width : 30vw;
     margin-left: 2vw;
+}
+
+#like
+{
+    margin: auto;
+    display: table;
 }
 
 .display
@@ -109,6 +111,13 @@ body
     padding : 0;
 }
 
+#comment hr
+{
+    margin-top: 3vmin;
+    height: 0.2vmin;
+    background: #c7d2cb;
+}
+
 #form textarea
 {
     width : 94%;
@@ -134,12 +143,13 @@ body
 
 .select
 {
-    height : 30vh;
-    font-size: 4vw;
-    color : red;
-    padding-left: 5%;
+    color: red;
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-style: italic;
+    display: flex;
+    height: 100%;
+    font-size: 4vw;
+    line-height: 25vmin;
 }
 
 #pictures img
@@ -182,9 +192,8 @@ body
 
 #button1, #button2
 {
-    margin: 1vh 3vw 0 4vw;
-    height: 6vw;
-    width : 6vw;
+    height: 10vmin;
+    width : 10vmin;
     background-size: cover;
     background-color: inherit;
     cursor: pointer;
@@ -194,6 +203,8 @@ body
 {
     background-image: url('like.png');
     border: 0.2vw outset green;
+    margin-right: 6vw;
+    margin-top: 1vh;
 }
 
 #button2
@@ -215,4 +226,31 @@ body
 #button2:hover
 {
     border: 0.4vw inset red;
+}
+
+#actual_contain
+{
+    height: 40vh;
+    position: relative;
+    width: 97%;
+    display: flex;
+}
+
+#comment #actual
+{
+    width: 95%;
+    background: #d2dae0;
+    margin-top: 3vmin;
+    height: 96%;
+    border-radius: 1vmin;
+    display: block;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+#actual td
+{
+    border : 1px dotted black;
+    padding : 1vmin;
 }
