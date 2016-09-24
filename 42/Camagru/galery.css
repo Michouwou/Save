@@ -47,8 +47,8 @@ body
 .commentaries, #pictures
 {
     background : #b7b5b5;
-    height : 80%;
-    top : 14%;
+    height : 80vh;
+    top : 14vh;
     border-radius: 5%;
     border : 1vmin double;
     border-color: white;
@@ -58,8 +58,8 @@ body
 .commentaries
 {
     position : absolute;
-    width : 30%;
-    margin-left: 2%;
+    width : 30vw;
+    margin-left: 2vw;
 }
 
 .display
@@ -70,8 +70,8 @@ body
 #pictures
 {
     position : absolute;
-    width : 60%;
-    left : 30%;
+    width : 63vw;
+    left : 30vw;
     overflow: auto;
     margin-left : 5%;
 }
@@ -87,19 +87,21 @@ body
 
 #comment
 {
-    width : 100%;
-    height : 80%;
+    width: 28vw;
+    height: 17%;
+    margin: auto;
 }
 
 #comment #form, #comment table
 {
-    width : 99%;
+    width: 27vw;
+    margin: auto;
     height : 100%;
 }
 
 #comment table
 {
-    margin-top : 30%;
+    margin-top : 5vh;
 }
 
 #comment td
@@ -109,13 +111,30 @@ body
 
 #form textarea
 {
-    width : 100%;
-    height : 80%;
+    width : 94%;
+    height : 100%;
+    margin: auto;
+    resize : none;
+    padding: 2%;
+    border-radius: 0% 2vmin 2vmin 2vmin;
+    border: .4em double #6b6b6f;
+    background: #c8cbce;
+}
+
+#form input[type=submit]
+{
+    width: 9vmin;
+    right: 1.3vmin;
+    position: absolute;
+    background: #8b97b5;
+    border: .2em solid #4a4747;
+    cursor: pointer;
+    height: 2.5vmin;
 }
 
 .select
 {
-    height : 30%;
+    height : 30vh;
     font-size: 4vw;
     color : red;
     padding-left: 5%;
@@ -125,8 +144,8 @@ body
 
 #pictures img
 {
-    height : 40%;
-    width : 40%;
+    height : 15vw;
+    width : 15vw;
     margin : 4%;
     box-sizing: border-box;
 }
@@ -139,14 +158,14 @@ body
 
 ::-webkit-scrollbar
 {
-    width : 1vw;
+    width : 0.9vw;
 }
 
 ::-webkit-scrollbar-track-piece
 {
     background: transparent none;
     border: solid 0.5vw transparent;
-    border-right-width: 1vw;
+    border-right-width: 0.9vw;
     margin: 15%;
 	-webkit-box-shadow: inset .0625em .0625em 0 0 rgb(137,131,117), inset -.0625em -.0625em 0 0 rgb(224,220,210);
 }
@@ -155,8 +174,45 @@ body
 {
     border: solid 0 transparent;
 	border-right-width: 0.4vw;
-    -webkit-border-radius: 0.5em;
+    -webkit-border-radius: 0.3em;
 	-webkit-border-top-right-radius: .5625em .3125em;
 	-webkit-border-bottom-right-radius: .5625em .3125em;
 	-webkit-box-shadow: inset 0 0 0 .0625em rgb(79,79,79), inset 0 0 0 .375em rgb(102,102,102);
+}
+
+#button1, #button2
+{
+    margin: 1vh 3vw 0 4vw;
+    height: 6vw;
+    width : 6vw;
+    background-size: cover;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+#button1
+{
+    background-image: url('like.png');
+    border: 0.2vw outset green;
+}
+
+#button2
+{
+    background-image: url('dislike.png');
+    border: 0.2vw outset red;
+}
+
+#button1:hover, #button2:hover
+{
+    background-color: #756e6e;
+}
+
+#button1:hover
+{
+    border: 0.4vw inset green;
+}
+
+#button2:hover
+{
+    border: 0.4vw inset red;
 }
