@@ -13,7 +13,7 @@
     {
         if (urldecode($_GET['cle']) == hash('sha512', $arr['id']))
         {
-            $query = 'ALTER TABLE users SET active=1 WHERE username=?';
+            $query = 'UPDATE users SET active=1 WHERE username=?;';
             $prep = $pdo->prepare($query);
             $prep->bindValue(1, $_GET['login'], PDO::PARAM_STR);
             $prep->execute();

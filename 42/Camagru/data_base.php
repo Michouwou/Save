@@ -1,9 +1,10 @@
 <?php
+    require_once('utils.php');
         try
         {
-            if (!isset($_SESSION))
+            session_start();
+            if ($_SESSION['logged_in'] == false)
             {
-                session_start();
                 $_SESSION['logged_in'] = false;
             }
             $connection = 'mysql:host=localhost;dbname=db';

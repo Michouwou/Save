@@ -3,7 +3,6 @@ var canvas = document.querySelector("#my_canvas");
 var data2;
 
 
-alert("blop");
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 
 if (navigator.getUserMedia)       
@@ -14,8 +13,9 @@ function handleVideo(stream)
     video.src = window.URL.createObjectURL(stream);
 }
 
-function getImage()
+function getImage(glob_id)
 {
+    console.log("JS " + glob_id);
     var context = canvas.getContext('2d');
     canvas.width = 200;
     canvas.height = 200;
@@ -35,6 +35,7 @@ function getImage()
         data:
         {
             imageData : data2 ,
+            id_user : String(glob_id) ,
         },
         success: function () 
         {

@@ -1,7 +1,7 @@
 <?php
     require_once('data_base.php');
-    if ($_SESSION[logged_in] == false)
-        header('Location : connexion.php');
+    if ($_SESSION['logged_in'] == false)
+        redirect('Location : connexion.php');
     $images = "";
     $query = "SELECT * FROM gallery";
     $prep = $pdo->prepare($query);

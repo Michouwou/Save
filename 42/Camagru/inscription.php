@@ -48,7 +48,7 @@
             $prep->bindValue(2, $hash, PDO::PARAM_STR);
             $prep->bindValue(3, $_POST['Email'], PDO::PARAM_STR);
             $prep->bindValue(4, 0, PDO::PARAM_INT);
-            $prep->bindValue(5, isset($_POST['sexe']) ? $_POST['sexe'] : '1', PDO::PARAM_INT);
+            $prep->bindValue(5, isset($_POST['sexe']) ? ($_POST['sexe'] == "1" ? 1 : 0) : 1, PDO::PARAM_INT);
             $prep->execute();
             $cle = $pdo->lastInsertId();
             $subject = "Mail d'activation de compte Camagru";

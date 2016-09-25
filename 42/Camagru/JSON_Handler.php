@@ -1,12 +1,13 @@
 <?php
     require_once("data_base.php");
-	if (array_key_exists('imageData',$_REQUEST))
+	if (array_key_exists('imageData',$_REQUEST) && array_key_exists('id_user',$_REQUEST))
+	{
 		$data = $_REQUEST['imageData'];
-	$query = "INSERT INTO gallery (picture) VALUES (?);";
+		$id = intval($_REQUEST['id_user']);
+	}
+	$query = "INSERT INTO gallery (picture, id_user) VALUES (?, ?);";
 	$prep = $pdo->prepare($query);
-	$fd = fopen("test.jpeg", 'w+');
-	fwrite($fd, base64_decode($data));
-	fclose($fd);
     $prep->bindValue(1, $data, PDO::PARAM_STR);
+    $prep->bindValue(2, $id, PDO::PARAM_INT);
     $prep->execute();
 ?>

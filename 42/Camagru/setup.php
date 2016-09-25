@@ -22,7 +22,8 @@
 	$query2 = "CREATE TABLE gallery
 				(
 					`id` INT PRIMARY KEY AUTO_INCREMENT,
-					`picture` TEXT(200000)
+					`picture` TEXT(200000),
+					`id_user` INT
 				);";
 	$query3 = "CREATE TABLE comments
 				(

@@ -1,7 +1,8 @@
 <?php
     require_once("data_base.php");
-    // if ($_SESSION['logged_in'] == false)
-    //     header('Location : connexion.php');
+    if ($_SESSION['logged_in'] == false)
+         redirect('connexion.php');
+
 ?>
 
 <html>
@@ -34,7 +35,7 @@
                             <div id="shooter">
                                 <video autoplay="true" id="videoElement">
                                 </video>
-                                <button id="shoot" onclick="getImage()"></button>
+                                <button id="shoot" onclick="getImage(glob_id)"></button>
                                 <canvas id="my_canvas">
                                     
                                 </canvas>
@@ -50,6 +51,11 @@
         <div id="footer">
             
         </div>
+        <script>
+            var glob_id = <?php echo "\"".strval($_SESSION['id_user'])."\""; ?> ;
+            console.log("camagru " + glob_id);
+        </script>
+        <script type="text/javascript" src="get_image.js">
+        </script>
     </body>
-    <script type="text/javascript" src="get_image.js"></script>
 </html>

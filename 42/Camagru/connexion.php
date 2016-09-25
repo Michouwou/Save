@@ -1,7 +1,7 @@
 <?php
     require_once('data_base.php');
-    if ($_SESSION[logged_in] == true)
-        header('Location : camagru.php');
+    if ($_SESSION['logged_in'] == true)
+        redirect('Location : camagru.php');
     if (isset($_POST) && isset($_POST['Username']) && isset($_POST['Password'])
         && $_POST['Username'] != "" && $_POST['Password'] != "")
     {
@@ -23,7 +23,10 @@
                 if ($arr['active'] == 1)
                 {
                     $_SESSION['logged_in'] = true;
-                    header('Location : https://save-michouwou.c9users.io/Save/42/Camagru/camagru.php');
+                    $_SESSION['username'] = $_POST['Username'];
+                    $_SESSION['id_user'] = $arr['id'];
+                    echo "<script type='text/javascript'>console.log(\"".$arr['id']."\");</script>";
+                    redirect('camagru.php');
                 }
                 else
                 {
