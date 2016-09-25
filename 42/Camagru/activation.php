@@ -17,7 +17,8 @@
             $prep = $pdo->prepare($query);
             $prep->bindValue(1, $_GET['login'], PDO::PARAM_STR);
             $prep->execute();
-            $_POST['account_is_validated'] = "Votre compte vient d'être validé, vous pouvez maintenant vous connecter!";
+            $_POST['account_is_validated'] = "Votre compte vient d'être validé, vous pouvez maintenant vous connecter!
+                                                <br/><br/><br/><br/><a href='connexion.php'>Me connecter</a>";
         }
         else
         {

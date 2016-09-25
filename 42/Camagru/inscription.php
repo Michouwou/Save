@@ -1,7 +1,7 @@
 <?php
     require_once('data_base.php');
-    if ($_SESSION[logged_in] == true)
-        header('Location : camagru.php');
+    if ($_SESSION['logged_in'] == true)
+        redirection('Location : camagru.php');
     if ($_POST && $_POST['Username'] && $_POST['Password'] && $_POST['Email']
         && $_POST['Username'] != "" && $_POST['Password'] != ""
         && $_POST['Email'] != "")
@@ -21,12 +21,13 @@
         {
             while ($arr)
             {
-                if ($arr['email'] == $_POST['Email'])
+                if ($arr['mail'] == $_POST['Email'])
                 {
                     $_POST['Email'] = null;
+                    echo "<h1>PLOPLOPLO</h1>";
                     $_POST['error_mail'] = "Cet adresse email est déjà utilisée";
                 }
-                if ($arr['pwd'] == $hash)
+                if ($arr['password'] == $hash)
                 {
                     $_POST['Password'] = null;
                     $_POST['error_pwd'] = "Ce mot de passe est déjà utilisé";
@@ -48,7 +49,7 @@
             $prep->bindValue(2, $hash, PDO::PARAM_STR);
             $prep->bindValue(3, $_POST['Email'], PDO::PARAM_STR);
             $prep->bindValue(4, 0, PDO::PARAM_INT);
-            $prep->bindValue(5, isset($_POST['sexe']) ? ($_POST['sexe'] == "1" ? 1 : 0) : 1, PDO::PARAM_INT);
+            $prep->bindValue(5, (intval($_POST['sexe']) == 0 ? 0 : 1), PDO::PARAM_INT);
             $prep->execute();
             $cle = $pdo->lastInsertId();
             $subject = "Mail d'activation de compte Camagru";
@@ -57,7 +58,7 @@
                         Pour toute question concernant nos conditions d'utilisation ou autre,
                         veuillez utiliser la rubrique contact de notre site.
                         \n\nCliquez sur le lien pour activer votre compte :\n
-                        https://save-michouwou.c9users.io/Save/42/Camagru/activation.php?login="
+                        http://localhost:8080/Camagru/activation.php?login="
                         .urlencode($_POST['Username'])."&cle=".urlencode(hash('sha512', $cle)).
                         "\nCeci est un message automatique, merci de ne pas répondre.";
             mail($_POST['Email'], $subject, $message, $entete);
@@ -127,7 +128,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><span id="precision">Les champs marqués d'une astérixe ('*') sont obligatoires</span></td>
+                    <td><span id="precision">Les champs marqués d'une astérixe ('*') sont obligatoires
+                        <br/>Le mot de passe choisi doit contenir au minimum 8 caractères
+                        <br/>Le nom d'utilisateur choisi doit contenir au minimum 6 caractères</span></td>
                 </tr>
                 <?php
                     if (isset($_POST['error_user']) || isset($_POST['error_pwd']) || isset($_POST['error_mail'])
