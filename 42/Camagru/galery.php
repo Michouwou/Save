@@ -52,16 +52,7 @@
                 <hr/>
                 <div id="actual_contain">
                     <table id="actual">
-                        <tr>
-                            <td>
-                                J'adore cette photo, elle est geante!
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Quelqu'un pourrait me trouver le nom de l'artiste svp, ca fait un bout de temps que je le cherche et impossible de mettre la main dessus, du coup si    quelqu'un a une idee, faites le moi savoir svp
-                            </td>
-                        </tr>
+                        
                     </table>
                 </div>
             </div>
@@ -89,6 +80,7 @@
         var like = document.getElementById('button1');
         var dislike = document.getElementById('button2');
         var glob_id = <?php echo $_SESSION['id_user']; ?> ;
+        var tab;
 
         function getRightDiv(id)
         {
@@ -97,6 +89,27 @@
             div = document.getElementById("selecting");
             div.className = "display";
             current_id = id;
+            $.ajax(
+            {
+                type: 'POST',
+                url: 'http://localhost:8080/Camagru/getComments.php',
+                dataType: 'text',
+                data:
+                {
+                    id_picture : current_id ,
+                },
+                success: function(data)
+                {
+                    affect(data);
+                }
+            });
+        }
+
+        function affect(data)
+        {
+            tab = data;
+            var actual = document.getElementById("actual");
+            actual.innerHTML = tab;
         }
 
         function getComment()
@@ -117,6 +130,7 @@
                     comment.value = "";
                 }
             });
+            getRightDiv(current_id);
         }
 
         function unlikePicture()
@@ -135,6 +149,7 @@
                 success: function () 
                 {}
             });
+            getRightDiv(current_id);
         }
 
         function likePicture()
@@ -153,6 +168,7 @@
                 success: function () 
                 {}
             });
+            getRightDiv(current_id);
         }
     </script>
 </html>

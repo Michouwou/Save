@@ -230,10 +230,11 @@ body
 
 #actual_contain
 {
-    height: 40vh;
+    max-height: 40vh;
     position: relative;
     width: 97%;
     display: flex;
+    overflow: auto;
 }
 
 #comment #actual
@@ -243,14 +244,34 @@ body
     margin-top: 3vmin;
     height: 96%;
     border-radius: 1vmin;
-    display: block;
     border-collapse: collapse;
     box-sizing: border-box;
-    overflow: auto;
+}
+
+#actual tr
+{
+    width : 100%;
 }
 
 #actual td
 {
     border : 1px dotted black;
     padding : 1vmin;
+}
+
+#actual tr:first-child td:first-child
+{
+    border-radius: 1vmin 1vmin 0 0;
+    display : flex;
+}
+
+#actual tr:last-child td:first-child
+{
+    border-radius: 0 0 1vmin 1vmin;
+    display : flex;
+}
+#actual tr td:only-child
+{
+    border-radius : 1vmin !important;
+    display : flex !important;
 }
