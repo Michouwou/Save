@@ -1,7 +1,7 @@
 <?php
     require_once('data_base.php');
     if ($_SESSION['logged_in'] == true)
-        redirection('Location : camagru.php');
+        redirect('camagru.php');
     if ($_POST && $_POST['Username'] && $_POST['Password'] && $_POST['Email']
         && $_POST['Username'] != "" && $_POST['Password'] != ""
         && $_POST['Email'] != "")

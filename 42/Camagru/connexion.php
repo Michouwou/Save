@@ -25,7 +25,6 @@
                     $_SESSION['logged_in'] = true;
                     $_SESSION['username'] = $_POST['Username'];
                     $_SESSION['id_user'] = $arr['id'];
-                    echo "<script type='text/javascript'>console.log(\"".$arr['id']."\");</script>";
                     redirect('camagru.php');
                 }
                 else

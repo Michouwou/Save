@@ -15,7 +15,6 @@ function handleVideo(stream)
 
 function getImage(glob_id)
 {
-    console.log("JS " + glob_id);
     var context = canvas.getContext('2d');
     canvas.width = 200;
     canvas.height = 200;
@@ -38,9 +37,7 @@ function getImage(glob_id)
             id_user : String(glob_id) ,
         },
         success: function () 
-        {
-            alert("SUCCESS");
-        }
+        {}
     });
 }
 

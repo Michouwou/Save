@@ -1,6 +1,6 @@
 <?php
     require_once("data_base.php");
-	if (array_key_exists('imageData',$_REQUEST) && array_key_exists('id_user',$_REQUEST))
+	if (array_key_exists('imageData', $_REQUEST) && array_key_exists('id_user', $_REQUEST))
 	{
 		$data = $_REQUEST['imageData'];
 		$id = intval($_REQUEST['id_user']);
