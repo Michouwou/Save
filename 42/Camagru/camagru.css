@@ -41,6 +41,7 @@ body
 #main_content
 {
     background: #e0effd;
+    height: 75%;
 }
 
 .side table
@@ -56,7 +57,7 @@ body
 
 #videoElement
 {
-    width: 100%;
+    width: 62vmin;
     margin: auto;
     display: flex;
 }
@@ -98,7 +99,50 @@ canvas
 {
     padding: 0;
     display: flex;
-    max-height: 573px;
+    max-height: 62vmin;
     overflow: auto;
-    position: relative; 
+    position: relative;
+}
+
+.inner_images
+{
+    width :32%;
+}
+
+.speed_view
+{
+    width: 100%;
+}
+
+#images
+{
+    height: 15vmin;
+    max-width: 62vmin;
+    margin: auto;
+    box-sizing: border-box;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.super
+{
+    overflow: auto;
+    height:100%;
+    box-sizing: border-box;;
+}
+
+.super:hover
+{
+    background : rgba(36, 51, 70, 0.25);
+    cursor : pointer;
+    height : 99%;
+}
+
+.super:active
+{
+    background : rgba(36, 51, 70, 0.32);
+    box-shadow: inset 5px 3px 10px 3px blue;
+    height : 98%;
+    transition : box-shadow 0.2s;
 }

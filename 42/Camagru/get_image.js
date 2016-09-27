@@ -26,7 +26,7 @@ function getImage(glob_id)
     inner_images.width = 200;
     var elem = document.createElement('img');
     elem.src = data;
-    elem.id = "inner_images";
+    elem.className = "inner_images";
     inner_images.appendChild(elem);
     data2 = data.replace(/^data:image\/(png|jpg);base64,/, "");
     $.ajax(

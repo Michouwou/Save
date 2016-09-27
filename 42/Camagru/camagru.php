@@ -30,6 +30,8 @@
                                 <tr>
                                     <td>
                                         <div id="images">
+                                            <img src="test_1_image.png" class="super"/>
+                                            <img src="test_1_image.png" class="super"/>
                                         </div>
                                     </td>
                                 </tr>
@@ -49,7 +51,6 @@
                     </td>
                     <td id='test'>
                         <div class="side speed_view">
-                            <img id="inner_images"/>
                         </div>
                     </td>
                 </tr>
