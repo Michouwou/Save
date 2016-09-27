@@ -41,13 +41,11 @@ body
 #main_content
 {
     background: #e0effd;
-    height : 75%;
 }
 
-.side
+.side table
 {
-    float: left;
-    width: 49%;
+    width:100%;
 }
 
 #footer
@@ -58,21 +56,24 @@ body
 
 #videoElement
 {
-    position: absolute;
-    width : 70vmin;
+    width: 100%;
+    margin: auto;
+    display: flex;
 }
 
 #shoot
 {
-    position : absolute;
-    top : 60vmin;
-    left : 33vmin;
-    background : black;
-    border-radius : 100%;
-    border : 10px double #BDBDBD;
-    cursor : pointer;
-    width : 6vmin;
-    height : 6vmin;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    bottom: 7vmin;
+    position: relative;
+    background: black;
+    border-radius: 100%;
+    border: 10px double #BDBDBD;
+    cursor: pointer;
+    width: 7vmin;
+    height: 7vmin;
 }
 
 #shoot:hover
@@ -93,16 +94,11 @@ canvas
     display: none;
 }
 
-.speed_view
+#test
 {
-    width : 29vmin;
-    position : absolute;
-    left : 71vmin;
-}
-
-.speed_view img
-{
-    width: 11vw;
-    height: 11vw;
-    position: static;
+    padding: 0;
+    display: flex;
+    max-height: 573px;
+    overflow: auto;
+    position: relative; 
 }

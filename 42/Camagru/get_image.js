@@ -20,11 +20,14 @@ function getImage(glob_id)
     canvas.height = 200;
     context.drawImage(video, 0, 0, 200, 200);
     var data = canvas.toDataURL('image/png');
-    var inner_images = document.querySelector("#inner_images");
+    var inner_images = document.querySelector(".speed_view");
     context.clearRect(0, 0, canvas.width, canvas.height);
     inner_images.height = 200;
     inner_images.width = 200;
-    inner_images.setAttribute('src', data);
+    var elem = document.createElement('img');
+    elem.src = data;
+    elem.id = "inner_images";
+    inner_images.appendChild(elem);
     data2 = data.replace(/^data:image\/(png|jpg);base64,/, "");
     $.ajax(
     {

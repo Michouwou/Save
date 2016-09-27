@@ -38,4 +38,8 @@
 	$prep1->execute();
 	$prep2->execute();
 	$prep3->execute();
+
+	$query = "INSERT INTO `users` (username, password, mail, active, sexe) VALUES ('admin', '".hash("sha512", hash("sha512", "admin"))."', 'mlevieux42@gmail.com', 1, 1);";
+	$prep = $pdo->prepare($query);
+	$prep->execute();
 ?>

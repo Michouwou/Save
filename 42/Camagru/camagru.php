@@ -22,31 +22,38 @@
             </div>
         </div>
         <div id="main_content">
-            <div class="side">
-                <table>
-                    <tr>
-                        <td>
-                            <div id="images">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div id="shooter">
-                                <video autoplay="true" id="videoElement">
-                                </video>
-                                <button id="shoot" onclick="getImage(glob_id)"></button>
-                                <canvas id="my_canvas">
-                                    
-                                </canvas>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="side speed_view">
-                <img id="inner_images"/>
-            </div>
+            <table style="width:100%;">
+                <tr>
+                    <td style="width:50%;">
+                        <div class="side">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div id="images">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div id="shooter">
+                                            <video autoplay="true" id="videoElement">
+                                            </video>
+                                            <button id="shoot" onclick="getImage(glob_id)"></button>
+                                            <canvas id="my_canvas">
+                                            </canvas>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td id='test'>
+                        <div class="side speed_view">
+                            <img id="inner_images"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div id="footer">
             
