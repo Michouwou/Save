@@ -8,8 +8,8 @@
     $prep->execute();
     
     while ($arr = $prep->fetch())
-            $images = $images."<img id=\"".$arr['id']."\" src=\"data:image/png;charset=utf-8;base64,".
-                        addcslashes($arr['picture'], "'\"}")."\" onclick=\"getRightDiv(".$arr['id'].")\"/>\n";
+            $images = "<img id=\"".$arr['id']."\" src=\"data:image/png;charset=utf-8;base64,".
+                        addcslashes($arr['picture'], "'\"}")."\" onclick=\"getRightDiv(".$arr['id'].")\"/>\n".$images;
 ?>
 
 <!DOCTYPE html>

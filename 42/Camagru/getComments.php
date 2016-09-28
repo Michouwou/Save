@@ -15,12 +15,12 @@
 		{
 			while (($var1 = $prep1->fetch()) != false)
 			{
-				$result = $result."<tr><td>";
+				$result = "</td></tr>".$result;
 				if ($var1['likes'])
-					$result = $result.$var2[$var1['id_user']][0]." ".($var1['likes'] == 1 ? "a " : " n'a pas ")."aimé cette photo";
+					$result = $var2[$var1['id_user']][0]." ".($var1['likes'] == 1 ? "a " : " n'a pas ")."aimé cette photo".$result;
 				else if ($var1['comment'])
-					$result = $result.$var2[$var1['id_user']][0]." : ".$var1['comment'];
-				$result = $result."</td></tr>";
+					$result = $var2[$var1['id_user']][0]." : ".$var1['comment'].$result;
+				$result = "<tr><td>".$result;
 			}
 		}
 	}
