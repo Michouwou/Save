@@ -1,6 +1,7 @@
 var video = document.querySelector("#videoElement");
 var canvas = document.querySelector("#my_canvas");
 var data2;
+var id = 0;
 
 
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
@@ -16,11 +17,11 @@ function handleVideo(stream)
 function getImage(glob_id, current_png)
 {
     var context = canvas.getContext('2d');
-    canvas.width = 200;
-    canvas.height = 200;
+    canvas.width = 500;
+    canvas.height = 500;
     var image = document.getElementById(current_png);
-    context.drawImage(video, 0, 0, 200, 200);
-    context.drawImage(image, 0, 0, 200, 200);
+    context.drawImage(video, 0, 0, 500, 500);
+    context.drawImage(image, 0, 0, 500, 500);
     var data = canvas.toDataURL('image/png');
     var inner_images = document.querySelector(".speed_view");
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -28,6 +29,12 @@ function getImage(glob_id, current_png)
     inner_images.width = 200;
     var elem = document.createElement('img');
     elem.src = data;
+    elem.id = id;
+    elem.onclick = function ()
+    {
+        select(elem.id);
+    };
+    id++;
     elem.className = "inner_images";
     inner_images.insertBefore(elem, inner_images.firstChild);
     data2 = data.replace(/^data:image\/(png|jpg);base64,/, "");

@@ -31,12 +31,12 @@
                                     <td>
                                         <div style="height:15vmin">
                                         <div id="images">
-                                            <img src="png_frame_1.png" class="super" id='1' onclick="superpose('1')"/>
-                                            <img src="png_frame_2.png" class="super" id='2' onclick="superpose('2')"/>
-                                            <img src="png_frame_3.png" class="super" id='3' onclick="superpose('3')"/>
-                                            <img src="png_frame_4.jpg" class="super" id='4' onclick="superpose('4')"/>
-                                            <img src="png_frame_5.png" class="super" id='5' onclick="superpose('5')"/>
-                                            <img src="png_frame_6.png" class="super" id='6' onclick="superpose('6')"/>
+                                            <img src="png_frame_1.png" class="super" id='a' onclick="superpose('a')"/>
+                                            <img src="png_frame_2.png" class="super" id='b' onclick="superpose('b')"/>
+                                            <img src="png_frame_3.png" class="super" id='c' onclick="superpose('c')"/>
+                                            <img src="png_frame_4.jpg" class="super" id='d' onclick="superpose('d')"/>
+                                            <img src="png_frame_5.png" class="super" id='e' onclick="superpose('e')"/>
+                                            <img src="png_frame_6.png" class="super" id='f' onclick="superpose('f')"/>
                                         </div>
                                         </div>
                                     </td>
@@ -61,6 +61,11 @@
                     </td>
                 </tr>
             </table>
+        <div>
+            <button id="download" onclick="get_last_image()">
+                Download
+            </button>
+        </div>
         </div>
         <div id="footer">
             
@@ -70,10 +75,45 @@
             var current_png;
             var contain = document.getElementById('shooter');
             var videoElement = document.getElementById('videoElement');
+            var Selected;
             window.onresize = function()
             {
                 resize();
             };
+
+            function get_last_image()
+            {
+                if (confirm("Voulez-vous télécharger la photo que vous venez de sélectionner??") == true)
+                {
+                    var a = document.createElement("a");
+                    var data = document.getElementById(Selected).src;
+                    var name = 'camagru_picture_' + Selected;
+                    if (window.navigator.msSaveOrOpenBlob)
+                        window.navigator.msSaveOrOpenBlob(file, name);
+                    else
+                    {
+                        a.href = data;
+                        a.download = name;
+                        document.body.appendChild(a);
+                        a.click();
+                        setTimeout(function()
+                        {
+                            document.body.removeChild(a);
+                            window.URL.revokeObjectURL(url);  
+                        }, 0); 
+                    }
+                }
+            }
+
+            function select(id)
+            {
+                var last = document.getElementById(Selected);
+                if (last)
+                    last.className = "inner_images";
+                Selected = id;
+                document.getElementById('download').style.display = "block";
+                document.getElementById(Selected).className = "selected";
+            }
 
             function superpose(id)
             {
@@ -91,6 +131,11 @@
                 image.id = 'actual';
                 current_png = id;
                 contain.insertBefore(image, contain.firstChild);;
+            }
+
+            function b64_to_utf8( str )
+            {
+               return decodeURIComponent(unescape(window.atob( str )));
             }
 
             function resize()

@@ -3,6 +3,11 @@ body
     margin : 0;
 }
 
+td
+{
+    padding : 0;
+}
+
 #header
 {
     background: rgb(35, 40, 46);
@@ -104,9 +109,15 @@ canvas
     position: relative;
 }
 
-.inner_images
+.inner_images, .selected
 {
     width :32%;
+}
+
+.selected
+{
+    border : 1vmin solid #ff29f4;
+    box-sizing : border-box;
 }
 
 .speed_view
@@ -149,4 +160,32 @@ canvas
     box-shadow: inset 5px 3px 10px 3px blue;
     height : 98%;
     transition : box-shadow 0.2s;
+}
+
+#download
+{
+    height: 3vmin;
+    display: none;
+    width: 12vmin;
+    border-radius: 0.6vmin;
+    font-size: 1.5vmin;
+    color: #9dc7c2;
+    background-image: linear-gradient(90deg, #716c6c, #272626, #716c6c);
+    box-shadow: none;
+    box-sizing: content-box;
+    cursor : pointer;
+}
+
+#download:hover
+{
+    background-image: linear-gradient(90deg, #272626, #716c6c, #272626);
+    border : 0.3vmin double black;
+}
+
+#download:active
+{
+    background-image: linear-gradient(90deg, #716c6c, #272626, #716c6c);
+    border : none;
+    width : 11.5vmin;
+    height : 2.5vmin;
 }
