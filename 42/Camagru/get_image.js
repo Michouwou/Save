@@ -1,6 +1,7 @@
 var video = document.querySelector("#videoElement");
 var canvas = document.querySelector("#my_canvas");
 var data2;
+var inner_images;
 var id = 0;
 
 
@@ -14,8 +15,16 @@ function handleVideo(stream)
     video.src = window.URL.createObjectURL(stream);
 }
 
+function make_inner()
+{
+    inner_images = document.querySelector(".speed_view");
+    inner_images.height = 200;
+    inner_images.width = 200;
+}
+
 function getImage(glob_id, current_png)
 {
+    make_inner();
     var context = canvas.getContext('2d');
     canvas.width = 500;
     canvas.height = 500;
@@ -23,10 +32,31 @@ function getImage(glob_id, current_png)
     context.drawImage(video, 0, 0, 500, 500);
     context.drawImage(image, 0, 0, 500, 500);
     var data = canvas.toDataURL('image/png');
-    var inner_images = document.querySelector(".speed_view");
     context.clearRect(0, 0, canvas.width, canvas.height);
-    inner_images.height = 200;
-    inner_images.width = 200;
+    new_image(data);
+    data2 = data.replace(/^data:image\/(png|jpg);base64,/, "");
+    server_send(data2);
+}
+
+function server_send(data)
+{
+    $.ajax(
+    {
+        type: 'POST',
+        url: 'http://localhost:8080/Camagru/JSON_Handler.php',
+        dataType: 'text',
+        data:
+        {
+            imageData : data ,
+            id_user : String(glob_id) ,
+        },
+        success: function () 
+        {}
+    });
+}
+
+function new_image(data)
+{
     var elem = document.createElement('img');
     elem.src = data;
     elem.id = id;
@@ -37,20 +67,7 @@ function getImage(glob_id, current_png)
     id++;
     elem.className = "inner_images";
     inner_images.insertBefore(elem, inner_images.firstChild);
-    data2 = data.replace(/^data:image\/(png|jpg);base64,/, "");
-    $.ajax(
-    {
-        type: 'POST',
-        url: 'http://localhost:8080/Camagru/JSON_Handler.php',
-        dataType: 'text',
-        data:
-        {
-            imageData : data2 ,
-            id_user : String(glob_id) ,
-        },
-        success: function () 
-        {}
-    });
+    alert("OK");
 }
 
 function videoError(e)

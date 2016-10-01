@@ -17,9 +17,9 @@
 			{
 				$result = "</td></tr>".$result;
 				if ($var1['likes'])
-					$result = $var2[$var1['id_user']][0]." ".($var1['likes'] == 1 ? "a " : " n'a pas ")."aimé cette photo".$result;
+					$result = htmlentities($var2[$var1['id_user']][0])." ".($var1['likes'] == 1 ? "a " : " n'a pas ")."aimé cette photo".$result;
 				else if ($var1['comment'])
-					$result = $var2[$var1['id_user']][0]." : ".$var1['comment'].$result;
+					$result = htmlentities($var2[$var1['id_user']][0])." : ".htmlentities($var1['comment']).$result;
 				$result = "<tr><td>".$result;
 			}
 		}

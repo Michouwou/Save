@@ -61,10 +61,15 @@
                     </td>
                 </tr>
             </table>
-        <div>
-            <button id="download" onclick="get_last_image()">
-                Download
-            </button>
+        <div style="display:flex;">
+            <div id="buttons">
+                <button class="download" id="download" onclick="get_last_image()">
+                    Download
+                </button>
+                <button class="download" style="display:block;" onclick="upload_file()">
+                    Upload
+                </button>
+            </div>
         </div>
         </div>
         <div id="footer">
@@ -80,6 +85,30 @@
             {
                 resize();
             };
+
+            function upload_file()
+            {
+                make_inner();
+                var link = document.createElement("input");
+                link.type = "file";
+                link.click();
+                link.onchange = function ()
+                {
+                    var file = link.files[0];
+                    var reader = new FileReader();
+                    reader.onloadend = function()
+                    {
+                        data2 = reader.result.replace(/^data:image\/(png|jpg);base64,/, "");
+                        alert(data2);
+                        new_image(reader.result);
+                        server_send(data2);
+                    }
+                    if (file)
+                    {
+                        reader.readAsDataURL(file);
+                    }
+                }
+            }
 
             function get_last_image()
             {
@@ -102,6 +131,11 @@
                             window.URL.revokeObjectURL(url);  
                         }, 0); 
                     }
+                    var last = document.getElementById(Selected);
+                    if (last)
+                        last.className = "inner_images";
+                    Selected = "";
+                    document.getElementById('download').style.display = "none";
                 }
             }
 
@@ -125,17 +159,11 @@
                 var y = videoElement.offsetHeight;
                 image.style.width = x.toString()+"px";
                 image.style.height = y.toString()+"px";
-                image.style.height = videoElement.style.height.toString()+"px";
                 image.style.position = 'absolute';
                 image.className = "";
                 image.id = 'actual';
                 current_png = id;
                 contain.insertBefore(image, contain.firstChild);;
-            }
-
-            function b64_to_utf8( str )
-            {
-               return decodeURIComponent(unescape(window.atob( str )));
             }
 
             function resize()
@@ -145,7 +173,6 @@
                 {
                     var x = videoElement.offsetWidth;
                     var y = videoElement.offsetHeight;
-                    console.log(x);
                     image.style.width = x.toString()+"px";
                     image.style.height = y.toString()+"px";
                 }

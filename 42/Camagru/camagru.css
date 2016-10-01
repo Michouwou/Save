@@ -3,11 +3,6 @@ body
     margin : 0;
 }
 
-td
-{
-    padding : 0;
-}
-
 #header
 {
     background: rgb(35, 40, 46);
@@ -162,8 +157,10 @@ canvas
     transition : box-shadow 0.2s;
 }
 
-#download
+.download
 {
+    display: table;
+    margin: auto;
     height: 3vmin;
     display: none;
     width: 12vmin;
@@ -176,16 +173,28 @@ canvas
     cursor : pointer;
 }
 
-#download:hover
+.download:hover
 {
     background-image: linear-gradient(90deg, #272626, #716c6c, #272626);
     border : 0.3vmin double black;
 }
 
-#download:active
+.download:active
 {
     background-image: linear-gradient(90deg, #716c6c, #272626, #716c6c);
     border : none;
     width : 11.5vmin;
     height : 2.5vmin;
+}
+
+#shooter
+{
+    margin: auto;
+    display: table;
+}
+
+#buttons
+{
+    margin: auto;
+    display: flex;
 }

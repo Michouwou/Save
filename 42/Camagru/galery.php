@@ -75,7 +75,7 @@
         </div>
     </body>
     <script type="text/javascript">
-        var current_id;
+        var current_id = "";
         var comment = document.getElementById('text_comment');
         var like = document.getElementById('button1');
         var dislike = document.getElementById('button2');
@@ -88,7 +88,10 @@
             div.className = "commentaries";
             div = document.getElementById("selecting");
             div.className = "display";
+            if (current_id != "")
+                document.getElementById(current_id).className = "";
             current_id = id;
+            document.getElementById(current_id).className = "selection";
             $.ajax(
             {
                 type: 'POST',
@@ -109,7 +112,7 @@
         {
             tab = data;
             var actual = document.getElementById("actual");
-            actual.innerHTML = tab;
+            actual.innerHTML = tab ;
         }
 
         function getComment()

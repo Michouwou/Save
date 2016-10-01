@@ -3,6 +3,11 @@ body
     margin : 0;
 }
 
+*
+{
+    max-width : 100%;
+}
+
 #header
 {
     background: rgb(35, 40, 46);
@@ -152,7 +157,7 @@ body
     line-height: 25vmin;
 }
 
-#pictures img
+#pictures img, .selection
 {
     height : 15vw;
     width : 15vw;
@@ -160,7 +165,7 @@ body
     box-sizing: border-box;
 }
 
-#pictures img:hover
+#pictures img:hover, .selection
 {
     cursor: pointer;
     border : 3px solid blue;
@@ -257,21 +262,24 @@ body
 {
     border : 1px dotted black;
     padding : 1vmin;
+    word-wrap: break-word;
+}
+
+#actual td, #actual tr, #actual tbody, #actual
+{
+    display: block;
 }
 
 #actual tr:first-child td:first-child
 {
     border-radius: 1vmin 1vmin 0 0;
-    display : flex;
 }
 
 #actual tr:last-child td:first-child
 {
     border-radius: 0 0 1vmin 1vmin;
-    display : flex;
 }
 #actual tr td:only-child
 {
     border-radius : 1vmin !important;
-    display : flex !important;
 }
