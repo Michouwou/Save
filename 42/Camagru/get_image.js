@@ -24,6 +24,11 @@ function make_inner()
 
 function getImage(glob_id, current_png)
 {
+    var last = document.getElementById(Selected);
+    if (last)
+        last.className = "inner_images";
+    Selected = "";
+    document.getElementById('download').style.display = "none";
     make_inner();
     var context = canvas.getContext('2d');
     canvas.width = 1000;
@@ -52,7 +57,12 @@ function getImage(glob_id, current_png)
 }
 
 function getImage_up(glob_id, current_png, img)
-{
+{    
+    var last = document.getElementById(Selected);
+    if (last)
+        last.className = "inner_images";
+    Selected = "";
+    document.getElementById('download').style.display = "none";
     make_inner();
     $.ajax(
     {

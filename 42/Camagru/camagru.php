@@ -46,7 +46,7 @@
                                         <div id="shooter">
                                             <video autoplay="true" id="videoElement">
                                             </video>
-                                            <button id="shoot" onclick="getImage(glob_id, current_png)"></button>
+                                            <button id="shoot"></button>
                                             <canvas id="my_canvas">
                                             </canvas>
                                         </div>
@@ -60,8 +60,7 @@
                         </div>
                     </td>
                 </tr>
-            </table>
-        <div style="display:flex;">
+                <tr><td><div style="display:flex;">
             <div id="buttons">
                 <button class="download" id="download" onclick="get_last_image()">
                     Download
@@ -70,7 +69,9 @@
                     Upload
                 </button>
             </div>
-        </div>
+        </div></td></tr>
+            </table>
+        
         </div>
         <div id="footer">
             
@@ -81,6 +82,8 @@
             var contain = document.getElementById('shooter');
             var videoElement = document.getElementById('videoElement');
             var Selected;
+            var click = document.getElementById('shoot');
+
             window.onresize = function()
             {
                 resize();
@@ -99,7 +102,6 @@
                     reader.onloadend = function()
                     {
                         data2 = reader.result.replace(/^data:image\/(png|jpg);base64,/, "");
-                        alert(data2);
                         getImage_up(glob_id, current_png, data2);
                     }
                     if (file)
@@ -152,6 +154,10 @@
             {
                 var image = document.getElementById(id).cloneNode();
                 var to_delete = document.getElementById('actual');
+                click.onclick = function()
+                {
+                    getImage(glob_id, current_png);
+                }
                 if (current_png != "")
                     document.getElementById(current_png).className = "super";
                 if (to_delete)

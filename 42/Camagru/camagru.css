@@ -81,6 +81,7 @@ body
 {
     width : 6.5vmin;
     height : 6.5vmin;
+    margin-bottom: 0.5vmin;
 }
 
 #shoot:active
@@ -88,6 +89,7 @@ body
     width : 5.5vmin;
     height : 5.5vmin;
     opacity: 0.3;
+    margin-bottom: 1.5vmin;
 }
 
 canvas
