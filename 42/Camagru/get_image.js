@@ -26,11 +26,10 @@ function getImage(glob_id, current_png)
 {
     make_inner();
     var context = canvas.getContext('2d');
-    canvas.width = 500;
-    canvas.height = 500;
-    context.drawImage(video, 0, 0, 500, 500);
+    canvas.width = 1000;
+    canvas.height = 1000;
+    context.drawImage(video, 0, 0, 1000, 1000);
     var data = canvas.toDataURL('image/png');
-    alert(document.getElementById(current_png));
     context.clearRect(0, 0, canvas.width, canvas.height);
     data2 = data.replace(/^data:image\/(png|jpg);base64,/, "");
     $.ajax(
@@ -48,7 +47,29 @@ function getImage(glob_id, current_png)
         {
             data3 = "data:image\/png;base64," + data;
             new_image(data3);
-            alert(data3);
+        }
+    });
+}
+
+function getImage_up(glob_id, current_png, img)
+{
+    make_inner();
+    $.ajax(
+    {
+        type: 'POST',
+        url: 'http://localhost:8080/Camagru/treatment.php',
+        datatype: 'text',
+        data:
+        {
+            string_pic : data2,
+            string_alpha : document.getElementById(current_png).src,
+            id_user : String(glob_id),
+            up : "1",
+        },
+        success: function(data)
+        {
+            data3 = "data:image\/png;base64," + data;
+            new_image(data3);
         }
     });
 }
@@ -82,7 +103,6 @@ function new_image(data)
     id++;
     elem.className = "inner_images";
     inner_images.insertBefore(elem, inner_images.firstChild);
-    alert("OK");
 }
 
 function videoError(e)

@@ -77,7 +77,7 @@
         </div>
         <script type="text/javascript">
             var glob_id = <?php echo "\"".strval($_SESSION['id_user'])."\""; ?> ;
-            var current_png;
+            var current_png = "";
             var contain = document.getElementById('shooter');
             var videoElement = document.getElementById('videoElement');
             var Selected;
@@ -100,8 +100,7 @@
                     {
                         data2 = reader.result.replace(/^data:image\/(png|jpg);base64,/, "");
                         alert(data2);
-                        new_image(reader.result);
-                        server_send(data2);
+                        getImage_up(glob_id, current_png, data2);
                     }
                     if (file)
                     {
@@ -153,6 +152,8 @@
             {
                 var image = document.getElementById(id).cloneNode();
                 var to_delete = document.getElementById('actual');
+                if (current_png != "")
+                    document.getElementById(current_png).className = "super";
                 if (to_delete)
                     contain.removeChild(to_delete);
                 var x = videoElement.offsetWidth;
@@ -163,6 +164,7 @@
                 image.className = "";
                 image.id = 'actual';
                 current_png = id;
+                document.getElementById(current_png).className = "activepng";
                 contain.insertBefore(image, contain.firstChild);;
             }
 

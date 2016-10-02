@@ -149,7 +149,7 @@ canvas
     height : 99%;
 }
 
-.super:active
+.super:active, .activepng
 {
     background : rgba(36, 51, 70, 0.32);
     box-shadow: inset 5px 3px 10px 3px blue;

@@ -1,22 +1,37 @@
 <?php
-require_once('data_base.php');
+	require_once('data_base.php');
 	if (array_key_exists("string_pic", $_REQUEST) && array_key_exists("string_alpha", $_REQUEST) && array_key_exists("id_user", $_REQUEST))
 	{
-		$image = imagecreatefrompng(base64_decode($_REQUEST["string_pic"]));
+		$image = imagecreatefromstring(base64_decode($_REQUEST["string_pic"]));
 		$alpha = imagecreatefrompng($_REQUEST["string_alpha"]);
-		$result = imagecreate(500, 500);
-		$next = imagecreate(500, 500);
-		$success =imagecopyresized ($next, $alpha, 0, 0, 0, 0, 500, 500, getimagesize($_REQUEST["string_alpha"])[0], getimagesize($_REQUEST["string_alpha"])[1]);
-		if ($result && $image && $success)
+		$next = imagecreatetruecolor(1000, 1000);
+		$img = imagecreatetruecolor(1000, 1000); 
+		imagealphablending($img, true); 
+		$transparent = imagecolorallocatealpha($img, 0, 0, 0, 127); 
+		imagefill($img, 0, 0, $transparent);
+		imagefill($next, 0, 0, $transparent);
+		if (array_key_exists("up", $_REQUEST))
 		{
-			$success = imagecopy($result, $image, 0, 0, 0, 0, 500, 500);
+			$res = imagecreatetruecolor(1000, 1000);
+			imagefill($res, 0, 0, $transparent);
+			$success = imagecopyresized($res, $image, 0, 0, 0, 0, 1000, 1000, imagesx($image), imagesy($image));
+			imagedestroy($image);
+			$image = $res;
+		}
+		$success = imagecopyresized($next, $alpha, 0, 0, 0, 0, 1000, 1000, getimagesize($_REQUEST["string_alpha"])[0], getimagesize($_REQUEST["string_alpha"])[1]);
+		imagedestroy($alpha);
+		if ($img && $image && $success)
+		{
+			imagecopyresampled($img, $image, 0, 0, 0, 0, 1000, 1000, 1000, 1000); 
 			if ($success)
 			{
-				$success = imagecopymerge($result, $next, 0, 0, 0, 0, 500, 500, 100);
+				imagecopyresampled($img, $next, 0, 0, 0, 0, 1000, 1000, 1000, 1000);
 				if ($success)
 				{
+					imagealphablending($img, false);
+					imagesavealpha($img, true);
 					ob_start();
-					imagepng($result);
+					imagepng($img);
 					$base =  ob_get_contents();
 					ob_end_clean();
 					$query = "INSERT INTO gallery (picture, id_user) VALUES (?, ?);";
@@ -33,6 +48,9 @@ require_once('data_base.php');
 		}
 		else
 			$base = "Echec lors de la creation des images";
+		imagedestroy($next);
+		imagedestroy($image);
+		imagedestroy($img);
 	}
 	else
 		$base = "Echec lors de l'envoi des donnees";
