@@ -56,7 +56,7 @@
                         </div>
                     </td>
                     <td id='test'>
-                        <div class="side speed_view">
+                        <div class="side speed_view" id="speed_view">
                         </div>
                     </td>
                 </tr>

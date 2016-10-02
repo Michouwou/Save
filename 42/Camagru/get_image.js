@@ -17,7 +17,7 @@ function handleVideo(stream)
 
 function make_inner()
 {
-    inner_images = document.querySelector(".speed_view");
+    inner_images = document.getElementById("speed_view");
     inner_images.height = 200;
     inner_images.width = 200;
 }
@@ -28,14 +28,29 @@ function getImage(glob_id, current_png)
     var context = canvas.getContext('2d');
     canvas.width = 500;
     canvas.height = 500;
-    var image = document.getElementById(current_png);
     context.drawImage(video, 0, 0, 500, 500);
-    context.drawImage(image, 0, 0, 500, 500);
     var data = canvas.toDataURL('image/png');
+    alert(document.getElementById(current_png));
     context.clearRect(0, 0, canvas.width, canvas.height);
-    new_image(data);
     data2 = data.replace(/^data:image\/(png|jpg);base64,/, "");
-    server_send(data2);
+    $.ajax(
+    {
+        type: 'POST',
+        url: 'http://localhost:8080/Camagru/treatment.php',
+        datatype: 'text',
+        data:
+        {
+            string_pic : data2,
+            string_alpha : document.getElementById(current_png).src,
+            id_user : String(glob_id),
+        },
+        success: function(data)
+        {
+            data3 = "data:image\/png;base64," + data;
+            new_image(data3);
+            alert(data3);
+        }
+    });
 }
 
 function server_send(data)

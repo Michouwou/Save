@@ -16,7 +16,7 @@
         
         $prep->execute();
         $arr = $prep->fetch();
-        
+
         if($arr !== false)
         {
             while ($arr)
@@ -24,7 +24,6 @@
                 if ($arr['mail'] == $_POST['Email'])
                 {
                     $_POST['Email'] = null;
-                    echo "<h1>PLOPLOPLO</h1>";
                     $_POST['error_mail'] = "Cet adresse email est déjà utilisée";
                 }
                 if ($arr['password'] == $hash)
@@ -42,12 +41,12 @@
         }
         else
         {
-            $hash = hash('sha512', hash('sha512', $_POST['Password']));
+            $hash = hash('sha512', hash('sha512', htmlentities($_POST['Password'])));
             $query = 'INSERT INTO users (username, password, mail, active, sexe) VALUES (?, ?, ?, ?, ?)';
             $prep = $pdo->prepare($query);
-            $prep->bindValue(1, $_POST['Username'], PDO::PARAM_STR);
+            $prep->bindValue(1, htmlentities($_POST['Username']), PDO::PARAM_STR);
             $prep->bindValue(2, $hash, PDO::PARAM_STR);
-            $prep->bindValue(3, $_POST['Email'], PDO::PARAM_STR);
+            $prep->bindValue(3, htmlentities($_POST['Email']), PDO::PARAM_STR);
             $prep->bindValue(4, 0, PDO::PARAM_INT);
             $prep->bindValue(5, (intval($_POST['sexe']) == 0 ? 0 : 1), PDO::PARAM_INT);
             $prep->execute();
@@ -59,9 +58,9 @@
                         veuillez utiliser la rubrique contact de notre site.
                         \n\nCliquez sur le lien pour activer votre compte :\n
                         http://localhost:8080/Camagru/activation.php?login="
-                        .urlencode($_POST['Username'])."&cle=".urlencode(hash('sha512', $cle)).
+                        .urlencode(htmlentities($_POST['Username']))."&cle=".urlencode(hash('sha512', $cle)).
                         "\nCeci est un message automatique, merci de ne pas répondre.";
-            mail($_POST['Email'], $subject, $message, $entete);
+            mail(htmlentities($_POST['Email']), $subject, $message, $entete);
             $_POST['Username'] = null;
             $_POST['Password'] = null;
             $_POST['Email'] = null;
