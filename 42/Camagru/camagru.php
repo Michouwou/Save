@@ -60,12 +60,12 @@
                         </div>
                     </td>
                 </tr>
-                <tr><td><div style="display:flex;">
+                <tr id="b_row"><td><div style="display:flex;">
             <div id="buttons">
                 <button class="download" id="download" onclick="get_last_image()">
                     Download
                 </button>
-                <button class="download" style="display:block;" onclick="upload_file()">
+                <button id="upload" class="download" onclick="upload_file()">
                     Upload
                 </button>
             </div>
@@ -74,7 +74,8 @@
         
         </div>
         <div id="footer">
-            
+            <p onmouseover="show_pane('images')" onmouseout="unshow_pane('images')">Vous devez selectionner un element a superposer pour pouvoir prendre une photo ou en envoyer une</p>
+            <p onmouseover="show_pane('speed_view')" onmouseout="unshow_pane('speed_view')">Si une photo vous plait, vous pouvez la telecharger en cliquant dessus puis sur "Download"</p>
         </div>
         <script type="text/javascript">
             var glob_id = <?php echo "\"".strval($_SESSION['id_user'])."\""; ?> ;
@@ -88,6 +89,16 @@
             {
                 resize();
             };
+
+            function show_pane(id)
+            {
+                document.getElementById(id).style.border = "6px solid red";
+            }
+
+            function unshow_pane(id)
+            {
+                document.getElementById(id).style.border = "";
+            }
 
             function upload_file()
             {
@@ -154,6 +165,8 @@
             {
                 var image = document.getElementById(id).cloneNode();
                 var to_delete = document.getElementById('actual');
+                document.getElementById("shoot").style.display = "flex";
+                document.getElementById("upload").style.display = "block";
                 click.onclick = function()
                 {
                     getImage(glob_id, current_png);

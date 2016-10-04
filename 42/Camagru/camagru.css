@@ -51,8 +51,17 @@ body
 
 #footer
 {
-    background: #48494A;
+    background: rgb(35, 40, 46);
     height : 10%;
+    font-size: 2vmin;
+    padding: 1vmin;
+    color: white;
+    box-sizing: border-box;
+}
+
+#footer p
+{
+    margin : 0;
 }
 
 #videoElement
@@ -64,7 +73,7 @@ body
 
 #shoot
 {
-    display: flex;
+    display: none;
     margin-right: auto;
     margin-left: auto;
     bottom: 7vmin;
@@ -199,4 +208,14 @@ canvas
 {
     margin: auto;
     display: flex;
+}
+
+#upload
+{
+    display :none;
+}
+
+#b_row
+{
+    transform: translateY(-6vmin);
 }
