@@ -75,6 +75,7 @@
         </div>
         <div id="footer">
             <p onmouseover="show_pane('images')" onmouseout="unshow_pane('images')">Vous devez selectionner un element a superposer pour pouvoir prendre une photo ou en envoyer une</p>
+            <br/>
             <p onmouseover="show_pane('speed_view')" onmouseout="unshow_pane('speed_view')">Si une photo vous plait, vous pouvez la telecharger en cliquant dessus puis sur "Download"</p>
         </div>
         <script type="text/javascript">

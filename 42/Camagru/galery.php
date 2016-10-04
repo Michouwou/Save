@@ -2,14 +2,16 @@
     require_once('data_base.php');
     if ($_SESSION['logged_in'] == false)
         redirect('Location : connexion.php');
-    $images = "";
-    $query = "SELECT * FROM gallery";
+    $pages = "";
+    $query = "SELECT COUNT(`id`) FROM gallery";
     $prep = $pdo->prepare($query);
     $prep->execute();
-    
-    while ($arr = $prep->fetch())
-            $images = "<img id=\"".$arr['id']."\" src=\"data:image/png;charset=utf-8;base64,".
-                        addcslashes($arr['picture'], "'\"}")."\" onclick=\"getRightDiv(".$arr['id'].")\"/>\n".$images;
+    $nb = intval(intval($prep->fetch()) / 30) + 1;
+    while ($nb > 0)
+    {
+        $pages = "<a onclick='get_page(".$nb.")'>".$nb."</a>".$pages;
+        $nb--;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -66,8 +68,7 @@
         </div>
         <div id="pictures">
             <?php
-                if ($images != "")
-                    echo $images;
+                echo $pages;
             ?>
         </div>
         <div id="footer">
@@ -81,6 +82,37 @@
         var dislike = document.getElementById('button2');
         var glob_id = <?php echo $_SESSION['id_user']; ?> ;
         var tab;
+        var page = 1;
+
+        window.ready = function ()
+        {
+            get_page(1);
+        };
+
+        function get_page(page)
+        {
+            if (page > 0)
+            {
+                $.ajax(
+                {
+                    type: 'POST',
+                    url: 'http://localhost:8080/Camagru/get_page_gallery.php',
+                    dataType: 'text',
+                    data:
+                    {
+                        nb_page : String(page),
+                    },
+                    success: function(data)
+                    {
+                        getElementById('pictures').innerHTML = data;
+                    },
+                    error: function()
+                    {
+                        getElementById('pictures').innerHTML = "Une erreur est survenue, veuillez recharger la page.";
+                    },
+                })
+            }
+        }
 
         function getRightDiv(id)
         {

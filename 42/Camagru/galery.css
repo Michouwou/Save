@@ -83,6 +83,13 @@ body
     margin-left : 5%;
 }
 
+#pictures a
+{
+    position : absolute;
+    bottom : 0;
+    margin : auto;
+}
+
 #footer
 {
     background: rgb(35, 40, 46);

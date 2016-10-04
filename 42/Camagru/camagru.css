@@ -62,6 +62,7 @@ body
 #footer p
 {
     margin : 0;
+    display: inline;
 }
 
 #videoElement
