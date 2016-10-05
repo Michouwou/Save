@@ -6,10 +6,11 @@
     $query = "SELECT COUNT(`id`) FROM gallery";
     $prep = $pdo->prepare($query);
     $prep->execute();
-    $nb = intval(intval($prep->fetch()) / 30) + 1;
+    $nb = intval(intval($prep->fetch()[0]) / 21) + 1;
+
     while ($nb > 0)
     {
-        $pages = "<a onclick='get_page(".$nb.")'>".$nb."</a>".$pages;
+        $pages = "<p onclick='get_page(".$nb.")'>&nbsp".$nb."&nbsp</p>".$pages;
         $nb--;
     }
 ?>
@@ -67,9 +68,12 @@
            </div>
         </div>
         <div id="pictures">
-            <?php
+            
+        </div>
+        <div id="pages" style="display:none;">
+        <?php
                 echo $pages;
-            ?>
+        ?>
         </div>
         <div id="footer">
             
@@ -84,7 +88,7 @@
         var tab;
         var page = 1;
 
-        window.ready = function ()
+        window.onload = function ()
         {
             get_page(1);
         };
@@ -104,11 +108,11 @@
                     },
                     success: function(data)
                     {
-                        getElementById('pictures').innerHTML = data;
+                        document.getElementById('pictures').innerHTML = data + "<div id='pages'>" + document.getElementById('pages').innerHTML + "</div>";
                     },
                     error: function()
                     {
-                        getElementById('pictures').innerHTML = "Une erreur est survenue, veuillez recharger la page.";
+                        document.getElementById('pictures').innerHTML = "Une erreur est survenue, veuillez recharger la page.";
                     },
                 })
             }

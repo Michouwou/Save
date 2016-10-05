@@ -83,11 +83,13 @@ body
     margin-left : 5%;
 }
 
-#pictures a
+#pictures p
 {
-    position : absolute;
     bottom : 0;
     margin : auto;
+    color: blue;
+    cursor: pointer;
+    font-size: 2vmin;
 }
 
 #footer
@@ -286,7 +288,18 @@ body
 {
     border-radius: 0 0 1vmin 1vmin;
 }
+
 #actual tr td:only-child
 {
     border-radius : 1vmin !important;
+}
+
+#pages
+{
+    width: 100%;
+    text-align: center;
+    padding-left: 15vmin;
+    padding-right: 15vmin;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
 }

@@ -5,11 +5,13 @@
 		$image = imagecreatefromstring(base64_decode($_REQUEST["string_pic"]));
 		$alpha = imagecreatefrompng($_REQUEST["string_alpha"]);
 		$next = imagecreatetruecolor(1000, 1000);
-		$img = imagecreatetruecolor(1000, 1000); 
-		imagealphablending($img, true); 
-		$transparent = imagecolorallocatealpha($img, 0, 0, 0, 127); 
+		$img = imagecreatetruecolor(1000, 1000);
+		$save = imagecreatetruecolor(200, 200);
+		imagealphablending($img, true);
+		$transparent = imagecolorallocatealpha($img, 0, 0, 0, 127);
 		imagefill($img, 0, 0, $transparent);
 		imagefill($next, 0, 0, $transparent);
+		imagefill($save, 0, 0, $transparent);
 		if (array_key_exists("up", $_REQUEST))
 		{
 			$res = imagecreatetruecolor(1000, 1000);
@@ -30,9 +32,14 @@
 				{
 					imagealphablending($img, false);
 					imagesavealpha($img, true);
+					$success = imagecopyresized($save, $img, 0, 0, 0, 0, 200, 200, imagesx($img), imagesy($img));
 					ob_start();
-					imagepng($img);
+					imagepng($save);
 					$base =  ob_get_contents();
+					ob_end_clean();
+					ob_start();					
+					imagepng($img);
+					$base2 = ob_get_contents();
 					ob_end_clean();
 					$query = "INSERT INTO gallery (picture, id_user) VALUES (?, ?);";
 					$prep = $pdo->prepare($query);
@@ -54,5 +61,5 @@
 	}
 	else
 		$base = "Echec lors de l'envoi des donnees";
-	echo base64_encode($base);
+	echo base64_encode($base2);
 ?>
