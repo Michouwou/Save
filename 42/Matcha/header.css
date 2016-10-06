@@ -31,8 +31,7 @@ body
     position: relative;
     min-height: 180px;
     min-width: 180px;
-    box-shadow: 15px 15px 25px #3d3942;
-    border: 2px solid rgba(179, 102, 115, 0.56);
+    border: 7px outset rgb(255, 255, 255);
 }
 
 #quick_info
