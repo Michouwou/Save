@@ -93,7 +93,7 @@ body
 
 .button
 {
-	height: 50%;
+	height: 33%;
     width: 96%;
     margin: auto;
     display: block;
@@ -111,6 +111,11 @@ body
 	background: red;
 	border: 30px double white;
 	color: blue;
+}
+
+#delete_all
+{
+	border: 20px solid red;
 }
 
 #buttons

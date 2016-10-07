@@ -16,6 +16,7 @@
 <head>
 	<title>Mes images</title>
 	<link rel="stylesheet" type="text/css" href="my_images.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -27,8 +28,9 @@
     </div>
     <div id="commentaries">
     	<div id="buttons">
-    		<button id="delete" class="button" onclick="delete_image()">Effacer l'image</button>
-    		<button id="reset" class="button" onclick="reset_image()">Effacer les likes et les commentaires</button>
+    		<button id="delete" class="button" onclick="deletion('delete')">Effacer l'image</button>
+    		<button id="reset" class="button" onclick="deletion('reset')">Effacer les likes et les commentaires</button>
+    		<button id="delete_all" class="button" onclick="deletion('all')">Effacer toutes mes photos</button>
     	</div>
     </div>
     <div id="pictures">
@@ -41,6 +43,7 @@
 </body>
 <script type="text/javascript">
 	var select = 0;
+	var glob_id = <?php echo $_SESSION['id_user']?>;
 
 	function select_image(id)
 	{
@@ -48,6 +51,36 @@
 			document.getElementById(select).className = "";
 		select = id;
 		document.getElementById(select).className = "selection";
+	}
+
+	function deletion(action)
+	{
+		if (select == 0 && action != 'all')
+			alert("Vous devez selectionner une image pour appliquer cette action!");
+		else
+		{
+			$.ajax(
+			{
+				type: 'POST',
+				url: "delete.php",
+				dataType: 'text',
+				data:
+				{
+					action : action,
+					user_id : glob_id,
+					picture_id : select,
+				},
+				success: function (data)
+				{
+					alert("L'action a ete effectuee avec succes");
+					location.reload();
+				},
+				error: function()
+				{
+					alert("Une erreur est survenue, veuillez reessayer ulterieurement");
+				},
+			});
+		}
 	}
 </script>
 </html>
