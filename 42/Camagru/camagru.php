@@ -19,6 +19,7 @@
             <div id="fast_access">
                 <a href="log_out.php">Se déconnecter</a>
                 <a href="galery.php">Galerie</a>
+                <a href="my_images.php">Mes images</a>
             </div>
         </div>
         <div id="main_content">

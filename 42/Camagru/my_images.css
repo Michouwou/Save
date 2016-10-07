@@ -1,0 +1,121 @@
+body
+{
+    margin : 0;
+}
+
+#footer
+{
+    background: rgb(35, 40, 46);
+    position : fixed;
+    bottom : 0;
+    width : 100%;
+    height : 5%;
+}
+
+#header
+{
+    background: rgb(35, 40, 46);
+    position: fixed;
+    width: 100%;
+    height: 13vmin;
+}
+
+#fast_access
+{
+    text-align: right;
+    background: inherit;
+    padding: 8vmin 1vmin 0 0;
+}
+
+#fast_access a
+{
+    text-decoration: none;
+    font-weight: 600;
+    color : white;
+    font-size: 2vmin;
+    padding: 1%;
+}
+
+#fast_access a:hover
+{
+    font-weight: 700;
+    background: black;
+    border-radius: 10%;
+}
+
+#fast_access a:active
+{
+    color : black;
+    background : white;
+}
+
+#pictures
+{
+    position : absolute;
+    width : 63vw;
+    left : 30vw;
+    overflow: auto;
+    margin-left : 5%;
+}
+
+#pictures img, .selection
+{
+    height : 15vw;
+    width : 15vw;
+    margin : 4%;
+    box-sizing: border-box;
+}
+
+#pictures img:hover, .selection
+{
+    cursor: pointer;
+    border : 3px solid blue;
+}
+
+#pictures, #commentaries
+{
+    background : #b7b5b5;
+    height : 80vh;
+    top : 14vh;
+    border-radius: 5%;
+    border : 1vmin double;
+    border-color: white;
+    box-sizing: border-box;
+}
+
+#commentaries
+{
+    position : absolute;
+    width : 30vw;
+    margin-left: 2vw;
+    display: flex;
+}
+
+.button
+{
+	height: 50%;
+    width: 96%;
+    margin: auto;
+    display: block;
+    background: #43525f;
+    font-size: 3vmin;
+    font-family: sans-serif;
+    font-style: oblique;
+    color: #F44336;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.button:hover
+{
+	background: red;
+	border: 30px double white;
+	color: blue;
+}
+
+#buttons
+{
+	width: 100%;
+	height: 80%;
+	margin: auto;
+}

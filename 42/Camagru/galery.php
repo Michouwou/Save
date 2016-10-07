@@ -30,6 +30,7 @@
             <div id="fast_access">
                 <a href="log_out.php">Se déconnecter</a>
                 <a href="camagru.php">Camagru</a>
+                <a href="my_images.php">Mes Images</a>
             </div>
         </div>
         <div class="display" id="commenting">
@@ -112,7 +113,7 @@
                         actual_page = page;
                         id_pages = page_nb.split("</p>");
                         i = 0;
-                        inner = "";
+                        var inner = "";
                         if (id_pages.length > 6)
                         {
                             if (actual_page >= 4)

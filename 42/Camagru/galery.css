@@ -167,8 +167,8 @@ body
 
 #pictures img, .selection
 {
-    height : 15vw;
-    width : 15vw;
+    height : 25vw;
+    width : 25vw;
     margin : 4%;
     box-sizing: border-box;
 }
@@ -176,7 +176,7 @@ body
 #pictures img:hover, .selection
 {
     cursor: pointer;
-    border : 3px solid blue;
+    border : 12px solid blue;
 }
 
 ::-webkit-scrollbar
