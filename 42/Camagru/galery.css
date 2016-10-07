@@ -86,7 +86,6 @@ body
 #pictures p
 {
     bottom : 0;
-    margin : auto;
     color: blue;
     cursor: pointer;
     font-size: 2vmin;
@@ -296,10 +295,10 @@ body
 
 #pages
 {
-    width: 100%;
+    width: 15%;
+    display: flex;
     text-align: center;
-    padding-left: 15vmin;
-    padding-right: 15vmin;
     box-sizing: border-box;
     text-overflow: ellipsis;
+    margin: auto;
 }

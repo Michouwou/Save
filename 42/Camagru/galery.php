@@ -86,7 +86,8 @@
         var dislike = document.getElementById('button2');
         var glob_id = <?php echo $_SESSION['id_user']; ?> ;
         var tab;
-        var page = 1;
+        var actual_page = 1;
+        var page_nb = document.getElementById('pages').innerHTML;
 
         window.onload = function ()
         {
@@ -108,7 +109,28 @@
                     },
                     success: function(data)
                     {
-                        document.getElementById('pictures').innerHTML = data + "<div id='pages'>" + document.getElementById('pages').innerHTML + "</div>";
+                        actual_page = page;
+                        id_pages = page_nb.split("</p>");
+                        i = 0;
+                        inner = "";
+                        if (id_pages.length > 6)
+                        {
+                            if (actual_page >= 4)
+                                inner = "<p>... </p>";
+                            while (i < actual_page - 3)
+                                i++;
+                            while (i < actual_page + 3 && i < id_pages.length)
+                            {
+                                inner = inner + id_pages[i] + "</p>";
+                                i++;
+                            }
+                            if (i < id_pages.length - 1)
+                                inner = inner + "<p> ...</p>";
+                        }
+                        else
+                            inner = page_nb;
+                        document.getElementById('pictures').innerHTML = data + "<div id='pages'>" + inner + "</div>";
+                        document.getElementById('pictures').scrollTop = "0px";
                     },
                     error: function()
                     {
@@ -116,6 +138,7 @@
                     },
                 })
             }
+            actual_page = page;
         }
 
         function getRightDiv(id)
