@@ -39,6 +39,10 @@
     			width: 35%;
     			font-size: 1.5vmin;
         	}
+        	a
+        	{
+        		margin: auto;
+        	}
         </style>
 </head>
 <body>
@@ -47,8 +51,12 @@
             <hr>
         	Entrez votre login : <input id="username" type="text" name="username"/>
         	<hr>
+        	
         	<input type=submit id="validate" onclick="send()" name="OK" value="OK"/>
         </div>
+        <div style='width:100%;display:flex;'>
+			<a href="connexion.php">Retour a la page de connexion</a>
+		</div>
         
 </body>
 <script>

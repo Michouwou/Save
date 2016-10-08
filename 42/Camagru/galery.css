@@ -167,8 +167,8 @@ body
 
 #pictures img, .selection
 {
-    height : 25vw;
-    width : 25vw;
+    height : 15vw;
+    width : 15vw;
     margin : 4%;
     box-sizing: border-box;
 }

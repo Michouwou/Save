@@ -2,20 +2,21 @@
     require_once('data_base.php');
     if ($_SESSION['logged_in'] == true)
         redirect('camagru.php');
-    if ($_POST && $_POST['Username'] && $_POST['Password'] && $_POST['Email']
+    if ($_POST && $_POST['Username'] && $_POST['Password'] && $_POST['Email'] && $_POST['Password_check']
         && $_POST['Username'] != "" && $_POST['Password'] != ""
-        && $_POST['Email'] != "")
+        && $_POST['Email'] != "" && $_POST['Password_check'] != "")
     {
-        $hash = hash('sha512', hash('sha512', $_POST['Password']));
+        $hash = hash('sha512', htmlentities($_POST['Password']));
         $query = 'SELECT * FROM users WHERE username = ? OR password = ? OR mail = ?';
         $prep = $pdo->prepare($query);
         
-        $prep->bindValue(1, $_POST['Username'], PDO::PARAM_STR);
+        $prep->bindValue(1, htmlentities($_POST['Username']), PDO::PARAM_STR);
         $prep->bindValue(2, $hash, PDO::PARAM_STR);
-        $prep->bindValue(3, $_POST['Email'], PDO::PARAM_STR);
+        $prep->bindValue(3, htmlentities($_POST['Email']), PDO::PARAM_STR);
         
         $prep->execute();
         $arr = $prep->fetch();
+        $pass = htmlentities($_POST['Password']);
 
         if($arr !== false)
         {
@@ -39,9 +40,11 @@
                 $arr = $prep->fetch();
             }
         }
-        else
+        else if (preg_match('/[a-z]/', $pass) && preg_match('/[0-9]/', $pass) &&
+                    preg_match('/[A-Z]/', $pass) &&
+                    $pass == htmlentities($_POST['Password_check']))
         {
-            $hash = hash('sha512', hash('sha512', htmlentities($_POST['Password'])));
+            $hash = hash('sha512', $pass);
             $query = 'INSERT INTO users (username, password, mail, active, sexe) VALUES (?, ?, ?, ?, ?)';
             $prep = $pdo->prepare($query);
             $prep->bindValue(1, htmlentities($_POST['Username']), PDO::PARAM_STR);
@@ -63,16 +66,21 @@
             mail(htmlentities($_POST['Email']), $subject, $message, $entete);
             $_POST['Username'] = null;
             $_POST['Password'] = null;
+            $_POST['Password_check'] = null;
             $_POST['Email'] = null;
             $_POST['error_user'] = null;
             $_POST['error_mail'] = null;
             $_POST['error_pwd'] = null;
             echo '<script>alert("Votre inscription a bien été effectuée, un mail d\'activation vous a été envoyé");</script>';
         }
+        else if ($pass != htmlentities($_POST['Password_check']))
+            $_POST['error_passwords_not_identical'] = "Les deux mots de passe doivent etre identiques";
+        else
+            $_POST['error_not_secure'] = "Le mot de passe doit contenir au moins une minuscule, une majuscule et un chiffre";
     }
     else if ($_POST && ($_POST['Username'] == "" || $_POST['Password'] == "" || $_POST['Email'] == ""))
         $_POST['error_not_filled'] = "Vous devez remplir tous les champs marqués d'une '*' pour vous inscrire!";
-?>
+?>    
 
 <html>
     <head>
@@ -111,6 +119,16 @@
                     type="password" name="Password" min=8 max=60/></td>
                 </tr>
                 <tr>
+                    <td>Veuillez retaper votre mot de passe* : <input
+                    <?php
+                        if (isset($_POST['error_pwd']))
+                            echo 'style="background:#F5A9A9";';
+                        else if (isset($_POST['Password_check']))
+                            echo ' value="'.$_POST['Password_check'].'"';
+                    ?>
+                    type="password" name="Password_check" min=8 max=60/></td>
+                </tr>
+                <tr>
                     <td>Veuillez renseigner votre email* : <input
                     <?php
                         if (isset($_POST['error_mail']))
@@ -133,14 +151,17 @@
                 </tr>
                 <?php
                     if (isset($_POST['error_user']) || isset($_POST['error_pwd']) || isset($_POST['error_mail'])
-                        || isset($_POST['error_not_filled']))
+                        || isset($_POST['error_not_filled']) || isset($_POST['error_not_secure']) ||
+                        isset($_POST['error_passwords_not_identical']))
                     {
                         echo    '<tr id="warning">
                                     <td>
                                         <p>'.$_POST['error_user'].'</p>'.
                                         '<p>'.$_POST['error_pwd'].'</p>'.
                                         '<p>'.$_POST['error_mail'].'</p>'.
-                                        '<p>'.$_POST['error_not_filled'].'</p>
+                                        '<p>'.$_POST['error_not_filled'].'</p>'.
+                                        '<p>'.$_POST['error_passwords_not_identical'].'</p>'.
+                                        '<p>'.$_POST['error_not_secure'].'</p>
                                     </td>
                                 </tr>';
                     }

@@ -18,7 +18,7 @@
         }
         else
         {
-            if ($arr['password'] == hash('sha512', hash('sha512', htmlentities($_POST['Password']))))
+            if ($arr['password'] == hash('sha512', htmlentities($_POST['Password'])))
             {
                 if ($arr['active'] == 1)
                 {
