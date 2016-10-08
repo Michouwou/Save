@@ -7,8 +7,8 @@
 		$query2 = "SELECT * FROM `users` WHERE mail=?;";
 		$prep = $pdo->prepare($query);
 		$prep2 = $pdo->prepare($query2);
-		$prep->bindValue(1, $_REQUEST['username']);
-		$prep2->bindValue(1, $_REQUEST['mail']);
+		$prep->bindValue(1, htmlentities($_REQUEST['username']));
+		$prep2->bindValue(1, htmlentities($_REQUEST['mail']));
 		$prep->execute();
 		$prep2->execute();
 		$arr = $prep->fetch();

@@ -74,3 +74,8 @@
     font-weight : 700;
     text-decoration : underline;
 }
+
+input[type="text"], input[type="password"], input[type="email"]
+{
+    font-size: 1.3vmin;
+}

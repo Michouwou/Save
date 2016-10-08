@@ -66,7 +66,7 @@
 		var dusername = document.getElementById('username').value;
 		console.log(dmail);
 		console.log(dusername);
-		if (mail == "" || username == "" || mail == null || username == null || !dmail || !dusername)
+		if (dmail == "" || dusername == "" || dmail == null || dusername == null || !dmail || !dusername)
 			alert('Les deux champs doivent etre completes pour la reinitialisation du mot de passe...');
 		else
 		{

@@ -43,7 +43,7 @@
                 $prep->bindValue(1, hash('sha512', $pass), PDO::PARAM_STR);
                 $prep->bindValue(2, $_SESSION['present'], PDO::PARAM_STR);
                 $prep->execute();
-                $_POST['reset'] = "Votre mot de passe a bien ete reinitialise, veillez a le noter quelque part pour ne pas l'oublier ;) ".$_SESSION['login'];
+                $_POST['reset'] = "Votre mot de passe a bien ete reinitialise, veillez a le noter quelque part pour ne pas l'oublier ;)";
             }
             else
             {
@@ -124,10 +124,11 @@
                 echo "<form method='post' action='reset.php'> Veuillez choisir un nouveau mot de passe* : <hr>Mot de passe : <input ";
                 if ($_POST['error_already_existing'] != "" || $_POST['error_passwords_not_identical'] != "" || $_POST['error_not_secure'] != "")
                     echo "style='background:#F5A9A9;'";
-                echo "type='password' name='password1' min=8 max=60 require='required'/>
-                <hr>Mot de passe : <input type='password' name='password2' min=8 max=60 require='required'/>
-                <hr><input type='submit' value='OK' name='OK'/></form>
-                <p>".$_POST['error_not_secure']."</p><p>".$_POST['error_passwords_not_identical']."</p><p>".$_POST['error_already_existing']."</p><p>".$_POST['reset']."</p>";
+                echo "type='password' name='password1' minlength=8 maxlength=60 require='required'/>
+                <hr>Mot de passe : <input type='password' name='password2' minlength=8 maxlength=60 require='required'/>";
+                if($_POST['reset'] != "Votre mot de passe a bien ete reinitialise, veillez a le noter quelque part pour ne pas l'oublier ;)")
+                    echo "<hr><input type='submit' value='OK' name='OK'/></form>";
+                echo "<p>".$_POST['error_not_secure']."</p><p>".$_POST['error_passwords_not_identical']."</p><p>".$_POST['error_already_existing']."</p><p>".$_POST['reset']."</p>";
             ?>
         </div>
         <div style='width:100%;display:flex;'>

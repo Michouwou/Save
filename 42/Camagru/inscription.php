@@ -106,7 +106,7 @@
                         else if (isset($_POST['Username']))
                             echo ' value="'.$_POST['Username'].'"';
                     ?>
-                    type="text" name="Username" min=6 max=30/></td>
+                    type="text" name="Username" minlength=6 maxlength=30/></td>
                 </tr>
                 <tr>
                     <td>Veuillez choisir un mot de passe* : <input
@@ -116,7 +116,7 @@
                         else if (isset($_POST['Password']))
                             echo ' value="'.$_POST['Password'].'"';
                     ?>
-                    type="password" name="Password" min=8 max=60/></td>
+                    type="password" name="Password" minlength=8 maxlength=60/></td>
                 </tr>
                 <tr>
                     <td>Veuillez retaper votre mot de passe* : <input
@@ -126,7 +126,7 @@
                         else if (isset($_POST['Password_check']))
                             echo ' value="'.$_POST['Password_check'].'"';
                     ?>
-                    type="password" name="Password_check" min=8 max=60/></td>
+                    type="password" name="Password_check" minlength=8 maxlength=60/></td>
                 </tr>
                 <tr>
                     <td>Veuillez renseigner votre email* : <input
@@ -136,7 +136,7 @@
                         else if (isset($_POST['Email']))
                             echo ' value="'.$_POST['Email'].'"';
                     ?>
-                    type="email" name="Email" min=7/></td>
+                    type="email" name="Email" minlength=7/></td>
                 </tr>
                 <tr>
                     <td>Êtes-vous un homme ou une femme? : <br/>
