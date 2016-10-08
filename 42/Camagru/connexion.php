@@ -81,7 +81,10 @@
                     <span id="third">Wouhou!!</span>
                 </button>
             </form>
-            <a href="reactivation.php">OUBLIE</a>
+            
+        </div>
+        <div id='plop'>
+            <a id="forgotten" href="reactivation.php">J'ai oublie mon mot de passe</a>
         </div>
         <div id="errors">
                 <?php

@@ -3,12 +3,17 @@
 	$res = "";
 	if (array_key_exists('username', $_REQUEST) && array_key_exists('mail', $_REQUEST))
 	{
-		$query = "SELECT * FROM `users` WHERE username=?";
+		$query = "SELECT * FROM `users` WHERE username=?;";
+		$query2 = "SELECT * FROM `users` WHERE mail=?;";
 		$prep = $pdo->prepare($query);
+		$prep2 = $pdo->prepare($query2);
 		$prep->bindValue(1, $_REQUEST['username']);
+		$prep2->bindValue(1, $_REQUEST['mail']);
 		$prep->execute();
+		$prep2->execute();
 		$arr = $prep->fetch();
-		if ($arr && $arr['mail'] == $_REQUEST['mail'])
+		$arr2 = $prep2->fetch();
+		if ($arr && $arr2 && $arr['mail'] == $_REQUEST['mail'] && $arr2['username'] == $_REQUEST['username'])
 		{
 			$cle = $arr['id'];
             $subject = "Mail de reactivation de compte Camagru";
@@ -19,10 +24,11 @@
                         .urlencode($arr['username'])."&cle=".urlencode(hash('sha512', $cle)).
                         "\nCeci est un message automatique, merci de ne pas répondre.";
             mail(htmlentities($_REQUEST['mail']), $subject, $message, $entete);
-            $res = "1";
+            echo "Un mail de reactivation vous a ete envoye";
 		}
 		else
-			$res = "0";
+			echo "Les deux champs ne correspondent pas!";
 	}
-	echo $res;
+	else
+		echo "Une erreur est survenue";
 ?>

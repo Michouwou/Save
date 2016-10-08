@@ -29,6 +29,32 @@
     font-size : 2vmax;
 }
 
+#forgotten
+{
+    margin: auto;
+    color: #d2aeb7;
+    background: #1c2727;
+    padding: 1%;
+    border-radius: 5px;
+    border: 2px grey outset;
+    font-size: 2vmin;
+    box-sizing: border-box;
+}
+
+#forgotten:hover
+{
+    border: none;
+}
+
+#plop
+{
+    width: 100%;
+    position: absolute;
+    bottom: 10%;
+    height: 10%;
+    display: flex;
+}
+
 form
 {
     margin-bottom: 0;
