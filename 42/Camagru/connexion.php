@@ -7,7 +7,7 @@
     {
         $query = "SELECT * FROM users WHERE username=?";
         $prep = $pdo->prepare($query);
-        $prep->bindValue(1, $_POST['Username'], PDO::PARAM_STR);
+        $prep->bindValue(1, htmlentities($_POST['Username']), PDO::PARAM_STR);
         $prep->execute();
         
         $arr = $prep->fetch();
@@ -18,12 +18,12 @@
         }
         else
         {
-            if ($arr['password'] == hash('sha512', hash('sha512', $_POST['Password'])))
+            if ($arr['password'] == hash('sha512', hash('sha512', htmlentities($_POST['Password']))))
             {
                 if ($arr['active'] == 1)
                 {
                     $_SESSION['logged_in'] = true;
-                    $_SESSION['username'] = $_POST['Username'];
+                    $_SESSION['username'] = htmlentities($_POST['Username']);
                     $_SESSION['id_user'] = $arr['id'];
                     redirect('camagru.php');
                 }
@@ -81,6 +81,7 @@
                     <span id="third">Wouhou!!</span>
                 </button>
             </form>
+            <a href="reactivation.php">OUBLIE</a>
         </div>
         <div id="errors">
                 <?php
