@@ -2,7 +2,6 @@
     require_once("data_base.php");
     if ($_SESSION['logged_in'] == false)
          redirect('connexion.php');
-
 ?>
 
 <html>
@@ -81,125 +80,6 @@
         </div>
         <script type="text/javascript">
             var glob_id = <?php echo "\"".strval($_SESSION['id_user'])."\""; ?> ;
-            var current_png = "";
-            var contain = document.getElementById('shooter');
-            var videoElement = document.getElementById('videoElement');
-            var Selected;
-            var click = document.getElementById('shoot');
-
-            window.onresize = function()
-            {
-                resize();
-            };
-
-            function show_pane(id)
-            {
-                document.getElementById(id).style.border = "6px solid red";
-            }
-
-            function unshow_pane(id)
-            {
-                document.getElementById(id).style.border = "";
-            }
-
-            function upload_file()
-            {
-                make_inner();
-                var link = document.createElement("input");
-                link.type = "file";
-                link.click();
-                link.onchange = function ()
-                {
-                    var file = link.files[0];
-                    var reader = new FileReader();
-                    reader.onloadend = function()
-                    {
-                        data2 = reader.result.replace(/^data:image\/(png|jpg);base64,/, "");
-                        getImage_up(glob_id, current_png, data2);
-                    }
-                    if (file)
-                    {
-                        reader.readAsDataURL(file);
-                    }
-                }
-            }
-
-            function get_last_image()
-            {
-                if (confirm("Voulez-vous télécharger la photo que vous venez de sélectionner??") == true)
-                {
-                    var a = document.createElement("a");
-                    var data = document.getElementById(Selected).src;
-                    var name = 'camagru_picture_' + Selected;
-                    if (window.navigator.msSaveOrOpenBlob)
-                        window.navigator.msSaveOrOpenBlob(file, name);
-                    else
-                    {
-                        a.href = data;
-                        a.download = name;
-                        document.body.appendChild(a);
-                        a.click();
-                        setTimeout(function()
-                        {
-                            document.body.removeChild(a);
-                            window.URL.revokeObjectURL(url);  
-                        }, 0); 
-                    }
-                    var last = document.getElementById(Selected);
-                    if (last)
-                        last.className = "inner_images";
-                    Selected = "";
-                    document.getElementById('download').style.display = "none";
-                }
-            }
-
-            function select(id)
-            {
-                var last = document.getElementById(Selected);
-                if (last)
-                    last.className = "inner_images";
-                Selected = id;
-                document.getElementById('download').style.display = "block";
-                document.getElementById(Selected).className = "selected";
-            }
-
-            function superpose(id)
-            {
-                var image = document.getElementById(id).cloneNode();
-                var to_delete = document.getElementById('actual');
-                document.getElementById("shoot").style.display = "flex";
-                document.getElementById("upload").style.display = "block";
-                click.onclick = function()
-                {
-                    getImage(glob_id, current_png);
-                }
-                if (current_png != "")
-                    document.getElementById(current_png).className = "super";
-                if (to_delete)
-                    contain.removeChild(to_delete);
-                var x = videoElement.offsetWidth;
-                var y = videoElement.offsetHeight;
-                image.style.width = x.toString()+"px";
-                image.style.height = y.toString()+"px";
-                image.style.position = 'absolute';
-                image.className = "";
-                image.id = 'actual';
-                current_png = id;
-                document.getElementById(current_png).className = "activepng";
-                contain.insertBefore(image, contain.firstChild);;
-            }
-
-            function resize()
-            {
-                var image = document.getElementById('actual');
-                if (image)
-                {
-                    var x = videoElement.offsetWidth;
-                    var y = videoElement.offsetHeight;
-                    image.style.width = x.toString()+"px";
-                    image.style.height = y.toString()+"px";
-                }
-            }
         </script>
         <script type="text/javascript" src="get_image.js">
         </script>

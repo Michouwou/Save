@@ -2,7 +2,10 @@
 	require_once('data_base.php');
 	if (array_key_exists("string_pic", $_REQUEST) && array_key_exists("string_alpha", $_REQUEST) && array_key_exists("id_user", $_REQUEST))
 	{
-		$image = imagecreatefromstring(base64_decode($_REQUEST["string_pic"]));
+		if ($_REQUEST['jpg'] == "1")
+			$image = imagecreatefromjpeg($_REQUEST['string_pic']);
+		else
+			$image = imagecreatefromstring(base64_decode($_REQUEST["string_pic"]));
 		$alpha = imagecreatefrompng($_REQUEST["string_alpha"]);
 		$next = imagecreatetruecolor(1000, 1000);
 		$img = imagecreatetruecolor(1000, 1000);

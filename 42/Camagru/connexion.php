@@ -83,7 +83,7 @@
             </form>
             
         </div>
-        <div id='plop'>
+        <div id='contain_f'>
             <a id="forgotten" href="reactivation.php">J'ai oublie mon mot de passe</a>
         </div>
         <div id="errors">
