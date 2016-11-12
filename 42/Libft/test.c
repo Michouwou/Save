@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 14:22:13 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/11/12 12:03:31 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/11/12 14:36:22 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ int main()
 {
 	char *string;
 
-	printf("%d\n", ft_parse_match("*@*.*", "m3im3i@nun--uche.com"));
+	printf("%d\n", ft_parse_match("[a-zA-Z0-3]+@*.*", "a0I@nun--uche.com"));
 	return (0);
 }
