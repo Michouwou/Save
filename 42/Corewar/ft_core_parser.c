@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 19:02:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/11/09 19:14:31 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/11/09 21:06:27 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_parse_main_args(char **args, int nb_args, t_vm **machine)
 			nb_champ = ft_atoi(args[++i]);
 		else if (ft_parse_match("*.cor", args[i]))
 		{
-			ft_warrior_parser(args[i], machine, nb_champ);
+			ft_load_champion(args[i], machine, nb_champ);
 			nb_champ = -1;
 		}
 		else if (!ft_strcmp(args[i], "-n") && nb_champ != -1)
@@ -41,32 +41,4 @@ void	ft_parse_main_args(char **args, int nb_args, t_vm **machine)
 	ft_check_machine_state(machine);
 }
 
-void	ft_warrior_parser(char *file_name, t_buffer **buffer, int nb_champ)
-{
-	int		line;
-	char	**resource;
-	char	*label_temp;
-	char	*current;
 
-	line = 0;
-	ft_read_file(file_name, resource);
-	ft_header_check(resource, &line);
-	while (resource[line] != NULL)
-	{
-		if (ft_begins_with_label(resource[line]))
-		{
-			ft_label_check(resource[line], &label_temp);
-			ft_check_label_instruction(resource, &line);
-		}
-		if ((current = ft_contains_instruction(resource[line])) != NULL)
-		{
-			ft_instruction_validity(current);
-			ft_check_arg_number(current);
-			ft_check_arg_type(current);
-		}
-		else
-			ft_help("Empty or invalid line\n");
-		ft__main_compiler(buffer, current, label_temp);
-		line += 1;
-	}
-}
