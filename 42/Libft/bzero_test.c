@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   bzero_test.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/10/09 14:30:39 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/10/09 14:20:20 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/10/09 14:22:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr(char *s)
+void	ft_bzero_test(char *string, int n)
 {
-	write(1, s, ft_strlen(s));
+	int i;
+
+	i = 0;
+	while (i < n)
+	{
+		string[i] = '\0';
+		i++;
+	}
 }

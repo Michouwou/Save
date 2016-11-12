@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/10/09 14:30:39 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/10/09 14:22:13 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/11/12 12:03:31 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	ft_putstr(char *s)
+int main()
 {
-	write(1, s, ft_strlen(s));
+	char *string;
+
+	printf("%d\n", ft_parse_match("*@*.*", "m3im3i@nun--uche.com"));
+	return (0);
 }

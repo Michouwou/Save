@@ -6,26 +6,21 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2015/12/17 19:04:10 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/10/09 15:44:00 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int	ft_count_figures(long nb)
+static char	ft_count_figures(int nb)
 {
-	long	i;
-	int		j;
+	int		i;
+	char	j;
 
 	i = 1;
-	j = 0;
-	if (nb < 0)
-	{
-		nb = -nb;
-		j++;
-	}
-	while (i * 10 <= nb)
+	j = nb < 0 ? 1: 0;
+	while ((-nb / 10 <= i && i <= nb / 10) || (-nb / 10 >= i && i >= nb / 10))
 	{
 		i *= 10;
 		j++;
