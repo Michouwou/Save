@@ -6,7 +6,7 @@
 /*   By: vlancien <vlancien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 16:57:55 by vlancien          #+#    #+#             */
-/*   Updated: 2016/11/13 14:44:34 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/11/13 16:42:44 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,6 +211,8 @@ void	open_line(char *fichier, t_env *e)
 	// if ((lenght_file =  lseek(fd, 0, SEEK_END)) > CHAMP_MAX_SIZE) //a faire sur le binaire
 		// asm_error("fichier trop long");
 
+
+// Retire juste les deux points a la fin de chaque label de methode
 void	trim_args(t_env *file)
 {
 	t_func	*tmp_func;
@@ -224,6 +226,37 @@ void	trim_args(t_env *file)
 	}
 }
 
+// Utilise dans labels_are_defined pour checker la validite d'un label !
+void	check_single_label(char *info, t_func *func)
+{
+	while (func != NULL && info && ft_strcmp(func->label,
+			info[0] == '%' ? info + 2 : info + 1))
+		func = func->next;
+	if (func == NULL)
+	{
+		asm_error("Label not defined");
+		exit (-1);
+	}
+}
+
+
+// Check que le registre donne ne depasse le nombre de registres total
+void	check_reg_number(t_line *line)
+{
+	if ((line->info1 && line->info1[0] == 'r' && 
+				atoi(&(line->info1[1])) > REG_NUMBER) ||
+		(line->info2 && line->info2[0] == 'r' &&
+		 		atoi(&(line->info2[1])) > REG_NUMBER) ||
+		(line->info3 && line->info3[0] == 'r' &&
+		 		atoi(&(line->info3[1])) > REG_NUMBER))
+	{
+		asm_error("Register not valid");
+		exit(-1);
+	}
+}
+
+// Verifie si les labels appeles dans les methodes de l'asm sont bien definis quelque part
+// dans le meme fichier
 int		labels_are_defined(t_env *file)
 {
 	t_func	*tmpa_func;
@@ -237,32 +270,12 @@ int		labels_are_defined(t_env *file)
 		while (tmp_line != NULL)
 		{
 			if (tmp_line->info1 && ft_parse_match("*:[a-z0-9_]+", tmp_line->info1 + 1))
-			{
-				tmpb_func = file->head;
-				while (tmpb_func != NULL && tmp_line->info1 && ft_strcmp(tmpb_func->label,
-							tmp_line->info1[0] == '%' ? tmp_line->info1 + 2 : tmp_line->info1 + 1))
-					tmpb_func = tmpb_func->next;
-				if (tmpb_func == NULL)
-					return (0);
-			}
+				check_single_label(tmp_line->info1, tmpb_func = file->head);
 			if (tmp_line->info2 && ft_parse_match("*:[a-z0-9_]+", tmp_line->info2 + 1))
-			{
-				tmpb_func = file->head;
-				while (tmpb_func != NULL && tmp_line->info2 && ft_strcmp(tmpb_func->label,
-							tmp_line->info2[0] == '%' ? tmp_line->info2 + 2 : tmp_line->info2 + 1))
-					tmpb_func = tmpb_func->next;
-				if (tmpb_func == NULL)
-					return (0);
-			}
+				check_single_label(tmp_line->info2, tmpb_func = file->head);
 			if (tmp_line->info3 && ft_parse_match("*:[a-z0-9_]+", tmp_line->info3 + 1))
-			{
-				tmpb_func = file->head;
-				while (tmpb_func != NULL && tmp_line->info3 && ft_strcmp(tmpb_func->label,
-							tmp_line->info3[0] == '%' ? tmp_line->info3 + 2 : tmp_line->info3 + 1))
-					tmpb_func = tmpb_func->next;
-				if (tmpa_func == NULL)
-					return (0);
-			}
+				check_single_label(tmp_line->info3, tmpb_func = file->head);
+			check_reg_number(tmp_line);
 			tmp_line = tmp_line->next;
 		}
 		tmpa_func = tmpa_func->next;

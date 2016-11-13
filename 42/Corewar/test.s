@@ -13,7 +13,7 @@ entry:
 	sti		r1, %:cc4, %9
 	sti		r1, %:cc4, %17
 	sti		r1, %:cc4l, %1
-	sti		r1, %:ccld, %2
+	sti		r1, %:cc4ld, %2
 	sti		r1, %:cc3, %1
 	sti		r1, %:cc4, %9
 	sti		r1, %:cc2, %1
