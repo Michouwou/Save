@@ -6,7 +6,7 @@
 /*   By: vlancien <vlancien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:33:49 by vlancien          #+#    #+#             */
-/*   Updated: 2016/10/19 14:10:36 by vlancien         ###   ########.fr       */
+/*   Updated: 2016/11/13 14:31:50 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,4 +133,6 @@ int					cmp(const char *cs, const char *ct);
 int					get_next_line(int const fd, char **line);
 
 void				ft_putstr_char(char c, int nb);
+char				*ft_str_reg_chr(const char *str, int c);
+char				**ft_str_ext_split(char *str, char *ext);
 #endif

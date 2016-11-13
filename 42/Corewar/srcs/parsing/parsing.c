@@ -6,7 +6,7 @@
 /*   By: vlancien <vlancien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 16:57:55 by vlancien          #+#    #+#             */
-/*   Updated: 2016/11/13 10:59:57 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/11/13 14:44:34 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,7 @@ void	other(char *str, t_env *e)
 	int		command;
 
 	nb_space = epur_str(str);
-	tab = ft_strsplit(str, ' ');
+	tab = ft_str_ext_split(str, ", \t");
 	// printf("%s =>> ", str);
 	// printf("%d\n", nb_space);
 	if (nb_space == 0)
@@ -220,23 +220,6 @@ void	trim_args(t_env *file)
 	while (tmp_func)
 	{
 		tmp_func->label[ft_strlen(tmp_func->label) - 1] = 0;
-		tmp_line = tmp_func->line;
-		while (tmp_line)
-		{
-			if (tmp_line->info1 && tmp_line->info1[0] == ',')
-				 tmp_line->info1 = (tmp_line->info1) + 1;
-			if (tmp_line->info1 && tmp_line->info1[ft_strlen(tmp_line->info1) - 1] == ',')
-				tmp_line->info1[ft_strlen(tmp_line->info1) - 1] = 0;
-			if (tmp_line->info2 && tmp_line->info2[0] == ',')
-				 tmp_line->info2 = (tmp_line->info2) + 1;
-			if (tmp_line->info2 && tmp_line->info2[ft_strlen(tmp_line->info2) - 1] == ',')
-				tmp_line->info2[ft_strlen(tmp_line->info2) - 1] = 0;	
-			if (tmp_line->info3 && tmp_line->info3[0] == ',')
-				 tmp_line->info3 = (tmp_line->info3) + 1;
-			if (tmp_line->info3 && tmp_line->info3[ft_strlen(tmp_line->info3) - 1] == ',')
-				tmp_line->info3[ft_strlen(tmp_line->info3) - 1] = 0;
-			tmp_line = tmp_line->next;
-		}
 		tmp_func = tmp_func->next;
 	}
 }
@@ -253,16 +236,12 @@ int		labels_are_defined(t_env *file)
 		tmp_line = tmpa_func->line;
 		while (tmp_line != NULL)
 		{
-				printf("%d ???\n", ft_parse_match("*:[a-z0-9_]+", tmp_line->info1));
 			if (tmp_line->info1 && ft_parse_match("*:[a-z0-9_]+", tmp_line->info1 + 1))
 			{
 				tmpb_func = file->head;
 				while (tmpb_func != NULL && tmp_line->info1 && ft_strcmp(tmpb_func->label,
 							tmp_line->info1[0] == '%' ? tmp_line->info1 + 2 : tmp_line->info1 + 1))
-				{
-					printf("%s, %s\n", tmpb_func->label, tmp_line->info1);
 					tmpb_func = tmpb_func->next;
-				}
 				if (tmpb_func == NULL)
 					return (0);
 			}
@@ -271,10 +250,7 @@ int		labels_are_defined(t_env *file)
 				tmpb_func = file->head;
 				while (tmpb_func != NULL && tmp_line->info2 && ft_strcmp(tmpb_func->label,
 							tmp_line->info2[0] == '%' ? tmp_line->info2 + 2 : tmp_line->info2 + 1))
-				{
-					printf("%s, %s\n", tmpb_func->label, tmp_line->info2);
 					tmpb_func = tmpb_func->next;
-				}
 				if (tmpb_func == NULL)
 					return (0);
 			}
@@ -283,10 +259,7 @@ int		labels_are_defined(t_env *file)
 				tmpb_func = file->head;
 				while (tmpb_func != NULL && tmp_line->info3 && ft_strcmp(tmpb_func->label,
 							tmp_line->info3[0] == '%' ? tmp_line->info3 + 2 : tmp_line->info3 + 1))
-				{
-					printf("%s, %s\n", tmpb_func->label, tmp_line->info3);
 					tmpb_func = tmpb_func->next;
-				}
 				if (tmpa_func == NULL)
 					return (0);
 			}

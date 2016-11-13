@@ -6,14 +6,12 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 17:58:47 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/11/12 14:33:17 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/11/13 14:23:10 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "parsing.h"
 #include <stdlib.h>
-#include <stdio.h>
-#define P(m) printf(m);fflush(stdout);
 
 static char	*ft_get_char_class(char **str)
 {
@@ -30,66 +28,49 @@ static char	*ft_get_char_class(char **str)
 	return (class);
 }
 
-char		*ft_str_reg_chr(const char *s, int c)
+static int	go_forward_char_class(char **tmpb, char **tmpa)
 {
-	char	wanted;
-	char	*tmp;
-	int		i;
-	int		j_dash;
-	
-	i = -1;
-	wanted = (char)c;
-	tmp = (char *)s;
-	while (tmp[++i] != 0)
+	char	*class;
+
+	class = NULL;
+	class = ft_get_char_class(tmpb);
+	if (!ft_str_reg_chr(class + 1, **tmpa))
 	{
-		if (tmp[i] == '-')
-		{
-			j_dash = tmp[i - 1];
-			while (++j_dash < tmp[i + 1])
-				if (j_dash == wanted)
-					return (&(tmp[i]));
-		}
-		else if (tmp[i] == wanted)
-			return (&(tmp[i]));
+		free(class);
+		return (0);
 	}
-	return (NULL);
+	(*tmpa)++;
+	while (class[0] && ft_str_reg_chr(class + 1, **tmpa))
+		++(*tmpa);
+	free(class);
+	return (1);
 }
 
 int			ft_parse_match(char *regex, char *string)
 {
 	char	*tmpa;
 	char	*tmpb;
-	char	*class;
-	char	antislash;
 
 	tmpa = string;
 	tmpb = regex;
-	while (*tmpb != 0)
+	while (*tmpb != 0 || *tmpa != 0)
 	{
-		class = NULL;
 		if (*tmpb == '[')
 		{
-			class = ft_get_char_class(&tmpb);
-			if (!ft_str_reg_chr(class + 1, *(tmpa++)))
+			if (go_forward_char_class(&tmpb, &tmpa) == 0)
 				return (0);
-			while (class[0] && ft_str_reg_chr(class + 1, *tmpa))
-				++tmpa;
 		}
-		else if (*tmpb == '*' && !antislash)
+		else if (*tmpb == '*')
 		{
 			while (*tmpa && !ft_parse_match(tmpb + 1, tmpa))
 				++tmpa;
-			return (*tmpa ? 1 : 0);
+			return (*tmpa || !*(tmpb + 1) ? 1 : 0);
 		}
-		else if (antislash || *tmpa == '\\')
-			antislash = antislash ? 0 : 1;
 		else if (*tmpb != *tmpa)
 			return (0);
 		else if (*tmpa)
 			++tmpa;
 		++tmpb;
-		if (class != NULL  && ft_strlen(class) >= 1)
-			free(class);
 	}
 	return (1);
 }
