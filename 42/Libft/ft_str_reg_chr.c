@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_str_reg_chr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/09 14:22:13 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/11/13 13:54:34 by mlevieux         ###   ########.fr       */
+/*   Created: 2016/11/13 13:55:44 by mlevieux          #+#    #+#             */
+/*   Updated: 2016/11/13 13:58:48 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int main()
+char	*ft_str_reg_chr(const char *s, int c)
 {
-	char **strings;
+	char	wanted;
+	char	*tmp;
+	int		i;
+	int		j_dash;
 
-	printf("%d\n", ft_parse_match("*:[a-z]+:", "bla:fork:blo"));
-	return (0);
+	i = -1;
+	wanted = (char)c;
+	tmp = (char *)s;
+	while (tmp[++i] != 0)
+	{
+		if (tmp[i] == '-')
+		{
+			j_dash = tmp[i - 1];
+			while (++j_dash < tmp[i + 1])
+				if (j_dash == wanted)
+					return (&(tmp[i]));
+		}
+		else if (tmp[i] == wanted)
+			return (&(tmp[i]));
+	}
+	return (NULL);
 }

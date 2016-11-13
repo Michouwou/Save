@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:08:28 by mlevieux          #+#    #+#             */
-/*   Updated: 2016/11/11 18:39:05 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/11/13 13:57:37 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,7 @@ void			ft_topos(int *a);
 int				ft_printf(const char *fmt, ...);
 char			*ft_repstr(char *str, int start, int end, char *to_insert);
 int				ft_parse_match(char *regex, char *string);
+char			*ft_str_reg_chr(const char *s, int c);
+char			**ft_str_ext_split(char *str, char *ext);
+
 #endif
