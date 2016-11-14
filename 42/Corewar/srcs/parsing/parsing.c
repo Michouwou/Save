@@ -6,7 +6,7 @@
 /*   By: vlancien <vlancien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 16:57:55 by vlancien          #+#    #+#             */
-/*   Updated: 2016/11/13 16:42:44 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/11/14 23:15:44 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -281,4 +281,35 @@ int		labels_are_defined(t_env *file)
 		tmpa_func = tmpa_func->next;
 	}
 	return (1);
+}
+
+int		check_single_param_info(int nb_tab, t_op op_tab[], char *info, int nb_param)
+{
+			if (op_tab[nb_tab].params_type[nb_param] & T_REG)
+				if (info[0] == 'r')
+					return (1);
+			else if (op_tab[nb_tab].params_type[nb_param] & T_DIR)
+				if (info[0] != '%')
+					return (1);
+			else if (!(op_tab[nb_tab].params_type[nb_param] & T_IND))
+				   return (0);
+}
+
+int		params_correspond(t_env *file)
+{
+	t_func	*tmp_func;
+	t_line	*tmp_line;
+
+	tmp_func = file->head;
+	while (tmp_func)
+	{
+		tmp_line = tmp_func->line;
+		while (tmp_line)
+		{
+			if (!check_single_param_info(tmp_line->nb_tab, file->op_tab, info1, 0) ||
+				!check_single_param_info(tmp_line->nb_tab, file->op_tab, info2, 1) ||
+				!check_single_param_info(tmp_line->nb_tab, file->op_tab, info3, 2))
+				asm_error("Error type");
+		}
+	}
 }
