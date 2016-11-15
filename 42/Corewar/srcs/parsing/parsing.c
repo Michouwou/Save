@@ -6,7 +6,7 @@
 /*   By: vlancien <vlancien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 16:57:55 by vlancien          #+#    #+#             */
-/*   Updated: 2016/11/15 18:11:31 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/11/15 18:42:56 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -290,7 +290,7 @@ int		check_param(int nb_tab, t_op op_tab[], char *info, int nb_param)
 	
 	reg = ft_strnew(ft_strlen(LABEL_CHARS) + 3);
 	ft_strcpy(reg, "[");
-	ft_strcpy(reg + 1, LABEL_CHAR);
+	reg[1] = LABEL_CHAR;
 	ft_strcpy(reg + 2, LABEL_CHARS);
 	ft_strcpy(reg + ft_strlen(LABEL_CHARS), "]+");
 	byte = op_tab[nb_tab].params_types[nb_param];

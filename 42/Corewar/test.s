@@ -10,7 +10,7 @@ entry:
 	sti		r1, %:cc_spawn, %1
 	sti		r1, %:wall, %1
 	sti		r1, %:cc4, %1
-	sti		r1, %:cc4, %9
+	sti		r1, %:cc4, %9837763
 	sti		r1, %:cc4, %17
 	sti		r1, %:cc4l, %1
 	sti		r1, %:cc4ld, %2
@@ -25,7 +25,7 @@ wall_prep:
 	ld		%0, r16
 
 wall:
-	live	4902343
+	live	%4902343
 	st		r2, -24
 	st		r2, -33
 	st		r2, -42

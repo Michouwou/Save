@@ -6,7 +6,7 @@
 /*   By: vlancien <vlancien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/19 12:59:13 by vlancien          #+#    #+#             */
-/*   Updated: 2016/11/15 17:27:36 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/11/15 18:46:28 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,7 @@ int		main(int argc, char **argv)
 	fille_op_tab(&e);
 	open_line(argv[1], &e);
 	trim_args(&e);
+	labels_are_defined(&e);
 	printf("***** --- %d --- *****\n", params_correspond(&e));
 	create_file(&e);
 	//print_all(e.head);
