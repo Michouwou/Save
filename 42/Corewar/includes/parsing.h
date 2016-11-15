@@ -6,7 +6,7 @@
 /*   By: vlancien <vlancien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/19 13:09:50 by vlancien          #+#    #+#             */
-/*   Updated: 2016/11/13 10:27:54 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/11/15 17:14:00 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ void		push_tail_method(t_line **begin_list, char **tab, int nb_arg, t_env *e);
 int			labels_are_defined(t_env *env);
 int			ft_parse_match(char *reg, char *str);
 void		trim_args(t_env *env);
-
+int			check_param(int nb_tab, t_op op_tab[], char *info, int nb_param);
+int			params_correspond(t_env *file);
 
 
 

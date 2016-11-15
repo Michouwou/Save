@@ -6,7 +6,7 @@
 /*   By: vlancien <vlancien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 16:57:55 by vlancien          #+#    #+#             */
-/*   Updated: 2016/11/14 23:15:44 by mlevieux         ###   ########.fr       */
+/*   Updated: 2016/11/15 18:11:31 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,33 +283,64 @@ int		labels_are_defined(t_env *file)
 	return (1);
 }
 
-int		check_single_param_info(int nb_tab, t_op op_tab[], char *info, int nb_param)
+int		check_param(int nb_tab, t_op op_tab[], char *info, int nb_param)
 {
-			if (op_tab[nb_tab].params_type[nb_param] & T_REG)
-				if (info[0] == 'r')
-					return (1);
-			else if (op_tab[nb_tab].params_type[nb_param] & T_DIR)
-				if (info[0] != '%')
-					return (1);
-			else if (!(op_tab[nb_tab].params_type[nb_param] & T_IND))
-				   return (0);
+	char	byte;
+	char	*reg;
+	
+	reg = ft_strnew(ft_strlen(LABEL_CHARS) + 3);
+	ft_strcpy(reg, "[");
+	ft_strcpy(reg + 1, LABEL_CHAR);
+	ft_strcpy(reg + 2, LABEL_CHARS);
+	ft_strcpy(reg + ft_strlen(LABEL_CHARS), "]+");
+	byte = op_tab[nb_tab].params_types[nb_param];
+	printf("BYTE = %d\n", byte);
+	printf("+++ Info vaut ==> %s\n+++\tinfo[0] vaut : %c\n", info, info[0]);
+	if (byte & T_REG)
+	{
+		if (ft_parse_match("r[0-9]+", info) && ft_atoi(info + 1) <= REG_NUMBER)
+			return (1);
+		else if (byte == T_REG)
+			return (0);
+	}
+	if (byte & T_DIR)
+	{
+		if (info[0] == DIRECT_CHAR &&
+				(ft_parse_match("[0-9]+", info + 1) || ft_parse_match(reg, info + 1)))
+			return (1);
+		else if (byte == T_DIR || byte == (T_DIR | T_REG))
+			return (0);
+	}
+	if (ft_parse_match("[0-9]+", info[0] == '-' ? info + 1 : info))
+	   return (1);
+	free(reg);
+	return (0);
 }
 
 int		params_correspond(t_env *file)
 {
-	t_func	*tmp_func;
-	t_line	*tmp_line;
+	t_func	*func;
+	t_line	*line;
 
-	tmp_func = file->head;
-	while (tmp_func)
+	func = file->head;
+	while (func)
 	{
-		tmp_line = tmp_func->line;
-		while (tmp_line)
+		line = func->line;
+		while (line)
 		{
-			if (!check_single_param_info(tmp_line->nb_tab, file->op_tab, info1, 0) ||
-				!check_single_param_info(tmp_line->nb_tab, file->op_tab, info2, 1) ||
-				!check_single_param_info(tmp_line->nb_tab, file->op_tab, info3, 2))
-				asm_error("Error type");
+			printf("---------------------------------------\nOn va tester : %s\n", file->op_tab[line->nb_tab].name);
+			if (!check_param(line->nb_tab, file->op_tab, line->info1, 0))
+				asm_error("Error type, 1");
+			if (line->info2 &&
+					!check_param(line->nb_tab, file->op_tab, line->info2, 1))
+				asm_error("Error type, 2");
+			if (line->info3 &&
+					!check_param(line->nb_tab, file->op_tab, line->info3, 2))
+				asm_error("Error type, 3");
+			line = line->next;
+			printf("\n");
 		}
+		func = func->next;
 	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 
 entry:
 	sti		r1, %:beegees_gen, %1
-	sti		r1, %:beegees, %1
+	sti		r1, %:beegees, %13
 	sti		r1, %:cc_spawn, %1
 	sti		r1, %:wall, %1
 	sti		r1, %:cc4, %1
@@ -25,7 +25,7 @@ wall_prep:
 	ld		%0, r16
 
 wall:
-	live	%4902343
+	live	4902343
 	st		r2, -24
 	st		r2, -33
 	st		r2, -42
