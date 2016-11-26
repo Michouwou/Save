@@ -132,7 +132,65 @@ def reduire_polynome(left, right):
 		if (type(right[i]) is int and i + 1 < taille2 and right[i + 1] == 'Y'):
 			sub[2] -= right[i]
 		i += 1
-	return (sub[2], "Y", sub[1], "X", sub[0])
+	return ([sub[2], "Y", sub[1], "X", sub[0]])
+
+def print_reduit(reduced):
+	print("Reduced form :", str(reduced[0]) if reduced[0] >= 0 else ("-" + str(-reduced[0]))
+	, "* " + var + "^2", ("+ " + str(reduced[2])) if reduced[2] >= 0 else ("- " + str(-reduced[2])), "* " + var + "^1",
+	("+ " + str(reduced[4])) if reduced[4] >= 0 else ("- " + str(-reduced[4])), "* " + var + "^0 = 0")
+
+def calcul_delta(polynome):
+	return (polynome[2] ** 2 - 4 * polynome[0] * polynome[4])
+
+def trouve_solutions(polynome):
+	delta = calcul_delta(polynome)
+	if (delta > 0):
+		solution1 = (-polynome[2] + floor(sqrt(delta, 6))) / (2*polynome[0])
+		solution2 = (-polynome[2] - floor(sqrt(delta, 6))) / (2*polynome[0])
+		complexe = False
+	elif (delta < 0):
+		solution1 = (-polynome[2] + floor(sqrt(delta, 6))) / (2*polynome[0])
+		solution2 = (-polynome[2] - floor(sqrt(delta, 6))) / (2*polynome[0])
+		complexe = True
+	else:
+		solution1 = -polynome[2] / (2*polynome[0])
+		solution2None
+		complexe = False
+
+def sqrt(nombre, precision):
+	a = nombre
+	b = 1
+	precision = 10 ** -precision
+	while (a - b > precision):
+		a = (a + b) / 2
+		b = nombre / a
+		print ("a = ", a, " b = ", b)
+	return (a)
+
+def pgcd(nb1, nb2):
+	a = nb1
+	b = nb2
+	r = nb2
+	while b != 0:
+		r = a%b
+		a = b
+		b = r
+	return (a)
+
+def floor(nb):
+	result = 0
+	print(nb)
+	while (nb > 1.0 or nb < -1.0):
+		result += 1
+		nb += -1.0 if nb > 0 else 1.0
+	return (int(result))
+
+def frac(nb):
+	power = 1
+	while (int(nb) - floor(nb) != 0):
+		power *= 10
+		nb *= 10
+	return (nb / pgcd(power, nb), power / pgcd(power, nb))
 
 polynome = input("Entrez votre polynome : ")
 lst, var = polynome_valide(polynome)
@@ -143,6 +201,8 @@ print(concat_vars(lst))
 print(passe_signe(lst))
 lst1, lst2 = split_equal(lst)
 reduced = reduire_polynome(lst1, lst2)
-print("Reduced form :", str(reduced[0]) if reduced[0] >= 0 else ("- " + str(-reduced[0]))
-	, "* " + var + "^2", ("+ " + str(reduced[2])) if reduced[2] >= 0 else ("- " + str(-reduced[2])), "* " + var + "^1",
-	("+ " + str(reduced[4])) if reduced[4] >= 0 else ("- " + str(-reduced[4])), "* " + var + "^0 = 0")
+print_reduit(reduced)
+print(reduced)
+print(calcul_delta(reduced))
+print(trouve_solutions(reduced))
+print(frac(8.25), frac(1.233333), frac(4.55795))
