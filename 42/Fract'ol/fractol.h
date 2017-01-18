@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/17 20:07:53 by mlevieux          #+#    #+#             */
-/*   Updated: 2017/01/17 22:20:49 by mlevieux         ###   ########.fr       */
+/*   Updated: 2017/01/18 19:11:13 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ struct s_set
 	int		iteration;
 	double	floor;
 	double	roof;
-	int		zoom;
+	double	zoom;
 	int		colorset;
 };
 
@@ -62,6 +62,6 @@ void		help();
 t_complex	z_num(double x, double y);
 t_complex	z_add(t_complex z1, t_complex z2);
 t_complex	z_pow(t_complex z, int pow);
-int			z_mod(t_complex z);
+double		z_mod(t_complex z);
 
 #endif

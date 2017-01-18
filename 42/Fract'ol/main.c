@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/17 20:29:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2017/01/17 21:59:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2017/01/18 19:17:25 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 static int	 key_events(int keycode, t_core *core)
 {
-	(void)core;
-	(void)keycode;
+	printf("key = %d\n", keycode);
 	if (keycode == 53)
 		exit(0);
+	else if (keycode == 126)
+		core->set.zoom += 0.1;
+	else if (keycode == 125)
+		core->set.zoom -= 0.1;
+	draw_fract(*core);
 	return (0);
 }
 

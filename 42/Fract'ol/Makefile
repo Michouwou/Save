@@ -6,7 +6,7 @@
 #    By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/17 20:25:26 by mlevieux          #+#    #+#              #
-#    Updated: 2017/01/17 21:56:26 by mlevieux         ###   ########.fr        #
+#    Updated: 2017/01/18 17:35:56 by mlevieux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,11 +28,9 @@ $(NAME) :
 		gcc -Wall -Wextra -Werror $(SRC) -I $(INC) -L $(LIBDIR) $(LIBS) -lmlx -framework OpenGL -framework Appkit
 
 clean :
-		make clean -C ft_printf/
 		rm -f $(OBJ)
 
 fclean : clean
-		make fclean -C ft_printf/
 		rm -f $(NAME)
 
 re : fclean all
