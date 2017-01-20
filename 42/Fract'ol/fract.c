@@ -22,6 +22,8 @@ void	set_fract(t_core *core, char *set)
 		core->set.zoom = 1.0;
 		core->set.colorset = 1;
 		core->set.juliaC = z_num(0.3, 0.1);
+		core->set.xShift = 0;
+		core->set.yShift = 0;
 	}
 	else
 		help();
@@ -52,14 +54,20 @@ void	draw_mandelbrot(t_core core)
 		j = -1;
 		while (++j < core.mlx.height)
 		{
-			iter = -1;
-			current = z_num(zoom * -2.1 + (zoom * 2.7 / core.mlx.width * i),
-					zoom * -1.2 + (zoom * 2.4 / core.mlx.height * j));
-			z = z_num(0.0, 0.0);
-			while (++iter < core.set.iteration && z_mod(z) < core.set.roof)
-				z = z_add(z_pow(z, 2), current);
-			if (iter == core.set.iteration)
-				mlx_pixel_put(core.mlx.core, core.mlx.win, i, j, 0xFFFFFF);
+			if (core.set.xShift + i > 0 &&
+				core.set.xShift + i < core.mlx.width &&
+				core.set.yShift + j > 0 && core.set.yShift + j <
+				core.mlx.height)
+			{
+				iter = -1;
+				current = z_num(-2.1 + (zoom * 2.7 / core.mlx.width * i),
+						-1.2 + (zoom * 2.4 / core.mlx.height * j));
+				z = z_num(0.0, 0.0);
+				while (++iter < core.set.iteration && z_mod(z) < core.set.roof)
+					z = z_add(z_pow(z, 2), current);
+				if (iter == core.set.iteration)
+					mlx_pixel_put(core.mlx.core, core.mlx.win, i + core.set.xShift, j + core.set.yShift, 0xFFFFFF);
+			}
 		}
 	}
 }

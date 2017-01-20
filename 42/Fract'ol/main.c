@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/17 20:29:48 by mlevieux          #+#    #+#             */
-/*   Updated: 2017/01/20 16:12:38 by mlevieux         ###   ########.fr       */
+/*   Updated: 2017/01/20 16:55:24 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,18 @@ static int		key_events(int keycode, t_core *core)
 	printf("key = %d\n", keycode);
 	if (keycode == 53)
 		exit(0);
-	else if (keycode == 126)
-		core->set.zoom -= 0.1;
+	else if (keycode == 124)
+		core->set.xShift += 10;
+	else if (keycode == 123)
+		core->set.xShift -= 10;
 	else if (keycode == 125)
+		core->set.yShift += 10;
+	else if (keycode == 126)
+		core->set.yShift -= 10;
+	else if (keycode == 46)
 		core->set.zoom += 0.1;
+	else if (keycode == 35)
+		core->set.zoom -= 0.1;
 	else if (keycode == 67)
 		core->set.juliaC = z_add(core->set.juliaC, z_num(0.0, 0.01));
 	else if (keycode == 75)
