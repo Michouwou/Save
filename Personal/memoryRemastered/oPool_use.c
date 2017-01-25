@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   oPool_use.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/25 18:42:53 by mlevieux          #+#    #+#             */
+/*   Updated: 2017/01/25 18:43:05 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "t_pool.h"
+
 // To allocate a size bytes memory from an
 // oPool. If the pool is too small, its size
 // will automatically be increased, as well

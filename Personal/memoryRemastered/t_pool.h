@@ -1,3 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   t_pool.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/25 18:43:42 by mlevieux          #+#    #+#             */
+/*   Updated: 2017/01/25 18:48:29 by mlevieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef _T_POOL_H
+# define _T_POOL_H
+
+# include "libft.h"
+# include <stdlib.h>
+# include <errno.h>
+# include <stddef.h>
+
 /************************************************************************/
 /*																		*/
 /* Implementation of a 'pool' library. The goal not being to get a		*/
@@ -47,21 +67,23 @@ typedef struct		s_olympic_pool
 }					t_oPool;
 
 // For internal use only
-void		error_increasingOPool(char *path)
-void		*to_enomem()
+void				error_increasingOPool(char *path);
+void				*to_enomem();
 
 // For t_pool struct only
-void		free_pool(t_pool *pool)
-t_pool		*create_pool()
-void		*pool_alloc(t_pool *pool, size_t size)
-size_t		pool_state(t_pool *pool)
-void		**pool_arrayAlloc(t_pool *pool, size_t *sizes)
-void		to_flat_pool(t_pool *pool)
-t_pool		*pool_dup(t_pool *pool)
+void				free_pool(t_pool *pool);
+t_pool				*create_pool();
+void				*pool_alloc(t_pool *pool, size_t size);
+size_t				pool_state(t_pool *pool);
+void				**pool_arrayAlloc(t_pool *pool, size_t *sizes);
+void				to_flat_pool(t_pool *pool);
+t_pool				*pool_dup(t_pool *pool);
 
 // For t_oPool struct only
-t_oPool		*init_oPool(size_t size, size_t len)
-void		free_oPool(t_oPool *oPool)
-void		*oPool_alloc(t_oPool *oPool, size_t size)
-void		*oPool_indexBaseAcces(t_oPool *oPool, size_t index)
-void		del_oPool_chunk(t_oPool *oPool, size_t chunk)
+t_oPool				*init_oPool(size_t size, size_t len);
+void				free_oPool(t_oPool *oPool);
+void				*oPool_alloc(t_oPool *oPool, size_t size);
+void				*oPool_indexBaseAcces(t_oPool *oPool, size_t index);
+void				del_oPool_chunk(t_oPool *oPool, size_t chunk);
+
+#endif
