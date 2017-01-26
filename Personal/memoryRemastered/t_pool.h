@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:43:42 by mlevieux          #+#    #+#             */
-/*   Updated: 2017/01/25 18:48:29 by mlevieux         ###   ########.fr       */
+/*   Updated: 2017/01/26 18:39:33 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,18 @@ typedef struct		s_olympic_pool
 	void			**memmap;
 	size_t			*sizes;
 	size_t			len;
+	size_t			self_size;
+	size_t			self_used;
 }					t_oPool;
 
 // For internal use only
 void				error_increasingOPool(char *path);
+void				*intern_oPoolAllocation(t_oPool *oPool, size_t size);
+int					intern_oPoolIncreaseSize(t_oPool *oPool, size_t size);
 void				*to_enomem();
 
 // For t_pool struct only
+t_pool				*new_pool(size_t size);
 void				free_pool(t_pool *pool);
 t_pool				*create_pool();
 void				*pool_alloc(t_pool *pool, size_t size);

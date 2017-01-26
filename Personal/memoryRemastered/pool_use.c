@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:43:26 by mlevieux          #+#    #+#             */
-/*   Updated: 2017/01/25 18:43:37 by mlevieux         ###   ########.fr       */
+/*   Updated: 2017/01/26 17:20:52 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void		*pool_alloc(t_pool *pool, size_t size)
 	
 	if (pool == NULL || (*pool).pool == NULL)
 		return (to_enomem());
+	else if (size == 0)
+		return (NULL);
 	available = (*pool).size - (*pool).used;
 	if (available < size)
 		return (to_enomem());
@@ -61,9 +63,9 @@ void		**pool_arrayAlloc(t_pool *pool, size_t *sizes)
 		total += sizes[sizes_len++];
 	if (available < total)
 		return (to_enomem());
-	alloc = ft_memalloc(size(void*) * (size_t)sizes_len);
+	alloc = ft_memalloc(sizeof(void*) * (size_t)sizes_len);
 	(*pool).used += total;
-	(*pool).count += sizes_len;
+	(*pool).counter += sizes_len;
 	while (--sizes_len > -1)
 	{
 		total -= sizes[sizes_len];
@@ -78,7 +80,7 @@ void		to_flat_pool(t_pool *pool)
 	if (pool == NULL)
 		return;
 	(*pool).used = 0;
-	(*pool).count = 0;
+	(*pool).counter = 0;
 	ft_bzero((*pool).pool, (*pool).size);
 }
 
@@ -96,8 +98,8 @@ t_pool		*pool_dup(t_pool *pool)
 	duplicate = new_pool((*pool).size);
 	if (duplicate == NULL)
 		return (NULL);
-	(*duplicate).count = (*pool).count;
+	(*duplicate).counter = (*pool).counter;
 	(*duplicate).used = (*pool).used;
-	ft_memcopy((*duplicate).pool, (*pool).pool, (*duplicate).size);
+	ft_memcpy((*duplicate).pool, (*pool).pool, (*duplicate).size);
 	return (duplicate);
 }

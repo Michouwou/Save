@@ -39,8 +39,9 @@ t_pool		*new_pool(size_t size)
 void		free_pool(t_pool *pool)
 {
 	free((*pool).pool);
-	ft_bzero((void*)pool);
+	ft_bzero((void*)pool, sizeof(t_pool));
 	free(pool);
+	pool = NULL;
 }
 
 // Only for convenience, creates a pool which size is DEFAULT_SIZE
