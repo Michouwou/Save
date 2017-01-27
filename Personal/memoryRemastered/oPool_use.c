@@ -19,8 +19,8 @@
 // it is supposed to be able to hold.
 void		*oPool_alloc(t_oPool *oPool, size_t size)
 {
-	void	*mem;
-	int		i;
+	void			*mem;
+	//int		i;
 	
 	if (oPool == NULL || (*oPool).pool == NULL)
 		return (NULL);
@@ -28,6 +28,8 @@ void		*oPool_alloc(t_oPool *oPool, size_t size)
 		if (intern_oPoolIncreaseSize(oPool, size) == -1 ||
 			(mem = intern_oPoolAllocation(oPool, size)) == NULL)
 			error_increasingOPool((char*)__PRETTY_FUNCTION__);
+	/*	Changing void ** + size_t * by t_memoryMapper
+		but keeping old code for the moment
 	i = 0;
 	while (i < (int)(*oPool).len && (*oPool).memmap[i] != NULL)
 		i++;
@@ -43,7 +45,7 @@ void		*oPool_alloc(t_oPool *oPool, size_t size)
 		(*oPool).len *= 2;
 	}
 	(*oPool).memmap[i] = mem;
-	(*oPool).sizes[i] = size;
+	(*oPool).sizes[i] = size; */
 	return (mem);
 }
 
@@ -114,7 +116,7 @@ void		*intern_oPoolAllocation(t_oPool *oPool, size_t size)
 		printf("%p\n", (*oPool).pool);
 		printf("%zu\n", (*oPool).sizes[0]);
 		while (++cpt < (*oPool).len && ((*oPool).memmap[cpt] ||
-			(*oPool).sizes[cpt]) && !((*oPool).sizes[cpt] < size &&
+			(*oPool).sizes[cpt]) && !((*oPool).sizes[cpt] > size &&
 			(*oPool).memmap[cpt] == NULL))
 		{
 			printf("Un tour de boucle\n");

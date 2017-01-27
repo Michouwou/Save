@@ -35,5 +35,10 @@ int main(void)
 			ptr[i] = 'a';
 	}
 	printf("|%s|\n", ptr);
+	del_oPool_chunk(pool, 0);
+	printf("|%s|\n", ptr);
+	ptr = oPool_alloc(pool, 20);
+	ptr2 = oPool_alloc(pool, 5);
+	printf("|%p|, |%p|\n", ptr, ptr2);
 	return (0);
 }
