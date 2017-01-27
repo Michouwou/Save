@@ -75,7 +75,10 @@ void		*intern_oPoolAllocation(t_oPool *oPool, size_t size)
 	size_t	remainingSize;
 
 	if (oPool == NULL)
+	{
+		printf("NULL\n");
 		return (NULL);
+	}
 	else if ((*oPool).pool == NULL)
 	{
 		/************************************************/
@@ -89,6 +92,7 @@ void		*intern_oPoolAllocation(t_oPool *oPool, size_t size)
 		/* certain moment.								*/
 		/* See MANUAL/t_oPool.txt for examples.			*/
 		/************************************************/
+		printf("Not NULL but not valid\n");
 		if (((*oPool).pool = ft_memalloc(size)) == NULL)
 			return (to_enomem());
 		if ((*oPool).memmap == NULL &&
@@ -99,24 +103,51 @@ void		*intern_oPoolAllocation(t_oPool *oPool, size_t size)
 			return (to_enomem());
 		(*oPool).self_size = size;
 		(*oPool).self_used = size;
-		(*oPool).len == 0 ? (*oPool).len = 2;
+		(*oPool).len == 0 ? (*oPool).len = 2 : (*oPool).len;
 		return ((*oPool).pool);
 	}
 	else if ((remainingSize = (*oPool).self_size - (*oPool).self_used) > size)
 	{
+		printf("Valid\n");
 		cpt = -1;
+		printf("%p\n", (*oPool).memmap[0]);
+		printf("%p\n", (*oPool).pool);
+		printf("%zu\n", (*oPool).sizes[0]);
 		while (++cpt < (*oPool).len && ((*oPool).memmap[cpt] ||
-			(*oPool).sizes[cpt]) && ((*oPool).sizes[cpt] < size ||
+			(*oPool).sizes[cpt]) && !((*oPool).sizes[cpt] < size &&
 			(*oPool).memmap[cpt] == NULL))
+		{
+			printf("Un tour de boucle\n");
 			if ((*oPool).memmap[cpt] == NULL && (*oPool).sizes[cpt] > 0)
 				remainingSize -= (*oPool).sizes[cpt];
+		}
+		printf("PLOP, cpt == %d\n", cpt);
+		if (cpt == 0)
+			return ((*oPool).pool);
 		if (remainingSize < size && force_oPoolDefrag(oPool) != -1)
 			return ((*oPool).pool + (*oPool).self_used + 1);
 		else if (remainingSize < size)
 			error_defragmentingOPool((char*)__PRETTY_FUNCTION__);
-		return ((*oPool).memmap[cpt ? cpt - 1 : cpt] + (cpt ? (*oPool).sizes[cpt - 1] : 0))
+		return ((*oPool).memmap[cpt ? cpt - 1 : cpt] + (cpt ? (*oPool).sizes[cpt - 1] : 0));
 	}
 	return (NULL);
+}
+
+// Codes : -1 for invalid t_oPool for use, 0 for valid
+// but not complete t_oPool structure,
+// 1 for valid t_oPool for use.
+int			check_oPoolValidity(t_oPool *oPool)
+{
+	if (oPool == NULL ||
+		(int)((*oPool).self_size - (*oPool).self_used) < 0)
+		return (-1);
+	if ((*oPool).pool == NULL ||
+		(*oPool).memmap == NULL ||
+		(*oPool).sizes == NULL ||
+		(*oPool).len == 0 ||
+		(*oPool).self_size)
+		return (0);
+	return (1);
 }
 
 int			intern_oPoolIncreaseSize(t_oPool *oPool, size_t size)
@@ -124,4 +155,10 @@ int			intern_oPoolIncreaseSize(t_oPool *oPool, size_t size)
 	(void)oPool;
 	(void)size;
 	return (1);
+}
+
+int			force_oPoolDefrag(t_oPool *oPool)
+{
+		(void)oPool;
+		return (-1);
 }

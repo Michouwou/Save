@@ -26,3 +26,11 @@ void		error_increasingOPool(char *path)
 	ft_putstr(path);
 	exit(-1);
 }
+
+void		error_defragmentingOPool(char* path)
+{
+	ft_putstr("Error trying to defragment memory in function : ");
+	ft_putstr(path);
+	exit(-1);
+}
+

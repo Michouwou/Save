@@ -15,15 +15,25 @@
 
 int main(void)
 {
-	t_pool	*pool;
-	char	**ptr;
+	t_oPool	*pool;
+	char	*ptr, *ptr2;
 	size_t	sizes[] = {5, 5, 5, 5, 5, 5, 5, 5, 5, 0};
 
-	pool = new_pool((size_t)200);
-	ptr = (char**)pool_arrayAlloc(pool, sizes);
-	for (int i = 0; i < 9; i++)
-	   ptr[i] = ft_strdup("plop");
-	for (int i= 0; i < 9; i++)
-		printf("|%s|\n", ptr[i]);	
+	pool = init_oPool((size_t)200, 5);
+	ptr = (char*)oPool_alloc(pool, (size_t)30);
+	printf("ptr %p\n", ptr);
+	ft_strcpy(ptr, "Salut je suis nulle");
+	printf("|%s|\n", ptr);
+
+	ptr2 = (char*)oPool_alloc(pool, (size_t)30);
+	ft_strcpy(ptr2, "plop plop plop plop plop");
+	printf("|%s|\n", ptr2);
+
+	for (int i = 0 ; ptr[i] || i < 29 ; i++)
+	{
+		if (!ptr[i])
+			ptr[i] = 'a';
+	}
+	printf("|%s|\n", ptr);
 	return (0);
 }

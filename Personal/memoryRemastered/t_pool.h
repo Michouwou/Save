@@ -18,6 +18,10 @@
 # include <errno.h>
 # include <stddef.h>
 
+// /!\ TO DEBUGG ONLY, THINK OF GETTING IT AWAY /!\ \\
+
+# include <stdio.h>
+
 /************************************************************************/
 /*																		*/
 /* Implementation of a 'pool' library. The goal not being to get a		*/
@@ -70,6 +74,7 @@ typedef struct		s_olympic_pool
 
 // For internal use only
 void				error_increasingOPool(char *path);
+void				error_defragmentingOPool(char* path);
 void				*intern_oPoolAllocation(t_oPool *oPool, size_t size);
 int					intern_oPoolIncreaseSize(t_oPool *oPool, size_t size);
 void				*to_enomem();
@@ -90,5 +95,6 @@ void				free_oPool(t_oPool *oPool);
 void				*oPool_alloc(t_oPool *oPool, size_t size);
 void				*oPool_indexBaseAcces(t_oPool *oPool, size_t index);
 void				del_oPool_chunk(t_oPool *oPool, size_t chunk);
+int					force_oPoolDefrag(t_oPool *oPool);
 
 #endif
