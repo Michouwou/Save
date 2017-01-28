@@ -34,3 +34,43 @@ void		error_defragmentingOPool(char* path)
 	exit(-1);
 }
 
+void						intern_oPoolMapNewChunk(t_memoryMapper *memoryMap, void *mem, size_t size)
+{
+	t_memoryMapper	*tmp;
+	t_memoryMapper	nNode; // Nothing complicated, just stands for "new node"
+
+	nNode.memoryChunk = mem;
+	nNode.chunkSize = size;
+	nNode.next = NULL;
+	tmp = memoryMap;
+	while ((*tmp).next)
+		tmp = (*tmp).next;
+	(*tmp).next = &nNode;
+}
+
+void						intern_oPoolUpdateChunk(t_memoryMapper *map, void *mem, size_t size)
+{
+	t_memoryMapper	nNode;
+
+	if ((*map).chunkSize < size)
+	{
+		nNode.memoryChunk = NULL;
+		nNode.chunkSize = size - (*map).chunkSize;
+		nNode.next = (*map).next;
+		(*map).next = &nNode;
+	}
+	(*map).memoryChunk = mem;
+	(*map).chunkSize = size;
+}
+
+t_memoryMapper				*intern_oPoolGetMappedIndex(t_memoryMapper *memoryMap, size_t chunk)
+{
+	t_memoryMapper	*tmp;
+	int				i;
+
+	i = 1;
+	tmp = memoryMap;
+	while (i <= chunk && tmp)
+		tmp = (*tmp).next;
+	return (tmp);
+}

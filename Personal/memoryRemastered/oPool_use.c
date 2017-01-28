@@ -46,6 +46,7 @@ void		*oPool_alloc(t_oPool *oPool, size_t size)
 	}
 	(*oPool).memmap[i] = mem;
 	(*oPool).sizes[i] = size; */
+	(*oPool).self_used += size;
 	return (mem);
 }
 
@@ -53,21 +54,24 @@ void		*oPool_alloc(t_oPool *oPool, size_t size)
 // works a little like an array.
 void		*oPool_indexBaseAcces(t_oPool *oPool, size_t index)
 {
-	if (oPool == NULL || index > (*oPool).len)
+	t_memoryMapper	*tmp;
+
+	if (oPool == NULL)// || index > (*oPool).len)
 		return (NULL);
-	return ((*oPool).memmap[index]);
+	tmp = intern_oPoolGetMappedIndex((*oPool).memoryMap, index);
+	return ((*tmp).memoryChunk);
 }
 
 // Puts a whole chunk of the oPool back to 0
 void		del_oPool_chunk(t_oPool *oPool, size_t chunk)
 {
-	void	*mem;
+	t_memoryMapper	*mem;
 	
-	mem = oPool_indexBaseAcces(oPool, chunk);
+	mem = intern_oPoolGetMappedIndex((*oPool).memoryMap, chunk);
 	if (mem != NULL)
 	{
-		ft_bzero(mem, (*oPool).sizes[chunk]);
-		(*oPool).memmap[chunk] = NULL;
+		ft_bzero((void*)(*mem).memoryChunk, (*mem).chunkSize);
+		(*mem).memoryChunk = NULL;
 	}
 }
 
@@ -77,32 +81,41 @@ void		*intern_oPoolAllocation(t_oPool *oPool, size_t size)
 	t_memoryMapper	*map;
 	void			*mem;
 
-	map = (*oPool).memoryMap;
-	mem = (*map).memoryChunk;
-	remainingSize = (*oPool).self_size - (*oPool).self_used;
-	if (oPool == NULL || (*oPool).pool == NULL)
+	printf("Entree dans la fonction d'allocation\n");
+	map = (*oPool).memoryMap; // For travelling in the list
+	mem = (*map).memoryChunk; // To know what adress to return
+	remainingSize = (*oPool).self_size - (*oPool).self_used; // Size that is still available
+	if (oPool == NULL || (*oPool).pool == NULL) // If Nothing
 		return (NULL);
+
+	printf("Les premieres valeurs sont sets, on entre dans la boucle\n");
 	while (map && ((*map).memoryChunk != NULL || (*map).chunkSize < size))
+		// while we're not at the end and either the space is already in use or there is not enough space to allocate size
 	{
-		mem += (*map).size;
-		if ((*map).memoryChunk == NULL)
-			remainingSize -= (*map).size;
+		mem += (*map).chunkSize; // We increment the adress
+		if ((*map).memoryChunk == NULL) // If the poiter memoryChumk is NULL but the space is too small to put
+			// size bytes in it then it represents some free memory that we counted as available, which is then
+			// not really true, so we just do as if this memory was really taken to fix this problem
+			remainingSize -= (*map).chunkSize;
 		map = (*map).next;
 	}
-	if (remainingSize > size)
+
+	printf("On est sorti indemne de la boucle\n");
+	if (remainingSize > size) // If after all this there is still enough space
 	{
-		if (map == NULL)
+		if (map == NULL) // If it was the end of the list (no hole in the memory is big enough to hold size)
 		{
-			intern_oPoolMapNewChunk((*oPool).memoryMap, (*oPool).pool, size);
+			intern_oPoolMapNewChunk((*oPool).memoryMap, mem, size); // we create a new node
 			return ((*oPool).pool);
 		}
-		else if (map != NULL)
+		else if (map != NULL) // If it wasn't (there is a hole that is big enough)
 		{
-			intern_oPoolUpdateChunk(map, mem, size);
+			intern_oPoolUpdateChunk(map, mem, size); // We update this node
 			return (mem);
 		}
 	}
-	return (NULL);
+	printf("Sortie de la fonction d'allocation\n");
+	return (NULL); // last case there is no possibility to allocate, just return NULL
 }
 
 // Codes : -1 for invalid t_oPool for use, 0 for valid
@@ -113,11 +126,11 @@ int			check_oPoolValidity(t_oPool *oPool)
 	if (oPool == NULL ||
 		(int)((*oPool).self_size - (*oPool).self_used) < 0)
 		return (-1);
-	if ((*oPool).pool == NULL ||
+	if ((*oPool).pool == NULL /*||
 		(*oPool).memmap == NULL ||
 		(*oPool).sizes == NULL ||
-		(*oPool).len == 0 ||
-		(*oPool).self_size)
+		(*oPool).len == 0 ||*/
+		|| (*oPool).self_size == 0)
 		return (0);
 	return (1);
 }

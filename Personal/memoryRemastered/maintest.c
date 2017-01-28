@@ -16,29 +16,41 @@
 int main(void)
 {
 	t_oPool	*pool;
-	char	*ptr, *ptr2;
-	size_t	sizes[] = {5, 5, 5, 5, 5, 5, 5, 5, 5, 0};
 
-	pool = init_oPool((size_t)200, 5);
-	ptr = (char*)oPool_alloc(pool, (size_t)30);
-	printf("ptr %p\n", ptr);
-	ft_strcpy(ptr, "Salut je suis nulle");
-	printf("|%s|\n", ptr);
 
-	ptr2 = (char*)oPool_alloc(pool, (size_t)30);
-	ft_strcpy(ptr2, "plop plop plop plop plop");
-	printf("|%s|\n", ptr2);
+	printf("Initialisation de la structure...\n");
+	pool = init_oPool((size_t)8001, 5);
 
-	for (int i = 0 ; ptr[i] || i < 29 ; i++)
-	{
-		if (!ptr[i])
-			ptr[i] = 'a';
-	}
-	printf("|%s|\n", ptr);
-	del_oPool_chunk(pool, 0);
-	printf("|%s|\n", ptr);
-	ptr = oPool_alloc(pool, 20);
-	ptr2 = oPool_alloc(pool, 5);
-	printf("|%p|, |%p|\n", ptr, ptr2);
+	
+	printf("Allocation des pointeurs...\n");
+	
+	void *ptr1 = oPool_alloc(pool, (size_t)2000);
+	printf("Pointeur 1 OK...\n");
+
+	void *ptr2 = oPool_alloc(pool, (size_t)2000);
+	printf("Pointeur 2 OK...\n");
+	
+	void *ptr3 = oPool_alloc(pool, (size_t)2000);
+	printf("Pointeur 3 OK...\n");
+	
+	void *ptr4 = oPool_alloc(pool, (size_t)2000);
+	printf("Pointeur 4 OK...\n");
+
+
+	char *bigChaine = (char*)ptr1;
+	int	*intTab = (int*)ptr2;
+	float *floatTab = (float*)ptr3;
+
+
+	printf("Deletion du chunk 4 de la structure...\n");
+	del_oPool_chunk(pool, 4);
+
+
+	printf("Accession a l'index 3 de la structure...\n");
+	ptr4 = oPool_indexBaseAcces(pool, 3);
+
+
+	printf("Liberation complete de la memoire...\n");
+	free_oPool(pool);
 	return (0);
 }

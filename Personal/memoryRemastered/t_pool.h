@@ -85,6 +85,9 @@ void						error_defragmentingOPool(char* path);
 void						*intern_oPoolAllocation(t_oPool *oPool, size_t size);
 int							intern_oPoolIncreaseSize(t_oPool *oPool, size_t size);
 void						*to_enomem();
+void						intern_oPoolMapNewChunk(t_memoryMapper *memoryMap, void *mem, size_t size);
+void						intern_oPoolUpdateChunk(t_memoryMapper *map, void *mem, size_t size);
+t_memoryMapper				*intern_oPoolGetMappedIndex(t_memoryMapper *memoryMap, size_t chunk);
 
 // For t_pool struct only
 t_pool						*new_pool(size_t size);

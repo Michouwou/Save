@@ -10,3 +10,5 @@ TODO:
 	- Rédiger le man de t_oPool et le README
 	- Implémenter les fonctions permettant le traitement de données sur des dimensions dynamiques
 	- Voir pour éclater le mapping mémoire en un certain nombre de chunks pour accélérer les allocations
+	- Voir pour rendre la structure transparente en utilisant une variable statique dans une sorte
+	de fonction principale de redirection.

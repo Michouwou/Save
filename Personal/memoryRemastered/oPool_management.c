@@ -23,7 +23,7 @@ t_oPool		*init_oPool(size_t size, size_t len)
 	t_memoryMapper	map;
 	
 	oPool = (t_oPool*)ft_memalloc(sizeof(t_oPool));
-	ft_bzero(&map, sizeof(t_memoryMapper));
+	ft_bzero((void*)&map, sizeof(t_memoryMapper));
 	if (oPool == NULL)
 		return (to_enomem());
 	//(*oPool).memmap = (void**)ft_memalloc(sizeof(void*) * (len));
