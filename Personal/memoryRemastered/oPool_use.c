@@ -88,7 +88,7 @@ void		*intern_oPoolAllocation(t_oPool *oPool, size_t size)
 	if (oPool == NULL || (*oPool).pool == NULL) // If Nothing
 		return (NULL);
 
-	printf("Les premieres valeurs sont sets, on entre dans la boucle\n");
+	printf("Les premieres valeurs sont sets, on entre dans la boucle, map = %zd\n", map->chunkSize);
 	while (map && ((*map).memoryChunk != NULL || (*map).chunkSize < size))
 		// while we're not at the end and either the space is already in use or there is not enough space to allocate size
 	{
@@ -105,7 +105,7 @@ void		*intern_oPoolAllocation(t_oPool *oPool, size_t size)
 	{
 		if (map == NULL) // If it was the end of the list (no hole in the memory is big enough to hold size)
 		{
-			intern_oPoolMapNewChunk((*oPool).memoryMap, mem, size); // we create a new node
+			intern_oPoolMapNewChunk((*oPool).memoryMap, oPool, mem, size); // we create a new node
 			return ((*oPool).pool);
 		}
 		else if (map != NULL) // If it wasn't (there is a hole that is big enough)

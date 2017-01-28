@@ -34,11 +34,20 @@ void		error_defragmentingOPool(char* path)
 	exit(-1);
 }
 
-void						intern_oPoolMapNewChunk(t_memoryMapper *memoryMap, void *mem, size_t size)
+void						intern_oPoolMapNewChunk(t_memoryMapper *memoryMap, t_oPool *oPool, void *mem, size_t size)
 {
 	t_memoryMapper	*tmp;
 	t_memoryMapper	nNode; // Nothing complicated, just stands for "new node"
 
+	printf("map = %p ;\n", memoryMap);
+	printf("map.memoryChunk = %p ;\nmap.chunkSize = %zd ;\n", (*memoryMap).memoryChunk, (*memoryMap).chunkSize);
+	if ((*memoryMap).memoryChunk == NULL)
+	{
+		(*memoryMap).memoryChunk = (*oPool).pool;
+		(*memoryMap).chunkSize = size;
+		(*memoryMap).next = NULL;
+		return;
+	}
 	nNode.memoryChunk = mem;
 	nNode.chunkSize = size;
 	nNode.next = NULL;

@@ -20,10 +20,9 @@
 t_oPool		*init_oPool(size_t size, size_t len)
 {
 	t_oPool			*oPool;
-	t_memoryMapper	map;
+	t_memoryMapper	*map;
 	
 	oPool = (t_oPool*)ft_memalloc(sizeof(t_oPool));
-	ft_bzero((void*)&map, sizeof(t_memoryMapper));
 	if (oPool == NULL)
 		return (to_enomem());
 	//(*oPool).memmap = (void**)ft_memalloc(sizeof(void*) * (len));
@@ -39,7 +38,11 @@ t_oPool		*init_oPool(size_t size, size_t len)
 	//(*oPool).len = len;
 	(*oPool).self_size = size;
 	(*oPool).self_used = 0;
-	(*oPool).memoryMap = &map;
+	map = ft_memalloc(sizeof(t_memoryMapper));
+	ft_bzero((void*)map, sizeof(t_memoryMapper));
+	map->chunkSize = 0;
+	map->memoryChunk = (*oPool).pool;
+	(*oPool).memoryMap = map;
 	return (oPool);
 }
 
