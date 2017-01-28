@@ -1,0 +1,12 @@
+TODO:
+
+	- Implémenter les différentes fonctions permettant le traitement de la liste chaînée qui
+	sert à mapper la mémoire d'une oPool à un instant donné.
+	- Changer les codes d'allocation etc pour prendre en compte la liste en question
+	- Changer les données relatives aux pools de données sous forme d'une liste chainée également
+	afin de permettre une réallocation sans perdre la validité des pointeurs déjà alloués
+	- Implémenter le système de réallocation
+	- Optimiser les calculs et les performances en temps
+	- Rédiger le man de t_oPool et le README
+	- Implémenter les fonctions permettant le traitement de données sur des dimensions dynamiques
+	- Voir pour éclater le mapping mémoire en un certain nombre de chunks pour accélérer les allocations
