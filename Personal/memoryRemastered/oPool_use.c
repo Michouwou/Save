@@ -73,64 +73,34 @@ void		del_oPool_chunk(t_oPool *oPool, size_t chunk)
 
 void		*intern_oPoolAllocation(t_oPool *oPool, size_t size)
 {
-	int		cpt;
-	size_t	remainingSize;
+	size_t			remainingSize;
+	t_memoryMapper	*map;
+	void			*mem;
 
-	if (oPool == NULL)
-	{
-		printf("NULL\n");
+	map = (*oPool).memoryMap;
+	mem = (*map).memoryChunk;
+	remainingSize = (*oPool).self_size - (*oPool).self_used;
+	if (oPool == NULL || (*oPool).pool == NULL)
 		return (NULL);
-	}
-	else if ((*oPool).pool == NULL)
+	while (map && ((*map).memoryChunk != NULL || (*map).chunkSize < size))
 	{
-		/************************************************/
-		/* If memmap or sizes were not set yet, we only	*/
-		/* reserve two places please check using		*/
-		/* check_oPoolValidity(). This feature can		*/
-		/* nonetheless be useful if you think you are	*/
-		/* hardly going to have to store so many things	*/
-		/* in your pool and you think it is better to	*/
-		/* just want to allocate what is needed at a	*/
-		/* certain moment.								*/
-		/* See MANUAL/t_oPool.txt for examples.			*/
-		/************************************************/
-		printf("Not NULL but not valid\n");
-		if (((*oPool).pool = ft_memalloc(size)) == NULL)
-			return (to_enomem());
-		if ((*oPool).memmap == NULL &&
-			((*oPool).memmap = (void**)ft_memalloc(sizeof(void*) * 2)) == NULL)	
-			return (to_enomem());
-		if ((*oPool).sizes == NULL &&
-			((*oPool).sizes = (size_t*)ft_memalloc(sizeof(size_t) * 2)) == NULL)
-			return (to_enomem());
-		(*oPool).self_size = size;
-		(*oPool).self_used = size;
-		(*oPool).len == 0 ? (*oPool).len = 2 : (*oPool).len;
-		return ((*oPool).pool);
+		mem += (*map).size;
+		if ((*map).memoryChunk == NULL)
+			remainingSize -= (*map).size;
+		map = (*map).next;
 	}
-	else if ((remainingSize = (*oPool).self_size - (*oPool).self_used) > size)
+	if (remainingSize > size)
 	{
-		printf("Valid\n");
-		cpt = -1;
-		printf("%p\n", (*oPool).memmap[0]);
-		printf("%p\n", (*oPool).pool);
-		printf("%zu\n", (*oPool).sizes[0]);
-		while (++cpt < (*oPool).len && ((*oPool).memmap[cpt] ||
-			(*oPool).sizes[cpt]) && !((*oPool).sizes[cpt] > size &&
-			(*oPool).memmap[cpt] == NULL))
+		if (map == NULL)
 		{
-			printf("Un tour de boucle\n");
-			if ((*oPool).memmap[cpt] == NULL && (*oPool).sizes[cpt] > 0)
-				remainingSize -= (*oPool).sizes[cpt];
-		}
-		printf("PLOP, cpt == %d\n", cpt);
-		if (cpt == 0)
+			intern_oPoolMapNewChunk((*oPool).memoryMap, (*oPool).pool, size);
 			return ((*oPool).pool);
-		if (remainingSize < size && force_oPoolDefrag(oPool) != -1)
-			return ((*oPool).pool + (*oPool).self_used + 1);
-		else if (remainingSize < size)
-			error_defragmentingOPool((char*)__PRETTY_FUNCTION__);
-		return ((*oPool).memmap[cpt ? cpt - 1 : cpt] + (cpt ? (*oPool).sizes[cpt - 1] : 0));
+		}
+		else if (map != NULL)
+		{
+			intern_oPoolUpdateChunk(map, mem, size);
+			return (mem);
+		}
 	}
 	return (NULL);
 }
