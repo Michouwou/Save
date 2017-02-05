@@ -43,8 +43,8 @@ typedef struct		s_pool
 typedef struct		s_metadata
 {
 	int				indexLastGlob;
-	size_t			freeGlobSize;
-	t_glob			map[GLOB_INITIAL_NUMBER];
+	int				*firstPoolIndex;
+	t_glob			*map;
 }					t_metadata;
 
 typedef struct		s_core
@@ -59,7 +59,10 @@ t_metadata			*new_meta_data(void);
 t_core				*init_core_data(size_t size);
 void				intern_alloc_new_pool(t_core *core, size_t size);
 void				intern_alloc_new_map(t_core *core);
-void				*alloc_request(size_t size);
+void				*alloc_request(size_t size, int code);
 void				*intern_user_alloc(size_t size, t_core *core);
+int					intern_get_free_adress(size_t size, t_core *core, int pool_number);
+void				*intern_update_memory_map(t_core *core, size_t size, int pool_number, int free_adress);
+void				dump_pool_memory(t_core *core);
 
 #endif
