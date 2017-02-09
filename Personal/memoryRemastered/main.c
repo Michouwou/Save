@@ -6,7 +6,7 @@
 /*   By: mlevieux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/05 16:58:09 by mlevieux          #+#    #+#             */
-/*   Updated: 2017/02/07 18:52:17 by mlevieux         ###   ########.fr       */
+/*   Updated: 2017/02/09 16:39:06 by mlevieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,20 @@ int main(void)
 {
 	void	*space;
 
-	space = alloc_request((size_t)20, 1);
+	init_memory((size_t)500);
+	space = new_memory((size_t)20);
 	ft_strcpy((char*)space, "helllooooooo\n");
 	printf("LOL");
 	printf("%s", (char*)space);
-	alloc_request(0, 2);
+	dump_memory();
 	printf("LOL");
-	ft_strcpy((char*)alloc_request(256, 1), "blim blam bloum\n");
-	alloc_request(0, 2);
-	printf("LOL");
+	ft_strcpy((char*)new_memory(256), "blim blam bloum\n");
+	dump_memory();
+	space = new_memory(400);
+	dump_memory();
+	printf("LOL\n");
+	ft_strcpy((char*)space, "MMMMAIIISS WWWWHHHHHAAAAATTTT?\?\?\?!!!!!\n");
+
+	dump_memory();
 	return (0);
 }

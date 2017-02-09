@@ -12,16 +12,31 @@
 
 #include "pool.h"
 
+void		init_memory(size_t size)
+{
+	alloc_request(size, 0);
+}
+
+void		*new_memory(size_t size)
+{
+	return (alloc_request(size, 1));
+}
+
+void		dump_memory()
+{
+	alloc_request(0, 2);
+}
+
 void		*alloc_request(size_t size, int code)
 {
 	static t_core	*core;
 
-	if (core == NULL)
+	if (core == NULL && code == 0)
 	{
 		// Si size inferieur a 2^24, on le met a une certaine puissance de 2 superieure
 		// Les tailles sont arbitraires pour le moment et a revoir bien sur :)
 		printf("Initiatilzation\n");
-		core = init_core_data(size * 32);
+		core = init_core_data(size);
 	}
 	if (code == 1)
 	{
@@ -38,15 +53,13 @@ void		*intern_user_alloc(size_t size, t_core *core)
 {
 	int		i;
 	int		free_adress;
-	_Bool	flag;
+	int		flag;
 
-	free_adress = 0;
-	flag = FALSE;
-	while (!flag)
+	free_adress = -1;
+	flag = 0;
+	while (flag < 2)
 	{
 		i = 0;
-		if (free_adress != 0)
-			flag = TRUE;
 		// Tant qu'on a pas parcouru toutes les pools
 		while (i < (int)core->pool->number)
 		{
@@ -54,13 +67,17 @@ void		*intern_user_alloc(size_t size, t_core *core)
 			// On regarde si la pool sur laquelle on est ne contient pas assez de memoire (au total)
 			if (core->pool->totalSize[i] - core->pool->usedSize[i] >= size)
 				free_adress = intern_get_free_adress(size, core, i); // recupere l'adresse contenant la bonne quantite de memoire
-			printf("Checking if free space exists\n");
+			printf("Checking if free space exists, free_adress = %d\n", free_adress);
 			if (free_adress != -1) // si on a trouve
 				return (intern_update_memory_map(core, size, i, free_adress)); // on renvoie le pointeur correspondant apres avoir update la map
 			i += 1;
 		}
 		// Si on a parcouru toutes les pools sans trouver c'est qu'il faut en allouer une autre
-		intern_alloc_new_pool(core, size);
+		if (flag != 1)
+			intern_alloc_new_pool(core, size);
+		else
+			return (NULL);
+		flag += 1;
 	}
 	// Si non il y a a eu un probleme alors on renvoie null
 	return (NULL);
@@ -72,6 +89,7 @@ int			intern_get_free_adress(size_t size, t_core *core, int pool_number)
 	size_t	available;
 
 	i = core->meta->firstPoolIndex[pool_number];
+	printf("dernier = %d |||\n", core->meta->firstPoolIndex[pool_number]);
 	available = core->pool->totalSize[pool_number] - core->pool->usedSize[pool_number];
 	printf("Before intern_get_free_adress loop\n");
 	while (available > size && i < core->meta->indexLastGlob && core->meta->map[i].poolNumber == (size_t)pool_number &&
@@ -81,8 +99,10 @@ int			intern_get_free_adress(size_t size, t_core *core, int pool_number)
 		i = core->meta->map[i].next;
 		printf("One tour inside looop\n");
 	}
-	if (i == core->meta->indexLastGlob && available > size)
+	if (i == core->meta->indexLastGlob && available >= size)
 		return (i + 1);
+	else if (available >= size && core->pool->usedSize[pool_number] == 0)
+		return (core->meta->firstPoolIndex[pool_number]);
 	printf("No new adress to be given\n");
 	if (core->meta->map[i].poolNumber != (size_t)pool_number)
 		return (-1);
@@ -131,6 +151,7 @@ void		dump_pool_memory(t_core *core)
 	i = 0;
 	while (i < (int)core->pool->number)
 	{
+		printf("--------------------------------------------------------------------------------------------------------------------------------\n");
 		j = 1;
 		while (j <= (int)core->pool->totalSize[i])
 		{
@@ -138,5 +159,6 @@ void		dump_pool_memory(t_core *core)
 			j += 1;
 		}
 		i += 1;
+		printf("\n--------------------------------------------------------------------------------------------------------------------------------\n");
 	}
 }
