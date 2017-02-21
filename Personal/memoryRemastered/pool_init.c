@@ -66,22 +66,19 @@ void		intern_alloc_new_pool(t_core *core, size_t size)
 
 	(void)size;
 
-	// On sauvegarde le tableau actuel
-	printf("MDR\n");
+	// On sauvegarde les structures a reallouer
 	pools_buffer = core->pool->pool;
 	total_buffer = core->pool->totalSize;
 	used_buffer = core->pool->usedSize;
 	number = core->pool->number;
 	first_buffer = core->meta->firstPoolIndex;
-	// On en alloue un nouveau, plus grand
-	printf("Juste avant les allocations\n");
+	// On en alloue de nouvelles
 	core->pool->pool = (void**)ft_memalloc(sizeof(void*) * (number + 1));
 	core->pool->totalSize = (size_t*)ft_memalloc(sizeof(size_t) * (number + 1));
 	core->pool->usedSize = (size_t*)ft_memalloc(sizeof(size_t) * (number + 1));
 	core->meta->firstPoolIndex = (int*)ft_memalloc(sizeof(int) * (number + 1));
 	i = -1;
 	// On copie le precedent dans le nouveau
-	printf("Avant la boucle\n");
 	while (++i < (int)number)
 	{
 		core->pool->pool[i] = pools_buffer[i];
@@ -90,16 +87,24 @@ void		intern_alloc_new_pool(t_core *core, size_t size)
 		core->meta->firstPoolIndex[i] = first_buffer[i];
 	}
 	// On en alloue la derniere case
-	printf("Derniere boucle\n");
-	core->pool->pool[number] = (t_pool*)ft_memalloc(sizeof(t_pool) * (core->firstAllocatedSize));
+	// On realloue une pool de la taille de la premiere allouee (a revoir)
+	core->pool->pool[number] = (void*)ft_memalloc((core->firstAllocatedSize));
+	// On rappelle la taille du bloc alloue
 	core->pool->totalSize[number] = core->firstAllocatedSize;
+	// On incremente le nombre de pools disponibles
 	core->pool->number += 1;
-	core->meta->firstPoolIndex[number - 1] = core->meta->indexLastGlob + 1;
-	core->meta->map[core->meta->firstPoolIndex[number - 1]].poolNumber = number - 1;
-	core->meta->map[core->meta->indexLastGlob].next = core->meta->firstPoolIndex[number - 1];
-	core->meta->map[core->meta->firstPoolIndex[number - 1]].prev = core->meta->indexLastGlob;
-	// On free l'ancien
-	printf("Liberation\n");	
+	// On dispose le pointeur sur la pool allouee sur le bloc de mappage directement apres
+	// le dernier utilise (on sait que l'on reallouera une pool uniquement quand il n'y aura pas de place
+	// dans les autres donc on peut se permettre de positionner l'index ou on veut)
+	core->meta->firstPoolIndex[number] = core->meta->indexLastGlob + 1;
+	// On precise que ce bloc de mappage correspond a la pool que l'on vient d'allouer
+	core->meta->map[core->meta->firstPoolIndex[number]].poolNumber = number;
+	// On link les blocks de mappage
+	core->meta->map[core->meta->indexLastGlob].next = core->meta->firstPoolIndex[number];
+	core->meta->map[core->meta->firstPoolIndex[number]].prev = core->meta->indexLastGlob;
+	// Comme l'adresse que l'on va adresser ensuite est la premiere de la pool, on set le bon last
+	core->meta->indexLastGlob += 1;
+	// On free l'ancienne memoire
 	free(total_buffer);
 	free(used_buffer);
 	free(pools_buffer);
