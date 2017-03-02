@@ -1,4 +1,4 @@
-global start
+global _main
 
 extern _malloc, _free
 
@@ -40,7 +40,7 @@ ft_memalloc:
     push    ebp
     mov     ebp, esp
 
-    mov     edi, [esp + 8]
+    push    0x8
     call    _malloc
     add     esp, 0x4
 
@@ -156,7 +156,7 @@ _print:
     leave
     ret ; returning
 
-start:
+_main:
     ;push    len ; length of the string to write
     ;push    msg ; message to print
 
@@ -175,11 +175,11 @@ start:
     ; add     esp, 0x10
     push    0x10
     call    ft_memalloc
-    mov     dword [eax], "plop"
-    push    0x4
-    push    eax
-    call    _print
-    add     esp, 0xc
+    ;mov     dword [eax], "plop"
+    ;push    0x4
+    ;push    eax
+    ;call    _print
+    ;add     esp, 0xc
 
     push    0x0 ; exit status
     mov     eax, 0x1 ; sys_call = exit
