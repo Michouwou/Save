@@ -8,22 +8,21 @@ extern _ft_putstr
 extern _ft_strlen
 extern _ft_puts
 extern _ft_bzero
+extern _ft_strcat
 global _start
 
 _start:
 
-	mov		rdi, string
-	mov		qword [rdi], 'qqqq'
-	mov		byte [rdi + 4], 0xa
-    call    _ft_puts
+    mov		rdi, dat
+    mov		rsi, msg
+    call	_ft_strcat
 
-    mov		rdi, string
-    inc		rdi
-    mov		rsi, 3
-    call	_ft_bzero
+    mov		rdi, rax
+    mov		rsi, msg
+    call 	_ft_strcat
 
-    mov		rdi, string
-    call	_ft_puts
+    mov		rdi, dat
+    call	_ft_putstr
 
     mov     rax, SYS_CALL(END)
     mov     rbx, 0x0
@@ -35,5 +34,4 @@ msg     db "Hello!", 0xa, 0x0
 len     equ $ - msg
 
 section .bss
-
-string	resb 30
+dat resb 30

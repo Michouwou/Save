@@ -11,22 +11,20 @@ _ft_bzero:
 	push	rbp
 	mov		rbp, rsp
 
-	xor		rcx, rcx
-	push	rdx
+	push	rdi
 	push	rsi
-	mov		rdx, rdi
 
 	to_end:
 		cmp		rcx, rsi
 		je		end
-		mov		byte [rdx + rcx], byte 0x0
+		mov		byte [rdi], byte 0x0
+		inc		rdi
 		inc		rcx
 		jmp		to_end
 
 	end:
 		pop		rsi
-		pop		rdx
-		mov		rax, rcx
+		pop		rdi
 		xor		rcx, rcx
 
 	leave

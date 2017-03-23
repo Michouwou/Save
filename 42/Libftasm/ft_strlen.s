@@ -10,20 +10,19 @@ _ft_strlen:
 	push	rbp
 	mov		rbp, rsp
 
+	push	rdi
 	xor		rcx, rcx
-	push	rdx
-	mov		rdx, rdi
-
-	to_end:
-		cmp		byte [rdx + rcx], byte 0x0
-		je		end
-		inc		rcx
-		jmp		to_end
+	not		rcx
+	mov		rax, 0x0
+	cld
+	repne	scasb
+	not		rcx
+	dec		rcx
 
 	end:
-		pop		rdx
 		mov		rax, rcx
 		xor		rcx, rcx
 
+	pop		rdi
 	leave
 	ret

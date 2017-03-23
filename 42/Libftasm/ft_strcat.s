@@ -1,35 +1,40 @@
+extern _ft_strlen
 global _ft_strcat
 
 section .text
 
-; Prend en argument sur la pile deux chaines de caracteres,
-; copy la premiere a la fin de la deuxieme et renvoie le
-; resultat dans eax
 _ft_strcat:
-    push    ebp
-    mov     ebp, esp
+	push	rbp
+	mov		rbp, rsp
 
-    mov     edi, [esp + 8]
-    mov     esi, [esp + 12]
-    push    edi
+	test	rdi, rdi
+	jz		null_dst
 
-    toend:
-        cmp     byte [edi], 0x0
-        je      cpy
-        inc     edi
-        jmp     toend
+	test	rsi, rsi
+	jz		null_src
 
-    cpy:
-        mov     al, byte[esi]
-        mov     byte [edi], al
-        cmp     byte [esi], 0x0
-        je      end
-        inc     edi
-        inc     esi
-        jmp     cpy
+	push	rdi
+    push    rsi
+	call	_ft_strlen
+    add     rdi, rax
+	mov		rdx, rdi
+	mov		rdi, rsi
+	call	_ft_strlen
+	mov		rcx, rax
+	mov		rdi, rdx
+	rep		movsb
+	mov		byte [rdi], 0x0
+    pop     rsi
+	pop		rax
+	jmp		end
 
-    end:
+	null_dst:
+		mov		rax, 0x0
+		jmp		end
 
-    pop     eax
-    leave
-    ret
+	null_src:
+		mov		rax, rdi
+
+	end:
+		leave
+		ret

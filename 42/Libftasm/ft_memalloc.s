@@ -5,12 +5,12 @@ extern _malloc
 section .text
 
 _ft_memalloc:
-    push    ebp
-    mov     ebp, esp
+    push    rbp
+    mov     rbp, rsp
 
-    push    eax
+    push    rax
     call    _malloc
-    add     esp, 0x4
+    add     rsp, 0x4
 
     leave
     ret
