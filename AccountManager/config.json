@@ -1,0 +1,10 @@
+{
+	"login": "root",
+	"pass": "tfF4yoxyy2",
+	"host": "localhost",
+	"port": "5000",
+	"base": "comptes",
+	"purchase": "purchases",
+	"saving": "savings",
+	"types": "types"
+}
