@@ -39,7 +39,7 @@ func Write(str string, file *os.File, display bool) error {
 	return err
 }
 
-func ConnectToDB(conf Configuration) *sql.DB {
+func ConnectToDB(conf *Configuration) *sql.DB {
 
 	db, err := sql.Open("mysql", conf.Login+":"+conf.Password+"@tcp("+conf.Host+":"+conf.Port+")/"+conf.Base)
 	if err != nil {
@@ -76,7 +76,7 @@ func GetConfiguration(path string) *Configuration {
 
 var PreviousFile = ""
 
-func RefreshFile(fileName string, conf *Configuration) *os.file {
+func RefreshFile(fileName string, conf *Configuration) *os.File {
 
 	if conf.RefreshInPlace {
 
@@ -92,7 +92,7 @@ func RefreshFile(fileName string, conf *Configuration) *os.file {
 		os.Rename(PreviousFile, strings.Trim(conf.Bkp, "/")+"/"+path.Base(PreviousFile))
 
 		t := time.Now().UnixNano()
-		strT := strconv.Itoa(t)
+		strT := strconv.FormatInt(t, 16)
 		PreviousFile = fileName + "_" + strT
 
 		fileToWriteTo, err := os.Create(fileName + "_" + strT)
@@ -105,9 +105,41 @@ func RefreshFile(fileName string, conf *Configuration) *os.file {
 	}
 }
 
+func SingleQuery(query string, db *sql.DB, values ...interface{}) error {
+	err := db.QueryRow(query).Scan(values...)
+	if err != nil {
+		log.Println("Error querying db or scanning values :", err)
+		return err
+	}
+
+	return nil
+}
+
+func GetTotalSpent(db *sql.DB, file *os.File, conf Configuration) {
+
+	var (
+		nb  float64
+		err error
+	)
+
+	if err = SingleQuery("select sum(cpm_micros)/1000000 from win_"+conf.Op+";", db, &nb); err != nil {
+		return
+	}
+
+	if err = Write("\n", file, false); err != nil {
+		log.Println("Error writing to file :", err)
+		return
+	}
+
+	if err = Write("Dépensé depuis le début : "+strconv.FormatFloat(nb, 'f', 2, 64)+"\n", file, true); err != nil {
+		log.Println("Error writing to file :", err)
+		return
+	}
+}
+
 func main() {
 
-	conf := GetConfiguration(path)
+	conf := GetConfiguration(os.Args[1])
 	if conf == nil {
 		return
 	}
@@ -118,97 +150,45 @@ func main() {
 		return
 	}
 
-	nb := float64(0.0)
-	date1 := ""
-	date2 := ""
-	var t1 time.Time
-	var t2 time.Time
-
 	for {
 
-		file := RefreshFile(conf.File, conf)
-		if err == nil {
+		fileToWriteTo := RefreshFile(conf.File, conf)
+		if fileToWriteTo == nil {
 			return
 		}
 
-		r, err := db.Query("select sum(cpm_micros)/1000000 from win_" + conf.Op + ";")
-		if err != nil {
-			log.Println("Unable to query db :", err)
+		GetTotalSpent(db, fileToWriteTo, conf)
+
+		if err := SingleQuery("select min(created_at), max(created_at) from win_"+conf.Op+";", db, &date1, &date2); err != nil {
 			return
 		}
 
-		if r.Next() {
-			err = r.Scan(&nb)
-			if err != nil {
-				log.Println("Error scanning value :", err)
-				return
-			}
-		}
-		r.Close()
-
-		err = Write("\n", fileToWriteTo, false)
-		if err != nil {
-			log.Println("Error writing to file :", err)
-			return
-		}
-
-		err = Write("Dépensé depuis le début : "+strconv.FormatFloat(nb, 'f', 2, 64)+"\n", fileToWriteTo, true)
-		if err != nil {
-			log.Println("Error writing to file :", err)
-			return
-		}
-
-		r, err = db.Query("select min(created_at), max(created_at) from win_" + conf.Op + ";")
-		if err != nil {
-			log.Println("Unable to query db :", err)
-			return
-		}
-
-		if r.Next() {
-			err = r.Scan(&date1, &date2)
-			if err != nil {
-				log.Println("Error scanning value :", err)
-				return
-			}
-		}
-		r.Close()
-
-		t1, err = time.Parse("2006-01-02 15:04:05", date1)
-		if err != nil {
+		if t1, err := time.Parse("2006-01-02 15:04:05", date1); err != nil {
 			log.Println("Date :", date1, "could not be parsed")
 		}
-		t2, err = time.Parse("2006-01-02 15:04:05", date2)
-		if err != nil {
+		if t2, err := time.Parse("2006-01-02 15:04:05", date2); err != nil {
 			log.Println("Date :", date2, "could not be parsed")
 		}
 
 		dur := t2.Sub(t1)
 		hou, min := dur.Hours(), dur.Minutes()
 
-		err = Write("Dépensé en moyenne par minute : "+strconv.FormatFloat(nb/min, 'f', 2, 64)+"\n", fileToWriteTo, true)
-		if err != nil {
+		if err = Write("Dépensé en moyenne par minute : "+strconv.FormatFloat(nb/min, 'f', 2, 64)+"\n", fileToWriteTo, true); err != nil {
 			log.Println("Error writing to file :", err)
 			return
 		}
-		err = Write("Dépensé en moyenne par heure : "+strconv.FormatFloat(nb/hou, 'f', 2, 64)+"\n", fileToWriteTo, true)
-		if err != nil {
+		if err = Write("Dépensé en moyenne par heure : "+strconv.FormatFloat(nb/hou, 'f', 2, 64)+"\n", fileToWriteTo, true); err != nil {
 			log.Println("Error writing to file :", err)
 			return
 		}
 
 		today := float64(0.0)
+		dateToday := time.Now().Format("2006-01-02")
 
-		r, err = db.Query("select sum(cpm_micros)/1000000 from win_" + conf.Op + " group by substring(created_at, 1, 10) order by substring(created_at, 1, 10) desc limit 1;")
+		err = SingleQuery("select sum(cpm_micros)/1000000 from win_"+conf.Op+" where date(created_at) = "+dateToday+";", db, &today)
 		if err != nil {
 			log.Println("Uneable to query db :", err)
 			return
-		}
-
-		if r.Next() {
-			err = r.Scan(&today)
-			if err != nil {
-				log.Println("Error scanning value :", err)
-			}
 		}
 
 		err = Write("Dépensé aujourd'hui : "+strconv.FormatFloat(today, 'f', 2, 64)+"\n", fileToWriteTo, true)
