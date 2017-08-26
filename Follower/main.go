@@ -7,18 +7,22 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"path"
 	"strconv"
+	"strings"
 	"time"
 )
 
 type Configuration struct {
-	Login    string `json:"login"`
-	Password string `json:"pass"`
-	Host     string `json:"host"`
-	Port     string `json:"port"`
-	Base     string `json:"base"`
-	Op       string `json:"op"`
-	File     string `json:"file"`
+	Login          string `json:"login"`
+	Password       string `json:"pass"`
+	Host           string `json:"host"`
+	Port           string `json:"port"`
+	Base           string `json:"base"`
+	Op             string `json:"op"`
+	File           string `json:"file"`
+	RefreshInPlace bool   `json:"in_place"`
+	Bkp            string `json:"backup"`
 }
 
 func Write(str string, file *os.File, display bool) error {
@@ -35,33 +39,82 @@ func Write(str string, file *os.File, display bool) error {
 	return err
 }
 
-func main() {
-
-	var conf Configuration
-
-	file, err := ioutil.ReadFile(os.Args[1])
-	if err != nil {
-		log.Println("Unable to read file :", os.Args[1], err)
-		return
-	}
-
-	err = json.Unmarshal(file, &conf)
-	if err != nil {
-		log.Println("Unable to unmarshal file :", os.Args[1], err)
-		return
-	}
-
-	log.Println("Connecting with :", conf.Login+":"+conf.Password+"@tcp("+conf.Host+":"+conf.Port+")/"+conf.Base)
+func ConnectToDB(conf Configuration) *sql.DB {
 
 	db, err := sql.Open("mysql", conf.Login+":"+conf.Password+"@tcp("+conf.Host+":"+conf.Port+")/"+conf.Base)
 	if err != nil {
 		log.Println("Unable to connect to db :", err)
-		return
+		return nil
 	}
 
 	err = db.Ping()
 	if err != nil {
 		log.Println("Unable to keep connection alive :", err)
+		return nil
+	}
+
+	return db
+}
+
+func GetConfiguration(path string) *Configuration {
+	var conf Configuration
+
+	file, err := ioutil.ReadFile(path)
+	if err != nil {
+		log.Println("Unable to read file :", path, err)
+		return nil
+	}
+
+	err = json.Unmarshal(file, &conf)
+	if err != nil {
+		log.Println("Unable to unmarshal file :", path, err)
+		return nil
+	}
+
+	return &conf
+}
+
+var PreviousFile = ""
+
+func RefreshFile(fileName string, conf *Configuration) *os.file {
+
+	if conf.RefreshInPlace {
+
+		fileToWriteTo, err := os.Create(fileName)
+		if err != nil {
+			log.Println("Unable to open file for writing")
+			return nil
+		}
+
+		return fileToWriteTo
+	} else {
+
+		os.Rename(PreviousFile, strings.Trim(conf.Bkp, "/")+"/"+path.Base(PreviousFile))
+
+		t := time.Now().UnixNano()
+		strT := strconv.Itoa(t)
+		PreviousFile = fileName + "_" + strT
+
+		fileToWriteTo, err := os.Create(fileName + "_" + strT)
+		if err != nil {
+			log.Println("Unable to open file for writing")
+			return nil
+		}
+
+		return fileToWriteTo
+	}
+}
+
+func main() {
+
+	conf := GetConfiguration(path)
+	if conf == nil {
+		return
+	}
+
+	log.Println("Connecting with :", conf.Login+":"+conf.Password+"@tcp("+conf.Host+":"+conf.Port+")/"+conf.Base)
+	db := ConnectToDB(conf)
+	if db == nil {
 		return
 	}
 
@@ -72,9 +125,9 @@ func main() {
 	var t2 time.Time
 
 	for {
-		fileToWriteTo, err := os.Create(conf.File + conf.Op)
-		if err != nil {
-			log.Println("Unable to open file for writing")
+
+		file := RefreshFile(conf.File, conf)
+		if err == nil {
 			return
 		}
 
