@@ -1,9 +1,23 @@
 {
-	"login":"m.levieux",
-	"pass":"perriercitron",
-	"host":"logan.kdata.fr",
-	"port":"3306",
-	"base":"adexreporting",
+	"Adex": {
+		"login":"m.levieux",
+		"pass":"perriercitron",
+		"host":"logan.kdata.fr",
+		"port":"3306",
+		"base":"adexreporting"
+	},
+	"CDB": {
+		"login":"m.levieux",
+		"pass":"perriercitron",
+		"host":"odin.kdata.fr",
+		"port":"3306",
+		"base":"franprix"
+	},
 	"op":"fp_op13",
-	"file":"follow_"
+	"file":"follow",
+	"behaviour": [
+		"spe15",
+		"crm_onboarding"
+	],
+	"in_place":true
 }
