@@ -29,6 +29,7 @@ type DBInfo struct {
 type Configuration struct {
 	Adex           DBInfo   `json:"adex"`
 	CDB            DBInfo   `json:"CDB"`
+	SU             DBInfo   `json:"SU"`
 	Op             string   `json:"op"`
 	File           string   `json:"file"`
 	RefreshInPlace bool     `json:"in_place"`
@@ -508,6 +509,39 @@ func CheckLastDateOfBehaviourUsed(conf *Configuration, db *sql.DB) {
 	}
 }
 
+func GetClickThroughRate(db *sql.DB, file *os.File, conf *Configuration) {
+
+	var (
+		ctr     float64
+		nbClick int64
+		nbOpen  int64
+		err     error
+	)
+
+	err = SingleQuery("select count(*) from events where type_id = 12 and created_at between "+beginning.Format("2006-01-02 15:04:05")+" and "+end.Format("2006-01-02 15:04:05")+";", db, &nbClick)
+	if err != nil {
+		return
+	}
+
+	err = SingleQuery("select count(*) from events where type_id = 11 and created_at between "+beginning.Format("2006-01-02 15:04:05")+" and "+end.Format("2006-01-02 15:04:05")+";", db, &nbOpen)
+	if err != nil {
+		return
+	}
+
+	if nbClick == 0 || nbOpen == 0 || nbOpen < nbClick {
+		Warning("Apparently there's an error, there are ", nbClick, " clicks and ", nbOpen, " opens!")
+	}
+
+	ctr = float64(nbClick) / float64(nbOpen) * 100
+	if ctr < 0.1 {
+		Warning("The CTR is critically low :", ctr)
+	} else if ctr > 0.6 {
+		Warning("The CTR is critically high :", ctr)
+	}
+
+	err = Write("Le CTR est de : "+strconv.FormatFloat(ctr, 'f', 2, 64)+"%", file, true)
+}
+
 func Warning(toPrint ...interface{}) {
 	log.Println("\x1b[31;1m")
 	toPrint = append(toPrint, "\x1b[0m")
@@ -521,6 +555,7 @@ func main() {
 		conf          *Configuration
 		dbAdex        *sql.DB
 		dbCDB         *sql.DB
+		dbSU          *sql.DB
 		fileToWriteTo *os.File
 		err           error
 		ssps          map[string]float64
@@ -546,6 +581,12 @@ func main() {
 		return
 	}
 
+	log.Println("Connecting with :", conf.SU.Login+":"+conf.SU.Password+"@tcp("+conf.SU.Host+":"+conf.SU.Port+")/"+conf.SU.Base)
+	dbSU = ConnectToDB(conf.SU)
+	if dbCDB == nil {
+		return
+	}
+
 	go CheckLastDateOfBehaviourUsed(conf, dbCDB)
 
 	for {
@@ -566,6 +607,7 @@ func main() {
 		GetSpentPerSspRaw(total, ssps, dbAdex, fileToWriteTo, conf)
 		devices = GetSpentPerDevicePercent(total, fileToWriteTo, dbAdex, conf)
 		GetSpentPerDeviceRaw(total, devices, dbAdex, fileToWriteTo, conf)
+		GetClickThroughRate(dbSU, fileToWriteTo, conf)
 		err = Write("\n\n", fileToWriteTo, false)
 		if err != nil {
 			log.Println("Error writing to file :", err)
