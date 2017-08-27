@@ -1,2 +1,0 @@
-2017/08/24 11:49:38 Connecting with : m.levieux:perriercitron@tcp(logan.kdata.fr:3306)/adexreporting
-2017/08/24 11:49:38 Querying spent budget :select cast(sum(cpm_micros)/1000000 as signed) from win_fp_op13;
