@@ -1,0 +1,34 @@
+TODO Follower [V1.0.0 ==> V2.0.0]:
+
+- Passer sur un mode dialogue ou options. (4h)
+- Rajouter les clicks, open et CTR par heure, jour. (2h)
+- Rajouter les dépenses par minute, heure, jour. (1h)
+- Rajouter la possiblité de faire fonctionner le programme sur plusieurs op de manière simultanée. (4h)
+- Rajouter la prévision de la fin de la campagne. (2h)
+- Faire en sorte que le programme aille lui-même chercher les informations disponibles sur la campagne dans la configuration kdatadex,
+	pression et dans le backup spooler. (12h)
+- Ajouter de nouveaux checks (bannières, tailles de spooler...). (2h)
+- Rajouter les dépenses par device par minute, heure, jour. (2h)
+- Rajouter les dépenses par bannière par minute, heure, jour. (2h)
+- Rajouter un mode refresh plein écran (ou pleine fenêtre) terminal. (? - 20h)
+- Mettre en place une pseudo-interface de création de configurations (pour le Follower). (4h) 
+- [A VOIR] Aller chercher des données épurées du Reporter pour plus de possibilités. (? - 16h)
+
+{TOTAL = somme * 2 = 142h}
+
+TODO Before CampaignGen:
+- Se remettre sérieusement au PHP. (2h)
+
+{TOTAL = somme * 2 = 4h}
+
+TODO CampaignGen:
+
+- Créer la classer Kdatadex. (3h)
+- Permettre de ne modifier qu'une partie de la configuration. (3h)
+- Permettre de gérer le budget par SSP par jour et total, le budget par content, l'insertion des contents doit être automatique, le nom de l'op,
+	les formats de bannière utilisés, les devices pour chaque bannière, les heures de bid, l'insertion des zoneid et bannerid des bannières. (10h)
+- Permettre de gérer la configuration master, c'est à dire ajouter de nouvelles configuration d'op. (1h)
+- [A VOIR] Dans le cas de l'insertion d'un nouveau client, il faudrait dans l'idéal que l'interface lance le kdatadex sur Thanos, copie les spoolers
+	sur les bidders, archive les anciens spoolers de l'op et des op finies, et relance le kdatadex sur les bidders elle-même. (? - 25h)
+
+{TOTAL = somme * 2 = 84h}
