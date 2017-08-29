@@ -1,17 +1,17 @@
 TODO Follower [V1.0.0 ==> V2.0.0]:
 
-- Passer sur un mode dialogue ou options. (4h)
 - Rajouter les clicks, open et CTR par heure, jour. (2h)
-- Rajouter les dépenses par minute, heure, jour. (1h)
 - Rajouter la possiblité de faire fonctionner le programme sur plusieurs op de manière simultanée. (4h)
-- Rajouter la prévision de la fin de la campagne. (2h)
+- Rajouter les dépenses par minute, heure, jour. (1h)
 - Faire en sorte que le programme aille lui-même chercher les informations disponibles sur la campagne dans la configuration kdatadex,
 	pression et dans le backup spooler. (12h)
-- Ajouter de nouveaux checks (bannières, tailles de spooler...). (2h)
-- Rajouter les dépenses par device par minute, heure, jour. (2h)
 - Rajouter les dépenses par bannière par minute, heure, jour. (2h)
+- Ajouter de nouveaux checks (bannières, tailles de spooler...). (2h)
+- Rajouter les dépenses par device par minute, heure, jour. (2h) 
+- Passer sur un mode dialogue ou options. (4h)
+- Rajouter la prévision de la fin de la campagne. (2h)
 - Rajouter un mode refresh plein écran (ou pleine fenêtre) terminal. (? - 20h)
-- Mettre en place une pseudo-interface de création de configurations (pour le Follower). (4h) 
+- Mettre en place une interface de création de configurations (pour le Follower). (4h)
 - [A VOIR] Aller chercher des données épurées du Reporter pour plus de possibilités. (? - 16h)
 
 {TOTAL = somme * 2 = 142h}
